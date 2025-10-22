@@ -6,3 +6,6 @@ _site/
 .Rhistory
 .Rproj.user
 .ipynb_checkpoints
+
+/.quarto/
+**/*.quarto_ipynb

@@ -19,7 +19,7 @@ website:
         href: index_misc.qmd
     right:
       - icon: github
-        href: https://github.com/YOURNAME/academic-site
+        href: https://github.com/f-mc2/fmc
   sidebar:
     style: "docked"
     contents:
