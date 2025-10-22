@@ -1,0 +1,8 @@
+---
+title: "Miscellanea"
+listing:
+  contents: /misc/.
+  type: table
+  sort: "date desc"
+  fields: [title, date, tags]
+---

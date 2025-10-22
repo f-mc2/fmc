@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.24">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>exercises – Florio M. Ciaglia</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-b651517ce65839d647a86e2780455cfb.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-075db7670ff9040d996a2500bb1207fa.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-6f4840de3e51e6422d2669dcdbbfd0fa.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-075db7670ff9040d996a2500bb1207fa.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    </a>
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Florio M. Ciaglia</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="../../index.html" aria-current="page"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../index_teaching.html"> 
+<span class="menu-text">Teaching</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../publications/"> 
+<span class="menu-text">Publications</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../conferences.html"> 
+<span class="menu-text">Conferences &amp; Seminars</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../index_misc.html"> 
+<span class="menu-text">Miscellanea</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/YOURNAME/academic-site"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../index_teaching.html">Teaching</a></li><li class="breadcrumb-item"><a href="../../teaching/calculus-uc3m-robotics/index.html">Calculus - Robotics Engineering - UC3M</a></li><li class="breadcrumb-item"><a href="../../teaching/calculus-uc3m-robotics/3.5 Exercises.html">Anti-derivatives</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+      <a href="../../index.html" class="sidebar-logo-link">
+      </a>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../index_teaching.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Teaching</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../teaching/calculus-uc3m-robotics/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Calculus - Robotics Engineering - UC3M</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/calculus-uc3m-robotics/1.1 Sets and functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">1.1 Sets and functions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/calculus-uc3m-robotics/1.2 Limits of scalar functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Distance and intervals</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/calculus-uc3m-robotics/1.3 Derivatives of scalar functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Derivatives of scalar functions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/calculus-uc3m-robotics/1.4 Sequences and series.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Limits of numerical sequences</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/calculus-uc3m-robotics/1.5 Power series, trascendental functions, and Taylor series.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Power series</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/calculus-uc3m-robotics/1.6 Derivatives and extrema of scalar functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Derivatives and local behavior</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/calculus-uc3m-robotics/1.7 Exercises.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">1 Limits of scalar functions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/calculus-uc3m-robotics/2.1 From 1 to many dimensions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">From 1 to many dimensions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/calculus-uc3m-robotics/2.2 Limits of multivariable functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Limits multivariable vector functions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/calculus-uc3m-robotics/2.3 Derivatives and Taylor's theorem for multivariable functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Derivatives and differentiability of multivariable functions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/calculus-uc3m-robotics/2.4 Extrema of multivariable functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Critical points and local extrema for multivariable scalar functions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/calculus-uc3m-robotics/2.5 Exercises.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Change of coordinates</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/calculus-uc3m-robotics/3.1 Antiderivatives.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Anti-derivatives of scalar functions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/calculus-uc3m-robotics/3.2 Integrals.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Definite integrals and anti-derivatives</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/calculus-uc3m-robotics/3.3 Double integrals.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Double integrals</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/calculus-uc3m-robotics/3.4 Triple integrals.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Triple integrals</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/calculus-uc3m-robotics/3.5 Exercises.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Anti-derivatives</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../publications/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Publications</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../publications/inf-geo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Information geometry</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../publications/grpd.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Groupoidal picture of Quantum Mechanics</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../publications/misc.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Miscellanea</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../publications/preprints.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preprints</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../publications/articles.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Articles</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../publications/proceedings.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Proceedings</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../index_misc.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Miscellanea</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../misc/2025-05-27 timeline on fields of covariances.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Timeline on fields of covariances</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../misc/Fundamentals of statistics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fundamentals of statistics</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../misc/geodesics_dual_connections_qubit.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Geodesics of dual connections</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#anti-derivatives" id="toc-anti-derivatives" class="nav-link active" data-scroll-target="#anti-derivatives">Anti-derivatives</a></li>
+  <li><a href="#double-integrals" id="toc-double-integrals" class="nav-link" data-scroll-target="#double-integrals">Double integrals</a></li>
+  <li><a href="#double-integrals-and-change-of-variables" id="toc-double-integrals-and-change-of-variables" class="nav-link" data-scroll-target="#double-integrals-and-change-of-variables">Double integrals and change of variables</a></li>
+  <li><a href="#triple-integrals" id="toc-triple-integrals" class="nav-link" data-scroll-target="#triple-integrals">Triple integrals</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../index_teaching.html">Teaching</a></li><li class="breadcrumb-item"><a href="../../teaching/calculus-uc3m-robotics/index.html">Calculus - Robotics Engineering - UC3M</a></li><li class="breadcrumb-item"><a href="../../teaching/calculus-uc3m-robotics/3.5 Exercises.html">Anti-derivatives</a></li></ol></nav></header>
+
+
+
+
+
+<section id="anti-derivatives" class="level1">
+<h1>Anti-derivatives</h1>
+<ol type="1">
+<li><p>Use [[3.1 Antiderivatives#^b5075f|integration by parts]] to compute the anti-derivatives of the following functions <span class="math display">\[ \begin{split} 1) \qquad &amp; f(x) = x^{2}\,(x +1)^{9} \\ &amp; \\ 2) \qquad &amp; f(x) = x^{2}(2x - 1)^{-7} \\ &amp; \\ 3) \qquad &amp; f(x) = \ln(x) \\ &amp; \\ 4)  \qquad &amp; f(x) = x\ln(x) \\ &amp; \\ 5)  \qquad &amp; f(x) = (\ln(x))^{2} \\ &amp; \\ 6)  \qquad &amp; f(x) = \arcsin(x) \\ &amp; \\ 7)  \qquad &amp; f(x) = \arccos(x) \\ &amp; \\ 8)  \qquad &amp; f(x) = \arctan(x) \\ &amp; \\ 9)  \qquad &amp; f(x) = \mathrm{e}^{x}\,\sin(x)\\ &amp; \\ 10)  \qquad &amp; f(x) = x^{3} \,\sin(x^{2})\\ &amp; \\ 11)  \qquad &amp; f(x) = x\,\ln(x+1)\\ &amp; \\ 12)  \qquad &amp; f(x) = x\,\sqrt{x+1}\\ &amp; \\ 13) \qquad &amp; f(x) = \cos(\ln(x))\qquad \mbox{Hint: integrate by parts twice} \\ &amp; \\ 14) \qquad &amp; f(x) = \frac{1}{x}\arcsin(\ln(x)) \\ &amp; \\ 15) \qquad &amp; f(x) = x\,\arctan(x^{2}) \\ &amp; \\ \end{split} \]</span></p></li>
+<li><p>If <span class="math inline">\(f\colon[a,b]\rightarrow \mathbb{R}\)</span> is continuous and invertible in <span class="math inline">\((a,b)\)</span> with inverse <span class="math inline">\(f^{-1}\)</span> and primitive <span class="math inline">\(F\)</span>, use [[3.1 Antiderivatives#^b5075f|integration by parts]] to prove that <span class="math display">\[ \int f^{-1}(x)\,\mathrm{d}x =x f^{-1}(x) - F(f^{-1}(x)) + c .\]</span></p></li>
+<li><p>Use the [[3.1 Antiderivatives#^93db8a|a suitable change of variable]] to compute the anti-derivatives of the following functions <span class="math display">\[ \begin{split} 1) \qquad &amp; f(x) = \frac{1 + \sqrt{1-\sqrt{x}}}{\sqrt{x}}  \\ &amp; \\ 2) \qquad &amp; f(x) =  x^{2}\,\sin(\sqrt{x^{3}}) \\ &amp; \\ 3) \qquad &amp; f(x) =   \cos(\ln(x)) \\ &amp; \\ 4) \qquad &amp; f(x) =   \frac{\sqrt{x}+1}{x+3} \\ &amp; \\ 5) \qquad &amp; f(x) =  \frac{x^{3}}{(1+x^{2})^{3}} \\ &amp; \\ 6) \qquad &amp; f(x) =   \frac{1}{(x+2)\sqrt{1+x}} \\ &amp; \\ 7) \qquad &amp; f(x) =   \frac{\mathrm{e}^{4x}}{\mathrm{e}^{2x} + 2\mathrm{e}^{x} + 2} \\ &amp; \\ 8) \qquad &amp; f(x) =   \frac{1}{\sqrt{\mathrm{e}^{2x} - 1}}\\ &amp; \\ 9) \qquad &amp; f(x) =   \frac{\sin^{2}(x)\,\cos^{5}(x)}{\tan^{3}(x)}\\ &amp; \\ 10) \qquad &amp; f(x) =  \frac{\sin(x) + 3\cos(x)}{\sin(x) + 2\cos(x)} \\ &amp; \\ 11) \qquad &amp; f(x) =   \frac{\sin(x) + 3\cos(x)}{\sin(x)\cos(x) + \sin(x)}\\ &amp; \\ 12) \qquad &amp; f(x) = \sqrt{\sqrt{x} + 1}  \\ &amp; \\ 13) \qquad &amp; f(x) = \frac{1}{\mathrm{e}^{x} - 4\mathrm{e}^{-x}} \\ &amp; \\ 14) \qquad &amp; f(x) = \frac{1}{x^{2}\sqrt{9-x^{2}}}  \\ &amp; \\ \end{split} \]</span> &gt;[!note]- Solution: &gt;1) Use <span class="math inline">\(t=\sqrt{1-\sqrt{x}}\)</span>. &gt;2) Use <span class="math inline">\(t=x^{\frac{3}{2}}\)</span>. &gt;3) Use <span class="math inline">\(t=\ln(x)\)</span> and integrate by part twice. &gt;4) Use <span class="math inline">\(t=\sqrt{x} +1\)</span> and long division of polynomials. &gt;5) Use <span class="math inline">\(t=1+x^2\)</span>. &gt;6) Use <span class="math inline">\(t=\sqrt{1+x}\)</span>. &gt;7) Use <span class="math inline">\(t=\mathrm{e}^x\)</span> and long division of polynomials. &gt;8) Use <span class="math inline">\(t=\sqrt{\mathrm{e}^{2x}-1}\)</span>. &gt;9) Use <span class="math inline">\(t=\cos(x)\)</span>. &gt;10) Use &gt;11) Use <span class="math inline">\(t=\tan(x/2)\)</span>, so that <span class="math inline">\(\sin(x)=2t/(1+t^2)\)</span> and <span class="math inline">\(\cos(x)=(1-t)/(1+t^2)\)</span>. &gt;12) Use <span class="math inline">\(t=\sqrt{\sqrt{x}+1}\)</span>. &gt;13) Use <span class="math inline">\(t=\mathrm{e}^x\)</span>. &gt;14) Use first <span class="math inline">\(y=x/3\)</span> and then <span class="math inline">\(y=\sin(t)\)</span>.</p></li>
+</ol>
+</section>
+<section id="double-integrals" class="level1">
+<h1>Double integrals</h1>
+<ol type="1">
+<li><p>Compute the double integral <span class="math display">\[ \iint_{D}y^{2}\,\mathrm{d}A\]</span> where <span class="math inline">\(D\)</span> is the triangular region with vertices <span class="math inline">\((0,2)\)</span>, <span class="math inline">\((2,4)\)</span>, and <span class="math inline">\((4,2)\)</span>.</p></li>
+<li><p>Compute the double integral <span class="math display">\[ \iint_{D}\mathrm{e}^{x-y}\,\mathrm{d}A \]</span> where <span class="math inline">\(D\)</span> is the triangular region with vertices <span class="math inline">\((0,0)\)</span>, <span class="math inline">\((1,3)\)</span>, and <span class="math inline">\((2,2)\)</span>.</p></li>
+<li><p>Compute the following double integrals and sketch the regions of integration: <span class="math display">\[ \begin{split} 1) \qquad &amp; \int_{0}^{2}\int_{\frac{x}{8}}^{\sqrt[3]{x}}\, \;\mathrm{d}y\,\mathrm{d}x &amp; \\ 2) \qquad &amp; \int_{1}^{2}\int_{\ln(x)}^{\mathrm{e}^{x}}\, \;\mathrm{d}y\,\mathrm{d}x &amp; \\ 3) \qquad &amp; \int_{0}^{2}\int_{2}^{3}\, (x + \mathrm{e}^{-y})\;\mathrm{d}x\,\mathrm{d}y &amp; \\ 4)  \qquad &amp; \int_{1}^{3}\int_{\frac{\pi}{2}}^{\pi}\,y\sin(x) \;\mathrm{d}x\,\mathrm{d}y &amp; \\ 5)  \qquad &amp; \int_{2}^{3}\int_{1}^{4}\,\left(\frac{x}{y} + \frac{y}{x}\right) \;\mathrm{d}y\,\mathrm{d}x &amp; \\ 6)  \qquad &amp; \int_{0}^{\frac{\pi}{2}}\int_{0}^{y}\, y\sin(x)\;\mathrm{d}x\,\mathrm{d}y &amp; \\ 7)  \qquad &amp; \int_{0}^{1}\int_{0}^{x}\,\sqrt{1-x^{2}} \;\mathrm{d}y\,\mathrm{d}x &amp; \\ 8)  \qquad &amp; \int_{0}^{3}\int_{0}^{x^{2}}\,y^{2}x \;\mathrm{d}y\,\mathrm{d}x &amp; \\ 9)  \qquad &amp; \int_{0}^{1}\int_{x}^{1}\,xy \;\mathrm{d}y\,\mathrm{d}x &amp; \\ 10)  \qquad &amp; \int_{0}^{\frac{\pi}{2}}\int_{0}^{\cos(x)}\,\cos(x) \;\mathrm{d}y\,\mathrm{d}x &amp; \\ 11)  \qquad &amp; \int_{-1}^{1}\int_{|y|}^{1}\,(x+y)^{2} \;\mathrm{d}x\,\mathrm{d}y &amp; \\ 12)  \qquad &amp; \int_{-3}^{1}\int_{-\sqrt{9-y^{2}}}^{\sqrt{9-y^{2}}}\, x^{2}\;\mathrm{d}x\,\mathrm{d}y &amp; \\ 13) \qquad &amp; \int_{-1}^{1}\int_{-2|x|}^{|x|}\,\mathrm{e}^{x+y} \;\mathrm{d}y\,\mathrm{d}x &amp; \\ 14) \qquad &amp; \int_{0}^{1}\int_{2-y}^{1}\,(x+y)^{2} \;\mathrm{d}x\,\mathrm{d}y &amp; \\ 15) \qquad &amp; \int_{0}^{1}\int_{1}^{\mathrm{e}^{x}}\,x + y \;\mathrm{d}y\,\mathrm{d}x \end{split} \]</span></p></li>
+<li><p>Compute the following integrals by changing the order of integration: <span class="math display">\[ \begin{split} 1) \qquad &amp; \int_{0}^{a }\int_{0}^{\sqrt{a^{2} - x^{2}}}\sqrt{a^{2} - y^{2}}\, \;\mathrm{d}y\,\mathrm{d}x &amp; \\ 2)  \qquad &amp; \int_{1}^{2}\int_{0}^{\ln(x)}\,(x-1)\,\sqrt{1+ \mathrm{e}^{2y}} \;\mathrm{d}y\,\mathrm{d}x &amp; \\ 3)  \qquad &amp; \int_{0}^{8}\int_{\frac{y}{2}}^{4}\, \;\mathrm{d}x\,\mathrm{d}y &amp; \\ 4)  \qquad &amp; \int_{0}^{1}\int_{x}^{1}\,xy \;\mathrm{d}y\,\mathrm{d}x &amp; \\ 5)  \qquad &amp; \int_{-3}^{1}\int_{-\sqrt{9-y^{2}}}^{\sqrt{9-y^{2}}}x^{2}\, \;\mathrm{d}x\,\mathrm{d}y &amp; \\ 6)  \qquad &amp; \int_{0}^{4}\int_{\frac{y}{2}}^{2}\,\mathrm{e}^{x^{2}} \;\mathrm{d}x\,\mathrm{d}y &amp; \\ 7)  \qquad &amp; \int_{0}^{3}\int_{\sqrt[3]{x}}^{27}\,xy \;\mathrm{d}y\,\mathrm{d}x \end{split} \]</span> &gt;[!note]- Solution: &gt;1) &gt;2) The region of integration reads <span class="math inline">\(D=\{(x,y)\in\mathbb{R}^{2}|1\leq x\leq 2, 0\leq y\leq \ln(x)\}\)</span>. As such, it is written as a <span class="math inline">\(y\)</span>-simple region, but we can turn it into an <span class="math inline">\(x\)</span>-simple region writing <span class="math inline">\(D=\{(x,y)\in\mathbb{R}^{2}|0\leq y\leq \ln(2),\mathrm{e}^{y}\leq x\leq 2\}\)</span>. Next, we perform the change of variable <span class="math inline">\(\mathrm{e}^{y}=t\)</span>, which means <span class="math inline">\(\mathrm{e}^{y}\mathrm{d}y=\mathrm{d}t\)</span> and thus &gt; <span class="math display">\[\begin{split} \int_{1}^{2}\int_{0}^{\ln(x)}(x-1)\sqrt{1+\mathrm{e}^{2y}}\,\mathrm{d}y\mathrm{d}x&amp;=\int_{0}^{\ln(2)}\int_{\mathrm{e}^{y}}^{2}(x-1)\sqrt{1+\mathrm{e}^{2y}}\,\mathrm{d}x\mathrm{d}y=\\ &amp;= \int_{0}^{\ln(2)}\mathrm{e}^{y}\left(1-\frac{\mathrm{e}^{y}}{2}\right)\sqrt{1+\mathrm{e}^{2y}}\,\mathrm{d}y= \\ &amp;=\int_{1}^{2}\left(1-\frac{t}{2}\right)\sqrt{1+t^{2}}\,\mathrm{d}t=\\ &amp; =\int_{1}^{2} \sqrt{1+t^{2}}\,\mathrm{d}t-\int_{1}^{2}\frac{t}{2}\sqrt{1+t^{2}}\,\mathrm{d}t.\end{split}\]</span> &gt; The second integral is immediate because <span class="math inline">\(2t\)</span> is the derivative of <span class="math inline">\(1+t^{2}\)</span>, and the result is thus <span class="math inline">\(\frac{1}{6}(2^{\frac{3}{2}}-5^{\frac{3}{2}})\)</span>. To solve the first integral in the RHS of the previous long chain of equalities, we introduce the change of variable <span class="math inline">\(t=\sinh(u)\)</span> (look <a href="https://en.wikipedia.org/wiki/Hyperbolic_functions">here</a> for the definition and all the properties of hyperbolic functions we need), which leads to <span class="math inline">\(\mathrm{d}t=\cosh(x)\mathrm{d}u\)</span> and <span class="math inline">\(1+\sinh^{2}(u)=\cosh^{2}(u)\)</span>. Since <span class="math inline">\(\cosh(u)\)</span> is always positive, we have &gt; <span class="math display">\[\begin{split}\int_{1}^{2} \sqrt{1+t^{2}}\,\mathrm{d}t&amp;=\int_{0}^{\mathrm{arcsinh}(2)} \cosh^{2}(u)\,\mathrm{d}u= \\ &amp; =\int_{0}^{\mathrm{arcsinh}(2)}\cosh(u) \cosh(u)\,\mathrm{d}u= \\ &amp; = \sinh(x)\cosh(x) - \int_{0}^{\mathrm{arcsinh}(2)} \sinh^{2}(u)\,\mathrm{d}u=\\ &amp; =\sinh(x)\cosh(x) - \int_{0}^{\mathrm{arcsinh}(2)} \cosh^{2} (u)-1\,\mathrm{d}u,\end{split}\]</span> &gt; which leads to &gt; <span class="math display">\[\begin{split}\int_{0}^{\mathrm{arcsinh}(2)}\cosh^{2}(u)\,\mathrm{d}u&amp;=\left[\frac{sinh(u)\cosh(u) +u}{2}\right]_{0}^{\mathrm{arcsinh}(2)}=\\ &amp;= \cosh(\mathrm{arcsinh}(2))+\frac{\mathrm{arcsinh(2)}}{2}\end{split}.\]</span> &gt; In conclusion, the original integral is <span class="math inline">\(cosh(\mathrm{arcsinh}(2))+\frac{\mathrm{arcsinh(2)}}{2}+\frac{1}{6}(2^{\frac{3}{2}}-5^{\frac{3}{2}})\)</span>. &gt;3) &gt;4) &gt;5) &gt;6) &gt;7)</p></li>
+</ol>
+</section>
+<section id="double-integrals-and-change-of-variables" class="level1">
+<h1>Double integrals and change of variables</h1>
+<ol type="1">
+<li><p>Let <span class="math inline">\(D\)</span> be the closed unit disk in <span class="math inline">\(\mathbb{R}^{2}\)</span>. Compute the double integral <span class="math display">\[ \iint_{D}\mathrm{e}^{x^2 + y^{2}}\;\mathrm{d}A\]</span> using a suitable change of variables.</p></li>
+<li><p>Let <span class="math inline">\(D\)</span> be the region in <span class="math inline">\(\mathbb{R}^{2}\)</span> delimited by the lines <span class="math display">\[ x+y=0,\quad x+y=1,\quad 2x-y=0,\quad 2x-y=3 . \]</span> Compute the double integral <span class="math display">\[ \iint_{D}(x^{2} + y^{2})\;\mathrm{d}A \]</span> using a suitable change of variables.</p></li>
+<li><p>Let <span class="math inline">\(D\)</span> be the region in <span class="math inline">\(\mathbb{R}^2\)</span> delimited by <span class="math display">\[ x^2 + y^2 = 4,\quad  x^2 + y^2 = 9, \quad x^2 - y^2 = 1, \quad x^{2 }- y^{2} = 4.\]</span> Compute the double integral <span class="math display">\[ \iint_{D}xy\;\mathrm{d}A \]</span> using a suitable change of variable.</p></li>
+<li><p>Consider the region <span class="math display">\[ D=\left\lbrace (x,y)\in \mathbb{R}^2 \mid x\geq 2,\: (x-2)^2+y^{2}\leq 1 \right\rbrace . \]</span> Using the polar coordinates transformation with center at the point <span class="math inline">\((1,0)\)</span> shows that <span class="math inline">\(D\)</span> is the image of a simple region in the plane <span class="math inline">\((r,\theta)\)</span>. Compute the double integral <span class="math display">\[ \iint_D \dfrac{1}{x-1}\,dA\,, \]</span> exploiting the change of variable just discussed. &gt;[!note]- Solution: &gt;The transformation reads &gt;<span class="math display">\[(r,\theta)\mapsto (x=1+r\cos\theta , y= r\sin\theta),\]</span> &gt; and the determinant of its jacobian is <span class="math inline">\(r\)</span> like in the case of ordinary polar coordinates. In this coordinates, the inequality <span class="math inline">\(x\geq 2\)</span> becomes <span class="math inline">\(r\cos\theta\geq 1\)</span>, while the inequality <span class="math inline">\((x-2)^2+y^{2}\leq 1\)</span> becomes <span class="math inline">\(r^{2}\cos^{2}(\theta) - 2r\cos\theta + 1+ r^{2}\sin^{2}(\theta)\leq 1\)</span>, which means <span class="math inline">\(r\leq 2\cos\theta\)</span>. Consequently, the region <span class="math inline">\(D\)</span> is the image of the region <span class="math inline">\(D^{*}\)</span> determined by <span class="math inline">\(\frac{1}{\cos\theta}\leq r\leq 2\cos\theta\)</span>, and <span class="math inline">\(0\leq \theta \leq \frac{\pi}{4}\)</span>. The inequality in <span class="math inline">\(\theta\)</span> follows from drawing the region <span class="math inline">\(D\)</span> in the <span class="math inline">\(xy\)</span>-plane, and recalling the geometrical interpretation of the angle theta for the generalized polar coordinates introduced above. Clearly, the region <span class="math inline">\(D^{*}\)</span> is <span class="math inline">\(r\)</span>-simple, and so it is an elementary region in the <span class="math inline">\(r\theta\)</span>-plane. Applying the change of variable formula, the integral becomes &gt; <span class="math display">\[\iint_{D}\frac{1}{x-1}\mathrm{d}A=\iint_{D^{*}}\frac{r}{r\cos\theta}\mathrm{d}A'=\int_{0}^{\frac{\pi}{4}}\int_{\frac{1}{\cos\theta}}^{2\cos\theta}\frac{1}{\cos\theta}\mathrm{d}r\,\mathrm{d}\theta=[2\theta - \tan\theta]_{0}^{\frac{\pi}{4}}=\frac{\pi}{2} -1\]</span></p></li>
+<li><p>Evaluate the double integral: <span class="math display">\[ I = \int_{0}^{\pi/2}\int_{0}^{2\sin(\theta)}\frac{r\sqrt{1+\sin^{2}(\theta)}}{\sin(\theta)}\,\mathrm{d}r\,\mathrm{d}\theta\]</span> &gt;[!note]- Solution: &gt;We first evaluate the inner integral with respect to <span class="math inline">\(r\)</span> because we can treat <span class="math inline">\(\theta\)</span> as a constant for this step: &gt;<span class="math display">\[ \int_{0}^{2\sin(\theta)}\frac{r\sqrt{1+\sin^{2}(\theta)}}{\sin(\theta)}\,\mathrm{d}r = \frac{\sqrt{1+\sin^{2}(\theta)}}{\sin(\theta)} \left[ \frac{r^{2}}{2} \right]_{r=0}^{r=2\sin(\theta)}= 2\sin(\theta)\,\sqrt{1+\sin^{2}(\theta)},\]</span> &gt;where we used that <span class="math inline">\(\sin(\theta)\neq0\)</span> for <span class="math inline">\(\theta\in(0,\frac{\pi}{2}\)</span>], and that the potential issue at <span class="math inline">\(\theta=0\)</span> where <span class="math inline">\(\sin(0)=0\)</span> is handled because the result of the inner definite integral correctly evaluates to <span class="math inline">\(0\)</span> at <span class="math inline">\(\theta=0\)</span>. To evaluate the outer integral &gt;<span class="math display">\[I = \int_{0}^{\frac{\pi}{2}} 2\sin(\theta)\sqrt{1+\sin^{2}(\theta)}\,\mathrm{d}\theta,\]</span> &gt;we use the substitution <span class="math inline">\(u=\cos(\theta)\)</span>, from which we obtain <span class="math inline">\(\sin^{2}(\theta)=1−\cos^{2}(\theta)=1−u^{2}\)</span>, and <span class="math inline">\(\mathrm{d}u=−\sin(\theta)\mathrm{d}\theta\)</span>, so that the change of the limits of variable leads to &gt;<span class="math display">\[ I = \int_{1}^{0} 2 \sqrt{1+(1-u^2)} (-\mathrm{d}u)  = \int_{1}^{0} -2 \sqrt{2-u^{2},\mathrm{d}u}= \int_{0}^{1} 2 \sqrt{2-u^2},\mathrm{d}u.\]</span> &gt;This integral requires a trigonometric substitution. Let <span class="math inline">\(u=\sqrt{2}\sin(\phi)\)</span>. Then <span class="math inline">\(\mathrm{d}u=\sqrt{2}\cos(\phi)\mathrm{d}\phi\)</span>, <span class="math inline">\(\phi\in[0,\pi/4]\)</span>, and &gt;<span class="math display">\[ I = \int_{0}^{\pi/4} 2 \sqrt{2(1 - \sin^2(\phi))} (\sqrt{2}\cos(\phi))\,\mathrm{d}\phi = \int_{0}^{\pi/4} 2 \sqrt{2\cos^2(\phi)} (\sqrt{2}\cos(\phi))\,\mathrm{d}\phi   = \int_{0}^{\pi/4} 4\cos^2(\phi)\,\mathrm{d}\phi,\]</span> &gt;where we used <span class="math inline">\(1−\sin^{2}(\phi)=\cos^{2}(\phi)\)</span>, and the fact that <span class="math inline">\(0\leq\phi\leq\frac{\pi}{4}\)</span> implies <span class="math inline">\(\cos(\phi)\geq 0\)</span>, and <span class="math inline">\(\sqrt{\cos^{2}(\phi)}=\cos(\phi)\)</span>. Using the identity <span class="math inline">\(cos^{2}(\phi)=\frac{1+\cos(\phi)}{2}\)</span>​, we obtain &gt;<span class="math display">\[ I = \int_{0}^{\pi/4} 4 \left( \frac{1+\cos(2\phi)}{2} \right)\,\mathrm{d}\phi = 2 \int_{0}^{\pi/4} (1+\cos(2\phi))\,\mathrm{d}\phi= 2 \left[ \phi + \frac{\sin(2\phi)}{2} \right]_{0}^{\pi/4} =  \boxed{1 + \frac{\pi}{2}}.\]</span></p></li>
+</ol>
+</section>
+<section id="triple-integrals" class="level1">
+<h1>Triple integrals</h1>
+<ol type="1">
+<li><p>Evaluate the following triple integral <span class="math display">\[ \iiint_{W} \sin(x)\,\mathrm{d}V \]</span> where <span class="math inline">\(W\)</span> is the solid given by <span class="math inline">\(0\leq x\leq \pi\)</span>, <span class="math inline">\(0,\leq y\leq 1\)</span>, <span class="math inline">\(0, z\leq x\)</span>.</p></li>
+<li><p>Let <span class="math inline">\(W\)</span> be the region bounded by the planes <span class="math inline">\(x=0\)</span>, <span class="math inline">\(y = 0\)</span>, and <span class="math inline">\(z=2\)</span>, and the surface <span class="math inline">\(z = x^{2} + y^{2}\)</span>, and lying in the quadrant <span class="math inline">\(x \geq 0\)</span>, <span class="math inline">\(y\geq  0\)</span>. Compute <span class="math display">\[ \iiint_{W}x\,\mathrm{d}V \]</span> in two different ways, and sketch the region <span class="math inline">\(W\)</span>.</p></li>
+<li><p>Evaluate the triple integral <span class="math display">\[ \iiint_{W}\,\mathrm{d}V=\int_{0}^{1}\int_{0}^{x}\int_{x^{2} + y^{2}}^{2}\,\mathrm{d}z\,\mathrm{d}y \,\mathrm{d}x, \]</span> sketch the region <span class="math inline">\(W\)</span> and interpret the result geometrically.</p></li>
+</ol>
+
+
+</section>
+
+</main> <!-- /main -->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  document.querySelectorAll('a[href^="http"]').forEach(function(link) {
+    if (!link.href.includes(window.location.hostname)) {
+      link.setAttribute("target", "_blank");
+      link.setAttribute("rel", "noopener noreferrer");
+    }
+  });
+});
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

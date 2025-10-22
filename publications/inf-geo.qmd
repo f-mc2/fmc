@@ -1,0 +1,21 @@
+---
+title: "Information geometry"
+format:
+  html:
+    css: ../css/refs-desc-numbering.css
+csl: ../csl/cv-date-desc-doi-url.csl
+bibliography: inf-geo.bib
+nocite: |
+  @*
+---
+
+To be honest, instead of “Information geometry”, I should have written “Geometrical, categorical, and statistical aspects of states on C*-algebras/von Neumann algebras/Jordan algebras”, but it may have been perceived as being a little too much for a title.
+
+This is the theoretical playground in which I pass the vast majority of my spare time, and I plan (somewhen) to write down a better description of how entertaining it is. 
+
+The list is ordered according to the date of publication/arXiv submission, and not the date of creation. trdy
+
+ 
+::: {#refs}
+:::
+ 

@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.24">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>power-series-trascendental-functions-and-taylor-series – Florio M. Ciaglia</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-b651517ce65839d647a86e2780455cfb.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-075db7670ff9040d996a2500bb1207fa.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-6f4840de3e51e6422d2669dcdbbfd0fa.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-075db7670ff9040d996a2500bb1207fa.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    </a>
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Florio M. Ciaglia</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="../../index.html" aria-current="page"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../index_teaching.html"> 
+<span class="menu-text">Teaching</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../publications/"> 
+<span class="menu-text">Publications</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../conferences.html"> 
+<span class="menu-text">Conferences &amp; Seminars</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../index_misc.html"> 
+<span class="menu-text">Miscellanea</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/YOURNAME/academic-site"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../index_teaching.html">Teaching</a></li><li class="breadcrumb-item"><a href="../../teaching/calculus-uc3m-robotics/index.html">Calculus - Robotics Engineering - UC3M</a></li><li class="breadcrumb-item"><a href="../../teaching/calculus-uc3m-robotics/1.5 Power series, trascendental functions, and Taylor series.html">Power series</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+      <a href="../../index.html" class="sidebar-logo-link">
+      </a>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../index_teaching.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Teaching</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../teaching/calculus-uc3m-robotics/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Calculus - Robotics Engineering - UC3M</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/calculus-uc3m-robotics/1.1 Sets and functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">1.1 Sets and functions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/calculus-uc3m-robotics/1.2 Limits of scalar functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Distance and intervals</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/calculus-uc3m-robotics/1.3 Derivatives of scalar functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Derivatives of scalar functions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/calculus-uc3m-robotics/1.4 Sequences and series.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Limits of numerical sequences</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/calculus-uc3m-robotics/1.5 Power series, trascendental functions, and Taylor series.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Power series</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/calculus-uc3m-robotics/1.6 Derivatives and extrema of scalar functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Derivatives and local behavior</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/calculus-uc3m-robotics/1.7 Exercises.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">1 Limits of scalar functions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/calculus-uc3m-robotics/2.1 From 1 to many dimensions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">From 1 to many dimensions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/calculus-uc3m-robotics/2.2 Limits of multivariable functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Limits multivariable vector functions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/calculus-uc3m-robotics/2.3 Derivatives and Taylor's theorem for multivariable functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Derivatives and differentiability of multivariable functions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/calculus-uc3m-robotics/2.4 Extrema of multivariable functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Critical points and local extrema for multivariable scalar functions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/calculus-uc3m-robotics/2.5 Exercises.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Change of coordinates</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/calculus-uc3m-robotics/3.1 Antiderivatives.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Anti-derivatives of scalar functions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/calculus-uc3m-robotics/3.2 Integrals.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Definite integrals and anti-derivatives</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/calculus-uc3m-robotics/3.3 Double integrals.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Double integrals</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/calculus-uc3m-robotics/3.4 Triple integrals.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Triple integrals</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/calculus-uc3m-robotics/3.5 Exercises.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Anti-derivatives</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../publications/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Publications</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../publications/inf-geo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Information geometry</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../publications/grpd.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Groupoidal picture of Quantum Mechanics</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../publications/misc.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Miscellanea</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../publications/preprints.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preprints</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../publications/articles.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Articles</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../publications/proceedings.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Proceedings</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../index_misc.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Miscellanea</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../misc/2025-05-27 timeline on fields of covariances.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Timeline on fields of covariances</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../misc/Fundamentals of statistics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fundamentals of statistics</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../misc/geodesics_dual_connections_qubit.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Geodesics of dual connections</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#power-series" id="toc-power-series" class="nav-link active" data-scroll-target="#power-series">Power series</a></li>
+  <li><a href="#the-exponential-and-logarithm-functions" id="toc-the-exponential-and-logarithm-functions" class="nav-link" data-scroll-target="#the-exponential-and-logarithm-functions">The exponential and logarithm functions</a></li>
+  <li><a href="#the-trigonometric-functions" id="toc-the-trigonometric-functions" class="nav-link" data-scroll-target="#the-trigonometric-functions">The trigonometric functions</a></li>
+  <li><a href="#the-taylor-series-of-a-scalar-function" id="toc-the-taylor-series-of-a-scalar-function" class="nav-link" data-scroll-target="#the-taylor-series-of-a-scalar-function">The Taylor series of a scalar function</a></li>
+  <li><a href="#taylor-series-and-limits" id="toc-taylor-series-and-limits" class="nav-link" data-scroll-target="#taylor-series-and-limits">Taylor series and limits</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../index_teaching.html">Teaching</a></li><li class="breadcrumb-item"><a href="../../teaching/calculus-uc3m-robotics/index.html">Calculus - Robotics Engineering - UC3M</a></li><li class="breadcrumb-item"><a href="../../teaching/calculus-uc3m-robotics/1.5 Power series, trascendental functions, and Taylor series.html">Power series</a></li></ol></nav></header>
+
+
+
+
+
+<section id="power-series" class="level1">
+<h1>Power series</h1>
+<p>Once we understand that it is possible to make sense of the sum of infinite numbers using numerical series, nothing prevents us in trying to develop similar ideas for the sum of an infinite number of polynomials, thus arriving at the notion of <strong>power series</strong>.</p>
+<blockquote class="blockquote">
+<p>[!defn] Definition: power series A power series is a series whose elements are polynomial functions: <span class="math display">\[
+P(x,x_{0})=\sum_{n=0}^{+\infty} \;a_{n}\,(x-x_{0})^{n}
+\]</span> where <span class="math inline">\(x,x_{0}\in\mathbb{R}\)</span> and <span class="math inline">\(\{a_{n}\}_{n\in\mathbb{N}}\)</span> is a numerical sequence.</p>
+</blockquote>
+<p>Essentially, for any fixed choice of <span class="math inline">\(x,x_{0}\in \mathbb{R}\)</span>, we obtain a numerical series. However, since <span class="math inline">\(x\)</span> may vary, it makes sense to look at <span class="math inline">\(P(x,x_{0})\)</span> as a kind of function (depending on the parameter <span class="math inline">\(x_{0}\)</span>). This point of view turns out to be particularly useful because it leads to the introduction of new interesting functions.</p>
+<p>We use the [[1.4 Sequences and series#^3a9a60|root test]] to obtain that the power series <span class="math inline">\(P(x,x_{0})\)</span> is [[1.4 Sequences and series#^32251b|absolutely convergent]] if</p>
+<p><span class="math display">\[
+\lim_{n\rightarrow \infty}\sqrt[n]{|a_{n}|\,|(x-x_{0})^{n}|}=|x-x_{0}|\,\left(\lim_{n\rightarrow + \infty} \sqrt[n]{|a_{n}|}\right) &lt; 1 .
+\]</span></p>
+<p>The case where the limit is precisely <span class="math inline">\(1\)</span> must be handled with a case-by-case analysis.</p>
+<p>The extended real number <span class="math inline">\(\rho\geq 0\)</span> given by</p>
+<p><span class="math display">\[
+\frac{1}{\rho}:=\lim_{n\rightarrow +\infty} \sqrt[n]{|a_{n}|}
+\]</span></p>
+<p>is then called the <strong>convergence radius</strong> of the power series because, when the power series is absolutely convergent according to the root test above, then <span class="math inline">\(|x-x_{0}|&lt; \rho\)</span>.</p>
+<p>If a power series converges in <span class="math inline">\(I=(x_{0}-\rho, x_{0}+\rho)\)</span> then we can define the scalar function <span class="math inline">\((I,\mathbb{R},f,\mathbb{R})\)</span> with</p>
+<p><span class="math display">\[
+f(x)=\sum_{n=0}^{+\infty}a_{n}\,(x-x_{0})^{n} .
+\]</span></p>
+<p>Unless <span class="math inline">\(a_{n}=0\)</span> for every <span class="math inline">\(n&gt;N\)</span> with <span class="math inline">\(N\)</span> fixed (the polynomial case), the scalar function defined above is a <strong>trascendental function</strong> (we can not compute its value at <span class="math inline">\(x\)</span> using only algebraic operations).</p>
+<p>Functions defined through a power series enjoy a lot of interesting properties.</p>
+<blockquote class="blockquote">
+<p>[!important] Proposition Let <span class="math inline">\(x_{0},\rho\in\mathbb{R}\)</span>, with <span class="math inline">\(\rho&gt;0\)</span>, and consider the function <span class="math inline">\((I,\mathbb{R},f,\mathbb{R})\)</span>, where <span class="math inline">\(I=(x_{0}-\rho,x_{0}+\rho)\)</span>, and <span class="math inline">\(f(x)\)</span> is defined through the power series <span class="math display">\[
+f(x)=\sum_{n=0}^{+\infty}a_{n}\,(x-x_{0})^{n}
+\]</span> with radius of convergence <span class="math inline">\(\rho\)</span>. This function is [[1.3 Derivatives of scalar functions#^a6b2f2|smooth]], that is, it has infinitely many continuous derivatives in <span class="math inline">\(I\)</span> given by <span class="math display">\[
+\begin{split}
+f^{(k)}(x)&amp;=\sum_{n=0}^{+\infty}\frac{\mathrm{d}^{k}}{\mathrm{d}x^{k}}\,\left(a_{n}\,(x-a)^{n}\right)= \\ &amp; = \sum_{n=k}^{+\infty}n(n-1)\cdots(n-k+1)\,\left(a_{n}\,(x-a)^{n-k}\right).
+\end{split}
+\]</span> In particular, any such function <span class="math inline">\(f\)</span> is continuous.</p>
+</blockquote>
+</section>
+<section id="the-exponential-and-logarithm-functions" class="level1">
+<h1>The exponential and logarithm functions</h1>
+<p>The discussion in this section follows chapter 8 of <a href="https://en.wikipedia.org/wiki/Principles_of_Mathematical_Analysis">“Rudin - Principle of Mathematical Analysis (third edition)”</a>, which contains all the proofs of the results recalled here.</p>
+<p>The convergence radius of the power series <span class="math display">\[
+E(x,x_{0})=\sum\limits_{k=0}^{+\infty} \frac{(x-x_{0})^{k}}{k!}
+\]</span> [[1.7 Exercises#^98a973|satisfies]] <span class="math display">\[
+\frac{1}{\rho}=\lim_{k\rightarrow+\infty}\frac{|x-a|}{\sqrt[k]{k!}} =0,
+\]</span> which means that the power series converges for all <span class="math inline">\(x\in\mathbb{R}\)</span>. The smooth function defined by <span class="math inline">\(E(x,0)\)</span> is called the exponential function and is denoted by <span class="math display">\[
+\mathrm{exp}(x):=E(x,0)=\sum\limits_{k=0}^{+\infty} \frac{x^{k}}{k!}.
+\]</span> The value <span class="math inline">\(\mathrm{exp}(1)\)</span> is called the <strong>Euler number</strong>, and it is denoted by <span class="math inline">\(\mathrm{e}\)</span>. It is also customary to write <span class="math inline">\(\mathrm{e}^{x}\equiv\mathrm{exp}(x)\)</span>.</p>
+<blockquote class="blockquote">
+<p>[!important] Proposition: the exponential function The exponential function <span class="math inline">\(\mathrm{exp}\colon \mathbb{R}\rightarrow \mathbb{R}\)</span> satisfies the following properties: 1) <span class="math inline">\(\mathrm{exp}(x)'=\mathrm{exp}(x)\)</span> for all <span class="math inline">\(x\in\mathbb{R}\)</span>; 2) <span class="math inline">\(\mathrm{exp}(a+b)=\mathrm{exp}(a)\,\mathrm{exp}(b)\)</span> for all <span class="math inline">\(a,b\in\mathbb{R}\)</span> (in particular, <span class="math inline">\(\mathrm{exp}(0)=1\)</span>, and <span class="math inline">\(\mathrm{exp}(-x)=(\mathrm{exp}(x))^{-1}\)</span>); 3) <span class="math inline">\(\mathrm{exp}(x)&gt;0\)</span> for all <span class="math inline">\(x\in\mathbb{R}\)</span>; 4) it is bijective (injective and surjective); 5) <span class="math inline">\(\lim_{x\rightarrow+\infty}\,\mathrm{exp}(x)=+\infty\)</span>; 6) <span class="math inline">\(\lim_{x\rightarrow-\infty}\,\mathrm{exp}(x)=0\)</span>.</p>
+</blockquote>
+<p>Because of property 3 of the exponential function, we have <span class="math display">\[
+E(x,x_{0})=\mathrm{exp}(x-x_{0})=\mathrm{exp}(x)\,\mathrm{exp}(-x_{0}),
+\]</span> which means that <span class="math inline">\(\mathrm{exp}(x)\)</span> is all we really need to discuss all the functions of the form <span class="math inline">\(E(x,x_{0})\)</span>.</p>
+<blockquote class="blockquote">
+<p>[!important] Proposition: the logarithm function The inverse function of <span class="math inline">\(\mathrm{exp}(x)\equiv\mathrm{e}^{x}\)</span> is called the <strong>logarithm function</strong> and it is denoted by <span class="math inline">\(\ln(x)\)</span>. Since <span class="math inline">\(\mathrm{exp}(x)&gt;0\)</span>, the domain of the logarithm function is <span class="math inline">\((0,\infty)\)</span>. The logarithm function satisfies the following properties: 1) <span class="math inline">\(\ln(x)&lt;0\)</span> for <span class="math inline">\(x\in(0,1)\)</span>, <span class="math inline">\(\ln(1)=0\)</span>, and <span class="math inline">\(\ln(x)&gt;0\)</span> for <span class="math inline">\(x&gt;1\)</span>; 2) <span class="math inline">\(\ln(ab)=\ln(a) + \ln(b)\)</span> for all <span class="math inline">\(a,b&gt;0\)</span> (in particular, <span class="math inline">\(\ln(x^{n})=n\ln(x)\)</span> for all <span class="math inline">\(n\in\mathbb{N}\)</span>);<br>
+3) <span class="math inline">\(\ln(\frac{a}{b})=\ln(a)-\ln(b)\)</span> for all <span class="math inline">\(a,b&gt;0\)</span>; 4) <span class="math inline">\(\ln(x)'=\frac{1}{x}\)</span> for all <span class="math inline">\(x&gt;0\)</span> (using the [[1.3 Derivatives of scalar functions#^05d051|the rule for the derivative of the inverse]]), which means that <span class="math inline">\(\ln(x)\)</span> is infinitely differentiable; 5) it is (obviously) invertible, and its inverse is (obviously) the exponential function; 6) <span class="math inline">\(\lim_{x\rightarrow 0^{+}}\,\ln(x)=-\infty\)</span>, and <span class="math inline">\(\lim_{x\rightarrow+\infty}\,f(x)=x\)</span>.</p>
+</blockquote>
+<p>Using the exponential and logarithm functions, given <span class="math inline">\(a&gt;0\)</span>, we define the function <span class="math display">\[
+a^{x}:=\mathrm{e}^{x\ln(a)}.
+\]</span> Clearly, for <span class="math inline">\(a=1\)</span>, we obtain a constant function. Moreover, <span class="math inline">\(a^{x}\)</span> is well defined for all <span class="math inline">\(x\in\mathbb{R}\)</span>, and <span class="math inline">\(a^{x}&gt;0\)</span> for every <span class="math inline">\(x\in\mathbb{R}\)</span>. Therefore, we obtain <span class="math display">\[
+\ln(a^{b})=\ln(\mathrm{e}^{b\ln(a)})=b\ln(a),
+\]</span> which is a sort of generalization of the particular case discussed in property 2 of the logarithm function.</p>
+</section>
+<section id="the-trigonometric-functions" class="level1">
+<h1>The trigonometric functions</h1>
+<p>The power series <span class="math display">\[
+\begin{split}
+S(x,x_{0})&amp; =\sum\limits_{k=0}^{+\infty} \frac{(-1)^{k}\, (x-x_{0})^{2k+1}}{(2k+1)!} \\ &amp; \\
+C(x,x_{0})&amp; =\sum\limits_{k=0}^{+\infty} \frac{(-1)^{k} (x-x_{0})^{2k}}{(2k)!}
+\end{split}
+\]</span> (absolutely) converge for every <span class="math inline">\(x,x_{0}\in\mathbb{R}\)</span> because of the [[1.4 Sequences and series#^b44184|ratio test]]. Consequently, the radius of convergence is infinite. Setting <span class="math inline">\(x_{0}=0\)</span>, we obtain two smooth functions denoted by <span class="math display">\[
+\begin{split}
+\sin(x) &amp; := \sum\limits_{k=0}^{+\infty} \frac{(-1)^{k}\,x^{2k+1}}{(2k+1)!} \\ &amp; \\
+\cos(x) &amp; := \sum\limits_{k=0}^{+\infty} \frac{(-1)^{k}\,x^{2k}}{(2k)!},
+\end{split}
+\]</span> and referred to as <em>sine</em> and <em>cosine</em> function, respectively. These functions are the building block of the so-called <em>trigonometric functions</em>.</p>
+<blockquote class="blockquote">
+<p>[!important] Proposition: sine and cosine functions Let <span class="math inline">\(x_{0}=0\)</span>. The <em>sine</em> and <em>cosine</em> function defined above satisfy the following properties: 1) <span class="math inline">\(\sin(x+2k\pi)= \sin(x)\)</span>, <span class="math inline">\(\cos(x)=\cos(x + 2k\pi)\)</span> for all <span class="math inline">\(x\in\mathbb{R}\)</span>, and all <span class="math inline">\(k\in\mathbb{Z}\)</span> (the functions are <strong>periodic</strong> with period <span class="math inline">\(2\pi\)</span>); 2) <span class="math inline">\(\sin(-x)=-\sin(x)\)</span>, and <span class="math inline">\(\cos(-x)=\cos(x)\)</span> for all <span class="math inline">\(x\in\mathbb{R}\)</span>; 3) <span class="math inline">\(\cos(x)=\sin(x + \pi/2)\)</span> for all <span class="math inline">\(x\in\mathbb{R}\)</span>; 4) <span class="math inline">\(\sin(0)=\sin(\pi)=0\)</span>, and <span class="math inline">\(\sin(\pi/2)=1\)</span> (using property 3 we obtain the values of <span class="math inline">\(\cos\)</span> for the same input numbers); 5) <span class="math inline">\(\sin(x)'=\cos(x)\)</span> and <span class="math inline">\(\cos(x)'=-\sin(x)\)</span> for all <span class="math inline">\(x\in\mathbb{R}\)</span>; 6) <span class="math inline">\(\sin^{2}(x) + \cos^{2}(x)=1\)</span> for all <span class="math inline">\(x\in\mathbb{R}\)</span>; 7) the inverse function of <span class="math inline">\(\sin(x)\)</span> is defined for <span class="math inline">\(\frac{-\pi}{2}\leq x\leq \frac{\pi}{2}\)</span> and is denoted as <span class="math inline">\(\arcsin(x)\)</span>; 8) the inverse function of <span class="math inline">\(\cos(x)\)</span> is defined for <span class="math inline">\(0\leq x\leq \pi\)</span> and is denoted as <span class="math inline">\(\arccos(x)\)</span>; 9) both <span class="math inline">\(\sin(x)\)</span> and <span class="math inline">\(\cos(x)\)</span> do not admit limits at <span class="math inline">\(\pm\infty\)</span> because they oscillate.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>[!exmp] Example Now that we know how to compute the derivative of <span class="math inline">\(\sin(x)\)</span> in a way that does not make direct use of the definition of derivative, we can apply L’Hôpital’s to solve the limit we could not solve like this [[1.3 Derivatives of scalar functions#^77ad27|before]].</p>
+</blockquote>
+<p>^ed7011</p>
+<p>Since they are periodic, both <span class="math inline">\(\sin(x)\)</span> and <span class="math inline">\(\cos(x)\)</span> are not invertible in their maximal domain. However, if we fix <span class="math inline">\(-\frac{\pi}{2}&lt;x&lt;\frac{\pi}{2}\)</span>, then both functions are invertible (because bijective), and their inverse functions are denoted by <span class="math inline">\(\arcsin(x)\)</span> and <span class="math inline">\(\arccos(x)\)</span>, respectively. Note that the maximal domain of these inverse trigonometric functions is <span class="math inline">\((-1,1)\)</span>. Moreover, again because of periodicity, the choice <span class="math inline">\(-\frac{\pi}{2}&lt;x&lt;\frac{\pi}{2}\)</span> is not unique, and we could select different intervals in which <span class="math inline">\(\sin(x)\)</span> and <span class="math inline">\(\cos(x)\)</span> are bijective.</p>
+<p>Starting from <span class="math inline">\(\sin(x)\)</span> and <span class="math inline">\(\cos(x)\)</span>, we define the <em>tangent</em> and <em>cotangent</em> function as <span class="math display">\[
+\tan(x):=\frac{\sin(x)}{\cos(x)}\,\qquad \cot(x):=\frac{\cos(x)}{\sin(x)}=\frac{1}{\tan(x)},
+\]</span> respectively. Note that both <span class="math inline">\(\tan(x)\)</span> and <span class="math inline">\(\cot(x)\)</span> are not defined on the whole real linea because there are infinitely many points at which <span class="math inline">\(\sin(x)\)</span> or <span class="math inline">\(\cos(x)\)</span> are <span class="math inline">\(0\)</span>. Moreover, both <span class="math inline">\(\tan(x)\)</span> and <span class="math inline">\(\cot(x)\)</span> are periodic functions of period <span class="math inline">\(\pi\)</span> (half of <span class="math inline">\(\sin(x)\)</span> and <span class="math inline">\(\cos(x)\)</span>).</p>
+<p>It turns out that <span class="math inline">\(\tan(x)\)</span> is invertible for <span class="math inline">\(\frac{\pi}{2}\leq x\leq \frac{\pi}{2}\)</span>, and its inverse function is denoted by <span class="math inline">\(\arctan(x)\)</span>. Similarly, <span class="math inline">\(\cot(x)\)</span> is invertible in <span class="math inline">\(0\leq x\leq \pi\)</span>, and its inverse function is denoted by <span class="math inline">\(\mathrm{arccot}(x)\)</span>.</p>
+<p>Additional information on trigonometric functions, especially in relation to their geometrical interpretation, can be found in <a href="https://en.wikipedia.org/wiki/Trigonometric_functions">this Wikipedia page</a>, while additional (and often useful) trigonometric identities can be found in <a href="https://en.wikipedia.org/wiki/List_of_trigonometric_identities">this Wikipedia page</a>.</p>
+</section>
+<section id="the-taylor-series-of-a-scalar-function" class="level1">
+<h1>The Taylor series of a scalar function</h1>
+<p>A particular type of power series is the so-called <strong>Taylor series</strong> associated with a particular scalar function <span class="math inline">\(f\)</span>.</p>
+<blockquote class="blockquote">
+<p>[!note] Definition: Taylor series Let <span class="math inline">\(f\)</span> be a scalar function having continuous derivatives of any order in an interval centered at the point <span class="math inline">\(x_{0}\)</span>. The power series <span class="math display">\[
+\sum_{n=0}^{+\infty}\,a_{n}\;(x-x_{0})^{n}=\sum_{n=0}^{+\infty}\,\frac{f^{(n)}(x_{0})}{n!}\;(x-x_{0})^{n}
+\]</span> is called the <strong>Taylor series</strong> of <span class="math inline">\(f\)</span> centered at <span class="math inline">\(x_{0}\)</span>.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>[!rem] Remark Computing a closed-form expression for the Taylor series of a given function is not an easy task!</p>
+</blockquote>
+<p>The Taylor series of a function provides a suitable way to approximate the function itself.</p>
+<blockquote class="blockquote">
+<p>[!important] Theorem: Taylor’s theorem Let <span class="math inline">\(f\)</span> be a scalar function which is <span class="math inline">\((k+1)\)</span>-times differentiable in an open interval <span class="math inline">\(I\)</span> containing <span class="math inline">\(x_{0}\)</span>. Then, for every <span class="math inline">\(x\in I\)</span>, it holds <span class="math display">\[
+f(x)=\sum_{n=0}^{k}\frac{f^{(n)}(x_{0})}{n!}\,(x-x_{0})^{n} + o((x-x_{0})^{k}),
+\]</span> where the function <span class="math inline">\(o((x-x_{0})^{k+1})\)</span> is defined in <span class="math inline">\(I\)</span>, it is called the <strong>remainder</strong>, and satisfies <span class="math display">\[ \lim_{x\rightarrow x_{0}} \frac{o((x-x_{0})^{k})}{(x-x_{0})^{m}}=0\]</span> for all <span class="math inline">\(m\leq k\)</span>. An explicit form for the remainder, called the <strong>Lagrange form</strong>, is <span class="math display">\[o((x-x_{0})^{k})= \frac{f^{(k+1)}((1-\theta)x_{0} + \theta x)}{(k+1)!}\,(x-x_{0})^{k+1}, \]</span> where <span class="math inline">\(\theta \in (0,1)\)</span>.</p>
+</blockquote>
+<p>^113a5b A visualization of how Taylor’s approximation works (<a href="https://www.geogebra.org/m/F7h24XKR">source</a>) <iframe id="inlineFrameExample" title="Inline Frame Example" width="800" height="500" src="https://www.geogebra.org/m/uzzpq6hk"> </iframe></p>
+<p>Now, a question. If the <strong>Taylor series</strong> of a function converges in <span class="math inline">\(I=(x_{0}-\rho,x_{0}+\rho)\)</span>, can we say it must converge to the original function?</p>
+<p>Looking at Taylor’s theorem above, we may be tempted to say the answer to the previous question is positive, but we would be wrong!</p>
+<blockquote class="blockquote">
+<p>[!exmp] Example The prototypical example of smooth (infinitely differentiable) function which is non-analytic and has a convergent Taylor series is the function <span class="math inline">\((\mathbb{R},\mathbb{R},f,\mathbb{R})\)</span> given by <span class="math display">\[ f(x)=\left\{\begin{matrix} \mathrm{e}^{-\frac{1}{x}} &amp;\quad x&gt;0 \\ 0 &amp; \quad x\leq 0 . \end{matrix}\right. \]</span></p>
+<p>A <a href="https://en.wikipedia.org/wiki/Non-analytic_smooth_function#The_function_is_smooth">non-trivial computation</a> shows that the Taylor series of <span class="math inline">\(f\)</span> around <span class="math inline">\(x=0\)</span> is made of terms that are all equal to <span class="math inline">\(0\)</span> so that it always converges to the zero function which is clearly different from <span class="math inline">\(f\)</span>.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>[!defn] Definition: analytic function If the Taylor series of a function converges to the function itself in an open interval <span class="math inline">\(I\)</span>, then the original function is called <strong>analytic</strong> in <span class="math inline">\(I\)</span>.</p>
+</blockquote>
+</section>
+<section id="taylor-series-and-limits" class="level1">
+<h1>Taylor series and limits</h1>
+<p>One useful exploitation of Taylor series is connected with the indeterminate form <span class="math inline">\(\frac{0}{0}\)</span> in evaluating limits.</p>
+<p>Let us consider the limit <span class="math display">\[ \lim_{x\rightarrow 0}\; \frac{f(x)}{g(x)} \,=\,\lim_{x\rightarrow 0} \;\frac{1-\cos^{2}(x)}{x^{2}} .\]</span> The second order Taylor expansion for <span class="math inline">\(\cos^{2}(x)\)</span> reads <span class="math display">\[ \cos^{2}(x)= 1 -x^{2} + o(x^{2}) \]</span> so that <span class="math display">\[\lim_{x\rightarrow 0} \;\frac{1-\cos^{2}(x)}{x^{2}} =\lim_{x\rightarrow 0}\frac{1-1+x^{2} - o(x^{3})}{x^{2}} = \lim_{x\rightarrow 0}\left(\frac{x^{2} }{x^{2}} - \frac{o(x^{3})}{x^{2}} \right) = 1 \]</span> because of the property of the remainder.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  document.querySelectorAll('a[href^="http"]').forEach(function(link) {
+    if (!link.href.includes(window.location.hostname)) {
+      link.setAttribute("target", "_blank");
+      link.setAttribute("rel", "noopener noreferrer");
+    }
+  });
+});
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

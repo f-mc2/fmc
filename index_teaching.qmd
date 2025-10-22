@@ -1,0 +1,8 @@
+---
+title: "Teaching"
+listing:
+  contents: teaching/*/index.qmd
+  type: table     
+  fields: [title, description]
+  sort: "title"
+---

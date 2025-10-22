@@ -1,0 +1,8 @@
+# Quarto build outputs
+_site/
+.quarto/
+# General
+.DS_Store
+.Rhistory
+.Rproj.user
+.ipynb_checkpoints

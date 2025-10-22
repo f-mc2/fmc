@@ -1,0 +1,57 @@
+---
+title: "Fundamentals of statistics"
+date: "2025-09-18"
+---
+
+The starting point will be operational, but really limited. We start with situations in which we have a finite and discrete outcome space $\Omega$ (dices, coins, alphabets, and so on).
+
+Each element in $\Omega$ is referred to as an **event**, and it should be intuitively clear that what we mean by that is that an operational inquiry among those we are considering will determine uniquely the selection of one element in $\Omega$. In this case, given the finite and discrete nature of $\Omega$, everything is clear and "directly verifiable".
+
+
+
+
+# Random variables
+
+Often, the whole probability space $(\Omega,\tau)$ is "too much" for the practical purposes of statistical instances. 
+
+For instance, if we are interested in the number of heads after $n=3$ throws of a fair coin, the outcome space $\Omega$ would be 
+$$
+\Omega=\{HHH,HHT,HTH,HTT,THH,THT,TTH,TTT\},
+$$
+and the probability $\tau$ would be a probability distribution on $\Omega$. However, if we introduce the function $X\colon \Omega\rightarrow\mathbb{R}$ whose output is precisely the number of heads of the given configuration in $\Omega$,  we obtain a smaller probability space $(\Omega_{X},\tau_{X})$ with $\Omega_{X}=X(\Omega)=\{0,1,2,3\}$, and $\tau_{X}=X_{* }\tau$ (the pushforward measure). For all practical purposes, $(\Omega_{X},\tau_{X})$ is the only thing we really need.
+
+Since $\mid\Omega\mid= 2^{n}$ while $\mid\Omega_{X}\mid=n+1$, where  $n$ is the number of throws, we see that $\Omega_{X}$ becomes quite smaller than $\Omega$ when $n$ grows. 
+
+This example, although silly, describes an interesting fact: sometimes, we are not interested in the whole probability space modelling a random phenomena, but only in a specific "random quantity" that we can model with a real-valued (measurable) function.
+
+We thus arrive to the notion of **random variable** as a real-valued, measurable function $X\colon\Omega\rightarrow\mathbb{R}$.
+
+Once we have random variables, we can even dare to essentially forget the probability space $(\Omega,\tau)$, and focus on $\Omega_{X}=X(\Omega)\subseteq\mathbb{R}$. This approach can be particularly useful because there are practical situations in which we only have a quite uncertain knowledge of $\Omega$. 
+
+**EXAMPLES NEEDED!!!** 
+
+**REFERENCES TO THE VARIOUS DISCUSSIONS ON DISPOSE OF PROBABILITY SPACES/RANDOM VARIABLES (FREMLIN VOL. 2 AND STACKEXCHANGE)**
+
+In practice, we focus on the induced distribution of a random variable because we can only really measure real numbers. This fact is coherent with the operator algebraic setting in which experimental contexts are realized in terms of Abelian algebras.
+
+# Covariance
+
+
+
+Consider two random variables $X,Y\colon \Omega\rightarrow\mathbb{R}$, and the associated vector random variable $Z\equiv(X,Y)\colon\Omega\rightarrow\mathbb{R}^{2}$. The pushforward measure $Z_{*}\tau$ is in general not a product measure, and covariance helps us understanding how far from a product measure it is. Specifically, if $\mathrm{Cov}(X,Y)\neq 0$ then $Z_{*}\tau$ is **not** a product measure (however, if $\mathrm{Cov}(X,Y)=0$, we can not say anything (see example 2.5.3 in "Introduction to mathematical statistics" by Hogg, McKean, Craig)). 
+
+
+
+
+
+# From Cramér's "Mathematical methods of statistics" Chapter 13
+
+**13.1. On random experiments.** In the most varied fields of practical and scientific activity, cases occur where certain experiments or observations may be repeated a large number of times under similar circumstances. On each occasion, our attention is then directed to a result of the observation, which is expressed by a certain number of characteristic features. In many cases these characteristics directly take a quantitative form: at each observation something is counted or measured. In other cases, the characteristics are qualitative: we observe e. g. the colour of a certain object, the occurrence or non-occurrence of some specified
+event in connection with each experiment, etc. In the latter case, it is always possible to express the characteristics in numerical form according to some conventional system of notation. Whenever it is found convenient, we may thus always suppose that the result of each observation is expressed by a certain number of quantities.
+
+**13.5. On the frequency interpretation.** If E is an impossible event, i. e. an event that can never occur at a performance of the experiment, any frequency of Ε must be zero; and consequently we take the probability P to be 0. On the other hand, if we know that for some event Ε we have Ρ=0, then Ε is not necessarily an
+impossible event. In fact, the frequency interpretation of Ρ only implies that the frequency v/n of Ε will for large n be approximately equal to zero, so that in the long run Ε will at most occur in a very small percentage of all cases. The same conclusion holds not only when $Ρ = 0$, but even under the more general assumption that $0<P<\epsilon$, where $\epsilon$ is some very small number. If Ε is an event of this type, and if the experiment is performed one single time, it can thus be 
+considered as practically certain that Ε will not occur. Analogous considerations hold for certain events and $P=1$. This particular case of the frequency interpretation of a probability will often be applied in the sequel.
+
+
+

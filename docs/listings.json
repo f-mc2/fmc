@@ -1,0 +1,16 @@
+[
+  {
+    "listing": "/index_teaching.html",
+    "items": [
+      "/teaching/calculus-uc3m-robotics/index.html"
+    ]
+  },
+  {
+    "listing": "/index_misc.html",
+    "items": [
+      "/misc/geodesics_dual_connections_qubit.html",
+      "/misc/Fundamentals of statistics.html",
+      "/misc/2025-05-27 timeline on fields of covariances.html"
+    ]
+  }
+]

@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.24">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>exercises – Florio M. Ciaglia</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-b651517ce65839d647a86e2780455cfb.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-075db7670ff9040d996a2500bb1207fa.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-6f4840de3e51e6422d2669dcdbbfd0fa.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-075db7670ff9040d996a2500bb1207fa.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    </a>
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Florio M. Ciaglia</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="../../index.html" aria-current="page"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../index_teaching.html"> 
+<span class="menu-text">Teaching</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../publications/"> 
+<span class="menu-text">Publications</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../conferences.html"> 
+<span class="menu-text">Conferences &amp; Seminars</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../index_misc.html"> 
+<span class="menu-text">Miscellanea</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/YOURNAME/academic-site"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../index_teaching.html">Teaching</a></li><li class="breadcrumb-item"><a href="../../teaching/calculus-uc3m-robotics/index.html">Calculus - Robotics Engineering - UC3M</a></li><li class="breadcrumb-item"><a href="../../teaching/calculus-uc3m-robotics/2.5 Exercises.html">Change of coordinates</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+      <a href="../../index.html" class="sidebar-logo-link">
+      </a>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../index_teaching.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Teaching</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../teaching/calculus-uc3m-robotics/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Calculus - Robotics Engineering - UC3M</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/calculus-uc3m-robotics/1.1 Sets and functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">1.1 Sets and functions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/calculus-uc3m-robotics/1.2 Limits of scalar functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Distance and intervals</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/calculus-uc3m-robotics/1.3 Derivatives of scalar functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Derivatives of scalar functions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/calculus-uc3m-robotics/1.4 Sequences and series.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Limits of numerical sequences</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/calculus-uc3m-robotics/1.5 Power series, trascendental functions, and Taylor series.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Power series</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/calculus-uc3m-robotics/1.6 Derivatives and extrema of scalar functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Derivatives and local behavior</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/calculus-uc3m-robotics/1.7 Exercises.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">1 Limits of scalar functions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/calculus-uc3m-robotics/2.1 From 1 to many dimensions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">From 1 to many dimensions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/calculus-uc3m-robotics/2.2 Limits of multivariable functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Limits multivariable vector functions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/calculus-uc3m-robotics/2.3 Derivatives and Taylor's theorem for multivariable functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Derivatives and differentiability of multivariable functions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/calculus-uc3m-robotics/2.4 Extrema of multivariable functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Critical points and local extrema for multivariable scalar functions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/calculus-uc3m-robotics/2.5 Exercises.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Change of coordinates</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/calculus-uc3m-robotics/3.1 Antiderivatives.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Anti-derivatives of scalar functions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/calculus-uc3m-robotics/3.2 Integrals.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Definite integrals and anti-derivatives</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/calculus-uc3m-robotics/3.3 Double integrals.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Double integrals</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/calculus-uc3m-robotics/3.4 Triple integrals.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Triple integrals</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/calculus-uc3m-robotics/3.5 Exercises.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Anti-derivatives</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../publications/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Publications</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../publications/inf-geo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Information geometry</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../publications/grpd.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Groupoidal picture of Quantum Mechanics</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../publications/misc.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Miscellanea</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../publications/preprints.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preprints</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../publications/articles.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Articles</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../publications/proceedings.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Proceedings</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../index_misc.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Miscellanea</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../misc/2025-05-27 timeline on fields of covariances.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Timeline on fields of covariances</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../misc/Fundamentals of statistics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fundamentals of statistics</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../misc/geodesics_dual_connections_qubit.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Geodesics of dual connections</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#change-of-coordinates" id="toc-change-of-coordinates" class="nav-link active" data-scroll-target="#change-of-coordinates">Change of coordinates</a></li>
+  <li><a href="#limits-of-multivariable-functions" id="toc-limits-of-multivariable-functions" class="nav-link" data-scroll-target="#limits-of-multivariable-functions">Limits of multivariable functions</a></li>
+  <li><a href="#derivatives-and-second-order-taylors-theorem-for-multivariable-functions" id="toc-derivatives-and-second-order-taylors-theorem-for-multivariable-functions" class="nav-link" data-scroll-target="#derivatives-and-second-order-taylors-theorem-for-multivariable-functions">Derivatives and second order Taylor’s theorem for multivariable functions</a></li>
+  <li><a href="#extrema-of-multivariable-functions" id="toc-extrema-of-multivariable-functions" class="nav-link" data-scroll-target="#extrema-of-multivariable-functions">Extrema of multivariable functions</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../index_teaching.html">Teaching</a></li><li class="breadcrumb-item"><a href="../../teaching/calculus-uc3m-robotics/index.html">Calculus - Robotics Engineering - UC3M</a></li><li class="breadcrumb-item"><a href="../../teaching/calculus-uc3m-robotics/2.5 Exercises.html">Change of coordinates</a></li></ol></nav></header>
+
+
+
+
+
+<section id="change-of-coordinates" class="level2">
+<h2 class="anchored" data-anchor-id="change-of-coordinates">Change of coordinates</h2>
+<ol type="1">
+<li><p>Recalling how the [[2.1 From 1 to many dimensions#^1f484e|cylindrical]] and [[2.1 From 1 to many dimensions#^b5d3f4|spherical]] coordinates are expressed in terms of the Cartesian coordinates, find the function determining the passage from cylindrical to spherical coordinates and its inverse.<br>
+&gt;[!note]- Solution: &gt; Compose <span class="math inline">\(\psi_{cyl}\)</span> of [[2.1 From 1 to many dimensions#^1f484e|cylindrical coordinates]] with <span class="math inline">\(\psi^{-1}_{sph}\)</span> of [[2.1 From 1 to many dimensions#^b5d3f4|spherical coordinates]] to get how cylindrical coordinates are expressed in terms of spherical coordinates. Exchange the role of <span class="math inline">\(\psi\)</span> and <span class="math inline">\(\psi^{-1}\)</span> to obtain how spherical coordinates are expressed using cylindrical coordinates.</p></li>
+<li><p>Determine the expression in cylindrical and spherical coordinates of the function <span class="math inline">\((D,\mathbb{R}^{3},f,\mathbb{R})\)</span> expressed in Cartesian coordinates by: <span class="math display">\[  \begin{split}   1) &amp;\qquad  f(x,y,z)= x^{2} + y^{2} +z^{2}  \\ &amp; \\     2) &amp;\qquad  f(x,y,z)=\left(x,\;y-z,\; 3 \right) \\ &amp; \\     3) &amp; \qquad f(x,y,z)= \mathrm{e}^{x^{2} + y^{2} +z} . \end{split} \]</span> &gt;[!note]- Solution: &gt;Compose <span class="math inline">\(f\)</span> with <span class="math inline">\(\psi^{-1}\)</span> of [[2.1 From 1 to many dimensions#^1f484e|cylindrical coordinates]] or [[2.1 From 1 to many dimensions#^b5d3f4|spherical coordinates]].</p></li>
+<li><p>If the expression of <span class="math inline">\(f\colon\mathbb{R}^{2}\rightarrow \mathbb{R}\)</span> in polar coordinates is <span class="math display">\[  f(r,\theta) = r + \theta ,  \]</span> determine the value of <span class="math inline">\(f\)</span> a the point <span class="math inline">\(\mathbf{p}\)</span> with Cartesian coordinates <span class="math inline">\((p_{x}=0, p_{y}=1)\)</span>, <span class="math inline">\((p_{x}=1,p_{y}=1)\)</span>, and <span class="math inline">\((p_{x}=2,p_{y}=3)\)</span>. &gt;[!note]- Solution &gt;In Cartesian coordinates, the point <span class="math inline">\((0,1)\)</span> corresponds to the point <span class="math inline">\((1,\pi/2)\)</span> in polar coordinates, while the point <span class="math inline">\((2,3)\)</span> corresponds to the point <span class="math inline">\((\sqrt{13},\arctan(3/2))\)</span>.</p></li>
+<li><p>Let <span class="math inline">\((\mathbb{R},\mathbb{R},f, \mathbb{R})\)</span> be expressed as <span class="math display">\[ f(x)=\frac{\mathrm{e}^{2x} - 2 + \mathrm{e}^{-2x}}{4}
+\]</span> in Cartesian coordinates. Determine a change of coordinate <span class="math inline">\((A,\mathbb{R},\psi,\mathbb{R})\)</span> leading to <span class="math display">\[ f\circ\psi(v) = v^{2} \]</span> and discuss its domain of applicability. &gt;[!note]- Solution &gt;Note that <span class="math inline">\(\mathrm{e}^{2x} - 2 + \mathrm{e}^{-2x}=(\mathrm{e}^{x}-\mathrm{e}^{-x})^{2}\)</span>. The change of coordinates can be understood as <span class="math inline">\(x(v)=\psi(v)\)</span>, and we must have &gt;<span class="math display">\[ \frac{(\mathrm{e}^{x}-\mathrm{e}^{-x})^{2}}{4}=f\circ\psi(v)=v^{2},\]</span> &gt;which means we can take <span class="math inline">\(\psi(v)=\frac{\mathrm{e}^{x}-\mathrm{e}^{-x}}{2}\)</span>. This change of coordinates is valid for all <span class="math inline">\(v\)</span> and <span class="math inline">\(x\)</span> because both the domain and range of <span class="math inline">\(\psi\)</span> are <span class="math inline">\(\mathbb{R}\)</span>. Note that <span class="math inline">\(\tilde{\psi}(v)=-\psi(v)\)</span> is another, perfectly valid choice.</p></li>
+<li><p>Let <span class="math inline">\(f\colon\mathbb{R}^{2}\rightarrow \mathbb{R}\)</span> be expressed as <span class="math display">\[ f(x,y)= ax + by \]</span> in Cartesian coordinates with <span class="math inline">\(a,b\neq 0\)</span>. Determine a change of coordinate <span class="math inline">\(\psi\colon A\subseteq \mathbb{R}^{2}\rightarrow \mathbb{R}^{2}\)</span> leading to <span class="math display">\[ f\circ\psi(v,w)= v^2 - w^{3},\]</span> and discuss its domain of applicability. Is <span class="math inline">\(\psi\)</span> unique? &gt;[!note]- Solution &gt;There are infinitely many change of coordinates satisfying the constraint imposed. Indeed, we can take <span class="math inline">\(\psi(v,w)=(x(v,w),y(v,w))\)</span> with <span class="math inline">\(x(v,w)=\alpha v^{2} +\beta w^{3}\)</span>, <span class="math inline">\(y(v,w)=\gamma v^{2} +\delta w^{3}\)</span> and <span class="math inline">\(\alpha,\beta,\gamma,\delta\)</span> satisfying <span class="math inline">\(a(\alpha + \gamma )=1\)</span> and <span class="math inline">\(b(\beta + \delta)=-1\)</span>. In order for <span class="math inline">\(\psi\)</span> to be a valid change of coordinates, we must impose that <span class="math inline">\(\alpha,\beta,\gamma,\delta\)</span> are such that <span class="math inline">\(\psi\)</span> can be inverted somewhere, and this determines the domain of applicability. For instance, taking <span class="math inline">\(\alpha=1/a\)</span>, <span class="math inline">\(\delta=-1/b\)</span>, and <span class="math inline">\(\beta=\gamma=0\)</span>, we have that <span class="math inline">\(\psi^{-1}\)</span> only exists when <span class="math inline">\(x\geq 0\)</span>. On the other hand, if we take <span class="math inline">\(\alpha=\beta=0\)</span>, <span class="math inline">\(\gamma=1/a\)</span>, and <span class="math inline">\(\delta=-1/b\)</span>, then <span class="math inline">\(\psi^{-1}\)</span> does not exist because <span class="math inline">\((v,w)=\psi^{-1}\circ\psi(v,w)=\psi^{-1}(0,v^{2}+w^{3})\)</span> is impossible.</p></li>
+</ol>
+</section>
+<section id="limits-of-multivariable-functions" class="level1">
+<h1>Limits of multivariable functions</h1>
+<ol type="1">
+<li><p>Prove the following limits: <span class="math display">\[      \begin{split}   1) &amp;\qquad  \lim_{(x,y)\rightarrow (0,0)}\,\frac{x^{2}}{\sqrt{x^{2} + y^{2}}}=0 \\ &amp; \\     2) &amp;\qquad  \lim_{(x,y)\rightarrow (0,0)}\,\frac{2x^{2}\,y}{x^{2} + y^{2}}=0 \\ &amp; \\    3) &amp; \qquad \lim_{x\rightarrow 1} \;(x^{2},\;\mathrm{e}^{x^{3} -1}) = (1,\;1) \\ &amp; \\   4) &amp; \qquad \lim_{(x,y,z)\rightarrow (0,0,0)}\,\frac{xyz}{x^{2} + y^{2} + z^{2}} =0 \\ &amp; \\     5) &amp; \qquad \lim_{(x,y)\rightarrow (0,0)}\,\frac{xy}{x^{2} +y^{2} +2}=0. \end{split}    \]</span> &gt;[!note]- Solution &gt;1) We have to prove that, for every <span class="math inline">\(\epsilon&gt;0\)</span>, there is <span class="math inline">\(\delta_{\epsilon}&gt;0\)</span> such that <span class="math inline">\(\Vert\mathbf{x}-\mathbf{0}\Vert=\sqrt{(x-0)^{2}+(y-0)^{2}}=\sqrt{x^{2}+y^{2}}&lt;\delta\)</span> implies &gt; <span class="math display">\[ \vert\frac{x^{2}}{\sqrt{x^{2}+y^{2}}}\vert&lt;\epsilon .\]</span> &gt; At this purpose, we note that &gt; <span class="math display">\[ x^{2}\leq x^{2} + y^{2}\Longrightarrow \vert\frac{x^{2}}{\sqrt{x^{2}+y^{2}}}\vert\leq \vert\frac{x^{2}+y^{2}}{\sqrt{x^{2}+y^{2}}} \vert=\vert \sqrt{x^{2} + y^{2}} \vert \]</span> &gt; so that <span class="math inline">\(\delta_{\epsilon}&lt;\epsilon\)</span> does the job. &gt;2) We have to prove that, for every <span class="math inline">\(\epsilon&gt;0\)</span>, there is <span class="math inline">\(\delta_{\epsilon}&gt;0\)</span> such that <span class="math inline">\(\Vert\mathbf{x}-\mathbf{0}\Vert=\sqrt{(x-0)^{2}+(y-0)^{2}}=\sqrt{x^{2}+y^{2}}&lt;\delta\)</span> implies &gt; <span class="math display">\[ \vert\frac{2x^{2}y}{ x^{2}+y^{2} }\vert&lt;\epsilon .\]</span> &gt; At this purpose, we note that <span class="math inline">\(x^{2}\leq x^{2} + y^{2}\)</span> and <span class="math inline">\(|y|=\sqrt{y^{2}}\leq \sqrt{x^{2}+y^{2}}\)</span>, so that &gt; <span class="math display">\[  \vert\frac{2x^{2}y}{ x^{2}+y^{2} }\vert\leq \frac{2(x^{2}+y^{2})\sqrt{x^{2} + y^{2}}}{ x^{2}+y^{2} }=2 \sqrt{x^{2} + y^{2}}, \]</span> &gt; and thus <span class="math inline">\(\delta_{\epsilon}&lt;\epsilon\)</span> does the job. &gt;3) In this case, we have a vector function whose components are continuous functions for all <span class="math inline">\(x\in\mathbb{R}\)</span>. Therefore, the limit can be found by simply putting <span class="math inline">\(x=1\)</span>. &gt;4) We have to prove that, for every <span class="math inline">\(\epsilon&gt;0\)</span>, there is <span class="math inline">\(\delta_{\epsilon}&gt;0\)</span> such that <span class="math inline">\(\Vert\mathbf{x}-\mathbf{0}\Vert=\sqrt{(x-0)^{2}+(y-0)^{2} + (z-0)^{2}}=\sqrt{x^{2}+y^{2}+z^{2}}&lt;\delta\)</span> implies &gt; <span class="math display">\[ \vert \frac{xyz}{x^{2} + y^{2} + z^{2}} \vert &lt; \epsilon.\]</span> &gt; At this purpose, we just note that <span class="math inline">\(|x|=\sqrt{x^{2}}\leq\sqrt{x^{2}+y^{2}+z^{2}}\)</span> (and similarly for <span class="math inline">\(|y|\)</span> and <span class="math inline">\(|z|\)</span>), so that &gt; <span class="math display">\[\vert \frac{xyz}{x^{2} + y^{2} + z^{2}} \vert\leq \sqrt{x^{2}+y^{2}+z^{2}}, \]</span> &gt; and thus <span class="math inline">\(\delta_{\epsilon}&lt;\epsilon\)</span> does the job. &gt;5) In this case, we have the quotient of polynomials (continuous functions) whose denominator does not vanish when <span class="math inline">\((x,y)=(0,0)\)</span>, so that the limit can be computed putting <span class="math inline">\((x,y)=(0,0)\)</span>.</p></li>
+<li><p>Prove that the following limits do not exist: <span class="math display">\[ \begin{split} 1) &amp;\qquad \lim_{(x,y)\rightarrow(0,0)} \frac{x^{2}+\sin^{2}(y)}{2x^{2}+y^{2}} \\ &amp; \\ 2)  &amp; \qquad \lim_{(x,y)\rightarrow(0,0)} \frac{x^{2}y\mathrm{e}^{y}}{x^{4}+4y^{2}}  \\ &amp; \\ 3) &amp; \qquad \lim_{(x,y)\rightarrow(0,0)} \frac{x\cos(xy)}{3x^{3}+y} \\ &amp; \\ 4) &amp; \lim_{(x,y)\rightarrow(0,0)} \frac{\sin(2x) - 2x +y}{x^{3}+y} \qquad \\ &amp; \\ 5) &amp; \lim_{(x,y)\rightarrow(0,0)} \frac{\cos(x) - 1 + \frac{x^{2}}{2}}{x^{4}+y} . \qquad   .\end{split} \]</span> &gt;[!note]- Solution &gt;1) Evaluate what happens when <span class="math inline">\(y=mx\)</span> and <span class="math inline">\(x\rightarrow 0\)</span>. &gt;2) Evaluate what happens when <span class="math inline">\(y=mx^{2}\)</span> and <span class="math inline">\(x\rightarrow 0\)</span>. &gt;3) Evaluate what happens when <span class="math inline">\(y=mx\)</span> and <span class="math inline">\(x\rightarrow 0\)</span>. &gt;4) Evaluate what happens when <span class="math inline">\(y=-x^{3}+2x\)</span> and <span class="math inline">\(x\rightarrow 0\)</span>, and then what happens when <span class="math inline">\(x=0\)</span> and <span class="math inline">\(y\rightarrow 0\)</span>. &gt;5) Evaluate what happens when <span class="math inline">\(y=-x^{4}+y^{2}\)</span> and <span class="math inline">\(x\rightarrow 0\)</span>, and then what happens when <span class="math inline">\(x=0\)</span> and <span class="math inline">\(y\rightarrow 0\)</span>.</p></li>
+<li><p>Determine the points at which <span class="math inline">\((\mathbb{R}^{2},\mathbb{R}^{2},f,\mathbb{R})\)</span> is continuous when <span class="math display">\[ \begin{split} 1)\quad  &amp; f(x,y) = \left\{\begin{matrix}\frac{x^{2}y^{3}}{2x^{2}+y^{2}} &amp; (x,y)\neq(0,0) \\ 1 &amp; (x,y)=(0,0)\end{matrix}\right.  \\ &amp; \\ 2)\quad &amp; f(x,y)  = \left\{\begin{matrix}\frac{xy}{x^{2}+xy + y^{2}} &amp; (x,y)\neq(0,0) \\ 0 &amp; (x,y)=(0,0) .\end{matrix}\right. \\ &amp; \\ 3) \quad &amp; f(x,y)= \left\{\begin{matrix}\frac{xy}{\sqrt{x^{2} + y^{2}}} &amp; (x,y)\neq(0,0) \\ 0 &amp; (x,y)=(0,0) .\end{matrix}\right. \\ &amp; \\ 4) \quad &amp; f(x,y)= \left\{\begin{matrix}\frac{x^{4} + x^{2}y - y^{3}}{\sqrt{x^{2} + y^{2}}} &amp; (x,y)\neq(0,0) \\ 0 &amp; (x,y)=(0,0) .\end{matrix}\right. \\ &amp; \\ 5) \quad &amp; f(x,y)= \left\{\begin{matrix}\frac{\sin(x-y)}{\mathrm{e}^{x} - \mathrm{e}^{y}} &amp; (x,y)\neq(c,c) \\ 1 &amp; (x,y)=(c,c) .\end{matrix}\right. \end{split}\]</span> &gt;[!note]- Solution &gt;1) Outside <span class="math inline">\((0,0)\)</span>, the function is continuous because it is the quotient of polynomials whose denominator never vanishes. Evaluating what happens when <span class="math inline">\(y=mx\)</span>, and <span class="math inline">\(x\rightarrow 0\)</span>, we obtain <span class="math inline">\(0\)</span>. Therefore, even if the limit for <span class="math inline">\((x,y)\rightarrow(0,0)\)</span> existed, it would be equal to <span class="math inline">\(0\neq f(0,0)=1\)</span>, so that the function is not continuous at <span class="math inline">\((0,0)\)</span>. &gt;2) Outside <span class="math inline">\((0,0)\)</span>, the function is continuous for essentially the same reasons of point 1). Evaluating what happens when <span class="math inline">\(y=mx\)</span>, and <span class="math inline">\(x\rightarrow 0\)</span>, we obtain <span class="math inline">\(\frac{m}{1+m+m^{2}}\)</span>, which means the function is not continuous at <span class="math inline">\((0,0)\)</span>. &gt;3) Outside <span class="math inline">\((0,0)\)</span>, the function is continuous for essentially the same reasons of point 1). Since &gt; <span class="math display">\[\left|\frac{xy}{\sqrt{x^{2} + y^{2}}} \right|\leq \frac{x^{2} + y^{2}}{\sqrt{x^{2} + y^{2}}}=\sqrt{x^{2} + y^{2}},\]</span> &gt; it follows that <span class="math inline">\(f\)</span> is continuous also at <span class="math inline">\((0,0)\)</span>. &gt;4) Following the steps of point 3), we can prove that <span class="math inline">\(f\)</span> is continuous everywhere. &gt;5) Outside the diagonal, the function is continuous for essentially the same reason of point 1). To investigate what happens on the diagonal, it is best to write &gt; <span class="math display">\[\frac{\sin(x-y)}{\mathrm{e}^{x}-\mathrm{e}^{y}}=\mathrm{e}^{-y}\,\frac{\sin(x-y)}{\mathrm{e}^{x-y}-1}.\]</span> &gt; Then, <span class="math inline">\(f(x,y)\)</span> can be written as the product <span class="math inline">\(g(x,y)\,h(x,y)\)</span>, with <span class="math inline">\(g(x,y)=y\)</span> a continuous function, and <span class="math inline">\(h(x,y)=K\circ F(x,y)\)</span> with <span class="math inline">\(F(x,y)=x-y\)</span> a continuous function, and <span class="math inline">\(K(t)=\frac{\sin(t)}{\mathrm{e}^{t}-1}\)</span> a function such that &gt; <span class="math display">\[\lim_{t\rightarrow 0}K(t)=\lim_{t\rightarrow 0} \frac{\sin(t)}{\mathrm{e}^{t}-1}=1,\]</span> &gt; where we have used de L’Hôpital rule to compute the limit. Therefore, we can apply the properties of limit to conclude that &gt; <span class="math display">\[\lim_{(x,y)\rightarrow(c,c)}g(x,y)h(x,y)=\lim_{(x,y)\rightarrow(c,c)}g(x,y)\left(K\circ F(x,y)\right)= \mathrm{e}^{-c}\lim_{t\rightarrow 0}K(t)=\mathrm{e}^{-c},\]</span> &gt; so that, on the diagonal, <span class="math inline">\(f\)</span> is continuous only at <span class="math inline">\((0,0)\)</span>.</p></li>
+</ol>
+</section>
+<section id="derivatives-and-second-order-taylors-theorem-for-multivariable-functions" class="level1">
+<h1>Derivatives and second order Taylor’s theorem for multivariable functions</h1>
+<ol type="1">
+<li><p>Compute the matrix of partial derivatives of the following functions <span class="math display">\[ \begin{split} 1) &amp;\qquad f\colon\mathbb{R}^{2}\rightarrow\mathbb{R},\qquad f(x,y)=x\mathrm{e}^{x^{2} - y^{2}} \\ &amp; \\ 2) &amp; \qquad f\colon\mathbb{R}^{2}\rightarrow\mathbb{R},\qquad f(x,y)=\left\{\begin{matrix} \frac{xy}{\sqrt{x^{2}+y^{2}}} &amp; (x,y)\neq (0,0) \\ 0 &amp; (x,y)=(0,0) \end{matrix}\right.\\ &amp; \\ 3) &amp; \qquad f\colon\mathbb{R}^{2}\rightarrow\mathbb{R},\qquad f(x,y)=\left\{\begin{matrix} \frac{x^{2}y}{x^{4}+y^{2} } &amp; (x,y)\neq (0,0) \\ 0 &amp; (x,y)=(0,0) \end{matrix}\right.\\ &amp; \\ 4) &amp;\qquad f\colon\mathbb{R}^{3}\rightarrow\mathbb{R}^{3},\qquad f(x,y,z)=\left(\begin{matrix}3x +5y \\ 2y + 6z^{2} \\x^{3} - y^{5} +z^{7}   \end{matrix}\right)\\ &amp; \\ 5) &amp;\qquad f\colon\mathbb{R}^{3}\rightarrow\mathbb{R}^{3},\qquad f(x,y,z)=\left(\begin{matrix}\ln(x^{2}+y^{2}+1 ) \\ 2y\,\cos(z^{2}x) \\ \arctan\left(x^{4} +y^{4} + \sqrt{z^{2} +1}\right)   \end{matrix}\right)\\ &amp; \\ \end{split} \]</span> &gt;[!note]- Solution &gt;1) Amounts to (tedious) routine computations. &gt;2) Outside (0,0), we take partial derivative as in the one-dimensional case. In <span class="math inline">\((0,0)\)</span>, we need to apply [[2.3 Derivatives and Taylor’s theorem for multivariable functions#^c8b7dc|the definition]] of partial derivative as a limit. Since the numerator is <span class="math inline">\(xy\)</span>, both partial derivatives are <span class="math inline">\(0\)</span>. &gt;3) Outside (0,0), we take partial derivative as in the one-dimensional case. In <span class="math inline">\((0,0)\)</span>, we need to apply [[2.3 Derivatives and Taylor’s theorem for multivariable functions#^c8b7dc|the definition]] of partial derivative as a limit. Since the numerator is <span class="math inline">\(x^{2}y\)</span>, both partial derivatives are <span class="math inline">\(0\)</span>. &gt;4) Amounts to (tedious) routine computations. &gt;5) Amounts to (tedious) routine computations.</p></li>
+<li><p>Compute the partial derivatives and study the differentiability of <span class="math inline">\((\mathbb{R}^{2},\mathbb{R}^{2},f,\mathbb{R})\)</span> when <span class="math display">\[ \begin{split} 1)\quad  &amp; f(x,y) = \left\{\begin{matrix}\frac{x^{2}y^{2}}{x^{4}+y^{4}} &amp; (x,y)\neq(0,0) \\ 0 &amp; (x,y)=(0,0)\end{matrix}\right.  \\ &amp; \\ 2)\quad &amp; f(x,y)  = \left\{\begin{matrix}\frac{x^{2}y^{4}}{x^{2} + y^{2}} &amp; (x,y)\neq(0,0) \\ 0 &amp; (x,y)=(0,0) .\end{matrix}\right. \\ &amp; \\ 3) \quad &amp; f(x,y)= \left\{\begin{matrix}\frac{x^{2}+y}{\sqrt{x^{2} + y^{2}}} &amp; (x,y)\neq(0,0) \\ 0 &amp; (x,y)=(0,0) .\end{matrix}\right. \\ &amp; \\ 4) \quad &amp; f(x,y)= \left\{\begin{matrix}\frac{2xy}{x^{2} + y^{2}} &amp; (x,y)\neq(0,0) \\ 0 &amp; (x,y)=(0,0) .\end{matrix}\right.  \end{split}\]</span> &gt;[!note]- Solution &gt;1) Outside <span class="math inline">\((0,0)\)</span>, the function is differentiable because it is the quotient of differentiable functions whose denominator never vanishes. At <span class="math inline">\((0,0)\)</span>, using [[2.3 Derivatives and Taylor’s theorem for multivariable functions#^c8b7dc|the definition]] of partial derivative as a limit, we obtain that both partial derivatives are <span class="math inline">\(0\)</span>. Consequently, the differentiability of <span class="math inline">\(f\)</span> at <span class="math inline">\((0,0)\)</span> [[2.3 Derivatives and Taylor’s theorem for multivariable functions#^801be3|depends on the validity]] of the following limit &gt; <span class="math display">\[\lim_{(x,y)\rightarrow(0,0)}\frac{x^{2}y^{2}}{\sqrt{x^{2}+y^{2}}(x^{4}+y^{4})}=0.\]</span> &gt; However, instead of evaluating the previous limit, we may check what happens when we reach <span class="math inline">\((0,0)\)</span> along the <span class="math inline">\(x\)</span> axis or along the parabola <span class="math inline">\(y=x^{2}\)</span> to check that <span class="math inline">\(f\)</span> is not continuous at <span class="math inline">\((0,0)\)</span>. Consequently, <span class="math inline">\(f\)</span> can not be differentiable at the origin. &gt;2) Outside <span class="math inline">\((0,0)\)</span>, the function is differentiable for the same reason as in point 1). At <span class="math inline">\((0,0)\)</span>, both partial derivatives vanish when computed using the definition through limits. Recaling that <span class="math inline">\(x^{2}\leq x^{2} + y^{2}\)</span>, that <span class="math inline">\(y^{2}\leq x^{2}+y^{2}\)</span>, and that <span class="math inline">\(y^{4}=y^{2}y^{2}\)</span>, we obtain &gt; <span class="math display">\[\frac{x^{2}y^{4}}{x^{2} + y^{2}}\leq (x^{2} + y^{2})^{3},\]</span> &gt; which means that <span class="math inline">\(f\)</span> is differentiable at <span class="math inline">\((0,0)\)</span>. &gt;3) Outside <span class="math inline">\((0,0)\)</span>, the function is differentiable for the same reason as in point 1). At <span class="math inline">\((0,0)\)</span>, using the definition of partial derivative as a limit, we conclude that the partial derivative along <span class="math inline">\(x\)</span> is <span class="math inline">\(1\)</span>, but the partial derivative along <span class="math inline">\(y\)</span> does not exist: &gt; <span class="math display">\[\begin{split} \frac{\partial f}{\partial x}(0,0)&amp;:=\lim_{h\rightarrow 0}\frac{h^{2}}{|h|}=1 \\ \frac{\partial f}{\partial y}(0,0)&amp;:=\lim_{h\rightarrow 0}\frac{h}{|h|}=\nexists .\end{split}\]</span> &gt; Since one of the partial derivatives does not exist at <span class="math inline">\((0,0)\)</span>, the function can not be differentiable at <span class="math inline">\((0,0)\)</span>. An alternative proof of the non-differentiability of <span class="math inline">\(f\)</span> at <span class="math inline">\((0,0)\)</span> can be obtained evaluating what happens when we reach <span class="math inline">\((0,0)\)</span> along <span class="math inline">\(y=\lambda x\)</span>. &gt;4) Outside <span class="math inline">\((0,0)\)</span>, the function is differentiable for the same reason as in point 1). At <span class="math inline">\((0,0)\)</span>, using the definition of partial derivative as a limit, we obtain that both vanish. However, evaluating what happens when we reach <span class="math inline">\((0,0)\)</span> along <span class="math inline">\(y=\lambda x\)</span>, we conclude that <span class="math inline">\(f\)</span> is not continuous at <span class="math inline">\((0,0)\)</span>, and thus it is not differentiable there.</p></li>
+<li><p>Verify the validity of the chain rule for <span class="math inline">\(f\circ g\)</span> in the following cases <span class="math display">\[ \begin{split} 1) &amp;\qquad f(x,y)=xy, \quad g(t)=(\mathrm{e}^{t},\cos(t))\\ &amp;  \\ 2) &amp;\qquad f(x,y)=(x^{2} + y^{2})\ln\left(\sqrt{x^{2} + y^{2}}\right), \quad g(t)=(\mathrm{e}^{t},\mathrm{e}^{-t}) \\ &amp; \\ 3) &amp;\qquad f(u,v)=(\tan(u-1) - \mathrm{e}^{v}, u^{2} - v^{2}),\quad g(x,y)=(\mathrm{e}^{x-y},x-y),\quad(x,y)=(1,1) \\ &amp; \\ 4) &amp;\qquad f(u, v, w) = (\mathrm{e}^{u-w}, \cos(v + u) + \sin(u + v + w)),\quad g(x, y) = (\mathrm{e}^{x} , \cos( y -x), \mathrm{e}^{-y} ),  \quad (x,y)=(0, 0). \end{split} \]</span> &gt;[!note]- Solution &gt;For all points of the exercise, either we perform all the derivatives directly, or we notice that the functions involved satisfy [[2.3 Derivatives and Taylor’s theorem for multivariable functions#^9ceaa7|the assumptions of the chain rule theorem]], so that the chain rule must hold.</p></li>
+<li><p>Let <span class="math inline">\(f\colon\mathbb{R}^{3}\rightarrow \mathbb{R}\)</span> be differentiable. Use the chain rule to obtain the partial derivatives in spherical and cylindrical coordinates. <strong>Hint</strong>: remember that a change of coordinates is associated with a function <span class="math inline">\(\psi\)</span> so that the function in the new coordinates system is <span class="math inline">\(f\circ\psi\)</span>. &gt;[!note]- Solution &gt;TBA</p></li>
+<li><p>Consider the function <span class="math inline">\(f\colon\mathbb{R}^{2}\rightarrow\mathbb{R}\)</span> given by <span class="math display">\[ f(x,y)=\left\{\begin{matrix} \frac{xy^{2}}{x^{2} + y^{2}} &amp; (x,y)\neq(0,0) \\ &amp; \\ 0 &amp; (x,y)=(0,0).\end{matrix}\right. \]</span> Compute the partial derivatives at <span class="math inline">\((0,0)\)</span>. Then, consider the function <span class="math inline">\(g\colon\mathbb{R}\rightarrow\mathbb{R}^{2}\)</span> given by <span class="math inline">\(g(t)=(at,bt)\)</span> with <span class="math inline">\(a,b\in\mathbb{R}\)</span> and compute the derivative of <span class="math inline">\(f\circ g\)</span> at <span class="math inline">\(t=0\)</span> both directly and using the chain rule. What can we conclude? &gt;[!note]- Solution &gt;Outside <span class="math inline">\((0,0)\)</span>, the partial derivatives can be computed following the rules of the one-dimensional case. In <span class="math inline">\((0,0)\)</span>, we need to apply [[2.3 Derivatives and Taylor’s theorem for multivariable functions#^c8b7dc|the definition]] of partial derivatives as limits. Since the numerator is <span class="math inline">\(x^{2}y\)</span>, both partial derivatives are <span class="math inline">\(0\)</span>. &gt;The derivative of <span class="math inline">\(f\circ g(t)\)</span> is easily computed to be <span class="math inline">\(\frac{ab^{2}}{a^{2}+b^{2}}\)</span> at all <span class="math inline">\(t\in\mathbb{R}\)</span>. However, the gradient vector (matrix of partial derivatives) of <span class="math inline">\(f\)</span> at (0,0) is <span class="math inline">\((0,0)\)</span>, so that a direct application of the formula [[2.3 Derivatives and Taylor’s theorem for multivariable functions#^9ceaa7|on the left-hand-side of the chain rule]] gives <span class="math inline">\(Df(g(0))g'(0)=0\)</span>. We thus conclude that the hypothesis of the chain rule theorem are not met. In particular, <span class="math inline">\(f\)</span> is not differentiable at <span class="math inline">\((0,0)\)</span>. Indeed, the limit &gt;<span class="math display">\[\lim_{(x,y)\rightarrow (0,0)} \left| \frac{f(x,y)-f(0,0) - f_{x}(0)\,x -f_{y}(0)\,y}{\sqrt{x^{2} + y^{2}}}\right| =\lim_{(x,y)\rightarrow (0,0)} \left| \frac{xy^{2}}{(x^{2} + y^{2})^{\frac{3}{2}}}\right|, \]</span> &gt; [[2.3 Derivatives and Taylor’s theorem for multivariable functions#^801be3|that must be]] <span class="math inline">\(0\)</span> to ensure differentiability, does not exist because, evaluating what happens when <span class="math inline">\(y=mx\)</span> and <span class="math inline">\(x\rightarrow 0\)</span>, we obtain an answer that depends on <span class="math inline">\(m\)</span>.</p></li>
+</ol>
+<p>^fbb3a9</p>
+<ol start="6" type="1">
+<li><p>Show that the function <span class="math inline">\((\mathbb{R}^{2},\mathbb{R}^{2},f,\mathbb{R})\)</span> given by <span class="math display">\[ f(x,y)= \left\{\begin{matrix}(x^{2}+y^{2})\,\sin\left(\frac{1}{x^{2}+y^{2}}\right) &amp; (x,y)\neq(0,0) \\ 0 &amp; (x,y)=(0,0) \\ \end{matrix}\right.\]</span> has partial derivatives that are continuous everywhere except <span class="math inline">\((0,0)\)</span>. Nonetheless, show that it is differentiable at <span class="math inline">\((0,0)\)</span>. &gt;[!note]- Solution &gt;This is exercise is essentially [[2.3 Derivatives and Taylor’s theorem for multivariable functions#^bed62d|this one]] in disguise.</p></li>
+<li><p>Compute the second order Taylor’s expansion for <span class="math display">\[ \begin{split} 1) \quad f(x,y) &amp; =\frac{1}{x^{2}+y^{2}+1}, &amp; \qquad (x_{0},y_{0})&amp;=(0,0) \\ 2) \quad f(x,y) &amp; =\cos(x)\sin(y), &amp; \qquad (x_{0},y_{0})&amp;=(\pi,\frac{\pi}{2}) \\ 3) \quad f(x,y) &amp; =\mathrm{e}^{-x^{2}-y^{2}}\cos(xy),&amp; \qquad (x_{0},y_{0})&amp;=(0,0) \\ 4) \quad f(x,y) &amp; = \mathrm{e}^{(x-1)^{2}} \cos(y),&amp; \qquad (x_{0},y_{0})&amp;=(1,0) \\ 5) \quad f(x,y) &amp; = \sin(xy)-3x^{2}\ln(y) + 1, &amp; \qquad (x_{0},y_{0})&amp;=(\pi/2,1) . \end{split}\]</span> &gt;[!note]- Solution &gt;All the exercises amount to routine computations.</p></li>
+</ol>
+</section>
+<section id="extrema-of-multivariable-functions" class="level1">
+<h1>Extrema of multivariable functions</h1>
+<ol type="1">
+<li><p>Find the global extrema of the function <span class="math inline">\(f\colon \mathbb{R}^{2}\rightarrow \mathbb{R}\)</span> given by <span class="math display">\[  f(x,y)=\frac{x^{2} + y^{2}}{2}  \]</span> on the closed triangle with vertex in <span class="math inline">\((0,0)\)</span>, <span class="math inline">\((1,1)\)</span>, and <span class="math inline">\((0,2)\)</span>. &gt;[!note]- Solution &gt;The function is continuous (smooth) because it is a polynomial, and the triangle is a closed and bounded domain in <span class="math inline">\(\mathbb{R}^{2}\)</span>. Therefore, the [[2.4 Extrema of multivariable functions#^d586b6|extreme value theorem]] implies there will be global extrema. TBA</p></li>
+<li><p>Find the global extrema of the function <span class="math inline">\(f\colon \mathbb{R}^{2}\rightarrow \mathbb{R}\)</span> given by <span class="math display">\[f(x, y) = x^2 + y^2 + x^2 y + 4\]</span> on <span class="math inline">\(D = \{(x, y) \;\colon\;|x| \leq 1,\;|y|\leq 1\}\)</span>.</p></li>
+<li><p>Find the global extrema of the function <span class="math inline">\(f\colon \mathbb{R}^{2}\rightarrow \mathbb{R}\)</span> given by <span class="math display">\[f (x, y) = 4x + 6y − x^2 − y^2 \]</span> on <span class="math inline">\(D = \{(x, y) \;\colon\;\;0 \leq x \leq 4, 0 \leq y \leq 5\}\)</span>.</p></li>
+<li><p>Find the global extrema of the function <span class="math inline">\(f\colon \mathbb{R}^{2}\rightarrow \mathbb{R}\)</span> given by <span class="math display">\[f (x, y) = x^3 −3x−y^3 +12y\]</span> on <span class="math inline">\(D\)</span> which is the quadrilateral whose vertices are <span class="math inline">\((−2, 3)\)</span>, <span class="math inline">\((2, 3)\)</span>, <span class="math inline">\((2, 2)\)</span>, and <span class="math inline">\((−2, −2)\)</span>.</p></li>
+<li><p>Use the procedure based on Lagrange multipliers to find the global extrema of the function <span class="math inline">\(f\colon \mathbb{R}^{2}\rightarrow \mathbb{R}\)</span> given by <span class="math display">\[f(x,y)=xy\]</span> on the closed unit disk <span class="math inline">\(\overline{D}=\left\{(x,y)\in\mathbb{R}^{2}\,|\quad x^{2} + y^{2}\leq 1\right\}\)</span>.</p></li>
+<li><p>Use the procedure based on Lagrange multipliers to find the global extrema of the function <span class="math inline">\(f\colon \mathbb{R}^{2}\rightarrow \mathbb{R}\)</span> given by <span class="math display">\[f(x,y)=\frac{x^{2} + y^{2}}{2}\]</span> on the closed ellipsoid <span class="math inline">\(D=\left\{(x,y)\in\mathbb{R}^{2}\,|\quad \frac{x^{2}}{2} + y^{2}\leq 1\right\}\)</span>.</p></li>
+<li><p>Use the procedure based on Lagrange multipliers to find the global extrema of the function <span class="math inline">\(f\colon \mathbb{R}^{2}\rightarrow \mathbb{R}\)</span> given by <span class="math display">\[ f(x,y)= y\, \mathrm{e}^{x}\]</span> on the closed disk <span class="math inline">\(\overline{D}=\left\{(x,y)\in\mathbb{R}^{2}\,|\quad x^{2} + y^{2}\leq 2\right\}\)</span>.</p></li>
+<li><p>Use the procedure based on Lagrange multipliers to find the global extrema of the function <span class="math inline">\(f\colon \mathbb{R}^{3}\rightarrow \mathbb{R}\)</span> given by <span class="math display">\[ f(x,y,z)= x - y +z \]</span> on the unit sphere <span class="math inline">\(D=\left\{(x,y,z)\in\mathbb{R}^{3}\,|\quad x^{2} + y^{2} + z^{2}\leq 1\right\}\)</span>.</p></li>
+<li><p>Use the procedure based on Lagrange multipliers to find the global extrema of the function <span class="math inline">\(f\colon \mathbb{R}^{3}\rightarrow \mathbb{R}\)</span> given by <span class="math display">\[ f(x,y,z)= x^{2} + y^{2} + z^{2} - x + y  \]</span> on the unit sphere <span class="math inline">\(D=\left\{(x,y,z)\in\mathbb{R}^{3}\,|\quad x^{2} + y^{2} + z^{2}\leq 1\right\}\)</span>.</p></li>
+<li><p>Use the procedure based on Lagrange multipliers to find three numbers whose product is 27 and whose sum is minimal, and three numbers whose sum is 27 and whose product is maximal.</p></li>
+<li><p>A rectangular box with no top is to have a surface area of <span class="math inline">\(16\,m^{2}\)</span>. Use the procedure based on Lagrange multipliers to find the dimensions that maximize its volume.</p></li>
+<li><p>Use the procedure based on Lagrange multipliers to design a cylindrical can (with a lid) to contain 1 liter (= 1000 cm3) of water, using the minimum amount of metal.</p></li>
+</ol>
+
+
+</section>
+
+</main> <!-- /main -->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  document.querySelectorAll('a[href^="http"]').forEach(function(link) {
+    if (!link.href.includes(window.location.hostname)) {
+      link.setAttribute("target", "_blank");
+      link.setAttribute("rel", "noopener noreferrer");
+    }
+  });
+});
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

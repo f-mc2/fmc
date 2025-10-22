@@ -1,0 +1,16 @@
+---
+title: "Preprints"
+format:
+  html:
+    css: ../css/refs-desc-numbering.css
+csl: ../csl/cv-date-desc-doi-url.csl
+bibliography: preprints.bib
+nocite: |
+  @*
+---
+
+The list is ordered according to the date of arXiv submission, and not the date of creation.
+
+::: {#refs}
+:::
+

@@ -1,0 +1,16 @@
+---
+title: "Proceedings"
+format:
+  html:
+    css: ../css/refs-desc-numbering.css
+csl: ../csl/cv-date-desc-doi-url.csl
+bibliography: proceedings.bib
+nocite: |
+  @*
+---
+
+The list is ordered according to the date of publication, and not the date of creation.
+
+::: {#refs}
+:::
+

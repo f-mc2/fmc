@@ -1,0 +1,69 @@
+project:
+  type: website
+  output-dir: docs   # GitHub Pages looks here
+
+website:
+  title: "Florio M. Ciaglia"
+  description: "You thought he was a man, but he only was a muffin."
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - text: Teaching
+        href: index_teaching.qmd
+      - text: Publications
+        href: publications/
+      - text: Conferences & Seminars
+        href: conferences.qmd
+      - text: Miscellanea
+        href: index_misc.qmd
+    right:
+      - icon: github
+        href: https://github.com/YOURNAME/academic-site
+  sidebar:
+    style: "docked"
+    contents:
+      - section: "Teaching"
+        href: index_teaching.qmd
+        contents:
+          - auto: teaching/*/*.{qmd,md}
+          - sort: title
+      - section: "Publications"
+        href: publications/index.qmd
+        contents:
+          - publications/inf-geo.qmd
+          - publications/grpd.qmd
+          - publications/misc.qmd
+          - publications/preprints.qmd
+          - publications/articles.qmd
+          - publications/proceedings.qmd
+      - section: "Miscellanea"
+        href: index_misc.qmd
+        contents:
+        - auto: misc/*.{qmd,ipynb,md}
+          sort: "date desc"
+
+serve:
+  port: 4329
+  browser: true
+
+format:
+  html:
+    include-after-body: includes/after-body.html
+    theme: 
+      light: cosmo    
+      dark: darkly    
+    toggle: true      # adds the switch in the navbar
+    css: css/style.css
+    toc: true
+    code-fold: true
+    code-summary: "Show/Hide code"
+
+execute:
+  echo: true
+  warning: false
+  error: false
+  freeze: auto      # only rerun cells if source changes
+  executable: .venv/bin/python   # force Quarto to use your venv
+
+

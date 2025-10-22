@@ -1,0 +1,1142 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.24">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>derivatives-of-scalar-functions – Florio M. Ciaglia</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-b651517ce65839d647a86e2780455cfb.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-075db7670ff9040d996a2500bb1207fa.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-6f4840de3e51e6422d2669dcdbbfd0fa.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-075db7670ff9040d996a2500bb1207fa.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    </a>
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Florio M. Ciaglia</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="../../index.html" aria-current="page"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../index_teaching.html"> 
+<span class="menu-text">Teaching</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../publications/"> 
+<span class="menu-text">Publications</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../conferences.html"> 
+<span class="menu-text">Conferences &amp; Seminars</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../index_misc.html"> 
+<span class="menu-text">Miscellanea</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/YOURNAME/academic-site"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../index_teaching.html">Teaching</a></li><li class="breadcrumb-item"><a href="../../teaching/calculus-uc3m-robotics/index.html">Calculus - Robotics Engineering - UC3M</a></li><li class="breadcrumb-item"><a href="../../teaching/calculus-uc3m-robotics/1.3 Derivatives of scalar functions.html">Derivatives of scalar functions</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+      <a href="../../index.html" class="sidebar-logo-link">
+      </a>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../index_teaching.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Teaching</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../teaching/calculus-uc3m-robotics/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Calculus - Robotics Engineering - UC3M</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/calculus-uc3m-robotics/1.1 Sets and functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">1.1 Sets and functions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/calculus-uc3m-robotics/1.2 Limits of scalar functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Distance and intervals</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/calculus-uc3m-robotics/1.3 Derivatives of scalar functions.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Derivatives of scalar functions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/calculus-uc3m-robotics/1.4 Sequences and series.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Limits of numerical sequences</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/calculus-uc3m-robotics/1.5 Power series, trascendental functions, and Taylor series.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Power series</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/calculus-uc3m-robotics/1.6 Derivatives and extrema of scalar functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Derivatives and local behavior</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/calculus-uc3m-robotics/1.7 Exercises.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">1 Limits of scalar functions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/calculus-uc3m-robotics/2.1 From 1 to many dimensions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">From 1 to many dimensions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/calculus-uc3m-robotics/2.2 Limits of multivariable functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Limits multivariable vector functions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/calculus-uc3m-robotics/2.3 Derivatives and Taylor's theorem for multivariable functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Derivatives and differentiability of multivariable functions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/calculus-uc3m-robotics/2.4 Extrema of multivariable functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Critical points and local extrema for multivariable scalar functions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/calculus-uc3m-robotics/2.5 Exercises.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Change of coordinates</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/calculus-uc3m-robotics/3.1 Antiderivatives.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Anti-derivatives of scalar functions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/calculus-uc3m-robotics/3.2 Integrals.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Definite integrals and anti-derivatives</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/calculus-uc3m-robotics/3.3 Double integrals.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Double integrals</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/calculus-uc3m-robotics/3.4 Triple integrals.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Triple integrals</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/calculus-uc3m-robotics/3.5 Exercises.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Anti-derivatives</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../publications/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Publications</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../publications/inf-geo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Information geometry</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../publications/grpd.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Groupoidal picture of Quantum Mechanics</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../publications/misc.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Miscellanea</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../publications/preprints.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preprints</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../publications/articles.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Articles</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../publications/proceedings.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Proceedings</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../index_misc.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Miscellanea</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../misc/2025-05-27 timeline on fields of covariances.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Timeline on fields of covariances</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../misc/Fundamentals of statistics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fundamentals of statistics</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../misc/geodesics_dual_connections_qubit.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Geodesics of dual connections</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#derivatives-of-scalar-functions" id="toc-derivatives-of-scalar-functions" class="nav-link active" data-scroll-target="#derivatives-of-scalar-functions">Derivatives of scalar functions</a></li>
+  <li><a href="#properties-of-derivatives" id="toc-properties-of-derivatives" class="nav-link" data-scroll-target="#properties-of-derivatives">Properties of derivatives</a></li>
+  <li><a href="#lhôpitals-rule-and-indeterminate-forms" id="toc-lhôpitals-rule-and-indeterminate-forms" class="nav-link" data-scroll-target="#lhôpitals-rule-and-indeterminate-forms">L’Hôpital’s rule and indeterminate forms</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../index_teaching.html">Teaching</a></li><li class="breadcrumb-item"><a href="../../teaching/calculus-uc3m-robotics/index.html">Calculus - Robotics Engineering - UC3M</a></li><li class="breadcrumb-item"><a href="../../teaching/calculus-uc3m-robotics/1.3 Derivatives of scalar functions.html">Derivatives of scalar functions</a></li></ol></nav></header>
+
+
+
+
+
+<section id="derivatives-of-scalar-functions" class="level1">
+<h1>Derivatives of scalar functions</h1>
+<p>The derivative of the function <span class="math inline">\(f\)</span> at a point <span class="math inline">\(x_{0}\)</span> is nothing but a particular limit associated with <span class="math inline">\(f\)</span> and <span class="math inline">\(x_{0}\)</span>. A way to understand it is to think to the following physical instance. There is an object <span class="math inline">\(O\)</span> moving on a line. Its position may be thought of as a function <span class="math inline">\(\gamma\colon I\rightarrow\mathbb{R}\)</span> where <span class="math inline">\(I=(-t^{*},t^{*})\)</span> is a time interval, and <span class="math inline">\(\gamma(t)\)</span> is the distance between <span class="math inline">\(O\)</span> and a reference point at time <span class="math inline">\(t\)</span>.</p>
+<p>Associated with <span class="math inline">\(\gamma\)</span> and a choice of initial time <span class="math inline">\(t_{0}\)</span>, there is the function <span class="math display">\[
+\Delta \gamma (t):=\frac{ \gamma(t)-\gamma(t_{0})}{t-t_{0}}.
+\]</span> This function tells us the rate of change of the position of <span class="math inline">\(O\)</span> in the time interval <span class="math inline">\(\Delta t=t-t_{0}\)</span>. Obviously, if <span class="math inline">\(\Delta t\)</span> is fixed, the bigger <span class="math inline">\(\Delta \gamma\)</span> the further <span class="math inline">\(O\)</span> has moved from the origin point <span class="math inline">\(\gamma(t_{0})\)</span>. Consequently, <span class="math inline">\(\Delta \gamma\)</span> seems like a nice candidate to mathematically represent what we intuitively picture as velocity/rapidity.</p>
+<p>However, upon closer examination, <span class="math inline">\(\Delta \gamma\)</span> can only inform us about velocity/rapidity in the time interval <span class="math inline">\(\Delta t=t-t_{0}\)</span>, and we conclude <span class="math inline">\(\Delta \gamma\)</span> is more like an average velocity in the time interval <span class="math inline">\(\Delta t\)</span> rather than an instantaneous at <span class="math inline">\(t=t_{0}\)</span>.</p>
+<p>What happens when <span class="math inline">\(t=t_{0}\)</span>?</p>
+<p>Looking at the very definition of <span class="math inline">\(\Delta \gamma\)</span>, we immediately realize that <span class="math inline">\(t=t_{0}\)</span> brings <span class="math inline">\(0\)</span> in the denominator. We are thus led to a meaningless expression unless we remember that we introduced [[1.2 Limits of scalar functions#^cbf378|limits]] precisely to deal with these type of situations. Once limits enter the game, we obtain the notion of (left/right) derivative of <span class="math inline">\(\gamma\)</span> at the point <span class="math inline">\(t=t_{0}\)</span>, and instantaneous velocities suddenly make sense!</p>
+<blockquote class="blockquote">
+<p>[!defn] Definition: derivative of a scalar function Let <span class="math inline">\(f\colon D\rightarrow \mathbb{R}\)</span> be a scalar function and let <span class="math inline">\(x_{0}\in D\)</span> be a [[1.2 Limits of scalar functions#^772289|left accumulation point]]. Consider the function <span class="math inline">\(\Delta f\colon (x_{0},x_{0}+c)\subset D\rightarrow \mathbb{R}\)</span> given by <span class="math display">\[
+\Delta f(h):=\frac{f(x_{0}+h) - f(x_{0})}{h} .
+\]</span> If the right limit <span class="math display">\[
+\lim_{h\rightarrow 0^{+}}\;\Delta f = l
+\]</span> exists with <span class="math inline">\(l\in\mathbb{R}\)</span>, then <span class="math inline">\(l\)</span> is called the right derivative of <span class="math inline">\(f\)</span> at <span class="math inline">\(x_{0}\)</span> and <span class="math inline">\(f\)</span> is said to be right differentiable at <span class="math inline">\(x_{0}\)</span>. Starting from a right accumulation point, we obtain the notion of left derivative and left differentiability at <span class="math inline">\(x_{0}\)</span>. If both the left and right derivatives at <span class="math inline">\(x_{0}\)</span> exist and are equal, then we say that <span class="math inline">\(f\)</span> is differentiable at <span class="math inline">\(x_{0}\)</span> and write <span class="math display">\[
+f'(x_{0})\equiv \lim_{h\rightarrow 0}\;\Delta f .
+\]</span> We also write <span class="math display">\[
+\frac{\mathrm{d}f}{\mathrm{d} x}(x_{0})\equiv f'(x_{0}),
+\]</span> and refer to this expression as the <em>Leibniz</em> notation for derivatives.</p>
+<p>The function associated with the rule <span class="math inline">\(x\mapsto f'(x)\)</span> is called the <strong>derivative</strong> of <span class="math inline">\(f\)</span>. Its domain need not coincide with the domain of <span class="math inline">\(f\)</span>.</p>
+</blockquote>
+<p>^971f59</p>
+<p>Both [[1.2 Limits of scalar functions#^979f48|continuity]] and differentiability are defined through limits, and it turns out there is a hierarchy between these two properties.</p>
+<blockquote class="blockquote">
+<p>[!important] Proposition: differentiability implies continuity If the function<span class="math inline">\(f\colon D\rightarrow\mathbb{R}\)</span> is (left/right) differentiable at <span class="math inline">\(x_{0}\in D\)</span>, then it is also (left/right) continuous at <span class="math inline">\(x_{0}\)</span>.</p>
+</blockquote>
+<p>The converse of the previous proposition does not hold, and the typical example of function which is continuous but not differentiable is the absolute value function given by <span class="math display">\[
+|x|=\sqrt{x^{2}}=\left\{\begin{matrix}x &amp; \mbox{ if } x\geq 0 \\ &amp; \\ -x &amp; \mbox{ if } x&lt;0 .\end{matrix}\right.
+\]</span> Indeed, we have <span class="math display">\[
+\begin{split}
+\lim_{x\rightarrow 0^{+}}\Delta |x|&amp;=\lim_{x\rightarrow 0^{+}}\frac{x-0}{x}=1 \\ &amp; \\
+\lim_{x\rightarrow 0^{-}}\Delta |x|&amp;=\lim_{x\rightarrow 0^{-}}\frac{-x-0}{x}=-1 ,
+\end{split}
+\]</span> which means that the left and right derivatives at <span class="math inline">\(0\)</span> exist but are different.</p>
+<blockquote class="blockquote">
+<p>[!exmp] Examples The first example of derivative we consider is that of a constant function <span class="math inline">\(f(x)=c\)</span> with <span class="math inline">\(c\in \mathbb{R}\)</span>. Following the very definition of derivative given above, we have <span class="math display">\[
+f'(x_{0})=\lim_{h\rightarrow 0} \frac{f(x_{0}+h)-f(x_{0})}{h}=0
+\]</span> for every <span class="math inline">\(x_{0}\in\mathbb{R}\)</span>.</p>
+<p>The second example we consider is that of the function <span class="math inline">\(f(x)=x\)</span>: <span class="math display">\[
+f'(x_{0})=\lim_{h\rightarrow 0} \frac{f(x_{0}+h)-f(x_{0})}{h}=\lim_{h\rightarrow 0} \frac{x_{0} + h -x_{0}}{h}=1
+\]</span> for every <span class="math inline">\(x_{0}\in\mathbb{R}\)</span>.</p>
+<p>The third example we consider is that of the function <span class="math inline">\(f(x)=x^{2}\)</span>: <span class="math display">\[
+\begin{split}
+f'(x_{0})&amp;=\lim_{h\rightarrow 0} \frac{f(x_{0}+h)-f(x_{0})}{h}= \\ &amp;=\lim_{h\rightarrow 0} \frac{(x_{0} + h)^{2} -x_{0}^{2}}{h}= \\ &amp;\lim_{h\rightarrow 0} \frac{2x_{0}h + h^{2}}{h}=2x_{0}
+\end{split}
+\]</span> for every <span class="math inline">\(x_{0}\in\mathbb{R}\)</span>.</p>
+</blockquote>
+<p>From an intuitive geometrical point of view, the derivative <span class="math inline">\(f'(x_{0})\)</span> of <span class="math inline">\(f\)</span> at <span class="math inline">\(x_{0}\)</span> may be interpreted as the value <span class="math inline">\(\tan(\theta_{0})\)</span> of a certain angle <span class="math inline">\(\theta_{0}\)</span> (refer to the figure adapted from <a href="https://commons.wikimedia.org/wiki/File:Derivative_-_geometric_meaning.svg">here</a>):</p>
+<p>![[geometric_derivative.png|500]]</p>
+<p>Considering the square triangle with vertices <span class="math inline">\(A\equiv(x_{0},f(x_{0}))\)</span>, <span class="math inline">\(B\equiv(x_{0}+h,f(x_{0}))\)</span>, and <span class="math inline">\(C\equiv(x_{0}+h,f(x_{0}+h))\)</span>, and denoting with <span class="math inline">\(\theta_{h}\)</span> the angle between the vectors <span class="math inline">\(\vec{AB}\)</span> and <span class="math inline">\(\vec{AC}\)</span>, some trigonometric considerations lead us to the equality <span class="math display">\[
+\frac{f(x_{0}+h) - f(x_{0})}{h}=\tan(\theta_{h}).
+\]</span> Then, as <span class="math inline">\(h\rightarrow 0\)</span>, the segment <span class="math inline">\(\vec{AC}\)</span> becomes closer and closer to the line <span class="math inline">\(L\)</span> tangent to the graph of <span class="math inline">\(f\)</span> passing through the point <span class="math inline">\((x_{0},f(x_{0}))\)</span>, and the resulting limit is the derivative <span class="math inline">\(f'(x_{0})=\tan(\theta_{0})\)</span>, with <span class="math inline">\(\theta_{0}\)</span> the angle between the horizontal axis and the tangent line <span class="math inline">\(L\)</span>.</p>
+<p>%% We can visualize in which sense the derivative is related to the tangent line as follows (<a href="https://commons.wikimedia.org/wiki/File:Graph_of_sliding_derivative_line_no_text.gif">source</a>):</p>
+<p>![[Graph_of_sliding_derivative_line_no_text.gif]] %% Intuitively speaking, the line tangent to the graph of a function at a point is the limit of the secant lines connecting said point with other points on the graph. <a href="https://www.geogebra.org/m/n8ztr6qs">Here</a> is an interactive visualization of this fact:</p>
+<iframe id="inlineFrameExample" title="Inline Frame Example" width="700" height="500" src="https://www.geogebra.org/m/n8ztr6qs">
+</iframe>
+<blockquote class="blockquote">
+<p>[!defn] Definition: <span class="math inline">\(C^{1}\)</span>-functions The function <span class="math inline">\(f\colon D\rightarrow\mathbb{R}\)</span> is said to be differentiable in <span class="math inline">\(D\)</span> if it is (left/right) differentiable at all [[1.2 Limits of scalar functions#^772289|(left/right) accumulation points]] in <span class="math inline">\(D\)</span>. The function <span class="math inline">\(f'\colon D\rightarrow \mathbb{R}\)</span> is called the <strong>derivative</strong> function. The function <span class="math inline">\(f\)</span> is said to be <span class="math inline">\(C^{1}\)</span> in <span class="math inline">\(D\)</span> if it is differentiable in <span class="math inline">\(D\)</span> and its derivative function is [[1.2 Limits of scalar functions#^979f48|continuous]] in <span class="math inline">\(D\)</span>.</p>
+</blockquote>
+<p>^c07f2b</p>
+<p>The intuitive idea of derivative as rate of change may be easy to grasp because it relies on the idea of velocity which the vast majority of humans can understand (even if only in a non-rigorous way). However, this interpretation is not very helpful when the input of the functions considered is no longer a single number (which can always be thought of as being the “time parameter” labeling something that changes).</p>
+<p>A perspective which is suitable to multivariable functions is that of thinking of the derivative <span class="math inline">\(f'(x_{0})\)</span> as providing the best linear approximation of the function near <span class="math inline">\(x_{0}\)</span>. Specifically, we can define <span class="math inline">\(f'(x_{0})\)</span> as the number (if it exists) such that <span class="math display">\[ \lim_{x\rightarrow x_{0}}\frac{\mid f(x) - [f(x_{0}) +f'(x_{0})\,(x-x_{0})]\mid}{\mid x-x_{0}\mid}=0. \]</span> Roughly speaking, the previous limit is telling us that the difference between <span class="math inline">\(f(x)\)</span> and <span class="math inline">\([f(x_{0}) +f'(x_{0})\,(x-x_{0})]\)</span> gets smaller as <span class="math inline">\(x\)</span> approaches <span class="math inline">\(x_{0}\)</span>, and it gets smaller “faster” than how <span class="math inline">\(x\)</span> approaches <span class="math inline">\(x_{0}\)</span> (because the limit with <span class="math inline">\(x-x_{0}\)</span> in the denominator is finite).</p>
+<p>Consequently, when the derivative at <span class="math inline">\(x_{0}\)</span> exists, we may approximate reasonably well <span class="math inline">\(f(x_{0})\)</span> with the linear function <span class="math inline">\([f(x_{0}) + f'(x_{0})\,(x-x_{0})]\)</span> as long as <span class="math inline">\(x\)</span> is close to <span class="math inline">\(x_{0}\)</span>.</p>
+<p>Once we understand how the derivative is connected with linear approximation, we may go back to the interpretation of the derivative as velocity, and we can try to understand velocity as being connected with the best linear approximation of the position for small times.</p>
+</section>
+<section id="properties-of-derivatives" class="level1">
+<h1>Properties of derivatives</h1>
+<p>^f3bc1e</p>
+<p>Just as it happens for limits, the actual computation of derivatives may often be carried without directly computing the limit in its definition by suitably exploiting powerful results.</p>
+<p>The first result is related with derivatives of sums and products.</p>
+<blockquote class="blockquote">
+<p>[!important] Proposition: Algebraic manipulations of derivatives Let <span class="math inline">\((\alpha_{1},\cdots\alpha_{n})\)</span> be a finite sequence of real numbers and <span class="math inline">\((f_{1},\cdots,f_{n})\)</span> a finite sequence of scalar functions. Suppose that <span class="math inline">\(f_{j}'(x)\)</span> exists for every <span class="math inline">\(j=1,...,n\)</span>. Then, it holds <span class="math display">\[
+\begin{split}
+\left(\sum_{j=1}^{n}\,\alpha_{j}\,f_{j}\right)'(x) &amp;=\sum_{j=1}^{n}\, \alpha_{j}\,f_{j}'(x)   \\ &amp; \\
+\left(\prod_{j=1}^{n} \,\alpha_{j}\,f_{j}\right)'(x) &amp;=\sum_{j=1}^{n}\,\alpha_{j}\,f_{j}'(x)\,\left(\prod_{k\neq j}\alpha_{k}\,f_{k}(x)\right) .
+\end{split}
+\]</span> In particular, if <span class="math inline">\(n=2\)</span> and <span class="math inline">\(\alpha_{1}=\alpha_{2}=1\)</span>, the derivative of the product takes on the very well-known form (<strong>Leibniz rule</strong>) <span class="math display">\[
+\left(f_{1}f_{2}\right)'(x)=f_{1}'(x)\,f_{2}(x) + f_{1}(x)\,f_{2}'(x).
+\]</span> Moreover, if <span class="math inline">\(n=2\)</span>, <span class="math inline">\(f_{2}'(x)\neq0\)</span> and <span class="math inline">\(\alpha_{1}=\alpha_{2}=1\)</span>, the derivative of the quotient reads <span class="math display">\[
+\left(\frac{ f_{1}}{f_{2}}\right)'(x)=\frac{f_{1}'(x)f_{2}(x) - f_{1}(x)\,f_{2}'(x)}{(f_{2}(x))^{2}}.
+\]</span></p>
+</blockquote>
+<p>^5d20ad</p>
+<p>Next, we consider the composition of functions and obtain the important <strong>chain rule</strong> for derivatives.</p>
+<blockquote class="blockquote">
+<p>[!important] Proposition: <strong>Chain rule for derivatives</strong> Let <span class="math inline">\(f,g\)</span> be scalar functions such that <span class="math inline">\(g\)</span> is differentiable at the point <span class="math inline">\(x_{0}\)</span> and <span class="math inline">\(f\)</span> is differentiable at the point <span class="math inline">\(y_{0}=g'(x_{0})\)</span>. The composite function <span class="math inline">\(f\circ g\)</span> is differentiable at <span class="math inline">\(x_{0}\)</span> and its derivative reads <span class="math display">\[
+(f\circ g)'(x_{0})=(f'\circ g)(x_{0})\,g'(x_{0}).
+\]</span> If we introduce the new variable <span class="math inline">\(y=g(x)\)</span> we can exploit the <em>Leibniz</em> notation for derivatives to write the chain rule above as <span class="math display">\[
+\frac{\mathrm{d}f}{\mathrm{d}x}=\frac{\mathrm{d}f}{\mathrm{d}y}\frac{\mathrm{d}y}{\mathrm{d}x}.
+\]</span> This expression is particularly useful if we want to extend the chain rule to the composition of more than two functions.</p>
+</blockquote>
+<p>^c87d27</p>
+<p>Finally, if a function admits an inverse, then their derivatives are connected to one another.</p>
+<blockquote class="blockquote">
+<p>[!important] Proposition: Differentiability of the inverse function Let <span class="math inline">\(g\)</span> be a scalar function which is invertible and differentiable, and let <span class="math inline">\(f\)</span> denote its inverse. If <span class="math inline">\(g(a)=b\)</span> and <span class="math inline">\(g'(a)\neq 0\)</span> then <span class="math inline">\(f\)</span> is differentiable at <span class="math inline">\(b=g(a)\)</span> and it holds <span class="math display">\[
+f'(b)= \frac{1}{g'(a)} .
+\]</span></p>
+</blockquote>
+<p>^05d051</p>
+<p>A good discussion of all the subtleties involved in the previous proposition can be found in the section “Inverse function” of Michael Spivak’s “Calculus” book.</p>
+</section>
+<section id="lhôpitals-rule-and-indeterminate-forms" class="level1">
+<h1>L’Hôpital’s rule and indeterminate forms</h1>
+<p>Derivatives can help us in computing the limit of some quotients of functions in the indeterminate cases <span class="math inline">\(\frac{0}{0}\)</span> or <span class="math inline">\(\frac{\pm\infty}{\pm\infty}\)</span>.</p>
+<blockquote class="blockquote">
+<p>[!important] Theorem: L’Hôpital’s rule Let <span class="math inline">\(x_{0}\in\overline{\mathbb{R}}:=\mathbb{R}\cup\{+\infty,-\infty\}\)</span> and let <span class="math inline">\(I\)</span> be an open interval containing <span class="math inline">\(x_{0}\)</span> if <span class="math inline">\(x_{0}\neq \pm\infty\)</span>, or having <span class="math inline">\(x_{0}\)</span> as an endpoint if <span class="math inline">\(x_{0}=\pm\infty\)</span>. Let <span class="math inline">\(f,g\)</span> be scalar functions differentiable in <span class="math inline">\(I\)</span> except possibly at <span class="math inline">\(x_{0}\)</span>. If <span class="math display">\[
+\lim_{x\rightarrow x_{0}}f(x)=\lim_{x\rightarrow x_{0}}g(x)=0\,\mbox{ or }\; \pm \infty,
+\]</span> if <span class="math inline">\(g'(x)\neq 0\)</span> for every <span class="math inline">\(x\in I\)</span> such that <span class="math inline">\(x\neq x_{0}\)</span>, and if <span class="math display">\[
+\lim_{x\rightarrow x_{0}}\frac{f'(x)}{g'(x)} = l \in\mathbb{R},
+\]</span> then <span class="math display">\[
+\lim_{x\rightarrow x_{0}}\frac{f(x)}{g(x)} =\lim_{x\rightarrow x_{0}}\frac{f'(x)}{g'(x)} .
+\]</span> Whenever even <strong>one</strong> of the previous assumptions fail, the result is not true!</p>
+</blockquote>
+<p>Note that L’Hôpital’s rule may be applied more than one time if necessary. For instance to compute</p>
+<p><span class="math display">\[1)\quad \lim_{x\rightarrow 0} \frac{ax^{4}+bx^{3}+cx^{2}}{b'x^{3}+c'x^{2}} = \frac{c}{c'} ,\]</span></p>
+<p>with <span class="math inline">\((c,c')\neq (0,0)\)</span>.</p>
+<p>Indeed, if we apply L’Hôpital’s rule once, we get</p>
+<p><span class="math display">\[2)\quad \lim_{x\rightarrow 0} \frac{4ax^{3}+3bx^{2}+2cx}{3b'x^{2}+2c'x} \stackrel{?}{=} \frac{0}{0}, \]</span></p>
+<p>which means we can not solve 1) with 2). However, we can look at 2) on its own, an apply L’Hôpital’s rule to it, obtaining</p>
+<p><span class="math display">\[ 3)\quad \lim_{x\rightarrow 0} \frac{12ax^{2}+6bx +2c }{6b'x +2c'} = \frac{c}{c'}. \]</span></p>
+<p>Since we assumed <span class="math inline">\((c,c')\neq (0,0)\)</span>, the right hand side of 3) makes sense, and thus L’Hôpital’s rule can be applied to conclude that the result of 2) is <span class="math inline">\(\frac{c}{c'}\)</span>. However, once we are here, we know that the limit in 2) makes sense, and we can L’Hôpital’s rule applies again to conclude that the result of 1) is <span class="math inline">\(\frac{c}{c'}\)</span>.</p>
+<p>L’Hôpital’s rule is very powerful and useful, but it is easy to abuse it or apply it incorrectly. In particular, it is relevant to mention the case <span class="math display">\[
+\lim_{x\rightarrow 0} \frac{\sin(x)}{x}=1
+\]</span></p>
+<p>^77ad27</p>
+<p>even if we did not yet introduced the trigonometric function <span class="math inline">\(\sin(x)\)</span>. Suppose trigonometric functions are introduced just making reference to the geometry of angles as it is often done. If we want to apply L’Hôpital’s rule to check the previous limit, we need to compute the derivative of <span class="math inline">\(\sin(x)\)</span> at <span class="math inline">\(x=0\)</span>. Assuming we know that <span class="math inline">\(\sin(0)=0\)</span>, by the very definition of derivative, we get <span class="math display">\[
+\sin'(0)=\lim_{h\rightarrow 0} \frac{\sin(0+h) -\sin(0)}{h}=\lim_{h\rightarrow 0}\frac{\sin(h)}{h}.
+\]</span> It is thus clear that we reach a circular situation because evaluating <span class="math inline">\(\sin'(x)\)</span> is equivalent to using L’Hôpital’s rule to solve the indeterminate limit!</p>
+<p>This instance should make clear that L’Hôpital’s rule should never be applied without really understanding what is going on at a deeper level.</p>
+<blockquote class="blockquote">
+<p>[!rem] Remark We [[1.5 Power series, trascendental functions, and Taylor series#^ed7011|will see]] that L’Hôpital’s rule can be applied to solve the previous limit if we introduce trigonometric functions using power series.<br>
+# Second and higher order derivatives</p>
+</blockquote>
+<p>By definition, if the scalar function <span class="math inline">\(f\)</span> is <span class="math inline">\(C^{1}\)</span> in <span class="math inline">\(D\)</span>, its derivative <span class="math inline">\(f'\)</span> is a continuous function in <span class="math inline">\(D\)</span>. Therefore, it makes sense to consider <span class="math inline">\(f'\)</span> as a scalar function on its own, say <span class="math inline">\(g\equiv f'\)</span>, and investigate its differentiability properties. If everything works fine, we obtain the <strong>second derivative</strong> <span class="math inline">\(f''\)</span> of <span class="math inline">\(f\)</span>. In the <span class="math inline">\(\frac{\mathrm{d}}{\mathrm{d}x}\)</span>-notation for derivatives introduced above, the second derivative is written as <span class="math display">\[
+\frac{\mathrm{d}^{2}f}{\mathrm{d}x^{2}} =  \frac{\mathrm{d}}{\mathrm{d}x}\left(\frac{\mathrm{d}f}{\mathrm{d}x}\right)=f''.
+\]</span> &gt;[!exmp] Examples &gt;It should not be surprising that the second derivative of the constant function <span class="math inline">\(f(x)=c\)</span> identically vanishes because <span class="math inline">\(f'(x)=0\)</span>. &gt; &gt;Quite similarly, the second derivative of <span class="math inline">\(f(x)=x\)</span> also vanishes. Indeed, since <span class="math inline">\(f'(x)=1\)</span>, setting <span class="math inline">\(g(x)=f'(x)=1\)</span>, we obtain that <span class="math inline">\(f''(x)=g'(x)=0\)</span> because <span class="math inline">\(g'(x)\)</span> is a constant function. &gt; &gt;On the other hand, if we consider the function <span class="math inline">\(f(x)=x^{2}\)</span>, we know from the examples above that <span class="math inline">\(f'(x)=2x\)</span>, so that, setting <span class="math inline">\(g(x)=f'(x)\)</span>, it immediately follows that <span class="math inline">\(f''(x)=g'(x)=2\)</span>.</p>
+<p>As long as things make sense, we can take derivatives as many times as we want, thus reaching the third derivative <span class="math inline">\(f'''=f^{(3)}\)</span>, or the fourth derivative <span class="math inline">\(f^{(4)}\)</span>, or even the 26453271935261-th derivative <span class="math inline">\(f^{(26453271935261)}\)</span>.</p>
+<blockquote class="blockquote">
+<p>[!defn] Definition: <span class="math inline">\(C^{k}\)</span> and smooth functions Given <span class="math inline">\(k\in\mathbb{N}-\{0\}\)</span>, a function <span class="math inline">\(f\colon D \rightarrow \mathbb{R}\)</span> is said to be <span class="math inline">\(C^{k}\)</span> on <span class="math inline">\(D\)</span> if its <span class="math inline">\(k\)</span>-th order derivative exists and is continuous on <span class="math inline">\(D\)</span>. A continuous function is also said to be <span class="math inline">\(C^{0}\)</span>. If <span class="math inline">\(f\)</span> is <span class="math inline">\(C^{k}\)</span> for all <span class="math inline">\(k\in\mathbb{K}\)</span>, then it is called <span class="math inline">\(C^{\infty}\)</span> or smooth.</p>
+</blockquote>
+<p>^a6b2f2</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  document.querySelectorAll('a[href^="http"]').forEach(function(link) {
+    if (!link.href.includes(window.location.hostname)) {
+      link.setAttribute("target", "_blank");
+      link.setAttribute("rel", "noopener noreferrer");
+    }
+  });
+});
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

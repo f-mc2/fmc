@@ -1,0 +1,23 @@
+/* Reverse the visual order of the bibliography */
+#refs.csl-bib-body,
+.references.csl-bib-body {
+  display: flex;
+  flex-direction: column-reverse; /* newest appears first */
+  counter-reset: ref;             /* start the counter at 0 */
+}
+
+/* Number each entry */
+#refs .csl-entry,
+.references .csl-entry {
+  counter-increment: ref;         /* 1, 2, 3... in DOM order (oldest→newest) */
+  position: relative;
+  padding-left: 2.2em;            /* space for the number */
+}
+
+/* Show the number before each entry */
+#refs .csl-entry::before,
+.references .csl-entry::before {
+  content: counter(ref) ". ";
+  position: absolute;
+  left: 0;
+}

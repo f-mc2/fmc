@@ -1,0 +1,14 @@
+/* Subtitle under site title */
+.navbar-title::after {
+  content: "You thought he was a man, but he only was a muffin.";
+  display: block;
+  font-size: 0.8rem;
+  line-height: 1.2;
+  color: var(--bs-body-color);
+  opacity: 0.7;
+}
+body.quarto-light .navbar-title::after { color: #555; }
+body.quarto-dark .navbar-title::after { color: #bbb; }
+
+
+
