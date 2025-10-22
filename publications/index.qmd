@@ -1,0 +1,27 @@
+---
+title: "Publications"
+format: html
+---
+
+All my publications are available either on my [arXiv page](https://arxiv.org/a/ciaglia_f_1.html) or in open access on the publisher page.
+
+## List of publications by topics
+
+- [Information Geometry](inf-geo.qmd)
+- [Groupoid picture of Quantum Mechanics](grpd.qmd)
+- [Miscellanea](misc.qmd)
+
+
+## List of publications by types
+
+- [Preprints](preprints.qmd)
+- [Articles](articles.qmd)
+- [Proceedings](proceedings.qmd)
+
+
+
+## Editorials
+
+- I guest-edited the research topic on [“Advances in Information Geometry: beyond the conventional approach”](https://www.frontiersin.org/research-topics/36006/advances-in-information-geometry-beyond-the-conventional-approach#overview) in Frontiers in Physics.
+
+- I guest-edited the focus point [“Classical and Quantum Information Geometry”](https://www.epj.org/epjplus-news/2158-epjplus-focus-point-on-classical-and-quantum-information-geometry) in the European Physical Journal Plus.

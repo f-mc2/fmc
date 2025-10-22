@@ -1,0 +1,18 @@
+---
+title: "Miscellanea"
+format:
+  html:
+    css: ../css/refs-desc-numbering.css
+csl: ../csl/cv-date-desc-doi-url.csl
+bibliography: misc.bib
+nocite: |
+  @*
+---
+
+Various works on various (sparse) topics.
+
+The list is ordered according to the date of publication/arXiv submission, and not the date of creation.
+
+::: {#refs}
+:::
+

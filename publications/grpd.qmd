@@ -1,0 +1,19 @@
+---
+title: "Groupoidal picture of Quantum Mechanics"
+format:
+  html:
+    css: ../css/refs-desc-numbering.css
+csl: ../csl/cv-date-desc-doi-url.csl
+bibliography: grpd.bib
+nocite: |
+  @*
+---
+
+This project aims to investigate the use of groupoids in the context of quantum mechanics, quantum information theory, and quantum field theory. 
+The idea of associating a groupoid with a quantum system may be traced back to [Schwinger’s seminal work](https://doi.org/10.1007/978-3-662-04589-3).
+
+The list is ordered according to the date of publication/arXiv submission, and not the date of creation.
+
+::: {#refs}
+:::
+

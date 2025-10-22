@@ -1,0 +1,1132 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.24">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>extrema-of-multivariable-functions – Florio M. Ciaglia</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-b651517ce65839d647a86e2780455cfb.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-075db7670ff9040d996a2500bb1207fa.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-6f4840de3e51e6422d2669dcdbbfd0fa.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-075db7670ff9040d996a2500bb1207fa.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    </a>
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Florio M. Ciaglia</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="../../index.html" aria-current="page"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../index_teaching.html"> 
+<span class="menu-text">Teaching</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../publications/"> 
+<span class="menu-text">Publications</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../conferences.html"> 
+<span class="menu-text">Conferences &amp; Seminars</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../index_misc.html"> 
+<span class="menu-text">Miscellanea</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/YOURNAME/academic-site"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../index_teaching.html">Teaching</a></li><li class="breadcrumb-item"><a href="../../teaching/calculus-uc3m-robotics/index.html">Calculus - Robotics Engineering - UC3M</a></li><li class="breadcrumb-item"><a href="../../teaching/calculus-uc3m-robotics/2.4 Extrema of multivariable functions.html">Critical points and local extrema for multivariable scalar functions</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+      <a href="../../index.html" class="sidebar-logo-link">
+      </a>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../index_teaching.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Teaching</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../teaching/calculus-uc3m-robotics/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Calculus - Robotics Engineering - UC3M</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/calculus-uc3m-robotics/1.1 Sets and functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">1.1 Sets and functions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/calculus-uc3m-robotics/1.2 Limits of scalar functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Distance and intervals</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/calculus-uc3m-robotics/1.3 Derivatives of scalar functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Derivatives of scalar functions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/calculus-uc3m-robotics/1.4 Sequences and series.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Limits of numerical sequences</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/calculus-uc3m-robotics/1.5 Power series, trascendental functions, and Taylor series.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Power series</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/calculus-uc3m-robotics/1.6 Derivatives and extrema of scalar functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Derivatives and local behavior</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/calculus-uc3m-robotics/1.7 Exercises.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">1 Limits of scalar functions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/calculus-uc3m-robotics/2.1 From 1 to many dimensions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">From 1 to many dimensions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/calculus-uc3m-robotics/2.2 Limits of multivariable functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Limits multivariable vector functions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/calculus-uc3m-robotics/2.3 Derivatives and Taylor's theorem for multivariable functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Derivatives and differentiability of multivariable functions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/calculus-uc3m-robotics/2.4 Extrema of multivariable functions.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Critical points and local extrema for multivariable scalar functions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/calculus-uc3m-robotics/2.5 Exercises.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Change of coordinates</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/calculus-uc3m-robotics/3.1 Antiderivatives.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Anti-derivatives of scalar functions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/calculus-uc3m-robotics/3.2 Integrals.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Definite integrals and anti-derivatives</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/calculus-uc3m-robotics/3.3 Double integrals.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Double integrals</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/calculus-uc3m-robotics/3.4 Triple integrals.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Triple integrals</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/calculus-uc3m-robotics/3.5 Exercises.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Anti-derivatives</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../publications/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Publications</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../publications/inf-geo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Information geometry</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../publications/grpd.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Groupoidal picture of Quantum Mechanics</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../publications/misc.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Miscellanea</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../publications/preprints.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preprints</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../publications/articles.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Articles</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../publications/proceedings.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Proceedings</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../index_misc.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Miscellanea</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../misc/2025-05-27 timeline on fields of covariances.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Timeline on fields of covariances</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../misc/Fundamentals of statistics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fundamentals of statistics</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../misc/geodesics_dual_connections_qubit.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Geodesics of dual connections</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#critical-points-and-local-extrema-for-multivariable-scalar-functions" id="toc-critical-points-and-local-extrema-for-multivariable-scalar-functions" class="nav-link active" data-scroll-target="#critical-points-and-local-extrema-for-multivariable-scalar-functions">Critical points and local extrema for multivariable scalar functions</a></li>
+  <li><a href="#global-extrema" id="toc-global-extrema" class="nav-link" data-scroll-target="#global-extrema">Global extrema</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../index_teaching.html">Teaching</a></li><li class="breadcrumb-item"><a href="../../teaching/calculus-uc3m-robotics/index.html">Calculus - Robotics Engineering - UC3M</a></li><li class="breadcrumb-item"><a href="../../teaching/calculus-uc3m-robotics/2.4 Extrema of multivariable functions.html">Critical points and local extrema for multivariable scalar functions</a></li></ol></nav></header>
+
+
+
+
+
+<section id="critical-points-and-local-extrema-for-multivariable-scalar-functions" class="level1">
+<h1>Critical points and local extrema for multivariable scalar functions</h1>
+<p>We now turn our attention to the problem of finding local and global extrema for multivariable scalar functions.</p>
+<blockquote class="blockquote">
+<p>[!defn] Definition: local extrema Consider the function <span class="math inline">\(f\colon D\subseteq\mathbb{R}^{n}\rightarrow\mathbb{R}\)</span> and the [[2.1 From 1 to many dimensions#^ceea9b|interior point]] <span class="math inline">\(\mathbf{x}_{0}\in D\)</span>: 1) it is said that <span class="math inline">\(f\)</span> has a <strong>local maximum</strong> at <span class="math inline">\(\mathbf{x}_{0}\)</span> if there is <span class="math inline">\(\epsilon&gt;0\)</span> such that <span class="math inline">\(f(\mathbf{x}_{0})&gt;f(\mathbf{x})\)</span> for all <span class="math inline">\(\mathbf{x}\in B_{\mathbf{x}_{0},\epsilon}\)</span>; 2) it is said that <span class="math inline">\(f\)</span> has a <strong>local minimum</strong> at <span class="math inline">\(\mathbf{x}_{0}\)</span> if there is <span class="math inline">\(\epsilon&gt;0\)</span> such that <span class="math inline">\(f(\mathbf{x}_{0})&lt;f(\mathbf{x})\)</span> for all <span class="math inline">\(\mathbf{x}\in B_{\mathbf{x}_{0},\epsilon}\)</span> 3) it is said that <span class="math inline">\(f\)</span> has a <strong>local extrema</strong> at <span class="math inline">\(\mathbf{x}_{0}\)</span> if <span class="math inline">\(\mathbf{x}_{0}\)</span> is either a local maximum or a local minimum of <span class="math inline">\(f\)</span>.</p>
+</blockquote>
+<p>For a multivariable scalar function <span class="math inline">\(f\colon D\subseteq\mathbb{R}^{n}\rightarrow\mathbb{R}\)</span>, it is possible to introduce a notion of derivative that takes into account how <span class="math inline">\(f\)</span> changes along an arbitrary direction in <span class="math inline">\(\mathbb{R}^{n}\)</span> determined by the vector <span class="math inline">\(\mathbf{v}\in\mathbb{R}^{n}\)</span>. This notion of derivative is called <strong>directional derivative</strong> and is defined below.</p>
+<blockquote class="blockquote">
+<p>[!defn] Definition: directional derivative Consider the function <span class="math inline">\(f\colon D\subseteq\mathbb{R}^{n}\rightarrow\mathbb{R}\)</span>, an interior point <span class="math inline">\(\mathbf{x}_{0}\in D\)</span>, and the vector <span class="math inline">\(\mathbf{v}\in\mathbb{R}^{n}\)</span>. The <strong>directional derivative</strong> <span class="math inline">\(\mathbf{D}_{\mathbf{v}}f(\mathbf{x}_{0})\)</span> of <span class="math inline">\(f\)</span> at <span class="math inline">\(\mathbf{x}_{0}\)</span> along the direction <span class="math inline">\(\mathbf{v}\)</span> is defined as <span class="math display">\[
+\mathbf{D}_{\mathbf{v}}f(\mathbf{x}_{0}):=\lim_{t\rightarrow 0}\,\frac{f(\mathbf{x}_{0} + t\mathbf{v}) - f(\mathbf{x}_{0})}{t}=\frac{\mathrm{d} f(\mathbf{x}_{0} + t\mathbf{v})}{\mathrm{d}t}(0) ,
+\]</span> where the right-hand side is thought of as a vector function of one variable <span class="math inline">\(t\in\mathbb{R}\)</span>. A moment of thought reveals that the directional derivative of <span class="math inline">\(f\)</span> at <span class="math inline">\(\mathbf{x}_{0}\)</span> along the direction <span class="math inline">\(\mathbf{e}_{j}\)</span> of the standard basis coincides with the <span class="math inline">\(j\)</span>-th partial derivative of <span class="math inline">\(f\)</span> at <span class="math inline">\(\mathbf{x}_{0}\)</span> as defined [[2.3 Derivatives and Taylor’s theorem for multivariable functions#^c8b7dc|here]].</p>
+</blockquote>
+<p>Focusing on the vector function <span class="math inline">\(\gamma\colon D'\subseteq \mathbb{R} \rightarrow \mathbb{R}^{n}\)</span> given by <span class="math display">\[
+\gamma(t)=\mathbf{x}_{0} + t\mathbf{v},
+\]</span> where <span class="math inline">\(D'\)</span> is determined by the condition <span class="math inline">\(\gamma(D')\subseteq D\)</span>, a direct application of the [[2.3 Derivatives and Taylor’s theorem for multivariable functions#^9ceaa7|chain rule]] for the function <span class="math inline">\(f\circ \gamma\)</span> allows to prove the following proposition that gives a direct link between directional derivatives and the gradient vector.</p>
+<blockquote class="blockquote">
+<p>[!important] Proposition: directional derivatives and the gradient Let <span class="math inline">\(f\colon D\subseteq\mathbb{R}^{n}\rightarrow \mathbb{R}\)</span> be differentiable in <span class="math inline">\(D\)</span>, and <span class="math inline">\(\mathbf{x}_{0}\in D\)</span> be an interior point. Then, it holds <span class="math display">\[
+\mathbf{D}_{\mathbf{v}}f(\mathbf{x}_{0})= \mathbf{v}\,\cdot\,\nabla f(\mathbf{x}_{0}) ,
+\]</span> where <span class="math inline">\(\cdot\)</span> is the scalar product in <span class="math inline">\(\mathbb{R}^{n}\)</span>.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>[!rem] Remark: gradient vector as direction of fastest increase For a differentiable function <span class="math inline">\((D,  \mathbb{R}^{n},f, \mathbb{R})\)</span>, since the scalar product is maximum when <span class="math inline">\(\mathbf{v}\)</span> is parallel to <span class="math inline">\(\nabla f(\mathbf{x}_{0})\)</span>, we conclude that the gradient vector points in the direction along which <span class="math inline">\(f\)</span> increases the fastest.</p>
+</blockquote>
+<p>Motivated by the previous remark, we introduce the notion of <strong>critical point</strong> in analogy with the [[1.6 Derivatives and extrema of scalar functions#^d2fcd0|one-variable scalar case]], and we state how it is connected to local extrema.</p>
+<blockquote class="blockquote">
+<p>[!defn] Definition: critical point Given the function <span class="math inline">\((D,\mathbb{R}^{n},f,\mathbb{R})\)</span>, an <strong>interior point</strong> <span class="math inline">\(\mathbf{x}_{0}\in D\)</span> is called a <strong>critical point</strong> if either <span class="math inline">\(\mathbf{D}f(\mathbf{x}_{0})=\nabla f(\mathbf{x}_{0})=0\)</span> or it does not exist.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>[!important] Proposition: local extrema and critical points If <span class="math inline">\((D,\mathbb{R}^{n},f, \mathbb{R})\)</span> has a local extremum at <span class="math inline">\(\mathbf{x}_{0}\in D\)</span> then <span class="math inline">\(\mathbf{x}_{0}\)</span> is a <strong>critical point</strong> of <span class="math inline">\(f\)</span>.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>[!attention] Remark The converse of the previous proposition is not true, already for [[1.6 Derivatives and extrema of scalar functions#^f4bbab|scalar functions of one variable]].</p>
+</blockquote>
+<p>In the genuinely multivariable case (<em>i.e.</em>, when the output space is <span class="math inline">\(\mathbb{R}^{n}\)</span> with <span class="math inline">\(n&gt;1\)</span>), it is difficult to establish if a critical point is a local extrema. Intuitively speaking, this is due to the fact that a local extrema <span class="math inline">\(\mathbf{x}_{0}\)</span> has to be an extrema along every direction pointing to it, and this is a very demanding request. For instance, let us consider the function <span class="math inline">\(f\colon \mathbb{R}^{2}\rightarrow\mathbb{R}\)</span> given by <span class="math display">\[
+f(x,y)=x^{2} - y^{2} .
+\]</span> It is immediate to check that the partial derivatives are <span class="math display">\[
+f_{x}=2x,\qquad f_{y}=-2y,
+\]</span> so that <span class="math inline">\((0,0)\)</span> is a critical point because <span class="math inline">\(\nabla f(0,0)=(0,0)\)</span>. However, if we investigate the behaviour of <span class="math inline">\(f\)</span> along the <span class="math inline">\(x\)</span>-axis determined by <span class="math inline">\(y=0\)</span> we find <span class="math inline">\(f(x,0)=x^{2}\)</span> which has a global minimum at <span class="math inline">\(x=0\)</span>, while the behaviour of <span class="math inline">\(f\)</span> along the <span class="math inline">\(y\)</span>-axis gives back <span class="math inline">\(f(0,y)=-y^{2}\)</span> which has a global maximum at <span class="math inline">\(y=0\)</span>. Consequently, <span class="math inline">\((0,0)\)</span> can not be a local extrema for <span class="math inline">\(f\)</span>.</p>
+<p>This situation is very typical for multivariable scalar functions, and, as it is clear from the example above, it applies also to very simple functions.</p>
+<p>A possible way to investigate the nature of a critical point is associated with the notion of [[2.3 Derivatives and Taylor’s theorem for multivariable functions#^1b4383|second order partial derivative]]. In particular, multivariable scalar functions that are <span class="math inline">\(C^{2}\)</span> are important because of the following proposition.</p>
+<blockquote class="blockquote">
+<p>[!important] Proposition Let <span class="math inline">\(f\colon D\subseteq \mathbb{R}^{n}\rightarrow\mathbb{R}\)</span> be <span class="math inline">\(C^{2}\)</span> on <span class="math inline">\(A\subseteq D\)</span>, and let <span class="math inline">\(\mathbf{x}_{0}\in A\)</span> be a critical point (which can only mean <span class="math inline">\(\nabla f(\mathbf{x}_{0})=\mathbf{0}\)</span> because all the partial derivatives exist when <span class="math inline">\(f\)</span> is <span class="math inline">\(C^{2}\)</span>). If the multivariable scalar function <span class="math inline">\(Hf_{\mathbf{x}_{0}}\colon\mathbb{R}^{n}\rightarrow\mathbb{R}\)</span> given by <span class="math display">\[
+Hf_{\mathbf{x}_{0}}(\mathbf{h}):=(h^{1}\,\cdots\, h^{n})\left(\begin{matrix}f_{11}|_{\mathbf{x}_{0}}&amp; \cdots &amp; f_{1n}|_{\mathbf{x}_{0}} \\ &amp; &amp; \\ \vdots &amp; &amp;\vdots \\ &amp; &amp; \\ f_{n1}|_{\mathbf{x}_{0}} &amp; \cdots &amp; f_{nn}|_{\mathbf{x}_{0}}\end{matrix}\right)\,\left(\begin{matrix}h^{1} \\ \\\vdots\\ \\h^{n} \end{matrix}\right)
+\]</span> is strictly positive for all <span class="math inline">\(\mathbf{0}\neq\mathbf{h}\in\mathbb{R}^{n}\)</span> then <span class="math inline">\(\mathbf{x}_{0}\)</span> is a <strong>local minimum</strong>; if it is strictly negative for all <span class="math inline">\(\mathbf{0}\neq\mathbf{h}\in\mathbb{R}^{n}\)</span> then <span class="math inline">\(\mathbf{x}_{0}\)</span> is a <strong>local maximum</strong>; if it takes both positive and negative values, and the Hessian matrix <span class="math inline">\(Hf_{\mathbf{x}_{0}}\)</span> is <a href="https://en.wikipedia.org/wiki/Invertible_matrix">invertible</a>, then <span class="math inline">\(\mathbf{x}_{0}\)</span> is a <strong>saddle point</strong>.</p>
+</blockquote>
+<p>^36f25b</p>
+<blockquote class="blockquote">
+<p>[!rem] Remark To check which type of local extrema is <span class="math inline">\(\mathbf{x}_{0}\)</span>, we can also investigate the determinants of all the square sub-matrices of the Hessian matrix containing the first element. If they are all positive, then <span class="math inline">\(\mathbf{x}_{0}\)</span> is a <strong>local minimum</strong>. If they alternate starting with a negative one, then <span class="math inline">\(\mathbf{x}_{0}\)</span> is a local minimum. If they are all different then <span class="math inline">\(0\)</span>, but do not follow the previous conditions, then <span class="math inline">\(\mathbf{x}_{0}\)</span> is a <strong>saddle point</strong>.</p>
+</blockquote>
+<p>^99ac31</p>
+</section>
+<section id="global-extrema" class="level1">
+<h1>Global extrema</h1>
+<p>Let us start with the definition of global extrema.</p>
+<blockquote class="blockquote">
+<p>[!defn] Definition: global extrema Consider the function <span class="math inline">\(f\colon D\subseteq\mathbb{R}^{n}\rightarrow\mathbb{R}\)</span> and <span class="math inline">\(\mathbf{x}_{0}\in D\)</span>: 1) it is said that <span class="math inline">\(f\)</span> has a <strong>global maximum</strong> at <span class="math inline">\(\mathbf{x}_{0}\)</span> if <span class="math inline">\(f(\mathbf{x}_{0})&gt;f(\mathbf{x})\)</span> for all <span class="math inline">\(\mathbf{x}\in D\)</span>; 2) it is said that <span class="math inline">\(f\)</span> has a <strong>global minimum</strong> at <span class="math inline">\(\mathbf{x}_{0}\)</span> if <span class="math inline">\(f(\mathbf{x}_{0})&lt;f(\mathbf{x})\)</span> for all <span class="math inline">\(\mathbf{x}\in D\)</span>; 3) it is said that <span class="math inline">\(f\)</span> has a <strong>local extrema</strong> at <span class="math inline">\(\mathbf{x}_{0}\)</span> if <span class="math inline">\(\mathbf{x}_{0}\)</span> is either a global maximum or a global minimum of <span class="math inline">\(f\)</span>.</p>
+</blockquote>
+<p>Understanding the behaviour of arbitrary multivariable scalar functions is incredibly difficult. We need to make regularity assumptions on the type of functions we consider in order to be able to attack the problem. At this purpose, multivariable scalar functions that are continuous are particularly important because they admit global extrema when they are defined on sets that are closed and bounded.</p>
+<blockquote class="blockquote">
+<p>[!defn] Definition: bounded and closed sets The set <span class="math inline">\(A\subseteq \mathbb{R}^{n}\)</span> is called <strong>bounded</strong> if there is <span class="math inline">\(M\in\mathbb{R}\)</span> such that <span class="math inline">\(||\mathbf{x}||\leq M\)</span> for every <span class="math inline">\(\mathbf{x}\in A\)</span>. The set <span class="math inline">\(A\subseteq \mathbb{R}^{n}\)</span> is called <strong>closed</strong> if it contains all its boundary points.</p>
+</blockquote>
+<p>^cf7a0c</p>
+<blockquote class="blockquote">
+<p>[!important] Theorem: <a href="https://math.stackexchange.com/a/881569/86146">Extreme value theorem</a> Given a closed and bounded set <span class="math inline">\(D\subset\mathbb{R}^{n}\)</span>, a continuous function <span class="math inline">\(f\colon D\subset\mathbb{R}^{n}\rightarrow\mathbb{R}\)</span> admits global maximum and global minimum.</p>
+</blockquote>
+<p>^d586b6</p>
+<blockquote class="blockquote">
+<p>[!attention] Remark: the level sets of continuous functions are closed Fixing <span class="math inline">\(c\in\mathbb{R}\)</span>, it can be proved that the level set <span class="math display">\[
+S=\left\{\mathbf{x}\in\mathbb{R}^{n}\,|\quad g(\mathbf{x})=c \right\}
+\]</span> of the continuous function <span class="math inline">\(g\colon D\subseteq\mathbb{R}^{n}\rightarrow\mathbb{R}\)</span> is always closed in <span class="math inline">\(\mathbb{R}^{n}\)</span>.</p>
+</blockquote>
+<p>In the following, we discuss two possible ways to determine global extrema for continuous functions defined on a closed and bounded domain whose boundary is of a particular type. To be able to discuss more general cases would require a level of sophistication that is not compatible with the little time we have at our disposal for the course. However, if you are interested, a first approach is to read carefully the whole chapter 3 of <a href="https://www.macmillanlearning.com/college/ca/product/Vector-Calculus/p/1429215089">M-T</a>, the whole chapter 16 of <a href="https://www.wiley.com/en-us/Calculus:+One+and+Several+Variables,+10th+Edition-p-9780471698043">S-E-H</a>, and then consult the references and external links in the <a href="https://en.wikipedia.org/wiki/Multivariable_calculus">Wikipedia page</a> for “Multivariable calculus”. # Global extrema in 2D: parametrizable boundary</p>
+<p>Here, we discuss how to find the global extrema of a continuous function <span class="math inline">\((D,\mathbb{R}^{2},f,\mathbb{R})\)</span> when <span class="math inline">\(D\)</span> is closed and bounded, and the boundary <span class="math inline">\(\partial D\)</span> is the union of finitely many smooth curves (<em>e.g.</em>, polygons, ellipses, and similar things).</p>
+<p>Instead of trying to describe a general theory, we deal with a specific example that allows to understand the general structure. We consider the function <span class="math inline">\((D,\mathbb{R}^{2},f,\mathbb{R})\)</span>, with <span class="math inline">\(f(x,y)=x^{2} + y^{2}-2x\)</span>, and with <span class="math inline">\(D\)</span> the triangle with vertices <span class="math inline">\(A\equiv(0,0)\)</span>, <span class="math inline">\(B\equiv(2,0)\)</span>, and <span class="math inline">\(C\equiv(0,2)\)</span>.</p>
+<p>Since <span class="math inline">\(f\)</span> is continuous and <span class="math inline">\(D\)</span> is a closed and bounded set, there will be global extrema, and we have to first look for local extrema inside <span class="math inline">\(D\)</span>, and then investigate the behaviour at the boundary.</p>
+<p>The local extrema inside <span class="math inline">\(D\)</span> can be found and classified according to the theory we [[2.4 Extrema of multivariable functions#^36f25b|developed before]]. We obtain the critical point <span class="math inline">\((1,0)\)</span> which lies on the boundary of the triangle. Since <span class="math inline">\(f\)</span> is a polynomial function, it is <span class="math inline">\(C^2\)</span>, and the Hessian matrix at <span class="math inline">\((1,0)\)</span> reads <span class="math display">\[\mathbf{H}f_{(1,0)}=\left(\begin{matrix}2 &amp; 0 \\ 0 &amp; 2\end{matrix}\right).\]</span> According to the [[2.4 Extrema of multivariable functions#^36f25b|proposition]] and [[2.4 Extrema of multivariable functions#^99ac31|remark]] above, we conclude that <span class="math inline">\((1,0)\)</span> is a local minimum.</p>
+<p>Concerning the behavior on the boundary, we consider the open segment <span class="math inline">\(AB\)</span>, the open segment <span class="math inline">\(BC\)</span>, the open segment <span class="math inline">\(AC\)</span>, and then the three vertices.</p>
+<p>The segment <span class="math inline">\(AB\)</span> can be parametrized by the function <span class="math inline">\(t\mapsto(t,0)\)</span> with <span class="math inline">\(t\in(0,2)\)</span>, so that the original function on this segment looks like <span class="math inline">\(f(t,0)=t^{2}-2t\)</span>. Following what we learned for [[1.6 Derivatives and extrema of scalar functions|scalar functions of one variable]], we obtain a minimum at <span class="math inline">\(t=1\)</span>, that is, at the point <span class="math inline">\((1,0)\)</span>, which is compatible with what we found before.</p>
+<p>The segment <span class="math inline">\(AC\)</span> can be parametrized by the function <span class="math inline">\(t\mapsto (0,t)\)</span> with <span class="math inline">\(t\in(0,2)\)</span>, so that the original function on this segment looks like <span class="math inline">\(f(0,t)=t^{2}\)</span>. This function has a minimum at <span class="math inline">\(t=0\)</span>, which is also a corner point.</p>
+<p>The segment <span class="math inline">\(BC\)</span> can be parametrized by <span class="math inline">\(t\mapsto(2t,2(1-t))\)</span> with <span class="math inline">\(t\in(0,1)\)</span>, and the original function on the segment looks like <span class="math inline">\(f(2t,2(1-t))= 4t^{2} +4 +4t^{2}-8t-4t=8t^{2}-12t+4\)</span>. This function has a minimum at <span class="math inline">\(t=\frac{3}{4}\)</span>, that is, at the point <span class="math inline">\((\frac{3}{2},\frac{1}{2})\)</span>.</p>
+<p>Arrived here, to find the global extrema of <span class="math inline">\(f\)</span> in <span class="math inline">\(D\)</span>, we have to evaluate the function at all the local extrema in the interior of <span class="math inline">\(D\)</span> (in this case, there is no such point), and at the boundary <span class="math inline">\(\partial D\)</span> (including the vertices): <span class="math display">\[
+\begin{split}
+f(0,0) &amp; =0 \\ &amp; \\
+f(2,0) &amp; = 0 \\ &amp; \\
+f(0,2) &amp; = 4 \\ &amp; \\
+f(1,0) &amp; = -1 \\ &amp; \\
+f\left(\frac{3}{2},\frac{1}{2}\right)&amp; =-\frac{1}{2},
+\end{split}
+\]</span> and we conclude that <span class="math inline">\((1,0)\)</span> is the global minima, while <span class="math inline">\((0,2)\)</span> is the global maxima. # Global extrema: Lagrange multipliers</p>
+<p>Here, we discuss the method of Lagrange multipliers to find the global extrema on <span class="math inline">\(D\subset A\)</span> of a continuous function <span class="math inline">\((A,\mathbb{R}^{n},f,\mathbb{R})\)</span> with <span class="math inline">\(A\)</span> an open set, <span class="math inline">\(D\)</span> closed, bounded, with open interior, and the boundary <span class="math inline">\(\partial D\)</span> regular enough in a sense specified below.</p>
+<p>The first condition we impose on <span class="math inline">\(\partial D\)</span> is that it is the level set of a smooth function <span class="math inline">\((A,\mathbb{R}^{n},g,\mathbb{R})\)</span> with <span class="math inline">\(A\)</span> open, that is, we assume: <span class="math display">\[
+\partial D=\left\{\mathbf{x}\in \mathbb{R}^{n}\;|\quad g(\mathbf{x})=c\right\},
+\]</span> with <span class="math inline">\(c\in\mathbb{R}\)</span>.</p>
+<blockquote class="blockquote">
+<p>[!important] Proposition: Lagrange multipliers and level sets Let <span class="math inline">\(A\subseteq \mathbb{R}^{n}\rightarrow \mathbb{R}\)</span> be open, and let <span class="math inline">\(f,g \colon A\rightarrow\mathbb{R}\)</span> be <span class="math inline">\(C^{1}\)</span> on <span class="math inline">\(A\)</span>. Let <span class="math inline">\(c\in\mathbb{R}\)</span>, let <span class="math inline">\(S\)</span> be the level set of <span class="math inline">\(c\)</span> through <span class="math inline">\(g\)</span>: <span class="math display">\[
+S=\left\{\mathbf{x}\in \mathbb{R}^{n}\,|\quad g(\mathbf{x})=c\right\},
+\]</span> and assume <span class="math inline">\(\nabla g(\mathbf{x}_{0})\neq\mathbf{0}\)</span> at <span class="math inline">\(\mathbf{x}_{0}\in S\)</span>.</p>
+<p>If the restriction of <span class="math inline">\(f\)</span> to <span class="math inline">\(S\)</span>, usually denoted as <span class="math inline">\(f|_{S}\)</span>, has a local maximum or local minimum at <span class="math inline">\(\mathbf{x}_{0}\)</span> then <span class="math display">\[
+\nabla f(\mathbf{x}_{0})=\lambda \nabla g (\mathbf{x}_{0})
+\]</span> for some <span class="math inline">\(\lambda\in \mathbb{R}\)</span> (which can also be <span class="math inline">\(0\)</span>).</p>
+</blockquote>
+<p>^df7f57</p>
+<blockquote class="blockquote">
+<p>[!note] Definition: Lagrange multipliers and critical points on level sets The number <span class="math inline">\(\lambda\)</span> in the previous proposition is known as <strong>Lagrange multiplier</strong>, while a point <span class="math inline">\(\mathbf{x}_{0}\in S\)</span> for which the equation <span class="math display">\[
+\nabla f(\mathbf{x}_{0})=\lambda \nabla g (\mathbf{x}_{0})
+\]</span> holds is referred to as a <strong>critical point</strong> of <span class="math inline">\(f\)</span> on <span class="math inline">\(S\)</span>.</p>
+</blockquote>
+<p>When the level set <span class="math inline">\(S\)</span> in the previous proposition is the set of [[2.1 From 1 to many dimensions#^ceea9b|boundary points]] <span class="math inline">\(\partial D\)</span> of a [[2.4 Extrema of multivariable functions#^cf7a0c|closed, bounded]], and connected (meaning it can not be partitioned into the disjoint union of non-empty open sets) set <span class="math inline">\(D\)</span>, then we can find the global maxima and global minima of the <span class="math inline">\(C^{1}\)</span> function <span class="math inline">\(f\colon A\subseteq\mathbb{R}^{n}\rightarrow \mathbb{R}\)</span> on <span class="math inline">\(D\subset A\)</span> as follows:</p>
+<ol type="1">
+<li>we look for critical points in the interior of <span class="math inline">\(D\)</span> using the gradient vector <span class="math inline">\(\nabla f\)</span>;</li>
+<li>we look for critical points on <span class="math inline">\(\partial D\)</span> using Lagrange multipliers;</li>
+<li>we compute <span class="math inline">\(f\)</span> at all the points we found and select those giving maximum and minimum values.</li>
+</ol>
+<blockquote class="blockquote">
+<p>[!attention] Remark This procedure works because <span class="math inline">\(D\)</span> is closed an bounded, and <span class="math inline">\(f\)</span> is continuous on <span class="math inline">\(D\)</span> (because it is <span class="math inline">\(C^{1}\)</span> on <span class="math inline">\(A\supset D\)</span>). If even one of the previous assumptions falls, the procedure outlined above will fail!</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>[!exmp] Example Let <span class="math inline">\(f\colon\mathbb{R}^{2}\rightarrow \mathbb{R}\)</span> be given by</p>
+<p><span class="math display">\[
+f(x,y)=x^{2} - y^{2},
+\]</span></p>
+<p>and let <span class="math inline">\(D\)</span> be the closed disk with unit radius centered in <span class="math inline">\((0,0)\)</span>. The only critical point in the interior of <span class="math inline">\(D\)</span> is <span class="math inline">\((0,0)\)</span>. However, following the [[2.4 Extrema of multivariable functions#^36f25b|Hessian matrix criteria]], we conclude the origin is neither a local minima, nor a local maxima. Concerning the boundary <span class="math inline">\(\partial D\)</span>, we can write it as the level set of the function <span class="math inline">\(g(x,y)=x^{2} + y^{2}\)</span> corresponding to the value <span class="math inline">\(1\)</span>. Following the proposition on [[2.4 Extrema of multivariable functions#^df7f57|Lagrange mutipliers]], we have to solve the system <span class="math display">\[
+\left\{\begin{matrix}\nabla f(x,y)=\lambda \nabla g(x,y) \\ x^{2} + y^{2} = 1\end{matrix}\right.
+\]</span> with respect to <span class="math inline">\((x,y)\)</span> and <span class="math inline">\(\lambda\)</span>. A direct computation shows that the previous system is equivalent to <span class="math display">\[
+\left\{\begin{matrix} x=\lambda x \\ y=-\lambda y \\ x^{2} + y^{2} = 1\end{matrix}\right. .
+\]</span> We solve this system by first considering <span class="math inline">\(y=0\)</span> and then we solve it for <span class="math inline">\(y\neq 0\)</span>. If <span class="math inline">\(y=0\)</span>, then the last equation forces <span class="math inline">\(x=\pm 1\)</span> so that the first one implies <span class="math inline">\(\lambda =1\)</span>. Therefore, we obtain two solutions: <span class="math inline">\((x=1,y=0;\lambda=1)\)</span> and <span class="math inline">\((x=-1,y=0;\lambda=1)\)</span>. When <span class="math inline">\(y\neq 0\)</span>, the second equation implies <span class="math inline">\(\lambda=-1\)</span> so that the first equation forces <span class="math inline">\(x=0\)</span>, but then the third equation implies <span class="math inline">\(y=\pm 1\)</span>. Therefore, we obtain other two solutions: <span class="math inline">\((x=0, y=1;\lambda=-1)\)</span> and <span class="math inline">\((x=0,y=-1;\lambda=-1)\)</span>. These four points are the only candidates to be global extrema for <span class="math inline">\(f\)</span> on <span class="math inline">\(\overline{D}\)</span>. If we evaluate <span class="math inline">\(f\)</span> on them we discover that the first two points are global maxima while the second ones are global minima.</p>
+</blockquote>
+<p>As a last remark, we note that the method of Lagrange multipliers can be used also in another context. Specifically, we may be interested in maximizing or minimizing a given function <span class="math inline">\((D,\mathbb{R}^{n},f,\mathbb{R})\)</span> subject to a <em>constraint</em> encoded in the equation <span class="math inline">\(g(\mathbf{x})=c\)</span>. In this case, however, we are not sure the maxima or minima exist because we are not dealing, in general, with a continuous function on a closed and bounded domain. Therefore, <em>ad hoc</em> considerations are necessary to determine whether the points selected by the method of Lagrange multipliers are indeed suitable maxima or minima.</p>
+<blockquote class="blockquote">
+<p>[!exmp] Example: minimization under a constraint We want to find, if possile, the minimum of <span class="math inline">\(\mathbb{R},\mathbb{R}^{2},f,\mathbb{R}\)</span> with <span class="math display">\[f(x,y)=x^{2} + (y-2)^{2}\]</span> subject to the constraint <span class="math display">\[
+g(x,y)=x^{2}-y^{2}.\]</span> Applying the method of Lagrange multipliers, we obtain the system <span class="math display">\[\left\{\begin{matrix}x&amp; = &amp; \lambda x \\ (y-2) &amp; = &amp; -\lambda y \\ x^{2}-y^{2}&amp; = &amp;1.\end{matrix}\right.\]</span> The constraint implies <span class="math inline">\(x\neq 0\)</span>, and thus we obtain the solutions <span class="math inline">\((x=\pm\sqrt{2},y=1,\lambda=1)\)</span>. Since the constraint <span class="math inline">\(g(x,y)=x^{2} - y^{2}=1\)</span> is an hyperbola, which is not bounded, and thus is not the boundary of a closed and bounded region, we do not know if either of the two points found above is a minimum. That is, we do not know if there is a solution to our problem. However, we note that <span class="math inline">\(f(x,y)\)</span> is nothing but the square of the distance of the point <span class="math inline">\((x,y)\)</span> from the point <span class="math inline">\((0,2)\)</span>, so that our problem can be stated as the search for the point on the hyperbola <span class="math inline">\(x^{2}-y^{2}=1\)</span> which is the closest to the point <span class="math inline">\((0,2)\)</span>. Of course, because of geometrical considerations, this problem <strong>must</strong> have solution, and both the points found with the method of Lagrange multipliers are viable solutions.</p>
+</blockquote>
+
+
+</section>
+
+</main> <!-- /main -->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  document.querySelectorAll('a[href^="http"]').forEach(function(link) {
+    if (!link.href.includes(window.location.hostname)) {
+      link.setAttribute("target", "_blank");
+      link.setAttribute("rel", "noopener noreferrer");
+    }
+  });
+});
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

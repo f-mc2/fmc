@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<style xmlns="http://purl.org/net/xbiblio/csl" version="1.0"
+  class="note" default-locale="en-US">
+  <info>
+    <title>CV — reverse chronological numbered with DOI+URL</title>
+    <id>http://example.org/styles/cv-date-desc-numbered</id>
+    <link href="http://example.org/styles/cv-date-desc-numbered" rel="self"/>
+    <updated>2025-09-20T00:00:00Z</updated>
+  </info>
+
+  <macro name="author">
+    <names variable="author">
+      <name and="text" delimiter=", " initialize-with="."/>
+      <substitute>
+        <names variable="editor"/>
+      </substitute>
+    </names>
+  </macro>
+
+  <macro name="year">
+    <date variable="issued">
+      <date-part name="year"/>
+      <date-part name="month" form="numeric-leading-zeros" prefix="-"/>
+    </date>
+  </macro>
+
+  <macro name="title">
+    <text variable="title" font-style="italic"/>    
+  </macro>
+
+  <macro name="where">
+    <choose>
+      <if type="article-journal">
+        <group delimiter=" ">
+          <text variable="container-title" text-case="sentence"/>
+          <group>
+            <text variable="volume" prefix=" "/>
+            <text variable="issue" prefix="(" suffix=")"/>            
+          </group>
+        </group>
+      </if>
+      <else>
+        <text variable="container-title"/>
+      </else>
+    </choose>
+  </macro>
+
+  <macro name="access">
+    <group delimiter=". ">
+      <choose>
+        <if variable="DOI">
+          <group delimiter=" ">
+            <text value="doi:"/>
+            <text variable="DOI"/>
+          </group>
+        </if>
+      </choose>
+      <choose>
+        <if variable="URL">
+          <group delimiter=" ">
+            <text value="Available at:"/>
+            <text variable="URL"/>
+          </group>
+        </if>
+      </choose>
+    </group>
+  </macro>
+
+  <!-- Citation layout not used here -->
+  <citation>
+    <layout>
+      <text variable="citation-number"/>
+    </layout>
+  </citation>
+
+  <bibliography entry-spacing="0" line-spacing="1" second-field-align="flush">
+    <sort>
+      <key variable="issued" sort="ascending"/>
+      <key variable="author"/>
+      <key variable="title"/>
+    </sort>
+    <layout>
+      <group delimiter=": ">
+        <group delimiter=" ">
+          <text macro="author"/>
+        </group>
+        <text macro="title"/>
+        <text macro="where"/>
+        <group delimiter=", ">
+          <text macro="year"/>
+        </group>S
+        <text macro="access"/>
+      </group>
+    </layout>
+  </bibliography>
+</style>
