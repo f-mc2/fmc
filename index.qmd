@@ -1,5 +1,7 @@
 ---
 title: "Home"
+format: html
+comments: false
 ---
 
 I was born and raised in <a href="https://sscnapoli.it/en" target="_blank" rel="noopener">Napoli</a> where I grew up eating pizza, reading books and manga, playing guitar, and, most importantly, wondering about abstractness during my BSc, MSc, and PhD at the <a href="http://www.unina.it/en_GB/home" target="_blank" rel="noopener">Università degli Studi di Napoli Federico II</a> under the supervision of G. Marmo.

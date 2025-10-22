@@ -1,0 +1,6 @@
+---
+title: "Sets and functions"
+date: 2025-10-22
+date-style: full
+date-modified: last modified
+---

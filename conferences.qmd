@@ -1,6 +1,7 @@
 ---
 title: "Conferences & Seminars"
 format: html
+comments: false
 ---
 
 ## Organization of conferences and workshops:

@@ -1,6 +1,9 @@
 ---
 title: "Timeline on fields of covariances"
 date: "2025-05-18"
+date-style: full
+date-modified: last modified
+draft: true
 tags:
   - idee
   - memento

@@ -1,14 +1,15 @@
 ---
-title: "Calculus (20124) - Bachelor in Applied Mathematics - UC3M"
+title: "Calculus (20124)"
 date: 2025-10-22
 date-style: full
 date-modified: last-modified
-description: "Calculus course for the  Bachelor in Applied Mathematics at UC3M"
+comments: false
+description: "Home for the Calculus course for the  Bachelor in Applied Mathematics at UC3M"
 ---
 
 # Introductory remarks
 
-These are the notes for the course of Calculus for the [Bachelor in Applied Mathematics](https://aplicaciones.uc3m.es/cpa/generaFicha?est=507&anio=2025&plan=554&asig=20124&idioma=2) at the [UC3M](https://www.uc3m.es/home) taught by [me](https://f-mc2.github.io/fmc/) in the academic year 2026/2027. 
+These are the notes for the [Calculus](https://aplicaciones.uc3m.es/cpa/generaFicha?est=507&anio=2025&plan=554&asig=20124&idioma=2) course for the Bachelor in Applied Mathematics at the [UC3M](https://www.uc3m.es/home) taught by [me](https://f-mc2.github.io/fmc/) in the academic year 2026/2027. 
 
 # Course-related stuff
 

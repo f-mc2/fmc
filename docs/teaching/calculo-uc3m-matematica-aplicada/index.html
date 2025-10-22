@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2025-10-22">
+<meta name="description" content="Home for the Calculus course for the Bachelor in Applied Mathematics at UC3M">
 
-<title>integrals – Florio M. Ciaglia</title>
+<title>Calculus (20124) – Florio M. Ciaglia</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -73,35 +75,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="../../css/style.css">
 </head>
@@ -326,7 +299,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../index_teaching.html">Teaching</a></li><li class="breadcrumb-item"><a href="../../teaching/calculus-uc3m-robotics/index.html">Calculus - Robotics Engineering - UC3M</a></li><li class="breadcrumb-item"><a href="../../teaching/calculus-uc3m-robotics/3.2 Integrals.html">Definite integrals and anti-derivatives</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../index_teaching.html">Teaching</a></li><li class="breadcrumb-item"><a href="../../teaching/calculo-uc3m-matematica-aplicada/index.html">Calculus (20124)</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -353,8 +326,8 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../teaching/calculus-uc3m-robotics/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Calculus - Robotics Engineering - UC3M</span></a>
+            <a href="../../teaching/calculo-uc3m-matematica-aplicada/index.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Calculus (20124)</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -362,104 +335,8 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../teaching/calculus-uc3m-robotics/1.1 Sets and functions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">1.1 Sets and functions</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../teaching/calculus-uc3m-robotics/1.2 Limits of scalar functions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Distance and intervals</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../teaching/calculus-uc3m-robotics/1.3 Derivatives of scalar functions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Derivatives of scalar functions</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../teaching/calculus-uc3m-robotics/1.4 Sequences and series.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Limits of numerical sequences</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../teaching/calculus-uc3m-robotics/1.5 Power series, trascendental functions, and Taylor series.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Power series</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../teaching/calculus-uc3m-robotics/1.6 Derivatives and extrema of scalar functions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Derivatives and local behavior</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../teaching/calculus-uc3m-robotics/1.7 Exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">1 Limits of scalar functions</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../teaching/calculus-uc3m-robotics/2.1 From 1 to many dimensions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">From 1 to many dimensions</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../teaching/calculus-uc3m-robotics/2.2 Limits of multivariable functions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Limits multivariable vector functions</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../teaching/calculus-uc3m-robotics/2.3 Derivatives and Taylor's theorem for multivariable functions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Derivatives and differentiability of multivariable functions</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../teaching/calculus-uc3m-robotics/2.4 Extrema of multivariable functions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Critical points and local extrema for multivariable scalar functions</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../teaching/calculus-uc3m-robotics/2.5 Exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Change of coordinates</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../teaching/calculus-uc3m-robotics/3.1 Antiderivatives.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Anti-derivatives of scalar functions</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../teaching/calculus-uc3m-robotics/3.2 Integrals.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Definite integrals and anti-derivatives</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../teaching/calculus-uc3m-robotics/3.3 Double integrals.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Double integrals</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../teaching/calculus-uc3m-robotics/3.4 Triple integrals.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Triple integrals</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../teaching/calculus-uc3m-robotics/3.5 Exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Anti-derivatives</span></a>
+  <a href="../../teaching/calculo-uc3m-matematica-aplicada/1.1 Sets and functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Sets and functions</span></a>
   </div>
 </li>
       </ul>
@@ -522,24 +399,6 @@ window.Quarto = {
           </a> 
       </div>
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../misc/2025-05-27 timeline on fields of covariances.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Timeline on fields of covariances</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../misc/Fundamentals of statistics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Fundamentals of statistics</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../misc/geodesics_dual_connections_qubit.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Geodesics of dual connections</span></a>
-  </div>
-</li>
       </ul>
   </li>
     </ul>
@@ -552,87 +411,118 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#definite-integrals-and-anti-derivatives" id="toc-definite-integrals-and-anti-derivatives" class="nav-link active" data-scroll-target="#definite-integrals-and-anti-derivatives">Definite integrals and anti-derivatives</a></li>
+  <li><a href="#introductory-remarks" id="toc-introductory-remarks" class="nav-link active" data-scroll-target="#introductory-remarks">Introductory remarks</a></li>
+  <li><a href="#course-related-stuff" id="toc-course-related-stuff" class="nav-link" data-scroll-target="#course-related-stuff">Course-related stuff</a>
+  <ul class="collapse">
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul></li>
+  <li><a href="#online-resources" id="toc-online-resources" class="nav-link" data-scroll-target="#online-resources">Online resources</a>
+  <ul class="collapse">
+  <li><a href="#wikipedia-in-english" id="toc-wikipedia-in-english" class="nav-link" data-scroll-target="#wikipedia-in-english">Wikipedia (in English)</a></li>
+  <li><a href="#mathematics-stack-exchange" id="toc-mathematics-stack-exchange" class="nav-link" data-scroll-target="#mathematics-stack-exchange">MATHEMATICS Stack Exchange</a></li>
+  <li><a href="#pauls-online-notes" id="toc-pauls-online-notes" class="nav-link" data-scroll-target="#pauls-online-notes">Paul’s Online Notes</a></li>
+  <li><a href="#libretexts-mathematics" id="toc-libretexts-mathematics" class="nav-link" data-scroll-target="#libretexts-mathematics">LibreTexts Mathematics</a></li>
+  <li><a href="#youtube-videos" id="toc-youtube-videos" class="nav-link" data-scroll-target="#youtube-videos">Youtube videos</a></li>
+  </ul></li>
+  <li><a href="#technical-notes" id="toc-technical-notes" class="nav-link" data-scroll-target="#technical-notes">Technical notes</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../index_teaching.html">Teaching</a></li><li class="breadcrumb-item"><a href="../../teaching/calculus-uc3m-robotics/index.html">Calculus - Robotics Engineering - UC3M</a></li><li class="breadcrumb-item"><a href="../../teaching/calculus-uc3m-robotics/3.2 Integrals.html">Definite integrals and anti-derivatives</a></li></ol></nav></header>
+<main class="content" id="quarto-document-content">
 
 
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../index_teaching.html">Teaching</a></li><li class="breadcrumb-item"><a href="../../teaching/calculo-uc3m-matematica-aplicada/index.html">Calculus (20124)</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Calculus (20124)</h1>
+</div>
+
+<div>
+  <div class="description">
+    Home for the Calculus course for the Bachelor in Applied Mathematics at UC3M
+  </div>
+</div>
 
 
+<div class="quarto-title-meta">
 
-<section id="definite-integrals-and-anti-derivatives" class="level1">
-<h1>Definite integrals and anti-derivatives</h1>
-<p>Consider the scalar function <span class="math inline">\(f\colon D\subseteq\mathbb{R}\rightarrow\mathbb{R}\)</span> and the closed and bounded interval <span class="math inline">\([a,b]\subseteq D\)</span>, and build the set <span class="math display">\[
-S_{[a,b]}^{f}:=\left\{(x,y)\in\mathbb{R}^{2}\,|\quad x\in[a,b],\;\;y=f(x)\right\} .
-\]</span> The notion of definite integral of <span class="math inline">\(f\)</span> over <span class="math inline">\([a,b]\)</span> gives rigorous meaning to the idea of measuring the area <span class="math inline">\(\mathrm{A}(S_{[a,b]}^{f})\)</span> of <span class="math inline">\(S_{[a,b]}^{f}\)</span> in such a way that this mathematical construction reduces to the results obtained by elementary geometry in simple cases like the area of a square (<em>e.g.</em>, <span class="math inline">\(f\colon \mathbb{R}\rightarrow \mathbb{R}\)</span> given by <span class="math inline">\(f(x)=1\)</span> over the interval <span class="math inline">\([0,1]\)</span>), or the area of a triangle (<em>e.g.</em>, <span class="math inline">\(f(x)=x\)</span> over the interval <span class="math inline">\([0,1]\)</span>).</p>
-<p>Let us start with a function <span class="math inline">\(f\colon D\subseteq\mathbb{R}\rightarrow \mathbb{R}\)</span> which is non-negative and increasing. The main idea behind the procedure of integrating <span class="math inline">\(f\)</span> is to approximate the area of <span class="math inline">\(\mathrm{A}(S_{[a,b]}^{f})\)</span> “from above” and “from below”. ^964215</p>
-<p>To better understand the idea, we visualize the procedure of finding the “approximation from below”, on the left, and “from above”, on the right (<a href="https://en.wikipedia.org/wiki/File:Riemann_Integration_and_Darboux_Lower_Sums.gif">source-left</a>, <a href="https://en.wikipedia.org/wiki/File:Riemann_Integration_and_Darboux_Upper_Sums.gif">source-right</a>):</p>
-<p>![[Integral_lower_upper_sum.gif]]</p>
-<p>Other helpful visualizations can be found <a href="https://github.com/FOSSEE/FSF-mathematics-python-code-archive/tree/master/FSF-2020/calculus/intro-to-calculus/riemann-integrals">here</a>.</p>
-<p>More mathematically, we first divide <span class="math inline">\([a,b]\)</span> in two intervals selecting <span class="math inline">\(c\in(a,b)\)</span>. The approximation of <span class="math inline">\(\mathrm{A}(S_{[a,b]}^{f})\)</span> from below will be given by <span class="math display">\[
-\mathrm{A}_{2}^{-}(S_{[a,b]}^{f})=(c-a)(f(a)) + (b-c)(f(c)).
-\]</span> This is nothing but the sum of the area of the rectangle with vertices <span class="math inline">\((a,0)\)</span>, <span class="math inline">\((c,0)\)</span>, <span class="math inline">\((a,f(a))\)</span>, <span class="math inline">\((c,f(a))\)</span> with the area of the rectangle with vertices <span class="math inline">\((c,0)\)</span>, <span class="math inline">\((b,0)\)</span>, <span class="math inline">\((c,f(c))\)</span>, <span class="math inline">\((b,f(c))\)</span>. Quite similarly, the approximation of <span class="math inline">\(\mathrm{A}(S_{[a,b]}^{f})\)</span> from above will be given by <span class="math display">\[
-\mathrm{A}_{2}^{+}(S_{[a,b]}^{f})=(c-a)(f(c)) + (b-c)(f(b)).
-\]</span></p>
-<p>We go on and divide <span class="math inline">\([a,b]\)</span> in 3 parts and compute <span class="math inline">\(\mathrm{A}_{3}^{-}(S_{[a,b]}^{f})\)</span> and <span class="math inline">\(\mathrm{A}_{3}^{+}(S_{[a,b]}^{f})\)</span>, and we go on increasing the number of parts in which we divide <span class="math inline">\([a,b]\)</span>. If the function <span class="math inline">\(f\)</span> is “nice enough”, this procedure will give us two sequences, say <span class="math inline">\(\mathrm{A}_{n}^{-}(S_{[a,b]}^{f})\)</span> and <span class="math inline">\(\mathrm{A}_{n}^{+}(S_{[a,b]}^{f})\)</span>, that converge to the same limit which is the area <span class="math inline">\(\mathrm{A}(S_{[a,b]}^{f})\)</span> we were looking for.</p>
-<p>The procedure outlined above <a href="https://en.wikipedia.org/wiki/Darboux_integral">can be generalized</a> to functions which are not necessarily non-negative, and not necessarily increasing, and all functions for which <span class="math inline">\(\mathrm{A}(S_{[a,b]}^{f})\)</span> actually exists are called (Darboux or Riemann) <strong>integrable</strong>. Of course the interpretation of the integral as an area fails for functions admitting negative values, unless we allow for a more flexible idea of areas which contemplates also negative values.</p>
-<p>For reasons that will be clear below, the integral <span class="math inline">\(\mathrm{A}(S_{[a,b]}^{f})\)</span> of <span class="math inline">\(f\colon D\subseteq\mathbb{R}\rightarrow\mathbb{R}\)</span> over <span class="math inline">\([a,b]\)</span> is denoted as <span class="math display">\[
-\mathrm{A}(S_{[a,b]}^{f})=\int_{a}^{b} f(x)\,\mathrm{d}x,
-\]</span> where it is clear that we are borrowing the notation from the anti-derivative operation.</p>
-<p>The existence of the integral of a function is not guaranteed in general.</p>
-<blockquote class="blockquote">
-<p>[!important] Proposition: continuous functions are integrable Let <span class="math inline">\(f\colon [a,b]\subset \mathbb{R}\rightarrow\mathbb{R}\)</span> be continuos except at most at <span class="math inline">\(a\)</span> or <span class="math inline">\(b\)</span>, then the integral <span class="math inline">\(\mathrm{A}(S_{[a,b]}^{f})\)</span> exists.</p>
-</blockquote>
-<p>As you might guess, evaluating the integral of a function by means of the approximation procedures described above is incredibly difficult, even for “nice” functions. However, some talented humans discovered a deep, beautiful, and perhaps surprising link between integrals and anti-derivatives that greatly simplify the task.</p>
-<blockquote class="blockquote">
-<p>[!important] Theorem: <a href="https://en.wikipedia.org/wiki/Fundamental_theorem_of_calculus#First_part">first fundamental theorem of calculus</a> Let <span class="math inline">\(f\colon [a,b]\rightarrow \mathbb{R}\)</span> be continuous. For every <span class="math inline">\(x\in [a,b]\)</span>, the function <span class="math display">\[
-F(x):=\int_{a}^{x}f(t)\,\mathrm{d}t =\mathrm{A}(S_{[a,x]}^{f})
-\]</span> is continuous on <span class="math inline">\([a,b]\)</span> and differentiable in <span class="math inline">\((a,b)\)</span>. Moreover, its derivative satisfies <span class="math display">\[
-F'(x) =f(x)
-\]</span> which means that <span class="math inline">\(F(x)\)</span> is an anti-derivative of <span class="math inline">\(f(x)\)</span>.</p>
-</blockquote>
-<p>^0523d5</p>
-<blockquote class="blockquote">
-<p>[!important] Theorem: <a href="https://en.wikipedia.org/wiki/Fundamental_theorem_of_calculus#Second_part">second fundamental theorem of calculus</a> Let <span class="math inline">\(f\colon [a,b]\rightarrow\mathbb{R}\)</span> be such that it admits a continuous anti-derivative <span class="math inline">\(F\)</span> at all <span class="math inline">\(x\in (a,b)\)</span>. Then, if <span class="math inline">\(f\)</span> is integrable it holds <span class="math display">\[
-\mathrm{A}(S_{[a,b]}^{f})=\int_{a}^{b}f(t)\,\mathrm{d}t=F(b) - F(a) .
-\]</span></p>
-</blockquote>
-<p>Even if the two theorems above are similar, they are different. For instance, the first one assumes <span class="math inline">\(f\)</span> to be continuous so that its anti-derivative is a [[1.3 Derivatives of scalar functions#^c07f2b|<span class="math inline">\(C^{1}\)</span>-function]], while the second one only assumes <span class="math inline">\(F\)</span> to be differentiable. Then, the first one determines the anti-derivative <span class="math inline">\(F\)</span> uniquely since <span class="math display">\[
-F(a)=\int_{a}^{a}f(t)\,\mathrm{d}t = \mathrm{A}(S_{[a,a]}^{f}) =0
-\]</span> because the area over a single point is <span class="math inline">\(0\)</span>. However, we know that <span class="math inline">\(G(x)=F(x) + c\)</span> with <span class="math inline">\(c\in\mathbb{R}\)</span> is another good anti-derivative. Indeed, <span class="math inline">\(G(x)\)</span> can be used to compute the integral of <span class="math inline">\(f\)</span> using the second theorem since <span class="math display">\[
-F(b)\overbrace{=}^{\mathrm{Thm}\,1}\mathrm{A}(S_{[a,b]}^{f})=\int_{a}^{b}f(t)\mathrm{d}t\overbrace{=}^{\mathrm{Thm}\,2}G(b) - G(a)\overbrace{=}^{G(x)=F(x)+c} F(b) +c - F(a) - c \overbrace{=}^{F(a)=0} F(b) .
-\]</span></p>
-<p>In the following, when computing <span class="math inline">\(\mathrm{A}(S_{[a,b]}^{f})\)</span> we simply look for an anti-derivative <span class="math inline">\(F\)</span> of <span class="math inline">\(f\)</span> and then write <span class="math inline">\(\mathrm{A}(S_{[a,b]}^{f})=F(b)-F(a)\)</span>.</p>
-<p>We list now some important results concerning definite integral.</p>
-<blockquote class="blockquote">
-<p>[!important] Proposition: properties of the integral Let <span class="math inline">\(f,g\colon[a,b]\subset\mathbb{R}\rightarrow\mathbb{R}\)</span> be integrable, and let <span class="math inline">\(\alpha,\beta\in\mathbb{R}\)</span>. It holds that <span class="math display">\[
-\begin{split}
-\int_{c}^{c}f(t)\,\mathrm{d}t&amp;=0 \\ &amp; \\
-\int_{c}^{d}f(t)\,\mathrm{d}t&amp;= - \int_{d}^{c}f(t)\,\mathrm{d}t \\ &amp; \\ \int_{a}^{b}\left(\alpha f(t) + \beta g(t)\right) \,\mathrm{d}t &amp;= \alpha \int_{a}^{b}f(t) \,\mathrm{d}t+ \beta \int_{a}^{b}g(t) \,\mathrm{d}t ,
-\end{split}
-\]</span> where the last property is known as the <strong>linearity of the integral</strong>.</p>
-</blockquote>
-<blockquote class="blockquote">
-<p>[!important] Proposition: interval additivity Let <span class="math inline">\(a&lt;b&lt;c\)</span> be real numbers. The function <span class="math inline">\(f\colon [a,c]\rightarrow\mathbb{R}\)</span> is integrable on <span class="math inline">\([a,c]\)</span> if and only if it is integrable in <span class="math inline">\([a,b]\)</span> and <span class="math inline">\([b,c]\)</span>. Moreover, it holds <span class="math display">\[
-\int_{a}^{c}f\;\mathrm{d}x = \int_{a}^{b}f\;\mathrm{d}x + \int_{b}^{c}f\;\mathrm{d}x .
-\]</span> In particular, a function <span class="math inline">\(f\colon [a,b]\rightarrow \mathbb{R}\)</span> which is continuous except at a finite (but perhaps arbitrarily big) number of points in <span class="math inline">\([a,b]\)</span> is integrable in <span class="math inline">\([a,b]\)</span>.</p>
-</blockquote>
-<p>^54f5d8</p>
-<blockquote class="blockquote">
-<p>[!important] Proposition Let <span class="math inline">\(f\colon[a,b]\rightarrow\mathbb{R}\)</span> be continuous, and let <span class="math inline">\(g_{1},g_{2}\colon(a,b)\rightarrow\)</span> be differentiable. Then <span class="math display">\[
-H(x):=\int_{g_{1}(x)}^{g_{2}(x)}f(t)\;\mathrm{d}t
-\]</span> is differentiable in <span class="math inline">\((a,b)\)</span> and it is such that <span class="math display">\[
-H'(x)=f(g_{2}(x))\,g_{2}'(x) - f(g_{1}(x))\,g_{1}'(x)
-\]</span> for all <span class="math inline">\(x\in (a,b)\)</span>.</p>
-</blockquote>
-<blockquote class="blockquote">
-<p>[!important] Proposition (Change of variables for definite integrals) Let <span class="math inline">\(g\colon[a,b]\rightarrow \mathbb{R}\)</span> be continuous and differentiable in <span class="math inline">\((a,b)\)</span>, set <span class="math inline">\(I=g([a,b])\)</span>, and let <span class="math inline">\(f\colon I\subset\mathbb{R}\rightarrow \mathbb{R}\)</span> be continuous. Then <span class="math display">\[
-\int_{g(a)}^{g(b)}\,f(t)\;\mathrm{d}t= \int_{a}^{b}\,f\circ g(x)\;\mathrm{d}x .
-\]</span></p>
-</blockquote>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">October 22, 2025</p>
+    </div>
+  </div>
+  
+    <div>
+    <div class="quarto-title-meta-heading">Modified</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date-modified">October 22, 2025</p>
+    </div>
+  </div>
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="introductory-remarks" class="level1">
+<h1>Introductory remarks</h1>
+<p>These are the notes for the <a href="https://aplicaciones.uc3m.es/cpa/generaFicha?est=507&amp;anio=2025&amp;plan=554&amp;asig=20124&amp;idioma=2">Calculus</a> course for the Bachelor in Applied Mathematics at the <a href="https://www.uc3m.es/home">UC3M</a> taught by <a href="https://f-mc2.github.io/fmc/">me</a> in the academic year 2026/2027.</p>
+</section>
+<section id="course-related-stuff" class="level1">
+<h1>Course-related stuff</h1>
+<p>Studying only the notes presented here <strong>DOES NOT</strong> grant a full understanding of the concepts and ideas discussed in the course. Therefore, it is always better to rely on the bibliographic references suggested in the <a href="https://aplicaciones.uc3m.es/cpa/generaFicha?est=507&amp;anio=2025&amp;plan=554&amp;asig=20124&amp;idioma=2"><em>Ficha Reina</em></a> of the course for both theory and exercises.</p>
+<p>Moreover, concerning exercises, I warmly suggest to collaborate with other students in solving exercises, and to try as many exercises as possible from as many sources as possible. For instance, additional exercises can be found <a href="https://tutorial.math.lamar.edu/Problems/CalcI/CalcI.aspx">here</a> and <a href="https://tutorial.math.lamar.edu/ProblemsNS/CalcI/CalcI.aspx">here</a></p>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<p>The following are the references which I believe provides the basic understanding necessary to pass the exam:</p>
+<ul>
+<li><a href="https://www.wiley.com/en-us/Calculus%3A+One+and+Several+Variables%2C+10th+Edition-p-9780471698043">Salas, Etgen, Hille - Calculus: One and Several Variables (tenth edition)</a>;</li>
+</ul>
+<p>Additional references, for a deeper understanding and an overall better enjoyment of the beautiful subject Calculus (or better, Analysis) is, are:</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Principles_of_Mathematical_Analysis">Rudin - Principle of Mathematical Analysis (third edition)</a>;</li>
+<li><a href="https://mathpop.com/">Spivak - Calculus (third/fourth edition)</a>.</li>
+<li><a href="https://link.springer.com/book/10.1007/978-981-19-7261-4">Tao - Analysis I (fourth edition)</a></li>
+</ul>
+</section>
+</section>
+<section id="online-resources" class="level1">
+<h1>Online resources</h1>
+<p>In this digital era, a lot of useful resources are available out there in the web. Below there is a list of some of the resources I personally use. Of course, you are strongly encouraged to explore the web and find your own personal resources (and perhaps share them).</p>
+<section id="wikipedia-in-english" class="level2">
+<h2 class="anchored" data-anchor-id="wikipedia-in-english">Wikipedia (in English)</h2>
+<p>It is almost impossible not to start this list from <a href="https://en.wikipedia.org/wiki/Main_Page">Wikipedia (in English)</a>. Whenever I encounter something new or I have a little doubt on something I should know, I consult Wikipedia together with the sources and further references it provides. However, I would not recommend to rely on Wikipedia as your primary and sole reference for studying.</p>
+</section>
+<section id="mathematics-stack-exchange" class="level2">
+<h2 class="anchored" data-anchor-id="mathematics-stack-exchange">MATHEMATICS Stack Exchange</h2>
+<p>A useful website to consult in order to get additional explanations or help with exercises in basically all fields of Mathematics is <a href="https://math.stackexchange.com/">MATHEMATICS Stack Exchange</a>. However, before asking a question there, make sure to search in the website for questions similar to the one you want to ask. Indeed, chances are that other people have already asked the same question, and they already received good answers you may profit from. Moreover, if asking for help with an exercise, make sure to explain what you did and why you are stucked. That is, always try to solve exercises on your own and then ask for help. Bear in mind that you need to know some <a href="https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference">basics of LaTeX</a> to properly write mathematical expressions on <a href="https://math.stackexchange.com/">MATHEMATICS Stack Exchange</a>.</p>
+</section>
+<section id="pauls-online-notes" class="level2">
+<h2 class="anchored" data-anchor-id="pauls-online-notes">Paul’s Online Notes</h2>
+<p><a href="https://tutorial.math.lamar.edu/">This amazing website</a> can be consulted for additional explanations/exercises, as a source of additional studying material, as well as for the simple fact that it is very nice to read. Moreover, among other things, you can find in it some very useful <a href="https://tutorial.math.lamar.edu/Extras/CheatSheets_Tables.aspx">cheatsheets</a> on algebra, trigonometry, and calculus.</p>
+</section>
+<section id="libretexts-mathematics" class="level2">
+<h2 class="anchored" data-anchor-id="libretexts-mathematics">LibreTexts Mathematics</h2>
+<p><a href="https://math.libretexts.org/Bookshelves">This website</a> contains some textbooks on Mathematics that are completely free to access, contains exercises, and can be freely downloaded!</p>
+</section>
+<section id="youtube-videos" class="level2">
+<h2 class="anchored" data-anchor-id="youtube-videos">Youtube videos</h2>
+<ol type="1">
+<li>In general in your life, you are strongly encouraged to check <a href="https://www.youtube.com/c/3blue1brown/featured">3Blue1Brown’s channel</a> because it contains beautiful videos explaining different concepts related to mathematics(<a href="https://www.youtube.com/watch?v=mH0oCDa74tE">on monsters and group theory</a>), physics (<a href="https://www.youtube.com/watch?v=MBnnXbOM5S4&amp;list=PLZHQObOWTQDPHLHBuY0nPbAQ_WGEjtzLW&amp;index=7">a primer on Heisenberg’s uncertainty principle</a>) and other things (<a href="https://www.youtube.com/watch?v=aircAruvnKk&amp;list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi">how does AI work?</a>, <a href="https://www.youtube.com/watch?v=bBC-nXj3Ng4">what is Bitcoin?</a>), in a clear and engaging way, using amazing graphical animations that help conveying the message. In relation to the course, I suggest the playlist <a href="https://www.youtube.com/c/3blue1brown/playlists">essence of Calculus</a> for a nice introduction to one-variable calculus.</li>
+<li>I did not have time to explore in detail <a href="https://www.youtube.com/c/DrTreforBazett/playlists">Trefor Bazett’s Calculus playlists</a>, but I think it is another good place to start for having more graphical explanations of the arguments discussed in the course.</li>
+</ol>
+</section>
+</section>
+<section id="technical-notes" class="level1">
+<h1>Technical notes</h1>
+<ul>
+<li>The notes are written using the amazing software <a href="https://quarto.org/">Quarto for Linux</a> and deployed through <a href="https://quarto.org/docs/publishing/github-pages.html">GitHub pages</a>.</li>
+<li>Unless otherwise specified, everything here is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0 license</a>.</li>
+</ul>
 
 
 </section>

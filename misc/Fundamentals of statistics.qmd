@@ -1,6 +1,9 @@
 ---
 title: "Fundamentals of statistics"
 date: "2025-09-18"
+date-style: full
+date-modified: last modified
+draft: true
 ---
 
 The starting point will be operational, but really limited. We start with situations in which we have a finite and discrete outcome space $\Omega$ (dices, coins, alphabets, and so on).

@@ -1,5 +1,7 @@
 ---
 title: "Teaching"
+format: html
+comments: false
 listing:
   contents: teaching/*/index.qmd
   type: table     
