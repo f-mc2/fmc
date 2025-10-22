@@ -1,0 +1,64 @@
+---
+title: "Calculus (20124) - Bachelor in Applied Mathematics - UC3M"
+date: 2025-10-22
+date-style: full
+date-modified: last-modified
+description: "Calculus course for the  Bachelor in Applied Mathematics at UC3M"
+---
+
+# Introductory remarks
+
+These are the notes for the course of Calculus for the [Bachelor in Applied Mathematics](https://aplicaciones.uc3m.es/cpa/generaFicha?est=507&anio=2025&plan=554&asig=20124&idioma=2) at the [UC3M](https://www.uc3m.es/home) taught by [me](https://f-mc2.github.io/fmc/) in the academic year 2026/2027. 
+
+# Course-related stuff
+
+Studying only the notes presented here **DOES NOT** grant a full understanding of the concepts and ideas discussed in the course. Therefore, it is always better to rely on the bibliographic references suggested in the [_Ficha Reina_](https://aplicaciones.uc3m.es/cpa/generaFicha?est=507&anio=2025&plan=554&asig=20124&idioma=2) of the course for both theory and exercises.
+
+Moreover, concerning exercises, I warmly suggest to collaborate with other students in solving exercises, and to try as many exercises as possible from as many sources as possible. For instance, additional exercises can be found [here](https://tutorial.math.lamar.edu/Problems/CalcI/CalcI.aspx) and [here](https://tutorial.math.lamar.edu/ProblemsNS/CalcI/CalcI.aspx)
+
+## References
+
+The following are the references which I believe provides the basic understanding necessary to pass the exam:
+
+- [Salas, Etgen, Hille - Calculus: One and Several Variables (tenth edition)](https://www.wiley.com/en-us/Calculus%3A+One+and+Several+Variables%2C+10th+Edition-p-9780471698043);
+
+Additional references, for a deeper understanding and an overall better enjoyment of the beautiful subject Calculus (or better, Analysis) is, are:
+
+- [Rudin - Principle of Mathematical Analysis (third edition)](https://en.wikipedia.org/wiki/Principles_of_Mathematical_Analysis);
+- [Spivak - Calculus (third/fourth edition)](https://mathpop.com/).
+- [Tao - Analysis I (fourth edition)](https://link.springer.com/book/10.1007/978-981-19-7261-4)
+
+# Online resources
+
+In this digital era, a lot of useful resources are available out there in the web. Below there is a list of some of the resources I personally use. Of course, you are strongly encouraged to explore the web and find your own personal resources (and perhaps share them).
+
+## Wikipedia (in English)
+
+It is almost impossible not to start this list from [Wikipedia (in English)](https://en.wikipedia.org/wiki/Main_Page). Whenever I encounter something new or I have a little doubt on something I should know, I consult Wikipedia together with the sources and further references it provides. However, I would not recommend to rely on Wikipedia as your primary and sole reference for studying. 
+
+## MATHEMATICS Stack Exchange
+
+A useful website to consult in order to get additional explanations or help with exercises in basically all fields of Mathematics is [MATHEMATICS Stack Exchange](https://math.stackexchange.com/). However, before asking a question there, make sure to search in the website for questions similar to the one you want to ask. Indeed, chances are that other people have already asked the same question, and they already received good answers you may profit from. Moreover, if asking for help with an exercise, make sure to explain what you did and why you are stucked. That is, always try to solve exercises on your own and then ask for help. Bear in mind that you need to know some [basics of LaTeX](https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference) to properly write mathematical expressions on [MATHEMATICS Stack Exchange](https://math.stackexchange.com/).
+
+## Paul's Online Notes
+
+[This amazing website](https://tutorial.math.lamar.edu/) can be consulted for additional explanations/exercises, as a source of additional studying material, as well as for the simple fact that it is very nice to read. Moreover, among other things, you can find in it some very useful [cheatsheets](https://tutorial.math.lamar.edu/Extras/CheatSheets_Tables.aspx) on algebra, trigonometry, and calculus.
+
+## LibreTexts Mathematics
+
+[This website](https://math.libretexts.org/Bookshelves) contains some textbooks on Mathematics that are completely free to access, contains exercises, and can be freely downloaded!
+
+## Youtube videos
+
+1) In general in your life, you are strongly encouraged to check [3Blue1Brown's channel](https://www.youtube.com/c/3blue1brown/featured) because it contains beautiful videos explaining different concepts related to mathematics([on monsters and group theory](https://www.youtube.com/watch?v=mH0oCDa74tE)), physics ([a primer on Heisenberg's uncertainty principle](https://www.youtube.com/watch?v=MBnnXbOM5S4&list=PLZHQObOWTQDPHLHBuY0nPbAQ_WGEjtzLW&index=7)) and other things ([how does AI work?](https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi), [what is Bitcoin?](https://www.youtube.com/watch?v=bBC-nXj3Ng4)), in a clear and engaging way, using amazing graphical animations that help conveying the message. In relation to the course, I suggest the playlist [essence of Calculus](https://www.youtube.com/c/3blue1brown/playlists) for a nice introduction to one-variable calculus.
+2) I did not have time to explore in detail [Trefor Bazett's Calculus playlists](https://www.youtube.com/c/DrTreforBazett/playlists), but I think it is another good place to start for having more graphical explanations of the arguments discussed in the course. 
+
+# Technical notes 
+
+- The notes are written using the amazing software [Quarto for Linux](https://quarto.org/) and deployed through [GitHub pages](https://quarto.org/docs/publishing/github-pages.html). 
+- Unless otherwise specified, everything here is licensed under a [CC BY-SA 4.0 license](https://creativecommons.org/licenses/by-sa/4.0/).
+
+
+
+
+
