@@ -1,5 +1,7 @@
 ---
 title: "Miscellanea"
+format: html
+comments: false
 listing:
   contents: /misc/.
   type: table

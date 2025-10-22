@@ -1,7 +1,11 @@
 project:
   type: website
   output-dir: docs   # GitHub Pages looks here
-
+  render:
+    - "**/*.qmd"
+    - "!**/_drafts/**"
+    - "!**/*-draft.qmd"
+    - "!**/*-draft.ipynb"
 website:
   title: "Florio M. Ciaglia"
   description: "You thought he was a man, but he only was a muffin."
@@ -42,6 +46,18 @@ website:
         contents:
         - auto: misc/*.{qmd,ipynb,md}
           sort: "date desc"
+  comments:
+    giscus:
+      repo: f-mc2/personal-page-giscus
+      repo-id: R_kgDOQHY3cg
+      category: General
+      category-id: DIC_kwDOQHY3cs4Cw8t9
+      mapping: pathname
+      reactions-enabled: true
+      input-position: bottom
+      theme:
+        light: light
+        dark: dark_dimmed
 
 serve:
   port: 4329

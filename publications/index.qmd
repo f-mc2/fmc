@@ -1,6 +1,7 @@
 ---
 title: "Publications"
 format: html
+comments: false
 ---
 
 All my publications are available either on my [arXiv page](https://arxiv.org/a/ciaglia_f_1.html) or in open access on the publisher page.
