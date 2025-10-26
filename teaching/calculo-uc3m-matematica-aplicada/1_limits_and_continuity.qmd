@@ -1,0 +1,197 @@
+---
+title: "Limits and continuity of real-valued functions"
+date: 2025-10-23
+date-style: full
+date-modified: last-modified
+number-sections: true
+---
+# Introduction {#sec-introduction}
+
+Let's start with something dirt: money and taxes.
+
+[Capitulo 15 - Gravamen de la base liquidable del ahorro](https://sede.agenciatributaria.gob.es/static_files/Sede/Biblioteca/Manual/Practicos/IRPF/IRPF-2024/ManualRenta2024Tomo1_es_es.pdf)
+Suppose y
+
+
+
+# Distance and intervals
+
+Let $f:X\rightarrow Y$ be a function. The notion of limit formalizes, rigorously, what happens to the output when the inputs gets closer and closer to a fixed value. Roughly speaking, we write
+
+$$
+\lim_{x\rightarrow x_{0}} f(x)=l 
+$$
+
+meaning that the output $f(x)$ gets closer to $l$ if the input $x$ is closer to $x_{0}$. 
+
+::: {.callout-important title="Remark"}
+Note that, in general, it is not always true that a limit exists.
+:::
+
+
+In order to make things precise, we first need to understand what does it mean for a real number to be closer to a fixed real number. Essentially, we need to specify a way to measure distances between real numbers.
+
+Intuitively speaking, if we fix $x_{0}\in \mathbb{R}$, we say that $x_{1}$ is closer than $x_{2}$ if the distance $\Delta_{1}$ between $x_{0}$ and $x_{1}$ is smaller than the distance $\Delta_{2}$ between $x_{2}$ and $x_{0}$, which brings the question: what is the distance between two real numbers? Graphycally speaking,  we can exploit the idea that real numbers make up a straight line, and obtain the distance between two points as the length, as would be measured by a ruler, of the piece of the real line connecting the two points (see @fig-realline-distance). 
+
+::: {.figure #fig-realline-distance}
+```{=html}
+<script type="text/tikz">
+\begin{tikzpicture}[x=1cm,y=1cm]
+% --- real line with three dots at both ends ---
+\draw [dash dot] (-5.2,0) -- (-4.9,0);
+\draw [thick] (-4.8,0) -- (4.8,0);
+\draw [dash dot] (4.9,0) -- (5.2,0);
+
+% Origin tick
+\draw (0,0) node[below] {$0$} -- ++(0,0.12);
+
+% Choose any positions with 0 < x0 < x1 < x2
+\def\xzero{0.8}
+\def\xone{3.5}
+\def\xtwo{-4.0}
+
+% Marks and labels (no \foreach)
+\fill (\xzero,0) circle (1.4pt);
+\draw (\xzero,0.12) -- (\xzero,-0.12) node[below,yshift=-2pt] {$x_{0}$};
+
+\fill (\xone,0) circle (1.4pt);
+\draw (\xone,0.12) -- (\xone,-0.12) node[below,yshift=-2pt] {$x_{1}$};
+
+\fill (\xtwo,0) circle (1.4pt);
+\draw (\xtwo,0.12) -- (\xtwo,-0.12) node[below,yshift=-2pt] {$x_{2}$};
+
+% Shape parameters (height of brace and how far the "curls" inset)
+\def\H{0.45}    % vertical size of brace
+\def\Inset{0.18}% how far the inner curls are from the endpoints
+
+%from x0 to x1 
+\draw (\xzero,0) to[out=270,in=180] (\xzero+\Inset,\H) -- (\xone-\Inset,\H) to[out=0,in=270] (\xone,0);
+
+% Delta1
+\draw (\xone/2 + \xzero/2,0.4) -- (\xone/2 + \xzero/2,0.7) node[above] {$\Delta_{1}$};
+
+% from x0 to x2 
+\draw (\xtwo,0) to[out=270,in=180]  (\xtwo+\Inset,\H) -- (\xzero-\Inset,\H) to[out=0,in=90]    (\xzero,0);
+
+% Delta2
+\draw (\xtwo/2 + \xzero/2,0.4) -- (\xtwo/2 + \xzero/2,0.7) node[above] {$\Delta_{2}=$};
+
+\end{tikzpicture}
+</script>
+```
+Graphical depiction of distances between real numbers on the real line.
+:::
+
+In mathematical symbols, we have
+$$
+\Delta_{1}\equiv|x_{1}- x_{0}|\leq |x_{2} - x_{0}|\equiv \Delta_{2}.
+$$
+
+
+
+::: {.callout-note title="Euclidean distance function"}
+The two-point function $d\colon \mathbb{R}\times\mathbb{R}\rightarrow\mathbb{R}$ given by
+$$
+d(x,y)=\sqrt{(x-y)^{2}}=|x-y|
+$${#eq-euclidean-distance-function}
+is referred to as a **Euclidean distance function** on $\mathbb{R}$.
+:::
+
+ 
+ 
+::: {.callout-important title="Remark"}
+An intuitive reason for $d$ in @eq-euclidean-distance-function to measure distances follows from our direct experience, for instance with ruled paper (can you guess why/how?),  but there are also more abstract reasons connected with the theory of [metric spaces](https://en.wikipedia.org/wiki/Metric_space).
+:::
+
+Besides the notion of distance between real numbers, we need to introduce various types of intervals. These objects help in formalizing the way $x$ approaches $x_{0}$.
+
+::: {.callout-note title="Open and closed intervals"}
+::: {#def-open-closed-intervals} 
+
+ 
+Let $a<b\in\mathbb{R}\cup\{+\infty\}\cup\{-\infty\}$.
+We define the **open interval** $(a,b)$ as the subset of $\mathbb{R}$ given by
+$$
+(a,b):= \{x\in\mathbb{R}\,|\quad a< x < b \}.
+$$ {#eq-open-interval}
+If either $a=-\infty$ or $b=+\infty$, the interval is said to be **unbounded**.
+
+When $a\neq-\infty$ and $b\neq+\infty$, we define the closed interval $[a,b]$ as
+$$
+[a,b]:= \{x\in\mathbb{R}\,|\quad a\leq x \leq b \}.
+$$
+
+Intuitively speaking, the interval $(a,b)$ is _open_ because its boundary points **are not** part of it, while $[a,b]$ is _closed_ because its boundary points **are** part of it.
+:::
+:::
+
+Not all intervals are either open or closed. For instance, when $a\neq-\infty$, we can define the interval $[a,b)$ as
+$$
+[a,b) := \{x\in\mathbb{R}\,|\quad a\leq x < b\},
+$$
+while, when $b\neq+\infty$, we can define the interval $(a,b]$ as
+$$
+(a,b] := \{x\in\mathbb{R}\,|\quad a < x \leq b\}, 
+$$
+and it's clear that these interval are neither open nor closed in the sense of @def-open-closed-intervals
+
+
+
+
+In the following, it will be useful to also consider the **symmetric open interval**
+$$
+I_{x_{0},\epsilon}\equiv(x_{0}-\epsilon, x_{0}+\epsilon)=\{x\in\mathbb{R}\,|\quad x_{0}-\epsilon < x < x_{0} + \epsilon\}
+$$
+centered at $x_{0}\in\mathbb{R}$ with length $2\epsilon$ with $\epsilon>0$. It is not hard to see that if $x\in I_{x_{0},\epsilon}$, then either $x-x_{0}< \epsilon$  or $x_{0} - x <\epsilon$. It then follows that $|x-x_{0}|<\epsilon$, so that
+$$ 
+I_{x_{0},\epsilon}=\{x\in\mathbb{R}\,| \quad d(x_{0},x)<\epsilon\}. 
+$$
+Therefore, the symmetric open intervals of $\mathbb{R}$ may be determined through the distance function.
+
+
+
+
+# The definition of limit
+
+
+
+
+# Properties of limits
+
+ 
+ 
+Let us start considering the constant function $f(x)=c$ with $x\in\mathbb{R}$, and prove that
+$$
+\lim_{x\rightarrow x_{0}} f(x)= f(x_{0}).
+$$
+Indeed, it immediately follows that $|f(x) - f(x_{0})|=0<\epsilon$ for every $x\in\mathbb{R}$ and every $\epsilon>0$.
+Now, let us consider the function $f(x)=x$, and prove that
+$$ 
+\lim_{x\rightarrow x_{0}} f(x)= f(x_{0}). 
+$$
+Again, it is immediate to check that $|f(x) - f(x_{0})|=|x - x_{0}|$, and thus, taking $\delta_{\epsilon}< \epsilon$, we get that $|x - x_{0}|<\delta_{\epsilon}$ implies $|f(x) - f(x_{0})|<\epsilon$. 
+Finally, let us consider the function $f(x)=x^{2}$, and prove that 
+$$ 
+\lim_{x\rightarrow x_{0}} f(x)= f(x_{0}) 
+$$
+for every $x_{0}\in\mathbb{R}$.  We have 
+$$ 
+|x^{2} - x_{0}^{2}| =|(x+x_{0})(x-x_{0})|\leq |x + x_{0}||x-x_{0}| . 
+$$
+Recall that we must check that $|f(x) - f(x_{0})|< \epsilon$ whenever $|x - x_{0}|<\delta$, with $\delta>0$ to be determined depending on $\epsilon>0$.  A direct computation shows that 
+$$ 
+| x+ x_{0}| =|x - x_{0} + 2x_{0}|\leq |x - x_{0}| + 2|x_{0}| 
+$$
+so that 
+$$ 
+|x^{2} - x_{0}^{2}|\leq (|x - x_{0}| + 2|x_{0}|)\,|x-x_{0}| < (2|x_{0}| + \delta_{\epsilon})\,\delta_{\epsilon}. 
+$$
+Therefore, if 
+$$ 
+\delta_{\epsilon}^{2} + 2|x_{0}| \delta_{\epsilon} - \epsilon<0 
+$$
+we are done. By solving the previous [quadratic equation](https://en.wikipedia.org/wiki/Quadratic_equation) in the variable $\delta_{\epsilon}$ we obtain the condition 
+$$ 
+0 < \delta_{\epsilon} <  \sqrt{x^{2}_{0} + \epsilon} -|x_{0}| = \sqrt{x^{2}_{0} + \epsilon} - \sqrt{x^{2}_{0}}. 
+$$
+

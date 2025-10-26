@@ -65,7 +65,12 @@ serve:
 
 format:
   html:
-    include-after-body: includes/after-body.html
+    include-in-header:
+      - text: |
+          <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css">
+    include-after-body: 
+      - includes/tikz-preamble.html
+      - includes/after-body.html
     theme: 
       light: cosmo    
       dark: darkly    

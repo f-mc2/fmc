@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-10-22">
+<meta name="dcterms.date" content="2025-10-23">
 
-<title>Sets and functions – Florio M. Ciaglia</title>
+<title>Limits and continuity of real-valued functions – Florio M. Ciaglia</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -74,6 +74,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../css/style.css">
 </head>
@@ -298,7 +327,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../index_teaching.html">Teaching</a></li><li class="breadcrumb-item"><a href="../../teaching/calculo-uc3m-matematica-aplicada/index.html">Calculus (20124)</a></li><li class="breadcrumb-item"><a href="../../teaching/calculo-uc3m-matematica-aplicada/1.1 Sets and functions.html">Sets and functions</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../index_teaching.html">Teaching</a></li><li class="breadcrumb-item"><a href="../../teaching/calculo-uc3m-matematica-aplicada/index.html">Calculus (20124)</a></li><li class="breadcrumb-item"><a href="../../teaching/calculo-uc3m-matematica-aplicada/limits_and_continuity.html">Limits and continuity of real-valued functions</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -334,13 +363,13 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../teaching/calculo-uc3m-matematica-aplicada/1.1 Sets and functions.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../teaching/calculo-uc3m-matematica-aplicada/1.1 Sets and functions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Sets and functions</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../teaching/calculo-uc3m-matematica-aplicada/limits_and_continuity.html" class="sidebar-item-text sidebar-link">
+  <a href="../../teaching/calculo-uc3m-matematica-aplicada/limits_and_continuity.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Limits and continuity of real-valued functions</span></a>
   </div>
 </li>
@@ -411,16 +440,22 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#sec-introduction" id="toc-sec-introduction" class="nav-link active" data-scroll-target="#sec-introduction"><span class="header-section-number">1</span> Introduction</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../index_teaching.html">Teaching</a></li><li class="breadcrumb-item"><a href="../../teaching/calculo-uc3m-matematica-aplicada/index.html">Calculus (20124)</a></li><li class="breadcrumb-item"><a href="../../teaching/calculo-uc3m-matematica-aplicada/1.1 Sets and functions.html">Sets and functions</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../index_teaching.html">Teaching</a></li><li class="breadcrumb-item"><a href="../../teaching/calculo-uc3m-matematica-aplicada/index.html">Calculus (20124)</a></li><li class="breadcrumb-item"><a href="../../teaching/calculo-uc3m-matematica-aplicada/limits_and_continuity.html">Limits and continuity of real-valued functions</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Sets and functions</h1>
+<h1 class="title">Limits and continuity of real-valued functions</h1>
 </div>
 
 
@@ -431,7 +466,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">October 22, 2025</p>
+      <p class="date">October 23, 2025</p>
     </div>
   </div>
   
@@ -449,9 +484,16 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><a href="../../teaching/calculo-uc3m-matematica-aplicada/limits_and_continuity.html#eq-test">test</a></p>
+<section id="sec-introduction" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Introduction</h1>
+<p>Let’s start with something dirt: money and taxes.</p>
+<p><a href="https://sede.agenciatributaria.gob.es/static_files/Sede/Biblioteca/Manual/Practicos/IRPF/IRPF-2024/ManualRenta2024Tomo1_es_es.pdf">Capitulo 15 - Gravamen de la base liquidable del ahorro</a> Suppose y</p>
+<p><span id="eq-test"><span class="math display">\[
+\partial t
+\tag{1}\]</span></span></p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script>

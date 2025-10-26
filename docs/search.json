@@ -290,5 +290,70 @@
       "Publications",
       "Preprints"
     ]
+  },
+  {
+    "objectID": "teaching/calculo-uc3m-matematica-aplicada/limits and continuity.html",
+    "href": "teaching/calculo-uc3m-matematica-aplicada/limits and continuity.html",
+    "title": "Limits and continuity of real-valued functions",
+    "section": "",
+    "text": "1 Introduction\nLet’s start with something dirt: money and taxes.\nCapitulo 15 - Gravamen de la base liquidable del ahorro Suppose y",
+    "crumbs": [
+      "Home",
+      "Teaching",
+      "Calculus (20124)",
+      "Limits and continuity of real-valued functions"
+    ]
+  },
+  {
+    "objectID": "teaching/calculo-uc3m-matematica-aplicada/limits_and_continuity.html",
+    "href": "teaching/calculo-uc3m-matematica-aplicada/limits_and_continuity.html",
+    "title": "Limits and continuity of real-valued functions",
+    "section": "",
+    "text": "1 Introduction\nLet’s start with something dirt: money and taxes.\nCapitulo 15 - Gravamen de la base liquidable del ahorro Suppose y\n\\[\n\\partial t\n\\tag{1}\\]",
+    "crumbs": [
+      "Home",
+      "Teaching",
+      "Calculus (20124)",
+      "Limits and continuity of real-valued functions"
+    ]
+  },
+  {
+    "objectID": "teaching/calculo-uc3m-matematica-aplicada/1.1 Sets and functions.html",
+    "href": "teaching/calculo-uc3m-matematica-aplicada/1.1 Sets and functions.html",
+    "title": "Sets and functions",
+    "section": "",
+    "text": "test",
+    "crumbs": [
+      "Home",
+      "Teaching",
+      "Calculus (20124)",
+      "Sets and functions"
+    ]
+  },
+  {
+    "objectID": "teaching/calculo-uc3m-matematica-aplicada/0_sets_and_functions.html",
+    "href": "teaching/calculo-uc3m-matematica-aplicada/0_sets_and_functions.html",
+    "title": "Sets and functions",
+    "section": "",
+    "text": "test",
+    "crumbs": [
+      "Home",
+      "Teaching",
+      "Calculus (20124)",
+      "Sets and functions"
+    ]
+  },
+  {
+    "objectID": "teaching/calculo-uc3m-matematica-aplicada/1_limits_and_continuity.html",
+    "href": "teaching/calculo-uc3m-matematica-aplicada/1_limits_and_continuity.html",
+    "title": "Limits and continuity of real-valued functions",
+    "section": "",
+    "text": "1 Introduction\nLet’s start with something dirt: money and taxes.\nCapitulo 15 - Gravamen de la base liquidable del ahorro Suppose y\n\n\n2 Distance and intervals\nLet \\(f:X\\rightarrow Y\\) be a function. The notion of limit formalizes, rigorously, what happens to the output when the inputs gets closer and closer to a fixed value. Roughly speaking, we write\n\\[\n\\lim_{x\\rightarrow x_{0}} f(x)=l\n\\]\nmeaning that the output \\(f(x)\\) gets closer to \\(l\\) if the input \\(x\\) is closer to \\(x_{0}\\).\n\n\n\n\n\n\nImportantRemark\n\n\n\nNote that, in general, it is not always true that a limit exists.\n\n\nIn order to make things precise, we first need to understand what does it mean for a real number to be closer to a fixed real number. Essentially, we need to specify a way to measure distances between real numbers.\nIntuitively speaking, if we fix \\(x_{0}\\in \\mathbb{R}\\), we say that \\(x_{1}\\) is closer than \\(x_{2}\\) if the distance \\(\\Delta_{1}\\) between \\(x_{0}\\) and \\(x_{1}\\) is smaller than the distance \\(\\Delta_{2}\\) between \\(x_{2}\\) and \\(x_{0}\\), which brings the question: what is the distance between two real numbers? Graphycally speaking, we can exploit the idea that real numbers make up a straight line, and obtain the distance between two points as the length, as would be measured by a ruler, of the piece of the real line connecting the two points (see Figure 1).\n\n\n\n\n\n\nFigure 1: Graphical depiction of distances between real numbers on the real line.\n\n\n\nIn mathematical symbols, we have \\[\n\\Delta_{1}\\equiv|x_{1}- x_{0}|\\leq |x_{2} - x_{0}|\\equiv \\Delta_{2}.\n\\]\n\n\n\n\n\n\nNoteEuclidean distance function\n\n\n\nThe two-point function \\(d\\colon \\mathbb{R}\\times\\mathbb{R}\\rightarrow\\mathbb{R}\\) given by \\[\nd(x,y)=\\sqrt{(x-y)^{2}}=|x-y|\n\\tag{1}\\] is referred to as a Euclidean distance function on \\(\\mathbb{R}\\).\n\n\n\n\n\n\n\n\nImportantRemark\n\n\n\nAn intuitive reason for \\(d\\) in Equation 1 to measure distances follows from our direct experience, for instance with ruled paper (can you guess why/how?), but there are also more abstract reasons connected with the theory of metric spaces.\n\n\nBesides the notion of distance between real numbers, we need to introduce various types of intervals. These objects help in formalizing the way \\(x\\) approaches \\(x_{0}\\).\n\n\n\n\n\n\nNoteOpen and closed intervals\n\n\n\n\nDefinition 1 Let \\(a&lt;b\\in\\mathbb{R}\\cup\\{+\\infty\\}\\cup\\{-\\infty\\}\\). We define the open interval \\((a,b)\\) as the subset of \\(\\mathbb{R}\\) given by \\[\n(a,b):= \\{x\\in\\mathbb{R}\\,|\\quad a&lt; x &lt; b \\}.\n\\tag{2}\\] If either \\(a=-\\infty\\) or \\(b=+\\infty\\), the interval is said to be unbounded.\nWhen \\(a\\neq-\\infty\\) and \\(b\\neq+\\infty\\), we define the closed interval \\([a,b]\\) as \\[\n[a,b]:= \\{x\\in\\mathbb{R}\\,|\\quad a\\leq x \\leq b \\}.\n\\]\nIntuitively speaking, the interval \\((a,b)\\) is open because its boundary points are not part of it, while \\([a,b]\\) is closed because its boundary points are part of it.\n\n\n\nNot all intervals are either open or closed. For instance, when \\(a\\neq-\\infty\\), we can define the interval \\([a,b)\\) as \\[\n[a,b) := \\{x\\in\\mathbb{R}\\,|\\quad a\\leq x &lt; b\\},\n\\] while, when \\(b\\neq+\\infty\\), we can define the interval \\((a,b]\\) as \\[\n(a,b] := \\{x\\in\\mathbb{R}\\,|\\quad a &lt; x \\leq b\\},\n\\] and it’s clear that these interval are neither open nor closed in the sense of Definition 1\nIn the following, it will be useful to also consider the symmetric open interval \\[\nI_{x_{0},\\epsilon}\\equiv(x_{0}-\\epsilon, x_{0}+\\epsilon)=\\{x\\in\\mathbb{R}\\,|\\quad x_{0}-\\epsilon &lt; x &lt; x_{0} + \\epsilon\\}\n\\] centered at \\(x_{0}\\in\\mathbb{R}\\) with length \\(2\\epsilon\\) with \\(\\epsilon&gt;0\\). It is not hard to see that if \\(x\\in I_{x_{0},\\epsilon}\\), then either \\(x-x_{0}&lt; \\epsilon\\) or \\(x_{0} - x &lt;\\epsilon\\). It then follows that \\(|x-x_{0}|&lt;\\epsilon\\), so that \\[\nI_{x_{0},\\epsilon}=\\{x\\in\\mathbb{R}\\,| \\quad d(x_{0},x)&lt;\\epsilon\\}.\n\\] Therefore, the symmetric open intervals of \\(\\mathbb{R}\\) may be determined through the distance function.\n\n\n3 The definition of limit\n\n\n4 Properties of limits\nLet us start considering the constant function \\(f(x)=c\\) with \\(x\\in\\mathbb{R}\\), and prove that \\[\n\\lim_{x\\rightarrow x_{0}} f(x)= f(x_{0}).\n\\] Indeed, it immediately follows that \\(|f(x) - f(x_{0})|=0&lt;\\epsilon\\) for every \\(x\\in\\mathbb{R}\\) and every \\(\\epsilon&gt;0\\). Now, let us consider the function \\(f(x)=x\\), and prove that \\[\n\\lim_{x\\rightarrow x_{0}} f(x)= f(x_{0}).\n\\] Again, it is immediate to check that \\(|f(x) - f(x_{0})|=|x - x_{0}|\\), and thus, taking \\(\\delta_{\\epsilon}&lt; \\epsilon\\), we get that \\(|x - x_{0}|&lt;\\delta_{\\epsilon}\\) implies \\(|f(x) - f(x_{0})|&lt;\\epsilon\\). Finally, let us consider the function \\(f(x)=x^{2}\\), and prove that \\[\n\\lim_{x\\rightarrow x_{0}} f(x)= f(x_{0})\n\\] for every \\(x_{0}\\in\\mathbb{R}\\). We have \\[\n|x^{2} - x_{0}^{2}| =|(x+x_{0})(x-x_{0})|\\leq |x + x_{0}||x-x_{0}| .\n\\] Recall that we must check that \\(|f(x) - f(x_{0})|&lt; \\epsilon\\) whenever \\(|x - x_{0}|&lt;\\delta\\), with \\(\\delta&gt;0\\) to be determined depending on \\(\\epsilon&gt;0\\). A direct computation shows that \\[\n| x+ x_{0}| =|x - x_{0} + 2x_{0}|\\leq |x - x_{0}| + 2|x_{0}|\n\\] so that \\[\n|x^{2} - x_{0}^{2}|\\leq (|x - x_{0}| + 2|x_{0}|)\\,|x-x_{0}| &lt; (2|x_{0}| + \\delta_{\\epsilon})\\,\\delta_{\\epsilon}.\n\\] Therefore, if \\[\n\\delta_{\\epsilon}^{2} + 2|x_{0}| \\delta_{\\epsilon} - \\epsilon&lt;0\n\\] we are done. By solving the previous quadratic equation in the variable \\(\\delta_{\\epsilon}\\) we obtain the condition \\[\n0 &lt; \\delta_{\\epsilon} &lt;  \\sqrt{x^{2}_{0} + \\epsilon} -|x_{0}| = \\sqrt{x^{2}_{0} + \\epsilon} - \\sqrt{x^{2}_{0}}.\n\\]",
+    "crumbs": [
+      "Home",
+      "Teaching",
+      "Calculus (20124)",
+      "Limits and continuity of real-valued functions"
+    ]
   }
 ]
