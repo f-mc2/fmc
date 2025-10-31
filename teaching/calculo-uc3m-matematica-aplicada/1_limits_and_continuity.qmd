@@ -100,98 +100,588 @@ is referred to as a **Euclidean distance function** on $\mathbb{R}$.
  
  
 ::: {.callout-important title="Remark"}
-An intuitive reason for $d$ in @eq-euclidean-distance-function to measure distances follows from our direct experience, for instance with ruled paper (can you guess why/how?),  but there are also more abstract reasons connected with the theory of [metric spaces](https://en.wikipedia.org/wiki/Metric_space).
+An intuitive 
+reason for $d$ in @eq-euclidean-distance-function to measure distances follows from our direct experience, for instance with ruled paper (can you guess why/how?),  but there are also more abstract reasons connected with the theory of [metric spaces](https://en.wikipedia.org/wiki/Metric_space).
 :::
-
-Besides the notion of distance between real numbers, we need to introduce various types of intervals. These objects help in formalizing the way $x$ approaches $x_{0}$.
-
-::: {.callout-note title="Open and closed intervals"}
-::: {#def-open-closed-intervals} 
-
- 
-Let $a<b\in\mathbb{R}\cup\{+\infty\}\cup\{-\infty\}$.
-We define the **open interval** $(a,b)$ as the subset of $\mathbb{R}$ given by
-$$
-(a,b):= \{x\in\mathbb{R}\,|\quad a< x < b \}.
-$$ {#eq-open-interval}
-If either $a=-\infty$ or $b=+\infty$, the interval is said to be **unbounded**.
-
-When $a\neq-\infty$ and $b\neq+\infty$, we define the closed interval $[a,b]$ as
-$$
-[a,b]:= \{x\in\mathbb{R}\,|\quad a\leq x \leq b \}.
-$$
-
-Intuitively speaking, the interval $(a,b)$ is _open_ because its boundary points **are not** part of it, while $[a,b]$ is _closed_ because its boundary points **are** part of it.
-:::
-:::
-
-Not all intervals are either open or closed. For instance, when $a\neq-\infty$, we can define the interval $[a,b)$ as
-$$
-[a,b) := \{x\in\mathbb{R}\,|\quad a\leq x < b\},
-$$
-while, when $b\neq+\infty$, we can define the interval $(a,b]$ as
-$$
-(a,b] := \{x\in\mathbb{R}\,|\quad a < x \leq b\}, 
-$$
-and it's clear that these interval are neither open nor closed in the sense of @def-open-closed-intervals
-
-
-
-
-In the following, it will be useful to also consider the **symmetric open interval**
-$$
-I_{x_{0},\epsilon}\equiv(x_{0}-\epsilon, x_{0}+\epsilon)=\{x\in\mathbb{R}\,|\quad x_{0}-\epsilon < x < x_{0} + \epsilon\}
-$$
-centered at $x_{0}\in\mathbb{R}$ with length $2\epsilon$ with $\epsilon>0$. It is not hard to see that if $x\in I_{x_{0},\epsilon}$, then either $x-x_{0}< \epsilon$  or $x_{0} - x <\epsilon$. It then follows that $|x-x_{0}|<\epsilon$, so that
-$$ 
-I_{x_{0},\epsilon}=\{x\in\mathbb{R}\,| \quad d(x_{0},x)<\epsilon\}. 
-$$
-Therefore, the symmetric open intervals of $\mathbb{R}$ may be determined through the distance function.
 
 
 
 
 # The definition of limit
 
+::: {.callout-note title="$\varepsilon$-$\delta$ definition of ([left/right](https://en.wikipedia.org/wiki/One-sided_limit)) [limits](https://en.wikipedia.org/wiki/Limit_of_a_function#(%CE%B5,_%CE%B4)-definition_of_limit)"}
+::: {#def-limits} 
+
+Consider the function $f\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}$ and the **left accumulation point** $x_{0}$ for $D$. 
+We say that the formal equality  
+$$
+\lim_{x\rightarrow x_{0}^{+}} f(x)=l
+$$
+holds if for every $\varepsilon>0$ there is  $0< \delta_{\varepsilon}$  such that
+$$ 
+|x-x_{0}|<\delta_\varepsilon \Longrightarrow  |f(x)-l|<\varepsilon .
+$$
+for every $x_{0}<x\in D$. 
+In this case, we say that $l$ is the right limit of $f$ at  $x_{0}$.
+
+Similarly, if $x_{0}$ is a **right accumulation point** for $D$, we say that the formal equality  
+$$
+\lim_{x\rightarrow x_{0}^{-}} f(x)=l
+$$
+holds if for every $\varepsilon>0$ there is a  $0< \delta_{\varepsilon}$ such that
+$$ 
+|x-x_{0}|<\delta_\varepsilon \Longrightarrow =|f(x)-l|<\varepsilon .
+$$
+for every $x_{0}>x\in D$.
+In this case, we say that $l$ is the left limit of $f$ at $x_{0}$.
+
+Finally, if $x_{0}$ is both a left and right accumulation point, we say that the formal equality
+$$ 
+\lim_{x\rightarrow x_{0}} f(x)=l 
+$$
+holds if for every $\varepsilon>0$ there is a  $0< \delta_{\varepsilon}$ such that
+$$
+|x-x_{0}|<\delta_{\varepsilon} \Longrightarrow |f(x)-l|<\varepsilon 
+$$
+for every $x\in D$.
+In this case, we say that $l$ is the limit of $f$ at $x_{0}$.
+:::
+:::
+
+The first thing to do once limits are defined as in @def-limits is to prove that they are well-defined in the sense that a limit, if it exists, is unique.
+
+::: {.callout-note title="Well-posedness of limits"}
+::: {#prp-well-posedness-limits}
+Consider the function $f\colon D\subseteq\mathbb{R}\rightarrow\mathbb{R}$ and the accumulation point $x_{0}$ for $D$.
+If 
+$$
+\begin{split}
+\lim_{x\rightarrow x_{0}}f(x)&=l \\
+\lim_{x\rightarrow x_{0}}f(x)&=m,
+\end{split}
+$$
+then $l=m$, and analogously for left/right limits.
+:::
+
+<details>
+<summary>**Proof**</summary>
+From @def-limits, it follows there are $\varepsilon_{1},\delta_{1},\varepsilon_{2},\delta_{2}>0$ such that  
+$$
+\begin{split}
+|x-x_{0}|<\delta_{1}&\Rightarrow |f(x) - l|<\varepsilon_{1} \\
+|x-x_{0}|<\delta_{2}&\Rightarrow |f(x) - m|<\varepsilon_{2}. \\
+\end{split}
+$$
+Taking $\varepsilon=\mathrm{max}(\varepsilon_{1},\varepsilon_{2})$ and $\delta_{\varepsilon}=\mathrm{min}(\delta_{1},\delta_{2})$, it holds
+$$
+|x-x_{0}|<\delta_{\varepsilon}\Rightarrow |f(x) - l|<\varepsilon \;\;\mbox{ and }\quad |f(x) - m|<\varepsilon.
+$$
+In particular, since $\varepsilon_{1}$ and $\varepsilon_{2}$ are arbitrary, we can take $\varepsilon=\frac{|l-m|}{2}$, so that , for $|x-x_{0}|<\delta_{\varepsilon}$, it holds
+$$
+\begin{split}
+|l-m|&=|l-m+f(x) -f(x)|\leq |f(x) -m| + |f(x) -l|< \\
+& < \frac{|l-m|}{2} + \frac{|l-m|}{2} =|l -m|,
+\end{split}
+$$
+which is a contradiction unless $l=m$.
+</details>
+:::
 
 
 
-# Properties of limits
+[Below](https://www.geogebra.org/m/mj2bXA5y), there is an interactive visualization of the $(\varepsilon-\delta)$-definition of the limit of a function when everything works.
+
+<iframe
+  id="inlineFrameExample"
+  title="Inline Frame Example"
+  width="700"
+  height="500"
+  src="https://www.geogebra.org/m/mj2bXA5y">
+</iframe>
+
+[Below](https://www.geogebra.org/m/hebkhRJm), there is an interactive visualization of the $(\varepsilon-\delta)$-definition of the limit of a function when things do not work (note that a trignometric function is used even if they are introduced later):
+
+<iframe
+  id="inlineFrameExample"
+  title="Inline Frame Example"
+  width="700"
+  height="500"
+  src="https://www.geogebra.org/m/hebkhRJm">
+</iframe>
+
+
+::: {.callout-caution title="Existence of the limit at $x_{0}$ is equivalent to existence and equality of left and right limits at $x_{0}$"}
+::: {#exr-left-right-limits-link}
+Consider the function $f\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}$.
+
+If $x_{0}$ is a left and right accumulation point for $D\subseteq \mathbb{R}$, prove that  $l$ is the limit of function $f\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}$ for $x$ going to $x_{0}$ if and only **if and only if** it is also the left and right limit of $f\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}$ at $x_{0}$.
+:::
+:::
+
+::: {.callout-caution title="Limits of the restriction"}
+::: {#exr-limits-restriction-functions}
+Consider the function $f\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}$, the subset $D'\subset D$, and  the restriction function $g\colon D'\subset \mathbb{R}\rightarrow \mathbb{R}$ given by $g(x)=f(x)$.
+
+If $x_{0}$ is an accumulation point for $D'$ prove that 
+$$
+\lim_{x\rightarrow x_{0}} f(x)=\lim_{x\rightarrow x_{0}} g(x)
+$$
+whenever either one of the limits exist.
+
+Prove analogous results for the case of left and right limits.
+:::
+:::
+
+
+
+::: {.callout-caution title="On restrictions and left/right limits"}
+::: {#exr-left-right-limits-restriction-constant-linear-quadratic-functions}
+Exploiting @exr-left-right-limits-link and @exr-limits-restriction-functions, prove that the obvious modifications of the results in this subsection hold also for left/right limits and for restrictions to arbitrary subsets of $\mathbb{R}$.
+:::
+:::
+
+
+# Continuity
 
  
+
+In @def-limits, the point $x_0$ is an accumulation point of the domain $D$ of the function under consideration, but it is not necessary that $x_0 \in D$ for the notion of limit to make sense.
+However, if $x_{0}$ does belong to $D$ and the limit exists, it makes sense to see if the limit $l$ differs from the value of the function at $x_0$. 
+
+::: {.callout-note title="Continuity"}
+::: {#def-continuity}
+Let $x_{0}\in D\subseteq \mathbb{R}$ be an [accumulation point](0_sets_and_functions.qmd#def-accumulation-point)  for $D$. 
+
+The function $f\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}$ said to be **continuous** at $x_{0}\in D$ if
+$$
+\lim_{x\rightarrow x_{0}}f(x)=f(x_{0}).
+$$
+Left and right continuity are defined in the obvious way. 
+
+The function $f\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}$ said to be continuous if it is continuous at all accumulation points $x_{0}\in D$, and left/right continuous at all right/left accumulation points $x_{0}\in D$.
+:::
+:::
+
+::: {.callout-caution title="Continuity is equivalent to simultaneous left and right continuity"}
+::: {#exr-continuity-iff-left-right-continuity}
+The function $f\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}$ is  continuous at $x_{0}\in D$ **and only if** it is both left and right continuous at $x_0$.
+:::
+:::
+
+::: {.callout-caution title="Polynomials are continuous"}
+Consider the function $P_{n}\colon\mathbb{R}\rightarrow\mathbb{R}$ where $P_{n}(x)$ is a polynomial of order $n$.
+Prove that $P_{n}$ is continuous.
+
+<details>
+<summary>**Proof**</summary>
+The polynomial $P_{n}(x)$ can be written as
+$$
+P_{n}(x)= a_{n}x^{n} + a_{n-1} x^{n-1}\cdots a_{1}x + a_{0}x^{0},
+$$
+where $a_{j}\in\mathbb{R}$ for every $j=1,\cdots , n$.
+It is then clear that $P_{n}$ is a suitable combinations of sums and products of constant functions (which are continuous) with  the identity function $f(x)=x$ (which is continuous).
+
+Consequently, @prp-algebraic-manipulations-continuous-functions ensures the desired result.
+
+</details>
+:::
+
+Consider the function $f\colon D\subseteq\mathbb{R}\rightarrow\mathbb{R}$, and let $x_{0}$ be an accumulation point for $D$. 
+Three situations are possibles:
+
+1. the limit at $x_{0}$ exists, but either $x_{0}$ is not in $D$, or the limit is different from $f(x_{0})$ (**removable discontinuity**);
+2. the right and left limits at $x_{0}\in D$ exist, are finite, but are different (**jump discontinuity**);
+3. the right and left limits at $x_{0}$ exist but at least one of them is either $+\infty$ or $-\infty$ or at least one of them does not exist(**essential discontinuity**).
+
+In the first case (**removable discontinuity**), we can define a new function $\tilde{f}\colon D\cup\{x_{0}\}\subseteq\mathbb{R}\rightarrow\mathbb{R}$ by setting 
+$$
+\tilde{f}(x)=\left\{\begin{matrix} f(x) & \mbox{ if } x_{0}\neq x\in D \\ & \\  \lim_{x\rightarrow x_{0}}f(x) & \mbox{ if } x=x_{0}\end{matrix}\right. .
+$$
+This new function is called an **extension by continuity** of $f$ and it is a continuous function at $x_{0}$ by construction. 
+Note that this procedure works whether $x_{0}$ is in the domain $D$ of the original function or not. 
+If $x_{0}$ were in $D$, then we are redefining $f$ at that point. 
+If $x_{0}$ was not in $D$, then we are genuinely extending $f$.
+
+In the second case (**jump discontinuity**), whether $x_{0}$ lies in $D$ or not, we can not redefine $f$ in such a way that the result is a continuous function at $x_{0}$. The best we can do is obtain an extension of $f$ which is either left or right continuous at $x_{0}$.
+
+In the third case (**essential singularity**), there is nothing we can do to ameliorate the discontinuities of the function $f$. 
+
+::: {.callout-caution title="Build examples of discontinuous functions"}
+::: {#exr-examples-discontinuous-functions}
+For each type of discontinuity, build a function presenting said discontinuity at least at one point.
+
+<details>
+<summary>**Solution**</summary>
+</details>
+:::
+:::
+
+
  
-Let us start considering the constant function $f(x)=c$ with $x\in\mathbb{R}$, and prove that
+# Constant, linear, and quadratic functions{#sec-limits-constant-linear-quadratic-functions}
+
+Let us start considering the function $f\colon \mathbb{R}\rightarrow\mathbb{R}$ given by $f(x)=c$ and prove that
 $$
-\lim_{x\rightarrow x_{0}} f(x)= f(x_{0}).
+\lim_{x\rightarrow x_{0}} f(x)= c = f(x_{0})
+$${#eq-limit-constant-function}
+for every $x_{0}\in\mathbb{R}$. 
+According to @def-limits, we need to prove that, for every $\varepsilon>0$, there is $\delta_{\varepsilon}>0$ such that $|x-x_{0}|<\delta_{\varepsilon}$ implies $|f(x)-c|<\varepsilon$.
+
+Since $f(x)=f(y)=c$ for all $x,y\in\mathbb{R}$, it follows that $|f(x) - c|=0<\varepsilon$ for every $x\in\mathbb{R}$ and every $\varepsilon>0$.
+In particular, fixing $\varepsilon,\delta>0$, the condition $|x -x_{0}|<\delta$ trivially implies $|f(x)-c|<\varepsilon$ which is precisely what we had to prove.
+Note that, in this case $\delta_{\varepsilon}=\delta$, which means that it does not depend on $\varepsilon$.
+
+---
+
+Now, let us consider the function $f\colon \mathbb{R}\rightarrow\mathbb{R}$  given by $f(x)=x + a$, and prove that
 $$
-Indeed, it immediately follows that $|f(x) - f(x_{0})|=0<\epsilon$ for every $x\in\mathbb{R}$ and every $\epsilon>0$.
-Now, let us consider the function $f(x)=x$, and prove that
+\lim_{x\rightarrow x_{0}} f(x)= x_{0} + a=f(x_{0})
+$${#eq-limit-linear-function}
+for every $x_{0}\in\mathbb{R}$. 
+According to @def-limits, we need to prove that, for every $\varepsilon>0$, there is $\delta_{\varepsilon}>0$ such that $|x-x_{0}|<\delta_{\varepsilon}$ implies $|f(x)-x_{0}|<\varepsilon$.
+
+By the very definition of $f$, it holds $|f(x) - (x_{0}+a)|=|x - x_{0}|$.
+Taking $\delta_{\varepsilon}< \varepsilon$, we get that $|x - x_{0}|<\delta_{\varepsilon}$ implies $|f(x) - f(x_{0})|<\varepsilon$ as desired.
+Note that, unlike what happens in the case of the constant function above, $\delta_\varepsilon$ depends on $\varepsilon$ because it must be $\delta_{\varepsilon}<\varepsilon$.
+
+--- 
+
+Finally, let us consider the function $f\colon \mathbb{R}\rightarrow\mathbb{R}$  given by $f(x)=x^{2}$, and prove that 
 $$ 
-\lim_{x\rightarrow x_{0}} f(x)= f(x_{0}). 
-$$
-Again, it is immediate to check that $|f(x) - f(x_{0})|=|x - x_{0}|$, and thus, taking $\delta_{\epsilon}< \epsilon$, we get that $|x - x_{0}|<\delta_{\epsilon}$ implies $|f(x) - f(x_{0})|<\epsilon$. 
-Finally, let us consider the function $f(x)=x^{2}$, and prove that 
+\lim_{x\rightarrow x_{0}} f(x)= x_{0}^{2}= f(x_{0}) 
+$${#eq-limit-quadratic-function}
+for every $x_{0}\in\mathbb{R}$.
+According to @def-limits, we need to prove that, for every $\varepsilon>0$, there is $\delta_{\varepsilon}>0$ such that $|x-x_{0}|<\delta_{\varepsilon}$ implies $|f(x)-x_{0}^{2}|<\varepsilon$.
+
+It is $|f(x)-x_{0}^{2}|=|x^{2} - x_{0}^{2}|$, and, using the properties of the absolute value, we have 
 $$ 
-\lim_{x\rightarrow x_{0}} f(x)= f(x_{0}) 
+|x^{2} - x_{0}^{2}| =|(x+x_{0})(x-x_{0})|\leq |x + x_{0}||x-x_{0}|.
 $$
-for every $x_{0}\in\mathbb{R}$.  We have 
+Moreover, it holds
 $$ 
-|x^{2} - x_{0}^{2}| =|(x+x_{0})(x-x_{0})|\leq |x + x_{0}||x-x_{0}| . 
+| x+ x_{0}| =|x - x_{0} + 2x_{0}|\leq |x - x_{0}| + 2|x_{0}|, 
 $$
-Recall that we must check that $|f(x) - f(x_{0})|< \epsilon$ whenever $|x - x_{0}|<\delta$, with $\delta>0$ to be determined depending on $\epsilon>0$.  A direct computation shows that 
+so that $|x - x_{0}|<\delta_{\varepsilon}$ implies
 $$ 
-| x+ x_{0}| =|x - x_{0} + 2x_{0}|\leq |x - x_{0}| + 2|x_{0}| 
+|x^{2} - x_{0}^{2}|\leq (|x - x_{0}| + 2|x_{0}|)\,|x-x_{0}| < ( \delta_{\varepsilon}+2|x_{0}|)\,\delta_{\varepsilon}. 
 $$
-so that 
+Therefore, to get $|f(x)-x_{0}^{2}|=|x^{2} - x_{0}^{2}|<\varepsilon$, we must ensure that 
 $$ 
-|x^{2} - x_{0}^{2}|\leq (|x - x_{0}| + 2|x_{0}|)\,|x-x_{0}| < (2|x_{0}| + \delta_{\epsilon})\,\delta_{\epsilon}. 
+\delta_{\varepsilon}^{2} + 2|x_{0}| \delta_{\varepsilon} - \varepsilon<0 .
 $$
-Therefore, if 
+Solving the previous [quadratic equation](https://en.wikipedia.org/wiki/Quadratic_equation) in the variable $\delta_{\varepsilon}$ we obtain the condition 
 $$ 
-\delta_{\epsilon}^{2} + 2|x_{0}| \delta_{\epsilon} - \epsilon<0 
+0 < \delta_{\varepsilon} <  \sqrt{x^{2}_{0} + \varepsilon} -|x_{0}| = \sqrt{x^{2}_{0} + \varepsilon} - \sqrt{x^{2}_{0}}. 
 $$
-we are done. By solving the previous [quadratic equation](https://en.wikipedia.org/wiki/Quadratic_equation) in the variable $\delta_{\epsilon}$ we obtain the condition 
-$$ 
-0 < \delta_{\epsilon} <  \sqrt{x^{2}_{0} + \epsilon} -|x_{0}| = \sqrt{x^{2}_{0} + \epsilon} - \sqrt{x^{2}_{0}}. 
+Note that the way in which $\delta_{\varepsilon}$ depends on $\varepsilon$ is more complex than in the case of the linear function above.
+
+
+
+
+# Algebraic manipulations of limits and continuous functions 
+ 
+
+From the example with $f(x)=x^{2}$, it should be clear that computing limits following   @def-limits is not going to be an easy task for arbitrary functions.
+This difficulty bothered some mathematicians who decided to investigate some simple cases using *educated guesses* (that is, the sophisticated siblings of sheer luck), and then proceeded to prove general theorems that allows to exploit to the maximum the simple examples already solved.
+
+To understand how one may envision such general theorem, let us note that, setting $f(x)=x +c$, $g(x)=x$, and $h(x)=c$, @eq-limit-constant-function and @eq-limit-linear-function (once with $a=c$ and once with $a=0$), imply
+$$
+\lim_{x\rightarrow x_{0}} f(x)=\left(\lim_{x\rightarrow x_{0}} g(x) \right) + \left(\lim_{x\rightarrow x_{0}} h(x)\right),
+$$
+which means that the limit of the sum is the sum of the limits.
+Moreover, setting $f(x)=x^{2}$ and $g(x)=x=h(x)$, @eq-limit-linear-function and @eq-limit-quadratic-function imply
+$$
+\lim_{x\rightarrow x_{0}} f(x)=\left(\lim_{x\rightarrow x_{0}} g(x)\right)\;\left(\lim_{x\rightarrow x_{0}} h(x)\right),
+$$
+which means that the limit of the product is the product of the limits.
+
+A natural question then arises: how general are these facts?
+It turns out that they are quite general.
+
+For instance, let us consider the functions $g,h\colon D\subset\mathbb{R}\rightarrow\mathbb{R}$ and the accumulation point $x_{0}$ for $D$.
+Assuming that the limits of both $g$ and $h$ at $x_{0}$ exist and are, respectively, $l$ and $m$, we know from @def-limits that there are $\nu,\delta_{\nu},\epsilon,\delta_{\epsilon}>0$ such that 
+$$
+\begin{split}
+|x-x_{0}|<\delta_{\nu}&\Rightarrow |g(x) -l|<\nu \\
+|x-x_{0}|<\delta_{\epsilon}&\Rightarrow |h(x) -l|<\epsilon .
+\end{split}
+$${#eq-limit-of-sum}
+For every $\varepsilon>0$, we can take $\nu$ and $\epsilon$ such that $\varepsilon=\nu+\epsilon$.
+Consequently, if $|x-x_{0}|<\mathrm{min}(\delta_{\nu},\delta_{\epsilon})$, it holds
+$$
+|g(x) + h(x) - l -m|\leq |f(x) -l| + |g(x) -m| <\nu +\epsilon=\varepsilon
+$$
+which means that $l+m$ is the limit at $x_{0}$ of $f(x)=g(x)+h(x)$ according to @def-limits.
+Moreover, it also holds
+$$
+\begin{split}
+|g(x)h(x) -lm|&=\mid (g(x) -l + l)(h(x) -m +m) -lm\mid = \\
+&=\mid (g(x) -l)(h(x)-m) +l(h(x)-m) + (g(x)-l)m\mid \leq \\
+&\leq \mid (g(x) -l)(h(x)-m)\mid + \mid l(h(x)-m)\mid + \mid(g(x)-l)m\mid < \\
+&<\nu\epsilon + |l|\,\epsilon + |m|\,\nu .
+\end{split}
+$$
+Given $\varepsilon>0$, I can choose $\nu$ and $\epsilon$ such that $\nu\epsilon + |l|\,\epsilon + |m|\,\nu<\varepsilon$ since $\nu$ and $\epsilon$ are arbitrary, and thus we conclude that the $lm$ is the limit at $x_{0}$ of $f(x)=g(x)h(x)$.
+
+
+
+Recalling the summation and product notation
+$$
+\begin{split}
+\sum\limits_{j=1}^{n} A_{j}&\equiv A_{1} + A_{2} + \cdots + A_{n} \\
+\prod_{j=1}^{n}A_{j}&\equiv A_{1}\,A_{2}\,\cdots\,A_{n} ,
+\end{split}
+$$
+where $(A_{1},\cdots,A_{n})$ can be a finite sequence of numbers or functions, we can use  the previous results together with the associativity property for function sums and products  to prove the follwing proposition on the algebraic manipulation of limits.
+
+::: {.callout-note title="Algebraic manipulations of limits"}
+::: {#prp-algebraic-manipulations-limits}
+Let $(\alpha_{1},\cdots\alpha_{n})\mathbb{R}^{n}$, and let $x_{0}\in\mathbb{R}$ be an accumulation point for $D$. 
+For each $j=1,\cdots,n$, consider the function $f_{j}\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}$.
+
+If
+$$
+\lim_{x\rightarrow x_{0} }f_{j}(x)=L_{j}\in \mathbb{R}
+$$
+for every $j=1,...,n$, then
+$$
+\begin{split}
+1)\quad & \lim_{x\rightarrow x_{0}} \sum_{j=1}^{n}\,\alpha_{j}\,f_{j}(x) =\sum_{j=1}^{n}\,\lim_{x\rightarrow x_{0}} \left(\alpha_{j}\,f_{j}(x)\right) = \sum_{j=1}^{n}\,\alpha_{j}\,L_{j} \\ & \\
+2) \quad &\lim_{x\rightarrow x_{0}}\prod_{j=1}^{n} \,\alpha_{j}\,f_{j}(x) =\prod_{j=1}^{n}\,\lim_{x\rightarrow x_{0}} \left(\alpha_{j}\,f_{j}(x)\right) = \prod_{j=1}^{n}\,\alpha_{j}\,L_{j} .
+\end{split}
+$${#eq-algebraic-manipulations-limits}
+Moreover, if $n=2$ and $\alpha_{2},L_{2}\neq 0$, it holds
+$$
+\lim_{x\rightarrow x_{0}^{+}}\,\frac{\alpha_{1}f_{1}(x)}{\alpha_{2}f_{2}(x)}=\frac{\alpha_{1}L_{1}}{\alpha_{2} L_{2}}.
 $$
 
+Under the obvious modifications, the same conclusions hold for left and right limits.
+:::
+:::
+
+
+From @prp-algebraic-manipulations-limits it naturally follows that continuous functions behaves well with respect to sums and products.
+
+::: {.callout-note title="Algebraic manipulations of continuous functions"}
+::: {#prp-algebraic-manipulations-continuous-functions}
+Let $(\alpha_{1},\cdots\alpha_{n})\mathbb{R}^{n}$ and $x_{0}$ be an accumulation point for $D\subseteq \mathbb{R}$.
+For each $j=1,\cdots,n$, consider the function $f_{j}\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}$, assumed to be  continuous at $x_{0}$.
+
+It follows that 
+$$
+F(x)=\sum\limits_{j=1}^{n}\alpha_{j}f_{j}(x),\qquad G(x)=\prod_{j=1}^{n}\alpha_{j}f_{j}(x)
+$$ 
+are continuous at $x_{0}$. 
+
+Moreover, when $n=2$ and  $\alpha_{2}f_{2}(x_{0})\neq 0$,  it follows that
+$$
+H(x)=\frac{\alpha_{1}f_{1}(x)}{\alpha_{2}f_{2}(x)}
+$$
+is continuous at $x_{0}$.
+
+Analogous results hold for left/right continuity with the obvious modifications.
+:::
+:::
+
+# Improper limits
+
+The notion of limit considered in @def-limits requires $l$ to be a finite real number.
+However, there are situation in which the more we get closer to a point in the domain, the more the function grows or de-grows.
+
+For instance,  let us consider the function $f\colon D\subset \mathbb{R}\rightarrow\mathbb{R}$ given by $f(x)=\frac{1}{x}$ and with domain $D=(-\infty,0)\cup(0,+\infty)$. 
+We can compute $f(x)$ for values of $x$ which are closer and closer to $0$. 
+For positive values of $x$, we see that the closer $x$ is to $0$, the bigger $f(x)$ is. 
+However, for negative values of $x$, the closer $x$ is to $0$, the more $f(x)$ becomes bigger in absolute value but with negative sign. 
+
+Faced with this situation, we conjecture that the limit at $x_{0}^{\pm}$ does not exist in the sense of @def-limits.
+However, we also have the  intuitively understanding of how  $f$ behaves around $0$: it grows indefinitely when $x\rightarrow 0^+$, and degrows indefinitely when $x\rightarrow 0^{-}$. 
+Can we make this intuitive understanding rigorous? 
+
+The answer is affirmative, and leads to the definition of unbounded limit.
+
+::: {.callout-note title="Unbounded limits"}
+::: {#def-unbounded-limits}
+Consider the function $f\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}$, and let $x_{0}$ be a left accumulation point for $D$. 
+We say that the formal equality
+$$ 
+\lim_{x\rightarrow x_{0}} f(x)=+\infty 
+$$ 
+holds if for every $K>0$ there is a  $0< \delta$ such that
+$$
+|x-x_{0}|<\delta \Rightarrow f(x)>K
+$$
+for every $x_{0}\neq x\in D$. 
+In this case, we say that $+\infty$ is the limit of $f$ at $x_{0}$.
+
+Analogously, we say that the formal equality
+$$ 
+\lim_{x\rightarrow x_{0}} f(x)=-\infty 
+$$ 
+holds if for every $K>0$ there is a  $0< \delta$ such that
+$$
+|x-x_{0}|<\delta \Rightarrow f(x)< -K
+$$
+for every $x_{0}\neq x\in D$.
+In this case, we say that $-\infty$ is the limit of $f$ at $x_{0}$.
+
+Left and right unbounded limits are defined analogously. 
+:::
+:::
+
+::: {.callout-caution title="Existence and equality of left and right unbounded limits at $x_{0}$ is equivalent to existence of the unbounded limit at $x_{0}$"}
+::: {#exr-left-right-unbounded-limits-link}
+Analogously to @exr-left-right-limits-link, show that the unbounded limit
+$$
+\lim_{x\rightarrow x_{0}}f(x)=\pm \infty
+$$
+holds **if and only if** if both left and right unbounded limits at $x_{0}$ exist and are equal.
+:::
+:::
+
+
+Another type of **improper** limit is necessary if we want to understand what happens when the input variable either grows or degrows indefinitely (when possible).
+
+::: {.callout-note title="Limits at $+\infty$"}
+::: {#def-limits-at-infty}
+Let $D\subseteq \mathbb{R}$ be such that $+\infty$ is a right accumulation point for it, and consider a function $f\colon D\rightarrow \mathbb{R}$. 
+
+The formal equality
+$$
+\lim_{x\rightarrow +\infty} f(x)= l
+$$
+holds  with $l\in\mathbb{R}$ if for every $\varepsilon>0$ there is $M>0$ such that
+$$
+D\ni x>M\Rightarrow |f(x) - l|<\varepsilon .
+$$
+
+
+The formal equality
+$$ 
+\lim_{x\rightarrow +\infty} f(x)=+\infty 
+$$ 
+holds if for every $K>0$ there is  $M>0$ such that
+$$
+D\ni x>M \rightarrow f(x)>K.
+$$
+
+The formal equality  
+$$ 
+\lim_{x\rightarrow +\infty} f(x)=-\infty 
+$$ 
+holds if for every $K>0$ there is  $M>0$ such that
+$$
+D\ni x>M \rightarrow f(x)<-K.
+$$
+:::
+:::
+
+::: {.callout-note title="Limits at $-\infty$"}
+::: {#def-limits-at-minus-infty}
+Let $D\subseteq \mathbb{R}$ be such that $-\infty$ is a left accumulation point for it, and consider a function $f\colon D\rightarrow \mathbb{R}$. 
+
+The formal equality
+$$
+\lim_{x\rightarrow -\infty} f(x)= l
+$$
+holds  with $l\in\mathbb{R}$ if for every $\varepsilon>0$ there is $M>0$ such that
+$$
+D\ni x<-M\Rightarrow |f(x) - l|<\varepsilon .
+$$
+
+
+The formal equality
+$$ 
+\lim_{x\rightarrow -\infty} f(x)=+\infty 
+$$ 
+holds if for every $K>0$ there is  $M>0$ such that
+$$
+D\ni x<-M \rightarrow f(x)>K.
+$$
+
+The formal equality  
+$$ 
+\lim_{x\rightarrow -\infty} f(x)=-\infty 
+$$ 
+holds if for every $K>0$ there is  $M>0$ such that
+$$
+D\ni x<-M \rightarrow f(x)<-K.
+$$
+:::
+:::
+
+
+ 
+
+The algebraic manipulations of limits in @prp-algebraic-manipulations-limits can be appropriately modified to handle also improper limits, provided we handle the so-called **inderminate forms** with care.
+
+::: {.callout-note title="Algebraic manipulations of improper limits"}
+
+Let $f,g\colon D\rightarrow \mathbb{R}$ be scalar function, and let $x_{0}$ be a left/right accumulation point for $D$ (possibly, also $\pm\infty$). If the right/left limit of both $f$ and $g$ exist at $x_{0}$, then we have:
+$$
+\begin{split}
+1) & \lim_{x\rightarrow x_{0}^{\pm}}(f(x) + g(x))= \lim_{x\rightarrow x_{0}^{\pm}}f(x) + \lim_{x\rightarrow x_{0}^{\pm}} g(x) \\ & \\
+2) & \lim_{x\rightarrow x_{0}^{\pm}}(f(x) - g(x))= \lim_{x\rightarrow x_{0}^{\pm}}f(x) - \lim_{x\rightarrow x_{0}^{\pm}} g(x) \\ & \\
+3) & \lim_{x\rightarrow x_{0}^{\pm}}f(x)\,\cdot \, g(x)= \lim_{x\rightarrow x_{0}^{\pm}}f(x)\, \cdot  \lim_{x\rightarrow x_{0}^{\pm}} g(x) \\ & \\
+4) & \lim_{x\rightarrow x_{0}^{\pm}}\frac{f(x)}{g(x)}= \frac{\lim_{x\rightarrow x_{0}^{\pm}}f(x)}{\lim_{x\rightarrow x_{0}^{\pm}} g(x)} \\ & \\
+5) & \lim_{x\rightarrow x_{0}^{\pm}}(f(x))^{g(x)}= \left(\lim_{x\rightarrow x_{0}^{\pm}}f(x)\right)^{\lim_{x\rightarrow x_{0}^{\pm}} g(x)}  
+\end{split}
+$$
+with the following "conventions":
+$$
+\begin{split}
+1) & \quad  l + (\pm\infty) =\pm \infty \;\mbox{ if }\;\; l\neq \mp\infty \\ & \\
+2) & \quad l\cdot \pm\infty = \pm \infty  \;\mbox{ if }\;\; l>0\\ & \\
+3) & \quad l\cdot \pm\infty = \mp \infty  \;\mbox{ if }\;\; l<0\\ & \\
+4) & \quad \frac{l}{\pm\infty} = 0  \;\mbox{ if }\;\; l\neq  \pm \infty\\ & \\
+5) & \quad \frac{\pm\infty}{l} = \pm \infty  \;\mbox{ if }\;\; l\in ( 0,+\infty)\\ & \\
+6) & \quad \frac{\pm\infty}{l} = \mp \infty  \;\mbox{ if }\;\; l\in (-\infty,0)\\ & \\
+7) & \quad (+\infty)^{l} =  +\infty \;\mbox{ if }\;\; l> 0\\ & \\
+8) & \quad (+\infty)^{l} =  0 \;\mbox{ if }\;\; l< 0\\ & \\
+9) & \quad l^{+\infty} = 0  \;\mbox{ if }\;\; 0<l< 1\\ & \\
+10) & \quad l^{+\infty} = +\infty  \;\mbox{ if }\;\; l> 1\\ & \\
+11) & \quad l^{-\infty} = 0  \;\mbox{ if }\;\; l> 1\\ & \\
+12) & \quad l^{-\infty} = +\infty  \;\mbox{ if }\;\; 0<l< 1 .
+\end{split}
+$$
+All other cases are called [**indeterminate forms**](https://en.wikipedia.org/wiki/Indeterminate_form), and a case by case analysis is needed to determine if the limit exists or not.
+:::
+
+
+
+
+# Some more properties of limits
+
+The next theorem is of paramount importance, and is known to humans by many names (very much like the [Many-Faced God](https://gameofthrones.fandom.com/wiki/Many-Faced_God)). 
+Informally speaking, the underlying idea behind the result is that, if a function $f$ lies between two other functions, say $g$ and $h$, the limits of $f$  are determined by the limits of $g$ and $h$.
+
+
+
+::: {.callout-note title="The squeeze (pinching) theorem"}
+::: {#thm-squeeze-thm}
+Consider the functions $f,g,h\colon D\subseteq\mathbb{R}\rightarrow \mathbb{R}$, and let $x_{0}$ be an accumulation point for $D$. 
+If $h(x)\leq f(x)\leq g(x)$ for all $x\in D$ and 
+ $$
+ \lim_{x\rightarrow x_{0}}h(x)=\lim_{x\rightarrow x_{0}}g(x)=L\in\mathbb{R},
+ $$
+ then it follows that
+ $$
+ \lim_{x\rightarrow x_{0}}f(x)=L.
+ $$
+ Under the obvious modifications, the same conclusions hold for left and right limits.
+:::
+:::
+
+Next is a proposition that regulates how limits behave with respect to composition of functions. 
+
+::: {.callout-note title="[Limits of composite functions](https://en.wikipedia.org/wiki/Limit_of_a_function#Limits_of_compositions_of_functions)"}
+::: {#prp-limits-composite-functions}
+Consider the scalar functions $f$ and $g$ such that
+$$
+\lim_{y\rightarrow l} f(y) =L , \qquad  \lim_{x\rightarrow x_{0}}g(x) = l.
+$$ 
+If there is no open interval containing $x_{0}$ on which $g(x)$ is constantly equal to $l$, then it follows that
+$$
+\lim_{x\rightarrow x_{0}} f\circ g(x)=L
+$$
+:::
+:::

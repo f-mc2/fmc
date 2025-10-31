@@ -73,7 +73,37 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css">
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../css/style.css">
 </head>
@@ -338,6 +368,12 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Sets and functions</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching/calculo-uc3m-matematica-aplicada/1_limits_and_continuity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Limits and continuity of real-valued functions</span></a>
+  </div>
+</li>
       </ul>
   </li>
       </ul>
@@ -405,8 +441,17 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">1</span> Introduction</a></li>
+  <li><a href="#näive-set-theory" id="toc-näive-set-theory" class="nav-link" data-scroll-target="#näive-set-theory"><span class="header-section-number">2</span> Näive set theory</a></li>
+  <li><a href="#functions" id="toc-functions" class="nav-link" data-scroll-target="#functions"><span class="header-section-number">3</span> Functions</a></li>
+  <li><a href="#real-numbers" id="toc-real-numbers" class="nav-link" data-scroll-target="#real-numbers"><span class="header-section-number">4</span> Real numbers</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -432,7 +477,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">October 23, 2025</p>
+      <p class="date-modified">October 30, 2025</p>
     </div>
   </div>
     
@@ -443,10 +488,78 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="introduction" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Introduction</h1>
+</section>
+<section id="näive-set-theory" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Näive set theory</h1>
+</section>
+<section id="functions" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Functions</h1>
+</section>
+<section id="real-numbers" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Real numbers</h1>
+<p>We need to introduce various types of intervals. These objects help in formalizing the way <span class="math inline">\(x\)</span> approaches <span class="math inline">\(x_{0}\)</span>.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Open and closed intervals">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Open and closed intervals
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div id="def-open-closed-intervals" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 1</strong></span> Let <span class="math inline">\(a&lt;b\in\mathbb{R}\cup\{+\infty\}\cup\{-\infty\}\)</span>. We define the <strong>open interval</strong> <span class="math inline">\((a,b)\)</span> as the subset of <span class="math inline">\(\mathbb{R}\)</span> given by <span id="eq-open-interval"><span class="math display">\[
+(a,b):= \{x\in\mathbb{R}\,|\quad a&lt; x &lt; b \}.
+\tag{1}\]</span></span> If either <span class="math inline">\(a=-\infty\)</span> or <span class="math inline">\(b=+\infty\)</span>, the interval is said to be <strong>unbounded</strong>.</p>
+<p>When <span class="math inline">\(a\neq-\infty\)</span> and <span class="math inline">\(b\neq+\infty\)</span>, we define the closed interval <span class="math inline">\([a,b]\)</span> as <span class="math display">\[
+[a,b]:= \{x\in\mathbb{R}\,|\quad a\leq x \leq b \}.
+\]</span></p>
+<p>Intuitively speaking, the interval <span class="math inline">\((a,b)\)</span> is <em>open</em> because its boundary points <strong>are not</strong> part of it, while <span class="math inline">\([a,b]\)</span> is <em>closed</em> because its boundary points <strong>are</strong> part of it.</p>
+</div>
+</div>
+</div>
+<p>Not all intervals are either open or closed. For instance, when <span class="math inline">\(a\neq-\infty\)</span>, we can define the interval <span class="math inline">\([a,b)\)</span> as <span class="math display">\[
+[a,b) := \{x\in\mathbb{R}\,|\quad a\leq x &lt; b\},
+\]</span> while, when <span class="math inline">\(b\neq+\infty\)</span>, we can define the interval <span class="math inline">\((a,b]\)</span> as <span class="math display">\[
+(a,b] := \{x\in\mathbb{R}\,|\quad a &lt; x \leq b\},
+\]</span> and it’s clear that these interval are neither open nor closed in the sense of <a href="#def-open-closed-intervals" class="quarto-xref">Definition&nbsp;1</a></p>
+<p>In the following, it will be useful to also consider the <strong>symmetric open interval</strong> <span class="math display">\[
+I_{x_{0},\varepsilon}\equiv(x_{0}-\varepsilon, x_{0}+\varepsilon)=\{x\in\mathbb{R}\,|\quad x_{0}-\varepsilon &lt; x &lt; x_{0} + \varepsilon\}
+\]</span> centered at <span class="math inline">\(x_{0}\in\mathbb{R}\)</span> with length <span class="math inline">\(2\varepsilon\)</span> with <span class="math inline">\(\varepsilon&gt;0\)</span>. It is not hard to see that if <span class="math inline">\(x\in I_{x_{0},\varepsilon}\)</span>, then either <span class="math inline">\(x-x_{0}&lt; \varepsilon\)</span> or <span class="math inline">\(x_{0} - x &lt;\varepsilon\)</span>. It then follows that <span class="math inline">\(|x-x_{0}|&lt;\varepsilon\)</span>, so that <span class="math display">\[
+I_{x_{0},\varepsilon}=\{x\in\mathbb{R}\,| \quad d(x_{0},x)&lt;\varepsilon\}.
+\]</span> Therefore, the symmetric open intervals of <span class="math inline">\(\mathbb{R}\)</span> may be determined through the distance function.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Accumulation point">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Accumulation point
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div id="def-accumulation-point" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 2</strong></span> A point <span class="math inline">\(x_{0}\in \mathbb{R}\)</span> is said to be a <strong>left accumulation point</strong> for the subset <span class="math inline">\(D\)</span> if there is <span class="math inline">\(r&gt;0\)</span> such that the open interval <span class="math inline">\(I_{(x_{0},r)}\)</span> is contained in <span class="math inline">\(D\)</span>. A <strong>right accumulation point</strong> for <span class="math inline">\(D\)</span> is then defined in the obvious way.</p>
+<p>A point which is a left (right) accumulation point but not a right (left) accumulation point is called a <strong>strict left accumulation point</strong> (<strong>strict right accumulation point</strong>).</p>
+<p>An <strong>accumulation point</strong> for <span class="math inline">\(D\)</span> is a point that is both a left and right accumulation point for <span class="math inline">\(D\)</span>.</p>
+</div>
+</div>
+</div>
 
 
+</section>
 
 </main> <!-- /main -->
+<script type="text/tikz">
+% --- TikZJax preamble (loaded once) ---
+\usetikzlibrary{arrows.meta,decorations.pathreplacing,calc,calligraphy}
+
+\usepackage{amsfonts,amsmath}
+
+</script>
 <script>
 document.addEventListener("DOMContentLoaded", function() {
   document.querySelectorAll('a[href^="http"]').forEach(function(link) {
@@ -457,6 +570,7 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
 </script>
+
 <script src="https://tikzjax.com/v1/tikzjax.js"></script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
