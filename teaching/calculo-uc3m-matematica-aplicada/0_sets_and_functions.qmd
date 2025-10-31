@@ -6,4 +6,68 @@ date-modified: last-modified
 number-sections: true
 ---
 
+# Introduction
 
+
+# Näive set theory
+
+# Functions
+
+# Real numbers
+
+We need to introduce various types of intervals. These objects help in formalizing the way $x$ approaches $x_{0}$.
+
+::: {.callout-note title="Open and closed intervals"}
+::: {#def-open-closed-intervals} 
+ 
+Let $a<b\in\mathbb{R}\cup\{+\infty\}\cup\{-\infty\}$.
+We define the **open interval** $(a,b)$ as the subset of $\mathbb{R}$ given by
+$$
+(a,b):= \{x\in\mathbb{R}\,|\quad a< x < b \}.
+$$ {#eq-open-interval}
+If either $a=-\infty$ or $b=+\infty$, the interval is said to be **unbounded**.
+
+When $a\neq-\infty$ and $b\neq+\infty$, we define the closed interval $[a,b]$ as
+$$
+[a,b]:= \{x\in\mathbb{R}\,|\quad a\leq x \leq b \}.
+$$
+
+Intuitively speaking, the interval $(a,b)$ is _open_ because its boundary points **are not** part of it, while $[a,b]$ is _closed_ because its boundary points **are** part of it.
+:::
+:::
+
+Not all intervals are either open or closed. For instance, when $a\neq-\infty$, we can define the interval $[a,b)$ as
+$$
+[a,b) := \{x\in\mathbb{R}\,|\quad a\leq x < b\},
+$$
+while, when $b\neq+\infty$, we can define the interval $(a,b]$ as
+$$
+(a,b] := \{x\in\mathbb{R}\,|\quad a < x \leq b\}, 
+$$
+and it's clear that these interval are neither open nor closed in the sense of @def-open-closed-intervals
+
+
+
+
+In the following, it will be useful to also consider the **symmetric open interval**
+$$
+I_{x_{0},\varepsilon}\equiv(x_{0}-\varepsilon, x_{0}+\varepsilon)=\{x\in\mathbb{R}\,|\quad x_{0}-\varepsilon < x < x_{0} + \varepsilon\}
+$$
+centered at $x_{0}\in\mathbb{R}$ with length $2\varepsilon$ with $\varepsilon>0$. It is not hard to see that if $x\in I_{x_{0},\varepsilon}$, then either $x-x_{0}< \varepsilon$  or $x_{0} - x <\varepsilon$. It then follows that $|x-x_{0}|<\varepsilon$, so that
+$$ 
+I_{x_{0},\varepsilon}=\{x\in\mathbb{R}\,| \quad d(x_{0},x)<\varepsilon\}. 
+$$
+Therefore, the symmetric open intervals of $\mathbb{R}$ may be determined through the distance function.
+
+
+
+::: {.callout-note title="Accumulation point"}
+::: {#def-accumulation-point}
+A point $x_{0}\in \mathbb{R}$ is said to be a **left accumulation point** for the subset $D$ if there is $r>0$ such that the open interval $I_{(x_{0},r)}$ is contained in $D$.
+A **right accumulation point** for $D$ is then defined in the obvious way. 
+
+A point which is a left (right) accumulation point but not a right (left) accumulation point is called a **strict left accumulation point** (**strict right accumulation point**). 
+
+An **accumulation point** for $D$ is a point that is both a left and right accumulation point for $D$.
+:::
+:::
