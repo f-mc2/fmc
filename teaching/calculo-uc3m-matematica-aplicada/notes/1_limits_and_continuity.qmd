@@ -3,7 +3,6 @@ title: "Limits and continuity of real-valued functions"
 date: 2025-10-23
 date-style: full
 date-modified: last-modified
-number-sections: true
 ---
 # Introduction {#sec-introduction}
 

@@ -1,0 +1,15 @@
+title-block-banner: false
+number-sections: true
+format:
+  revealjs:
+    slide-number: true
+    progress: true
+    transition: none
+    pdf-export: true
+    chalkboard: true
+    #self-contained: true   # handy for classroom PCs / offline
+    center: false          # more readable, left-aligned
+page-layout: full
+toc: false
+sidebar: false
+search: false              # keep slide decks out of search results
