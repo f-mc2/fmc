@@ -3,23 +3,33 @@ title: "Limits and continuity of real-valued functions"
 date: 2025-10-23
 date-style: full
 date-modified: last-modified
+include-in-header:
+  text: |
+    <script src="https://cdn.geogebra.org/apps/deployggb.js"></script>
+    <style>
+      .ggb-wrap{
+        position:relative;width:100%;max-width:960px;margin:1rem auto;
+        border-radius:12px;overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,.12);
+        background:var(--quarto-body-bg,#fff);
+      }
+      /* a bit taller so the input bar fits comfortably */
+      .ggb-16x10{ padding-top: 62.5%; }
+      .ggb-canvas{ position:absolute; inset:0; width:100%; height:100%; }
+    </style>
 ---
 ::: {.callout-note title="**Slides for this chapter**"}
-[Open deck](../../presentations/calculo-uc3m-matematica-aplicada_slides/slides/1_limits_and_continuity_slides.qmd)
+
+[Go to the slides](../../presentations/calculo-uc3m-matematica-aplicada_slides/slides/1_limits_and_continuity_slides.qmd)
+
 :::
 
 # Introduction {#sec-introduction}
-
-Let's start with something dirt: money and taxes.
-
-[Capitulo 15 - Gravamen de la base liquidable del ahorro](https://sede.agenciatributaria.gob.es/static_files/Sede/Biblioteca/Manual/Practicos/IRPF/IRPF-2024/ManualRenta2024Tomo1_es_es.pdf)
-Suppose y
 
 
 
 # Distance and intervals
 
-Let $f:X\rightarrow Y$ be a function. The notion of limit formalizes, rigorously, what happens to the output when the inputs gets closer and closer to a fixed value. Roughly speaking, we write
+Let $f\colon X\rightarrow Y$ be a function. The notion of limit formalizes, rigorously, what happens to the output when the inputs gets closer and closer to a fixed value. Roughly speaking, we write
 
 $$
 \lim_{x\rightarrow x_{0}} f(x)=l 
@@ -28,7 +38,9 @@ $$
 meaning that the output $f(x)$ gets closer to $l$ if the input $x$ is closer to $x_{0}$. 
 
 ::: {.callout-important title="Remark"}
+
 Note that, in general, it is not always true that a limit exists.
+
 :::
 
 
@@ -37,6 +49,7 @@ In order to make things precise, we first need to understand what does it mean f
 Intuitively speaking, if we fix $x_{0}\in \mathbb{R}$, we say that $x_{1}$ is closer than $x_{2}$ if the distance $\Delta_{1}$ between $x_{0}$ and $x_{1}$ is smaller than the distance $\Delta_{2}$ between $x_{2}$ and $x_{0}$, which brings the question: what is the distance between two real numbers? Graphycally speaking,  we can exploit the idea that real numbers make up a straight line, and obtain the distance between two points as the length, as would be measured by a ruler, of the piece of the real line connecting the two points (see @fig-realline-distance). 
 
 ::: {.figure #fig-realline-distance}
+
 ```{=html}
 <script type="text/tikz">
 \begin{tikzpicture}[x=1cm,y=1cm]
@@ -83,6 +96,7 @@ Intuitively speaking, if we fix $x_{0}\in \mathbb{R}$, we say that $x_{1}$ is cl
 </script>
 ```
 Graphical depiction of distances between real numbers on the real line.
+
 :::
 
 In mathematical symbols, we have
@@ -93,18 +107,21 @@ $$
 
 
 ::: {.callout-note title="Euclidean distance function"}
+
 The two-point function $d\colon \mathbb{R}\times\mathbb{R}\rightarrow\mathbb{R}$ given by
 $$
 d(x,y)=\sqrt{(x-y)^{2}}=|x-y|
 $${#eq-euclidean-distance-function}
 is referred to as a **Euclidean distance function** on $\mathbb{R}$.
+
 :::
 
  
  
 ::: {.callout-important title="Remark"}
-An intuitive 
-reason for $d$ in @eq-euclidean-distance-function to measure distances follows from our direct experience, for instance with ruled paper (can you guess why/how?),  but there are also more abstract reasons connected with the theory of [metric spaces](https://en.wikipedia.org/wiki/Metric_space).
+
+An intuitive reason for $d$ in @eq-euclidean-distance-function to measure distances follows from our direct experience, for instance with ruled paper (can you guess why/how?),  but there are also more abstract reasons connected with the theory of [metric spaces](https://en.wikipedia.org/wiki/Metric_space).
+
 :::
 
 
@@ -113,8 +130,8 @@ reason for $d$ in @eq-euclidean-distance-function to measure distances follows f
 # The definition of limit
 
 ::: {.callout-note title="$\varepsilon$-$\delta$ definition of ([left/right](https://en.wikipedia.org/wiki/One-sided_limit)) [limits](https://en.wikipedia.org/wiki/Limit_of_a_function#(%CE%B5,_%CE%B4)-definition_of_limit)"}
-::: {#def-limits} 
 
+::: {#def-limits} 
 Consider the function $f\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}$ and the **left accumulation point** $x_{0}$ for $D$. 
 We say that the formal equality  
 $$
@@ -148,12 +165,16 @@ $$
 $$
 for every $x\in D$.
 In this case, we say that $l$ is the limit of $f$ at $x_{0}$.
+
 :::
+
 :::
+
 
 The first thing to do once limits are defined as in @def-limits is to prove that they are well-defined in the sense that a limit, if it exists, is unique.
 
 ::: {.callout-note title="Well-posedness of limits"}
+
 ::: {#prp-well-posedness-limits}
 Consider the function $f\colon D\subseteq\mathbb{R}\rightarrow\mathbb{R}$ and the accumulation point $x_{0}$ for $D$.
 If 
@@ -164,10 +185,11 @@ $$
 \end{split}
 $$
 then $l=m$, and analogously for left/right limits.
-:::
+
 
 <details>
 <summary>**Proof**</summary>
+
 From @def-limits, it follows there are $\varepsilon_{1},\delta_{1},\varepsilon_{2},\delta_{2}>0$ such that  
 $$
 \begin{split}
@@ -188,19 +210,62 @@ $$
 $$
 which is a contradiction unless $l=m$.
 </details>
+
+:::
+
 :::
 
 
 
-[Below](https://www.geogebra.org/m/mj2bXA5y), there is an interactive visualization of the $(\varepsilon-\delta)$-definition of the limit of a function when everything works.
+Below, there is an interactive visualization of the $(\varepsilon-\delta)$-definition of the limit of a function when everything works (source: [Jason McCullough in Geogebra](https://www.geogebra.org/m/mj2bXA5y)).
+The sliders can be used to change the value of $\varepsilon$ and $\delta$ (which corresponds to $\delta_{\varepsilon}$ in @def-limits).
+The reference point can be dragged to explore the behaviour at other points in the domain.
+The function is $f\colon\mathbb{R}\rightarrow\mathbb{R}$ given by $f(x) = 1/8 x^3$.
+Type in "f(x) = " to try a different function. 
+The demo assumes the function to be continuous and monotone in the interval $(x - \delta, x + \delta)$.
 
-<iframe
-  id="inlineFrameExample"
-  title="Inline Frame Example"
-  width="700"
-  height="500"
-  src="https://www.geogebra.org/m/mj2bXA5y">
-</iframe>
+
+<div class="ggb-wrap ggb-16x10">
+  <div id="ggb-container" class="ggb-canvas"></div>
+</div>
+
+<script>
+window.addEventListener('DOMContentLoaded', () => {
+  const params = {
+    material_id: "mj2bXA5y",
+
+    // Use Classic to avoid command-compat issues (e.g., Polygon)
+    appName: "classic",
+
+    // Keep UI minimal but show the input bar like the original
+    showToolBar: false,
+    showMenuBar: false,
+    showAlgebraInput: true,
+    algebraInputPosition: "bottom", // works with Classic
+    showZoomButtons: true,
+    enableRightClick: false,
+    allowStyleBar: false,
+    language: "en",
+
+    // Make it fill the wrapper responsively
+    scaleContainerClass: "ggb-wrap",
+    autoHeight: false,
+    allowUpscale: true,
+
+    // Required by loader; CSS controls final size
+    width: 800, height: 500,
+
+    // Optional: tidy initial view once loaded
+    appletOnLoad: (api) => {
+      try { api.setCoordSystem(-6, 6, -6, 6); } catch(_) {}
+    }
+  };
+
+  const applet = new GGBApplet(params, /* useBrowserForJS */ true);
+  applet.inject("ggb-container");
+});
+</script>
+
 
 [Below](https://www.geogebra.org/m/hebkhRJm), there is an interactive visualization of the $(\varepsilon-\delta)$-definition of the limit of a function when things do not work (note that a trignometric function is used even if they are introduced later):
 
@@ -214,14 +279,19 @@ which is a contradiction unless $l=m$.
 
 
 ::: {.callout-caution title="Existence of the limit at $x_{0}$ is equivalent to existence and equality of left and right limits at $x_{0}$"}
+
 ::: {#exr-left-right-limits-link}
+
 Consider the function $f\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}$.
 
 If $x_{0}$ is a left and right accumulation point for $D\subseteq \mathbb{R}$, prove that  $l$ is the limit of function $f\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}$ for $x$ going to $x_{0}$ if and only **if and only if** it is also the left and right limit of $f\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}$ at $x_{0}$.
+
 :::
+
 :::
 
 ::: {.callout-caution title="Limits of the restriction"}
+
 ::: {#exr-limits-restriction-functions}
 Consider the function $f\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}$, the subset $D'\subset D$, and  the restriction function $g\colon D'\subset \mathbb{R}\rightarrow \mathbb{R}$ given by $g(x)=f(x)$.
 
@@ -233,14 +303,19 @@ whenever either one of the limits exist.
 
 Prove analogous results for the case of left and right limits.
 :::
+
 :::
 
 
 
 ::: {.callout-caution title="On restrictions and left/right limits"}
+
 ::: {#exr-left-right-limits-restriction-constant-linear-quadratic-functions}
+
 Exploiting @exr-left-right-limits-link and @exr-limits-restriction-functions, prove that the obvious modifications of the results in this subsection hold also for left/right limits and for restrictions to arbitrary subsets of $\mathbb{R}$.
+
 :::
+
 :::
 
 
@@ -252,6 +327,7 @@ In @def-limits, the point $x_0$ is an accumulation point of the domain $D$ of th
 However, if $x_{0}$ does belong to $D$ and the limit exists, it makes sense to see if the limit $l$ differs from the value of the function at $x_0$. 
 
 ::: {.callout-note title="Continuity"}
+
 ::: {#def-continuity}
 Let $x_{0}\in D\subseteq \mathbb{R}$ be an [accumulation point](0_sets_and_functions.qmd#def-accumulation-point)  for $D$. 
 
@@ -262,43 +338,63 @@ $$
 Left and right continuity are defined in the obvious way. 
 
 The function $f\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}$ said to be continuous if it is continuous at all accumulation points $x_{0}\in D$, and left/right continuous at all right/left accumulation points $x_{0}\in D$.
+
 :::
+
 :::
+
 
 ::: {.callout-caution title="Continuity is equivalent to simultaneous left and right continuity"}
+
 ::: {#exr-continuity-iff-left-right-continuity}
+
 The function $f\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}$ is  continuous at $x_{0}\in D$ **and only if** it is both left and right continuous at $x_0$.
-:::
+
 :::
 
+:::
+
+
 ::: {.callout-caution title="Polynomials are continuous"}
+
+::: {#exr-polynomials-continuous}
+
 Consider the function $P_{n}\colon\mathbb{R}\rightarrow\mathbb{R}$ where $P_{n}(x)$ is a polynomial of order $n$.
 Prove that $P_{n}$ is continuous.
 
+
+
 <details>
-<summary>**Proof**</summary>
+<summary> **Proof** </summary>
+
 The polynomial $P_{n}(x)$ can be written as
 $$
 P_{n}(x)= a_{n}x^{n} + a_{n-1} x^{n-1}\cdots a_{1}x + a_{0}x^{0},
 $$
 where $a_{j}\in\mathbb{R}$ for every $j=1,\cdots , n$.
 It is then clear that $P_{n}$ is a suitable combinations of sums and products of constant functions (which are continuous) with  the identity function $f(x)=x$ (which is continuous).
-
 Consequently, @prp-algebraic-manipulations-continuous-functions ensures the desired result.
 
 </details>
+
 :::
+
+:::
+
 
 Consider the function $f\colon D\subseteq\mathbb{R}\rightarrow\mathbb{R}$, and let $x_{0}$ be an accumulation point for $D$. 
 Three situations are possibles:
 
 1. the limit at $x_{0}$ exists, but either $x_{0}$ is not in $D$, or the limit is different from $f(x_{0})$ (**removable discontinuity**);
 2. the right and left limits at $x_{0}\in D$ exist, are finite, but are different (**jump discontinuity**);
-3. the right and left limits at $x_{0}$ exist but at least one of them is either $+\infty$ or $-\infty$ or at least one of them does not exist(**essential discontinuity**).
+3. the right and left limits at $x_{0}$ exist but at least one of them is either $+\infty$ or $-\infty$ or at least one of them does not exist (**essential discontinuity**).
 
-In the first case (**removable discontinuity**), we can define a new function $\tilde{f}\colon D\cup\{x_{0}\}\subseteq\mathbb{R}\rightarrow\mathbb{R}$ by setting 
+
+
+
+In the first case (**removable discontinuity**), we can define a new function $\tilde{f}\colon D \cup\{x_{0}\}\subseteq\mathbb{R}\rightarrow\mathbb{R}$ by setting 
 $$
-\tilde{f}(x)=\left\{\begin{matrix} f(x) & \mbox{ if } x_{0}\neq x\in D \\ & \\  \lim_{x\rightarrow x_{0}}f(x) & \mbox{ if } x=x_{0}\end{matrix}\right. .
+\tilde{f}(x)= \left\{\begin{matrix} f(x) & \mbox{ if } x_{0}\neq x\in D \\  \lim_{x\rightarrow x_{0}}f(x) & \mbox{ if } x=x_{0} .\end{matrix}\right.
 $$
 This new function is called an **extension by continuity** of $f$ and it is a continuous function at $x_{0}$ by construction. 
 Note that this procedure works whether $x_{0}$ is in the domain $D$ of the original function or not. 
@@ -310,18 +406,23 @@ In the second case (**jump discontinuity**), whether $x_{0}$ lies in $D$ or not,
 In the third case (**essential singularity**), there is nothing we can do to ameliorate the discontinuities of the function $f$. 
 
 ::: {.callout-caution title="Build examples of discontinuous functions"}
+
 ::: {#exr-examples-discontinuous-functions}
 For each type of discontinuity, build a function presenting said discontinuity at least at one point.
 
+
 <details>
 <summary>**Solution**</summary>
+
 </details>
+
 :::
+
 :::
 
 
- 
-# Constant, linear, and quadratic functions{#sec-limits-constant-linear-quadratic-functions}
+
+# Three simple examples {#sec-limits-constant-linear-quadratic-functions}
 
 Let us start considering the function $f\colon \mathbb{R}\rightarrow\mathbb{R}$ given by $f(x)=c$ and prove that
 $$
@@ -384,8 +485,8 @@ Note that the way in which $\delta_{\varepsilon}$ depends on $\varepsilon$ is mo
 # Algebraic manipulations of limits and continuous functions 
  
 
-From the example with $f(x)=x^{2}$, it should be clear that computing limits following   @def-limits is not going to be an easy task for arbitrary functions.
-This difficulty bothered some mathematicians who decided to investigate some simple cases using *educated guesses* (that is, the sophisticated siblings of sheer luck), and then proceeded to prove general theorems that allows to exploit to the maximum the simple examples already solved.
+From the example with $f(x)=x^{2}$, it should be clear that computing limits following  @def-limits is not going to be an easy task for arbitrary functions.
+This difficulty bothered some mathematicians who decided to investigate some simple cases using _educated guesses_ (that is, the sophisticated siblings of sheer luck), and then proceeded to prove general theorems that allows to exploit to the maximum the simple examples already solved.
 
 To understand how one may envision such general theorem, let us note that, setting $f(x)=x +c$, $g(x)=x$, and $h(x)=c$, @eq-limit-constant-function and @eq-limit-linear-function (once with $a=c$ and once with $a=0$), imply
 $$
@@ -424,7 +525,10 @@ $$
 &<\nu\epsilon + |l|\,\epsilon + |m|\,\nu .
 \end{split}
 $$
+
 Given $\varepsilon>0$, I can choose $\nu$ and $\epsilon$ such that $\nu\epsilon + |l|\,\epsilon + |m|\,\nu<\varepsilon$ since $\nu$ and $\epsilon$ are arbitrary, and thus we conclude that the $lm$ is the limit at $x_{0}$ of $f(x)=g(x)h(x)$.
+
+
 
 
 
@@ -438,19 +542,19 @@ $$
 where $(A_{1},\cdots,A_{n})$ can be a finite sequence of numbers or functions, we can use  the previous results together with the associativity property for function sums and products  to prove the follwing proposition on the algebraic manipulation of limits.
 
 ::: {.callout-note title="Algebraic manipulations of limits"}
-::: {#prp-algebraic-manipulations-limits}
-Let $(\alpha_{1},\cdots\alpha_{n})\mathbb{R}^{n}$, and let $x_{0}\in\mathbb{R}$ be an accumulation point for $D$. 
-For each $j=1,\cdots,n$, consider the function $f_{j}\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}$.
 
+::: {#prp-algebraic-manipulations-limits}
+
+Let $(\alpha_{1},\cdots\alpha_{n})\mathbb{R}^{n}$, let $x_{0}\in\mathbb{R}$ be an accumulation point for $D$, and, for each $j=1,\cdots,n$, consider the function $f_{j}\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}$.
 If
 $$
-\lim_{x\rightarrow x_{0} }f_{j}(x)=L_{j}\in \mathbb{R}
+\lim_{x\rightarrow x_{0}}f_{j}(x)=L_{j}\in \mathbb{R}
 $$
 for every $j=1,...,n$, then
 $$
 \begin{split}
-1)\quad & \lim_{x\rightarrow x_{0}} \sum_{j=1}^{n}\,\alpha_{j}\,f_{j}(x) =\sum_{j=1}^{n}\,\lim_{x\rightarrow x_{0}} \left(\alpha_{j}\,f_{j}(x)\right) = \sum_{j=1}^{n}\,\alpha_{j}\,L_{j} \\ & \\
-2) \quad &\lim_{x\rightarrow x_{0}}\prod_{j=1}^{n} \,\alpha_{j}\,f_{j}(x) =\prod_{j=1}^{n}\,\lim_{x\rightarrow x_{0}} \left(\alpha_{j}\,f_{j}(x)\right) = \prod_{j=1}^{n}\,\alpha_{j}\,L_{j} .
+\lim_{x\rightarrow x_{0}} \sum_{j=1}^{n}\,\alpha_{j}\,f_{j}(x) &=\sum_{j=1}^{n}\,\lim_{x\rightarrow x_{0}} \left(\alpha_{j}\,f_{j}(x)\right) = \sum_{j=1}^{n}\,\alpha_{j}\,L_{j} \\ & \\
+\lim_{x\rightarrow x_{0}}\prod_{j=1}^{n} \,\alpha_{j}\,f_{j}(x) & =\prod_{j=1}^{n}\,\lim_{x\rightarrow x_{0}} \left(\alpha_{j}\,f_{j}(x)\right) = \prod_{j=1}^{n}\,\alpha_{j}\,L_{j} .
 \end{split}
 $${#eq-algebraic-manipulations-limits}
 Moreover, if $n=2$ and $\alpha_{2},L_{2}\neq 0$, it holds
@@ -459,14 +563,19 @@ $$
 $$
 
 Under the obvious modifications, the same conclusions hold for left and right limits.
+
 :::
+
 :::
+
 
 
 From @prp-algebraic-manipulations-limits it naturally follows that continuous functions behaves well with respect to sums and products.
 
 ::: {.callout-note title="Algebraic manipulations of continuous functions"}
+
 ::: {#prp-algebraic-manipulations-continuous-functions}
+
 Let $(\alpha_{1},\cdots\alpha_{n})\mathbb{R}^{n}$ and $x_{0}$ be an accumulation point for $D\subseteq \mathbb{R}$.
 For each $j=1,\cdots,n$, consider the function $f_{j}\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}$, assumed to be  continuous at $x_{0}$.
 
@@ -483,8 +592,12 @@ $$
 is continuous at $x_{0}$.
 
 Analogous results hold for left/right continuity with the obvious modifications.
+
 :::
+
 :::
+
+
 
 # Improper limits
 
@@ -502,8 +615,11 @@ Can we make this intuitive understanding rigorous?
 
 The answer is affirmative, and leads to the definition of unbounded limit.
 
+
 ::: {.callout-note title="Unbounded limits"}
+
 ::: {#def-unbounded-limits}
+
 Consider the function $f\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}$, and let $x_{0}$ be a left accumulation point for $D$. 
 We say that the formal equality
 $$ 
@@ -528,24 +644,32 @@ for every $x_{0}\neq x\in D$.
 In this case, we say that $-\infty$ is the limit of $f$ at $x_{0}$.
 
 Left and right unbounded limits are defined analogously. 
+
 :::
+
 :::
 
 ::: {.callout-caution title="Existence and equality of left and right unbounded limits at $x_{0}$ is equivalent to existence of the unbounded limit at $x_{0}$"}
+
 ::: {#exr-left-right-unbounded-limits-link}
+
 Analogously to @exr-left-right-limits-link, show that the unbounded limit
 $$
 \lim_{x\rightarrow x_{0}}f(x)=\pm \infty
 $$
 holds **if and only if** if both left and right unbounded limits at $x_{0}$ exist and are equal.
+
 :::
+
 :::
 
 
 Another type of **improper** limit is necessary if we want to understand what happens when the input variable either grows or degrows indefinitely (when possible).
 
 ::: {.callout-note title="Limits at $+\infty$"}
+
 ::: {#def-limits-at-infty}
+
 Let $D\subseteq \mathbb{R}$ be such that $+\infty$ is a right accumulation point for it, and consider a function $f\colon D\rightarrow \mathbb{R}$. 
 
 The formal equality
@@ -575,11 +699,15 @@ holds if for every $K>0$ there is  $M>0$ such that
 $$
 D\ni x>M \rightarrow f(x)<-K.
 $$
+
 :::
+
 :::
 
 ::: {.callout-note title="Limits at $-\infty$"}
+
 ::: {#def-limits-at-minus-infty}
+
 Let $D\subseteq \mathbb{R}$ be such that $-\infty$ is a left accumulation point for it, and consider a function $f\colon D\rightarrow \mathbb{R}$. 
 
 The formal equality
@@ -609,7 +737,9 @@ holds if for every $K>0$ there is  $M>0$ such that
 $$
 D\ni x<-M \rightarrow f(x)<-K.
 $$
+
 :::
+
 :::
 
 
@@ -647,7 +777,9 @@ $$
 \end{split}
 $$
 All other cases are called [**indeterminate forms**](https://en.wikipedia.org/wiki/Indeterminate_form), and a case by case analysis is needed to determine if the limit exists or not.
+
 :::
+
 
 
 
@@ -660,24 +792,30 @@ Informally speaking, the underlying idea behind the result is that, if a functio
 
 
 ::: {.callout-note title="The squeeze (pinching) theorem"}
+
 ::: {#thm-squeeze-thm}
+
 Consider the functions $f,g,h\colon D\subseteq\mathbb{R}\rightarrow \mathbb{R}$, and let $x_{0}$ be an accumulation point for $D$. 
 If $h(x)\leq f(x)\leq g(x)$ for all $x\in D$ and 
- $$
- \lim_{x\rightarrow x_{0}}h(x)=\lim_{x\rightarrow x_{0}}g(x)=L\in\mathbb{R},
- $$
- then it follows that
- $$
- \lim_{x\rightarrow x_{0}}f(x)=L.
- $$
- Under the obvious modifications, the same conclusions hold for left and right limits.
+$$
+\lim_{x\rightarrow x_{0}}h(x)=\lim_{x\rightarrow x_{0}}g(x)=L\in\mathbb{R},
+$$
+then it follows that
+$$
+\lim_{x\rightarrow x_{0}}f(x)=L.
+$$
+Under the obvious modifications, the same conclusions hold for left and right limits.
+
 :::
+
 :::
 
 Next is a proposition that regulates how limits behave with respect to composition of functions. 
 
 ::: {.callout-note title="[Limits of composite functions](https://en.wikipedia.org/wiki/Limit_of_a_function#Limits_of_compositions_of_functions)"}
+
 ::: {#prp-limits-composite-functions}
+
 Consider the scalar functions $f$ and $g$ such that
 $$
 \lim_{y\rightarrow l} f(y) =L , \qquad  \lim_{x\rightarrow x_{0}}g(x) = l.
@@ -686,5 +824,7 @@ If there is no open interval containing $x_{0}$ on which $g(x)$ is constantly eq
 $$
 \lim_{x\rightarrow x_{0}} f\circ g(x)=L
 $$
+
 :::
+
 :::
