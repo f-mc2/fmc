@@ -1,0 +1,11 @@
+---
+title: "Calculus (20124)"
+format: html
+description: "Slides for the Calculus course for the  Bachelor in Applied Mathematics at UC3M"
+comments: false
+listing:
+  contents: slides/*.qmd
+  sort: "order"
+  type: table
+  fields: [title]
+---

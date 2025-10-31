@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Articles – Florio M. Ciaglia</title>
+<title>Presentations – Florio M. Ciaglia</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,27 +20,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-  margin-bottom: 0em;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -50,6 +30,8 @@ div.csl-indent {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-listing/list.min.js"></script>
+<script src="../site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -92,6 +74,35 @@ div.csl-indent {
     "search-label": "Search"
   }
 }</script>
+<script>
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
+      
+      searchColumns: ["listing-title","listing-author"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
 <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css">
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
@@ -125,7 +136,6 @@ window.Quarto = {
 </script>
 
 <link rel="stylesheet" href="../css/style.css">
-<link rel="stylesheet" href="../css/refs-desc-numbering.css">
 </head>
 
 <body class="nav-sidebar docked nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
@@ -340,7 +350,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../publications/publications_index.html">Publications</a></li><li class="breadcrumb-item"><a href="../publications/articles.html">Articles</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../presentations/presentations_index.html">Presentations</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -358,30 +368,47 @@ window.Quarto = {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../teaching/teaching_index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Teaching</span></a>
+            <a href="../courses/courses_index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Courses</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../courses/calculo-uc3m-matematica-aplicada/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Calculus (20124)</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../teaching/calculo-uc3m-matematica-aplicada/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Calculus (20124)</span></a>
+  <a href="../courses/calculo-uc3m-matematica-aplicada/0_sets_and_functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Sets and functions</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../courses/calculo-uc3m-matematica-aplicada/1_limits_and_continuity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Limits and continuity of real-valued functions</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="../publications/publications_index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Publications</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../publications/inf-geo.html" class="sidebar-item-text sidebar-link">
@@ -408,7 +435,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../publications/articles.html" class="sidebar-item-text sidebar-link active">
+  <a href="../publications/articles.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Articles</span></a>
   </div>
 </li>
@@ -416,6 +443,23 @@ window.Quarto = {
   <div class="sidebar-item-container"> 
   <a href="../publications/proceedings.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Proceedings</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../presentations/presentations_index.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Presentations</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../presentations/calculo-uc3m-matematica-aplicada_slides/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Calculus (20124)</span></a>
   </div>
 </li>
       </ul>
@@ -432,9 +476,9 @@ window.Quarto = {
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../publications/publications_index.html">Publications</a></li><li class="breadcrumb-item"><a href="../publications/articles.html">Articles</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Articles</h1>
+<h1 class="title">Presentations</h1>
 </div>
 
 
@@ -451,166 +495,57 @@ window.Quarto = {
 </header>
 
 
-<p>The list is ordered according to the date of publication, and not the date of creation.</p>
-<div id="refs" class="references csl-bib-body" data-entry-spacing="0" role="list">
-<div id="ref-ACDMP2016" class="csl-entry" role="listitem">
-<div class="csl-left-margin">P. Aniello, F.M. Ciaglia, F. Di Cosmo, G. Marmo, and J.M. Pérez-Pardo: <em>Time, classical and quantum</em>: Annals of physics 373: 2016-10: doi: <a href="https://doi.org/10.1016/j.aop.2016.08.001">10.1016/j.aop.2016.08.001</a>. Available at: <a href="https://arxiv.org/abs/1605.03534">https://arxiv.org/abs/1605.03534</a></div>
-</div>
-<div id="ref-ACDI2017a" class="csl-entry" role="listitem">
-<div class="csl-left-margin">M. Asorey, M. Ciaglia, F. Di Cosmo, and A. Ibort: <em>Covariant brackets for particles and fields</em>: Modern physics letters a 32(19): 2017-06: doi: <a href="https://doi.org/10.1142/S0217732317501000">10.1142/S0217732317501000</a>. Available at: <a href="https://arxiv.org/abs/1705.00235">https://arxiv.org/abs/1705.00235</a></div>
-</div>
-<div id="ref-CDFMMP2017" class="csl-entry" role="listitem">
-<div class="csl-left-margin">F.M. Ciaglia, F. Di Cosmo, D. Felice, S. Mancini, G. Marmo, and J.M. Pérez-Pardo: <em>Hamilton-<span>Jacobi</span> approach to potential functions in information geometry</em>: Journal of mathematical physics 58(6): 2017-06: doi: <a href="https://doi.org/10.1063/1.4984941">10.1063/1.4984941</a>. Available at: <a href="https://arxiv.org/abs/1608.06584">https://arxiv.org/abs/1608.06584</a></div>
-</div>
-<div id="ref-ACDI2017" class="csl-entry" role="listitem">
-<div class="csl-left-margin">M. Asorey, F.M. Ciaglia, F. Di Cosmo, and A. Ibort: <em>Erratum: <span>“<span>Covariant</span> brackets for particles and fields”</span></em>: Modern physics letters a 32(22): 2017-07: doi: <a href="https://doi.org/10.1142/S021773231792002X">10.1142/S021773231792002X</a></div>
-</div>
-<div id="ref-ACDIM2017" class="csl-entry" role="listitem">
-<div class="csl-left-margin">M. Asorey, F.M. Ciaglia, F. Di Cosmo, A. Ibort, and G. Marmo: <em>Covariant <span>Jacobi</span> brackets for test particles</em>: Modern physics letters a 32(23): 2017-07: doi: <a href="https://doi.org/10.1142/S021773231750122X">10.1142/S021773231750122X</a></div>
-</div>
-<div id="ref-CCLM2017" class="csl-entry" role="listitem">
-<div class="csl-left-margin">F.M. Ciaglia, F.D. Cosmo, M. Laudato, and G. Marmo: <em>Differential calculus on manifolds with boundary applications</em>: International journal of geometric methods in modern physics 14(08): 2017-08: doi: <a href="https://doi.org/10.1142/S0219887817400035">10.1142/S0219887817400035</a>. Available at: <a href="https://arxiv.org/abs/1705.02974">https://arxiv.org/abs/1705.02974</a></div>
-</div>
-<div id="ref-CDILM2017" class="csl-entry" role="listitem">
-<div class="csl-left-margin">F.M. Ciaglia, F. Di Cosmo, A. Ibort, M. Laudato, and G. Marmo: <em>Dynamical <span>Vector Fields</span> on the <span>Manifold</span> of <span>Quantum States</span></em>: Open systems &amp; information dynamics 24(03): 2017-09: doi: <a href="https://doi.org/10.1142/S1230161217400030">10.1142/S1230161217400030</a>. Available at: <a href="https://www.worldscientific.com/doi/abs/10.1142/S1230161217400030">https://www.worldscientific.com/doi/abs/10.1142/S1230161217400030</a></div>
-</div>
-<div id="ref-CDIM2017" class="csl-entry" role="listitem">
-<div class="csl-left-margin">F.M. Ciaglia, F. Di Cosmo, A. Ibort, and G. Marmo: <em>Dynamical aspects in the quantizer–dequantizer formalism</em>: Annals of physics 385: 2017-10: doi: <a href="https://doi.org/10.1016/j.aop.2017.08.025">10.1016/j.aop.2017.08.025</a></div>
-</div>
-<div id="ref-CIM2017" class="csl-entry" role="listitem">
-<div class="csl-left-margin">F.M. Ciaglia, A. Ibort, and G. Marmo: <em>Geometrical structures for classical and quantum probability spaces</em>: International journal of quantum information 15(08): 2017-12: doi: <a href="https://doi.org/10.1142/s021974991740007x">10.1142/s021974991740007x</a>. Available at: <a href="https://arxiv.org/abs/1711.09774">https://arxiv.org/abs/1711.09774</a></div>
-</div>
-<div id="ref-CCFMMP2018" class="csl-entry" role="listitem">
-<div class="csl-left-margin">F.M. Ciaglia, F.D. Cosmo, D. Felice, S. Mancini, G. Marmo, and J.M. Pérez-Pardo: <em>Aspects of <span>Geodesical Motion</span> with <span>Fisher-Rao Metric</span>: <span>Classical</span> and <span>Quantum</span></em>: Open systems &amp; information dynamics 25(01): 2018-03: doi: <a href="https://doi.org/10.1142/s1230161218500051">10.1142/s1230161218500051</a>. Available at: <a href="https://arxiv.org/abs/1608.06105">https://arxiv.org/abs/1608.06105</a></div>
-</div>
-<div id="ref-CIM2018" class="csl-entry" role="listitem">
-<div class="csl-left-margin">F.M. Ciaglia, A. Ibort, and G. Marmo: <em>A gentle introduction to <span>Schwinger</span>’s formulation of quantum mechanics: <span>The</span> groupoid picture</em>: Modern physics letters a 33(20): 2018-06: doi: <a href="https://doi.org/10.1142/S0217732318501225">10.1142/S0217732318501225</a>. Available at: <a href="https://arxiv.org/abs/1807.00519">https://arxiv.org/abs/1807.00519</a></div>
-</div>
-<div id="ref-CDLMMVV2018" class="csl-entry" role="listitem">
-<div class="csl-left-margin">F.M. Ciaglia, F. Di Cosmo, M. Laudato, G. Marmo, F.M. Mele, F. Ventriglia, and P. Vitale: <em>A pedagogical intrinsic approach to relative entropies as potential functions of quantum metrics: <span>The</span> q – z family</em>: Annals of physics 395: 2018-08: doi: <a href="https://doi.org/10.1016/j.aop.2018.05.015">10.1016/j.aop.2018.05.015</a>. Available at: <a href="https://arxiv.org/abs/1807.00519">https://arxiv.org/abs/1807.00519</a></div>
-</div>
-<div id="ref-CCM2018" class="csl-entry" role="listitem">
-<div class="csl-left-margin">F.M. Ciaglia, H. Cruz, and G. Marmo: <em>Contact manifolds and dissipation, classical and quantum</em>: Annals of physics 398: 2018-11: doi: <a href="https://doi.org/10.1016/j.aop.2018.09.012">10.1016/j.aop.2018.09.012</a>. Available at: <a href="https://linkinghub.elsevier.com/retrieve/pii/S0003491618302574">https://linkinghub.elsevier.com/retrieve/pii/S0003491618302574</a></div>
-</div>
-<div id="ref-CCIMV2019" class="csl-entry" role="listitem">
-<div class="csl-left-margin">D. Chruściński, F.M. Ciaglia, A. Ibort, G. Marmo, and F. Ventriglia: <em>Stratified manifold of quantum states, actions of the complex special linear group</em>: Annals of physics 400: 2019-01: doi: <a href="https://doi.org/10.1016/j.aop.2018.11.015">10.1016/j.aop.2018.11.015</a>. Available at: <a href="https://linkinghub.elsevier.com/retrieve/pii/S0003491618303002">https://linkinghub.elsevier.com/retrieve/pii/S0003491618303002</a></div>
-</div>
-<div id="ref-CMP2019" class="csl-entry" role="listitem">
-<div class="csl-left-margin">F.M. Ciaglia, G. Marmo, and J.M. Pérez-Pardo: <em>Generalized potential functions in differential geometry and information geometry</em>: International journal of geometric methods in modern physics 16(01): 2019-02: doi: <a href="https://doi.org/10.1142/s0219887819400024">10.1142/s0219887819400024</a>. Available at: <a href="https://arxiv.org/abs/1804.10414">https://arxiv.org/abs/1804.10414</a></div>
-</div>
-<div id="ref-CIM2019a" class="csl-entry" role="listitem">
-<div class="csl-left-margin">F.M. Ciaglia, A. Ibort, and G. Marmo: <em>Schwinger’s picture of quantum mechanics <span>I</span>: <span>Groupoids</span></em>: International journal of geometric methods in modern physics 16(08): 2019-08: doi: <a href="https://doi.org/10.1142/S0219887819501196">10.1142/S0219887819501196</a>. Available at: <a href="https://arxiv.org/abs/1905.12274">https://arxiv.org/abs/1905.12274</a></div>
-</div>
-<div id="ref-CIM2019b" class="csl-entry" role="listitem">
-<div class="csl-left-margin">F.M. Ciaglia, A. Ibort, and G. Marmo: <em>Schwinger’s picture of quantum mechanics <span>II</span>: <span>Algebras</span> and observables</em>: International journal of geometric methods in modern physics 16(09): 2019-09: doi: <a href="https://doi.org/10.1142/S0219887819501366">10.1142/S0219887819501366</a>. Available at: <a href="https://arxiv.org/abs/1907.03883">https://arxiv.org/abs/1907.03883</a></div>
-</div>
-<div id="ref-CDIM2019" class="csl-entry" role="listitem">
-<div class="csl-left-margin">F.M. Ciaglia, F. Di Cosmo, A. Ibort, and G. Marmo: <em>Descriptions of <span>Relativistic Dynamics</span> with <span>World Line Condition</span></em>: Quantum reports 1(2): 2019-10: doi: <a href="https://doi.org/10.3390/quantum1020016">10.3390/quantum1020016</a>. Available at: <a href="https://www.mdpi.com/2624-960X/1/2/16">https://www.mdpi.com/2624-960X/1/2/16</a></div>
-</div>
-<div id="ref-CDMS2019" class="csl-entry" role="listitem">
-<div class="csl-left-margin">F.M. Ciaglia, F. Di Cosmo, G. Marmo, and L. Schiavone: <em>Evolutionary equations and constraints: <span>Maxwell</span> equations</em>: Journal of mathematical physics 60(11): 2019-11: doi: <a href="https://doi.org/10.1063/1.5109087">10.1063/1.5109087</a>. Available at: <a href="http://aip.scitation.org/doi/10.1063/1.5109087">http://aip.scitation.org/doi/10.1063/1.5109087</a></div>
-</div>
-<div id="ref-CIM2019c" class="csl-entry" role="listitem">
-<div class="csl-left-margin">F.M. Ciaglia, A. Ibort, and G. Marmo: <em>Schwinger’s picture of quantum mechanics <span>III</span>: <span>The</span> statistical interpretation</em>: International journal of geometric methods in modern physics 16(11): 2019-11: doi: <a href="https://doi.org/10.1142/S0219887819501652">10.1142/S0219887819501652</a>. Available at: <a href="https://arxiv.org/abs/1909.07265">https://arxiv.org/abs/1909.07265</a></div>
-</div>
-<div id="ref-CIJM2019" class="csl-entry" role="listitem">
-<div class="csl-left-margin">F.M. Ciaglia, A. Ibort, J. Jost, and G. Marmo: <em>Manifolds of classical probability distributions and quantum density operators in infinite dimensions</em>: Information geometry 2(2): 2019-12: doi: <a href="https://doi.org/10.1007/s41884-019-00022-1">10.1007/s41884-019-00022-1</a>. Available at: <a href="https://arxiv.org/abs/1907.00732">https://arxiv.org/abs/1907.00732</a></div>
-</div>
-<div id="ref-CDFMMSVV2019" class="csl-entry" role="listitem">
-<div class="csl-left-margin">F.M. Ciaglia, F. Di Cosmo, A. Figueroa, V.I. Man’ko, G. Marmo, L. Schiavone, F. Ventriglia, and P. Vitale: <em>Nonlinear <span>Dynamics</span> from <span>Linear Quantum Evolutions</span></em>: Annals of physics 411: 2019-12: doi: <a href="https://doi.org/10.1016/j.aop.2019.167957">10.1016/j.aop.2019.167957</a>. Available at: <a href="http://arxiv.org/abs/1908.03699">http://arxiv.org/abs/1908.03699</a></div>
-</div>
-<div id="ref-CCFMS2020" class="csl-entry" role="listitem">
-<div class="csl-left-margin">F.M. Ciaglia, F.D. Cosmo, A. Figueroa, G. Marmo, and L. Schiavone: <em>Geometry from divergence functions and complex structures</em>: International journal of quantum information 18(01): 2020-02: doi: <a href="https://doi.org/10.1142/s021974991941020x">10.1142/s021974991941020x</a>. Available at: <a href="https://arxiv.org/abs/2002.02891">https://arxiv.org/abs/2002.02891</a></div>
-</div>
-<div id="ref-CDIM2020" class="csl-entry" role="listitem">
-<div class="csl-left-margin">F.M. Ciaglia, F. Di Cosmo, A. Ibort, and G. Marmo: <em>Schwinger’s picture of quantum mechanics</em>: International journal of geometric methods in modern physics 17(04): 2020-03: doi: <a href="https://doi.org/10.1142/S0219887820500541">10.1142/S0219887820500541</a>. Available at: <a href="https://arxiv.org/abs/2002.09326">https://arxiv.org/abs/2002.09326</a></div>
-</div>
-<div id="ref-CDIM2020a" class="csl-entry" role="listitem">
-<div class="csl-left-margin">F.M. Ciaglia, F. Di Cosmo, A. Ibort, and G. Marmo: <em>Schwinger’s picture of quantum mechanics <span>IV</span>: <span>Composition</span> and independence</em>: International journal of geometric methods in modern physics 17(04): 2020-03: doi: <a href="https://doi.org/10.1142/S0219887820500589">10.1142/S0219887820500589</a>. Available at: <a href="https://arxiv.org/abs/2004.02472">https://arxiv.org/abs/2004.02472</a></div>
-</div>
-<div id="ref-C2020a" class="csl-entry" role="listitem">
-<div class="csl-left-margin">F.M. Ciaglia: <em>Quantum states, groups and monotone metric tensors</em>: The european physical journal plus 135(6): 2020-06: doi: <a href="https://doi.org/10.1140/epjp/s13360-020-00537-y">10.1140/epjp/s13360-020-00537-y</a>. Available at: <a href="https://arxiv.org/abs/2006.10595">https://arxiv.org/abs/2006.10595</a></div>
-</div>
-<div id="ref-CDIMSZ2020" class="csl-entry" role="listitem">
-<div class="csl-left-margin">F.M. Ciaglia, F. Di Cosmo, A. Ibort, G. Marmo, L. Schiavone, and A. Zampini: <em>Lagrangian description of <span>Heisenberg</span> and <span>Landau</span>–von <span>Neumann</span> equations of motion</em>: Modern physics letters a 35(19): 2020-06: doi: <a href="https://doi.org/10.1142/S0217732320501618">10.1142/S0217732320501618</a>. Available at: <a href="https://www.worldscientific.com/doi/abs/10.1142/S0217732320501618">https://www.worldscientific.com/doi/abs/10.1142/S0217732320501618</a></div>
-</div>
-<div id="ref-CJS2020a" class="csl-entry" role="listitem">
-<div class="csl-left-margin">F.M. Ciaglia, J. Jost, and L. Schwachhöfer: <em>From the <span>Jordan Product</span> to <span>Riemannian Geometries</span> on <span>Classical</span> and <span>Quantum States</span></em>: Entropy 22(6): 2020-06: doi: <a href="https://doi.org/10.3390/e22060637">10.3390/e22060637</a>. Available at: <a href="https://arxiv.org/abs/2005.02023">https://arxiv.org/abs/2005.02023</a></div>
-</div>
-<div id="ref-CDIMS2020" class="csl-entry" role="listitem">
-<div class="csl-left-margin">F.M. Ciaglia, F. Di Cosmo, A. Ibort, G. Marmo, and L. Schiavone: <em>Covariant reduction of classical <span>Hamiltonian Field Theories</span>: <span>From D</span>’<span>Alembert</span> to <span>Klein</span>–<span>Gordon</span> and <span class="nocase">Schr<span class="nocase">ö</span>dinger</span></em>: Modern physics letters a 35(23): 2020-07: doi: <a href="https://doi.org/10.1142/S0217732320502144">10.1142/S0217732320502144</a>. Available at: <a href="https://www.worldscientific.com/doi/abs/10.1142/S0217732320502144">https://www.worldscientific.com/doi/abs/10.1142/S0217732320502144</a></div>
-</div>
-<div id="ref-CDIMS2020a" class="csl-entry" role="listitem">
-<div class="csl-left-margin">F.M. Ciaglia, F. Di Cosmo, A. Ibort, G. Marmo, and L. Schiavone: <em>Covariant <span>Variational Evolution</span> and <span>Jacobi</span> brackets: <span>Fields</span></em>: Modern physics letters a 35(23): 2020-07: doi: <a href="https://doi.org/10.1142/S0217732320502065">10.1142/S0217732320502065</a>. Available at: <a href="https://www.worldscientific.com/doi/abs/10.1142/S0217732320502065">https://www.worldscientific.com/doi/abs/10.1142/S0217732320502065</a></div>
-</div>
-<div id="ref-CDIMS2020b" class="csl-entry" role="listitem">
-<div class="csl-left-margin">F.M. Ciaglia, F. Di Cosmo, A. Ibort, G. Marmo, and L. Schiavone: <em>Covariant variational evolution and <span>Jacobi</span> brackets: <span>Particles</span></em>: Modern physics letters a 35(23): 2020-07: doi: <a href="https://doi.org/10.1142/S0217732320200011">10.1142/S0217732320200011</a>. Available at: <a href="https://www.worldscientific.com/doi/abs/10.1142/S0217732320200011">https://www.worldscientific.com/doi/abs/10.1142/S0217732320200011</a></div>
-</div>
-<div id="ref-CDIM2020b" class="csl-entry" role="listitem">
-<div class="csl-left-margin">F.M. Ciaglia, F.D. Di Cosmo, A. Ibort, and G. Marmo: <em>Evolution of <span>Classical</span> and <span>Quantum States</span> in the <span>Groupoid Picture</span> of <span>Quantum Mechanics</span></em>: Entropy 22(11): 2020-11: doi: <a href="https://doi.org/10.3390/e22111292">10.3390/e22111292</a>. Available at: <a href="https://arxiv.org/abs/2012.10284">https://arxiv.org/abs/2012.10284</a></div>
-</div>
-<div id="ref-CJS2020" class="csl-entry" role="listitem">
-<div class="csl-left-margin">F.M. Ciaglia, J. Jost, and L. Schwachhöfer: <em>Differential <span>Geometric Aspects</span> of <span>Parametric Estimation Theory</span> for <span>States</span> on <span>Finite-Dimensional C</span><span><span class="math inline">\(\ast\)</span></span>-<span>Algebras</span></em>: Entropy 22(11): 2020-11: doi: <a href="https://doi.org/10.3390/e22111332">10.3390/e22111332</a>. Available at: <a href="https://arxiv.org/abs/2010.14394">https://arxiv.org/abs/2010.14394</a></div>
-</div>
-<div id="ref-CDIMSZ2021" class="csl-entry" role="listitem">
-<div class="csl-left-margin">F.M. Ciaglia, F. Di Cosmo, A. Ibort, G. Marmo, L. Schiavone, and A. Zampini: <em>A quantum route to the classical <span>Lagrangian</span> formalism</em>: Modern physics letters a 36(15): 2021-05: doi: <a href="https://doi.org/10.1142/S0217732321500917">10.1142/S0217732321500917</a>. Available at: <a href="https://arxiv.org/abs/2106.00998">https://arxiv.org/abs/2106.00998</a></div>
-</div>
-<div id="ref-CMH2021" class="csl-entry" role="listitem">
-<div class="csl-left-margin">F.M. Ciaglia, S. Mancini, and M. Ha Quang: <em>Focus point: Classical and quantum information geometry</em>: The european physical journal plus 136(5): 2021-05: doi: <a href="https://doi.org/10.1140/epjp/s13360-021-01541-6">10.1140/epjp/s13360-021-01541-6</a></div>
-</div>
-<div id="ref-CDIMSZ2021a" class="csl-entry" role="listitem">
-<div class="csl-left-margin">F.M. Ciaglia, F. Di Cosmo, A. Ibort, G. Marmo, L. Schiavone, and A. Zampini: <em>Feynman’s propagator in <span>Schwinger</span>’s picture of <span>Quantum Mechanics</span></em>: Modern physics letters a 36(26): 2021-08: doi: <a href="https://doi.org/10.1142/S021773232150187X">10.1142/S021773232150187X</a>. Available at: <a href="https://arxiv.org/abs/2109.05756">https://arxiv.org/abs/2109.05756</a></div>
-</div>
-<div id="ref-CCIMS2021" class="csl-entry" role="listitem">
-<div class="csl-left-margin">F.M. Ciaglia, F.D. Cosmo, A. Ibort, G. Marmo, and L. Schiavone: <em>Schwinger’s picture of quantum mechanics: 2-groupoids and symmetries</em>: Journal of geometric mechanics 13(3): 2021-09: doi: <a href="https://doi.org/10.3934/jgm.2021008">10.3934/jgm.2021008</a>. Available at: <a href="https://arxiv.org/abs/2104.13880">https://arxiv.org/abs/2104.13880</a></div>
-</div>
-<div id="ref-CDIMSZ2022b" class="csl-entry" role="listitem">
-<div class="csl-left-margin">F.M. Ciaglia, F. Di Cosmo, A. Ibort, G. Marmo, L. Schiavone, and A. Zampini: <em>Causality in <span>Schwinger</span>’s <span>Picture</span> of <span>Quantum Mechanics</span></em>: Entropy 24(1): 2022-01: doi: <a href="https://doi.org/10.3390/e24010075">10.3390/e24010075</a>. Available at: <a href="https://www.mdpi.com/1099-4300/24/1/75">https://www.mdpi.com/1099-4300/24/1/75</a></div>
-</div>
-<div id="ref-CDIMSZ2022c" class="csl-entry" role="listitem">
-<div class="csl-left-margin">F.M. Ciaglia, F. Di Cosmo, A. Ibort, G. Marmo, L. Schiavone, and A. Zampini: <em>Symmetries and <span>Covariant Poisson Brackets</span> on <span>Presymplectic Manifolds</span></em>: Symmetry 14(1): 2022-01: doi: <a href="https://doi.org/10.3390/sym14010070">10.3390/sym14010070</a>. Available at: <a href="https://www.mdpi.com/2073-8994/14/1/70">https://www.mdpi.com/2073-8994/14/1/70</a></div>
-</div>
-<div id="ref-CDIM2022" class="csl-entry" role="listitem">
-<div class="csl-left-margin">F.M. Ciaglia, F. Di Cosmo, A. Ibort, and G. Marmo: <em>Quantum tomography and <span>Schwinger</span>’s picture of quantum mechanics</em>: Journal of physics a: Mathematical and theoretical 55(27): 2022-07: doi: <a href="https://doi.org/10.1088/1751-8121/ac7591">10.1088/1751-8121/ac7591</a>. Available at: <a href="https://arxiv.org/abs/2205.00170">https://arxiv.org/abs/2205.00170</a></div>
-</div>
-<div id="ref-CDIM2022a" class="csl-entry" role="listitem">
-<div class="csl-left-margin">F.M. Ciaglia, F. Di Cosmo, A. Ibort, and G. Marmo: <em>Dynamical <span>Maps</span> and <span>Symmetroids</span></em>: Open systems &amp; information dynamics 28(04): 2022-07: doi: <a href="https://doi.org/10.1142/S1230161221500190">10.1142/S1230161221500190</a>. Available at: <a href="https://arxiv.org/abs/2205.06734">https://arxiv.org/abs/2205.06734</a></div>
-</div>
-<div id="ref-CD2022" class="csl-entry" role="listitem">
-<div class="csl-left-margin">F.M. Ciaglia and F. Di Nocera: <em>Group <span>Actions</span> and <span>Monotone Quantum Metric Tensors</span></em>: Mathematics 10(15): 2022-07: doi: <a href="https://doi.org/10.3390/math10152613">10.3390/math10152613</a>. Available at: <a href="https://arxiv.org/abs/2206.10394">https://arxiv.org/abs/2206.10394</a></div>
-</div>
-<div id="ref-CDFIKM2023" class="csl-entry" role="listitem">
-<div class="csl-left-margin">F.M. Ciaglia, F. Di Cosmo, P. Facchi, A. Ibort, A. Konderak, and G. Marmo: <em>Groupoid and algebra of the infinite quantum spin chain</em>: Journal of geometry and physics 191: 2023-06: doi: <a href="https://doi.org/10.1016/j.geomphys.2023.104901">10.1016/j.geomphys.2023.104901</a>. Available at: <a href="https://arxiv.org/abs/2302.01050">https://arxiv.org/abs/2302.01050</a></div>
-</div>
-<div id="ref-CDGIM2023" class="csl-entry" role="listitem">
-<div class="csl-left-margin">F.M. Ciaglia, F. Di Cosmo, laura González-Bravo, A. Ibort, and G. Marmo: <em>The categorical foundations of quantum information theory: <span>Categories</span> and the <span class="nocase">Cram<span class="nocase">é</span>r</span>–<span>Rao</span> inequality</em>: Mod. Phys. Lett. a 38(16 &amp; 17): 2023-08: doi: <a href="https://doi.org/10.1142/S0217732323500852">10.1142/S0217732323500852</a>. Available at: <a href="https://arxiv.org/abs/2309.10428">https://arxiv.org/abs/2309.10428</a></div>
-</div>
-<div id="ref-CJS2023" class="csl-entry" role="listitem">
-<div class="csl-left-margin">F.M. Ciaglia, J. Jost, and L.J. Schwachhöfer: <em>Information geometry, jordan algebras, and a coadjoint orbit-like construction</em>: SIGMA 19: 2023-10: doi: <a href="https://doi.org/10.3842/SIGMA.2023.078">10.3842/SIGMA.2023.078</a>. Available at: <a href="https://arxiv.org/abs/2112.09781">https://arxiv.org/abs/2112.09781</a></div>
-</div>
-<div id="ref-CDIM2024" class="csl-entry" role="listitem">
-<div class="csl-left-margin">F.M. Ciaglia, F. Di Cosmo, A. Ibort, and G. Marmo: <em>G-dual <span>Teleparallel Connections</span> in <span>Information Geometry</span></em>: Information geometry 7(1): 2024-01: doi: <a href="https://doi.org/10.1007/s41884-023-00117-w">10.1007/s41884-023-00117-w</a>. Available at: <a href="https://arxiv.org/abs/2207.08694">https://arxiv.org/abs/2207.08694</a></div>
-</div>
-<div id="ref-CDIM2024a" class="csl-entry" role="listitem">
-<div class="csl-left-margin">F.M. Ciaglia, F. Di Cosmo, A. Ibort, and G. Marmo: <em>The groupoidal picture of quantum mechanics</em>: Journal of geometry and physics 197: 2024-01: doi: <a href="https://doi.org/10.1016/j.geomphys.2023.105095">10.1016/j.geomphys.2023.105095</a>. Available at: <a href="https://doi.org/10.1016/j.geomphys.2023.105095">https://doi.org/10.1016/j.geomphys.2023.105095</a></div>
-</div>
-<div id="ref-CDJS2024" class="csl-entry" role="listitem">
-<div class="csl-left-margin">F.M. Ciaglia, F. Di Nocera, J. Jost, and L. Schwachhöfer: <em>Parametric models and information geometry on <span>W</span>*-algebras</em>: Information geometry 7(1): 2024-01: doi: <a href="https://doi.org/10.1007/s41884-022-00094-6">10.1007/s41884-022-00094-6</a>. Available at: <a href="https://arxiv.org/abs/2207.09396">https://arxiv.org/abs/2207.09396</a></div>
-</div>
-<div id="ref-CDDV2024" class="csl-entry" role="listitem">
-<div class="csl-left-margin">F.M. Ciaglia, F. Di Cosmo, F. Di Nocera, and P. Vitale: <em>Monotone metric tensors in quantum information geometry</em>: International journal of geometric methods in modern physics 21(10): 2024-09: doi: <a href="https://doi.org/10.1142/S0219887824400048">10.1142/S0219887824400048</a>. Available at: <a href="https://arxiv.org/abs/2203.10857">https://arxiv.org/abs/2203.10857</a></div>
-</div>
-<div id="ref-CDIMSZ2024" class="csl-entry" role="listitem">
-<div class="csl-left-margin">F.M. Ciaglia, F. Di Cosmo, A. Ibort, G. Marmo, L. Schiavone, and A. Zampini: <em>The geometry of the solution space of first order <span>Hamiltonian</span> field theories <span>I</span>: <span>From</span> particle dynamics to free electrodynamics</em>: Journal of geometry and physics 204: 2024-10: doi: <a href="https://doi.org/10.1016/j.geomphys.2024.105279">10.1016/j.geomphys.2024.105279</a>. Available at: <a href="https://www.sciencedirect.com/science/article/pii/S0393044024001803">https://www.sciencedirect.com/science/article/pii/S0393044024001803</a></div>
-</div>
-<div id="ref-CJJS2025" class="csl-entry" role="listitem">
-<div class="csl-left-margin">F.M. Ciaglia, S. Jiang, J. Jost, and L. Schwachhöfer: <em>A coadjoint orbit–like construction for <span>Jordan</span> superalgebras</em>: Journal of geometry and physics 209: 2025-03: doi: <a href="https://doi.org/10.1016/j.geomphys.2024.105404">10.1016/j.geomphys.2024.105404</a>. Available at: <a href="https://arxiv.org/abs/2311.01333">https://arxiv.org/abs/2311.01333</a></div>
-</div>
-</div>
 
 
 
-</main> <!-- /main -->
+
+<div class="quarto-listing quarto-listing-container-table" id="listing-listing">
+<div class="listing-actions-group">
+   <div class="input-group input-group-sm quarto-listing-sort">
+    <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
+    <select id="listing-listing-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-listing'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
+      <option value="" disabled="" selected="" hidden="">Order By</option>
+      <option value="index" data-direction="asc">Default</option>
+      <option value="listing-title-sort" data-direction="asc">
+        Title
+      </option>
+    </select>
+  </div>
+    <div class="input-group input-group-sm quarto-listing-filter">
+      <span class="input-group-text"><i class="bi bi-search"></i></span>
+      <input type="text" class="search form-control" placeholder="Filter">
+    </div>
+</div>
+<table class="quarto-listing-table table">
+<thead>
+<tr>
+
+<th>
+<a class="sort" data-sort="listing-title-sort" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Title</a>
+</th>
+
+<th>
+Description
+</th>
+
+</tr>
+</thead>
+<tbody class="list">
+
+<tr data-index="0" data-listing-file-modified-sort="1761910666620" data-listing-reading-time-sort="1" data-listing-word-count-sort="1" data-listing-title-sort="Calculus (20124)" data-listing-filename-sort="index.qmd">
+<td>
+<a href="../presentations/calculo-uc3m-matematica-aplicada_slides/index.html" class="title listing-title">Calculus (20124)</a>
+</td>
+<td>
+<span class="listing-description">Slides for the Calculus course for the Bachelor in Applied Mathematics at UC3M</span>
+</td>
+
+</tr>
+
+</tbody>
+</table>
+<div class="listing-no-matching d-none">No matching items</div>
+</div></main> <!-- /main -->
 <script type="text/tikz">
 % --- TikZJax preamble (loaded once) ---
 \usetikzlibrary{arrows.meta,decorations.pathreplacing,calc,calligraphy}
@@ -1043,38 +978,6 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   });
   </script>
-<input type="hidden" id="giscus-base-theme" value="light">
-<input type="hidden" id="giscus-alt-theme" value="dark_dimmed">
-<script>
-  function loadGiscus() {
-    // Function to get the theme based on body class
-    const getTheme = () => {
-      let baseTheme = document.getElementById('giscus-base-theme').value;
-      let altTheme = document.getElementById('giscus-alt-theme').value;
-      if (authorPrefersDark) {
-          [baseTheme, altTheme] = [altTheme, baseTheme];
-      }
-      return document.body.classList.contains('quarto-dark') ? altTheme : baseTheme;
-    };
-    const script = document.createElement("script");
-    script.src = "https://giscus.app/client.js";
-    script.async = true;
-    script.dataset.repo = "f-mc2/personal-page-giscus";
-    script.dataset.repoId = "R_kgDOQHY3cg";
-    script.dataset.category = "General";
-    script.dataset.categoryId = "DIC_kwDOQHY3cs4Cw8t9";
-    script.dataset.mapping = "pathname";
-    script.dataset.reactionsEnabled = "1";
-    script.dataset.emitMetadata = "0";
-    script.dataset.inputPosition = "bottom";
-    script.dataset.theme = getTheme();
-    script.dataset.lang = "en";
-    script.crossOrigin = "anonymous";
-    // Append the script to the desired div instead of at the end of the body
-    document.getElementById("quarto-content").appendChild(script);
-  }
-  loadGiscus();
-</script>
 </div> <!-- /content -->
 
 

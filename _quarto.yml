@@ -13,27 +13,28 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - text: Teaching
-        href: index_teaching.qmd
-      - text: Publications
-        href: publications/
       - text: Conferences & Seminars
-        href: conferences.qmd
+        href: conferences.qmd  
       - text: Miscellanea
         href: index_misc.qmd
+#      - text: Publications
+#        href: publications/
+#      - text: Teaching
+#        href: teaching/teaching_index.qmd      
     right:
       - icon: github
         href: https://github.com/f-mc2/fmc
   sidebar:
     style: "docked"
     contents:
-      - section: "Teaching"
-        href: index_teaching.qmd
+      - section: "Courses"
+        href: courses/courses_index.qmd
         contents:
-          - auto: teaching/*/*.{qmd,md}
-          - sort: title
+          # auto-pick each course landing page
+          - auto: courses/*/*.qmd
+            sort: title
       - section: "Publications"
-        href: publications/index.qmd
+        href: publications/publications_index.qmd
         contents:
           - publications/inf-geo.qmd
           - publications/grpd.qmd
@@ -41,11 +42,16 @@ website:
           - publications/preprints.qmd
           - publications/articles.qmd
           - publications/proceedings.qmd
-      - section: "Miscellanea"
-        href: index_misc.qmd
-        contents:
-        - auto: misc/*.{qmd,ipynb,md}
-          sort: "date desc"
+      - section: "Presentations"
+        href: presentations/presentations_index.qmd
+        contents:    
+          - auto: presentations/*/*.qmd
+            sort: title
+#      - section: "Miscellanea"
+#        href: index_misc.qmd
+#        contents:
+#        - auto: misc/*.{qmd,ipynb,md}
+#          sort: "date desc"
   comments:
     giscus:
       repo: f-mc2/personal-page-giscus

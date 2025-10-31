@@ -1,12 +1,37 @@
 [
   {
+    "listing": "/teaching/teaching_index.html",
+    "items": [
+      "/teaching/calculo-uc3m-matematica-aplicada/index.html"
+    ]
+  },
+  {
     "listing": "/index_misc.html",
     "items": []
   },
   {
-    "listing": "/index_teaching.html",
+    "listing": "/slides/slides_index.html",
     "items": [
-      "/teaching/calculo-uc3m-matematica-aplicada/index.html"
+      "/slides/calculo-uc3m-matematica-aplicada_slides/index.html"
+    ]
+  },
+  {
+    "listing": "/presentations/presentations_index.html",
+    "items": [
+      "/presentations/calculo-uc3m-matematica-aplicada_slides/index.html"
+    ]
+  },
+  {
+    "listing": "/courses/courses_index.html",
+    "items": [
+      "/courses/calculo-uc3m-matematica-aplicada/index.html"
+    ]
+  },
+  {
+    "listing": "/presentations/calculo-uc3m-matematica-aplicada_slides/index.html",
+    "items": [
+      "/presentations/calculo-uc3m-matematica-aplicada_slides/slides/0_sets_and_functions_slides.html",
+      "/presentations/calculo-uc3m-matematica-aplicada_slides/slides/1_limits_and_continuity_slides.html"
     ]
   }
 ]
