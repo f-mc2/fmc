@@ -1,0 +1,9 @@
+title-block-banner: false
+toc: true
+number-sections: true
+format:
+  html:
+    toc: true
+    code-fold: true
+    code-summary: "Show/Hide code"
+search: true               # include notes in site search
