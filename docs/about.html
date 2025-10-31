@@ -72,6 +72,7 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css">
 
 
 <link rel="stylesheet" href="css/style.css">
@@ -263,14 +264,6 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./index_teaching.html"> 
-<span class="menu-text">Teaching</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./publications/"> 
-<span class="menu-text">Publications</span></a>
-  </li>  
-  <li class="nav-item">
     <a class="nav-link" href="./conferences.html"> 
 <span class="menu-text">Conferences &amp; Seminars</span></a>
   </li>  
@@ -315,41 +308,30 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./index_teaching.html" class="sidebar-item-text sidebar-link">
+            <a href="./teaching/teaching_index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Teaching</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="./teaching/calculo-uc3m-matematica-aplicada/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Calculus (20124)</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./teaching/calculo-uc3m-matematica-aplicada/1.1 Sets and functions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Sets and functions</span></a>
+  <a href="./teaching/calculo-uc3m-matematica-aplicada/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Calculus (20124)</span></a>
   </div>
 </li>
       </ul>
   </li>
-      </ul>
-  </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./publications/index.html" class="sidebar-item-text sidebar-link">
+            <a href="./publications/publications_index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Publications</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./publications/inf-geo.html" class="sidebar-item-text sidebar-link">
@@ -388,17 +370,6 @@ ul.task-list li input[type="checkbox"] {
 </li>
       </ul>
   </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="./index_misc.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Miscellanea</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
-      </ul>
-  </li>
     </ul>
     </div>
 </nav>
@@ -435,6 +406,13 @@ ul.task-list li input[type="checkbox"] {
 
 
 </main> <!-- /main -->
+<script type="text/tikz">
+% --- TikZJax preamble (loaded once) ---
+\usetikzlibrary{arrows.meta,decorations.pathreplacing,calc,calligraphy}
+
+\usepackage{amsfonts,amsmath}
+
+</script>
 <script>
 document.addEventListener("DOMContentLoaded", function() {
   document.querySelectorAll('a[href^="http"]').forEach(function(link) {
@@ -445,6 +423,8 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
 </script>
+
+<script src="https://tikzjax.com/v1/tikzjax.js"></script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right

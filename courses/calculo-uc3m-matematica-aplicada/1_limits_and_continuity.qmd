@@ -4,6 +4,10 @@ date: 2025-10-23
 date-style: full
 date-modified: last-modified
 ---
+::: {.callout-note title="**Slides for this chapter**"}
+[Open deck](../slides/1_limits_and_continuity_slides.html)
+:::
+
 # Introduction {#sec-introduction}
 
 Let's start with something dirt: money and taxes.

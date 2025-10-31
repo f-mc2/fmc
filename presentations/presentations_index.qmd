@@ -1,9 +1,9 @@
 ---
-title: "Teaching"
+title: "Presentations"
 format: html
 comments: false
 listing:
-  contents: teaching/*/index.qmd
+  contents: ./*/index.qmd
   type: table     
   fields: [title, description]
   sort: "title"
