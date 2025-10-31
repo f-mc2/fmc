@@ -5,7 +5,7 @@ date-style: full
 date-modified: last-modified
 ---
 ::: {.callout-note title="**Slides for this chapter**"}
-[Open deck](../slides/1_limits_and_continuity_slides.html)
+[Open deck](../../presentations/calculo-uc3m-matematica-aplicada_slides/slides/1_limits_and_continuity_slides.qmd)
 :::
 
 # Introduction {#sec-introduction}
