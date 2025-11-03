@@ -218,10 +218,9 @@ which is a contradiction unless $l=m$.
 
 
 Below, there is an interactive visualization of the $(\varepsilon-\delta)$-definition of the limit of a function when everything works (source: [Jason McCullough in Geogebra](https://www.geogebra.org/m/mj2bXA5y)).
+The function used is $f\colon\mathbb{R}\rightarrow\mathbb{R}$ given by $f(x) = 1/8 x^3$, but can be changed.
 The sliders can be used to change the value of $\varepsilon$ and $\delta$ (which corresponds to $\delta_{\varepsilon}$ in @def-limits).
-The reference point can be dragged to explore the behaviour at other points in the domain.
-The function is $f\colon\mathbb{R}\rightarrow\mathbb{R}$ given by $f(x) = 1/8 x^3$.
-Type in "f(x) = " to try a different function. 
+The reference point can be dragged to explore the behaviour at other points in the domain of the function.
 The demo assumes the function to be continuous and monotone in the interval $(x - \delta, x + \delta)$.
 
 
@@ -267,15 +266,49 @@ window.addEventListener('DOMContentLoaded', () => {
 </script>
 
 
-[Below](https://www.geogebra.org/m/hebkhRJm), there is an interactive visualization of the $(\varepsilon-\delta)$-definition of the limit of a function when things do not work (note that a trignometric function is used even if they are introduced later):
+Below, there is an interactive visualization of the $(\varepsilon-\delta)$-definition of the limit of a function when things do not work ([Jason McCullough in Geogebra](https://www.geogebra.org/m/hebkhRJm)).
+Note that a trignometric function is used even if they are introduced later):
 
-<iframe
-  id="inlineFrameExample"
-  title="Inline Frame Example"
-  width="700"
-  height="500"
-  src="https://www.geogebra.org/m/hebkhRJm">
-</iframe>
+<div class="ggb-wrap ggb-16x10">
+  <div id="ggb-container" class="ggb-canvas"></div>
+</div>
+
+<script>
+window.addEventListener('DOMContentLoaded', () => {
+  const params = {
+    material_id: "hebkhRJm",
+
+    // Use Classic to avoid command-compat issues (e.g., Polygon)
+    appName: "classic",
+
+    // Keep UI minimal but show the input bar like the original
+    showToolBar: false,
+    showMenuBar: false,
+    showAlgebraInput: true,
+    algebraInputPosition: "bottom", // works with Classic
+    showZoomButtons: true,
+    enableRightClick: false,
+    allowStyleBar: false,
+    language: "en",
+
+    // Make it fill the wrapper responsively
+    scaleContainerClass: "ggb-wrap",
+    autoHeight: false,
+    allowUpscale: true,
+
+    // Required by loader; CSS controls final size
+    width: 800, height: 500,
+
+    // Optional: tidy initial view once loaded
+    appletOnLoad: (api) => {
+      try { api.setCoordSystem(-6, 6, -6, 6); } catch(_) {}
+    }
+  };
+
+  const applet = new GGBApplet(params, /* useBrowserForJS */ true);
+  applet.inject("ggb-container");
+});
+</script>
 
 
 ::: {.callout-caution title="Existence of the limit at $x_{0}$ is equivalent to existence and equality of left and right limits at $x_{0}$"}

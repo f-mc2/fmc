@@ -13,7 +13,7 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - text: Conferences & Seminars
+      - text: "Conferences & Seminars"
         href: conferences.qmd  
       - text: Miscellanea
         href: index_misc.qmd
@@ -65,10 +65,6 @@ website:
         light: light
         dark: dark_dimmed
 
-serve:
-  port: 4329
-  browser: true
-
 format:
   html:
     include-in-header:
@@ -83,14 +79,13 @@ format:
     toggle: true      # adds the switch in the navbar
     css: css/style.css
     toc: true
+    toc-location: right
+    grid:
+      body-width: 1260px      # wider main column
+      margin-width: 300px    # narrower right column (TOC)
+      sidebar-width: 300px   # (only used if you have a left sidebar)
+      gutter-width: 1.2rem   # space between columns
     code-fold: true
     code-summary: "Show/Hide code"
-
-execute:
-  echo: true
-  warning: false
-  error: false
-  freeze: auto      # only rerun cells if source changes
-  executable: .venv/bin/python   # force Quarto to use your venv
 
 

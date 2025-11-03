@@ -43,9 +43,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-075db7670ff9040d996a2500bb1207fa.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-6f4840de3e51e6422d2669dcdbbfd0fa.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../site_libs/bootstrap/bootstrap-075db7670ff9040d996a2500bb1207fa.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-0eb7fd585e00d51023b3d1090d08195f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-cbdd6c9d3bb07a08fa49b004a2aab0e1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-0eb7fd585e00d51023b3d1090d08195f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -490,7 +490,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">October 31, 2025</p>
+      <p class="date-modified">November 3, 2025</p>
     </div>
   </div>
     
@@ -696,7 +696,7 @@ From <a href="#def-limits" class="quarto-xref">Definition&nbsp;1</a>, it follows
 </div>
 </div>
 </div>
-<p>Below, there is an interactive visualization of the <span class="math inline">\((\varepsilon-\delta)\)</span>-definition of the limit of a function when everything works (source: <a href="https://www.geogebra.org/m/mj2bXA5y">Jason McCullough in Geogebra</a>). The sliders can be used to change the value of <span class="math inline">\(\varepsilon\)</span> and <span class="math inline">\(\delta\)</span> (which corresponds to <span class="math inline">\(\delta_{\varepsilon}\)</span> in <a href="#def-limits" class="quarto-xref">Definition&nbsp;1</a>). The reference point can be dragged to explore the behaviour at other points in the domain. The function is <span class="math inline">\(f\colon\mathbb{R}\rightarrow\mathbb{R}\)</span> given by <span class="math inline">\(f(x) = 1/8 x^3\)</span>. Type in “f(x) =” to try a different function. The demo assumes the function to be continuous and monotone in the interval <span class="math inline">\((x - \delta, x + \delta)\)</span>.</p>
+<p>Below, there is an interactive visualization of the <span class="math inline">\((\varepsilon-\delta)\)</span>-definition of the limit of a function when everything works (source: <a href="https://www.geogebra.org/m/mj2bXA5y">Jason McCullough in Geogebra</a>). The function used is <span class="math inline">\(f\colon\mathbb{R}\rightarrow\mathbb{R}\)</span> given by <span class="math inline">\(f(x) = 1/8 x^3\)</span>, but can be changed. The sliders can be used to change the value of <span class="math inline">\(\varepsilon\)</span> and <span class="math inline">\(\delta\)</span> (which corresponds to <span class="math inline">\(\delta_{\varepsilon}\)</span> in <a href="#def-limits" class="quarto-xref">Definition&nbsp;1</a>). The reference point can be dragged to explore the behaviour at other points in the domain of the function. The demo assumes the function to be continuous and monotone in the interval <span class="math inline">\((x - \delta, x + \delta)\)</span>.</p>
 <div class="ggb-wrap ggb-16x10">
 <div id="ggb-container" class="ggb-canvas">
 
@@ -738,9 +738,48 @@ window.addEventListener('DOMContentLoaded', () => {
   applet.inject("ggb-container");
 });
 </script>
-<p><a href="https://www.geogebra.org/m/hebkhRJm">Below</a>, there is an interactive visualization of the <span class="math inline">\((\varepsilon-\delta)\)</span>-definition of the limit of a function when things do not work (note that a trignometric function is used even if they are introduced later):</p>
-<iframe id="inlineFrameExample" title="Inline Frame Example" width="700" height="500" src="https://www.geogebra.org/m/hebkhRJm">
-</iframe>
+<p>Below, there is an interactive visualization of the <span class="math inline">\((\varepsilon-\delta)\)</span>-definition of the limit of a function when things do not work (<a href="https://www.geogebra.org/m/hebkhRJm">Jason McCullough in Geogebra</a>). Note that a trignometric function is used even if they are introduced later):</p>
+<div class="ggb-wrap ggb-16x10">
+<div id="ggb-container" class="ggb-canvas">
+
+</div>
+</div>
+<script>
+window.addEventListener('DOMContentLoaded', () => {
+  const params = {
+    material_id: "hebkhRJm",
+
+    // Use Classic to avoid command-compat issues (e.g., Polygon)
+    appName: "classic",
+
+    // Keep UI minimal but show the input bar like the original
+    showToolBar: false,
+    showMenuBar: false,
+    showAlgebraInput: true,
+    algebraInputPosition: "bottom", // works with Classic
+    showZoomButtons: true,
+    enableRightClick: false,
+    allowStyleBar: false,
+    language: "en",
+
+    // Make it fill the wrapper responsively
+    scaleContainerClass: "ggb-wrap",
+    autoHeight: false,
+    allowUpscale: true,
+
+    // Required by loader; CSS controls final size
+    width: 800, height: 500,
+
+    // Optional: tidy initial view once loaded
+    appletOnLoad: (api) => {
+      try { api.setCoordSystem(-6, 6, -6, 6); } catch(_) {}
+    }
+  };
+
+  const applet = new GGBApplet(params, /* useBrowserForJS */ true);
+  applet.inject("ggb-container");
+});
+</script>
 <div class="callout callout-style-default callout-caution callout-titled" title="Existence of the limit at $x_{0}$ is equivalent to existence and equality of left and right limits at $x_{0}$">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
