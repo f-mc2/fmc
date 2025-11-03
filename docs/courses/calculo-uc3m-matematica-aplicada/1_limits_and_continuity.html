@@ -73,18 +73,28 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css">
+<!-- GeoGebra loader (CDN). Load ONCE site-wide -->
 <script src="https://cdn.geogebra.org/apps/deployggb.js"></script>
+
 <style>
-  .ggb-wrap{
-    position:relative;width:100%;max-width:960px;margin:1rem auto;
-    border-radius:12px;overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,.12);
-    background:var(--quarto-body-bg,#fff);
+  /* Outer frame the applet should fill */
+  .ggb-wrap {
+    position: relative;
+    width: 100%;
+    max-width: 1060px;
+    margin: 1rem auto;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 28px rgba(0,0,0,.12);
+    background: var(--quarto-body-bg, #fff);
   }
-  /* a bit taller so the input bar fits comfortably */
+
+  /* 16:10 height gives room for input bar when enabled */
   .ggb-16x10{ padding-top: 62.5%; }
   .ggb-canvas{ position:absolute; inset:0; width:100%; height:100%; }
+  .caption{max-width:1060px;margin:0 auto 1.0rem;opacity:.75}
 </style>
+<link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css">
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -456,13 +466,12 @@ window.Quarto = {
    
   <ul>
   <li><a href="#sec-introduction" id="toc-sec-introduction" class="nav-link active" data-scroll-target="#sec-introduction"><span class="header-section-number">1</span> Introduction</a></li>
-  <li><a href="#distance-and-intervals" id="toc-distance-and-intervals" class="nav-link" data-scroll-target="#distance-and-intervals"><span class="header-section-number">2</span> Distance and intervals</a></li>
-  <li><a href="#the-definition-of-limit" id="toc-the-definition-of-limit" class="nav-link" data-scroll-target="#the-definition-of-limit"><span class="header-section-number">3</span> The definition of limit</a></li>
-  <li><a href="#continuity" id="toc-continuity" class="nav-link" data-scroll-target="#continuity"><span class="header-section-number">4</span> Continuity</a></li>
-  <li><a href="#sec-limits-constant-linear-quadratic-functions" id="toc-sec-limits-constant-linear-quadratic-functions" class="nav-link" data-scroll-target="#sec-limits-constant-linear-quadratic-functions"><span class="header-section-number">5</span> Three simple examples</a></li>
-  <li><a href="#algebraic-manipulations-of-limits-and-continuous-functions" id="toc-algebraic-manipulations-of-limits-and-continuous-functions" class="nav-link" data-scroll-target="#algebraic-manipulations-of-limits-and-continuous-functions"><span class="header-section-number">6</span> Algebraic manipulations of limits and continuous functions</a></li>
-  <li><a href="#improper-limits" id="toc-improper-limits" class="nav-link" data-scroll-target="#improper-limits"><span class="header-section-number">7</span> Improper limits</a></li>
-  <li><a href="#some-more-properties-of-limits" id="toc-some-more-properties-of-limits" class="nav-link" data-scroll-target="#some-more-properties-of-limits"><span class="header-section-number">8</span> Some more properties of limits</a></li>
+  <li><a href="#the-definition-of-limit" id="toc-the-definition-of-limit" class="nav-link" data-scroll-target="#the-definition-of-limit"><span class="header-section-number">2</span> The definition of limit</a></li>
+  <li><a href="#continuity" id="toc-continuity" class="nav-link" data-scroll-target="#continuity"><span class="header-section-number">3</span> Continuity</a></li>
+  <li><a href="#sec-limits-constant-linear-quadratic-functions" id="toc-sec-limits-constant-linear-quadratic-functions" class="nav-link" data-scroll-target="#sec-limits-constant-linear-quadratic-functions"><span class="header-section-number">4</span> Three simple examples</a></li>
+  <li><a href="#algebraic-manipulations-of-limits-and-continuous-functions" id="toc-algebraic-manipulations-of-limits-and-continuous-functions" class="nav-link" data-scroll-target="#algebraic-manipulations-of-limits-and-continuous-functions"><span class="header-section-number">5</span> Algebraic manipulations of limits and continuous functions</a></li>
+  <li><a href="#improper-limits" id="toc-improper-limits" class="nav-link" data-scroll-target="#improper-limits"><span class="header-section-number">6</span> Improper limits</a></li>
+  <li><a href="#some-more-properties-of-limits" id="toc-some-more-properties-of-limits" class="nav-link" data-scroll-target="#some-more-properties-of-limits"><span class="header-section-number">7</span> Some more properties of limits</a></li>
   </ul>
 </nav>
     </div>
@@ -517,28 +526,13 @@ window.Quarto = {
 <section id="sec-introduction" class="level1" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> Introduction</h1>
 </section>
-<section id="distance-and-intervals" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> Distance and intervals</h1>
-<p>Let <span class="math inline">\(f\colon X\rightarrow Y\)</span> be a function. The notion of limit formalizes, rigorously, what happens to the output when the inputs gets closer and closer to a fixed value. Roughly speaking, we write</p>
-<p><span class="math display">\[
-\lim_{x\rightarrow x_{0}} f(x)=l
-\]</span></p>
-<p>meaning that the output <span class="math inline">\(f(x)\)</span> gets closer to <span class="math inline">\(l\)</span> if the input <span class="math inline">\(x\)</span> is closer to <span class="math inline">\(x_{0}\)</span>.</p>
-<div class="callout callout-style-default callout-important callout-titled" title="Remark">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Important</span>Remark
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Note that, in general, it is not always true that a limit exists.</p>
-</div>
-</div>
-<p>In order to make things precise, we first need to understand what does it mean for a real number to be closer to a fixed real number. Essentially, we need to specify a way to measure distances between real numbers.</p>
-<p>Intuitively speaking, if we fix <span class="math inline">\(x_{0}\in \mathbb{R}\)</span>, we say that <span class="math inline">\(x_{1}\)</span> is closer than <span class="math inline">\(x_{2}\)</span> if the distance <span class="math inline">\(\Delta_{1}\)</span> between <span class="math inline">\(x_{0}\)</span> and <span class="math inline">\(x_{1}\)</span> is smaller than the distance <span class="math inline">\(\Delta_{2}\)</span> between <span class="math inline">\(x_{2}\)</span> and <span class="math inline">\(x_{0}\)</span>, which brings the question: what is the distance between two real numbers? Graphycally speaking, we can exploit the idea that real numbers make up a straight line, and obtain the distance between two points as the length, as would be measured by a ruler, of the piece of the real line connecting the two points (see <a href="#fig-realline-distance" class="quarto-xref">Figure&nbsp;1</a>).</p>
+<section id="the-definition-of-limit" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> The definition of limit</h1>
+<p>Consider the function <span class="math inline">\(f\colon D\subseteq X\rightarrow Y\)</span>, a point <span class="math inline">\(x_{0}\in X\)</span>, and a point <span class="math inline">\(l\in Y\)</span>. The notion of limit we discuss here formalizes the fact that, when everything works, we can make the output of <span class="math inline">\(f\)</span> stay as close as we want to <span class="math inline">\(l\)</span> by taking input points that are sufficiently close to <span class="math inline">\(x_{0}\)</span>. In this case, we write <span class="math display">\[
+\lim_{x\rightarrow x_{0}} f(x)=l,
+\]</span> and we say that <span class="math inline">\(l\)</span> is the limit of <span class="math inline">\(f\colon D\subseteq X\rightarrow Y\)</span> for <span class="math inline">\(x\)</span> that goes to <span class="math inline">\(x_{0}\)</span>.</p>
+<p>The previous intuitive description relies on a very strong hidden assumption: we must be able to say what it means when we say that <span class="math inline">\(f(x)\)</span> is close to <span class="math inline">\(l\)</span> and that <span class="math inline">\(x\)</span> is close to <span class="math inline">\(x_{0}\)</span>. From a purely abstract point of view, the notion of ‘being close to’ works for a very general type of sets, known as <a href="https://en.wikipedia.org/wiki/Metric_space">metric spaces</a>, as long as a suitable <strong>distance function</strong> between points can be introduced.</p>
+<p>In this course, however, we are mainly concerned with the case <span class="math inline">\(X=Y=\mathbb{R}\)</span>, and the notion of ‘being close to’ has then a very strong and visual intuitive meaning. Indeed, visualizing <span class="math inline">\(\mathbb{R}\)</span> as the real line, and taking three points <span class="math inline">\(x_{0},x_{1},x_{2}\in \mathbb{R}\)</span>, it would be very hard to disagree with the idea that <span class="math inline">\(x_{1}\)</span> is closer to <span class="math inline">\(x_{0}\)</span> than <span class="math inline">\(x_{2}\)</span> if the ‘distance’ <span class="math inline">\(\Delta_{1}=|x_{1}-x_{0}|\)</span> between <span class="math inline">\(x_{1}\)</span> and <span class="math inline">\(x_{0}\)</span> is smaller than the ‘distance’ <span class="math inline">\(\Delta_{2}=|x_{2}-x_{0}|\)</span> between <span class="math inline">\(x_{2}\)</span> and <span class="math inline">\(x_{0}\)</span>, as shown in <a href="#fig-realline-distance" class="quarto-xref">Figure&nbsp;1</a>.</p>
 <div id="fig-realline-distance" class="figure quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-realline-distance-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -591,9 +585,7 @@ Figure&nbsp;1: Graphical depiction of distances between real numbers on the real
 </figcaption>
 </figure>
 </div>
-<p>In mathematical symbols, we have <span class="math display">\[
-\Delta_{1}\equiv|x_{1}- x_{0}|\leq |x_{2} - x_{0}|\equiv \Delta_{2}.
-\]</span></p>
+<p>The ‘distances’ <span class="math inline">\(\Delta_{1}\)</span> and <span class="math inline">\(\Delta_{2}\)</span> are precisely the lenghts of the segments joining <span class="math inline">\(x_{0}\)</span> with <span class="math inline">\(x_{1}\)</span> and <span class="math inline">\(x_{0}\)</span> with <span class="math inline">\(x_{2}\)</span>, respectively, as measured with a standard ruler.</p>
 <div class="callout callout-style-default callout-note callout-titled" title="Euclidean distance function">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -604,27 +596,29 @@ Figure&nbsp;1: Graphical depiction of distances between real numbers on the real
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The two-point function <span class="math inline">\(d\colon \mathbb{R}\times\mathbb{R}\rightarrow\mathbb{R}\)</span> given by <span id="eq-euclidean-distance-function"><span class="math display">\[
+<div id="def-euclidean-distance" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 1</strong></span> The two-point function <span class="math inline">\(d\colon \mathbb{R}\times\mathbb{R}\rightarrow\mathbb{R}\)</span> given by <span id="eq-euclidean-distance-function"><span class="math display">\[
 d(x,y)=\sqrt{(x-y)^{2}}=|x-y|
 \tag{1}\]</span></span> is referred to as a <strong>Euclidean distance function</strong> on <span class="math inline">\(\mathbb{R}\)</span>.</p>
 </div>
 </div>
-<div class="callout callout-style-default callout-important callout-titled" title="Remark">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
 </div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Important</span>Remark
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>An intuitive reason for <span class="math inline">\(d\)</span> in <a href="#eq-euclidean-distance-function" class="quarto-xref">Equation&nbsp;1</a> to measure distances follows from our direct experience, for instance with ruled paper (can you guess why/how?), but there are also more abstract reasons connected with the theory of <a href="https://en.wikipedia.org/wiki/Metric_space">metric spaces</a>.</p>
+<p>Now that we know what ‘being close to’ means, we can visualize what is the <span class="math inline">\((\varepsilon-\delta)\)</span>-definition of the limit of a function (see <a href="#def-limits" class="quarto-xref">Definition&nbsp;2</a> below) when everything works (source: <a href="https://www.geogebra.org/m/mj2bXA5y">Jason McCullough in Geogebra</a>). The function used in the applet is <span class="math inline">\(f\colon\mathbb{R}\rightarrow\mathbb{R}\)</span> with <span class="math inline">\(f(x) = 1/8 x^3\)</span>, but can be changed in the input bar. We fix the reference point <span class="math inline">\(a\in\mathbb{R}\)</span> in the input space by simply dragging it where we want, and visualize the validity of the formal equality <span class="math display">\[
+\lim_{x\rightarrow a} f(x)=L
+\]</span> as follows. The interval <span class="math inline">\((L-\varepsilon, L+\varepsilon)\)</span> in the output space is depicted as an horizontal blue strip, while the interval <span class="math inline">\((a-\delta,a+\delta)\)</span> in the input space is depicted as a vertical red strip, and we can use the sliders to change the value of <span class="math inline">\(\varepsilon&gt;0\)</span> and <span class="math inline">\(\delta&gt;0\)</span>.<br>
+What happens is that, whatever the value of <span class="math inline">\(\varepsilon\)</span> is, we can find a suitable value for <span class="math inline">\(\delta\)</span> such that <span class="math inline">\(x\in (a-\delta,a+\delta)\)</span> (or, equivalently, <span class="math inline">\(|x-a|&lt;\delta\)</span>) implies <span class="math inline">\(f(x)\in (L-\varepsilon, L+\varepsilon)\)</span> (or, equivalently, <span class="math inline">\(|f(x)- L|&lt;\epsilon\)</span>.</p>
+<div class="ggb-wrap ggb-16x10">
+<div id="ggb-a" class="ggb-canvas ggb" data-id="mj2bXA5y" data-app="classic" data-lang="en" data-input="true" data-zoom="true" data-window="-4,4,-3,9">
+
 </div>
 </div>
-</section>
-<section id="the-definition-of-limit" class="level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> The definition of limit</h1>
+<p>In general, limits do not need to exist, as visualized in the applet below (source: <a href="https://www.geogebra.org/m/hebkhRJm">Jason McCullough in Geogebra</a>). This example exploits the oscillating behavior of trigonometric functions, a type of real-valued function that we will able to properly define only later in the course. The intuitive ideais that, when <span class="math inline">\(x\)</span> approaches <span class="math inline">\(0\)</span>, the function keeps oscillating taking all values between <span class="math inline">\(-1\)</span> and <span class="math inline">\(1\)</span>. Consequently, by suitably varying <span class="math inline">\(\varepsilon\)</span> and <span class="math inline">\(\delta\)</span> with the sliders, we can see that, as soon as <span class="math inline">\(\varepsilon\)</span> is smaller than <span class="math inline">\(1\)</span>, there are no <span class="math inline">\(L\)</span> and no <span class="math inline">\(\delta&gt;0\)</span> such that <span class="math inline">\(|x-0|&lt;\delta\)</span> implies <span class="math inline">\(|f(x)-L|&lt;\varepsilon\)</span>.</p>
+<div class="ggb-wrap ggb-16x10">
+<div id="ggb-b" class="ggb-canvas ggb" data-id="hebkhRJm" data-app="classic" data-lang="en" data-input="false" data-zoom="true" data-window="-4,4,-3,5">
+
+</div>
+</div>
+<p>Now that we have an intuitive and visual understanding of what the notion of limit is, we can proceed to introduce a rigorous definition.</p>
 <div class="callout callout-style-default callout-note callout-titled" title="$\varepsilon$-$\delta$ definition of ([left/right](https://en.wikipedia.org/wiki/One-sided_limit)) [limits](https://en.wikipedia.org/wiki/Limit_of_a_function#(%CE%B5,_%CE%B4)-definition_of_limit)">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -636,7 +630,7 @@ d(x,y)=\sqrt{(x-y)^{2}}=|x-y|
 </div>
 <div class="callout-body-container callout-body">
 <div id="def-limits" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 1</strong></span> Consider the function <span class="math inline">\(f\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}\)</span> and the <strong>left accumulation point</strong> <span class="math inline">\(x_{0}\)</span> for <span class="math inline">\(D\)</span>. We say that the formal equality<br>
+<p><span class="theorem-title"><strong>Definition 2</strong></span> Consider the function <span class="math inline">\(f\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}\)</span> and the <strong>left accumulation point</strong> <span class="math inline">\(x_{0}\)</span> for <span class="math inline">\(D\)</span>. We say that the formal equality<br>
 <span class="math display">\[
 \lim_{x\rightarrow x_{0}^{+}} f(x)=l
 \]</span> holds if for every <span class="math inline">\(\varepsilon&gt;0\)</span> there is <span class="math inline">\(0&lt; \delta_{\varepsilon}\)</span> such that <span class="math display">\[
@@ -656,7 +650,7 @@ d(x,y)=\sqrt{(x-y)^{2}}=|x-y|
 </div>
 </div>
 </div>
-<p>The first thing to do once limits are defined as in <a href="#def-limits" class="quarto-xref">Definition&nbsp;1</a> is to prove that they are well-defined in the sense that a limit, if it exists, is unique.</p>
+<p>The first thing to do once limits are defined as in <a href="#def-limits" class="quarto-xref">Definition&nbsp;2</a> is to prove that they are indeed well-defined in the sense that a limit, if it exists, is unique.</p>
 <div class="callout callout-style-default callout-note callout-titled" title="Well-posedness of limits">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -678,7 +672,7 @@ d(x,y)=\sqrt{(x-y)^{2}}=|x-y|
 <summary>
 <strong>Proof</strong>
 </summary>
-From <a href="#def-limits" class="quarto-xref">Definition&nbsp;1</a>, it follows there are <span class="math inline">\(\varepsilon_{1},\delta_{1},\varepsilon_{2},\delta_{2}&gt;0\)</span> such that<br>
+From <a href="#def-limits" class="quarto-xref">Definition&nbsp;2</a>, it follows there are <span class="math inline">\(\varepsilon_{1},\delta_{1},\varepsilon_{2},\delta_{2}&gt;0\)</span> such that<br>
 <span class="math display">\[
 \begin{split}
 |x-x_{0}|&lt;\delta_{1}&amp;\Rightarrow |f(x) - l|&lt;\varepsilon_{1} \\
@@ -691,95 +685,12 @@ From <a href="#def-limits" class="quarto-xref">Definition&nbsp;1</a>, it follows
 |l-m|&amp;=|l-m+f(x) -f(x)|\leq |f(x) -m| + |f(x) -l|&lt; \\
 &amp; &lt; \frac{|l-m|}{2} + \frac{|l-m|}{2} =|l -m|,
 \end{split}
-\]</span> which is a contradiction unless <span class="math inline">\(l=m\)</span>.
+\]</span> which is a contradiction unless <span class="math inline">\(l=m\)</span>. The case of right/left limits can be proved analogously.
 </details>
 </div>
 </div>
 </div>
-<p>Below, there is an interactive visualization of the <span class="math inline">\((\varepsilon-\delta)\)</span>-definition of the limit of a function when everything works (source: <a href="https://www.geogebra.org/m/mj2bXA5y">Jason McCullough in Geogebra</a>). The function used is <span class="math inline">\(f\colon\mathbb{R}\rightarrow\mathbb{R}\)</span> given by <span class="math inline">\(f(x) = 1/8 x^3\)</span>, but can be changed. The sliders can be used to change the value of <span class="math inline">\(\varepsilon\)</span> and <span class="math inline">\(\delta\)</span> (which corresponds to <span class="math inline">\(\delta_{\varepsilon}\)</span> in <a href="#def-limits" class="quarto-xref">Definition&nbsp;1</a>). The reference point can be dragged to explore the behaviour at other points in the domain of the function. The demo assumes the function to be continuous and monotone in the interval <span class="math inline">\((x - \delta, x + \delta)\)</span>.</p>
-<div class="ggb-wrap ggb-16x10">
-<div id="ggb-container" class="ggb-canvas">
-
-</div>
-</div>
-<script>
-window.addEventListener('DOMContentLoaded', () => {
-  const params = {
-    material_id: "mj2bXA5y",
-
-    // Use Classic to avoid command-compat issues (e.g., Polygon)
-    appName: "classic",
-
-    // Keep UI minimal but show the input bar like the original
-    showToolBar: false,
-    showMenuBar: false,
-    showAlgebraInput: true,
-    algebraInputPosition: "bottom", // works with Classic
-    showZoomButtons: true,
-    enableRightClick: false,
-    allowStyleBar: false,
-    language: "en",
-
-    // Make it fill the wrapper responsively
-    scaleContainerClass: "ggb-wrap",
-    autoHeight: false,
-    allowUpscale: true,
-
-    // Required by loader; CSS controls final size
-    width: 800, height: 500,
-
-    // Optional: tidy initial view once loaded
-    appletOnLoad: (api) => {
-      try { api.setCoordSystem(-6, 6, -6, 6); } catch(_) {}
-    }
-  };
-
-  const applet = new GGBApplet(params, /* useBrowserForJS */ true);
-  applet.inject("ggb-container");
-});
-</script>
-<p>Below, there is an interactive visualization of the <span class="math inline">\((\varepsilon-\delta)\)</span>-definition of the limit of a function when things do not work (<a href="https://www.geogebra.org/m/hebkhRJm">Jason McCullough in Geogebra</a>). Note that a trignometric function is used even if they are introduced later):</p>
-<div class="ggb-wrap ggb-16x10">
-<div id="ggb-container" class="ggb-canvas">
-
-</div>
-</div>
-<script>
-window.addEventListener('DOMContentLoaded', () => {
-  const params = {
-    material_id: "hebkhRJm",
-
-    // Use Classic to avoid command-compat issues (e.g., Polygon)
-    appName: "classic",
-
-    // Keep UI minimal but show the input bar like the original
-    showToolBar: false,
-    showMenuBar: false,
-    showAlgebraInput: true,
-    algebraInputPosition: "bottom", // works with Classic
-    showZoomButtons: true,
-    enableRightClick: false,
-    allowStyleBar: false,
-    language: "en",
-
-    // Make it fill the wrapper responsively
-    scaleContainerClass: "ggb-wrap",
-    autoHeight: false,
-    allowUpscale: true,
-
-    // Required by loader; CSS controls final size
-    width: 800, height: 500,
-
-    // Optional: tidy initial view once loaded
-    appletOnLoad: (api) => {
-      try { api.setCoordSystem(-6, 6, -6, 6); } catch(_) {}
-    }
-  };
-
-  const applet = new GGBApplet(params, /* useBrowserForJS */ true);
-  applet.inject("ggb-container");
-});
-</script>
+<p>In <a href="#def-limits" class="quarto-xref">Definition&nbsp;2</a>, three types of limits for <span class="math inline">\(x\)</span> going to <span class="math inline">\(x_{0}\)</span> are considered, and in the exercise below, you are asked to take some time to prove that, under appropriate conditions, they are equivalent in a precise sense.</p>
 <div class="callout callout-style-default callout-caution callout-titled" title="Existence of the limit at $x_{0}$ is equivalent to existence and equality of left and right limits at $x_{0}$">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -796,6 +707,9 @@ window.addEventListener('DOMContentLoaded', () => {
 </div>
 </div>
 </div>
+<p>As we stressed <a href="../../courses/calculo-uc3m-matematica-aplicada/0_sets_and_functions.html">before</a>, a rigorous definition of a function requires a domain to be specified. Consequently, the function <span class="math inline">\(f\colon (0,3)\subset\mathbb{R}\rightarrow\mathbb{R}\)</span> given by <span class="math inline">\(f(x)=x+3\)</span> and the function <span class="math inline">\(g\colon (-1,2)\subset\mathbb{R}\rightarrow\mathbb{R}\)</span> given by <span class="math inline">\(g(x)=x+3\)</span> are <em>different functions</em>. However, it is clear that <span class="math inline">\(f(x)=g(x)\)</span> whenever <span class="math inline">\(x\in(0,2)\)</span>, and it would be quite inconvenient if the notion of limit in <a href="#def-limits" class="quarto-xref">Definition&nbsp;2</a> would allow something like <span class="math display">\[
+\lim_{x\rightarrow 1} f(x)=L\neq L'= \lim_{x\rightarrow 1} g(x).
+\]</span> The following exercise asks you to pause and prove that this weird behavior is not compatible with <a href="#def-limits" class="quarto-xref">Definition&nbsp;2</a>.</p>
 <div class="callout callout-style-default callout-caution callout-titled" title="Limits of the restriction">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -807,33 +721,17 @@ window.addEventListener('DOMContentLoaded', () => {
 </div>
 <div class="callout-body-container callout-body">
 <div id="exr-limits-restriction-functions" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 2</strong></span> Consider the function <span class="math inline">\(f\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}\)</span>, the subset <span class="math inline">\(D'\subset D\)</span>, and the restriction function <span class="math inline">\(g\colon D'\subset \mathbb{R}\rightarrow \mathbb{R}\)</span> given by <span class="math inline">\(g(x)=f(x)\)</span>.</p>
-<p>If <span class="math inline">\(x_{0}\)</span> is an accumulation point for <span class="math inline">\(D'\)</span> prove that <span class="math display">\[
+<p><span class="theorem-title"><strong>Exercise 2</strong></span> Consider two functions <span class="math inline">\(f\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}\)</span> and <span class="math inline">\(g\colon D'\subseteq \mathbb{R}\rightarrow \mathbb{R}\)</span> such that <span class="math inline">\(g(x)=f(x)\)</span> on <span class="math inline">\(D\cap D'\neq \emptyset\)</span>. If <span class="math inline">\(x_{0}\)</span> is an accumulation point for <span class="math inline">\(D\cap D'\)</span> prove that <span class="math display">\[
 \lim_{x\rightarrow x_{0}} f(x)=\lim_{x\rightarrow x_{0}} g(x)
 \]</span> whenever either one of the limits exist.</p>
 <p>Prove analogous results for the case of left and right limits.</p>
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-caution callout-titled" title="On restrictions and left/right limits">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Caution</span>On restrictions and left/right limits
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<div id="exr-left-right-limits-restriction-constant-linear-quadratic-functions" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 3</strong></span> Exploiting <a href="#exr-left-right-limits-link" class="quarto-xref">Exercise&nbsp;1</a> and <a href="#exr-limits-restriction-functions" class="quarto-xref">Exercise&nbsp;2</a>, prove that the obvious modifications of the results in this subsection hold also for left/right limits and for restrictions to arbitrary subsets of <span class="math inline">\(\mathbb{R}\)</span>.</p>
-</div>
-</div>
-</div>
 </section>
-<section id="continuity" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> Continuity</h1>
-<p>In <a href="#def-limits" class="quarto-xref">Definition&nbsp;1</a>, the point <span class="math inline">\(x_0\)</span> is an accumulation point of the domain <span class="math inline">\(D\)</span> of the function under consideration, but it is not necessary that <span class="math inline">\(x_0 \in D\)</span> for the notion of limit to make sense. However, if <span class="math inline">\(x_{0}\)</span> does belong to <span class="math inline">\(D\)</span> and the limit exists, it makes sense to see if the limit <span class="math inline">\(l\)</span> differs from the value of the function at <span class="math inline">\(x_0\)</span>.</p>
+<section id="continuity" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Continuity</h1>
+<p>In <a href="#def-limits" class="quarto-xref">Definition&nbsp;2</a>, the point <span class="math inline">\(x_0\)</span> is an accumulation point of the domain <span class="math inline">\(D\)</span> of the function under consideration, but it is not necessary that <span class="math inline">\(x_0 \in D\)</span> for the notion of limit to make sense. However, if <span class="math inline">\(x_{0}\)</span> does belong to <span class="math inline">\(D\)</span> and the limit exists, it makes sense to see if the limit <span class="math inline">\(l\)</span> differs from the value of the function at <span class="math inline">\(x_0\)</span>.</p>
 <div class="callout callout-style-default callout-note callout-titled" title="Continuity">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -845,7 +743,7 @@ window.addEventListener('DOMContentLoaded', () => {
 </div>
 <div class="callout-body-container callout-body">
 <div id="def-continuity" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 2</strong></span> Let <span class="math inline">\(x_{0}\in D\subseteq \mathbb{R}\)</span> be an <a href="../../courses/calculo-uc3m-matematica-aplicada/0_sets_and_functions.html#def-accumulation-point">accumulation point</a> for <span class="math inline">\(D\)</span>.</p>
+<p><span class="theorem-title"><strong>Definition 3</strong></span> Let <span class="math inline">\(x_{0}\in D\subseteq \mathbb{R}\)</span> be an <a href="../../courses/calculo-uc3m-matematica-aplicada/0_sets_and_functions.html#def-accumulation-point">accumulation point</a> for <span class="math inline">\(D\)</span>.</p>
 <p>The function <span class="math inline">\(f\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}\)</span> said to be <strong>continuous</strong> at <span class="math inline">\(x_{0}\in D\)</span> if <span class="math display">\[
 \lim_{x\rightarrow x_{0}}f(x)=f(x_{0}).
 \]</span> Left and right continuity are defined in the obvious way.</p>
@@ -864,7 +762,7 @@ window.addEventListener('DOMContentLoaded', () => {
 </div>
 <div class="callout-body-container callout-body">
 <div id="exr-continuity-iff-left-right-continuity" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 4</strong></span> The function <span class="math inline">\(f\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}\)</span> is continuous at <span class="math inline">\(x_{0}\in D\)</span> <strong>and only if</strong> it is both left and right continuous at <span class="math inline">\(x_0\)</span>.</p>
+<p><span class="theorem-title"><strong>Exercise 3</strong></span> The function <span class="math inline">\(f\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}\)</span> is continuous at <span class="math inline">\(x_{0}\in D\)</span> <strong>and only if</strong> it is both left and right continuous at <span class="math inline">\(x_0\)</span>.</p>
 </div>
 </div>
 </div>
@@ -879,7 +777,7 @@ window.addEventListener('DOMContentLoaded', () => {
 </div>
 <div class="callout-body-container callout-body">
 <div id="exr-polynomials-continuous" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 5</strong></span> Consider the function <span class="math inline">\(P_{n}\colon\mathbb{R}\rightarrow\mathbb{R}\)</span> where <span class="math inline">\(P_{n}(x)\)</span> is a polynomial of order <span class="math inline">\(n\)</span>. Prove that <span class="math inline">\(P_{n}\)</span> is continuous.</p>
+<p><span class="theorem-title"><strong>Exercise 4</strong></span> Consider the function <span class="math inline">\(P_{n}\colon\mathbb{R}\rightarrow\mathbb{R}\)</span> where <span class="math inline">\(P_{n}(x)\)</span> is a polynomial of order <span class="math inline">\(n\)</span>. Prove that <span class="math inline">\(P_{n}\)</span> is continuous.</p>
 <details>
 <summary>
 <strong>Proof</strong>
@@ -913,7 +811,7 @@ P_{n}(x)= a_{n}x^{n} + a_{n-1} x^{n-1}\cdots a_{1}x + a_{0}x^{0},
 </div>
 <div class="callout-body-container callout-body">
 <div id="exr-examples-discontinuous-functions" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 6</strong></span> For each type of discontinuity, build a function presenting said discontinuity at least at one point.</p>
+<p><span class="theorem-title"><strong>Exercise 5</strong></span> For each type of discontinuity, build a function presenting said discontinuity at least at one point.</p>
 <details>
 <summary>
 <strong>Solution</strong>
@@ -923,21 +821,21 @@ P_{n}(x)= a_{n}x^{n} + a_{n-1} x^{n-1}\cdots a_{1}x + a_{0}x^{0},
 </div>
 </div>
 </section>
-<section id="sec-limits-constant-linear-quadratic-functions" class="level1" data-number="5">
-<h1 data-number="5"><span class="header-section-number">5</span> Three simple examples</h1>
+<section id="sec-limits-constant-linear-quadratic-functions" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Three simple examples</h1>
 <p>Let us start considering the function <span class="math inline">\(f\colon \mathbb{R}\rightarrow\mathbb{R}\)</span> given by <span class="math inline">\(f(x)=c\)</span> and prove that <span id="eq-limit-constant-function"><span class="math display">\[
 \lim_{x\rightarrow x_{0}} f(x)= c = f(x_{0})
-\tag{2}\]</span></span> for every <span class="math inline">\(x_{0}\in\mathbb{R}\)</span>. According to <a href="#def-limits" class="quarto-xref">Definition&nbsp;1</a>, we need to prove that, for every <span class="math inline">\(\varepsilon&gt;0\)</span>, there is <span class="math inline">\(\delta_{\varepsilon}&gt;0\)</span> such that <span class="math inline">\(|x-x_{0}|&lt;\delta_{\varepsilon}\)</span> implies <span class="math inline">\(|f(x)-c|&lt;\varepsilon\)</span>.</p>
+\tag{2}\]</span></span> for every <span class="math inline">\(x_{0}\in\mathbb{R}\)</span>. According to <a href="#def-limits" class="quarto-xref">Definition&nbsp;2</a>, we need to prove that, for every <span class="math inline">\(\varepsilon&gt;0\)</span>, there is <span class="math inline">\(\delta_{\varepsilon}&gt;0\)</span> such that <span class="math inline">\(|x-x_{0}|&lt;\delta_{\varepsilon}\)</span> implies <span class="math inline">\(|f(x)-c|&lt;\varepsilon\)</span>.</p>
 <p>Since <span class="math inline">\(f(x)=f(y)=c\)</span> for all <span class="math inline">\(x,y\in\mathbb{R}\)</span>, it follows that <span class="math inline">\(|f(x) - c|=0&lt;\varepsilon\)</span> for every <span class="math inline">\(x\in\mathbb{R}\)</span> and every <span class="math inline">\(\varepsilon&gt;0\)</span>. In particular, fixing <span class="math inline">\(\varepsilon,\delta&gt;0\)</span>, the condition <span class="math inline">\(|x -x_{0}|&lt;\delta\)</span> trivially implies <span class="math inline">\(|f(x)-c|&lt;\varepsilon\)</span> which is precisely what we had to prove. Note that, in this case <span class="math inline">\(\delta_{\varepsilon}=\delta\)</span>, which means that it does not depend on <span class="math inline">\(\varepsilon\)</span>.</p>
 <hr>
 <p>Now, let us consider the function <span class="math inline">\(f\colon \mathbb{R}\rightarrow\mathbb{R}\)</span> given by <span class="math inline">\(f(x)=x + a\)</span>, and prove that <span id="eq-limit-linear-function"><span class="math display">\[
 \lim_{x\rightarrow x_{0}} f(x)= x_{0} + a=f(x_{0})
-\tag{3}\]</span></span> for every <span class="math inline">\(x_{0}\in\mathbb{R}\)</span>. According to <a href="#def-limits" class="quarto-xref">Definition&nbsp;1</a>, we need to prove that, for every <span class="math inline">\(\varepsilon&gt;0\)</span>, there is <span class="math inline">\(\delta_{\varepsilon}&gt;0\)</span> such that <span class="math inline">\(|x-x_{0}|&lt;\delta_{\varepsilon}\)</span> implies <span class="math inline">\(|f(x)-x_{0}|&lt;\varepsilon\)</span>.</p>
+\tag{3}\]</span></span> for every <span class="math inline">\(x_{0}\in\mathbb{R}\)</span>. According to <a href="#def-limits" class="quarto-xref">Definition&nbsp;2</a>, we need to prove that, for every <span class="math inline">\(\varepsilon&gt;0\)</span>, there is <span class="math inline">\(\delta_{\varepsilon}&gt;0\)</span> such that <span class="math inline">\(|x-x_{0}|&lt;\delta_{\varepsilon}\)</span> implies <span class="math inline">\(|f(x)-x_{0}|&lt;\varepsilon\)</span>.</p>
 <p>By the very definition of <span class="math inline">\(f\)</span>, it holds <span class="math inline">\(|f(x) - (x_{0}+a)|=|x - x_{0}|\)</span>. Taking <span class="math inline">\(\delta_{\varepsilon}&lt; \varepsilon\)</span>, we get that <span class="math inline">\(|x - x_{0}|&lt;\delta_{\varepsilon}\)</span> implies <span class="math inline">\(|f(x) - f(x_{0})|&lt;\varepsilon\)</span> as desired. Note that, unlike what happens in the case of the constant function above, <span class="math inline">\(\delta_\varepsilon\)</span> depends on <span class="math inline">\(\varepsilon\)</span> because it must be <span class="math inline">\(\delta_{\varepsilon}&lt;\varepsilon\)</span>.</p>
 <hr>
 <p>Finally, let us consider the function <span class="math inline">\(f\colon \mathbb{R}\rightarrow\mathbb{R}\)</span> given by <span class="math inline">\(f(x)=x^{2}\)</span>, and prove that <span id="eq-limit-quadratic-function"><span class="math display">\[
 \lim_{x\rightarrow x_{0}} f(x)= x_{0}^{2}= f(x_{0})
-\tag{4}\]</span></span> for every <span class="math inline">\(x_{0}\in\mathbb{R}\)</span>. According to <a href="#def-limits" class="quarto-xref">Definition&nbsp;1</a>, we need to prove that, for every <span class="math inline">\(\varepsilon&gt;0\)</span>, there is <span class="math inline">\(\delta_{\varepsilon}&gt;0\)</span> such that <span class="math inline">\(|x-x_{0}|&lt;\delta_{\varepsilon}\)</span> implies <span class="math inline">\(|f(x)-x_{0}^{2}|&lt;\varepsilon\)</span>.</p>
+\tag{4}\]</span></span> for every <span class="math inline">\(x_{0}\in\mathbb{R}\)</span>. According to <a href="#def-limits" class="quarto-xref">Definition&nbsp;2</a>, we need to prove that, for every <span class="math inline">\(\varepsilon&gt;0\)</span>, there is <span class="math inline">\(\delta_{\varepsilon}&gt;0\)</span> such that <span class="math inline">\(|x-x_{0}|&lt;\delta_{\varepsilon}\)</span> implies <span class="math inline">\(|f(x)-x_{0}^{2}|&lt;\varepsilon\)</span>.</p>
 <p>It is <span class="math inline">\(|f(x)-x_{0}^{2}|=|x^{2} - x_{0}^{2}|\)</span>, and, using the properties of the absolute value, we have <span class="math display">\[
 |x^{2} - x_{0}^{2}| =|(x+x_{0})(x-x_{0})|\leq |x + x_{0}||x-x_{0}|.
 \]</span> Moreover, it holds <span class="math display">\[
@@ -950,23 +848,23 @@ P_{n}(x)= a_{n}x^{n} + a_{n-1} x^{n-1}\cdots a_{1}x + a_{0}x^{0},
 0 &lt; \delta_{\varepsilon} &lt;  \sqrt{x^{2}_{0} + \varepsilon} -|x_{0}| = \sqrt{x^{2}_{0} + \varepsilon} - \sqrt{x^{2}_{0}}.
 \]</span> Note that the way in which <span class="math inline">\(\delta_{\varepsilon}\)</span> depends on <span class="math inline">\(\varepsilon\)</span> is more complex than in the case of the linear function above.</p>
 </section>
-<section id="algebraic-manipulations-of-limits-and-continuous-functions" class="level1" data-number="6">
-<h1 data-number="6"><span class="header-section-number">6</span> Algebraic manipulations of limits and continuous functions</h1>
-<p>From the example with <span class="math inline">\(f(x)=x^{2}\)</span>, it should be clear that computing limits following <a href="#def-limits" class="quarto-xref">Definition&nbsp;1</a> is not going to be an easy task for arbitrary functions. This difficulty bothered some mathematicians who decided to investigate some simple cases using <em>educated guesses</em> (that is, the sophisticated siblings of sheer luck), and then proceeded to prove general theorems that allows to exploit to the maximum the simple examples already solved.</p>
+<section id="algebraic-manipulations-of-limits-and-continuous-functions" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Algebraic manipulations of limits and continuous functions</h1>
+<p>From the example with <span class="math inline">\(f(x)=x^{2}\)</span>, it should be clear that computing limits following <a href="#def-limits" class="quarto-xref">Definition&nbsp;2</a> is not going to be an easy task for arbitrary functions. This difficulty bothered some mathematicians who decided to investigate some simple cases using <em>educated guesses</em> (that is, the sophisticated siblings of sheer luck), and then proceeded to prove general theorems that allows to exploit to the maximum the simple examples already solved.</p>
 <p>To understand how one may envision such general theorem, let us note that, setting <span class="math inline">\(f(x)=x +c\)</span>, <span class="math inline">\(g(x)=x\)</span>, and <span class="math inline">\(h(x)=c\)</span>, <a href="#eq-limit-constant-function" class="quarto-xref">Equation&nbsp;2</a> and <a href="#eq-limit-linear-function" class="quarto-xref">Equation&nbsp;3</a> (once with <span class="math inline">\(a=c\)</span> and once with <span class="math inline">\(a=0\)</span>), imply <span class="math display">\[
 \lim_{x\rightarrow x_{0}} f(x)=\left(\lim_{x\rightarrow x_{0}} g(x) \right) + \left(\lim_{x\rightarrow x_{0}} h(x)\right),
 \]</span> which means that the limit of the sum is the sum of the limits. Moreover, setting <span class="math inline">\(f(x)=x^{2}\)</span> and <span class="math inline">\(g(x)=x=h(x)\)</span>, <a href="#eq-limit-linear-function" class="quarto-xref">Equation&nbsp;3</a> and <a href="#eq-limit-quadratic-function" class="quarto-xref">Equation&nbsp;4</a> imply <span class="math display">\[
 \lim_{x\rightarrow x_{0}} f(x)=\left(\lim_{x\rightarrow x_{0}} g(x)\right)\;\left(\lim_{x\rightarrow x_{0}} h(x)\right),
 \]</span> which means that the limit of the product is the product of the limits.</p>
 <p>A natural question then arises: how general are these facts? It turns out that they are quite general.</p>
-<p>For instance, let us consider the functions <span class="math inline">\(g,h\colon D\subset\mathbb{R}\rightarrow\mathbb{R}\)</span> and the accumulation point <span class="math inline">\(x_{0}\)</span> for <span class="math inline">\(D\)</span>. Assuming that the limits of both <span class="math inline">\(g\)</span> and <span class="math inline">\(h\)</span> at <span class="math inline">\(x_{0}\)</span> exist and are, respectively, <span class="math inline">\(l\)</span> and <span class="math inline">\(m\)</span>, we know from <a href="#def-limits" class="quarto-xref">Definition&nbsp;1</a> that there are <span class="math inline">\(\nu,\delta_{\nu},\epsilon,\delta_{\epsilon}&gt;0\)</span> such that <span id="eq-limit-of-sum"><span class="math display">\[
+<p>For instance, let us consider the functions <span class="math inline">\(g,h\colon D\subset\mathbb{R}\rightarrow\mathbb{R}\)</span> and the accumulation point <span class="math inline">\(x_{0}\)</span> for <span class="math inline">\(D\)</span>. Assuming that the limits of both <span class="math inline">\(g\)</span> and <span class="math inline">\(h\)</span> at <span class="math inline">\(x_{0}\)</span> exist and are, respectively, <span class="math inline">\(l\)</span> and <span class="math inline">\(m\)</span>, we know from <a href="#def-limits" class="quarto-xref">Definition&nbsp;2</a> that there are <span class="math inline">\(\nu,\delta_{\nu},\epsilon,\delta_{\epsilon}&gt;0\)</span> such that <span id="eq-limit-of-sum"><span class="math display">\[
 \begin{split}
 |x-x_{0}|&lt;\delta_{\nu}&amp;\Rightarrow |g(x) -l|&lt;\nu \\
 |x-x_{0}|&lt;\delta_{\epsilon}&amp;\Rightarrow |h(x) -l|&lt;\epsilon .
 \end{split}
 \tag{5}\]</span></span> For every <span class="math inline">\(\varepsilon&gt;0\)</span>, we can take <span class="math inline">\(\nu\)</span> and <span class="math inline">\(\epsilon\)</span> such that <span class="math inline">\(\varepsilon=\nu+\epsilon\)</span>. Consequently, if <span class="math inline">\(|x-x_{0}|&lt;\mathrm{min}(\delta_{\nu},\delta_{\epsilon})\)</span>, it holds <span class="math display">\[
 |g(x) + h(x) - l -m|\leq |f(x) -l| + |g(x) -m| &lt;\nu +\epsilon=\varepsilon
-\]</span> which means that <span class="math inline">\(l+m\)</span> is the limit at <span class="math inline">\(x_{0}\)</span> of <span class="math inline">\(f(x)=g(x)+h(x)\)</span> according to <a href="#def-limits" class="quarto-xref">Definition&nbsp;1</a>. Moreover, it also holds <span class="math display">\[
+\]</span> which means that <span class="math inline">\(l+m\)</span> is the limit at <span class="math inline">\(x_{0}\)</span> of <span class="math inline">\(f(x)=g(x)+h(x)\)</span> according to <a href="#def-limits" class="quarto-xref">Definition&nbsp;2</a>. Moreover, it also holds <span class="math display">\[
 \begin{split}
 |g(x)h(x) -lm|&amp;=\mid (g(x) -l + l)(h(x) -m +m) -lm\mid = \\
 &amp;=\mid (g(x) -l)(h(x)-m) +l(h(x)-m) + (g(x)-l)m\mid \leq \\
@@ -1030,11 +928,11 @@ H(x)=\frac{\alpha_{1}f_{1}(x)}{\alpha_{2}f_{2}(x)}
 </div>
 </div>
 </section>
-<section id="improper-limits" class="level1" data-number="7">
-<h1 data-number="7"><span class="header-section-number">7</span> Improper limits</h1>
-<p>The notion of limit considered in <a href="#def-limits" class="quarto-xref">Definition&nbsp;1</a> requires <span class="math inline">\(l\)</span> to be a finite real number. However, there are situation in which the more we get closer to a point in the domain, the more the function grows or de-grows.</p>
+<section id="improper-limits" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> Improper limits</h1>
+<p>The notion of limit considered in <a href="#def-limits" class="quarto-xref">Definition&nbsp;2</a> requires <span class="math inline">\(l\)</span> to be a finite real number. However, there are situation in which the more we get closer to a point in the domain, the more the function grows or de-grows.</p>
 <p>For instance, let us consider the function <span class="math inline">\(f\colon D\subset \mathbb{R}\rightarrow\mathbb{R}\)</span> given by <span class="math inline">\(f(x)=\frac{1}{x}\)</span> and with domain <span class="math inline">\(D=(-\infty,0)\cup(0,+\infty)\)</span>. We can compute <span class="math inline">\(f(x)\)</span> for values of <span class="math inline">\(x\)</span> which are closer and closer to <span class="math inline">\(0\)</span>. For positive values of <span class="math inline">\(x\)</span>, we see that the closer <span class="math inline">\(x\)</span> is to <span class="math inline">\(0\)</span>, the bigger <span class="math inline">\(f(x)\)</span> is. However, for negative values of <span class="math inline">\(x\)</span>, the closer <span class="math inline">\(x\)</span> is to <span class="math inline">\(0\)</span>, the more <span class="math inline">\(f(x)\)</span> becomes bigger in absolute value but with negative sign.</p>
-<p>Faced with this situation, we conjecture that the limit at <span class="math inline">\(x_{0}^{\pm}\)</span> does not exist in the sense of <a href="#def-limits" class="quarto-xref">Definition&nbsp;1</a>. However, we also have the intuitively understanding of how <span class="math inline">\(f\)</span> behaves around <span class="math inline">\(0\)</span>: it grows indefinitely when <span class="math inline">\(x\rightarrow 0^+\)</span>, and degrows indefinitely when <span class="math inline">\(x\rightarrow 0^{-}\)</span>. Can we make this intuitive understanding rigorous?</p>
+<p>Faced with this situation, we conjecture that the limit at <span class="math inline">\(x_{0}^{\pm}\)</span> does not exist in the sense of <a href="#def-limits" class="quarto-xref">Definition&nbsp;2</a>. However, we also have the intuitively understanding of how <span class="math inline">\(f\)</span> behaves around <span class="math inline">\(0\)</span>: it grows indefinitely when <span class="math inline">\(x\rightarrow 0^+\)</span>, and degrows indefinitely when <span class="math inline">\(x\rightarrow 0^{-}\)</span>. Can we make this intuitive understanding rigorous?</p>
 <p>The answer is affirmative, and leads to the definition of unbounded limit.</p>
 <div class="callout callout-style-default callout-note callout-titled" title="Unbounded limits">
 <div class="callout-header d-flex align-content-center">
@@ -1047,7 +945,7 @@ H(x)=\frac{\alpha_{1}f_{1}(x)}{\alpha_{2}f_{2}(x)}
 </div>
 <div class="callout-body-container callout-body">
 <div id="def-unbounded-limits" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 3</strong></span> Consider the function <span class="math inline">\(f\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}\)</span>, and let <span class="math inline">\(x_{0}\)</span> be a left accumulation point for <span class="math inline">\(D\)</span>. We say that the formal equality <span class="math display">\[
+<p><span class="theorem-title"><strong>Definition 4</strong></span> Consider the function <span class="math inline">\(f\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}\)</span>, and let <span class="math inline">\(x_{0}\)</span> be a left accumulation point for <span class="math inline">\(D\)</span>. We say that the formal equality <span class="math display">\[
 \lim_{x\rightarrow x_{0}} f(x)=+\infty
 \]</span> holds if for every <span class="math inline">\(K&gt;0\)</span> there is a <span class="math inline">\(0&lt; \delta\)</span> such that <span class="math display">\[
 |x-x_{0}|&lt;\delta \Rightarrow f(x)&gt;K
@@ -1072,7 +970,7 @@ H(x)=\frac{\alpha_{1}f_{1}(x)}{\alpha_{2}f_{2}(x)}
 </div>
 <div class="callout-body-container callout-body">
 <div id="exr-left-right-unbounded-limits-link" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 7</strong></span> Analogously to <a href="#exr-left-right-limits-link" class="quarto-xref">Exercise&nbsp;1</a>, show that the unbounded limit <span class="math display">\[
+<p><span class="theorem-title"><strong>Exercise 6</strong></span> Analogously to <a href="#exr-left-right-limits-link" class="quarto-xref">Exercise&nbsp;1</a>, show that the unbounded limit <span class="math display">\[
 \lim_{x\rightarrow x_{0}}f(x)=\pm \infty
 \]</span> holds <strong>if and only if</strong> if both left and right unbounded limits at <span class="math inline">\(x_{0}\)</span> exist and are equal.</p>
 </div>
@@ -1090,7 +988,7 @@ H(x)=\frac{\alpha_{1}f_{1}(x)}{\alpha_{2}f_{2}(x)}
 </div>
 <div class="callout-body-container callout-body">
 <div id="def-limits-at-infty" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 4</strong></span> Let <span class="math inline">\(D\subseteq \mathbb{R}\)</span> be such that <span class="math inline">\(+\infty\)</span> is a right accumulation point for it, and consider a function <span class="math inline">\(f\colon D\rightarrow \mathbb{R}\)</span>.</p>
+<p><span class="theorem-title"><strong>Definition 5</strong></span> Let <span class="math inline">\(D\subseteq \mathbb{R}\)</span> be such that <span class="math inline">\(+\infty\)</span> is a right accumulation point for it, and consider a function <span class="math inline">\(f\colon D\rightarrow \mathbb{R}\)</span>.</p>
 <p>The formal equality <span class="math display">\[
 \lim_{x\rightarrow +\infty} f(x)= l
 \]</span> holds with <span class="math inline">\(l\in\mathbb{R}\)</span> if for every <span class="math inline">\(\varepsilon&gt;0\)</span> there is <span class="math inline">\(M&gt;0\)</span> such that <span class="math display">\[
@@ -1121,7 +1019,7 @@ D\ni x&gt;M \rightarrow f(x)&lt;-K.
 </div>
 <div class="callout-body-container callout-body">
 <div id="def-limits-at-minus-infty" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 5</strong></span> Let <span class="math inline">\(D\subseteq \mathbb{R}\)</span> be such that <span class="math inline">\(-\infty\)</span> is a left accumulation point for it, and consider a function <span class="math inline">\(f\colon D\rightarrow \mathbb{R}\)</span>.</p>
+<p><span class="theorem-title"><strong>Definition 6</strong></span> Let <span class="math inline">\(D\subseteq \mathbb{R}\)</span> be such that <span class="math inline">\(-\infty\)</span> is a left accumulation point for it, and consider a function <span class="math inline">\(f\colon D\rightarrow \mathbb{R}\)</span>.</p>
 <p>The formal equality <span class="math display">\[
 \lim_{x\rightarrow -\infty} f(x)= l
 \]</span> holds with <span class="math inline">\(l\in\mathbb{R}\)</span> if for every <span class="math inline">\(\varepsilon&gt;0\)</span> there is <span class="math inline">\(M&gt;0\)</span> such that <span class="math display">\[
@@ -1179,8 +1077,8 @@ D\ni x&lt;-M \rightarrow f(x)&lt;-K.
 </div>
 </div>
 </section>
-<section id="some-more-properties-of-limits" class="level1" data-number="8">
-<h1 data-number="8"><span class="header-section-number">8</span> Some more properties of limits</h1>
+<section id="some-more-properties-of-limits" class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> Some more properties of limits</h1>
 <p>The next theorem is of paramount importance, and is known to humans by many names (very much like the <a href="https://gameofthrones.fandom.com/wiki/Many-Faced_God">Many-Faced God</a>). Informally speaking, the underlying idea behind the result is that, if a function <span class="math inline">\(f\)</span> lies between two other functions, say <span class="math inline">\(g\)</span> and <span class="math inline">\(h\)</span>, the limits of <span class="math inline">\(f\)</span> are determined by the limits of <span class="math inline">\(g\)</span> and <span class="math inline">\(h\)</span>.</p>
 <div class="callout callout-style-default callout-note callout-titled" title="The squeeze (pinching) theorem">
 <div class="callout-header d-flex align-content-center">
@@ -1245,6 +1143,103 @@ document.addEventListener("DOMContentLoaded", function() {
 </script>
 
 <script src="https://tikzjax.com/v1/tikzjax.js"></script>
+<script>
+(() => {
+  // Keep track of which placeholders we already initialized.
+  const initted = new Set();
+
+  // Create and inject one applet, and keep it sized to its container.
+  function mountGGB(containerEl) {
+    const id = containerEl.id;
+    if (!id || initted.has(id)) return;
+
+    // Read data-* attributes with sensible defaults
+    const materialId = containerEl.dataset.id || "";
+    const appName    = containerEl.dataset.app || "classic"; // 'classic' safest
+    const lang       = containerEl.dataset.lang || "en";
+    const showInput  = (containerEl.dataset.input || "true") === "true";
+    const showZoom   = (containerEl.dataset.zoom  || "true") === "true";
+    const winStr     = containerEl.dataset.window || ""; // "-6,6,-6,6"
+
+    const params = {
+      material_id: materialId,
+      appName: appName,
+      language: lang,
+
+      // UI
+      showToolBar: false,
+      showMenuBar: false,
+      showAlgebraInput: showInput,
+      algebraInputPosition: "bottom",
+      showZoomButtons: showZoom,
+      enableRightClick: false,
+      allowStyleBar: false,
+
+      // Do NOT use scaleContainerClass; we will drive size explicitly.
+      autoHeight: false,
+      allowUpscale: true,
+      width: 800, height: 500  // required by loader; we override immediately
+    };
+
+    // Optional: set initial coordinate window
+    if (winStr) {
+      const p = winStr.split(",").map(Number);
+      if (p.length === 4 && p.every(Number.isFinite)) {
+        params.appletOnLoad = (api) => { try { api.setCoordSystem(p[0], p[1], p[2], p[3]); } catch(_) {} };
+      }
+    }
+
+    const app = new GGBApplet(params, /*useBrowserForJS*/ true);
+    app.inject(id);
+
+    // Explicitly size the applet to the container's content box, and keep in sync.
+    const fit = () => {
+      const r = containerEl.getBoundingClientRect();
+      const w = Math.max(1, Math.round(r.width));
+      const h = Math.max(1, Math.round(r.height));
+      try { app.setSize(w, h); } catch(_) {}
+    };
+
+    // Initial fit after paint
+    requestAnimationFrame(fit);
+
+    // Keep fitting on container resizes and viewport changes
+    const ro = new ResizeObserver(fit);
+    ro.observe(containerEl);
+    window.addEventListener('resize', fit);
+
+    initted.add(id);
+    return app;
+  }
+
+  // Initialize all placeholders on the page, lazily when they scroll into view.
+  function initAll() {
+    const nodes = document.querySelectorAll('.ggb-canvas.ggb');
+
+    if (!('IntersectionObserver' in window)) {
+      nodes.forEach(mountGGB);
+      return;
+    }
+
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          mountGGB(entry.target);
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { root: null, rootMargin: '200px 0px', threshold: 0.01 });
+
+    nodes.forEach(el => obs.observe(el));
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initAll);
+  } else {
+    initAll();
+  }
+})();
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right

@@ -1,0 +1,97 @@
+<script>
+(() => {
+  // Keep track of which placeholders we already initialized.
+  const initted = new Set();
+
+  // Create and inject one applet, and keep it sized to its container.
+  function mountGGB(containerEl) {
+    const id = containerEl.id;
+    if (!id || initted.has(id)) return;
+
+    // Read data-* attributes with sensible defaults
+    const materialId = containerEl.dataset.id || "";
+    const appName    = containerEl.dataset.app || "classic"; // 'classic' safest
+    const lang       = containerEl.dataset.lang || "en";
+    const showInput  = (containerEl.dataset.input || "true") === "true";
+    const showZoom   = (containerEl.dataset.zoom  || "true") === "true";
+    const winStr     = containerEl.dataset.window || ""; // "-6,6,-6,6"
+
+    const params = {
+      material_id: materialId,
+      appName: appName,
+      language: lang,
+
+      // UI
+      showToolBar: false,
+      showMenuBar: false,
+      showAlgebraInput: showInput,
+      algebraInputPosition: "bottom",
+      showZoomButtons: showZoom,
+      enableRightClick: false,
+      allowStyleBar: false,
+
+      // Do NOT use scaleContainerClass; we will drive size explicitly.
+      autoHeight: false,
+      allowUpscale: true,
+      width: 800, height: 500  // required by loader; we override immediately
+    };
+
+    // Optional: set initial coordinate window
+    if (winStr) {
+      const p = winStr.split(",").map(Number);
+      if (p.length === 4 && p.every(Number.isFinite)) {
+        params.appletOnLoad = (api) => { try { api.setCoordSystem(p[0], p[1], p[2], p[3]); } catch(_) {} };
+      }
+    }
+
+    const app = new GGBApplet(params, /*useBrowserForJS*/ true);
+    app.inject(id);
+
+    // Explicitly size the applet to the container's content box, and keep in sync.
+    const fit = () => {
+      const r = containerEl.getBoundingClientRect();
+      const w = Math.max(1, Math.round(r.width));
+      const h = Math.max(1, Math.round(r.height));
+      try { app.setSize(w, h); } catch(_) {}
+    };
+
+    // Initial fit after paint
+    requestAnimationFrame(fit);
+
+    // Keep fitting on container resizes and viewport changes
+    const ro = new ResizeObserver(fit);
+    ro.observe(containerEl);
+    window.addEventListener('resize', fit);
+
+    initted.add(id);
+    return app;
+  }
+
+  // Initialize all placeholders on the page, lazily when they scroll into view.
+  function initAll() {
+    const nodes = document.querySelectorAll('.ggb-canvas.ggb');
+
+    if (!('IntersectionObserver' in window)) {
+      nodes.forEach(mountGGB);
+      return;
+    }
+
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          mountGGB(entry.target);
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { root: null, rootMargin: '200px 0px', threshold: 0.01 });
+
+    nodes.forEach(el => obs.observe(el));
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initAll);
+  } else {
+    initAll();
+  }
+})();
+</script>

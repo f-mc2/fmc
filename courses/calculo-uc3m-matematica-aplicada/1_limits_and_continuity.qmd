@@ -3,19 +3,6 @@ title: "Limits and continuity of real-valued functions"
 date: 2025-10-23
 date-style: full
 date-modified: last-modified
-include-in-header:
-  text: |
-    <script src="https://cdn.geogebra.org/apps/deployggb.js"></script>
-    <style>
-      .ggb-wrap{
-        position:relative;width:100%;max-width:960px;margin:1rem auto;
-        border-radius:12px;overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,.12);
-        background:var(--quarto-body-bg,#fff);
-      }
-      /* a bit taller so the input bar fits comfortably */
-      .ggb-16x10{ padding-top: 62.5%; }
-      .ggb-canvas{ position:absolute; inset:0; width:100%; height:100%; }
-    </style>
 ---
 ::: {.callout-note title="**Slides for this chapter**"}
 
@@ -27,26 +14,23 @@ include-in-header:
 
 
 
-# Distance and intervals
+# The definition of limit
 
-Let $f\colon X\rightarrow Y$ be a function. The notion of limit formalizes, rigorously, what happens to the output when the inputs gets closer and closer to a fixed value. Roughly speaking, we write
 
+Consider the function  $f\colon D\subseteq X\rightarrow Y$, a point $x_{0}\in X$, and a point $l\in Y$.
+The notion of limit we discuss here formalizes the fact that, when everything works, we can make the output of $f$ stay as close as we want to $l$ by taking input points that are sufficiently close to $x_{0}$.
+In this case, we write
 $$
-\lim_{x\rightarrow x_{0}} f(x)=l 
+\lim_{x\rightarrow x_{0}} f(x)=l, 
 $$
+and we say that $l$ is the limit of $f\colon D\subseteq X\rightarrow Y$ for $x$ that goes to $x_{0}$.
 
-meaning that the output $f(x)$ gets closer to $l$ if the input $x$ is closer to $x_{0}$. 
-
-::: {.callout-important title="Remark"}
-
-Note that, in general, it is not always true that a limit exists.
-
-:::
+The previous intuitive description relies on a very strong hidden assumption: we must be able to say what it means when we say that $f(x)$ is close to $l$ and that $x$ is close to $x_{0}$.
+From a purely abstract point of view, the notion of 'being close to' works for a very general type of sets, known as [metric spaces](https://en.wikipedia.org/wiki/Metric_space), as long as a suitable **distance function** between points can be introduced.
 
 
-In order to make things precise, we first need to understand what does it mean for a real number to be closer to a fixed real number. Essentially, we need to specify a way to measure distances between real numbers.
-
-Intuitively speaking, if we fix $x_{0}\in \mathbb{R}$, we say that $x_{1}$ is closer than $x_{2}$ if the distance $\Delta_{1}$ between $x_{0}$ and $x_{1}$ is smaller than the distance $\Delta_{2}$ between $x_{2}$ and $x_{0}$, which brings the question: what is the distance between two real numbers? Graphycally speaking,  we can exploit the idea that real numbers make up a straight line, and obtain the distance between two points as the length, as would be measured by a ruler, of the piece of the real line connecting the two points (see @fig-realline-distance). 
+In this course, however, we are mainly concerned with the case $X=Y=\mathbb{R}$, and the notion of 'being close to' has then a very strong and visual intuitive meaning.
+Indeed, visualizing $\mathbb{R}$ as the real line, and taking three points $x_{0},x_{1},x_{2}\in \mathbb{R}$, it would be very hard to disagree with the idea that $x_{1}$ is closer to $x_{0}$ than $x_{2}$ if the 'distance' $\Delta_{1}=|x_{1}-x_{0}|$ between $x_{1}$ and $x_{0}$ is smaller than the 'distance' $\Delta_{2}=|x_{2}-x_{0}|$ between $x_{2}$ and $x_{0}$, as shown in @fig-realline-distance. 
 
 ::: {.figure #fig-realline-distance}
 
@@ -99,15 +83,14 @@ Graphical depiction of distances between real numbers on the real line.
 
 :::
 
-In mathematical symbols, we have
-$$
-\Delta_{1}\equiv|x_{1}- x_{0}|\leq |x_{2} - x_{0}|\equiv \Delta_{2}.
-$$
+
+The 'distances' $\Delta_{1}$ and $\Delta_{2}$ are precisely the lenghts of the segments joining $x_{0}$ with $x_{1}$ and $x_{0}$ with $x_{2}$, respectively, as measured with a standard ruler. 
 
 
 
 ::: {.callout-note title="Euclidean distance function"}
 
+::: {#def-euclidean-distance} 
 The two-point function $d\colon \mathbb{R}\times\mathbb{R}\rightarrow\mathbb{R}$ given by
 $$
 d(x,y)=\sqrt{(x-y)^{2}}=|x-y|
@@ -116,18 +99,52 @@ is referred to as a **Euclidean distance function** on $\mathbb{R}$.
 
 :::
 
- 
- 
-::: {.callout-important title="Remark"}
-
-An intuitive reason for $d$ in @eq-euclidean-distance-function to measure distances follows from our direct experience, for instance with ruled paper (can you guess why/how?),  but there are also more abstract reasons connected with the theory of [metric spaces](https://en.wikipedia.org/wiki/Metric_space).
-
 :::
+ 
+
+Now that we know what 'being close to' means, we can visualize what is the $(\varepsilon-\delta)$-definition of the limit of a function (see @def-limits below) when everything works (source: [Jason McCullough in Geogebra](https://www.geogebra.org/m/mj2bXA5y)).
+The function used in the applet is $f\colon\mathbb{R}\rightarrow\mathbb{R}$ with $f(x) = 1/8 x^3$, but can be changed in the input bar.
+We fix the reference point $a\in\mathbb{R}$ in the input space by simply dragging it where we want, and visualize the validity of the formal equality
+$$
+\lim_{x\rightarrow a} f(x)=L
+$$
+as follows.
+The interval $(L-\varepsilon, L+\varepsilon)$ in the output space is depicted as an horizontal blue strip, while the interval $(a-\delta,a+\delta)$ in the input space is depicted as a vertical red strip, and we can use the sliders to change the value of $\varepsilon>0$ and $\delta>0$.  
+What happens is that, whatever the value of $\varepsilon$ is, we can find a suitable value for $\delta$ such that $x\in (a-\delta,a+\delta)$ (or, equivalently, $|x-a|<\delta$) implies $f(x)\in (L-\varepsilon, L+\varepsilon)$ (or, equivalently, $|f(x)- L|<\epsilon$.
 
 
+<div class="ggb-wrap ggb-16x10">
+  <div id="ggb-a" class="ggb-canvas ggb"
+       data-id="mj2bXA5y"
+       data-app="classic"
+       data-lang="en"
+       data-input="true"
+       data-zoom="true"
+       data-window="-4,4,-3,9">
+  </div>
+</div>
 
 
-# The definition of limit
+In general, limits do not need to exist, as visualized in the applet below (source: [Jason McCullough in Geogebra](https://www.geogebra.org/m/hebkhRJm)).
+This example exploits the oscillating behavior of trigonometric functions, a type of real-valued function that we will able to properly define only later in the course.
+The intuitive ideais that, when $x$ approaches $0$, the function keeps oscillating taking all values between $-1$ and $1$.
+Consequently, by suitably varying $\varepsilon$ and $\delta$ with the sliders, we can see that, as soon as $\varepsilon$ is smaller than $1$, there are no $L$ and no $\delta>0$ such that $|x-0|<\delta$ implies $|f(x)-L|<\varepsilon$.
+
+<div class="ggb-wrap ggb-16x10">
+  <div id="ggb-b" class="ggb-canvas ggb"
+       data-id="hebkhRJm"
+       data-app="classic"
+       data-lang="en"
+       data-input="false"
+       data-zoom="true"
+       data-window="-4,4,-3,5">
+  </div>
+</div>
+
+
+Now that we have an intuitive and visual understanding of what the notion of limit is, we can proceed to introduce a rigorous definition.
+
+
 
 ::: {.callout-note title="$\varepsilon$-$\delta$ definition of ([left/right](https://en.wikipedia.org/wiki/One-sided_limit)) [limits](https://en.wikipedia.org/wiki/Limit_of_a_function#(%CE%B5,_%CE%B4)-definition_of_limit)"}
 
@@ -170,8 +187,8 @@ In this case, we say that $l$ is the limit of $f$ at $x_{0}$.
 
 :::
 
-
-The first thing to do once limits are defined as in @def-limits is to prove that they are well-defined in the sense that a limit, if it exists, is unique.
+ 
+The first thing to do once limits are defined as in @def-limits is to prove that they are indeed well-defined in the sense that a limit, if it exists, is unique.
 
 ::: {.callout-note title="Well-posedness of limits"}
 
@@ -209,6 +226,7 @@ $$
 \end{split}
 $$
 which is a contradiction unless $l=m$.
+The case of right/left limits can be proved analogously.
 </details>
 
 :::
@@ -216,100 +234,7 @@ which is a contradiction unless $l=m$.
 :::
 
 
-
-Below, there is an interactive visualization of the $(\varepsilon-\delta)$-definition of the limit of a function when everything works (source: [Jason McCullough in Geogebra](https://www.geogebra.org/m/mj2bXA5y)).
-The function used is $f\colon\mathbb{R}\rightarrow\mathbb{R}$ given by $f(x) = 1/8 x^3$, but can be changed.
-The sliders can be used to change the value of $\varepsilon$ and $\delta$ (which corresponds to $\delta_{\varepsilon}$ in @def-limits).
-The reference point can be dragged to explore the behaviour at other points in the domain of the function.
-The demo assumes the function to be continuous and monotone in the interval $(x - \delta, x + \delta)$.
-
-
-<div class="ggb-wrap ggb-16x10">
-  <div id="ggb-container" class="ggb-canvas"></div>
-</div>
-
-<script>
-window.addEventListener('DOMContentLoaded', () => {
-  const params = {
-    material_id: "mj2bXA5y",
-
-    // Use Classic to avoid command-compat issues (e.g., Polygon)
-    appName: "classic",
-
-    // Keep UI minimal but show the input bar like the original
-    showToolBar: false,
-    showMenuBar: false,
-    showAlgebraInput: true,
-    algebraInputPosition: "bottom", // works with Classic
-    showZoomButtons: true,
-    enableRightClick: false,
-    allowStyleBar: false,
-    language: "en",
-
-    // Make it fill the wrapper responsively
-    scaleContainerClass: "ggb-wrap",
-    autoHeight: false,
-    allowUpscale: true,
-
-    // Required by loader; CSS controls final size
-    width: 800, height: 500,
-
-    // Optional: tidy initial view once loaded
-    appletOnLoad: (api) => {
-      try { api.setCoordSystem(-6, 6, -6, 6); } catch(_) {}
-    }
-  };
-
-  const applet = new GGBApplet(params, /* useBrowserForJS */ true);
-  applet.inject("ggb-container");
-});
-</script>
-
-
-Below, there is an interactive visualization of the $(\varepsilon-\delta)$-definition of the limit of a function when things do not work ([Jason McCullough in Geogebra](https://www.geogebra.org/m/hebkhRJm)).
-Note that a trignometric function is used even if they are introduced later):
-
-<div class="ggb-wrap ggb-16x10">
-  <div id="ggb-container" class="ggb-canvas"></div>
-</div>
-
-<script>
-window.addEventListener('DOMContentLoaded', () => {
-  const params = {
-    material_id: "hebkhRJm",
-
-    // Use Classic to avoid command-compat issues (e.g., Polygon)
-    appName: "classic",
-
-    // Keep UI minimal but show the input bar like the original
-    showToolBar: false,
-    showMenuBar: false,
-    showAlgebraInput: true,
-    algebraInputPosition: "bottom", // works with Classic
-    showZoomButtons: true,
-    enableRightClick: false,
-    allowStyleBar: false,
-    language: "en",
-
-    // Make it fill the wrapper responsively
-    scaleContainerClass: "ggb-wrap",
-    autoHeight: false,
-    allowUpscale: true,
-
-    // Required by loader; CSS controls final size
-    width: 800, height: 500,
-
-    // Optional: tidy initial view once loaded
-    appletOnLoad: (api) => {
-      try { api.setCoordSystem(-6, 6, -6, 6); } catch(_) {}
-    }
-  };
-
-  const applet = new GGBApplet(params, /* useBrowserForJS */ true);
-  applet.inject("ggb-container");
-});
-</script>
-
+In @def-limits, three types of limits for $x$ going to $x_{0}$ are considered, and in the exercise below, you are asked to take some time to prove that, under appropriate conditions, they are equivalent in a precise sense.
 
 ::: {.callout-caution title="Existence of the limit at $x_{0}$ is equivalent to existence and equality of left and right limits at $x_{0}$"}
 
@@ -323,12 +248,20 @@ If $x_{0}$ is a left and right accumulation point for $D\subseteq \mathbb{R}$, p
 
 :::
 
+As we stressed [before](0_sets_and_functions.qmd), a rigorous definition of a function requires a domain to be specified.
+Consequently, the function $f\colon (0,3)\subset\mathbb{R}\rightarrow\mathbb{R}$ given by $f(x)=x+3$ and the function $g\colon (-1,2)\subset\mathbb{R}\rightarrow\mathbb{R}$ given by $g(x)=x+3$ are _different functions_.
+However, it is clear that $f(x)=g(x)$ whenever $x\in(0,2)$, and it would be quite inconvenient if the notion of limit in @def-limits would allow something like
+$$
+\lim_{x\rightarrow 1} f(x)=L\neq L'= \lim_{x\rightarrow 1} g(x).
+$$
+The following exercise asks you to pause and prove that this weird behavior is not compatible with @def-limits.
+
+
 ::: {.callout-caution title="Limits of the restriction"}
 
 ::: {#exr-limits-restriction-functions}
-Consider the function $f\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}$, the subset $D'\subset D$, and  the restriction function $g\colon D'\subset \mathbb{R}\rightarrow \mathbb{R}$ given by $g(x)=f(x)$.
-
-If $x_{0}$ is an accumulation point for $D'$ prove that 
+Consider two functions $f\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}$ and $g\colon D'\subseteq \mathbb{R}\rightarrow \mathbb{R}$ such that $g(x)=f(x)$ on $D\cap D'\neq \emptyset$.
+If $x_{0}$ is an accumulation point for $D\cap D'$ prove that 
 $$
 \lim_{x\rightarrow x_{0}} f(x)=\lim_{x\rightarrow x_{0}} g(x)
 $$
@@ -339,18 +272,7 @@ Prove analogous results for the case of left and right limits.
 
 :::
 
-
-
-::: {.callout-caution title="On restrictions and left/right limits"}
-
-::: {#exr-left-right-limits-restriction-constant-linear-quadratic-functions}
-
-Exploiting @exr-left-right-limits-link and @exr-limits-restriction-functions, prove that the obvious modifications of the results in this subsection hold also for left/right limits and for restrictions to arbitrary subsets of $\mathbb{R}$.
-
-:::
-
-:::
-
+ 
 
 # Continuity
 

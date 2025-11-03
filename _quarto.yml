@@ -68,11 +68,14 @@ website:
 format:
   html:
     include-in-header:
+      - includes/geogebra-header.html     # style of geogebra embedded applets
       - text: |
           <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css">
     include-after-body: 
       - includes/tikz-preamble.html
       - includes/after-body.html
+      - includes/geogebra-init.html      # script of geogebra embedded applets that runs after each page
+    sanitize: false
     theme: 
       light: cosmo    
       dark: darkly    
