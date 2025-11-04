@@ -73,27 +73,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<!-- GeoGebra loader (CDN). Load ONCE site-wide -->
-<script src="https://cdn.geogebra.org/apps/deployggb.js"></script>
-
-<style>
-  /* Outer frame the applet should fill */
-  .ggb-wrap {
-    position: relative;
-    width: 100%;
-    max-width: 1060px;
-    margin: 1rem auto;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 8px 28px rgba(0,0,0,.12);
-    background: var(--quarto-body-bg, #fff);
-  }
-
-  /* 16:10 height gives room for input bar when enabled */
-  .ggb-16x10{ padding-top: 62.5%; }
-  .ggb-canvas{ position:absolute; inset:0; width:100%; height:100%; }
-  .caption{max-width:1060px;margin:0 auto 1.0rem;opacity:.75}
-</style>
 <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css">
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
@@ -499,7 +478,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">November 3, 2025</p>
+      <p class="date-modified">November 4, 2025</p>
     </div>
   </div>
     
@@ -607,17 +586,21 @@ d(x,y)=\sqrt{(x-y)^{2}}=|x-y|
 \lim_{x\rightarrow a} f(x)=L
 \]</span> as follows. The interval <span class="math inline">\((L-\varepsilon, L+\varepsilon)\)</span> in the output space is depicted as an horizontal blue strip, while the interval <span class="math inline">\((a-\delta,a+\delta)\)</span> in the input space is depicted as a vertical red strip, and we can use the sliders to change the value of <span class="math inline">\(\varepsilon&gt;0\)</span> and <span class="math inline">\(\delta&gt;0\)</span>.<br>
 What happens is that, whatever the value of <span class="math inline">\(\varepsilon\)</span> is, we can find a suitable value for <span class="math inline">\(\delta\)</span> such that <span class="math inline">\(x\in (a-\delta,a+\delta)\)</span> (or, equivalently, <span class="math inline">\(|x-a|&lt;\delta\)</span>) implies <span class="math inline">\(f(x)\in (L-\varepsilon, L+\varepsilon)\)</span> (or, equivalently, <span class="math inline">\(|f(x)- L|&lt;\epsilon\)</span>.</p>
-<div class="ggb-wrap ggb-16x10">
-<div id="ggb-a" class="ggb-canvas ggb" data-id="mj2bXA5y" data-app="classic" data-lang="en" data-input="true" data-zoom="true" data-window="-4,4,-3,9">
-
-</div>
-</div>
+<figure style="max-width:960px;margin:1rem auto" class="figure">
+<iframe src="https://www.geogebra.org/material/iframe/id/mj2bXA5y/width/960/height/640/border/888888/sfsb/true/smb/true/stb/false" title="GeoGebra: Tangent line intuition" loading="lazy" allowfullscreen="" style="border:0;width:100%;height:640px;display:block;">
+</iframe>
+<figcaption style="text-align:center;font-size:0.95em;opacity:.85;margin-top:.5rem">
+Interactive demo: when a limit exists.
+</figcaption>
+</figure>
 <p>In general, limits do not need to exist, as visualized in the applet below (source: <a href="https://www.geogebra.org/m/hebkhRJm">Jason McCullough in Geogebra</a>). This example exploits the oscillating behavior of trigonometric functions, a type of real-valued function that we will able to properly define only later in the course. The intuitive ideais that, when <span class="math inline">\(x\)</span> approaches <span class="math inline">\(0\)</span>, the function keeps oscillating taking all values between <span class="math inline">\(-1\)</span> and <span class="math inline">\(1\)</span>. Consequently, by suitably varying <span class="math inline">\(\varepsilon\)</span> and <span class="math inline">\(\delta\)</span> with the sliders, we can see that, as soon as <span class="math inline">\(\varepsilon\)</span> is smaller than <span class="math inline">\(1\)</span>, there are no <span class="math inline">\(L\)</span> and no <span class="math inline">\(\delta&gt;0\)</span> such that <span class="math inline">\(|x-0|&lt;\delta\)</span> implies <span class="math inline">\(|f(x)-L|&lt;\varepsilon\)</span>.</p>
-<div class="ggb-wrap ggb-16x10">
-<div id="ggb-b" class="ggb-canvas ggb" data-id="hebkhRJm" data-app="classic" data-lang="en" data-input="false" data-zoom="true" data-window="-4,4,-3,5">
-
-</div>
-</div>
+<figure style="max-width:960px;margin:1rem auto" class="figure">
+<iframe src="https://www.geogebra.org/material/iframe/id/hebkhRJm/width/960/height/640/border/888888/sfsb/true/smb/true/stb/false" title="GeoGebra: Tangent line intuition" loading="lazy" allowfullscreen="" style="border:0;width:100%;height:640px;display:block;">
+</iframe>
+<figcaption style="text-align:center;font-size:0.95em;opacity:.85;margin-top:.5rem">
+Interactive demo: when a limit does not exists.
+</figcaption>
+</figure>
 <p>Now that we have an intuitive and visual understanding of what the notion of limit is, we can proceed to introduce a rigorous definition.</p>
 <div class="callout callout-style-default callout-note callout-titled" title="$\varepsilon$-$\delta$ definition of ([left/right](https://en.wikipedia.org/wiki/One-sided_limit)) [limits](https://en.wikipedia.org/wiki/Limit_of_a_function#(%CE%B5,_%CE%B4)-definition_of_limit)">
 <div class="callout-header d-flex align-content-center">
@@ -1143,103 +1126,6 @@ document.addEventListener("DOMContentLoaded", function() {
 </script>
 
 <script src="https://tikzjax.com/v1/tikzjax.js"></script>
-<script>
-(() => {
-  // Keep track of which placeholders we already initialized.
-  const initted = new Set();
-
-  // Create and inject one applet, and keep it sized to its container.
-  function mountGGB(containerEl) {
-    const id = containerEl.id;
-    if (!id || initted.has(id)) return;
-
-    // Read data-* attributes with sensible defaults
-    const materialId = containerEl.dataset.id || "";
-    const appName    = containerEl.dataset.app || "classic"; // 'classic' safest
-    const lang       = containerEl.dataset.lang || "en";
-    const showInput  = (containerEl.dataset.input || "true") === "true";
-    const showZoom   = (containerEl.dataset.zoom  || "true") === "true";
-    const winStr     = containerEl.dataset.window || ""; // "-6,6,-6,6"
-
-    const params = {
-      material_id: materialId,
-      appName: appName,
-      language: lang,
-
-      // UI
-      showToolBar: false,
-      showMenuBar: false,
-      showAlgebraInput: showInput,
-      algebraInputPosition: "bottom",
-      showZoomButtons: showZoom,
-      enableRightClick: false,
-      allowStyleBar: false,
-
-      // Do NOT use scaleContainerClass; we will drive size explicitly.
-      autoHeight: false,
-      allowUpscale: true,
-      width: 800, height: 500  // required by loader; we override immediately
-    };
-
-    // Optional: set initial coordinate window
-    if (winStr) {
-      const p = winStr.split(",").map(Number);
-      if (p.length === 4 && p.every(Number.isFinite)) {
-        params.appletOnLoad = (api) => { try { api.setCoordSystem(p[0], p[1], p[2], p[3]); } catch(_) {} };
-      }
-    }
-
-    const app = new GGBApplet(params, /*useBrowserForJS*/ true);
-    app.inject(id);
-
-    // Explicitly size the applet to the container's content box, and keep in sync.
-    const fit = () => {
-      const r = containerEl.getBoundingClientRect();
-      const w = Math.max(1, Math.round(r.width));
-      const h = Math.max(1, Math.round(r.height));
-      try { app.setSize(w, h); } catch(_) {}
-    };
-
-    // Initial fit after paint
-    requestAnimationFrame(fit);
-
-    // Keep fitting on container resizes and viewport changes
-    const ro = new ResizeObserver(fit);
-    ro.observe(containerEl);
-    window.addEventListener('resize', fit);
-
-    initted.add(id);
-    return app;
-  }
-
-  // Initialize all placeholders on the page, lazily when they scroll into view.
-  function initAll() {
-    const nodes = document.querySelectorAll('.ggb-canvas.ggb');
-
-    if (!('IntersectionObserver' in window)) {
-      nodes.forEach(mountGGB);
-      return;
-    }
-
-    const obs = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          mountGGB(entry.target);
-          obs.unobserve(entry.target);
-        }
-      });
-    }, { root: null, rootMargin: '200px 0px', threshold: 0.01 });
-
-    nodes.forEach(el => obs.observe(el));
-  }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initAll);
-  } else {
-    initAll();
-  }
-})();
-</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right

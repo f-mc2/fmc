@@ -113,34 +113,39 @@ The interval $(L-\varepsilon, L+\varepsilon)$ in the output space is depicted as
 What happens is that, whatever the value of $\varepsilon$ is, we can find a suitable value for $\delta$ such that $x\in (a-\delta,a+\delta)$ (or, equivalently, $|x-a|<\delta$) implies $f(x)\in (L-\varepsilon, L+\varepsilon)$ (or, equivalently, $|f(x)- L|<\epsilon$.
 
 
-<div class="ggb-wrap ggb-16x10">
-  <div id="ggb-a" class="ggb-canvas ggb"
-       data-id="mj2bXA5y"
-       data-app="classic"
-       data-lang="en"
-       data-input="true"
-       data-zoom="true"
-       data-window="-4,4,-3,9">
-  </div>
-</div>
+ 
+<figure style="max-width:960px;margin:1rem auto">
+  <iframe
+    src="https://www.geogebra.org/material/iframe/id/mj2bXA5y/width/960/height/640/border/888888/sfsb/true/smb/true/stb/false"
+    title="GeoGebra: Tangent line intuition"
+    loading="lazy" allowfullscreen
+    style="border:0;width:100%;height:640px;display:block;"
+  ></iframe>
+  <figcaption style="text-align:center;font-size:0.95em;opacity:.85;margin-top:.5rem">
+    Interactive demo: when a limit exists.
+  </figcaption>
+</figure>
 
+ 
 
 In general, limits do not need to exist, as visualized in the applet below (source: [Jason McCullough in Geogebra](https://www.geogebra.org/m/hebkhRJm)).
 This example exploits the oscillating behavior of trigonometric functions, a type of real-valued function that we will able to properly define only later in the course.
 The intuitive ideais that, when $x$ approaches $0$, the function keeps oscillating taking all values between $-1$ and $1$.
 Consequently, by suitably varying $\varepsilon$ and $\delta$ with the sliders, we can see that, as soon as $\varepsilon$ is smaller than $1$, there are no $L$ and no $\delta>0$ such that $|x-0|<\delta$ implies $|f(x)-L|<\varepsilon$.
 
-<div class="ggb-wrap ggb-16x10">
-  <div id="ggb-b" class="ggb-canvas ggb"
-       data-id="hebkhRJm"
-       data-app="classic"
-       data-lang="en"
-       data-input="false"
-       data-zoom="true"
-       data-window="-4,4,-3,5">
-  </div>
-</div>
 
+
+<figure style="max-width:960px;margin:1rem auto">
+  <iframe
+    src="https://www.geogebra.org/material/iframe/id/hebkhRJm/width/960/height/640/border/888888/sfsb/true/smb/true/stb/false"
+    title="GeoGebra: Tangent line intuition"
+    loading="lazy" allowfullscreen
+    style="border:0;width:100%;height:640px;display:block;"
+  ></iframe>
+  <figcaption style="text-align:center;font-size:0.95em;opacity:.85;margin-top:.5rem">
+    Interactive demo: when a limit does not exists.
+  </figcaption>
+</figure>
 
 Now that we have an intuitive and visual understanding of what the notion of limit is, we can proceed to introduce a rigorous definition.
 
@@ -276,7 +281,7 @@ Prove analogous results for the case of left and right limits.
 
 # Continuity
 
- 
+
 
 In @def-limits, the point $x_0$ is an accumulation point of the domain $D$ of the function under consideration, but it is not necessary that $x_0 \in D$ for the notion of limit to make sense.
 However, if $x_{0}$ does belong to $D$ and the limit exists, it makes sense to see if the limit $l$ differs from the value of the function at $x_0$. 
