@@ -10,13 +10,30 @@ date-modified: last-modified
 
 # Näive set theory
 
+
+
 # Functions
+
+
+
+::: {.callout-note title="Inverse function"}
+
+::: {#def-inverse-function}
+
+INSERT
+
+:::
+
+:::
+
+
 
 # Real numbers
 
 We need to introduce various types of intervals. These objects help in formalizing the way $x$ approaches $x_{0}$.
 
 ::: {.callout-note title="Open and closed intervals"}
+
 ::: {#def-open-closed-intervals} 
  
 Let $a<b\in\mathbb{R}\cup\{+\infty\}\cup\{-\infty\}$.
@@ -32,7 +49,9 @@ $$
 $$
 
 Intuitively speaking, the interval $(a,b)$ is _open_ because its boundary points **are not** part of it, while $[a,b]$ is _closed_ because its boundary points **are** part of it.
+
 :::
+
 :::
 
 Not all intervals are either open or closed. For instance, when $a\neq-\infty$, we can define the interval $[a,b)$ as
@@ -67,6 +86,21 @@ A **right accumulation point** for $D$ is then defined in the obvious way.
 
 A point which is a left (right) accumulation point but not a right (left) accumulation point is called a **strict left accumulation point** (**strict right accumulation point**). 
 
-An **accumulation point** for $D$ is a point that is both a left and right accumulation point for $D$.
+An **accumulation point** for $D$ is a point that is both a left and 
+right accumulation point for $D$.
+
 :::
+
+:::
+
+
+
+::: {.callout-note title="Invertible functions on intervals are monotone"}
+
+::: {#prp-invertible functions are monotonic} 
+
+INSERT
+
+:::
+
 :::
