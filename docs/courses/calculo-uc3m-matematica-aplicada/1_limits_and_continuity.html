@@ -43,9 +43,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-0eb7fd585e00d51023b3d1090d08195f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-cbdd6c9d3bb07a08fa49b004a2aab0e1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../site_libs/bootstrap/bootstrap-0eb7fd585e00d51023b3d1090d08195f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-088cf8b58fc5bdaf5ae7da23cfb2a7f7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-8e9235ed90459df727a637835f354bde.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-088cf8b58fc5bdaf5ae7da23cfb2a7f7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -651,12 +651,13 @@ Interactive demo: when a limit does not exists.
 \lim_{x\rightarrow x_{0}}f(x)&amp;=l \\
 \lim_{x\rightarrow x_{0}}f(x)&amp;=m,
 \end{split}
-\]</span> then <span class="math inline">\(l=m\)</span>, and analogously for left/right limits.</p>
+\]</span> then <span class="math inline">\(l=m\)</span>.</p>
+<p>Under the obvious modifications, analogous results hold for left and right limits.</p>
 <details>
 <summary>
-<strong>Proof</strong>
+<strong>Proof:</strong>
 </summary>
-From <a href="#def-limits" class="quarto-xref">Definition&nbsp;2</a>, it follows there are <span class="math inline">\(\varepsilon_{1},\delta_{1},\varepsilon_{2},\delta_{2}&gt;0\)</span> such that<br>
+<p>From <a href="#def-limits" class="quarto-xref">Definition&nbsp;2</a>, it follows there are <span class="math inline">\(\varepsilon_{1},\delta_{1},\varepsilon_{2},\delta_{2}&gt;0\)</span> such that<br>
 <span class="math display">\[
 \begin{split}
 |x-x_{0}|&lt;\delta_{1}&amp;\Rightarrow |f(x) - l|&lt;\varepsilon_{1} \\
@@ -669,7 +670,8 @@ From <a href="#def-limits" class="quarto-xref">Definition&nbsp;2</a>, it follows
 |l-m|&amp;=|l-m+f(x) -f(x)|\leq |f(x) -m| + |f(x) -l|&lt; \\
 &amp; &lt; \frac{|l-m|}{2} + \frac{|l-m|}{2} =|l -m|,
 \end{split}
-\]</span> which is a contradiction unless <span class="math inline">\(l=m\)</span>. The case of right/left limits can be proved analogously.
+\]</span> which is a contradiction unless <span class="math inline">\(l=m\)</span>.</p>
+The case of left and right limits can be proved analogously.
 </details>
 </div>
 </div>
@@ -727,6 +729,12 @@ From <a href="#def-limits" class="quarto-xref">Definition&nbsp;2</a>, it follows
 <div id="exr-left-right-limits-link" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 1</strong></span> Consider the function <span class="math inline">\(f\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}\)</span>.</p>
 <p>If <span class="math inline">\(x_{0}\)</span> is a left and right accumulation point for <span class="math inline">\(D\subseteq \mathbb{R}\)</span>, prove that <span class="math inline">\(l\)</span> is the limit of function <span class="math inline">\(f\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}\)</span> for <span class="math inline">\(x\)</span> going to <span class="math inline">\(x_{0}\)</span> if and only <strong>if and only if</strong> it is also the left and right limit of <span class="math inline">\(f\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}\)</span> at <span class="math inline">\(x_{0}\)</span>.</p>
+<details>
+<summary>
+<strong>Solution:</strong>
+</summary>
+You are strongly invited to try to solve it on your own.
+</details>
 </div>
 </div>
 </div>
@@ -748,6 +756,12 @@ From <a href="#def-limits" class="quarto-xref">Definition&nbsp;2</a>, it follows
 \lim_{x\rightarrow x_{0}} f(x)=\lim_{x\rightarrow x_{0}} g(x)
 \]</span> whenever either one of the limits exist.</p>
 <p>Prove analogous results for the case of left and right limits.</p>
+<details>
+<summary>
+<strong>Solution:</strong>
+</summary>
+You are strongly invited to try to solve it on your own.
+</details>
 </div>
 </div>
 </div>
@@ -767,7 +781,14 @@ From <a href="#def-limits" class="quarto-xref">Definition&nbsp;2</a>, it follows
 \lim_{x\rightarrow x_{0}}h(x)=\lim_{x\rightarrow x_{0}}g(x)=L\in\mathbb{R},
 \]</span> then it follows that <span class="math display">\[
 \lim_{x\rightarrow x_{0}}f(x)=L.
-\]</span> Under the obvious modifications, the same conclusions hold for left and right limits.</p>
+\]</span></p>
+<p>Under the obvious modifications, the same conclusions hold for left and right limits.</p>
+<details>
+<summary>
+<strong>Proof:</strong>
+</summary>
+The proof is quite tedious, and it will take me some time to upload it.
+</details>
 </div>
 </div>
 </div>
@@ -806,6 +827,12 @@ From <a href="#def-limits" class="quarto-xref">Definition&nbsp;2</a>, it follows
 <div class="callout-body-container callout-body">
 <div id="exr-continuity-iff-left-right-continuity" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 3</strong></span> The function <span class="math inline">\(f\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}\)</span> is continuous at <span class="math inline">\(x_{0}\in D\)</span> <strong>and only if</strong> it is both left and right continuous at <span class="math inline">\(x_0\)</span>.</p>
+<details>
+<summary>
+<strong>Solution:</strong>
+</summary>
+You are strongly invited to try to solve it on your own.
+</details>
 </div>
 </div>
 </div>
@@ -825,9 +852,9 @@ From <a href="#def-limits" class="quarto-xref">Definition&nbsp;2</a>, it follows
 <p>If continuity is replaced by left or right continuity at <span class="math inline">\(c\)</span>, then there is a corresponding one-sided interval <span class="math inline">\([c, c + \delta)\)</span> or <span class="math inline">\((c - \delta, c]\)</span> in which <span class="math inline">\(f\)</span> has the same sign as <span class="math inline">\(f(c)\)</span>.</p>
 <details>
 <summary>
-<strong>Proof</strong>
+<strong>Proof:</strong>
 </summary>
-FINISH
+I’ll do it soon (hopefully).
 </details>
 </div>
 </div>
@@ -845,6 +872,12 @@ FINISH
 <div class="callout-body-container callout-body">
 <div id="thm-extreme-value-thm" class="theorem">
 <p><span class="theorem-title"><strong>Theorem 2</strong></span> Let <span class="math inline">\(a,b\in\mathbb{R}\)</span>. If <span class="math inline">\(f\colon [a,b]\rightarrow\mathbb{R}\)</span> is continuous it attains a maximum and minimum value.</p>
+<details>
+<summary>
+<strong>Proof:</strong>
+</summary>
+I’ll do it soon (hopefully).
+</details>
 </div>
 </div>
 </div>
@@ -861,6 +894,12 @@ FINISH
 <div class="callout-body-container callout-body">
 <div id="thm-intermediate-value-thm" class="theorem">
 <p><span class="theorem-title"><strong>Theorem 3</strong></span> Let <span class="math inline">\(a,b\in\mathbb{R}\)</span>, let <span class="math inline">\(f\colon [a,b]\rightarrow\mathbb{R}\)</span> be continuous, and let <span class="math inline">\(K\)</span> be any number between <span class="math inline">\(f(a)\)</span> and <span class="math inline">\(f(b)\)</span>, then there is at least one point <span class="math inline">\(c\in (a,b)\)</span> such that <span class="math inline">\(f(c)=K\)</span>.</p>
+<details>
+<summary>
+<strong>Proof:</strong>
+</summary>
+I’ll do it soon (hopefully).
+</details>
 </div>
 </div>
 </div>
@@ -941,6 +980,12 @@ F(x)=\sum\limits_{j=1}^{n}\alpha_{j}f_{j}(x),\qquad G(x)=\prod_{j=1}^{n}\alpha_{
 H(x)=\frac{\alpha_{1}f_{1}(x)}{\alpha_{2}f_{2}(x)}
 \]</span> is continuous at <span class="math inline">\(x_{0}\)</span>.</p>
 <p>Analogous results hold for left/right continuity with the obvious modifications.</p>
+<details>
+<summary>
+<strong>Proof:</strong>
+</summary>
+You are strongly invited to try the proof on your own.
+</details>
 </div>
 </div>
 </div>
@@ -960,7 +1005,7 @@ H(x)=\frac{\alpha_{1}f_{1}(x)}{\alpha_{2}f_{2}(x)}
 <p>Consider another polynomial function <span class="math inline">\(\mathrm{Q}_{m}\colon\mathbb{R}\rightarrow\mathbb{R}\)</span>. Prove that the rational function <span class="math inline">\(\mathrm{R}\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}\)</span>, which is defined on <span class="math inline">\(D=\{x\in\mathbb{R}|\mathrm{Q}_{m}(x)\neq 0\}\)</span> and is given by <span class="math inline">\(\mathrm{R}(x)=\frac{P_{n}(x)}{\mathrm{Q}_{m}(x)}\)</span>, is continuous.</p>
 <details>
 <summary>
-<strong>Proof</strong>
+<strong>Solution:</strong>
 </summary>
 <p>The polynomial <span class="math inline">\(\mathrm{P}_{n}(x)\)</span> can be written as <span class="math display">\[
 \mathrm{P}_{n}(x)= a_{n}x^{n} + a_{n-1} x^{n-1}\cdots a_{1}x + a_{0}x^{0},
@@ -988,8 +1033,9 @@ The continuity of <span class="math inline">\(\mathrm{R}\)</span> follows again 
 <p><span class="theorem-title"><strong>Proposition 5</strong></span> Let <span class="math inline">\(I\)</span> be an interval, and let <span class="math inline">\(f\colon I\rightarrow \mathbb{R}\)</span> be continuous and invertible on <span class="math inline">\(I\)</span> (in particular, <span class="math inline">\(f\)</span> is <a href="../../courses/calculo-uc3m-matematica-aplicada/0_sets_and_functions.html#prp-invertible functions are monotonic">monotonic</a>). Then <span class="math inline">\(J:=f(I)\)</span> is an interval, and the inverse function <span class="math inline">\(f^{-1}\colon J\rightarrow\mathbb{R}\)</span> is continuous.</p>
 <details>
 <summary>
-<strong>Proof</strong>
+<strong>Proof:</strong>
 </summary>
+The proof is tedious, and it will take me some time to upload it.
 </details>
 </div>
 </div>
@@ -1007,6 +1053,12 @@ The continuity of <span class="math inline">\(\mathrm{R}\)</span> follows again 
 <div class="callout-body-container callout-body">
 <div id="exr-rational-power-functions-continuous" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 5</strong></span> Given <span class="math inline">\(D\)</span> as above and <span class="math inline">\(m,n&gt;0\)</span> natural numbers, prove that <span class="math inline">\(f\colon D\rightarrow\mathbb{R}\)</span> given by <span class="math inline">\(f(x)=x^{\frac{m}{n}}\)</span> is a continuous function.</p>
+<details>
+<summary>
+<strong>Solution:</strong>
+</summary>
+You are strongly invited to try to solve it on your own.
+</details>
 </div>
 </div>
 </div>
@@ -1040,6 +1092,12 @@ h(x)=x^{2}+3.
 <li>there is <strong>no</strong> open interval <span class="math inline">\(I\)</span> containing <span class="math inline">\(x_{0}\)</span> on which <span class="math inline">\(g(x)=l\)</span> for all <span class="math inline">\(x\in I\)</span>.</li>
 </ol>
 <p>Analogous results hold for right/left limits.</p>
+<details>
+<summary>
+<strong>Proof:</strong>
+</summary>
+<p>The proof is quite tedious, and it will take me some time to upload it.</p>
+</details>
 </div>
 </div>
 </div>
@@ -1056,10 +1114,10 @@ h(x)=x^{2}+3.
 <div id="exr-tricky-limit-composition" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 6</strong></span> Let <span class="math inline">\(f,g\colon\mathbb{R}\rightarrow\mathbb{R}\)</span> be given by <span class="math display">\[
 f(x)=g(x)=\left\{\begin{matrix} 0 &amp; \mbox{ if } x\neq 0 \\ 1 &amp; \mbox{ if } x= 0 .\end{matrix}\right.
-\]</span> Prove that the composite function <span class="math inline">\(h\colon\mathbb{R}\rightarrow\mathbb{R}\)</span> given by <span class="math inline">\(h=f\circ g\)</span> violates <a href="#prp-limit-composite-functions" class="quarto-xref">Proposition&nbsp;6</a> and explain why.</p>
+\]</span> Prove that the composite function <span class="math inline">\(h\colon\mathbb{R}\rightarrow\mathbb{R}\)</span> given by <span class="math inline">\(h=f\circ g\)</span> violates <a href="#prp-limit-composite-functions" class="quarto-xref">Proposition&nbsp;12</a> and explain why.</p>
 <details>
 <summary>
-<strong>Proof</strong>
+<strong>Solution:</strong>
 </summary>
 Since <span class="math inline">\(f(x)=g(x)=0\)</span> for <span class="math inline">\(x\neq 0\)</span>, it holds <span class="math display">\[
 \lim_{y\rightarrow 0} f(y)=0 =\lim_{x\rightarrow 0} g(x) .
@@ -1067,12 +1125,12 @@ Since <span class="math inline">\(f(x)=g(x)=0\)</span> for <span class="math inl
 h(x)=\left\{\begin{matrix} 1 &amp; \mbox{ if } x\neq 0 \\ 0 &amp; \mbox{ if } x= 0,\end{matrix}\right.
 \]</span> so that <span class="math display">\[
 \lim_{x\rightarrow 0} h(x)= 0 \neq \lim_{x\rightarrow 0} (f\circ g)(x)= 1 .
-\]</span> The reason behind the failure of <a href="#prp-limit-composite-functions" class="quarto-xref">Proposition&nbsp;6</a> is that both both the additional hypothesis of <a href="#prp-limit-composite-functions" class="quarto-xref">Proposition&nbsp;6</a> are not met since the function <span class="math inline">\(f\)</span> is not continuous at <span class="math inline">\(y=0\)</span>, and the function <span class="math inline">\(g\)</span> is constant in every open interval containing <span class="math inline">\(0\)</span>.
+\]</span> The reason behind the failure of <a href="#prp-limit-composite-functions" class="quarto-xref">Proposition&nbsp;12</a> is that both both the additional hypothesis of <a href="#prp-limit-composite-functions" class="quarto-xref">Proposition&nbsp;12</a> are not met since the function <span class="math inline">\(f\)</span> is not continuous at <span class="math inline">\(y=0\)</span>, and the function <span class="math inline">\(g\)</span> is constant in every open interval containing <span class="math inline">\(0\)</span>.
 </details>
 </div>
 </div>
 </div>
-<p><a href="#prp-limit-composite-functions" class="quarto-xref">Proposition&nbsp;6</a> immediately implies that continuous functions behaves well with respect to composition of functions.</p>
+<p><a href="#prp-limit-composite-functions" class="quarto-xref">Proposition&nbsp;12</a> immediately implies that continuous functions behaves well with respect to composition of functions.</p>
 <div class="callout callout-style-default callout-note callout-titled" title="Composition of continuous functions">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1087,7 +1145,7 @@ h(x)=\left\{\begin{matrix} 1 &amp; \mbox{ if } x\neq 0 \\ 0 &amp; \mbox{ if } x=
 <p><span class="theorem-title"><strong>Proposition 7</strong></span> Consider the functions <span class="math inline">\(f\colon D\subseteq \mathbb{R} \rightarrow \mathbb{R}\)</span> and <span class="math inline">\(g\colon D'\subseteq \mathbb{R} \rightarrow \mathbb{R}\)</span>. If <span class="math inline">\(g\)</span> is continuous at <span class="math inline">\(x_{0}\)</span> and <span class="math inline">\(f\)</span> is continuous at <span class="math inline">\(g(x_{0})\)</span> then the composite function <span class="math inline">\(f\circ g\)</span> is continuous at <span class="math inline">\(x_{0}\)</span>.</p>
 <details>
 <summary>
-<strong>Proof</strong>
+<strong>Proof:</strong>
 </summary>
 You are strongly invited to try the proof on your own.
 </details>
@@ -1112,6 +1170,12 @@ You are strongly invited to try the proof on your own.
 1) \lim_{x\rightarrow 0^{\pm}} \frac{|x|}{x} &amp; \qquad &amp; \qquad  &amp; 2) \lim_{x\rightarrow 0^{\pm}} \frac{\sqrt{x^{2}}}{x}
 \end{split}
 \]</span></p>
+<details>
+<summary>
+<strong>Solution</strong>
+</summary>
+You are strongly invited to try to solve them on your own.
+</details>
 </div>
 </div>
 </div>
@@ -1161,6 +1225,12 @@ You are strongly invited to try the proof on your own.
 <p><span class="theorem-title"><strong>Exercise 8</strong></span> Analogously to <a href="#exr-left-right-limits-link" class="quarto-xref">Exercise&nbsp;1</a>, show that the unbounded limit <span class="math display">\[
 \lim_{x\rightarrow x_{0}}f(x)=\pm \infty
 \]</span> holds <strong>if and only if</strong> if both left and right unbounded limits at <span class="math inline">\(x_{0}\)</span> exist and are equal.</p>
+<details>
+<summary>
+<strong>Solution:</strong>
+</summary>
+You are strongly invited to try to solve it on your own.
+</details>
 </div>
 </div>
 </div>
@@ -1184,7 +1254,7 @@ x-0&lt;\delta \implies \frac{1}{\delta}&lt;\frac{1}{x}=f(x) .
 </div>
 </div>
 </div>
-<p>The algebraic manipulations of limits in <a href="#prp-algebraic-manipulations-limits" class="quarto-xref">Proposition&nbsp;3</a> can be appropriately modified to handle also unbounded limits, provided we handle the so-called <strong>inderminate forms</strong> with care. Contrarily to <a href="#prp-algebraic-manipulations-limits" class="quarto-xref">Proposition&nbsp;3</a>, in <a href="#prp-algebraic-manipulations-unbounded-limits" class="quarto-xref">Proposition&nbsp;8</a> we only list what happens with two functions. The extension to an arbitrary but finite number of functions can be developed when necessary exploiting <a href="#prp-algebraic-manipulations-unbounded-limits" class="quarto-xref">Proposition&nbsp;8</a> and the associativity property of operations between functions.</p>
+<p>The algebraic manipulations of limits in <a href="#prp-algebraic-manipulations-limits" class="quarto-xref">Proposition&nbsp;3</a> can be appropriately modified to handle also unbounded limits, provided we handle the so-called <strong>inderminate forms</strong> with care.</p>
 <div class="callout callout-style-default callout-note callout-titled" title="Algebraic manipulations of unbounded limits">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1196,7 +1266,7 @@ x-0&lt;\delta \implies \frac{1}{\delta}&lt;\frac{1}{x}=f(x) .
 </div>
 <div class="callout-body-container callout-body">
 <div id="prp-algebraic-manipulations-unbounded-limits" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 8</strong></span> Consider two functions <span class="math inline">\(f,g\colon D\rightarrow \mathbb{R}\)</span>, and let <span class="math inline">\(x_{0}\)</span> be an accumulation point for <span class="math inline">\(D\)</span>. If the limits at <span class="math inline">\(x_{0}\)</span> of both <span class="math inline">\(f\)</span> and <span class="math inline">\(g\)</span> exist in the sense of <a href="#def-limits" class="quarto-xref">Definition&nbsp;2</a> or <a href="#def-unbounded-limits" class="quarto-xref">Definition&nbsp;4</a>, then it holds: <span class="math display">\[
+<p><span class="theorem-title"><strong>Proposition 8</strong></span> Consider two functions <span class="math inline">\(f,g\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}\)</span>, and let <span class="math inline">\(x_{0}\)</span> be an accumulation point for <span class="math inline">\(D\)</span>. If the limits at <span class="math inline">\(x_{0}\)</span> of both <span class="math inline">\(f\)</span> and <span class="math inline">\(g\)</span> exist in the sense of <a href="#def-limits" class="quarto-xref">Definition&nbsp;2</a> or <a href="#def-unbounded-limits" class="quarto-xref">Definition&nbsp;4</a>, then it holds: <span class="math display">\[
 \begin{split}
 1) &amp; \lim_{x\rightarrow x_{0}}(f(x) + g(x))=\lim_{x\rightarrow x_{0}}f(x) + \lim_{x\rightarrow x_{0}} g(x) \\ &amp; \\
 2) &amp; \lim_{x\rightarrow x_{0}}f(x)\,\cdot \, g(x)= \lim_{x\rightarrow x_{0}}f(x)\, \cdot  \lim_{x\rightarrow x_{0}} g(x) \\ &amp; \\
@@ -1217,9 +1287,75 @@ x-0&lt;\delta \implies \frac{1}{\delta}&lt;\frac{1}{x}=f(x) .
 <p>Analogous results hold for left/right unbounded limits.</p>
 <details>
 <summary>
-<strong>Proof</strong>
+<strong>Proof:</strong>
 </summary>
-The proof is quite tedious, and it will take me some time to be uploaded.
+<p>The case where both limits are real numbers is already done in <a href="#prp-algebraic-manipulations-limits" class="quarto-xref">Proposition&nbsp;3</a>.</p>
+The rest of the proof is tedious, and it will take me some time to be uploaded.
+</details>
+</div>
+</div>
+</div>
+<p>Also the <a href="#thm-squeeze-thm">squeeze theorem</a> can be adapted to unbounded limits.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="The squeeze (pinching) theorem for unbounded limits">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>The squeeze (pinching) theorem for unbounded limits
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div id="thm-squeeze-thm-unbounded" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 4</strong></span> Consider the functions <span class="math inline">\(f,g\colon D\subseteq\mathbb{R}\rightarrow \mathbb{R}\)</span>, and let <span class="math inline">\(x_{0}\)</span> be an accumulation point for <span class="math inline">\(D\)</span>. If <span class="math inline">\(g(x)\leq f(x)\)</span> for all <span class="math inline">\(x\in D\)</span> and <span class="math display">\[
+\lim_{x\rightarrow x_{0}}g(x)= +\infty,
+\]</span> then it follows that <span class="math display">\[
+\lim_{x\rightarrow x_{0}}f(x)=+\infty.
+\]</span> Analogously, if <span class="math inline">\(f(x)\leq g(x)\)</span> for all <span class="math inline">\(x\in D\)</span> and <span class="math display">\[
+\lim_{x\rightarrow x_{0}}g(x)= -\infty,
+\]</span> then it follows that <span class="math display">\[
+\lim_{x\rightarrow x_{0}}f(x)=-\infty.
+\]</span></p>
+<p>Under the obvious modifications, the same conclusions hold for left and right limits.</p>
+<details>
+<summary>
+<strong>Proof:</strong>
+</summary>
+<p>e</p>
+The proof is similar to that of <a href="#thm-squeeze-thm" class="quarto-xref">Theorem&nbsp;1</a>, and it will take me some time to upload it.
+</details>
+</div>
+</div>
+</div>
+<p>We can also adapt <a href="#prp-limit-composite-functions" class="quarto-xref">Proposition&nbsp;12</a> to the case of unbounded limits.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Unbounded limit of composite functions">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Unbounded limit of composite functions
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div id="prp-unbounded-limit-composite-functions" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 9</strong></span> Consider the functions <span class="math inline">\(f\colon D\subseteq \mathbb{R} \rightarrow \mathbb{R}\)</span> and <span class="math inline">\(g\colon D'\subseteq \mathbb{R} \rightarrow \mathbb{R}\)</span>, and let <span class="math inline">\(x_{0}\)</span> be an accumulation point for <span class="math inline">\(D'\)</span>. Suppose that <span class="math display">\[
+\lim_{x\rightarrow x_{0}}g(x) = l
+\]</span> with <span class="math inline">\(l\)</span> is an accumulation point for <span class="math inline">\(D\)</span>, and <span class="math display">\[
+\lim_{y\rightarrow l} f(y) =L ,
+\]</span> with <span class="math inline">\(L\)</span> possibly <span class="math inline">\(\pm\infty\)</span>. The equality <span class="math display">\[
+\lim_{x\rightarrow x_{0}} f\circ g(x)=L
+\]</span> holds if either one of the following additional assumptions are met:</p>
+<ol type="1">
+<li><span class="math inline">\(f\)</span> is continuous at <span class="math inline">\(y=l\)</span>;</li>
+<li>there is <strong>no</strong> open interval <span class="math inline">\(I\)</span> containing <span class="math inline">\(x_{0}\)</span> on which <span class="math inline">\(g(x)=l\)</span> for all <span class="math inline">\(x\in I\)</span>.</li>
+</ol>
+<p>Under the obvious modifications, analogous results hold for left and right limits.</p>
+<details>
+<summary>
+<strong>Proof:</strong>
+</summary>
+<p>The proof is quite tedious, and it will take me some time to upload it.</p>
 </details>
 </div>
 </div>
@@ -1237,13 +1373,12 @@ The proof is quite tedious, and it will take me some time to be uploaded.
 <div id="exr-unbounded-limits-1" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 9</strong></span> All the functions defined by the formulas given below are implicitely assumed to be defined on their maximal domains. Calculate the limits, or prove they do not exist, explaining which previous results you are using in each case: <span class="math display">\[
 \begin{split}
-1) \quad &amp; \lim_{x\rightarrow 1^{\pm}}\, \frac{x^{2}-1}{ x^{2} -2x + 1 }= \pm\infty \\
-2) \quad &amp;  \lim_{x\rightarrow 2^{+}}\, \frac{\sqrt{x^{2} -4}}{x-2} = +\infty,
+1) \quad &amp; \lim_{x\rightarrow 1^{\pm}}\, \frac{x^{2}-1}{ x^{2} -2x + 1 }= \pm\infty
 \end{split}
 \]</span></p>
 <details>
 <summary>
-<strong>Proof</strong>
+<strong>Solution:</strong>
 </summary>
 <ol type="1">
 <li>When <span class="math inline">\(x=1\)</span>, both numerator and denominator vanish, and we get the indeterminate form “<span class="math inline">\(\frac{0}{0}\)</span>”. The fact that both polynomials have a common root (<span class="math inline">\(x=1\)</span>) suggests we <a href="https://en.wikipedia.org/wiki/Polynomial#Factoring">factorize them</a>. In particular, it holds <span class="math display">\[
@@ -1251,9 +1386,6 @@ x^{2}-1=(x-1)(x+1), \quad \mbox{ and }\qquad x^{2}-2x +1=(x-1)(x-1),
 \]</span> and thus <span class="math display">\[
 \frac{x^{2}-1}{x^{2}-2x+1}=\frac{x+1}{x-1}.
 \]</span> Now, the numerator tends to 2 when <span class="math inline">\(x\rightarrow 1^{\pm}\)</span>, while the denominator tends to <span class="math inline">\(0\)</span>. Therefore, using <a href="#prp-algebraic-manipulations-unbounded-limits" class="quarto-xref">Proposition&nbsp;8</a>, we obtain that the limit is <span class="math inline">\(+\infty\)</span> when <span class="math inline">\(x\rightarrow 1^{+}\)</span> (because the denominator tends to <span class="math inline">\(0\)</span> from the left), and <span class="math inline">\(-\infty\)</span> when <span class="math inline">\(x\rightarrow 1^{-}\)</span> (because the denominator tends to <span class="math inline">\(0\)</span> from the right).</li>
-<li>When <span class="math inline">\(x=2\)</span>, both numerator and denominator vanish, and we get the indeterminate form “<span class="math inline">\(\frac{0}{0}\)</span>”. Putting the denominator in the square root, and using the difference of two squares identity, we obtain <span class="math display">\[
-\frac{\sqrt{x^{2}-4}}{x-2}=\sqrt{\frac{x+2}{x-2}}.
-\]</span> Then, the rest of the proof uses the [[1.2 Limits of scalar functions#^c8052c|limit of composite functions]] (with the outer function equal to the square root function) and a reasoning analogous to that of the previous point.</li>
 </ol>
 </details>
 </div>
@@ -1262,7 +1394,9 @@ x^{2}-1=(x-1)(x+1), \quad \mbox{ and }\qquad x^{2}-2x +1=(x-1)(x-1),
 </section>
 <section id="limits-at-infinity" class="level1" data-number="7">
 <h1 data-number="7"><span class="header-section-number">7</span> Limits at infinity</h1>
-<p>Another type of <strong>improper</strong> limit is necessary if we want to understand what happens when the input variable either grows or degrows indefinitely.</p>
+<p>It should be quite easy to convince ourself that the function <span class="math inline">\(f\colon \mathbb{R}\rightarrow\mathbb{R}\)</span> given by <span class="math inline">\(f(x)=x\)</span> is obliged to increase/decrease indefinitely as the input <span class="math inline">\(x\)</span> increases/decreases indefinitely. It should be less easy, but still quite manageable without too much thought, to convince ourselves that the function <span class="math inline">\(f\colon \mathbb{R}\rightarrow\mathbb{R}\)</span> given by <span class="math inline">\(f(x)=x^{2}+c\)</span>, with <span class="math inline">\(c\in\mathbb{R}\)</span>, is obliged to increase indefinitely irrespectively of the input <span class="math inline">\(x\)</span> increasing or decreasing indefinitely. We could dare to say that no sophisticated mathematical reasoning is necessary for us to confidently believe these ‘facts’.</p>
+<p>However, a different situation is presented to us if we consider the function <span class="math inline">\(f\colon \mathbb{R}\rightarrow\mathbb{R}\)</span> given by <span class="math inline">\(f(x)=\frac{x^{2}}{x^{2}+1}\)</span>. We ‘know’ that both the numerator and the denominator grow indefinitely irrespectively of the input <span class="math inline">\(x\)</span> increasing or decreasing, but it’s difficult to get a clear mental picture of what really happens when <span class="math inline">\(x\)</span> increases/decreases indefinitely just by looking at the definition of the function. After some thinking, we may arrive to the conclusion that, since the numerator and denominator only differ by <span class="math inline">\(1\)</span>, their ratio gets increasingly close to <span class="math inline">\(1\)</span>. Some quick numerical checks with <span class="math inline">\(x=100,1000,10000,100000\)</span> may support this intuition, but we can not be as sure as we were for the cases <span class="math inline">\(f(x)=x\)</span> or <span class="math inline">\(f(x)=x^{2}\)</span>. Therefore, we may start to wonder about more complex examples like <span class="math inline">\(f\colon \mathbb{R}\rightarrow\mathbb{R}\)</span> given by <span class="math inline">\(f(x)=\frac{x^{3}-3x^{2}}{x^{2}+x^{4}}\)</span>, or <span class="math inline">\(f\colon \mathbb{R}\rightarrow\mathbb{R}\)</span> given by <span class="math inline">\(f(x)=\frac{\sqrt{x^{4}+3x^{2}}}{x^{2}+x^{4}+83}\)</span>, and we quickly realize we have no idea other than plugging in some numbers and hoping some pattern emerges to guide our intuition.</p>
+<p>From a mathematician’s point of view, this is the appropriate moment to go hunting for a new concept of limit that can help us understanding what happens when the input variable either grows or degrows indefinitely, by giving us rigorous analytical tools to guide our intuition. Luckily for us, this new notion of limit is out there since quite some time, and we can ‘simply’ harness its power.</p>
 <div class="callout callout-style-default callout-note callout-titled" title="Limits at $+\infty$">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1325,7 +1459,107 @@ D\ni x&lt;-M \rightarrow f(x)&lt;-K.
 </div>
 </div>
 </div>
-<p>The algebraic manipulations of limits in <a href="#prp-algebraic-manipulations-limits" class="quarto-xref">Proposition&nbsp;3</a> can be appropriately modified to handle also improper limits, provided we handle the so-called <strong>inderminate forms</strong> with care.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Well-posedness of limits at infinity">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Well-posedness of limits at infinity
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div id="prp-well-posedness-limits-at-infinity" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 10</strong></span> Consider the function <span class="math inline">\(f\colon D\subseteq\mathbb{R}\rightarrow\mathbb{R}\)</span> with <span class="math inline">\(D\)</span> such that <span class="math inline">\(+\infty\)</span> is an accumulation point for <span class="math inline">\(D\)</span>. If <span class="math display">\[
+\begin{split}
+\lim_{x\rightarrow +\infty}f(x)&amp;=l \\
+\lim_{x\rightarrow +\infty}f(x)&amp;=m,
+\end{split}
+\]</span> with <span class="math inline">\(l,m\)</span> possibly <span class="math inline">\(\pm\infty\)</span>, then <span class="math inline">\(l=m\)</span>.</p>
+<p>Under the obvious modifications, a similar result holds for <span class="math inline">\(x\rightarrow-\infty\)</span>.</p>
+<details>
+<summary>
+<strong>Proof:</strong>
+</summary>
+<p>The proof is a slight modification of that of <a href="#prp-well-posedness-limits" class="quarto-xref">Proposition&nbsp;1</a>, but it will take time for me to upload it.</p>
+</details>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution callout-titled" title="Limits a infinity of the restriction">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Caution</span>Limits a infinity of the restriction
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div id="exr-limits-at-infty-restriction-functions" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 10</strong></span> Consider two functions <span class="math inline">\(f\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}\)</span> and <span class="math inline">\(g\colon D'\subseteq \mathbb{R}\rightarrow \mathbb{R}\)</span> such that <span class="math inline">\(g(x)=f(x)\)</span> on <span class="math inline">\(D\cap D'\neq \emptyset\)</span>. If <span class="math inline">\(\pm\infty\)</span> is an accumulation point for <span class="math inline">\(D\cap D'\)</span> prove that <span class="math display">\[
+\lim_{x\rightarrow \pm\infty} f(x)=\lim_{x\rightarrow \pm\infty g(x)
+\]</span> whenever either one of the limits exist.</p>
+<details>
+<summary>
+<strong>Solution:</strong>
+</summary>
+You are strongly invited to try to solve it on your own.
+</details>
+</div>
+</div>
+</div>
+<p>Let us now use <a href="#def-limits-at-infty" class="quarto-xref">Definition&nbsp;5</a> and <a href="#def-limits-at-minus-infty" class="quarto-xref">Definition&nbsp;6</a> to put on rigorous ground our intuition that <span class="math inline">\(f(x)=x\)</span> increases/decreases indefinitely when <span class="math inline">\(x\)</span> increases/decreases indefinitely.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Basic examples of limits at infinity">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Basic examples of limits at infinity
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div id="exm-basic-examples-limit-at-infty" class="theorem example">
+<p><span class="theorem-title"><strong>Example 3</strong></span> Consider the function <span class="math inline">\(f\colon \mathbb{R}\rightarrow \mathbb{R}\)</span> given by <span class="math inline">\(f(x)=x\)</span>. We want to prove that <span class="math display">\[
+\lim_{x\rightarrow\pm\infty} x=\pm\infty.
+\]</span> Focusing on the case <span class="math inline">\(x\rightarrow +\infty\)</span>, <a href="#def-limits-at-infty" class="quarto-xref">Definition&nbsp;5</a> requires us to prove that, given <span class="math inline">\(K&gt;0\)</span>, there is <span class="math inline">\(M&gt;0\)</span> such that <span class="math display">\[
+x&gt;M\implies x&gt;K.
+\]</span> Clearly, taking <span class="math inline">\(M&gt;K\)</span> is enough.</p>
+<p>For the case <span class="math inline">\(x\rightarrow -\infty\)</span>, <a href="#def-limits-at-minus-infty" class="quarto-xref">Definition&nbsp;6</a> requires us to prove that, given <span class="math inline">\(K&gt;0\)</span>, there is <span class="math inline">\(M&gt;0\)</span> such that <span class="math display">\[
+x&lt;-M\implies x&lt;-K.
+\]</span> Clearly, taking (again) <span class="math inline">\(M&gt;K\)</span> is enough.</p>
+<hr>
+<p>Consider the function <span class="math inline">\(f\colon D\subset \mathbb{R}\rightarrow \mathbb{R}\)</span> given by <span class="math inline">\(f(x)=x\)</span>, where <span class="math inline">\(D\)</span> is any subset not containing <span class="math inline">\(0\)</span> and such that <span class="math inline">\(\pm\infty\)</span> is an accumulation point. We want to prove that <span class="math display">\[
+\lim_{x\rightarrow\pm\infty} \frac{1}{x}=0.
+\]</span> FINISH….</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution callout-titled" title="The square root">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Caution</span>The square root
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div id="exr-limit-sqrt-at-infty" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 11</strong></span> Consider the function <span class="math inline">\(f\colon (0,+\infty)\rightarrow \mathbb{R}\)</span> given by <span class="math inline">\(f(x)=\sqrt{x}\)</span>. Prove that <span class="math display">\[
+\lim_{x\rightarrow+\infty} \sqrt{x}=+\infty.
+\]</span></p>
+<details>
+<summary>
+<strong>Solution:</strong>
+</summary>
+You are strongly invited to try to solve it on your own.
+</details>
+</div>
+</div>
+</div>
+<p>The algebraic manipulations of limits in <a href="#prp-algebraic-manipulations-limits" class="quarto-xref">Proposition&nbsp;3</a> can be appropriately modified to handle also limits at infinity, provided we handle the so-called <strong>inderminate forms</strong> with care.</p>
 <div class="callout callout-style-default callout-note callout-titled" title="Algebraic manipulations of improper limits">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1336,7 +1570,8 @@ D\ni x&lt;-M \rightarrow f(x)&lt;-K.
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Let <span class="math inline">\(f,g\colon D\rightarrow \mathbb{R}\)</span> be scalar function, and let <span class="math inline">\(x_{0}\)</span> be a left/right accumulation point for <span class="math inline">\(D\)</span> (possibly, also <span class="math inline">\(\pm\infty\)</span>). If the right/left limit of both <span class="math inline">\(f\)</span> and <span class="math inline">\(g\)</span> exist at <span class="math inline">\(x_{0}\)</span>, then we have: <span class="math display">\[
+<div id="prp-algebraic-manipulations-limits-at-infinity" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 11</strong></span> Let <span class="math inline">\(f,g\colon D\rightarrow \mathbb{R}\)</span> be scalar function, and let <span class="math inline">\(x_{0}\)</span> be a left/right accumulation point for <span class="math inline">\(D\)</span> (possibly, also <span class="math inline">\(\pm\infty\)</span>). If the right/left limit of both <span class="math inline">\(f\)</span> and <span class="math inline">\(g\)</span> exist at <span class="math inline">\(x_{0}\)</span>, then we have: <span class="math display">\[
 \begin{split}
 1) &amp; \lim_{x\rightarrow x_{0}^{\pm}}(f(x) + g(x))= \lim_{x\rightarrow x_{0}^{\pm}}f(x) + \lim_{x\rightarrow x_{0}^{\pm}} g(x) \\ &amp; \\
 2) &amp; \lim_{x\rightarrow x_{0}^{\pm}}(f(x) - g(x))= \lim_{x\rightarrow x_{0}^{\pm}}f(x) - \lim_{x\rightarrow x_{0}^{\pm}} g(x) \\ &amp; \\
@@ -1360,6 +1595,97 @@ D\ni x&lt;-M \rightarrow f(x)&lt;-K.
 12) &amp; \quad l^{-\infty} = +\infty  \;\mbox{ if }\;\; 0&lt;l&lt; 1 .
 \end{split}
 \]</span> All other cases are called <a href="https://en.wikipedia.org/wiki/Indeterminate_form"><strong>indeterminate forms</strong></a>, and a case by case analysis is needed to determine if the limit exists or not.</p>
+</div>
+</div>
+</div>
+<p>Now, we can go back and understand the ‘complex examples’ mentioned in the beginning of this section.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Two simple examples of limits at infinity">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Two simple examples of limits at infinity
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div id="exm-simple-examples-limits-at-infty" class="theorem example">
+<p><span class="theorem-title"><strong>Example 4</strong></span> Consider the function <span class="math inline">\(f\colon \mathbb{R}\rightarrow\mathbb{R}\)</span> given by <span class="math inline">\(f(x)=\frac{x^{2}}{x^{2}+1}\)</span>. Whenever <span class="math inline">\(x\neq 0\)</span>, we can write <span class="math display">\[
+f(x)=\frac{x^{2}}{x^{2}+1}=\frac{x^{2}}{x^{2}(1+\frac{1}{x^{2}})}=\frac{1}{1+\frac{1}{x^{2}}}.
+\]</span> Consequently, we have the function <span class="math inline">\(g\colon (0,+\infty)\rightarrow\mathbb{R}\)</span> given by <span class="math display">\[
+g(x)=f(x)=\frac{1}{1+\frac{1}{x^{2}}}
+\]</span> and <a href="#exr-limits-at-infty-restriction-functions" class="quarto-xref">Exercise&nbsp;10</a> implies <span id="eq-exm-simple-examples-limits-at-infty"><span class="math display">\[
+\lim_{x\rightarrow+\infty}g(x)=\lim_{x\rightarrow+\infty}f(x).
+\tag{7}\]</span></span> The denominator of <span class="math inline">\(g\colon (0,+\infty)\rightarrow\mathbb{R}\)</span> is the sum of the constant function <span class="math inline">\(h\colon (0,+\infty)\rightarrow\mathbb{R}\)</span> given by <span class="math inline">\(h(x)=1\)</span> with the function <span class="math inline">\(t\colon (0,+\infty)\rightarrow\mathbb{R}\)</span> given by <span class="math inline">\(t(x)=\frac{1}{x^{2}}\)</span>. Applying the product rule in <a href="#prp-algebraic-manipulations-limits-at-infinity" class="quarto-xref">Proposition&nbsp;11</a> to the second example in <a href="#exm-basic-examples-limit-at-infty" class="quarto-xref">Example&nbsp;3</a> leads to <span class="math display">\[
+\lim_{x\rightarrow +\infty}t(x)=\lim_{x\rightarrow +\infty} \frac{1}{x^{2}}=0
+\]</span> Then, <a href="#eq-exm-simple-examples-limits-at-infty" class="quarto-xref">Equation&nbsp;7</a> and the quotient rule in <a href="#prp-algebraic-manipulations-limits-at-infinity" class="quarto-xref">Proposition&nbsp;11</a> allow us to conclude that <span class="math display">\[
+\lim_{x\rightarrow +\infty}f(x)=\lim_{x\rightarrow +\infty}g(x)=\lim_{x\rightarrow +\infty} \frac{1}{1+\frac{1}{x^{2}}}=1
+\]</span></p>
+</div>
+</div>
+</div>
+<p>We can also adapt <a href="#prp-limit-composite-functions" class="quarto-xref">Proposition&nbsp;12</a> to the case of unbounded limits.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Unbounded limit of composite functions">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Unbounded limit of composite functions
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div id="prp-limit-composite-functions" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 12</strong></span> Consider the functions <span class="math inline">\(f\colon D\subseteq \mathbb{R} \rightarrow \mathbb{R}\)</span> and <span class="math inline">\(g\colon D'\subseteq \mathbb{R} \rightarrow \mathbb{R}\)</span>, and let <span class="math inline">\(x_{0}\)</span> be an accumulation point for <span class="math inline">\(D'\)</span>. Suppose that <span class="math display">\[
+\lim_{x\rightarrow x_{0}}g(x) = l
+\]</span> with <span class="math inline">\(l\)</span> is an accumulation point for <span class="math inline">\(D\)</span>, and <span class="math display">\[
+\lim_{y\rightarrow l} f(y) =L ,
+\]</span> with <span class="math inline">\(L\)</span> possibly <span class="math inline">\(\pm\infty\)</span>. The equality <span class="math display">\[
+\lim_{x\rightarrow x_{0}} f\circ g(x)=L
+\]</span> holds if either one of the following additional assumptions are met:</p>
+<ol type="1">
+<li><span class="math inline">\(f\)</span> is continuous at <span class="math inline">\(y=l\)</span>;</li>
+<li>there is <strong>no</strong> open interval <span class="math inline">\(I\)</span> containing <span class="math inline">\(x_{0}\)</span> on which <span class="math inline">\(g(x)=l\)</span> for all <span class="math inline">\(x\in I\)</span>.</li>
+</ol>
+<p>Under the obvious modifications, analogous results hold for left and right limits.</p>
+<details>
+<summary>
+<strong>Proof:</strong>
+</summary>
+<p>The proof is quite tedious, and it will take me some time to upload it.</p>
+</details>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution callout-titled" title="Exercises to keep up in good shape">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Caution</span>Exercises to keep up in good shape
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div id="exr-unbounded-limits-1" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 12</strong></span> All the functions defined by the formulas given below are implicitely assumed to be defined on their maximal domains. Calculate the limits, or prove they do not exist, explaining which previous results you are using in each case: <span class="math display">\[
+\begin{split}
+1) \quad &amp;  \lim_{x\rightarrow 2^{+}}\, \frac{\sqrt{x^{2} -4}}{x-2} = +\infty,
+\end{split}
+\]</span></p>
+<details>
+<summary>
+<strong>Solution:</strong>
+</summary>
+<ol type="1">
+<li>When <span class="math inline">\(x=2\)</span>, both numerator and denominator vanish, and we get the indeterminate form “<span class="math inline">\(\frac{0}{0}\)</span>”. Putting the denominator in the square root, and using the equality <span class="math display">\[
+(x^{2} -4)=(x-2)(x+2),
+\]</span> we obtain <span class="math display">\[
+\frac{\sqrt{x^{2}-4}}{x-2}=\sqrt{\frac{x+2}{x-2}}.
+\]</span> Then, the rest of the proof uses the [[1.2 Limits of scalar functions#^c8052c|limit of composite functions]] (with the outer function equal to the square root function) and a reasoning analogous to that of the previous point.</li>
+</ol>
+</details>
+</div>
 </div>
 </div>
 </section>
@@ -1387,7 +1713,7 @@ D\ni x&lt;-M \rightarrow f(x)&lt;-K.
 </div>
 <div class="callout-body-container callout-body">
 <div id="exr-examples-discontinuous-functions" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 10</strong></span> For each type of discontinuity, build a function presenting said discontinuity at least at one point.</p>
+<p><span class="theorem-title"><strong>Exercise 13</strong></span> For each type of discontinuity, build a function presenting said discontinuity at least at one point.</p>
 </div>
 </div>
 </div>

@@ -34,7 +34,7 @@ Indeed, visualizing $\mathbb{R}$ as the real line, and taking three points $x_{0
 
 ::: {.figure #fig-realline-distance}
 
-```{=html}
+
 <script type="text/tikz">
 \begin{tikzpicture}[x=1cm,y=1cm]
 % --- real line with three dots at both ends ---
@@ -78,7 +78,7 @@ Indeed, visualizing $\mathbb{R}$ as the real line, and taking three points $x_{0
 
 \end{tikzpicture}
 </script>
-```
+
 Graphical depiction of distances between real numbers on the real line.
 
 :::
@@ -213,11 +213,13 @@ $$
 \lim_{x\rightarrow x_{0}}f(x)&=m,
 \end{split}
 $$
-then $l=m$, and analogously for left/right limits.
+then $l=m$.
+
+Under the obvious modifications, analogous results hold for left and right limits.
 
 
 <details>
-<summary>**Proof**</summary>
+<summary>**Proof:**</summary>
 
 From @def-limits, it follows there are $\varepsilon_{1},\delta_{1},\varepsilon_{2},\delta_{2}>0$ such that  
 $$
@@ -238,7 +240,8 @@ $$
 \end{split}
 $$
 which is a contradiction unless $l=m$.
-The case of right/left limits can be proved analogously.
+
+The case of left and right limits can be proved analogously.
 </details>
 
 :::
@@ -325,6 +328,12 @@ Consider the function $f\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}$.
 
 If $x_{0}$ is a left and right accumulation point for $D\subseteq \mathbb{R}$, prove that  $l$ is the limit of function $f\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}$ for $x$ going to $x_{0}$ if and only **if and only if** it is also the left and right limit of $f\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}$ at $x_{0}$.
 
+<details>
+<summary> **Solution:** </summary>
+
+You are strongly invited to try to solve it on your own.
+</details>
+
 :::
 
 :::
@@ -349,6 +358,13 @@ $$
 whenever either one of the limits exist.
 
 Prove analogous results for the case of left and right limits.
+
+<details>
+<summary> **Solution:** </summary>
+
+You are strongly invited to try to solve it on your own.
+</details>
+
 :::
 
 :::
@@ -373,7 +389,14 @@ then it follows that
 $$
 \lim_{x\rightarrow x_{0}}f(x)=L.
 $$
+
 Under the obvious modifications, the same conclusions hold for left and right limits.
+
+<details>
+<summary> **Proof:** </summary>
+
+The proof is quite tedious, and it will take me some time to upload it.
+</details>
 
 :::
 
@@ -419,6 +442,14 @@ From a [previous exercise on limits](@exr-left-right-limits-link), it immediatel
 
 The function $f\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}$ is  continuous at $x_{0}\in D$ **and only if** it is both left and right continuous at $x_0$.
 
+
+<details>
+<summary> **Solution:** </summary>
+
+You are strongly invited to try to solve it on your own.
+</details>
+
+
 :::
 
 :::
@@ -437,8 +468,9 @@ Then there is an interval $(c — \delta, c + \delta)$ in which $f$ has the same
 If continuity is replaced by left or right continuity at $c$, then there is a corresponding one-sided interval $[c, c + \delta)$ or $(c - \delta, c]$ in which $f$ has the same sign as $f(c)$.
 
 <details>
-<summary> **Proof** </summary>
-FINISH
+<summary> **Proof:** </summary>
+
+I'll do it soon (hopefully).
 </details>
 
 :::
@@ -456,6 +488,12 @@ This theorem shows that continuous functions on closed intervals must always att
 Let $a,b\in\mathbb{R}$.
 If $f\colon [a,b]\rightarrow\mathbb{R}$ is continuous it attains a maximum and minimum value.
 
+<details>
+<summary> **Proof:** </summary>
+
+I'll do it soon (hopefully).
+</details>
+
 :::
 
 :::
@@ -472,6 +510,11 @@ Finally, from @thm-extreme-value-thm, it follows the so-called **intermediate va
 
 Let $a,b\in\mathbb{R}$, let $f\colon [a,b]\rightarrow\mathbb{R}$ be continuous, and let $K$ be any number between $f(a)$ and $f(b)$, then there is at least one point $c\in (a,b)$ such that $f(c)=K$.
 
+<details>
+<summary> **Proof:** </summary>
+
+I'll do it soon (hopefully).
+</details>
 
 :::
 
@@ -593,6 +636,12 @@ is continuous at $x_{0}$.
 
 Analogous results hold for left/right continuity with the obvious modifications.
 
+<details>
+<summary> **Proof:** </summary>
+
+You are strongly invited to try the proof on your own.
+</details>
+
 :::
 
 :::
@@ -614,7 +663,7 @@ Prove that the rational function $\mathrm{R}\colon D\subseteq \mathbb{R}\rightar
 
 
 <details>
-<summary> **Proof** </summary>
+<summary> **Solution:** </summary>
 
 The polynomial $\mathrm{P}_{n}(x)$ can be written as
 $$
@@ -652,7 +701,9 @@ Let $I$ be an interval, and let $f\colon I\rightarrow \mathbb{R}$ be continuous 
 Then $J:=f(I)$ is an interval, and the inverse function $f^{-1}\colon J\rightarrow\mathbb{R}$ is continuous.
 
 <details>
-<summary> **Proof** </summary>
+<summary> **Proof:** </summary>
+
+The proof is tedious, and it will take me some time to upload it.
 </details>
 
 :::
@@ -670,6 +721,12 @@ From @prp-continuity-inverse-function, it immediately follows that $g\colon D\ri
 ::: {#exr-rational-power-functions-continuous}
 
 Given $D$ as above and $m,n>0$ natural numbers, prove that $f\colon D\rightarrow\mathbb{R}$ given by $f(x)=x^{\frac{m}{n}}$ is a continuous function.
+
+<details>
+<summary> **Solution:** </summary>
+
+You are strongly invited to try to solve it on your own.
+</details>
 
 :::
 
@@ -723,6 +780,13 @@ holds   if either one of the following additional assumptions are met:
 
 Analogous results hold for right/left limits.
 
+<details>
+<summary> **Proof:** </summary>
+
+The proof is quite tedious, and it will take me some time to upload it.
+
+</details>
+
 :::
 
 :::
@@ -738,7 +802,8 @@ $$
 Prove that the composite function $h\colon\mathbb{R}\rightarrow\mathbb{R}$ given by $h=f\circ g$ violates @prp-limit-composite-functions and explain why.
 
 <details>
-<summary> **Proof** </summary>
+<summary> **Solution:** </summary>
+
 Since $f(x)=g(x)=0$ for $x\neq 0$, it holds
 $$
 \lim_{y\rightarrow 0} f(y)=0 =\lim_{x\rightarrow 0} g(x) .
@@ -769,7 +834,8 @@ Consider the  functions $f\colon D\subseteq \mathbb{R} \rightarrow \mathbb{R}$ a
 If $g$ is continuous at $x_{0}$ and $f$ is continuous at $g(x_{0})$ then  the composite function $f\circ g$ is continuous at $x_{0}$. 
 
 <details>
-<summary> **Proof** </summary>
+<summary> **Proof:** </summary>
+
 You are strongly invited to try the proof on your own.
 </details>
 
@@ -792,6 +858,11 @@ $$
 \end{split}
 $$
 
+<details>
+<summary> **Solution** </summary>
+
+You are strongly invited to try to solve them on your own.
+</details>
 
 :::
 
@@ -858,6 +929,12 @@ $$
 $$
 holds **if and only if** if both left and right unbounded limits at $x_{0}$ exist and are equal.
 
+<details>
+<summary> **Solution:** </summary>
+
+You are strongly invited to try to solve it on your own.
+</details>
+
 :::
 
 :::
@@ -889,17 +966,15 @@ The case $x\rightarrow 0^{-}$ follows analogously.
 
 
 
-The algebraic manipulations of limits in @prp-algebraic-manipulations-limits can be appropriately modified to handle also unbounded limits, provided we handle the so-called **inderminate forms** with care.
-Contrarily to @prp-algebraic-manipulations-limits, in @prp-algebraic-manipulations-unbounded-limits we only list what happens with two functions.
-The extension to an arbitrary but finite number of functions can be developed when necessary exploiting @prp-algebraic-manipulations-unbounded-limits and the associativity property of operations between functions.
 
+The algebraic manipulations of limits in @prp-algebraic-manipulations-limits can be appropriately modified to handle also unbounded limits, provided we handle the so-called **inderminate forms** with care.
 
 
 ::: {.callout-note title="Algebraic manipulations of unbounded limits"}
 
 ::: {#prp-algebraic-manipulations-unbounded-limits}
 
-Consider two functions $f,g\colon D\rightarrow \mathbb{R}$, and let $x_{0}$ be an accumulation point for $D$. 
+Consider two functions $f,g\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}$, and let $x_{0}$ be an accumulation point for $D$. 
 If the limits at $x_{0}$ of both $f$ and $g$ exist in the sense of @def-limits or @def-unbounded-limits, then it holds:
 $$
 \begin{split}
@@ -927,14 +1002,96 @@ All other cases are called [**indeterminate forms**](https://en.wikipedia.org/wi
 Analogous results hold for left/right unbounded limits.
 
 <details>
-<summary> **Proof** </summary>
-The proof is quite tedious, and it will take me some time to be uploaded.
+<summary> **Proof:** </summary>
+
+The case where both limits are real numbers is already done in @prp-algebraic-manipulations-limits.
+
+The rest of the proof is tedious, and it will take me some time to be uploaded.
 </details>
 
 
 :::
 
 :::
+
+
+Also the [squeeze theorem](#thm-squeeze-thm) can be adapted to unbounded limits.
+
+
+::: {.callout-note title="The squeeze (pinching) theorem for unbounded limits"}
+
+::: {#thm-squeeze-thm-unbounded}
+
+Consider the functions $f,g\colon D\subseteq\mathbb{R}\rightarrow \mathbb{R}$, and let $x_{0}$ be an accumulation point for $D$. 
+If $g(x)\leq f(x)$ for all $x\in D$ and 
+$$
+\lim_{x\rightarrow x_{0}}g(x)= +\infty,
+$$
+then it follows that
+$$
+\lim_{x\rightarrow x_{0}}f(x)=+\infty.
+$$
+Analogously, if $f(x)\leq g(x)$ for all $x\in D$ and
+$$
+\lim_{x\rightarrow x_{0}}g(x)= -\infty,
+$$
+then it follows that
+$$
+\lim_{x\rightarrow x_{0}}f(x)=-\infty.
+$$
+
+Under the obvious modifications, the same conclusions hold for left and right limits.
+
+<details>
+<summary> **Proof:** </summary>e 
+
+The proof is similar to that of @thm-squeeze-thm, and it will take me some time to upload it.
+</details>
+
+:::
+
+:::
+
+We can also adapt @prp-limit-composite-functions to the case of unbounded limits.
+
+::: {.callout-note title="Unbounded limit of composite functions"}
+
+::: {#prp-unbounded-limit-composite-functions}
+
+Consider the  functions $f\colon D\subseteq \mathbb{R} \rightarrow \mathbb{R}$ and $g\colon D'\subseteq \mathbb{R} \rightarrow \mathbb{R}$, and  let $x_{0}$ be an accumulation point for $D'$.
+Suppose that
+$$
+ \lim_{x\rightarrow x_{0}}g(x) = l
+$$
+with $l$ is an accumulation point for $D$, and 
+$$
+\lim_{y\rightarrow l} f(y) =L ,
+$$ 
+with $L$ possibly $\pm\infty$.
+The equality
+$$
+\lim_{x\rightarrow x_{0}} f\circ g(x)=L 
+$$
+holds   if either one of the following additional assumptions are met:
+
+1. $f$ is continuous at $y=l$; 
+2. there is **no** open interval $I$ containing $x_{0}$ on which $g(x)=l$ for all $x\in I$.
+
+
+Under the obvious modifications, analogous results hold for left and right limits.
+
+<details>
+<summary> **Proof:** </summary>
+
+The proof is quite tedious, and it will take me some time to upload it.
+
+</details>
+
+:::
+
+:::
+
+
 
 ::: {.callout-caution title="Exercises to keep up in good shape"}
 
@@ -944,13 +1101,12 @@ All the functions defined by the formulas given below are implicitely assumed to
 Calculate the limits, or prove they do not exist, explaining which previous results you are using in each case:
 $$
 \begin{split}
-1) \quad & \lim_{x\rightarrow 1^{\pm}}\, \frac{x^{2}-1}{ x^{2} -2x + 1 }= \pm\infty \\ 
-2) \quad &  \lim_{x\rightarrow 2^{+}}\, \frac{\sqrt{x^{2} -4}}{x-2} = +\infty,
+1) \quad & \lim_{x\rightarrow 1^{\pm}}\, \frac{x^{2}-1}{ x^{2} -2x + 1 }= \pm\infty 
 \end{split}
 $$
 
 <details>
-<summary> **Proof** </summary>
+<summary> **Solution:** </summary>
 
 1. When $x=1$, both numerator and denominator vanish, and we get the indeterminate form "$\frac{0}{0}$". 
 The fact that both polynomials have a common root ($x=1$) suggests we [factorize them](https://en.wikipedia.org/wiki/Polynomial#Factoring). In particular, it holds 
@@ -962,13 +1118,7 @@ $$
 \frac{x^{2}-1}{x^{2}-2x+1}=\frac{x+1}{x-1}. 
 $$
 Now, the numerator tends to 2 when $x\rightarrow 1^{\pm}$, while the denominator tends to $0$. 
-Therefore, using @prp-algebraic-manipulations-unbounded-limits, we obtain that the limit is $+\infty$ when $x\rightarrow 1^{+}$ (because the denominator tends to $0$ from the left), and $-\infty$ when $x\rightarrow 1^{-}$ (because the denominator tends to $0$ from the right).
-2. When $x=2$, both numerator and denominator vanish, and we get the indeterminate form "$\frac{0}{0}$". 
-Putting the denominator in the square root, and using the difference of two squares identity, we obtain
-$$ 
-\frac{\sqrt{x^{2}-4}}{x-2}=\sqrt{\frac{x+2}{x-2}}. 
-$$
-Then, the rest of the proof uses the [[1.2 Limits of scalar functions#^c8052c|limit of composite functions]] (with the outer function equal to the square root function) and a reasoning analogous to that of the previous point. 
+Therefore, using @prp-algebraic-manipulations-unbounded-limits, we obtain that the limit is $+\infty$ when $x\rightarrow 1^{+}$ (because the denominator tends to $0$ from the left), and $-\infty$ when $x\rightarrow 1^{-}$ (because the denominator tends to $0$ from the right). 
 
 </details>
 
@@ -979,7 +1129,21 @@ Then, the rest of the proof uses the [[1.2 Limits of scalar functions#^c8052c|li
 # Limits at infinity
 
 
-Another type of **improper** limit is necessary if we want to understand what happens when the input variable either grows or degrows indefinitely.
+It should be quite easy to convince ourself that the function $f\colon \mathbb{R}\rightarrow\mathbb{R}$ given by $f(x)=x$ is obliged to increase/decrease indefinitely as the input $x$ increases/decreases indefinitely.
+It should be less easy, but still quite manageable without too much thought, to convince ourselves that the function $f\colon \mathbb{R}\rightarrow\mathbb{R}$ given by $f(x)=x^{2}+c$, with $c\in\mathbb{R}$, is obliged to increase indefinitely irrespectively of the input $x$ increasing or decreasing indefinitely.
+We could dare to say that no sophisticated mathematical reasoning is necessary for us to confidently believe these 'facts'.
+
+However, a different situation is presented  to us if we consider the function $f\colon \mathbb{R}\rightarrow\mathbb{R}$ given by $f(x)=\frac{x^{2}}{x^{2}+1}$.
+We 'know' that both the numerator and the denominator grow indefinitely irrespectively of the input $x$ increasing or decreasing, but it's difficult to get a clear mental picture of what really happens when $x$ increases/decreases indefinitely just by looking at the definition of the function.
+After some thinking, we may arrive to the conclusion that, since the numerator and denominator only differ by $1$, their ratio gets increasingly close to $1$. 
+Some quick numerical checks with $x=100,1000,10000,100000$ may support this intuition, but we can not be as sure as we were for the cases $f(x)=x$ or $f(x)=x^{2}$.
+Therefore, we may start to wonder about more complex examples like $f\colon \mathbb{R}\rightarrow\mathbb{R}$ given by $f(x)=\frac{x^{3}-3x^{2}}{x^{2}+x^{4}}$, or  $f\colon \mathbb{R}\rightarrow\mathbb{R}$ given by $f(x)=\frac{\sqrt{x^{4}+3x^{2}}}{x^{2}+x^{4}+83}$, and we quickly realize we have no idea other than plugging in some numbers and hoping some pattern emerges to guide our intuition.
+
+
+From a mathematician's point of view, this is the appropriate moment to go hunting for a new  concept of limit that can help us understanding what happens when the input variable either grows or degrows indefinitely, by giving us rigorous analytical tools to guide our intuition.
+Luckily for us, this new notion of limit is out there since quite some time, and we can 'simply' harness its power.
+
+
 
 ::: {.callout-note title="Limits at $+\infty$"}
 
@@ -1057,12 +1221,121 @@ $$
 
 :::
 
+::: {.callout-note title="Well-posedness of limits at infinity"}
 
+::: {#prp-well-posedness-limits-at-infinity}
+
+Consider the function $f\colon D\subseteq\mathbb{R}\rightarrow\mathbb{R}$ with $D$ such that $+\infty$ is an accumulation point for $D$.
+If 
+$$
+\begin{split}
+\lim_{x\rightarrow +\infty}f(x)&=l \\
+\lim_{x\rightarrow +\infty}f(x)&=m,
+\end{split}
+$$
+with $l,m$ possibly $\pm\infty$, then $l=m$.
+
+Under the obvious modifications, a similar result holds for $x\rightarrow-\infty$.
+
+
+<details>
+<summary>**Proof:**</summary>
+
+The proof is a slight modification of that of @prp-well-posedness-limits, but it will take time for me to upload it.
+
+</details>
+
+:::
+
+:::
+
+
+
+
+::: {.callout-caution title="Limits a infinity of the restriction"}
+
+::: {#exr-limits-at-infty-restriction-functions}
+Consider two functions $f\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}$ and $g\colon D'\subseteq \mathbb{R}\rightarrow \mathbb{R}$ such that $g(x)=f(x)$ on $D\cap D'\neq \emptyset$.
+If $\pm\infty$ is an accumulation point for $D\cap D'$ prove that 
+$$
+\lim_{x\rightarrow \pm\infty} f(x)=\lim_{x\rightarrow \pm\infty g(x)
+$$
+whenever either one of the limits exist.
+
+
+<details>
+<summary> **Solution:** </summary>
+
+You are strongly invited to try to solve it on your own.
+</details>
+
+:::
+
+:::
+
+Let us now use @def-limits-at-infty and @def-limits-at-minus-infty to put on rigorous ground our intuition that $f(x)=x$ increases/decreases indefinitely when $x$ increases/decreases indefinitely.
+
+::: {.callout-tip title="Basic examples of limits at infinity"}
+
+::: {#exm-basic-examples-limit-at-infty}
+
+Consider the function $f\colon \mathbb{R}\rightarrow \mathbb{R}$ given by $f(x)=x$.
+We want to prove that
+$$
+\lim_{x\rightarrow\pm\infty} x=\pm\infty.
+$$
+Focusing on the case $x\rightarrow +\infty$, @def-limits-at-infty requires us to prove that, given $K>0$, there is $M>0$ such that 
+$$
+x>M\implies x>K.
+$$
+Clearly, taking $M>K$ is enough.
+
+For the case $x\rightarrow -\infty$, @def-limits-at-minus-infty requires us to prove that, given $K>0$, there is $M>0$ such that 
+$$
+x<-M\implies x<-K.
+$$
+Clearly, taking (again) $M>K$ is enough.
+
+---
+
+Consider the function $f\colon D\subset \mathbb{R}\rightarrow \mathbb{R}$ given by $f(x)=x$, where $D$ is any subset not containing $0$ and such that $\pm\infty$ is an accumulation point.
+We want to prove that
+$$
+\lim_{x\rightarrow\pm\infty} \frac{1}{x}=0.
+$$
+FINISH....
+:::
+
+:::
+
+
+
+::: {.callout-caution title="The square root"}
+
+::: {#exr-limit-sqrt-at-infty}
+
+Consider the function $f\colon (0,+\infty)\rightarrow \mathbb{R}$ given by $f(x)=\sqrt{x}$.
+Prove that 
+$$
+\lim_{x\rightarrow+\infty} \sqrt{x}=+\infty.
+$$
+
+<details>
+<summary> **Solution:** </summary>
+
+You are strongly invited to try to solve it on your own.
+</details>
+
+:::
+
+:::
  
-
-The algebraic manipulations of limits in @prp-algebraic-manipulations-limits can be appropriately modified to handle also improper limits, provided we handle the so-called **inderminate forms** with care.
+ 
+The algebraic manipulations of limits in @prp-algebraic-manipulations-limits can be appropriately modified to handle also limits at infinity, provided we handle the so-called **inderminate forms** with care.
 
 ::: {.callout-note title="Algebraic manipulations of improper limits"}
+
+::: {#prp-algebraic-manipulations-limits-at-infinity}
 
 Let $f,g\colon D\rightarrow \mathbb{R}$ be scalar function, and let $x_{0}$ be a left/right accumulation point for $D$ (possibly, also $\pm\infty$). If the right/left limit of both $f$ and $g$ exist at $x_{0}$, then we have:
 $$
@@ -1094,6 +1367,115 @@ $$
 All other cases are called [**indeterminate forms**](https://en.wikipedia.org/wiki/Indeterminate_form), and a case by case analysis is needed to determine if the limit exists or not.
 
 :::
+
+:::
+
+Now, we can go back and understand the 'complex examples' mentioned in the beginning of this section.
+
+::: {.callout-tip title="Two simple examples of limits at infinity"}
+
+::: {#exm-simple-examples-limits-at-infty}
+
+Consider the function $f\colon \mathbb{R}\rightarrow\mathbb{R}$ given by $f(x)=\frac{x^{2}}{x^{2}+1}$.
+Whenever $x\neq 0$, we can write
+$$
+f(x)=\frac{x^{2}}{x^{2}+1}=\frac{x^{2}}{x^{2}(1+\frac{1}{x^{2}})}=\frac{1}{1+\frac{1}{x^{2}}}.
+$$
+Consequently, we have the function $g\colon (0,+\infty)\rightarrow\mathbb{R}$ given by 
+$$
+g(x)=f(x)=\frac{1}{1+\frac{1}{x^{2}}}
+$$
+and @exr-limits-at-infty-restriction-functions implies
+$$
+\lim_{x\rightarrow+\infty}g(x)=\lim_{x\rightarrow+\infty}f(x).
+$${#eq-exm-simple-examples-limits-at-infty}
+The denominator of $g\colon (0,+\infty)\rightarrow\mathbb{R}$ is the sum of the constant function $h\colon (0,+\infty)\rightarrow\mathbb{R}$ given by $h(x)=1$ with the function $t\colon (0,+\infty)\rightarrow\mathbb{R}$  given by $t(x)=\frac{1}{x^{2}}$.
+Applying the product rule in @prp-algebraic-manipulations-limits-at-infinity to the second example in  @exm-basic-examples-limit-at-infty leads to
+$$
+\lim_{x\rightarrow +\infty}t(x)=\lim_{x\rightarrow +\infty} \frac{1}{x^{2}}=0
+$$
+Then, @eq-exm-simple-examples-limits-at-infty and the quotient rule in @prp-algebraic-manipulations-limits-at-infinity allow us to conclude that
+$$
+\lim_{x\rightarrow +\infty}f(x)=\lim_{x\rightarrow +\infty}g(x)=\lim_{x\rightarrow +\infty} \frac{1}{1+\frac{1}{x^{2}}}=1
+$$
+
+
+:::
+
+:::
+
+We can also adapt @prp-limit-composite-functions to the case of unbounded limits.
+
+::: {.callout-note title="Unbounded limit of composite functions"}
+
+::: {#prp-limit-composite-functions}
+
+Consider the  functions $f\colon D\subseteq \mathbb{R} \rightarrow \mathbb{R}$ and $g\colon D'\subseteq \mathbb{R} \rightarrow \mathbb{R}$, and  let $x_{0}$ be an accumulation point for $D'$.
+Suppose that
+$$
+ \lim_{x\rightarrow x_{0}}g(x) = l
+$$
+with $l$ is an accumulation point for $D$, and 
+$$
+\lim_{y\rightarrow l} f(y) =L ,
+$$ 
+with $L$ possibly $\pm\infty$.
+The equality
+$$
+\lim_{x\rightarrow x_{0}} f\circ g(x)=L 
+$$
+holds   if either one of the following additional assumptions are met:
+
+1. $f$ is continuous at $y=l$; 
+2. there is **no** open interval $I$ containing $x_{0}$ on which $g(x)=l$ for all $x\in I$.
+
+
+Under the obvious modifications, analogous results hold for left and right limits.
+
+<details>
+<summary> **Proof:** </summary>
+
+The proof is quite tedious, and it will take me some time to upload it.
+
+</details>
+
+:::
+
+:::
+
+
+::: {.callout-caution title="Exercises to keep up in good shape"}
+
+::: {#exr-unbounded-limits-1}
+
+All the functions defined by the formulas given below are implicitely assumed to be defined on their maximal domains. 
+Calculate the limits, or prove they do not exist, explaining which previous results you are using in each case:
+$$
+\begin{split}
+1) \quad &  \lim_{x\rightarrow 2^{+}}\, \frac{\sqrt{x^{2} -4}}{x-2} = +\infty,
+\end{split}
+$$
+
+<details>
+<summary> **Solution:** </summary>
+
+1. When $x=2$, both numerator and denominator vanish, and we get the indeterminate form "$\frac{0}{0}$". 
+Putting the denominator in the square root, and using the equality
+$$
+(x^{2} -4)=(x-2)(x+2),
+$$
+we obtain
+$$ 
+\frac{\sqrt{x^{2}-4}}{x-2}=\sqrt{\frac{x+2}{x-2}}. 
+$$
+Then, the rest of the proof uses the [[1.2 Limits of scalar functions#^c8052c|limit of composite functions]] (with the outer function equal to the square root function) and a reasoning analogous to that of the previous point. 
+
+</details>
+
+:::
+
+:::
+
 
 
 # Discontinuities
