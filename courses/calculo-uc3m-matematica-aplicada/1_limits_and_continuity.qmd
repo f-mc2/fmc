@@ -162,9 +162,8 @@ $$
 $$
 holds if for every $\varepsilon>0$ there is  $0< \delta$  such that
 $$ 
-|x-x_{0}|<\delta \Longrightarrow  |f(x)-l|<\varepsilon .
+0<x-x_{0}<\delta \Longrightarrow  |f(x)-l|<\varepsilon .
 $$
-for every $x_{0}<x\in D$. 
 In this case, we say that $l$ is the right limit of $f$ at  $x_{0}$.
 
 Similarly, if $x_{0}$ is a [**right accumulation point**](0_sets_and_functions.qmd#def-accumulation-point) for $D$, we say that the formal equality  
@@ -173,9 +172,8 @@ $$
 $$
 holds if for every $\varepsilon>0$ there is a  $0< \delta$ such that
 $$ 
-|x-x_{0}|<\delta \Longrightarrow =|f(x)-l|<\varepsilon .
+0<x_{0}-x<\delta \Longrightarrow =|f(x)-l|<\varepsilon .
 $$
-for every $x_{0}>x\in D$.
 In this case, we say that $l$ is the left limit of $f$ at $x_{0}$.
 
 Finally, if $x_{0}$ is an [accumulation point](0_sets_and_functions.qmd#def-accumulation-point) for $D$, we say that the formal equality
@@ -184,9 +182,8 @@ $$
 $$
 holds if for every $\varepsilon>0$ there is a  $0< \delta$ such that
 $$
-|x-x_{0}|<\delta \Longrightarrow |f(x)-l|<\varepsilon 
+0<|x-x_{0}|<\delta \Longrightarrow |f(x)-l|<\varepsilon .
 $$
-for every $x_{0}\neq x\in D$.
 In this case, we say that $l$ is the limit of $f$ at $x_{0}$.
 
 :::
@@ -350,12 +347,13 @@ The following exercise asks you to prove that this weird behavior is not compati
 ::: {.callout-caution title="Limits of the restriction"}
 
 ::: {#exr-limits-restriction-functions}
-Consider two functions $f\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}$ and $g\colon D'\subseteq \mathbb{R}\rightarrow \mathbb{R}$ such that $g(x)=f(x)$ on $D\cap D'\neq \emptyset$.
-If $x_{0}$ is an accumulation point for $D\cap D'$ prove that 
+
+Consider $D,D'\subseteq \mathbb{R}$ such that $D\cap D'\neq \emptyset$, and consider two functions $f\colon D\rightarrow \mathbb{R}$ and $g\colon D' \rightarrow \mathbb{R}$ such that $g(x)=f(x)$ on $S\subseteq D\cap D'$.
+If $x_{0}$ is an accumulation point for $S$ prove that 
 $$
 \lim_{x\rightarrow x_{0}} f(x)=\lim_{x\rightarrow x_{0}} g(x)
 $$
-whenever either one of the limits exist.
+whenever either one of the limits exist in the sense of @def-limits.
 
 Prove analogous results for the case of left and right limits.
 
@@ -453,6 +451,30 @@ You are strongly invited to try to solve it on your own.
 :::
 
 :::
+
+
+Just as for [limits](@exr-limits-restriction-functions), we must ensure that the notion of continuity in @def-continuity behaves well we consider different functions that agrees on the intersections of their domains to avoid unpleasant pathological behaviours.
+
+
+::: {.callout-caution title="Continuity of the restriction"}
+
+::: {#exr-continuity-restriction-functions}
+
+Consider two functions $f\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}$ and $g\colon D'\subseteq \mathbb{R}\rightarrow \mathbb{R}$ such that $g(x)=f(x)$ on $D\cap D'\neq \emptyset$.
+Prove that $h\colon D\cap D'\subseteq \mathbb{R}\rightarrow\mathbb{R}$ given by $h(x)=g(x)=f(x)$ is (left/right) continuous at $x_{0}\in D\cap D'$ if $g$ is (left/right) continuous at $x_{0}\in D\cap D'$.
+
+In particular, prove that $h$ is (left/right) continuous on $D\cap D'$ if $g$ is continuous on $D$.
+
+<details>
+<summary> **Solution:** </summary>
+
+It follows directly from @exr-limits-restriction-functions.
+</details>
+
+:::
+
+:::
+
 
 It is informally said that a function $f\colon D\subseteq\mathbb{R}\rightarrow\mathbb{R}$ is a continuous function if its graph can be drawn on paper without lifting the pen/pencil.
 We now try to make this informal statement precise by working our way to the [intermediate value theorem](#thm-intermediate-value-thm) below.
@@ -763,19 +785,19 @@ Consider the  functions $f\colon D\subseteq \mathbb{R} \rightarrow \mathbb{R}$ a
 Suppose that
 $$
  \lim_{x\rightarrow x_{0}}g(x) = l
-$$
+$${#eq-limit-composite-functions}
 with $l$ is an accumulation point for $D$, and 
 $$
 \lim_{y\rightarrow l} f(y) =L .
-$$ 
+$${#eq-limit-composite-functions2}
 The equality
 $$
 \lim_{x\rightarrow x_{0}} f\circ g(x)=L 
 $$
-holds   if either one of the following additional assumptions are met:
+holds  if either one of the following additional assumptions are met:
 
 1. $f$ is continuous at $y=l$; 
-2. there is **no** open interval $I$ containing $x_{0}$ on which $g(x)=l$ for all $x\in I$.
+2. there is anopen interval $I$ containing $x_{0}$ on which $g(x)\neq l$ for all $x\in I$  except possibly $x_{0}$.
 
 
 Analogous results hold for right/left limits.
@@ -783,8 +805,26 @@ Analogous results hold for right/left limits.
 <details>
 <summary> **Proof:** </summary>
 
-The proof is quite tedious, and it will take me some time to upload it.
+From @eq-limit-composite-functions2, give $\varepsilon>0$, it follows that there is $\eta>0$ for which
+$$
+0<|y-l|<\eta \implies |f(y)-L|<\varepsilon,
+$${#eq-limit-composite-functions3}
+with $y\neq l$.
+On the other hand,  @eq-limit-composite-functions implies that, given the same $\eta>0$ as before, there is $\delta>0$ such that 
+$$
+0<|x-x_{0}|<\delta \implies  |g(x) - l|<\eta.
+$${#eq-limit-composite-functions4}
+Setting $y=g(x)$, @eq-limit-composite-functions4 leads to $|g(x)-l|<\eta$, while @eq-limit-composite-functions3 states that $0<|y-l|=|g(x)-l|<\eta$ implies $|f(y)-L|=|f(g(x))-L|<\varepsilon$, and it does not necessarily hold that $|g(x)-l|<\eta$ implies $0<|y-l|=|g(x)-l|<\eta$ because $y=g(x)$ may be equal to $l$.
+See @exr-tricky-limit-composition for more details.
+We thus need to assume something more to otbain the desired result.
 
+1. In this case,  $L=f(l)$ because $f$ is continuous at $l$, and thus $|f(y) -L|=|f(y) -f(l)|<\varepsilon$ even when $y=g(x)=l$, and the result follows.
+2. In this case, we can take $\delta$ sufficiently small so that $|x-x_{0}|<\delta$ implies  $g(x)\neq l$ by assumption.
+Consequently, $|x-x_{0}|<\delta$  implies $|g(x)-l|<\eta$, which also implies $0<|g(x)-l|<\eta$, and thus
+$$
+0<|x-x_{0}|<\delta \implies  0<|g(x) - l|<\eta \implies |f(g(x)) -L|<\varepsilon,
+$$
+as desired.
 </details>
 
 :::
@@ -871,19 +911,16 @@ You are strongly invited to try to solve them on your own.
 
 # Unbounded limits {#sec-unbounded-limits}
 
-The notion of limit considered in @def-limits requires $l$ to be a finite real number.
-However, there are situations in which closer we get to a point in the domain, the more the function grows or de-grows.
+The notion of limit considered in @def-limits requires the actual limit to be a finite real number.
+However, there are situations in which the closer we get to a point in the domain, the more the function increases or decreases.
 
-For instance,  let us consider the function $f\colon D\subset \mathbb{R}\rightarrow\mathbb{R}$ given by $f(x)=\frac{1}{x}$ and with domain $D=(-\infty,0)\cup(0,+\infty)$. 
+For instance,  let $D=(-\infty,0)\cup(0,+\infty)$, and consider the function $f\colon D\subset \mathbb{R}\rightarrow\mathbb{R}$ given by $f(x)=\frac{1}{x}$. 
 We can compute $f(x)$ for values of $x$ which are closer and closer to $0$. 
 For positive values of $x$, we see that the closer $x$ is to $0$, the bigger $f(x)$ is. 
 However, for negative values of $x$, the closer $x$ is to $0$, the more $f(x)$ becomes bigger in absolute value but with negative sign. 
 
-Faced with this situation, we conclude that the limit at $x_{0}^{\pm}$ does not exist in the sense of @def-limits.
-However, we also have the  intuitively understanding of how  $f$ behaves around $0$: it grows indefinitely when $x\rightarrow 0^+$, and degrows indefinitely when $x\rightarrow 0^{-}$. 
-Can we make this intuitive understanding rigorous? 
-
-The answer is affirmative, and leads to the definition of unbounded limit.
+Faced with this situation, we conjecture that the limit at $x_{0}^{\pm}$ does not exist in the sense of @def-limits.
+However, since we do have the  intuitive understanding of how  $f$ behaves around $0$ (it increases indefinitely when $x\rightarrow 0^+$, and decreases indefinitely when $x\rightarrow 0^{-}$), we would like to be able to make this intuitive understanding rigorous. A suitable way to do it is by introducing the notion of unbounded limits.
 
 
 ::: {.callout-note title="Unbounded limits"}
@@ -913,21 +950,86 @@ $$
 for every $x_{0}\neq x\in D$.
 In this case, we say that $-\infty$ is the limit of $f$ at $x_{0}$.
 
-Left and right unbounded limits are defined analogously. 
+Left and right unbounded limits are defined by replacing $|x- x_{0}|<\delta$ with $x_{0}-x<\delta$ or $x-x_{0}<\delta$, respectively. 
 
 :::
 
 :::
+
+Before proceeding further, we need to make sure that unbounded limits as in @def-unbounded-limits make actual sense.
+
+First of all, just as we did for regular limits in @prp-well-posedness-limits, we must ensure that the notions of unbounded limits and unbounded left and right limits are well-posed.
+
+::: {.callout-note title="Well-posedness of unbounded limits"}
+
+::: {#prp-well-posedness-unbounded-limits}
+
+
+Let $x_{0}$ be an accumulation point for $D\subseteq \mathbb{R}$, and consider the function $f\colon D\subseteq\mathbb{R}\rightarrow\mathbb{R}$.
+If 
+$$
+\begin{split}
+\lim_{x\rightarrow +\infty}f(x)&=L \\
+\lim_{x\rightarrow +\infty}f(x)&=M,
+\end{split}
+$$
+according to @def-unbounded-limits, then $L=M$.
+
+Under the obvious modifications, a similar result holds for left and right unbounded limits.
+
+
+<details>
+<summary>**Proof:**</summary>
+
+The proof is a slight modification of that of @prp-well-posedness-limits, but it will take time for me to upload it.
+
+</details>
+
+:::
+
+:::
+
+Then, similarly to what we did in @exr-left-right-limits-link, we have to check what is the relation between the existence of an unbounded limit at $x_{0}$ and the existence of left and right unbounded limits at $x_{0}$.
+
+
 
 ::: {.callout-caution title="Existence and equality of left and right unbounded limits at $x_{0}$ is equivalent to existence of the unbounded limit at $x_{0}$"}
 
 ::: {#exr-left-right-unbounded-limits-link}
 
-Analogously to @exr-left-right-limits-link, show that the unbounded limit
+Let $x_{0}$ be an accumulation point for $D\subseteq \mathbb{R}$, and consider the function $f\colon D\subseteq\mathbb{R}\rightarrow\mathbb{R}$.
+Show that the unbounded limit
 $$
 \lim_{x\rightarrow x_{0}}f(x)=\pm \infty
 $$
 holds **if and only if** if both left and right unbounded limits at $x_{0}$ exist and are equal.
+
+<details>
+<summary> **Solution:** </summary>
+
+You are strongly invited to try to solve it on your own.
+</details>
+
+:::
+
+:::
+
+Finally, we have to verify that different functions that agree on an arbitrary subset of the intersection of their domains have the same unbounded limits (when they exist) at the points of the intersection.
+
+
+::: {.callout-caution title="Unbounded limits of the restriction"}
+
+::: {#exr-unbdounde-limits-restriction-functions}
+
+
+Let $D,D'\subseteq \mathbb{R}$ be such that $D\cap D'\neq\emptyset$, and consider two functions $f\colon D \rightarrow \mathbb{R}$ and $g\colon D'\rightarrow \mathbb{R}$ such that $g(x)=f(x)$ on $S\subseteq D\cap D'$.
+If $x_{0}$ is an accumulation point for $S$ prove that 
+$$
+\lim_{x\rightarrow x_{0}} f(x)=\lim_{x\rightarrow x_{0}} g(x)
+$$
+whenever either one of the limits exist in accordance with @def-unbounded-limits.
+
+Prove analogous results for the case of left and right limits.
 
 <details>
 <summary> **Solution:** </summary>
@@ -965,16 +1067,15 @@ The case $x\rightarrow 0^{-}$ follows analogously.
 :::
 
 
-
-
-The algebraic manipulations of limits in @prp-algebraic-manipulations-limits can be appropriately modified to handle also unbounded limits, provided we handle the so-called **inderminate forms** with care.
+The algebraic manipulations of limits in @prp-algebraic-manipulations-limits can be appropriately modified to handle also unbounded limits, provided the so-called **inderminate forms** are treated with care.
 
 
 ::: {.callout-note title="Algebraic manipulations of unbounded limits"}
 
 ::: {#prp-algebraic-manipulations-unbounded-limits}
 
-Consider two functions $f,g\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}$, and let $x_{0}$ be an accumulation point for $D$. 
+
+Let $x_{0}$ be an accumulation point for $D\subseteq \mathbb{R}$, and consider two functions $f,g\colon D\rightarrow \mathbb{R}$. 
 If the limits at $x_{0}$ of both $f$ and $g$ exist in the sense of @def-limits or @def-unbounded-limits, then it holds:
 $$
 \begin{split}
@@ -986,10 +1087,10 @@ $$
 with the following "conventions":
 $$
 \begin{split}
-1) & \quad  l + (\pm\infty) =\pm \infty \;\mbox{ if }\;\; l\in\mathbb{R} \\ & \\
-2) & \quad l\cdot \pm\infty = \pm \infty  \;\mbox{ if }\;\; l>0\\ & \\
+1) & \quad  L + (\pm\infty) =\pm \infty \;\mbox{ if }\;\; L\in\mathbb{R} \mbox{ or } L=\pm\infty\\ & \\
+2) & \quad L\cdot \pm\infty = \pm \infty  \;\mbox{ if }\;\; l>0\\ & \\
 3) & \quad l\cdot \pm\infty = \mp \infty  \;\mbox{ if }\;\; l<0\\ & \\
-4) & \quad \frac{l}{\pm\infty} = 0  \;\mbox{ if }\;\; l\neq  \pm \infty\\ & \\
+4) & \quad \frac{L}{\pm\infty} = 0  \;\mbox{ if }\;\; L\neq  \pm \infty\\ & \\
 5) & \quad \frac{\pm\infty}{l} = \pm \infty  \;\mbox{ if }\;\; l>0\\ & \\
 6) & \quad \frac{\pm\infty}{l} = \mp \infty  \;\mbox{ if }\;\; l<0\\ & \\
 7) & \quad \frac{l}{0} =+\infty \;\mbox{ if }\;\; \left\{\begin{matrix}l>0 \mbox{ and } g(x)>0 \\ \mbox{ or } \\ l<0 \mbox{ and } g(x)<0\end{matrix}\right.\\ & \\
@@ -1022,7 +1123,7 @@ Also the [squeeze theorem](#thm-squeeze-thm) can be adapted to unbounded limits.
 
 ::: {#thm-squeeze-thm-unbounded}
 
-Consider the functions $f,g\colon D\subseteq\mathbb{R}\rightarrow \mathbb{R}$, and let $x_{0}$ be an accumulation point for $D$. 
+Let $x_{0}$ be an accumulation point of $D\subseteq \mathbb{R}$, and consider the functions $f,g\colon D\rightarrow \mathbb{R}$. 
 If $g(x)\leq f(x)$ for all $x\in D$ and 
 $$
 \lim_{x\rightarrow x_{0}}g(x)= +\infty,
@@ -1058,24 +1159,23 @@ We can also adapt @prp-limit-composite-functions to the case of unbounded limits
 
 ::: {#prp-unbounded-limit-composite-functions}
 
-Consider the  functions $f\colon D\subseteq \mathbb{R} \rightarrow \mathbb{R}$ and $g\colon D'\subseteq \mathbb{R} \rightarrow \mathbb{R}$, and  let $x_{0}$ be an accumulation point for $D'$.
+Consider $D,D'\subseteq\mathbb{R}$, let $x_{0}\in\mathbb{R}$ and $l\in\mathbb{R}$ be accumulation points for $D'$ and $D$, respectively, and take two  functions $f\colon D \rightarrow \mathbb{R}$ and $g\colon D' \rightarrow \mathbb{R}$.
 Suppose that
 $$
- \lim_{x\rightarrow x_{0}}g(x) = l
+ \lim_{x\rightarrow x_{0}}g(x) = l\in\mathbb{R},
+$${#eq-unbounded-limit-composite-function}
+and that
 $$
-with $l$ is an accumulation point for $D$, and 
+\qquad \lim_{y\rightarrow l} f(y) =\pm\infty.
+$$ {#eq-unbounded-limit-composite-function2}
+Then, the equality
 $$
-\lim_{y\rightarrow l} f(y) =L ,
-$$ 
-with $L$ possibly $\pm\infty$.
-The equality
+\lim_{x\rightarrow x_{0}} f\circ g(x)=\pm\infty 
 $$
-\lim_{x\rightarrow x_{0}} f\circ g(x)=L 
-$$
-holds   if either one of the following additional assumptions are met:
+holds  if either one of the following additional assumptions are met:
 
 1. $f$ is continuous at $y=l$; 
-2. there is **no** open interval $I$ containing $x_{0}$ on which $g(x)=l$ for all $x\in I$.
+2. there is an open interval $I$ containing $x_{0}$ on which $g(x)\neq l$ for all $x\in I$.
 
 
 Under the obvious modifications, analogous results hold for left and right limits.
@@ -1083,8 +1183,30 @@ Under the obvious modifications, analogous results hold for left and right limit
 <details>
 <summary> **Proof:** </summary>
 
-The proof is quite tedious, and it will take me some time to upload it.
+The proof is essentially the same as that of @prp-limit-composite-functions
 
+Let us consider only the case where the limit in @eq-unbounded-limit-composite-function2 is $+\infty$, because the $-\infty$ can be proved by analogy.
+From @eq-unbounded-limit-composite-function2, given $K>0$, it follows that there is $\eta>0$ for which
+$$
+0<|y-l|<\eta \implies f(y)>K,
+$${#eq-unbounded-limit-composite-functions3}
+with $y\neq l$.
+On the other hand,  @eq-unbounded-limit-composite-function implies that, given the same $\eta>0$ as before, there is $\delta>0$ such that 
+$$
+0<|x-x_{0}|<\delta \implies  |g(x) - l|<\eta.
+$${#eq-unbonded-limit-composite-functions4}
+Setting $y=g(x)$, @eq-limit-composite-functions4 leads to $|g(x)-l|<\eta$, while @eq-limit-composite-functions3 states that $0<|y-l|=|g(x)-l|<\eta$ implies $f(y)>K$, and it does not necessarily hold that $|g(x)-l|<\eta$ implies $0<|y-l|=|g(x)-l|<\eta$ because $y=g(x)$ may be equal to $l$.
+We thus need to assume something more to otbain the desired result.
+
+FINISH!!!!!!!!!!!
+
+1. In this case,  $L=f(l)$ because $f$ is continuous at $l$, and thus $|f(y) -L|=|f(y) -f(l)|<\varepsilon$ even when $y=g(x)=l$, and the result follows.
+2. In this case, we can take $\delta$ sufficiently small so that $|x-x_{0}|<\delta$ implies  $g(x)\neq l$ by assumption.
+Consequently, $|x-x_{0}|<\delta$  implies $|g(x)-l|<\eta$, which also implies $0<|g(x)-l|<\eta$, and thus
+$$
+0<|x-x_{0}|<\delta \implies  0<|g(x) - l|<\eta \implies f(l)=f(g(x)) >K,
+$$
+as desired.
 </details>
 
 :::
@@ -1129,19 +1251,20 @@ Therefore, using @prp-algebraic-manipulations-unbounded-limits, we obtain that t
 # Limits at infinity
 
 
-It should be quite easy to convince ourself that the function $f\colon \mathbb{R}\rightarrow\mathbb{R}$ given by $f(x)=x$ is obliged to increase/decrease indefinitely as the input $x$ increases/decreases indefinitely.
-It should be less easy, but still quite manageable without too much thought, to convince ourselves that the function $f\colon \mathbb{R}\rightarrow\mathbb{R}$ given by $f(x)=x^{2}+c$, with $c\in\mathbb{R}$, is obliged to increase indefinitely irrespectively of the input $x$ increasing or decreasing indefinitely.
+It should be quite easy to convince ourselves that the function $f\colon \mathbb{R}\rightarrow\mathbb{R}$ given by $f(x)=x + c$, with $c\in\mathbb{R}$, is obliged to increase/decrease indefinitely as the input $x$ increases/decreases indefinitely.
+It should be less easy, but still quite manageable without too much thought, to convince ourselves that the function $g\colon \mathbb{R}\rightarrow\mathbb{R}$ given by $g(x)=x^{2}+c$, is obliged to increase indefinitely irrespectively of the input $x$ increasing or decreasing indefinitely.
 We could dare to say that no sophisticated mathematical reasoning is necessary for us to confidently believe these 'facts'.
 
-However, a different situation is presented  to us if we consider the function $f\colon \mathbb{R}\rightarrow\mathbb{R}$ given by $f(x)=\frac{x^{2}}{x^{2}+1}$.
-We 'know' that both the numerator and the denominator grow indefinitely irrespectively of the input $x$ increasing or decreasing, but it's difficult to get a clear mental picture of what really happens when $x$ increases/decreases indefinitely just by looking at the definition of the function.
+However, a different situation is presented  to us if we consider the function $h\colon \mathbb{R}\rightarrow\mathbb{R}$ given by $h(x)=\frac{x^{2}}{x^{2}+1}$.
+We 'know' that both the numerator and the denominator of $h$ grow indefinitely irrespectively of the input $x$ increasing or decreasing, but it's difficult to get a clear mental picture of what really happens when $x$ increases/decreases indefinitely just by looking at the definition of the function.
 After some thinking, we may arrive to the conclusion that, since the numerator and denominator only differ by $1$, their ratio gets increasingly close to $1$. 
-Some quick numerical checks with $x=100,1000,10000,100000$ may support this intuition, but we can not be as sure as we were for the cases $f(x)=x$ or $f(x)=x^{2}$.
-Therefore, we may start to wonder about more complex examples like $f\colon \mathbb{R}\rightarrow\mathbb{R}$ given by $f(x)=\frac{x^{3}-3x^{2}}{x^{2}+x^{4}}$, or  $f\colon \mathbb{R}\rightarrow\mathbb{R}$ given by $f(x)=\frac{\sqrt{x^{4}+3x^{2}}}{x^{2}+x^{4}+83}$, and we quickly realize we have no idea other than plugging in some numbers and hoping some pattern emerges to guide our intuition.
+Some quick numerical checks with $x=100,1000,10000,100000$ may support this intuition, but we can not be as sure as we were for the cases $f(x)=x$ or $g(x)=x^{2}+c$ mentioned before.
+
+Then, we may start to wonder about more complex examples like $t\colon \mathbb{R}\rightarrow\mathbb{R}$ given by $t(x)=\frac{x^{3}-3x^{2}}{x^{2}+x^{4}}$ or   $t(x)=\frac{\sqrt{x^{4}+3x^{2}}}{x^{2}+x^{4}+83}$, and we quickly realize we have no idea other than plugging in some numbers and hoping some pattern emerges to guide our intuition.
 
 
-From a mathematician's point of view, this is the appropriate moment to go hunting for a new  concept of limit that can help us understanding what happens when the input variable either grows or degrows indefinitely, by giving us rigorous analytical tools to guide our intuition.
-Luckily for us, this new notion of limit is out there since quite some time, and we can 'simply' harness its power.
+From a mathematician's point of view, this is the appropriate moment to go looking for a new  concept of limit that can help us understanding what happens when the input variable either grows or degrows indefinitely, by giving us rigorous analytical tools to guide our intuition.
+Luckily for us, this new notion of limit has been found quite some time, and we can 'simply' exploit its power.
 
 
 
@@ -1153,11 +1276,11 @@ Let $D\subseteq \mathbb{R}$ be such that $+\infty$ is a right accumulation point
 
 The formal equality
 $$
-\lim_{x\rightarrow +\infty} f(x)= l
+\lim_{x\rightarrow +\infty} f(x)= L
 $$
-holds  with $l\in\mathbb{R}$ if for every $\varepsilon>0$ there is $M>0$ such that
+holds  with $L\in\mathbb{R}$ if for every $\varepsilon>0$ there is $\varrho>0$ such that
 $$
-D\ni x>M\Rightarrow |f(x) - l|<\varepsilon .
+D\ni x> \varrho \Rightarrow |f(x) - l|<\varepsilon .
 $$
 
 
@@ -1165,18 +1288,18 @@ The formal equality
 $$ 
 \lim_{x\rightarrow +\infty} f(x)=+\infty 
 $$ 
-holds if for every $K>0$ there is  $M>0$ such that
+holds if for every $K>0$ there is  $\varrho>0$ such that
 $$
-D\ni x>M \rightarrow f(x)>K.
+D\ni x> \varrho \rightarrow f(x)>K.
 $$
 
 The formal equality  
 $$ 
 \lim_{x\rightarrow +\infty} f(x)=-\infty 
 $$ 
-holds if for every $K>0$ there is  $M>0$ such that
+holds if for every $K>0$ there is  $\varrho>0$ such that
 $$
-D\ni x>M \rightarrow f(x)<-K.
+D\ni x> \varrho \rightarrow f(x)<-K.
 $$
 
 :::
@@ -1191,11 +1314,11 @@ Let $D\subseteq \mathbb{R}$ be such that $-\infty$ is a left accumulation point 
 
 The formal equality
 $$
-\lim_{x\rightarrow -\infty} f(x)= l
+\lim_{x\rightarrow -\infty} f(x)= L
 $$
-holds  with $l\in\mathbb{R}$ if for every $\varepsilon>0$ there is $M>0$ such that
+holds  with $L\in\mathbb{R}$ if for every $\varepsilon>0$ there is $\varrho>0$ such that
 $$
-D\ni x<-M\Rightarrow |f(x) - l|<\varepsilon .
+D\ni x<-\varrho\Rightarrow |f(x) - l|<\varepsilon .
 $$
 
 
@@ -1203,37 +1326,40 @@ The formal equality
 $$ 
 \lim_{x\rightarrow -\infty} f(x)=+\infty 
 $$ 
-holds if for every $K>0$ there is  $M>0$ such that
+holds if for every $K>0$ there is  $\varrho>0$ such that
 $$
-D\ni x<-M \rightarrow f(x)>K.
+D\ni x<- \varrho \rightarrow f(x)>K.
 $$
 
 The formal equality  
 $$ 
 \lim_{x\rightarrow -\infty} f(x)=-\infty 
 $$ 
-holds if for every $K>0$ there is  $M>0$ such that
+holds if for every $K>0$ there is  $\varrho>0$ such that
 $$
-D\ni x<-M \rightarrow f(x)<-K.
+D\ni x<- \varrho \rightarrow f(x)<-K.
 $$
 
 :::
 
 :::
+
+Once again, we need to check that the notions of limits at infinity introduced in @def-limits-at-infty and @def-limits-at-minus-infty are well-posed.
 
 ::: {.callout-note title="Well-posedness of limits at infinity"}
 
 ::: {#prp-well-posedness-limits-at-infinity}
 
-Consider the function $f\colon D\subseteq\mathbb{R}\rightarrow\mathbb{R}$ with $D$ such that $+\infty$ is an accumulation point for $D$.
+
+Let $+\infty$ be an accumulation point of $D\subseteq\mathbb{R}$, and consider the function $f\colon D\subseteq\mathbb{R}\rightarrow\mathbb{R}$.
 If 
 $$
 \begin{split}
-\lim_{x\rightarrow +\infty}f(x)&=l \\
-\lim_{x\rightarrow +\infty}f(x)&=m,
+\lim_{x\rightarrow +\infty}f(x)&=L \\
+\lim_{x\rightarrow +\infty}f(x)&=M,
 \end{split}
 $$
-with $l,m$ possibly $\pm\infty$, then $l=m$.
+according to @def-limits-at-infty, then $L=M$.
 
 Under the obvious modifications, a similar result holds for $x\rightarrow-\infty$.
 
@@ -1249,18 +1375,18 @@ The proof is a slight modification of that of @prp-well-posedness-limits, but it
 
 :::
 
+Moreover, it is again important to check that the notion of limits at infinity does not produce weird instances when different functions agreeing on an arbitrary subset of the intersection of their domains are considered.
 
-
-
-::: {.callout-caution title="Limits a infinity of the restriction"}
+::: {.callout-caution title="Limits at infinity of the restriction"}
 
 ::: {#exr-limits-at-infty-restriction-functions}
-Consider two functions $f\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}$ and $g\colon D'\subseteq \mathbb{R}\rightarrow \mathbb{R}$ such that $g(x)=f(x)$ on $D\cap D'\neq \emptyset$.
-If $\pm\infty$ is an accumulation point for $D\cap D'$ prove that 
+
+Let $D,D'\subseteq \mathbb{R}$ be such that $D\cap D'\neq\emptyset$, and consider two functions $f\colon D \rightarrow \mathbb{R}$ and $g\colon D'\rightarrow \mathbb{R}$ such that $g(x)=f(x)$ on $S\subseteq D\cap D'$.
+If $\pm\infty$ is an accumulation point for $S$ prove that 
 $$
-\lim_{x\rightarrow \pm\infty} f(x)=\lim_{x\rightarrow \pm\infty g(x)
+\lim_{x\rightarrow \pm\infty} f(x)=\lim_{x\rightarrow \pm\infty} g(x)
 $$
-whenever either one of the limits exist.
+whenever either one of the limits exist in the sense of @def-limits-at-infty or @def-limits-at-minus-infty.
 
 
 <details>
@@ -1404,33 +1530,57 @@ $$
 
 :::
 
+
+Also the [squeeze theorem](#thm-squeeze-thm) can be adapted to limits at infinity.
+
+
+::: {.callout-note title="The squeeze (pinching) theorem for limits at infinity"}
+
+::: {#thm-squeeze-thm-at-infinity}
+
+Let $\pm\infty$ be an accumulation point of $D\subseteq \mathbb{R}$, and consider the functions $f,g\colon D\rightarrow \mathbb{R}$. 
+If $g(x)\leq f(x)$ for all $x\in D$ and 
+$$
+\lim_{x\rightarrow \pm\infty}g(x)= L,
+$$
+according to @def-limits-at-infty or @def-limits-at-minus-infty,  then it follows that
+$$
+\lim_{x\rightarrow \pm\infty}f(x)=L.
+$$
+
+<details>
+<summary> **Proof:** </summary>e 
+
+The proof is similar to that of @thm-squeeze-thm, and it will take me some time to upload it.
+</details>
+
+:::
+
+:::
+
+
 We can also adapt @prp-limit-composite-functions to the case of unbounded limits.
 
-::: {.callout-note title="Unbounded limit of composite functions"}
+::: {.callout-note title="Limit at infinity of composite functions"}
 
-::: {#prp-limit-composite-functions}
+::: {#prp-limit-at-infinity-composite-functions}
 
-Consider the  functions $f\colon D\subseteq \mathbb{R} \rightarrow \mathbb{R}$ and $g\colon D'\subseteq \mathbb{R} \rightarrow \mathbb{R}$, and  let $x_{0}$ be an accumulation point for $D'$.
-Suppose that
+Let $x_{0}\in\mathbb{R}\cup\{+\infty,-\infty\}$ be an accumulation point of $D'\subseteq \mathbb{R}$, and
+consider the function  $g\colon D' \rightarrow \mathbb{R}$ such that
 $$
- \lim_{x\rightarrow x_{0}}g(x) = l
+ \lim_{x\rightarrow x_{0}}g(x) = \pm\infty
 $$
-with $l$ is an accumulation point for $D$, and 
+according to @def-unbounded-limits, or @def-limits-at-infty @def-limits-at-minus-infty.
+If $\pm\infty$ is an accumulation point of $D\subseteq \mathbb{R}$, and  the  functions $f\colon D \rightarrow \mathbb{R}$  is such that
 $$
 \lim_{y\rightarrow l} f(y) =L ,
 $$ 
-with $L$ possibly $\pm\infty$.
-The equality
+according to @def-limits-at-infty, or @def-limits-at-minus-infty, the equality
 $$
-\lim_{x\rightarrow x_{0}} f\circ g(x)=L 
+\lim_{x\rightarrow \pm\infty} f\circ g(x)=L 
 $$
-holds   if either one of the following additional assumptions are met:
+holds if....
 
-1. $f$ is continuous at $y=l$; 
-2. there is **no** open interval $I$ containing $x_{0}$ on which $g(x)=l$ for all $x\in I$.
-
-
-Under the obvious modifications, analogous results hold for left and right limits.
 
 <details>
 <summary> **Proof:** </summary>

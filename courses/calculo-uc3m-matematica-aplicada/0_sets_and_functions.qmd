@@ -16,6 +16,20 @@ date-modified: last-modified
 
 
 
+::: {.callout-warning title="How we will write functions"}
+
+::: {#rem-how-we-write-functions}
+
+Sometimes, we may be forced to talk about the function $f\colon D\subseteq X\rightarrow Y$ given by $f(x)=y$ multiple times when proving a theorem, solving an exercise, or discussing an idea.
+To avoid an absurd amount of notationally-heavy repetitions, once the domain, the input space, the output  space, and the explicit rule $f(x)=y$ have been clearly defined as above, we will often write just $f(x)=y$, or even just $f$, for the rest of the proof of the theorem, or of the exercise, or of the discussion.
+
+Moreover, sometimes we may be introducing a subset $D\subseteq X$, and later introduce a function having $D$ as domain. 
+In this case, we often writes $f\colon D\rightarrow Y$ given by $f(x)=y$ omitting the input space since it is clear from the context.
+
+:::
+
+:::
+
 ::: {.callout-note title="Inverse function"}
 
 ::: {#def-inverse-function}
@@ -80,7 +94,9 @@ Therefore, the symmetric open intervals of $\mathbb{R}$ may be determined throug
 
 
 ::: {.callout-note title="Accumulation point"}
+
 ::: {#def-accumulation-point}
+
 A point $x_{0}\in \mathbb{R}$ is said to be a **left accumulation point** for the subset $D$ if there is $r>0$ such that the open interval $I_{(x_{0},r)}$ is contained in $D$.
 A **right accumulation point** for $D$ is then defined in the obvious way. 
 
@@ -97,7 +113,7 @@ right accumulation point for $D$.
 
 ::: {.callout-note title="Invertible functions on intervals are monotone"}
 
-::: {#prp-invertible functions are monotonic} 
+::: {#prp-invertible-functions-are-monotonic} 
 
 INSERT
 
