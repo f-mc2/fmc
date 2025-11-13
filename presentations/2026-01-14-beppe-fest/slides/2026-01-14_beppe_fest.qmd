@@ -1,0 +1,24 @@
+---
+title: "How Quantum Is the Uncertainty Principle?"
+subtitle: "Unifying (Quantum) Cramér–Rao, Schrödinger–Robertson uncertainty, and speed limits via Cauchy–Schwarz on GNS Hilbert spaces"
+author: "Florio M. Ciaglia"
+date: 2026-01-14
+fontsize: 26pt
+bibliography: ../../../biblio.bib
+#csl: talks/quantum-info.csl
+# Global math macros
+format-links: true
+draft: true
+---
+
+
+## Thesis (show this first)
+
+::: {.cols}
+::: {.col}
+**Punchline:** Many “uncertainty” and “speed” bounds are just **Cauchy–Schwarz** with the *right* inner product on the *right* Hilbert space (GNS / Petz).
+:::
+::: {.col}
+
+:::
+:::
