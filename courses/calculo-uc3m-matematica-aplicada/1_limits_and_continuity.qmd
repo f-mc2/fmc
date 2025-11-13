@@ -166,7 +166,7 @@ $$
 $$
 In this case, we say that $l$ is the right limit of $f$ at  $x_{0}$.
 
-Similarly, if $x_{0}$ is a [**right accumulation point**](0_sets_and_functions.qmd#def-accumulation-point) for $D$, we say that the formal equality  
+Similarly, if $x_{0}$ is a **right accumulation point** for $D$, we say that the formal equality  
 $$
 \lim_{x\rightarrow x_{0}^{-}} f(x)=l
 $$
@@ -176,7 +176,7 @@ $$
 $$
 In this case, we say that $l$ is the left limit of $f$ at $x_{0}$.
 
-Finally, if $x_{0}$ is an [accumulation point](0_sets_and_functions.qmd#def-accumulation-point) for $D$, we say that the formal equality
+Finally, if $x_{0}$ is an **accumulation point** for $D$, we say that the formal equality
 $$ 
 \lim_{x\rightarrow x_{0}} f(x)=l 
 $$
@@ -191,9 +191,8 @@ In this case, we say that $l$ is the limit of $f$ at $x_{0}$.
 :::
 
  
-
-Note that, in @def-limits, the input point $x_{0}$  is an [accumulation point](0_sets_and_functions.qmd#def-accumulation-point) (or possibly only a left/right one) for the domain $D$ of the function under consideration  that is not necessarily a point in $D$, and thus the limit is not necessarily $L=f(x_{0})$. 
-Functions with this type of regularity are called **continuous** and are studied [below](@sec-continuity).
+Recall that the (left/right) accumulation point $x_{0}$ of $D$ in @def-limits is not necessarily a point in $D$, and thus it doesn't necessarily make sense to compare the limit $L$ with $f(x_{0})$. 
+When this is possible, and $f(x_{0})=L$, then we are dealing with a particularly regular function (see the notion of **continuity** [below](@sec-continuity)).
 
  
 
@@ -313,8 +312,8 @@ Note that the way in which $\delta$ depends on $\varepsilon$ is more complex tha
 
 
 
-In @def-limits, three types of limits are considered because we can approach the input point $x_{0}$ from the left, from the right, or from both side simulatenously (whenever possible).
-In the last case,  it is then natural to ask if the three types of limits agree.
+In @def-limits, three types of limits are considered because we can approach the input point $x_{0}$ from the left, from the right, or from both sides simulatenously.
+In the last case,  it is reasonable to ask if the three types of limits agree.
 In the exercise below, you are asked to  prove that this is indeed the case.
 
 ::: {.callout-caution title="Existence of the limit at $x_{0}$ is equivalent to existence and equality of left and right limits at $x_{0}$"}
@@ -367,9 +366,8 @@ You are strongly invited to try to solve it on your own.
 
 :::
 
- 
- The next theorem is known to humans by many names (very much like the [Many-Faced God](https://gameofthrones.fandom.com/wiki/Many-Faced_God)). 
-Informally speaking, the underlying idea behind the result is that, if a function $f$ lies between two other functions, say $g$ and $h$, the limits of $f$  are determined by the limits of $g$ and $h$.
+  
+The next theorem makes precise the intuition according to which, if a function $f$ lies between two other functions, say $g$ and $h$, the limits of $f$  are determined by the limits of $g$ and $h$.
 
 
 
@@ -393,7 +391,7 @@ Under the obvious modifications, the same conclusions hold for left and right li
 <details>
 <summary> **Proof:** </summary>
 
-The proof is quite tedious, and it will take me some time to upload it.
+The proof is will likely take me some time to upload it.
 </details>
 
 :::
@@ -408,8 +406,12 @@ The proof is quite tedious, and it will take me some time to upload it.
 
 
 
-In @def-limits, the point $x_0$ is an [accumulation point](0_sets_and_functions.qmd#def-accumulation-point) of the domain $D$ of the function under consideration, but it is not necessary that $x_0 \in D$ for the notion of limit to make sense.
-However, if $x_{0}$ does belong to $D$ and the limit exists, it makes sense to see if the limit $l$ differs from the value of the function at $x_0$. 
+As already noted right after @def-limits, the point $x_0$ appearing when considering the limit
+$$
+\lim_{x\rightarrow x_{0}}f(x)=L
+$$
+is an [accumulation point](0_sets_and_functions.qmd#def-accumulation-point) of the domain $D\subseteq\mathbb{R}$ of the function $f\colon D\rightarrow\mathbb{R}$, but it is not necessarily true that $x_0 \in D$ for the notion of limit to make sense.
+However, if $x_{0}$ does belong to $D$ and the limit exists, it makes sense to see if the limit $L$ differs from the value of the function at $x_0$. 
 
 ::: {.callout-note title="Continuity"}
 
@@ -426,11 +428,7 @@ The function $f\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}$ said to be co
 :::
 
 :::
- 
 
-
-
-From a [previous exercise on limits](@exr-left-right-limits-link), it immediately follows that continuity at a point is equivalent to simultanelous left and right continuity, and you are asked to actually write down why this is true in the following exercise.
 
 
 
@@ -444,7 +442,7 @@ The function $f\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}$ is  continuou
 <details>
 <summary> **Solution:** </summary>
 
-You are strongly invited to try to solve it on your own.
+It follows directly from this [previous exercise on limits](@exr-left-right-limits-link).
 </details>
 
 
@@ -549,8 +547,8 @@ I'll do it soon (hopefully).
 # Algebraic manipulations of limits and continuous functions
  
 
-From the quadratic case in @exm-limits-constant-linear-quadratic-functions, it should be clear that computing limits following  @def-limits is not going to be an easy task for arbitrary functions.
-Luckily, perhaps motivated by systemic laziness, some mathematicians were able to prove general propositions that allows to exploit simple cases to solve more complex ones.
+From the quadratic case in @exm-limits-constant-linear-quadratic-functions, it should be clear that computing limits following  @def-limits is not going to be an easy task for arbitrarily complex functions.
+Luckily for us, some mathematicians were able to prove general propositions that allow to exploit simple cases to solve more complex ones.
 
 To understand how one may envision such general propositions, let us keep in mind the results obtained in @exm-limits-constant-linear-quadratic-functions.
 Setting $f(x)=x +c$, $g(x)=x$, and $h(x)=c$, we see that @eq-limit-constant-function and @eq-limit-linear-function (once with $a=c$ and once with $a=0$) imply
@@ -567,35 +565,73 @@ which means that the limit of the product is the product of the limits.
 A question then immediately arises: how general are these facts?
 It turns out that they are quite general.
 
-For instance, let us consider the functions $g,h\colon D\subset\mathbb{R}\rightarrow\mathbb{R}$ and the accumulation point $x_{0}$ for $D$.
-Assuming that the limits of both $g$ and $h$ at $x_{0}$ exist and are, respectively, $l$ and $m$, we know from @def-limits that there are $\nu,\delta_{\nu},\epsilon,\delta_{\epsilon}>0$ such that 
+
+
+
+
+
+::: {.callout-note title="Algebraic manipulations of limits"}
+
+::: {#prp-algebraic-manipulations-limits}
+
+
+Let $\alpha,\beta\in\mathbb{R}$, and consider the functions $f,g\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}$.
+If
+$$
+\lim_{x\rightarrow x_{0}}f(x)=L_{1} \mbox{ and } \quad \lim_{x\rightarrow x_{0}}g(x)=L_{2}
+$$
+in the sense of @def-limits, then
 $$
 \begin{split}
-|x-x_{0}|<\delta_{\nu}&\Rightarrow |g(x) -l|<\nu \\
-|x-x_{0}|<\delta_{\epsilon}&\Rightarrow |h(x) -l|<\epsilon .
+\lim_{x\rightarrow x_{0}} \left(\alpha \,f + \beta \,g \right)(x) &=\lim_{x\rightarrow x_{0}}  \alpha \,f (x) + \lim_{x\rightarrow x_{0}} \beta \, g(x) =  \alpha\,L_{1} + \beta \,L_{2} \\ & \\
+\lim_{x\rightarrow x_{0}} \left((\alpha \,f)\cdot(\beta \,g)\right) (x) & =\left(\lim_{x\rightarrow x_{0}} \alpha \,f(x)\right)\left(\lim_{x\rightarrow x_{0}}  \beta \,g(x)\right)= \alpha\,L_{1}\,\beta \,L_{2}  \\ & \\
+\lim_{x\rightarrow x_{0}}\,\left(\frac{\alpha \,f}{\beta \,g}\right)(x)&=\frac{\lim_{x\rightarrow x_{0} }\alpha \,f(x)}{\lim_{x\rightarrow x_{0} }\beta \,g(x)} =\frac{\alpha_{1}L_{1}}{\alpha_{2} L_{2}},
+\end{split}
+$${#eq-algebraic-manipulations-limits}
+where $\alpha_{2},L_{2}\neq 0$ is assumed in the last equality.
+
+Under the obvious modifications, the same conclusions hold for left and right limits.
+
+
+
+<details>
+<summary> **Proof:** </summary>
+
+Let us start with the sum of two functions.
+From @def-limits that there are $\varepsilon_{1},\delta_{1},\varepsilon_{2},\delta_{2}>0$ such that 
+$$
+\begin{split}
+|x-x_{0}|<\delta_{1}&\Rightarrow 0<|f(x) -L_{1}|<\varepsilon_{1} \\
+|x-x_{0}|<\delta_{2}&\Rightarrow 0<|g(x) -L_{2}|<\varepsilon_{2}.
 \end{split}
 $${#eq-limit-of-sum}
-For every $\varepsilon>0$, we can take $\nu$ and $\epsilon$ such that $\varepsilon=\nu+\epsilon$.
-Consequently, if $|x-x_{0}|<\mathrm{min}(\delta_{\nu},\delta_{\epsilon})$, it holds
+For every $\varepsilon>0$, we can take $\varepsilon_{1}$ and $\varepsilon_{2}$ such that $\varepsilon=\varepsilon_{1}+\varepsilon_{2}$.
+Consequently, if $|x-x_{0}|<\mathrm{min}(\delta_{1},\delta_{2})$, it holds
 $$
-|g(x) + h(x) - l -m|\leq |f(x) -l| + |g(x) -m| <\nu +\epsilon=\varepsilon
+0<|f(x) + g(x) - L_{1} - L_{2}|\leq |f(x) -L_{1}| + |g(x) -L_{2}| <\varepsilon_{1} +\varepsilon_{2}=\varepsilon
 $$
-which means that $l+m$ is the limit at $x_{0}$ of $f(x)=g(x)+h(x)$ according to @def-limits.
-Moreover, it also holds
+which means that $L_{1} + L_{2}$ is the limit at $x_{0}$ of $(f+g)(x)=f(x) + g(x)$ according to @def-limits.
+
+Passing to the product of two functions, again @def-limits implies that
 $$
 \begin{split}
-|g(x)h(x) -lm|&=\mid (g(x) -l + l)(h(x) -m +m) -lm\mid = \\
-&=\mid (g(x) -l)(h(x)-m) +l(h(x)-m) + (g(x)-l)m\mid \leq \\
-&\leq \mid (g(x) -l)(h(x)-m)\mid + \mid l(h(x)-m)\mid + \mid(g(x)-l)m\mid < \\
-&<\nu\epsilon + |l|\,\epsilon + |m|\,\nu .
+|f(x)g(x) - L_{1}L_{2}|&=\mid (f(x) -L_{1} + L_{1})(g(x) -L_{2} +L_{2}) -L_{1}L_{2}\mid = \\
+&=\mid (f(x) -L_{1})(g(x)-L_{2}) + L_{1}(g(x)-L_{2}) + (f(x)-L_{1})L_{2}\mid \leq \\
+&\leq \mid (f(x) -L_{1})(g(x)-L_{2})\mid + \mid L_{1}(g(x)-L_{2})\mid + \mid(f(x)-L_{1})L_{2}\mid < \\
+&<\varepsilon_{1}\varepsilon_{2} + |L_{1}|\,\varepsilon_{2} + |L_{2}|\,\varepsilon_{1} .
 \end{split}
 $$
 
-Given $\varepsilon>0$, I can choose $\nu$ and $\epsilon$ such that $\nu\epsilon + |l|\,\epsilon + |m|\,\nu<\varepsilon$ since $\nu$ and $\epsilon$ are arbitrary, and thus we conclude that the $lm$ is the limit at $x_{0}$ of $f(x)=g(x)h(x)$.
+Given $\varepsilon>0$, we can choose $\varepsilon_{1}$ and $\varepsilon_{2}$ such that $\varepsilon_{1}\varepsilon_{2} + |L_{1}|\,\varepsilon_{2} + |L_{2}|\,\varepsilon_{1}<\varepsilon$ since $\varepsilon_{1}$ and $\varepsilon_{2}$ are arbitrary, and thus we conclude that the $L_{1}L_{2}$ is the limit at $x_{0}$ of $(fg)(x)=f(x)g(x)$.
+
+The case of left and right limits should be easy to obtain by following and suitably adapting the previous steps. 
+</details>
 
 
 
+:::
 
+:::
 
 Recalling the summation and product notation
 $$
@@ -604,38 +640,45 @@ $$
 \prod_{j=1}^{n}A_{j}&\equiv A_{1}\,A_{2}\,\cdots\,A_{n} ,
 \end{split}
 $$
-where $(A_{1},\cdots,A_{n})$ can be a finite sequence of numbers or functions, we can use  the previous results together with the associativity property for function sums and products  to prove the follwing proposition on the algebraic manipulation of limits.
+where $(A_{1},\cdots,A_{n})$ can be a finite sequence of numbers or functions, we can use  the previous results together with the associativity property for function sums and products  to solve the following exercise.
 
-::: {.callout-note title="Algebraic manipulations of limits"}
+::: {.callout-caution title="Algebraic manipulations of more than 2 functions"}
 
-::: {#prp-algebraic-manipulations-limits}
+::: {#exr-algebraic-manipulations-limits-N-functions}
+
 
 Let $(\alpha_{1},\cdots\alpha_{n})\mathbb{R}^{n}$, let $x_{0}\in\mathbb{R}$ be an accumulation point for $D$, and, for each $j=1,\cdots,n$, consider the function $f_{j}\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}$.
-If
+Prove that, if
 $$
 \lim_{x\rightarrow x_{0}}f_{j}(x)=L_{j}\in \mathbb{R}
 $$
 for every $j=1,...,n$, then
 $$
 \begin{split}
-\lim_{x\rightarrow x_{0}} \sum_{j=1}^{n}\,\alpha_{j}\,f_{j}(x) &=\sum_{j=1}^{n}\,\lim_{x\rightarrow x_{0}} \left(\alpha_{j}\,f_{j}(x)\right) = \sum_{j=1}^{n}\,\alpha_{j}\,L_{j} \\ & \\
-\lim_{x\rightarrow x_{0}}\prod_{j=1}^{n} \,\alpha_{j}\,f_{j}(x) & =\prod_{j=1}^{n}\,\lim_{x\rightarrow x_{0}} \left(\alpha_{j}\,f_{j}(x)\right) = \prod_{j=1}^{n}\,\alpha_{j}\,L_{j} .
+\lim_{x\rightarrow x_{0}} \left(\sum_{j=1}^{n}\,\alpha_{j}\,f_{j}\right)(x) &=\sum_{j=1}^{n}\,\lim_{x\rightarrow x_{0}} \left(\alpha_{j}\,f_{j}(x)\right) = \sum_{j=1}^{n}\,\alpha_{j}\,L_{j} \\ & \\
+\lim_{x\rightarrow x_{0}}\left(\prod_{j=1}^{n} \,\alpha_{j}\,f_{j}\right)(x) & =\prod_{j=1}^{n}\,\lim_{x\rightarrow x_{0}} \left(\alpha_{j}\,f_{j}(x)\right) = \prod_{j=1}^{n}\,\alpha_{j}\,L_{j} .
 \end{split}
 $${#eq-algebraic-manipulations-limits}
 Moreover, if $n=2$ and $\alpha_{2},L_{2}\neq 0$, it holds
 $$
-\lim_{x\rightarrow x_{0}^{+}}\,\frac{\alpha_{1}f_{1}(x)}{\alpha_{2}f_{2}(x)}=\frac{\alpha_{1}L_{1}}{\alpha_{2} L_{2}}.
+\lim_{x\rightarrow x_{0}^{+}}\,\left(\frac{\alpha_{1}f_{1}}{\alpha_{2}f_{2}}\right)(x)=\lim_{x\rightarrow x_{0}^{+}}\,\frac{\alpha_{1}f_{1}(x)}{\alpha_{2}f_{2}(x)}=\frac{\alpha_{1}L_{1}}{\alpha_{2} L_{2}}.
 $$
 
 Under the obvious modifications, the same conclusions hold for left and right limits.
 
-:::
+
+<details>
+<summary> **Solution:** </summary>
+
+Use @prp-algebraic-manipulations-limits and the associativity property for function sums and products.
+</details>
 
 :::
 
+:::
 
 
-From @prp-algebraic-manipulations-limits it naturally follows that continuous functions behaves well with respect to sums and products.
+From @prp-algebraic-manipulations-limits and @exr-algebraic-manipulations-limits-N-functions it naturally follows that continuous functions behave well with respect to sums and products.
 
 ::: {.callout-note title="Algebraic manipulations of continuous functions"}
 
@@ -646,13 +689,13 @@ For each $j=1,\cdots,n$, consider the function $f_{j}\colon D\subseteq \mathbb{R
 
 It follows that 
 $$
-F(x)=\sum\limits_{j=1}^{n}\alpha_{j}f_{j}(x),\qquad G(x)=\prod_{j=1}^{n}\alpha_{j}f_{j}(x)
+F(x)=\left(\sum\limits_{j=1}^{n}\alpha_{j}f_{j}\right)(x),\qquad G(x)=\left(\prod_{j=1}^{n}\alpha_{j}f_{j}\right)(x)
 $$ 
 are continuous at $x_{0}$. 
 
 Moreover, when $n=2$ and  $\alpha_{2}f_{2}(x_{0})\neq 0$,  it follows that
 $$
-H(x)=\frac{\alpha_{1}f_{1}(x)}{\alpha_{2}f_{2}(x)}
+H(x)=\left(\frac{\alpha_{1}f_{1} }{\alpha_{2}f_{2}}\right)(x) 
 $$
 is continuous at $x_{0}$.
 
@@ -661,7 +704,7 @@ Analogous results hold for left/right continuity with the obvious modifications.
 <details>
 <summary> **Proof:** </summary>
 
-You are strongly invited to try the proof on your own.
+Follow @def-continuity and apply the results of @prp-algebraic-manipulations-limits and @exr-algebraic-manipulations-limits-N-functions.
 </details>
 
 :::
@@ -797,7 +840,7 @@ $$
 holds  if either one of the following additional assumptions are met:
 
 1. $f$ is continuous at $y=l$; 
-2. there is anopen interval $I$ containing $x_{0}$ on which $g(x)\neq l$ for all $x\in I$  except possibly $x_{0}$.
+2. there is an open interval $I$ centered at $x_{0}$ on which $g(x)\neq l$ for all $x_{0}\neq x\in I$.
 
 
 Analogous results hold for right/left limits.
@@ -819,8 +862,8 @@ See @exr-tricky-limit-composition for more details.
 We thus need to assume something more to otbain the desired result.
 
 1. In this case,  $L=f(l)$ because $f$ is continuous at $l$, and thus $|f(y) -L|=|f(y) -f(l)|<\varepsilon$ even when $y=g(x)=l$, and the result follows.
-2. In this case, we can take $\delta$ sufficiently small so that $|x-x_{0}|<\delta$ implies  $g(x)\neq l$ by assumption.
-Consequently, $|x-x_{0}|<\delta$  implies $|g(x)-l|<\eta$, which also implies $0<|g(x)-l|<\eta$, and thus
+2. In this case, we can take $\delta$ sufficiently small so that $0<|x-x_{0}|<\delta$ implies $x\in I$ and thus  $g(x)\neq l$ by assumption.
+Consequently, it holds
 $$
 0<|x-x_{0}|<\delta \implies  0<|g(x) - l|<\eta \implies |f(g(x)) -L|<\varepsilon,
 $$
@@ -864,7 +907,7 @@ The reason behind the failure of @prp-limit-composite-functions is that both bot
 
 :::
 
-@prp-limit-composite-functions immediately implies that continuous functions behaves well with respect to composition of functions.
+@prp-limit-composite-functions immediately implies that continuous functions behaves well when composed among themseleves.
 
 ::: {.callout-note title="Composition of continuous functions"}
 
@@ -876,12 +919,14 @@ If $g$ is continuous at $x_{0}$ and $f$ is continuous at $g(x_{0})$ then  the co
 <details>
 <summary> **Proof:** </summary>
 
-You are strongly invited to try the proof on your own.
+Follow @def-continuity and apply @prp-limit-composite-functions.
 </details>
 
 :::
 
 :::
+
+# Exercises
 
 Now, we are ready to solve quite a number of interesting problems.
 

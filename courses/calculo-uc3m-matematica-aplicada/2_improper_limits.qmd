@@ -32,7 +32,7 @@ However, since we do have the  intuitive understanding of how  $f$ behaves aroun
 
 ::: {#def-unbounded-limits}
 
-Consider the function $f\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}$, and let $x_{0}$ be a left accumulation point for $D$. 
+Consider the function $f\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}$, and let $x_{0}$ be a [**left accumulation point**](0_sets_and_functions.qmd#def-accumulation-point)  for $D$. 
 We say that the formal equality
 $$ 
 \lim_{x\rightarrow x_{0}} f(x)=+\infty 
@@ -61,7 +61,7 @@ Left and right unbounded limits are defined by replacing $|x- x_{0}|<\delta$ wit
 
 :::
 
-Before proceeding further, we need to make sure that unbounded limits as in @def-unbounded-limits make actual sense.
+Before proceeding further, we need to make sure that the idea of unbounded limits formalized in @def-unbounded-limits makes actual sense.
 
 First of all, just as we did for regular limits [here](/courses/calculo-uc3m-matematica-aplicada/1_limits_and_continuity.qmd#prp-well-posedness-limits), we must ensure that the notions of unbounded limits and unbounded left and right limits are well-posed.
 
@@ -86,7 +86,7 @@ Under the obvious modifications, a similar result holds for left and right unbou
 <details>
 <summary>**Proof:**</summary>
 
-The proof is a slight modification of that given  [here](/courses/calculo-uc3m-matematica-aplicada/1_limits_and_continuity.qmd#prp-well-posedness-limits), but it will likely take time for me to upload it.
+The proof is a slight modification of that given  [here](/courses/calculo-uc3m-matematica-aplicada/1_limits_and_continuity.qmd#prp-well-posedness-limits), and you are strongly invited to try to fill the gaps on your own.
 
 </details>
 
@@ -139,14 +139,15 @@ Prove analogous results for the case of left and right limits.
 <details>
 <summary> **Solution:** </summary>
 
-You are strongly invited to try to solve it on your own.
+You are strongly invited to try to solve it on your own following what you should have already done for [this exercise](/courses/calculo-uc3m-matematica-aplicada/1_limits_and_continuity.qmd#exr-limits-restriction-functions).
+
 </details>
 
 :::
 
 :::
 
-Let us apply @def-unbounded-limits to understand the motivating example $f(x)=\frac{1}{x}$.
+Let us now apply @def-unbounded-limits to rigorously investigate what happens in the motivating example $f(x)=\frac{1}{x}$ discussed above.
 
 ::: {.callout-tip title="The case $f(x)=\frac{1}{x}$"}
 
@@ -180,16 +181,20 @@ The algebraic manipulations of limits  [here](/courses/calculo-uc3m-matematica-a
 ::: {#prp-algebraic-manipulations-unbounded-limits}
 
 
-Let $x_{0}$ be an accumulation point for $D\subseteq \mathbb{R}$, and consider two functions $f,g\colon D\rightarrow \mathbb{R}$. 
-If the limits at $x_{0}$ of both $f$ and $g$ exist in the sense of [this definition](/courses/calculo-uc3m-matematica-aplicada/1_limits_and_continuity.qmd#def-limits) or @def-unbounded-limits, then it holds:
+Let $\alpha,\beta\in\mathbb{R}$, let $x_{0}$ be an accumulation point for $D\subseteq \mathbb{R}$, and consider two functions $f,g\colon D\rightarrow \mathbb{R}$. 
+If
+$$
+\lim_{x\rightarrow x_{0}}f(x)=L_{1} \mbox{ and } \quad \lim_{x\rightarrow x_{0}}g(x)=L_{2}
+$$
+in the sense of [this definition](/courses/calculo-uc3m-matematica-aplicada/1_limits_and_continuity.qmd#def-limits) or @def-unbounded-limits, then
 $$
 \begin{split}
-1) & \lim_{x\rightarrow x_{0}}(f(x) + g(x))=\lim_{x\rightarrow x_{0}}f(x) + \lim_{x\rightarrow x_{0}} g(x) \\ & \\
-2) & \lim_{x\rightarrow x_{0}}f(x)\,\cdot \, g(x)= \lim_{x\rightarrow x_{0}}f(x)\, \cdot  \lim_{x\rightarrow x_{0}} g(x) \\ & \\
-3) & \lim_{x\rightarrow x_{0}}\frac{f(x)}{g(x)}= \frac{\lim_{x\rightarrow x_{0} }f(x)}{\lim_{x\rightarrow x_{0} } g(x)}
+\lim_{x\rightarrow x_{0}} \left(\alpha \,f + \beta \,g \right)(x) &=\lim_{x\rightarrow x_{0}}  \alpha \,f (x) + \lim_{x\rightarrow x_{0}} \beta \, g(x) =  \alpha\,L_{1} + \beta \,L_{2} \\ & \\
+\lim_{x\rightarrow x_{0}} \left((\alpha \,f)\cdot(\beta \,g)\right) (x) & =\left(\lim_{x\rightarrow x_{0}} \alpha \,f(x)\right)\left(\lim_{x\rightarrow x_{0}}  \beta \,g(x)\right)= \alpha\,L_{1}\,\beta \,L_{2}  \\ & \\
+\lim_{x\rightarrow x_{0}}\,\left(\frac{\alpha \,f}{\beta \,g}\right)(x)&=\frac{\lim_{x\rightarrow x_{0} }\alpha \,f(x)}{\lim_{x\rightarrow x_{0} }\beta \,g(x)} =\frac{\alpha_{1}L_{1}}{\alpha_{2} L_{2}},
 \end{split}
 $$
-with the following "conventions":
+where $\alpha_{2},L_{2}\neq 0$ is assumed in the last equality, and where the following "conventions" are enforced:
 $$
 \begin{split}
 1) & \quad  L + (\pm\infty) =\pm \infty \;\mbox{ if }\;\; L\in\mathbb{R} \mbox{ or } L=\pm\infty\\ & \\
@@ -205,7 +210,10 @@ $$
 All other cases are called [**indeterminate forms**](https://en.wikipedia.org/wiki/Indeterminate_form), and require a case by case analysis to determine if the limit on the left exists or not.
 
 
-Analogous results hold for left/right unbounded limits.
+
+Under the obvious modifications, the same conclusions hold for left and right limits.
+
+ 
 
 <details>
 <summary> **Proof:** </summary>
@@ -249,9 +257,9 @@ $$
 Under the obvious modifications, the same conclusions hold for left and right limits.
 
 <details>
-<summary> **Proof:** </summary>e 
+<summary> **Proof:** </summary>
 
-The proof is similar to that given [here](/courses/calculo-uc3m-matematica-aplicada/1_limits_and_continuity.qmd#thm-squeeze-thm), and it will take me some time to upload it.
+The proof is similar to that given [here](/courses/calculo-uc3m-matematica-aplicada/1_limits_and_continuity.qmd#thm-squeeze-thm), but it will take me some time to upload it.
 </details>
 
 :::
@@ -277,10 +285,7 @@ Then, the equality
 $$
 \lim_{x\rightarrow x_{0}} f\circ g(x)=\pm\infty 
 $$
-holds  if either one of the following additional assumptions are met:
-
-1. $f$ is continuous at $y=l$; 
-2. there is an open interval $I$ containing $x_{0}$ on which $g(x)\neq l$ for all $x\in I$.
+holds  if  there is an open interval $I$ centered at $x_{0}$ on which $g(x)\neq l$ for all $x_{0}\neq x\in I$.
 
 
 Under the obvious modifications, analogous results hold for left and right limits.
@@ -300,16 +305,10 @@ On the other hand,  @eq-unbounded-limit-composite-function implies that, given t
 $$
 0<|x-x_{0}|<\delta \implies  |g(x) - l|<\eta.
 $${#eq-unbounded-limit-composite-function4}
-Setting $y=g(x)$, @eq-unbounded-limit-composite-function4 leads to $|g(x)-l|<\eta$, while @eq-unbounded-limit-composite-function3 states that $0<|y-l|=|g(x)-l|<\eta$ implies $f(y)>K$, and it does not necessarily hold that $|g(x)-l|<\eta$ implies $0<|y-l|=|g(x)-l|<\eta$ because $y=g(x)$ may be equal to $l$.
-We thus need to assume something more to otbain the desired result.
-
-FINISH!!!!!!!!!!!
-
-1. In this case,  $L=f(l)$ because $f$ is continuous at $l$, and thus $|f(y) -L|=|f(y) -f(l)|<\varepsilon$ even when $y=g(x)=l$, and the result follows.
-2. In this case, we can take $\delta$ sufficiently small so that $|x-x_{0}|<\delta$ implies  $g(x)\neq l$ by assumption.
-Consequently, $|x-x_{0}|<\delta$  implies $|g(x)-l|<\eta$, which also implies $0<|g(x)-l|<\eta$, and thus
+Setting $y=g(x)$, the assumption on $g$ implies we can take  $\delta>0$  such that  $0<|x-x_{0}|<\delta$ implies $x\in I$ and thus  $g(x)\neq l$ by assumption.
+Consequently, it holds
 $$
-0<|x-x_{0}|<\delta \implies  0<|g(x) - l|<\eta \implies f(l)=f(g(x)) >K,
+0<|x-x_{0}|<\delta \implies  0<|g(x) - l|<\eta \implies |f(g(x)) -L|<\varepsilon,
 $$
 as desired.
 </details>
@@ -320,38 +319,7 @@ as desired.
 
 
 
-::: {.callout-caution title="Exercises to keep up in good shape"}
 
-::: {#exr-unbounded-limits-1}
-
-All the functions defined by the formulas given below are implicitely assumed to be defined on their maximal domains. 
-Calculate the limits, or prove they do not exist, explaining which previous results you are using in each case:
-$$
-\begin{split}
-1) \quad & \lim_{x\rightarrow 1^{\pm}}\, \frac{x^{2}-1}{ x^{2} -2x + 1 }= \pm\infty 
-\end{split}
-$$
-
-<details>
-<summary> **Solution:** </summary>
-
-1. When $x=1$, both numerator and denominator vanish, and we get the indeterminate form "$\frac{0}{0}$". 
-The fact that both polynomials have a common root ($x=1$) suggests we [factorize them](https://en.wikipedia.org/wiki/Polynomial#Factoring). In particular, it holds 
-$$
-x^{2}-1=(x-1)(x+1), \quad \mbox{ and }\qquad x^{2}-2x +1=(x-1)(x-1),
-$$ 
-and thus
-$$ 
-\frac{x^{2}-1}{x^{2}-2x+1}=\frac{x+1}{x-1}. 
-$$
-Now, the numerator tends to 2 when $x\rightarrow 1^{\pm}$, while the denominator tends to $0$. 
-Therefore, using @prp-algebraic-manipulations-unbounded-limits, we obtain that the limit is $+\infty$ when $x\rightarrow 1^{+}$ (because the denominator tends to $0$ from the left), and $-\infty$ when $x\rightarrow 1^{-}$ (because the denominator tends to $0$ from the right). 
-
-</details>
-
-:::
-
-:::
 
 # Limits at infinity
 
@@ -449,7 +417,8 @@ $$
 
 :::
 
-Once again, we need to check that the notions of limits at infinity introduced in @def-limits-at-infty and @def-limits-at-minus-infty are well-posed.
+Once again, we need to check that the notions of limits at infinity introduced in @def-limits-at-infty and @def-limits-at-minus-infty are well-posed. 
+We start with the uniqueness of the limit at infinity.
 
 ::: {.callout-note title="Well-posedness of limits at infinity"}
 
@@ -472,7 +441,7 @@ Under the obvious modifications, a similar result holds for $x\rightarrow-\infty
 <details>
 <summary>**Proof:**</summary>
 
-The proof is a slight modification of that given [here](/courses/calculo-uc3m-matematica-aplicada/1_limits_and_continuity.qmd#prp-well-posedness-limits), but it will likely take time for me to upload it.
+The proof is a slight modification of that given [here](/courses/calculo-uc3m-matematica-aplicada/1_limits_and_continuity.qmd#prp-well-posedness-limits), and you are strongly invited to fill the gaps on your own.
 
 </details>
 
@@ -480,7 +449,7 @@ The proof is a slight modification of that given [here](/courses/calculo-uc3m-ma
 
 :::
 
-Moreover, it is again important to check that the notion of limits at infinity does not produce weird instances when different functions agreeing on an arbitrary subset of the intersection of their domains are considered.
+Then, we check that the notion of limits at infinity does not lead to weird situations when different functions agreeing on an arbitrary subset of the intersection of their domains are considered.
 
 ::: {.callout-caution title="Limits at infinity of the restriction"}
 
@@ -497,14 +466,14 @@ whenever either one of the limits exist in the sense of @def-limits-at-infty or 
 <details>
 <summary> **Solution:** </summary>
 
-You are strongly invited to try to solve it on your own.
+You are strongly invited to try to solve it on your own following what you should have already done for [this exercise](/courses/calculo-uc3m-matematica-aplicada/1_limits_and_continuity.qmd#exr-limits-restriction-functions) and @exr-unbdounde-limits-restriction-functions.
 </details>
 
 :::
 
 :::
 
-Let us now use @def-limits-at-infty and @def-limits-at-minus-infty to put on rigorous ground our intuition that $f(x)=x$ increases/decreases indefinitely when $x$ increases/decreases indefinitely.
+Let us now use @def-limits-at-infty and @def-limits-at-minus-infty to disucss two simple but important examples.
 
 ::: {.callout-tip title="Basic examples of limits at infinity"}
 
@@ -519,13 +488,13 @@ Focusing on the case $x\rightarrow +\infty$, @def-limits-at-infty requires us to
 $$
 x>M\implies x>K.
 $$
-Clearly, taking $M>K$ is enough.
+Taking $M>K$ is enough.
 
 For the case $x\rightarrow -\infty$, @def-limits-at-minus-infty requires us to prove that, given $K>0$, there is $M>0$ such that 
 $$
 x<-M\implies x<-K.
 $$
-Clearly, taking (again) $M>K$ is enough.
+Taking (again) $M>K$ is enough.
 
 ---
 
@@ -534,32 +503,28 @@ We want to prove that
 $$
 \lim_{x\rightarrow\pm\infty} \frac{1}{x}=0.
 $$
-FINISH....
-:::
-
-:::
-
-
-
-::: {.callout-caution title="The square root"}
-
-::: {#exr-limit-sqrt-at-infty}
-
-Consider the function $f\colon (0,+\infty)\rightarrow \mathbb{R}$ given by $f(x)=\sqrt{x}$.
-Prove that 
 $$
-\lim_{x\rightarrow+\infty} \sqrt{x}=+\infty.
+\lim_{x\rightarrow\pm\infty} x=\pm\infty.
 $$
+Focusing on the case $x\rightarrow +\infty$, @def-limits-at-infty requires us to prove that, given $\varepsilon>0$, there is $M>0$ such that 
+$$
+x>M\implies |f(x) - 0|= \frac{1}{x}<\varepsilon.
+$$
+Since $x>M>0$ implies $0<\frac{1}{x}<\frac{1}{M}$, taking $M$ such that $\frac{1}{M}<\varepsilon$ is enough.
 
-<details>
-<summary> **Solution:** </summary>
-
-You are strongly invited to try to solve it on your own.
-</details>
+For the case $x\rightarrow -\infty$, @def-limits-at-minus-infty requires us to prove that, given $\varepsilon>0$, there is $M>0$ such that 
+$$
+x<-M<0\implies |f(x) - 0|= -\frac{1}{x}<\varepsilon.
+$$
+Since $x<-M<0$ implies $0<-\frac{1}{x}<\frac{1}{M}$, taking (again) $M$ such that $\frac{1}{M}<\varepsilon$ is enough.
 
 :::
 
 :::
+
+
+
+
  
  
 The algebraic manipulations of limits [here](/courses/calculo-uc3m-matematica-aplicada/1_limits_and_continuity.qmd#prp-algebraic-manipulations-limits) can be appropriately modified to handle also limits at infinity, provided we handle the so-called **inderminate forms** with care.
@@ -568,34 +533,47 @@ The algebraic manipulations of limits [here](/courses/calculo-uc3m-matematica-ap
 
 ::: {#prp-algebraic-manipulations-limits-at-infinity}
 
-Let $f,g\colon D\rightarrow \mathbb{R}$ be scalar function, and let $x_{0}$ be a left/right accumulation point for $D$ (possibly, also $\pm\infty$). If the right/left limit of both $f$ and $g$ exist at $x_{0}$, then we have:
+Let $\alpha,\beta\in\mathbb{R}$, let $\pm\infty$ be an accumulation point for $D\subseteq \mathbb{R}$, and consider two functions $f,g\colon D\rightarrow \mathbb{R}$. 
+If
+$$
+\lim_{x\rightarrow \pm\infty}f(x)=L_{1} \mbox{ and } \quad \lim_{x\rightarrow \pm\infty}g(x)=L_{2}
+$$
+in the sense of  @def-limits-at-infty or @def-limits-at-minus-infty, then
 $$
 \begin{split}
-1) & \lim_{x\rightarrow x_{0}^{\pm}}(f(x) + g(x))= \lim_{x\rightarrow x_{0}^{\pm}}f(x) + \lim_{x\rightarrow x_{0}^{\pm}} g(x) \\ & \\
-2) & \lim_{x\rightarrow x_{0}^{\pm}}(f(x) - g(x))= \lim_{x\rightarrow x_{0}^{\pm}}f(x) - \lim_{x\rightarrow x_{0}^{\pm}} g(x) \\ & \\
-3) & \lim_{x\rightarrow x_{0}^{\pm}}f(x)\,\cdot \, g(x)= \lim_{x\rightarrow x_{0}^{\pm}}f(x)\, \cdot  \lim_{x\rightarrow x_{0}^{\pm}} g(x) \\ & \\
-4) & \lim_{x\rightarrow x_{0}^{\pm}}\frac{f(x)}{g(x)}= \frac{\lim_{x\rightarrow x_{0}^{\pm}}f(x)}{\lim_{x\rightarrow x_{0}^{\pm}} g(x)} \\ & \\
-5) & \lim_{x\rightarrow x_{0}^{\pm}}(f(x))^{g(x)}= \left(\lim_{x\rightarrow x_{0}^{\pm}}f(x)\right)^{\lim_{x\rightarrow x_{0}^{\pm}} g(x)}  
+\lim_{x\rightarrow \pm\infty} \left(\alpha \,f + \beta \,g \right)(x) &=\lim_{x\rightarrow \pm\infty}  \alpha \,f (x) + \lim_{x\rightarrow \pm\infty} \beta \, g(x) =  \alpha\,L_{1} + \beta \,L_{2} \\ & \\
+\lim_{x\rightarrow \pm\infty} \left((\alpha \,f)\cdot(\beta \,g)\right) (x) & =\left(\lim_{x\rightarrow \pm\infty} \alpha \,f(x)\right)\left(\lim_{x\rightarrow \pm\infty}  \beta \,g(x)\right)= \alpha\,L_{1}\,\beta \,L_{2}  \\ & \\
+\lim_{x\rightarrow \pm\infty}\,\left(\frac{\alpha \,f}{\beta \,g}\right)(x)&=\frac{\lim_{x\rightarrow \pm\infty }\alpha \,f(x)}{\lim_{x\rightarrow \pm\infty }\beta \,g(x)} =\frac{\alpha_{1}L_{1}}{\alpha_{2} L_{2}},
 \end{split}
 $$
-with the following "conventions":
+where $\alpha_{2},L_{2}\neq 0$ is assumed in the last equality, and where the following "conventions" are enforced:
 $$
 \begin{split}
-1) & \quad  l + (\pm\infty) =\pm \infty \;\mbox{ if }\;\; l\neq \mp\infty \\ & \\
-2) & \quad l\cdot \pm\infty = \pm \infty  \;\mbox{ if }\;\; l>0\\ & \\
+1) & \quad  L + (\pm\infty) =\pm \infty \;\mbox{ if }\;\; L\in\mathbb{R} \mbox{ or } L=\pm\infty\\ & \\
+2) & \quad L\cdot \pm\infty = \pm \infty  \;\mbox{ if }\;\; l>0\\ & \\
 3) & \quad l\cdot \pm\infty = \mp \infty  \;\mbox{ if }\;\; l<0\\ & \\
-4) & \quad \frac{l}{\pm\infty} = 0  \;\mbox{ if }\;\; l\neq  \pm \infty\\ & \\
-5) & \quad \frac{\pm\infty}{l} = \pm \infty  \;\mbox{ if }\;\; l\in ( 0,+\infty)\\ & \\
-6) & \quad \frac{\pm\infty}{l} = \mp \infty  \;\mbox{ if }\;\; l\in (-\infty,0)\\ & \\
-7) & \quad (+\infty)^{l} =  +\infty \;\mbox{ if }\;\; l> 0\\ & \\
-8) & \quad (+\infty)^{l} =  0 \;\mbox{ if }\;\; l< 0\\ & \\
-9) & \quad l^{+\infty} = 0  \;\mbox{ if }\;\; 0<l< 1\\ & \\
-10) & \quad l^{+\infty} = +\infty  \;\mbox{ if }\;\; l> 1\\ & \\
-11) & \quad l^{-\infty} = 0  \;\mbox{ if }\;\; l> 1\\ & \\
-12) & \quad l^{-\infty} = +\infty  \;\mbox{ if }\;\; 0<l< 1 .
+4) & \quad \frac{L}{\pm\infty} = 0  \;\mbox{ if }\;\; L\neq  \pm \infty\\ & \\
+5) & \quad \frac{\pm\infty}{l} = \pm \infty  \;\mbox{ if }\;\; l>0\\ & \\
+6) & \quad \frac{\pm\infty}{l} = \mp \infty  \;\mbox{ if }\;\; l<0\\ & \\
+7) & \quad \frac{l}{0} =+\infty \;\mbox{ if }\;\; \left\{\begin{matrix}l>0 \mbox{ and } g(x)>0 \\ \mbox{ or } \\ l<0 \mbox{ and } g(x)<0\end{matrix}\right.\\ & \\
+8) & \quad \frac{l}{0} =-\infty \;\mbox{ if }\;\; l<0 .
 \end{split}
 $$
-All other cases are called [**indeterminate forms**](https://en.wikipedia.org/wiki/Indeterminate_form), and a case by case analysis is needed to determine if the limit exists or not.
+All other cases are called [**indeterminate forms**](https://en.wikipedia.org/wiki/Indeterminate_form), and require a case by case analysis to determine if the limit on the left exists or not.
+
+
+
+Under the obvious modifications, the same conclusions hold for left and right limits.
+
+ 
+
+<details>
+<summary> **Proof:** </summary>
+
+The proof is similar to the one already done [here](/courses/calculo-uc3m-matematica-aplicada/1_limits_and_continuity.qmd#prp-algebraic-manipulations-limits), and to the proof of @prp-algebraic-manipulations-unbounded-limits. 
+However, it will likely take me some time to upload it.
+</details>
+ 
 
 :::
 
@@ -654,9 +632,9 @@ $$
 $$
 
 <details>
-<summary> **Proof:** </summary>e 
+<summary> **Proof:** </summary>
 
-The proof is similar to that given [here](/courses/calculo-uc3m-matematica-aplicada/1_limits_and_continuity.qmd#thm-squeeze-thm), and it will likely take me some time to upload it.
+The proof is similar to that given [here](/courses/calculo-uc3m-matematica-aplicada/1_limits_and_continuity.qmd#thm-squeeze-thm), but it will likely take me some time to upload it.
 </details>
  
 :::
@@ -670,27 +648,33 @@ We can also adapt the proposition on the [limit of composite functions](/courses
 
 ::: {#prp-limit-at-infinity-composite-functions}
 
-Let $x_{0}\in\mathbb{R}\cup\{+\infty,-\infty\}$ be an accumulation point of $D'\subseteq \mathbb{R}$, and
+Let $\pm\infty$ be an accumulation point of $D'\subseteq \mathbb{R}$, and
 consider the function  $g\colon D' \rightarrow \mathbb{R}$ such that
 $$
- \lim_{x\rightarrow x_{0}}g(x) = \pm\infty
+ \lim_{x\rightarrow \pm\infty}g(x) = l
 $$
-according to @def-unbounded-limits, or @def-limits-at-infty @def-limits-at-minus-infty.
-If $\pm\infty$ is an accumulation point of $D\subseteq \mathbb{R}$, and  the  functions $f\colon D \rightarrow \mathbb{R}$  is such that
+in the sense of @def-limits-at-infty or @def-limits-at-minus-infty.
+If $l$ (which is possibly $\pm\infty$) is an accumulation point of $D\subseteq \mathbb{R}$, and  the  functions $f\colon D \rightarrow \mathbb{R}$  is such that
 $$
 \lim_{y\rightarrow l} f(y) =L ,
 $$ 
-according to @def-limits-at-infty, or @def-limits-at-minus-infty, the equality
+according to [this definition](/courses/calculo-uc3m-matematica-aplicada/1_limits_and_continuity.qmd#def-limits), or @def-unbounded-limits, @def-limits-at-infty, or @def-limits-at-minus-infty, the equality
 $$
 \lim_{x\rightarrow \pm\infty} f\circ g(x)=L 
 $$
-holds if....
+holds if there exists $M_0>0$ such that for all $|x|>M_0$, we have $g(x)\in D$, and:
 
+1. if $l\in\mathbb{R}$ and $L\in\mathbb{R}$, either   $l\in D$ and $f(l)=L$, or there exists $M_1>0$ such that for all $|x|> M_{1}$ it holds $g(x)\in D -\{l\}$;
+2. if $l\in\mathbb R$ and $L=\pm\infty$, there exists $M_1>0$ such that for all $|x|> M_{1}$ it holds $g(x)\in D -\{l\}$;
+3. if $l=\pm\infty$, there exist $K,M_{2}>0$ such that for all $|x|> M_{2}$ it holds $g(x)\in D\cap\{y\colon |y|> K\}$.
+
+
+When $l\in\mathbb{R}$, a similar result holds for left and right limits provided the obvious modifications are implemented.
 
 <details>
 <summary> **Proof:** </summary>
 
-The proof is quite tedious, and it will take me some time to upload it.
+It will take me some time to upload the proof.
 
 </details>
 
@@ -698,38 +682,6 @@ The proof is quite tedious, and it will take me some time to upload it.
 
 :::
 
-
-::: {.callout-caution title="Exercises to keep up in good shape"}
-
-::: {#exr-unbounded-limits-1}
-
-All the functions defined by the formulas given below are implicitely assumed to be defined on their maximal domains. 
-Calculate the limits, or prove they do not exist, explaining which previous results you are using in each case:
-$$
-\begin{split}
-1) \quad &  \lim_{x\rightarrow 2^{+}}\, \frac{\sqrt{x^{2} -4}}{x-2} = +\infty,
-\end{split}
-$$
-
-<details>
-<summary> **Solution:** </summary>
-
-1. When $x=2$, both numerator and denominator vanish, and we get the indeterminate form "$\frac{0}{0}$". 
-Putting the denominator in the square root, and using the equality
-$$
-(x^{2} -4)=(x-2)(x+2),
-$$
-we obtain
-$$ 
-\frac{\sqrt{x^{2}-4}}{x-2}=\sqrt{\frac{x+2}{x-2}}. 
-$$
-Then, the rest of the proof uses the [[1.2 Limits of scalar functions#^c8052c|limit of composite functions]] (with the outer function equal to the square root function) and a reasoning analogous to that of the previous point. 
-
-</details>
-
-:::
-
-:::
 
 
 
@@ -769,3 +721,78 @@ For each type of discontinuity, build a function presenting said discontinuity a
 :::
 
 :::
+
+
+# Exercises
+
+
+::: {.callout-caution title="The square root"}
+
+::: {#exr-limit-sqrt-at-infty}
+
+Consider the function $f\colon (0,+\infty)\rightarrow \mathbb{R}$ given by $f(x)=\sqrt{x}$.
+Prove that 
+$$
+\lim_{x\rightarrow+\infty} \sqrt{x}=+\infty.
+$$
+
+<details>
+<summary> **Solution:** </summary>
+
+You are strongly invited to try to solve it on your own.
+</details>
+
+:::
+
+:::
+
+
+::: {.callout-caution title="Exercises to keep up in good shape"}
+
+::: {#exr-improper-limits}
+
+All the functions defined by the formulas given below are implicitely assumed to be defined on their maximal domains. 
+Calculate the limits, or prove they do not exist, explaining which previous results you are using in each case:
+$$
+\begin{split}
+1) \quad & \lim_{x\rightarrow 1^{\pm}}\, \frac{x^{2}-1}{ x^{2} -2x + 1 }= \pm\infty \\ & \\
+2) \quad & \lim_{x\rightarrow 2^{+}}\, \frac{\sqrt{x^{2} -4}}{x-2} = +\infty
+\end{split}
+$$
+
+<details>
+<summary> **Solution:** </summary>
+
+1. When $x=1$, both numerator and denominator vanish, and we get the indeterminate form "$\frac{0}{0}$". 
+The fact that both polynomials have a common root ($x=1$) suggests we [factorize them](https://en.wikipedia.org/wiki/Polynomial#Factoring). In particular, it holds 
+$$
+x^{2}-1=(x-1)(x+1), \quad \mbox{ and }\qquad x^{2}-2x +1=(x-1)(x-1),
+$$ 
+and thus
+$$ 
+\frac{x^{2}-1}{x^{2}-2x+1}=\frac{x+1}{x-1}. 
+$$
+Now, the numerator tends to 2 when $x\rightarrow 1^{\pm}$, while the denominator tends to $0$. 
+Therefore, using @prp-algebraic-manipulations-unbounded-limits, we obtain that the limit is $+\infty$ when $x\rightarrow 1^{+}$ (because the denominator tends to $0$ from the left), and $-\infty$ when $x\rightarrow 1^{-}$ (because the denominator tends to $0$ from the right). 
+2. When $x=2$, both numerator and denominator vanish, and we get the indeterminate form "$\frac{0}{0}$". 
+Putting the denominator in the square root, and using the equality
+$$
+(x^{2} -4)=(x-2)(x+2),
+$$
+we obtain
+$$ 
+\frac{\sqrt{x^{2}-4}}{x-2}=\sqrt{\frac{x+2}{x-2}}. 
+$$
+Then, the rest of the proof uses the  limit of composite functions (with the outer function equal to the square root function) and a reasoning analogous to that of the previous point. 
+
+</details>
+
+:::
+
+:::
+
+
+
+
+
+
