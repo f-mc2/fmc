@@ -19,7 +19,7 @@ date-modified: last-modified
 The notion of limit considered [here](/courses/calculo-uc3m-matematica-aplicada/1_limits_and_continuity.qmd#def-limits) requires the actual limit to be a finite real number.
 However, there are situations in which the closer we get to a point in the domain, the more the function increases or decreases.
 
-For instance,  let $D=(-\infty,0)\cup(0,+\infty)$, and consider the function $f\colon D\subset \mathbb{R}\rightarrow\mathbb{R}$ given by $f(x)=\frac{1}{x}$. 
+For instance,  let $D=\mathbb{R}-\{0\}$, and consider the function $f\colon D\subset \rightarrow\mathbb{R}$ given by $f(x)=\frac{1}{x}$. 
 We can compute $f(x)$ for values of $x$ which are closer and closer to $0$. 
 For positive values of $x$, we see that the closer $x$ is to $0$, the bigger $f(x)$ is. 
 However, for negative values of $x$, the closer $x$ is to $0$, the more $f(x)$ becomes bigger in absolute value but with negative sign. 
