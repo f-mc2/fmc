@@ -8,7 +8,6 @@ bibliography: ../../../biblio.bib
 #csl: talks/quantum-info.csl
 # Global math macros
 format-links: true
-draft: true
 ---
 
 

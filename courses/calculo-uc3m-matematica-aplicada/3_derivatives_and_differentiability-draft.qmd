@@ -3,7 +3,6 @@ title: "Derivatives and differentiability"
 date: 2025-11-14
 date-style: full
 date-modified: last-modified
-draft: true
 ---
 <!-- 
 ::: {.callout-note title="**Slides for this chapter**"}

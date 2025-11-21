@@ -3,7 +3,6 @@ title: "How Quantum Is the Uncertainty Principle?"
 format: html
 description: "Unifying (Quantum) Cramér–Rao, Schrödinger–Robertson uncertainty, and speed limits via Cauchy–Schwarz on GNS Hilbert"
 comments: false
-draft: true
 ---
 
 I was asked to give a talk at the conference [Geometry and Dynamics](https://agenda.infn.it/event/48741/) in honour of Beppe Marmo's 80th birthday in Naples.
