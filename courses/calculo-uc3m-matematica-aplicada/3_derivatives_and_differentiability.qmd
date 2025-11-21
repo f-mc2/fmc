@@ -3,9 +3,12 @@ title: "Derivatives and differentiability"
 date: 2025-11-14
 date-style: full
 date-modified: last-modified
+draft: true
 ---
+<!-- 
 ::: {.callout-note title="**Slides for this chapter**"}
 
 [Go to the slides](/presentations/calculo-uc3m-matematica-aplicada_slides/slides/3_derivatives_and_differentiability_slides.qmd)
 
 :::
+-->

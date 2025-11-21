@@ -372,6 +372,12 @@ window.Quarto = {
  <span class="menu-text">Improper limits</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../courses/calculo-uc3m-matematica-aplicada/3_derivatives_and_differentiability.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Derivatives and differentiability</span></a>
+  </div>
+</li>
       </ul>
   </li>
       </ul>
@@ -482,7 +488,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">November 13, 2025</p>
+      <p class="date-modified">November 21, 2025</p>
     </div>
   </div>
     
@@ -493,26 +499,20 @@ window.Quarto = {
 </header>
 
 
-<div class="callout callout-style-default callout-note callout-titled" title="**Slides for this chapter**">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span><strong>Slides for this chapter</strong>
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><a href="../../presentations/calculo-uc3m-matematica-aplicada_slides/slides/2_improper_limits_slides.qmd">Go to the slides</a></p>
-</div>
-</div>
+<!-- 
+::: {.callout-note title="**Slides for this chapter**"}
+
+[Go to the slides](/presentations/calculo-uc3m-matematica-aplicada_slides/slides/2_improper_limits_slides.qmd)
+
+:::
+-->
 <section id="sec-introduction" class="level1" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> Introduction</h1>
 </section>
 <section id="sec-unbounded-limits" class="level1" data-number="2">
 <h1 data-number="2"><span class="header-section-number">2</span> Unbounded limits</h1>
 <p>The notion of limit considered <a href="../../courses/calculo-uc3m-matematica-aplicada/1_limits_and_continuity.html#def-limits">here</a> requires the actual limit to be a finite real number. However, there are situations in which the closer we get to a point in the domain, the more the function increases or decreases.</p>
-<p>For instance, let <span class="math inline">\(D=(-\infty,0)\cup(0,+\infty)\)</span>, and consider the function <span class="math inline">\(f\colon D\subset \mathbb{R}\rightarrow\mathbb{R}\)</span> given by <span class="math inline">\(f(x)=\frac{1}{x}\)</span>. We can compute <span class="math inline">\(f(x)\)</span> for values of <span class="math inline">\(x\)</span> which are closer and closer to <span class="math inline">\(0\)</span>. For positive values of <span class="math inline">\(x\)</span>, we see that the closer <span class="math inline">\(x\)</span> is to <span class="math inline">\(0\)</span>, the bigger <span class="math inline">\(f(x)\)</span> is. However, for negative values of <span class="math inline">\(x\)</span>, the closer <span class="math inline">\(x\)</span> is to <span class="math inline">\(0\)</span>, the more <span class="math inline">\(f(x)\)</span> becomes bigger in absolute value but with negative sign.</p>
+<p>For instance, let <span class="math inline">\(D=\mathbb{R}-\{0\}\)</span>, and consider the function <span class="math inline">\(f\colon D\subset \rightarrow\mathbb{R}\)</span> given by <span class="math inline">\(f(x)=\frac{1}{x}\)</span>. We can compute <span class="math inline">\(f(x)\)</span> for values of <span class="math inline">\(x\)</span> which are closer and closer to <span class="math inline">\(0\)</span>. For positive values of <span class="math inline">\(x\)</span>, we see that the closer <span class="math inline">\(x\)</span> is to <span class="math inline">\(0\)</span>, the bigger <span class="math inline">\(f(x)\)</span> is. However, for negative values of <span class="math inline">\(x\)</span>, the closer <span class="math inline">\(x\)</span> is to <span class="math inline">\(0\)</span>, the more <span class="math inline">\(f(x)\)</span> becomes bigger in absolute value but with negative sign.</p>
 <p>Faced with this situation, we conjecture that the limit at <span class="math inline">\(x_{0}^{\pm}\)</span> does not exist in the sense of <a href="../../courses/calculo-uc3m-matematica-aplicada/1_limits_and_continuity.html#def-limits">this definition</a>. However, since we do have the intuitive understanding of how <span class="math inline">\(f\)</span> behaves around <span class="math inline">\(0\)</span> (it increases indefinitely when <span class="math inline">\(x\rightarrow 0^+\)</span>, and decreases indefinitely when <span class="math inline">\(x\rightarrow 0^{-}\)</span>), we would like to be able to make this intuitive understanding rigorous. A suitable way to do it is by introducing the notion of unbounded limits.</p>
 <div class="callout callout-style-default callout-note callout-titled" title="Unbounded limits">
 <div class="callout-header d-flex align-content-center">

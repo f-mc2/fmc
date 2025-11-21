@@ -17,10 +17,7 @@
   },
   {
     "listing": "/presentations/presentations_index.html",
-    "items": [
-      "/presentations/calculo-uc3m-matematica-aplicada_slides/index.html",
-      "/presentations/2026-01-14-beppe-fest/index.html"
-    ]
+    "items": []
   },
   {
     "listing": "/courses/courses_index.html",
@@ -30,9 +27,6 @@
   },
   {
     "listing": "/presentations/calculo-uc3m-matematica-aplicada_slides/index.html",
-    "items": [
-      "/presentations/calculo-uc3m-matematica-aplicada_slides/slides/0_sets_and_functions_slides.html",
-      "/presentations/calculo-uc3m-matematica-aplicada_slides/slides/1_limits_and_continuity_slides.html"
-    ]
+    "items": []
   }
 ]

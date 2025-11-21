@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Unifying (Quantum) Cramér–Rao, Schrödinger–Robertson uncertainty, and speed limits via Cauchy–Schwarz on GNS Hilbert spaces">
+<meta name="dcterms.date" content="2025-11-14">
 
-<title>How Quantum Is the Uncertainty Principle? – Florio M. Ciaglia</title>
+<title>Derivatives and differentiability – Florio M. Ciaglia</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -74,6 +74,7 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css">
+<meta name="quarto:status" content="draft">
 
 
 <link rel="stylesheet" href="../../css/style.css">
@@ -244,7 +245,7 @@ ul.task-list li input[type="checkbox"] {
   </script>
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top"><div id="quarto-draft-alert" class="alert alert-warning"><i class="bi bi-pencil-square"></i>Draft</div>
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
@@ -291,7 +292,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../presentations/presentations_index.html">Presentations</a></li><li class="breadcrumb-item"><a href="../../presentations/2026-01-14 beppe-fest/index.html">How Quantum Is the Uncertainty Principle?</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../courses/courses_index.html">Courses</a></li><li class="breadcrumb-item"><a href="../../courses/calculo-uc3m-matematica-aplicada/index.html">Calculus (20124)</a></li><li class="breadcrumb-item"><a href="../../courses/calculo-uc3m-matematica-aplicada/3_derivatives_and_differentiability.html">Derivatives and differentiability</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -320,11 +321,11 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="../../courses/calculo-uc3m-matematica-aplicada/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Calculus (20124)</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../courses/calculo-uc3m-matematica-aplicada/0_sets_and_functions.html" class="sidebar-item-text sidebar-link">
@@ -335,6 +336,18 @@ ul.task-list li input[type="checkbox"] {
   <div class="sidebar-item-container"> 
   <a href="../../courses/calculo-uc3m-matematica-aplicada/1_limits_and_continuity.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Limits and continuity of real-valued functions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../courses/calculo-uc3m-matematica-aplicada/2_improper_limits.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Improper limits</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../courses/calculo-uc3m-matematica-aplicada/3_derivatives_and_differentiability.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Derivatives and differentiability</span></a>
   </div>
 </li>
       </ul>
@@ -399,12 +412,6 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../presentations/2026-01-14 beppe-fest/index.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">How Quantum Is the Uncertainty Principle?</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../../presentations/calculo-uc3m-matematica-aplicada_slides/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Calculus (20124)</span></a>
   </div>
@@ -423,22 +430,29 @@ ul.task-list li input[type="checkbox"] {
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../presentations/presentations_index.html">Presentations</a></li><li class="breadcrumb-item"><a href="../../presentations/2026-01-14 beppe-fest/index.html">How Quantum Is the Uncertainty Principle?</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../courses/courses_index.html">Courses</a></li><li class="breadcrumb-item"><a href="../../courses/calculo-uc3m-matematica-aplicada/index.html">Calculus (20124)</a></li><li class="breadcrumb-item"><a href="../../courses/calculo-uc3m-matematica-aplicada/3_derivatives_and_differentiability.html">Derivatives and differentiability</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">How Quantum Is the Uncertainty Principle?</h1>
+<h1 class="title">Derivatives and differentiability</h1>
 </div>
 
-<div>
-  <div class="description">
-    Unifying (Quantum) Cramér–Rao, Schrödinger–Robertson uncertainty, and speed limits via Cauchy–Schwarz on GNS Hilbert spaces
-  </div>
-</div>
 
 
 <div class="quarto-title-meta">
 
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">November 14, 2025</p>
+    </div>
+  </div>
   
+    <div>
+    <div class="quarto-title-meta-heading">Modified</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date-modified">November 21, 2025</p>
+    </div>
+  </div>
     
   </div>
   
@@ -447,7 +461,13 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><a href="../../presentations/2026-01-14 beppe-fest/slides/2026-01-14_beppe_fest.html">Here</a> are the slides for the presentation at the conference <a href="https://agenda.infn.it/event/48741/">Geometry and Dynamics</a> in honour of Beppe Marmo’s 80th birthday in Naples.</p>
+<!-- 
+::: {.callout-note title="**Slides for this chapter**"}
+
+[Go to the slides](/presentations/calculo-uc3m-matematica-aplicada_slides/slides/3_derivatives_and_differentiability_slides.qmd)
+
+:::
+-->
 
 
 
@@ -884,6 +904,38 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   });
   </script>
+<input type="hidden" id="giscus-base-theme" value="light">
+<input type="hidden" id="giscus-alt-theme" value="dark_dimmed">
+<script>
+  function loadGiscus() {
+    // Function to get the theme based on body class
+    const getTheme = () => {
+      let baseTheme = document.getElementById('giscus-base-theme').value;
+      let altTheme = document.getElementById('giscus-alt-theme').value;
+      if (authorPrefersDark) {
+          [baseTheme, altTheme] = [altTheme, baseTheme];
+      }
+      return document.body.classList.contains('quarto-dark') ? altTheme : baseTheme;
+    };
+    const script = document.createElement("script");
+    script.src = "https://giscus.app/client.js";
+    script.async = true;
+    script.dataset.repo = "f-mc2/personal-page-giscus";
+    script.dataset.repoId = "R_kgDOQHY3cg";
+    script.dataset.category = "General";
+    script.dataset.categoryId = "DIC_kwDOQHY3cs4Cw8t9";
+    script.dataset.mapping = "pathname";
+    script.dataset.reactionsEnabled = "1";
+    script.dataset.emitMetadata = "0";
+    script.dataset.inputPosition = "bottom";
+    script.dataset.theme = getTheme();
+    script.dataset.lang = "en";
+    script.crossOrigin = "anonymous";
+    // Append the script to the desired div instead of at the end of the body
+    document.getElementById("quarto-content").appendChild(script);
+  }
+  loadGiscus();
+</script>
 </div> <!-- /content -->
 
 
