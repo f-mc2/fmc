@@ -32,6 +32,7 @@ website:
         contents:
           # auto-pick each course landing page
           - auto: courses/*/*.qmd
+          #- auto: "courses/*"
             sort: title
       - section: "Publications"
         href: publications/publications_index.qmd
@@ -45,8 +46,8 @@ website:
       - section: "Presentations"
         href: presentations/presentations_index.qmd
         contents:    
-          - auto: presentations/*/*.qmd
-            sort: title
+          #- auto: presentations/*/*.qmd
+          #  sort: title
 #      - section: "Miscellanea"
 #        href: index_misc.qmd
 #        contents:
