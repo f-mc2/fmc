@@ -12,6 +12,9 @@ format:
     chalkboard: true
     #self-contained: true   # handy for classroom PCs / offline
     center: false          # more readable, left-aligned
+    number-sections: false
+    smaller: true
+    scrollable: true
 
 page-layout: full
 toc: false

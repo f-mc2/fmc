@@ -1,0 +1,108 @@
+---
+title: "Look: it's GNS Hilbert spaces everywhere!"
+subtitle: ""
+author: "Florio M. Ciaglia"
+institute: "Universidad Carlos III de Madrid"
+date: 2026-01-14
+fontsize: 26pt
+bibliography: ../../../biblio.bib
+#csl: talks/quantum-info.csl
+# Global math macros
+format-links: true
+---
+
+# Classical models  {background-color="beige"}
+
+**Parametric statistical model** on the measure space $(X,\mu)$:
+$$
+\mathrm{i}\colon\Theta\subseteq\mathbb{R}^{n}  \hookrightarrow  \mathcal{P}(\Omega)
+$$
+$$
+(\theta^1,\dots,\theta^n)\equiv \theta 
+\mapsto \mathrm{i}(\theta)= \mathrm{p}_{\theta}(A)=\int_{A}p(\theta;\omega)\,\mathrm{d}\mu(\omega)
+$$
+
+
+**Score functions**:
+$$
+s_{j}(\theta;\omega):=\frac{\partial}{\theta^j}\log p(\theta;\omega)\,\in\;\mathcal{L}^{2}(\Omega,\mathrm{p}_{\theta})
+$$
+
+
+**Fisher-Rao metric**:
+
+$$
+g^{\mathrm{FR}}_{jk}(\theta)=\int_{\Omega} s_{j}(\theta;\omega)\,s_{k}(\theta;\omega)\,  p(\theta;\omega)\,d\mu(\omega)
+=
+\mathbb{E}_{p_\theta}[s_{j} \,s_{k}]
+$$
+ 
+ 
+ **Amari-Čencov tensor**:
+
+$$
+T_{jkl}^{\mathrm{AC}}(\theta)=\int_{\Omega} s_{j}(\theta;\omega)\,s_{k}(\theta;\omega)\,s_{l}(\theta;\omega)\,  p(\theta;\omega)\,d\mu(\omega)=
+\mathbb{E}_{p_\theta}[s_{j}\, s_{k}\,s_{l}]
+$$
+
+
+
+# Pure Quantum models  {background-color="beige"}
+
+**Parametric model** of normalized vectors on the Hilbert space of the system:
+$$
+\mathrm{i}\colon \Lambda\subseteq\mathbb{R}^{n} \hookrightarrow \mathcal{H}
+$$
+
+$$
+(\lambda^1,\dots,\lambda^n)= \lambda \mapsto \mathrm{i}(\lambda)=\psi(\lambda) \in \mathcal{H},\quad \langle \psi(\lambda)|\psi(\lambda)\rangle = 1
+$$
+
+**Quantum geometric tensor (QGT)**:
+$$
+Q_{ij}(\lambda) = \langle \partial_i \psi(\lambda), \partial_j \psi(\lambda)\rangle - \langle \partial_i \psi(\lambda), \psi(\lambda)\rangle
+  \langle \psi(\lambda), \partial_j \psi(\lambda)\rangle
+$$
+
+::: {.columns}
+::: {.column}
+- **Symmetric part**:
+$$
+g_{ij}^{\mathrm{FS}}(\lambda)= \Re Q_{ij}(\lambda)
+$$
+is essentially the Fubini-Study metric.
+:::
+::: {.column}
+- **Anti-symmetric part**:
+$$
+\omega_{ij}(\lambda)= \Im Q_{ij}(\lambda)
+$$
+is a symplectic form.
+:::
+::: 
+
+
+
+
+# Faithful Quantum models  {background-color="beige"}
+
+ **Parametric model** of invertible density operators on the Hilbert space of the system:
+$$
+\mathrm{i}\colon \Lambda\subseteq\mathbb{R}^{n} \hookrightarrow \mathcal{B}_{1}(\mathcal{H})
+$$
+
+$$
+(\lambda^1,\dots,\lambda^n)= \lambda \mapsto \mathrm{i}(\lambda)=\rho(\lambda) \in \mathcal{B}_{1}(\mathcal{H}),\quad \rho(\lambda)>0,\quad \mathrm{Tr}_{\mathcal{H}}(\rho(\lambda))=1
+$$
+
+**Symmetric Logarithmic Derivatives (SLDs)**:
+
+$$
+\frac{\partial \rho(\lambda)}{\partial \lambda^{j}}=\{\mathbf{L}_{j}(\lambda),\rho(\lambda)\}=\frac{1}{2}\left(\mathbf{L}_{j}(\lambda)\,\rho(\lambda) + \rho(\lambda)\,\mathbf{L}_{j}(\lambda)\right) 
+$$
+
+**Bures-Helstrom (Quantum Fisher) metric**
+
+$$
+g_{jk}^{\mathrm{BH}}(\lambda)=\mathrm{Tr}_{\mathcal{H}}\left(\rho(\lambda)\left\{\mathbf{L}_{j}(\lambda), \mathbf{L}_{k}(\lambda)\right\}\right)=\Re \mathrm{Tr}_{\mathcal{H}}\left(\rho(\lambda)\,\mathbf{L}_{j}(\lambda)\, \mathbf{L}_{k}(\lambda)\right)
+$$

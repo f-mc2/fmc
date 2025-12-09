@@ -1,0 +1,23 @@
+---
+title: "Look: it's GNS Hilbert spaces everywhere!"
+format: html
+description: ""
+comments: false
+bibliography: ../../biblio.bib
+csl: ../../csl/cv-date-desc-doi-url.csl
+nocite: |
+  @CDG2023, @CDJS2024, @CDG2025, @CDG2026
+---
+
+I was asked to give a talk at the conference [Geometry and Dynamics](https://agenda.infn.it/event/48741/) in honour of Beppe Marmo's 80th birthday in Naples ([go to the slides](/presentations/2026-01-14-GNS-everywhere/slides/2026-01-14_gns_everywhere.qmd)).
+
+
+Based on:
+
+::: {#refs}
+:::
+
+
+
+
+ 

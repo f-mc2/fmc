@@ -1,6 +1,8 @@
 project:
   type: website
   output-dir: docs   # GitHub Pages looks here
+  resources:
+    - auxiliaries/**
   render:
     - "**/*.qmd"
     - "!**/_drafts/**"
@@ -46,8 +48,8 @@ website:
       - section: "Presentations"
         href: presentations/presentations_index.qmd
         contents:    
-          #- auto: presentations/*/*.qmd
-          #  sort: title
+          - auto: presentations/*/*.qmd
+            sort: title
 #      - section: "Miscellanea"
 #        href: index_misc.qmd
 #        contents:

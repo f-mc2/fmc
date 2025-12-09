@@ -17,7 +17,9 @@
   },
   {
     "listing": "/presentations/presentations_index.html",
-    "items": []
+    "items": [
+      "/presentations/2026-01-14-GNS-everywhere/index.html"
+    ]
   },
   {
     "listing": "/courses/courses_index.html",
