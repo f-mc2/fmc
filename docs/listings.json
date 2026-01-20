@@ -7,7 +7,10 @@
   },
   {
     "listing": "/index_misc.html",
-    "items": []
+    "items": [
+      "/misc/Fundamentals of statistics.html",
+      "/misc/2025-05-27 timeline on fields of covariances.html"
+    ]
   },
   {
     "listing": "/slides/slides_index.html",
