@@ -9,9 +9,7 @@
 <link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.8.24">
 
-  <meta name="author" content="Florio M. Ciaglia">
-  <meta name="dcterms.date" content="2026-01-14">
-  <title>Florio M. Ciaglia – Look: it’s GNS Hilbert spaces everywhere!</title>
+  <title>Florio M. Ciaglia – gns_everywhere</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -48,7 +46,6 @@
     }
     .reveal .slide:not(.center) {
       height: 100%;
-      overflow-y: auto;
     }
     .reveal .slide.scrollable {
       overflow-y: auto;
@@ -130,32 +127,62 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Look: it’s GNS Hilbert spaces everywhere!</h1>
 
-<div class="quarto-title-authors">
-<div class="quarto-title-author">
-<div class="quarto-title-author-name">
-Florio M. Ciaglia 
-</div>
-        <p class="quarto-title-affiliation">
-            Universidad Carlos III de Madrid
-          </p>
-    </div>
-</div>
+<section id="look-its-gns-hilbert-spaces-everywhere" class="slide level2" data-background-color="beige">
+<h2><span class="math inline">\(\;\)</span> Look: it’s GNS Hilbert spaces everywhere!</h2>
+<div style="height: 0.8em;">
 
-  <p class="date">2026-01-14</p>
+</div>
+<h3 id="qquad-information-geometry-via-gns-construction"><span class="math inline">\(\qquad\)</span> Information geometry <em>via</em> GNS construction</h3>
+<div style="height: 1.2em;">
+
+</div>
+<div style="text-align:center;">
+<p>Florio M. Ciaglia</p>
+</div>
+<div style="height: 0.3em;">
+
+</div>
+<div style="text-align:center;">
+<p>Universidad Carlos III de Madrid</p>
+</div>
+<div style="height: 1em;">
+
+</div>
+<div style="text-align:center;">
+<p><strong>GEOMETRY AND DYNAMICS</strong> · Naples · 14-16 January 2026</p>
+</div>
+<div style="height: 1em;">
+
+</div>
+<div style="text-align:center;">
+<p>Joint work in collaboration with:</p>
+</div>
+<div style="text-align:center;">
+<div class="columns">
+<div class="column" style="width:33%;">
+<p>M. Castrillón (UCM)</p>
+</div><div class="column" style="width:33%;">
+<p>L. E. González-Bravo (UCM)</p>
+</div><div class="column" style="width:33%;">
+<p>A. Ibort (UC3M)</p>
+</div></div>
+</div>
 </section>
-<section id="classical-models" class="title-slide slide level1 center" data-background-color="beige">
-<h1>Classical models</h1>
-<p><strong>Parametric statistical model</strong> on the measure space <span class="math inline">\((X,\mu)\)</span>: <span class="math display">\[
+<section id="very-informal-take-home-message" class="slide level2" data-background-color="beige">
+<h2>Very informal take-home message</h2>
+
+<img data-src="../../../auxiliaries/2025-12-26_woody_buzz_GNS.png" class="r-stretch"></section>
+<section id="classical-models" class="slide level2" data-background-color="beige">
+<h2>Classical models</h2>
+<p><strong>Parametric statistical model</strong> on the measure space <span class="math inline">\((\Omega,\mu)\)</span>: <span class="math display">\[
 \mathrm{i}\colon\Theta\subseteq\mathbb{R}^{n}  \hookrightarrow  \mathcal{P}(\Omega)
 \]</span> <span class="math display">\[
 (\theta^1,\dots,\theta^n)\equiv \theta
 \mapsto \mathrm{i}(\theta)= \mathrm{p}_{\theta}(A)=\int_{A}p(\theta;\omega)\,\mathrm{d}\mu(\omega)
 \]</span></p>
 <p><strong>Score functions</strong>: <span class="math display">\[
-s_{j}(\theta;\omega):=\frac{\partial}{\theta^j}\log p(\theta;\omega)\,\in\;\mathcal{L}^{2}(\Omega,\mathrm{p}_{\theta})
+s_{j}(\theta;\omega):=\partial_{\theta^j}\log p(\theta;\omega)\,\in\;\mathcal{L}^{2}(\Omega,\mathrm{p}_{\theta})
 \]</span></p>
 <p><strong>Fisher-Rao metric</strong>:</p>
 <p><span class="math display">\[
@@ -163,15 +190,17 @@ g^{\mathrm{FR}}_{jk}(\theta)=\int_{\Omega} s_{j}(\theta;\omega)\,s_{k}(\theta;\o
 =
 \mathbb{E}_{p_\theta}[s_{j} \,s_{k}]
 \]</span></p>
-<p><strong>Amari-Čencov tensor</strong>:</p>
-<p><span class="math display">\[
+<p><!--
+ **Amari-Čencov tensor**:
+
+$$
 T_{jkl}^{\mathrm{AC}}(\theta)=\int_{\Omega} s_{j}(\theta;\omega)\,s_{k}(\theta;\omega)\,s_{l}(\theta;\omega)\,  p(\theta;\omega)\,d\mu(\omega)=
 \mathbb{E}_{p_\theta}[s_{j}\, s_{k}\,s_{l}]
-\]</span></p>
+$$
+--></p>
 </section>
-
-<section id="pure-quantum-models" class="title-slide slide level1 center" data-background-color="beige">
-<h1>Pure Quantum models</h1>
+<section id="pure-quantum-models" class="slide level2" data-background-color="beige">
+<h2>Pure Quantum models</h2>
 <p><strong>Parametric model</strong> of normalized vectors on the Hilbert space of the system: <span class="math display">\[
 \mathrm{i}\colon \Lambda\subseteq\mathbb{R}^{n} \hookrightarrow \mathcal{H}
 \]</span></p>
@@ -184,22 +213,17 @@ Q_{ij}(\lambda) = \langle \partial_i \psi(\lambda), \partial_j \psi(\lambda)\ran
 \]</span></p>
 <div class="columns">
 <div class="column">
-<ul>
-<li><strong>Symmetric part</strong>: <span class="math display">\[
+<p><strong>Fubini-Study metric</strong> (<strong>symmetric part</strong>): <span class="math display">\[
 g_{ij}^{\mathrm{FS}}(\lambda)= \Re Q_{ij}(\lambda)
-\]</span> is essentially the Fubini-Study metric.</li>
-</ul>
+\]</span></p>
 </div><div class="column">
-<ul>
-<li><strong>Anti-symmetric part</strong>: <span class="math display">\[
-\omega_{ij}(\lambda)= \Im Q_{ij}(\lambda)
-\]</span> is a symplectic form.</li>
-</ul>
+<p><strong>Berry curvature</strong> (<strong>anti-symmetric part</strong>): <span class="math display">\[
+\varpi_{ij}(\lambda)= \Im Q_{ij}(\lambda)
+\]</span></p>
 </div></div>
 </section>
-
-<section id="faithful-quantum-models" class="title-slide slide level1 center" data-background-color="beige">
-<h1>Faithful Quantum models</h1>
+<section id="faithful-quantum-models" class="slide level2" data-background-color="beige">
+<h2>Faithful Quantum models</h2>
 <p><strong>Parametric model</strong> of invertible density operators on the Hilbert space of the system: <span class="math display">\[
 \mathrm{i}\colon \Lambda\subseteq\mathbb{R}^{n} \hookrightarrow \mathcal{B}_{1}(\mathcal{H})
 \]</span></p>
@@ -208,15 +232,464 @@ g_{ij}^{\mathrm{FS}}(\lambda)= \Re Q_{ij}(\lambda)
 \]</span></p>
 <p><strong>Symmetric Logarithmic Derivatives (SLDs)</strong>:</p>
 <p><span class="math display">\[
-\frac{\partial \rho(\lambda)}{\partial \lambda^{j}}=\{\mathbf{L}_{j}(\lambda),\rho(\lambda)\}=\frac{1}{2}\left(\mathbf{L}_{j}(\lambda)\,\rho(\lambda) + \rho(\lambda)\,\mathbf{L}_{j}(\lambda)\right)
+\frac{\partial \rho(\lambda)}{\partial \lambda^{j}}=\{\rho(\lambda),\mathbf{L}_{j}(\lambda)\}=\frac{1}{2}\left(\rho(\lambda)\,\mathbf{L}_{j}(\lambda) + \mathbf{L}_{j}(\lambda)\,\rho(\lambda)\right)
 \]</span></p>
 <p><strong>Bures-Helstrom (Quantum Fisher) metric</strong></p>
 <p><span class="math display">\[
 g_{jk}^{\mathrm{BH}}(\lambda)=\mathrm{Tr}_{\mathcal{H}}\left(\rho(\lambda)\left\{\mathbf{L}_{j}(\lambda), \mathbf{L}_{k}(\lambda)\right\}\right)=\Re \mathrm{Tr}_{\mathcal{H}}\left(\rho(\lambda)\,\mathbf{L}_{j}(\lambda)\, \mathbf{L}_{k}(\lambda)\right)
 \]</span></p>
+</section>
+<section id="complex-numbers-on-steroids-c-algebras" class="slide level2" data-background-color="beige">
+<h2>Complex numbers on steroids: <span class="math inline">\(C^*\)</span>-algebras</h2>
+<div class="columns">
+<div class="column">
+<p>The <strong>Classical</strong>:</p>
+<ul>
+<li><span class="math inline">\(\mathcal{L}^{\infty}(\Omega,\mu)\)</span> is an Abelian <span class="math inline">\(C^*\)</span>-algebra</li>
+<li><span class="math inline">\(\mathcal{L}^{1}(\Omega,\mu)\)</span> is its predual</li>
+</ul>
+</div><div class="column">
+<p>The <strong>Quantum</strong>:</p>
+<ul>
+<li><span class="math inline">\(\mathcal{B}(\mathcal{H})\)</span> is a non-Abelian <span class="math inline">\(C^*\)</span>-algebra</li>
+<li><span class="math inline">\(\mathcal{B}_{1}(\mathcal{H})\)</span> is its predual</li>
+</ul>
+</div></div>
+<p>A complex <strong>Banach algebra</strong> <span class="math inline">\(\mathscr{A}=(A,+,\cdot,\Vert \cdot \Vert)\)</span> with:</p>
+<ul>
+<li><strong>Involution</strong> (anti-linear, continuous): <span class="math inline">\(\mathbf{x}\mapsto\mathbf{x}^{\dagger}\mid (\mathbf{x}^{\dagger})^{\dagger}=\mathbf{x}\)</span></li>
+<li><strong><span class="math inline">\(C^{*}\)</span>-identity</strong>: <span class="math inline">\(\Vert\mathbf{x}^{\dagger}\,\mathbf{x}\Vert = \Vert\mathbf{x}\Vert^{2}\;\Longleftrightarrow\;\Vert\mathbf{x}\,\mathbf{x}^{\dagger}\Vert = \Vert\mathbf{x}\Vert\; \Vert\mathbf{x}^{\dagger}\Vert\)</span></li>
+</ul>
+<p>Define:</p>
+<div class="columns">
+<div class="column">
+<ul>
+<li><strong>self-adjoint</strong> part <span class="math inline">\(\mathscr{A}_{sa}=\left\{\mathbf{x}^{\dagger}=\mathbf{x}\right\}\)</span></li>
+<li><strong>antiself-adjoint</strong> part <span class="math inline">\(i\mathscr{A}_{sa}=\left\{\mathbf{x}^{\dagger}=-\mathbf{x}\right\}\)</span></li>
+</ul>
+</div><div class="column">
+<ul>
+<li><strong>unitary</strong> part <span class="math inline">\(\mathcal{U}(\mathscr{A}):=\left\{\mathbf{u}\mid \mathbf{uu}^{\dagger}=\mathbf{u}^{\dagger}\mathbf{u}=\mathbb{I}\right\}\)</span></li>
+<li><strong>non-negative</strong> part <span class="math inline">\(\mathscr{A}_{+}:=\left\{\mathbf{p}\mid\mathbf{p}=\mathbf{xx}^{\dagger}\right\}\)</span></li>
+</ul>
+</div></div>
+<div style="height: 1em;">
+
+</div>
+<p>Life’s easier when <span class="math inline">\(\mathscr{A}\)</span> is a <strong><span class="math inline">\(W^{*}\)</span>-algebra</strong> (<em>i.e.</em>, it is the Banach dual space of some <span class="math inline">\(\mathscr{A}_{*}\)</span>)</p>
+</section>
+<section id="classical-and-quantum-states-revisited" class="slide level2" data-background-color="beige">
+<h2>Classical and quantum states revisited</h2>
+<p>The <strong>space of states</strong> <span class="math inline">\(\mathcal{S}(\mathscr{A})\)</span> of <span class="math inline">\(\mathscr{A}\)</span> is the convex set<sup>1</sup>: <span class="math display">\[
+\mathcal{S}(\mathscr{A}):=\left\{\rho\in\mathscr{A}_{sa}^{*}\mid \rho(\mathbf{aa}^{\dagger})\geq 0, \;\Vert\rho\Vert_{\mathscr{A}^{*}} =1\,=\rho(\mathbb{I})\right\}
+\]</span></p>
+<div style="height: 1em;">
+
+</div>
+<p>We focus on the space of <strong>normal states</strong> <span class="math inline">\(\mathcal{S}_{n}(\mathscr{A})\)</span>, whose elements “live” in <span class="math inline">\((\mathscr{A}_{sa})_{*}\subseteq \mathscr{A}_{sa}^{*}\)</span>.</p>
+<div style="height: 2em;">
+
+</div>
+<div class="columns">
+<div class="column">
+<p>The <strong>Classical</strong> space of normal states: <span class="math display">\[
+\mathcal{P}_{\mu}(\Omega)=\left\{p\mu\mid p\in\mathcal{L}^{1}_{+}(\Omega,\mu) ,\;p\mu(\Omega)=1\right\}
+\]</span> <span class="math display">\[
+p\mu(f)=\int_{\Omega}f(\omega)\,p(\omega)\,\mathrm{d}\mu(\omega)
+\]</span></p>
+</div><div class="column">
+<p>The <strong>Quantum</strong> space of normal states: <span class="math display">\[
+\mathcal{S}_{n}(\mathcal{H})=\left\{\rho\in\mathcal{B}_{1}(\mathcal{H})\mid \rho\geq 0, \; \rho(\mathbb{I})=1\right\}
+\]</span> <span class="math display">\[
+\rho(\mathbf{a})=\mathrm{Tr}_{\mathcal{H}}\left(\rho\,\mathbf{a}\right)
+\]</span></p>
+</div></div>
+<aside><ol class="aside-footnotes"><li id="fn1"><p>Every <span class="math inline">\(W^{*}\)</span>-algebra has an identity element <span class="math inline">\(\mathbb{I}\)</span>.</p></li></ol></aside></section>
+<section id="what-isstackrelmathbfnotcurlyvee-andbut-what-should-neveralways-be" class="slide level2" data-background-color="beige">
+<h2>What Is<span class="math inline">\(\stackrel{\mathbf{Not}}{\curlyvee}\)</span> <ruby><s>and</s><rt>but</rt></ruby> What Should <ruby><s>Never</s><rt>Always</rt></ruby> Be<sup>1</sup></h2>
+<p><strong>Classical</strong>/<strong>Quantum</strong> parametric models in one stroke: <span class="math display">\[
+\mathrm{i}\colon M\hookrightarrow \mathcal{S}_{n}(\mathscr{A})
+\]</span></p>
+<div style="height: 2em;">
+
+</div>
+<p>Imagine we find a Riemannian metric <span class="math inline">\(\mathrm{G}\)</span> on <span class="math inline">\(\mathcal{S}_{n}(\mathscr{A})\)</span> such that</p>
+<p><span class="math display">\[
+\mathrm{i}^{*}\mathrm{G}=\left\{\begin{matrix} g^{\mathrm{FR}} &amp; \mbox{ when } \mathscr{A}=\mathcal{L}^{\infty}(\Omega,\mu) &amp; \\ &amp; &amp; \\ g^{\mathrm{FS}} &amp; \mbox{ when } \mathscr{A}=\mathcal{B}(\mathcal{H}), &amp; \mathrm{i}(m)\equiv\rho_{m} \mbox{ is pure} \\ &amp; &amp; \\ g^{\mathrm{BH}} &amp; \mbox{ when } \mathscr{A}=\mathcal{B}(\mathcal{H}), &amp; \mathrm{i}(m)\equiv\rho_{m} \mbox{ is faithful} \end{matrix}\right.
+\]</span></p>
+<p>We would be very happy…</p>
+<aside><ol class="aside-footnotes"><li id="fn2"><p>A beer to the first one who <a href="https://www.youtube.com/watch?v=WnMiXsRtsfc">gets it</a>.</p></li></ol></aside></section>
+<section id="obviously-mathcals_nmathscra-is-not-a-manifold" class="slide level2" data-background-color="beige">
+<h2>Obviously, <span class="math inline">\(\mathcal{S}_{n}(\mathscr{A})\)</span> is <strong>not</strong> a manifold!</h2>
+<p><img data-src="../../../auxiliaries/knight-arrow.jpg" class="absolute" style="right: 300px; height: 600px; "></p>
+</section>
+<section id="how-to-pullback-metrics" class="slide level2" data-background-color="beige">
+<h2>How to pullback metrics</h2>
+<p>We need an immersion:</p>
+<p><span class="math display">\[
+\mathrm{i}\colon M \hookrightarrow N
+\]</span></p>
+<p>We need tangent bundles:</p>
+<p><span class="math display">\[
+TM=\sqcup_{m\in M} T_{m}M, \qquad
+TN=\sqcup_{n\in N} T_{n}N
+\]</span></p>
+<p>We need immersions of tangent spaces:</p>
+<p><span class="math display">\[
+T_{m}M\ni v_{m}\,\mapsto\,T_{m}\mathrm{i}(v_{m})\in T_{\mathrm{i}(m)}N
+\]</span></p>
+<p>We need real Hilbert spaces at each <span class="math inline">\(n\in N\)</span>:</p>
+<p><span class="math display">\[
+\mathrm{G}_{n}(v_{n},v_{n})\geq 0
+\]</span></p>
+<p>We then define: <span class="math display">\[
+(\mathrm{i}^{*}\mathrm{G})_{m}(v_{m},v_{m}):=\mathrm{G}_{\mathrm{i}(m)}\left(T_{m}\mathrm{i}(v_{m}),T_{m}\mathrm{i}(v_{m})\right)
+\]</span></p>
+</section>
+<section id="from-the-mathrmgns-space-to" class="slide level2" data-background-color="beige">
+<h2>From the <span class="math inline">\(\mathrm{GNS}\)</span> space to…</h2>
+<p>Define the <em>Gel’fand ideal</em> <span class="math display">\[
+\mathscr{N}_{\rho}:=\left\{\mathbf{a}\in\mathscr{A}\mid\rho(\mathbf{a}^{\dagger}\mathbf{a})=0\right\}.
+\]</span></p>
+<p>Define the <span class="math inline">\(\mathrm{GNS}\)</span> Hilbert space as <span class="math display">\[
+\mathcal{H}_{\rho}^{\mathbb{C}}:=\overline{\mathscr{A}/\mathscr{N}_{\rho}}^{\langle\cdot|\cdot\rangle_{\rho}},\qquad \psi_{\mathbf{a}}^{\rho}\equiv[\mathbf{a}]_{\rho},\qquad \langle \psi_{\mathbf{a}}^{\rho}\mid \psi_{\mathbf{b}}^{\rho}\rangle_{\rho}:=\rho(\mathbf{a}^{\dagger}\mathbf{b})
+\]</span></p>
+<div style="height: 1em;">
+
+</div>
+<p>The <strong>classical</strong> case: <span class="math display">\[
+p\mu(f)=\int_{\Omega}f(\omega)\,p(\omega)\,\mathrm{d}\mu(\omega) \qquad \rightsquigarrow\qquad
+\mathcal{H}_{p\mu}^{\mathbb{C}}\cong\mathcal{L}^{2}(\Omega,p\mu)
+\]</span></p>
+<p>The <strong>quantum case</strong>: <span class="math display">\[
+\rho(\mathbf{a})=\mathrm{Tr}_{\mathcal{H}}(\rho\,\mathbf{a}) \qquad \rightsquigarrow\qquad \mathcal{H}_{\rho}^{\mathbb{C}}\cong \mathrm{HS}(\mathrm{ran}(\rho),\mathcal{H})
+\]</span></p>
+</section>
+<section id="cotangent-bundle-of-mathcals_nmathscra" class="slide level2" data-background-color="beige">
+<h2>… “co/tangent bundle” of <span class="math inline">\(\mathcal{S}_{n}(\mathscr{A})\)</span></h2>
+<p>Consider the realification <span class="math inline">\(\mathcal{H}_{\rho}\)</span> of <span class="math inline">\(\mathcal{H}_{\rho}^{\mathbb{C}}\)</span> with</p>
+<p><span class="math display">\[
+\qquad (\psi^{\rho}\mid\eta^{\rho})_{\rho}:=\frac{1}{2}\left(\langle\psi^{\rho}\mid\eta^{\rho}\rangle_{\rho} + \langle\eta^{\rho}\mid\psi^{\rho}\rangle_{\rho}\right)=\Re \langle\psi^{\rho}\mid\eta^{\rho}\rangle_{\rho} .
+\]</span></p>
+<p>Define the “<strong>co/tangent <span class="math inline">\(\mathrm{GNS}\)</span> bundles</strong>”<sup>1</sup>: <span class="math display">\[
+\mathcal{H}(\mathscr{A})=\sqcup_{\rho\in\mathcal{S}_{n}(\mathscr{A})}\mathcal{H}_{\rho}\,\stackrel{(\psi^{\rho}\mapsto \rho)}{\longrightarrow} \mathcal{S}_{n}(\mathscr{A})
+\]</span> <span class="math display">\[
+\mathcal{H}^{*}(\mathscr{A})=\sqcup_{\rho\in\mathcal{S}_{n}(\mathscr{A})}\mathcal{H}_{\rho}^{*}\,\stackrel{(\eta^{\rho}\mapsto \rho)}{\longrightarrow} \mathcal{S}_{n}(\mathscr{A})
+\]</span> with <strong>tautological sections</strong>: <span class="math display">\[
+\begin{split}
+\rho&amp;\mapsto s_{\mathbf{a}}(\rho)=\psi_{\mathbf{a}}^{\rho}\\
+&amp; \\
+\rho&amp;\mapsto s^{*}_{\mathbf{a}}(\rho)=\eta^{\mathbf{a}}_{\rho}\mid \eta^{\mathbf{a}}_{\rho}(\psi_{\mathbf{b}}^{\rho})=\left( \psi_{\mathbf{a}}^{\rho}\mid \psi_{\mathbf{b}}^{\rho}\right)_{\rho}
+\end{split}
+\]</span></p>
+<aside><ol class="aside-footnotes"><li id="fn3"><p>Fell-Doran Vol.1.3.18 assure us that these are (non-locally-trivial) Hilbert bundles.</p></li></ol></aside></section>
+<section id="transformations-properties" class="slide level2" data-background-color="beige">
+<h2>Transformations properties</h2>
+<p>The nCPU map <span class="math display">\[
+\Phi\colon \mathscr{B}\rightarrow \mathscr{A}
+\]</span> such that <span class="math display">\[
+\mathcal{S}_{n}(\mathscr{A})\ni \rho \mapsto \sigma=\Phi^{*}\rho\in \mathcal{S}_{n}(\mathscr{B})
+\]</span> leads to <span class="math display">\[
+\tilde{\Phi}\colon \mathcal{H}_{\sigma}\rightarrow\mathcal{H}_{\rho},\qquad
+\psi_{\mathbf{b}}^{\sigma}\,\mapsto \, \tilde{\Phi}(\psi_{\mathbf{b}}^{\sigma}):=\psi_{\Phi(\mathbf{b})}^{\rho}
+\]</span> which means <span class="math inline">\(\mathcal{H}(\mathscr{A})\)</span> has contravariant/cotangent flavour, and to <span class="math display">\[
+\tilde{\Phi}^{\dagger}\colon \mathcal{H}_{\rho}^{*}\rightarrow\mathcal{H}_{\sigma}^{*},\qquad
+\eta^{\mathbf{a}}_{\rho}\,\mapsto \, \tilde{\Phi}^{\dagger}(\eta^{\mathbf{a}}_{\rho})\mid \tilde{\Phi}^{\dagger}(\eta^{\mathbf{a}}_{\rho})(\psi_{\mathbf{b}}^{\sigma})= \eta^{\mathbf{a}}_{\rho}(\psi_{\Phi(\mathbf{b})}^{\rho})
+\]</span> which means <span class="math inline">\(\mathcal{H}^{*}(\mathscr{A})\)</span> has covariant/tangent flavour.</p>
+<!---
+## ... and to the "Tangent bundle" of $\mathcal{S}_{n}(\mathscr{A})$ {background-color="beige"}
+
+We dualize
+$$
+\mathcal{H}^{*}(\mathscr{A})=\sqcup_{\rho\in\mathcal{S}_{n}(\mathscr{A})}\mathcal{H}_{\rho}^{*}\,\stackrel{(\psi_{\rho}\mapsto \rho)}{\longrightarrow} \mathcal{S}_{n}(\mathscr{A})
+$$
+to get covariant/tangent flavour.
+
+<div style="height: 1em;"></div>
+
+
+There is $\mathsf{I}_{\rho}\colon \mathscr{A}_{sa}\rightarrow \mathcal{H}_{\rho}$  given by 
+$$
+\mathsf{I}_{\rho}(\mathbf{a}):=\psi_{\mathbf{a}}^{\rho}
+$$
+The dual space $\mathcal{H}_{ \rho}^{*}$ splits as^[Note that $\mathscr{V}_{\rho}$ is in one-to-one correspondence with $\mathcal{V}_{\rho}$, but it need not be closed in $\mathscr{A}_{sa}^{*}$.]
+$$
+\mathcal{H}_{\rho}^{*}=\mathrm{Ker}(\mathsf{I}_{\rho}^{*})\oplus \mathrm{Ker}(\mathsf{I}_{\rho}^{*})^{\perp}\equiv \mathcal{K}_{\rho} \oplus \mathcal{V}_{\rho},
+$$
+$$
+\mathscr{V}_{\rho}:=\mathsf{I}_{\rho}^{*}(\mathcal{V}_{\rho}).
+$$
+
+
+Using Riesz's theorem,  $\mathcal{V}_{\rho}$ is isomorphic to  $\mathsf{I}_{\rho}(\mathscr{A}_{sa})\subseteq\mathcal{H}_{\rho}$.
+-->
+</section>
+<section id="regular-parametric-models" class="slide level2" data-background-color="beige">
+<h2>Regular parametric models</h2>
+<p>A <strong><em>regular parametric model</em></strong> is a triple <span class="math inline">\((\mathscr{A},\mathrm{i},M)\)</span> where:</p>
+<ul>
+<li><span class="math inline">\(\mathscr{A}\)</span> is a <span class="math inline">\(W^*\)</span>-algebra</li>
+</ul>
+<div style="height: 0.8em;">
+
+</div>
+<ul>
+<li><span class="math inline">\(M\)</span> is a smooth manifold</li>
+</ul>
+<div style="height: 0.8em;">
+
+</div>
+<ul>
+<li><span class="math inline">\(\mathrm{i}\colon M\hookrightarrow \mathcal{S}(\mathscr{A})\)</span> is (injective) <strong><em>continuous</em></strong> in the weak*-topology</li>
+</ul>
+<div style="height: 0.8em;">
+
+</div>
+<ul>
+<li>every <span class="math inline">\(v_{m}\in T_{m}M\)</span> is uniquely represented<sup>1</sup> in <span class="math inline">\(\mathcal{H}_{\mathrm{i}(m)}^{*}\)</span>:</li>
+</ul>
+<p><span class="math display">\[
+\frac{\mathrm{d}}{\mathrm{d}t}\left(\mathrm{i}(\gamma_{m}^{v_{m}}(t))(\mathbf{a})\right)_{t=0}=\eta^{v_{m}}_{\mathrm{i}(m)}(\psi_{\mathbf{a}}^{\mathrm{i}(m)})= \left(\tilde\eta_{v_{m}}^{\mathrm{i}(m)}|\psi_{\mathbf{a}}^{\mathrm{i}(m)}\right)_{\mathrm{i}(m)}
+\]</span> where <span class="math inline">\(\gamma_{m}^{v_{m}}(t)\)</span> is a defining curve for <span class="math inline">\(v_{m}\)</span>, and <span class="math inline">\(\mathbf{a}\in\mathscr{A}_{sa}\)</span></p>
+<aside><ol class="aside-footnotes"><li id="fn4"><p>Uniqueness is obtained imposing <span class="math inline">\(\eta^{v_{m}}_{\mathrm{i}(m)}\)</span> vanishes on the subspace generated by anti-self-adjoint elements.</p></li></ol></aside></section>
+<section id="scores-revisited" class="slide level2" data-background-color="beige">
+<h2>Scores (revisited)</h2>
+<p>Assume <span class="math inline">\((\mathcal{L}^{\infty}(\Omega,\mu),\mathrm{i},\Theta\subseteq \mathbb{R}^{n})\)</span> is a <strong><em>regular parametric model</em></strong> (<span class="math inline">\(p(\theta;\omega)&gt;0\)</span> <span class="math inline">\(\mu\)</span>-a.e., and <span class="math inline">\(f\in\mathscr{A}_{sa}\)</span>): <span class="math display">\[
+\theta\,\mapsto \mathrm{i}(\theta)(f)=\int_{\Omega}f(\omega)\,p(\theta;\omega)\,\mathrm{d}\mu(\omega)
+\]</span></p>
+<p>For <span class="math inline">\(v_{\theta}^{j}\equiv \left.\partial_{\theta^{j}}\right|_{\theta}\)</span> we have <span class="math display">\[
+\begin{split}
+\frac{\mathrm{d}}{\mathrm{d}t}\left(\mathrm{i}(\gamma_{\theta}^{v_{\theta}^{j}}(t))(f)\right)_{t=0}&amp;= \int_{\Omega}f(\omega)\,\partial_{\theta^{j}}p(\theta;\omega)\,\mathrm{d}\mu(\omega) \\
+\parallel \quad\; \qquad&amp;=  \int_{\Omega}f(\omega)\,\left(\partial_{\theta^{j}}\log p(\theta;\omega)\right)\,p(\theta;\omega)\,\mathrm{d}\mu(\omega) \\
+\left(\tilde\eta_{v_{\theta}^{j}}^{\mathrm{i}(\theta)}|\psi_{f}^{\mathrm{i}(\theta)}\right)_{\mathrm{i}(\theta)}  &amp;=\int_{\Omega} f(\omega)\,\tilde\eta_{v_{\theta}^{j}}^{\mathrm{i}(\theta)}(\omega)\,p(\theta;\omega)\,\mathrm{d}\mu(\omega)
+\end{split}
+\]</span> which means <span class="math display">\[
+v_{\theta}^{j}\equiv \left.\partial_{\theta^{j}}\right|_{\theta}\;\rightsquigarrow\;\tilde\eta_{v_{\theta}^{j}}^{\mathrm{i}(\theta)}(\omega)\equiv s_{j}(\theta;\omega)\in\mathcal{L}^{2}(\Omega,p_{\theta}\mu)
+\]</span></p>
+</section>
+<section id="slds-revisited" class="slide level2" data-background-color="beige">
+<h2>SLDs (revisited)</h2>
+<p>Assume <span class="math inline">\((\mathcal{B}(\mathcal{H}),\mathrm{i},\Lambda\subseteq \mathbb{R}^{n})\)</span> is a <strong><em>regular parametric model</em></strong> with <span class="math inline">\(\mathrm{dim}(\mathcal{H})&lt;\infty\)</span>, <span class="math inline">\(\rho(\lambda)&gt;0\)</span>, and <span class="math inline">\(\mathbf{a}=\mathbf{a}^{\dagger}\)</span>: <span class="math display">\[
+\lambda\;\mapsto\;\mathrm{i}(\lambda)(\mathbf{a})=\mathrm{Tr}_{\mathcal{H}}\left(\rho(\lambda)\,\mathbf{a}\right)
+\]</span></p>
+<p>For <span class="math inline">\(v_{\lambda}^{j}\equiv\left.\partial_{\lambda^{j}}\right|_{\lambda}\)</span> we have <span class="math display">\[
+\begin{split}
+\left(\tilde\eta_{v_{\lambda}^{j}}^{\mathrm{i}(\lambda)}|\psi_{\mathbf{a}}^{\mathrm{i}(\lambda)}\right)_{\mathrm{i}(\lambda)}  &amp;= \frac{1}{2}\mathrm{Tr}_{\mathcal{H}}\left(\rho(\lambda)\,\tilde\eta_{v_{\lambda}^{j}}^{\mathrm{i}(\lambda)}\,\mathbf{a} + \rho(\lambda)\,\mathbf{a}\,\tilde\eta_{v_{\lambda}^{j}}^{\mathrm{i}(\lambda)}\right)\\
+\parallel \quad \; \qquad &amp;=\mathrm{Tr}_{\mathcal{H}}\left(\{\rho(\lambda),\tilde\eta_{v_{\lambda}^{j}}^{\mathrm{i}(\lambda)}\}\,\mathbf{a}\right) \\
+\frac{\mathrm{d}}{\mathrm{d}t}\left(\mathrm{i}(\gamma_{\lambda}^{v_{\lambda}^{j}}(t))(\mathbf{a})\right)_{t=0}&amp;=\mathrm{Tr}_{\mathcal{H}}\left(\partial_{\lambda^{j}}\rho(\lambda)\,\mathbf{a}\right)
+\end{split}
+\]</span> which means <span class="math display">\[
+v_{\lambda}^{j}\equiv \left.\partial_{\lambda^{j}}\right|_{\lambda}\;\rightsquigarrow\;\partial_{\lambda^{j}}\rho(\lambda)=\{\rho(\lambda),\tilde\eta_{v_{\lambda}^{j}}^{\mathrm{i}(\lambda)}\}\equiv \{\rho(\lambda),\mathbf{L}_{j}(\lambda)\}
+\]</span></p>
+</section>
+<section id="pure-slds" class="slide level2" data-background-color="beige">
+<h2>Pure SLDs</h2>
+<p>Assume <span class="math inline">\((\mathcal{B}(\mathcal{H}),\mathrm{i},\Lambda\subseteq \mathbb{R}^{n})\)</span> is a <strong><em>regular parametric model</em></strong> with <span class="math inline">\(\rho(\lambda)=|\psi(\lambda)\rangle\langle\psi(\lambda)|\)</span>, and <span class="math inline">\(\mathbf{a}=\mathbf{a}^{\dagger}\)</span>: <span class="math display">\[
+\lambda\;\mapsto\;\mathrm{i}(\lambda)(\mathbf{a})=\mathrm{Tr}_{\mathcal{H}}\left(\rho(\lambda)\,\mathbf{a}\right)
+\]</span></p>
+<p>For <span class="math inline">\(v_{\lambda}^{j}\equiv\left.\partial_{\lambda^{j}}\right|_{\lambda}\)</span> we have <span class="math display">\[
+\begin{split}
+\frac{\mathrm{d}}{\mathrm{d}t}\left(\mathrm{i}(\gamma_{\lambda}^{v_{\lambda}^{j}}(t))(\mathbf{a})\right)_{t=0}&amp;=\partial_{\lambda^{j}}\mathrm{Tr}_{\mathcal{H}}\left(\rho(\lambda)\,\mathbf{a}\right) =  \partial_{\lambda^{j}}\left(\langle\psi(\lambda)|\mathbf{a}|\psi(\lambda)\rangle  \right)\\
+\parallel \qquad \qquad &amp;= \langle\partial_{\lambda^{j}}\psi(\lambda)|\mathbf{a}|\psi(\lambda)\rangle + \langle\psi(\lambda)|\mathbf{a}|\partial_{\lambda^{j}}\psi(\lambda)\rangle \\
+\left(\tilde\eta_{v_{\lambda}^{j}}^{\mathrm{i}(\lambda)}|\psi_{\mathbf{a}}^{\mathrm{i}(\lambda)}\right)_{\mathrm{i}(\lambda)}  
+\end{split}
+\]</span> which means<sup>1</sup> <span class="math display">\[
+v_{\lambda}^{j}\equiv \left.\partial_{\lambda^{j}}\right|_{\lambda}\;\rightsquigarrow\;\tilde\eta_{v_{\lambda}^{j}}^{\mathrm{i}(\lambda)}=\psi_{\mathbf{b}_{\lambda}^{j}}^{\mathrm{i}(\lambda)} \;\mbox{ with } \frac{\mathbf{b}_{\lambda}^{j}}{2}=|\partial_{\lambda^{j}}\psi(\lambda)\rangle\langle \psi(\lambda)| + | \psi(\lambda)\rangle\langle \partial_{\lambda^{j}}\psi(\lambda)|
+\]</span></p>
+<aside><ol class="aside-footnotes"><li id="fn5"><p>Recall that <span class="math inline">\(\rho(\lambda)(\mathbf{I})=\langle\psi(\lambda)|\psi(\lambda)\rangle =1\)</span> implies <span class="math inline">\(\Re \langle\partial_{\lambda^{j}}\psi(\lambda)|\psi(\lambda)\rangle=0\)</span>.</p></li></ol></aside></section>
+<section id="how-to-pullback-metrics-without-manifolds" class="slide level2" data-background-color="beige">
+<h2>How to pullback metrics without manifolds</h2>
+<p>We have an immersion:</p>
+<p><span class="math display">\[
+\mathrm{i}\colon M \hookrightarrow \mathscr{S}_{n}(\mathscr{A})
+\]</span></p>
+<p>We have “tangent bundles”:</p>
+<p><span class="math display">\[
+TM=\sqcup_{m\in M} T_{m}M, \qquad
+\mathcal{H}^{*}(\mathscr{A})=\sqcup_{\rho\in  \mathscr{S}_{n}(\mathscr{A})} \mathcal{H}_{\rho}^{*}
+\]</span></p>
+<p>We have immersions of “tangent spaces”:</p>
+<p><span class="math display">\[
+T_{m}M\ni v_{m}\,\mapsto\,\eta^{v_{m}}_{\mathrm{i}(m)}\in \mathcal{H}_{\rho}^{*}
+\]</span></p>
+<p>We have real Hilbert products at each <span class="math inline">\(\rho\in  \mathscr{S}_{n}(\mathscr{A})\)</span>:</p>
+<p><span class="math display">\[
+\left(\psi_{\rho}\mid\varphi_{\rho}\right)^{\rho}\geq 0
+\]</span></p>
+<!---
+We then define
+$$
+(\mathrm{i}^{*}\mathrm{G})_{m}(v_{m},v_{m}):=\left(\eta^{v_{m}}_{\mathrm{i}(m)},\eta^{v_{m}}_{\mathrm{i}(m)}\right)^{\mathrm{i}(m)}=\left(\eta_{v_{m}}^{\mathrm{i}(m)},\eta_{v_{m}}^{\mathrm{i}(m)}\right)_{\mathrm{i}(m)}
+$$
+--->
+</section>
+<section id="finally-the-metric" class="slide level2" data-background-color="beige">
+<h2>Finally, the metric!</h2>
+<p>Once we have a <strong><em>regular parametric model</em></strong> is a triple <span class="math inline">\((\mathscr{A},\mathrm{i},M)\)</span>: <span class="math display">\[
+\mathrm{G}(X,Y)(m):=\left(\tilde{\eta}^{X_{m}}\mid\tilde{\eta}^{Y_{m}}\right)_{\mathrm{i}(m)}
+\]</span> where <span class="math inline">\(X,Y\in\mathfrak{X}(M)\)</span>, and <span class="math inline">\(X_{m},Y_{m}\in T_{m}M\)</span>.</p>
+</section>
+<section id="finally-the-fisher-rao-metric" class="slide level2" data-background-color="beige" data-visibility="uncounted">
+<h2>Finally, the (Fisher-Rao) metric!</h2>
+<p>Once we have a <strong><em>regular parametric model</em></strong> is a triple <span class="math inline">\((\mathscr{A},\mathrm{i},M)\)</span>: <span class="math display">\[
+\mathrm{G}(X,Y)(m):=\left(\tilde{\eta}^{X_{m}}\mid\tilde{\eta}^{Y_{m}}\right)_{\mathrm{i}(m)}
+\]</span> where <span class="math inline">\(X,Y\in\mathfrak{X}(M)\)</span>, and <span class="math inline">\(X_{m},Y_{m}\in T_{m}M\)</span>.</p>
+<div style="height: 2em;">
+
+</div>
+<p><strong>Classical models</strong>: <span class="math display">\[
+v_{\theta}^{j}\equiv \left.\partial_{\theta^{j}}\right|_{\theta}\rightsquigarrow\;\tilde\eta^{v_{\theta}^{j}}(\omega)\equiv s_{j}(\theta;\omega)\in\mathcal{L}^{2}(\Omega,p_{\theta}\mu)
+\]</span></p>
+<div style="height: 1em;">
+
+</div>
+<p><span class="math display">\[
+\mathrm{G}(\partial_{\theta^{j}},\partial_{\theta^{k}})(\theta)=\int_{\Omega}\,s_{j}(\theta;\omega)\,s_{k}(\theta;\omega)\,p(\theta;\omega)\,\mathrm{d}\mu(\omega)=g_{jk}^{\mathrm{FR}}(\theta)
+\]</span></p>
+</section>
+<section id="finally-the-fubini-study-metric" class="slide level2" data-background-color="beige" data-visibility="uncounted">
+<h2>Finally, the (Fubini-Study) metric!</h2>
+<p>Once we have a <strong><em>regular parametric model</em></strong> is a triple <span class="math inline">\((\mathscr{A},\mathrm{i},M)\)</span>: <span class="math display">\[
+\mathrm{G}(X,Y)(m):=\left(\tilde{\eta}^{X_{m}}\mid\tilde{\eta}^{Y_{m}}\right)_{\mathrm{i}(m)}
+\]</span> where <span class="math inline">\(X,Y\in\mathfrak{X}(M)\)</span>, and <span class="math inline">\(X_{m},Y_{m}\in T_{m}M\)</span>.</p>
+<div style="height: 2em;">
+
+</div>
+<p><strong>Pure quantum models</strong><sup>1</sup>: <span class="math display">\[
+v_{\lambda}^{j}\equiv \left.\partial_{\lambda^{j}}\right|_{\lambda}\rightsquigarrow\;\tilde\eta^{v_{\lambda}^{j}}=\psi_{\mathbf{b}_{\lambda}^{j}}^{\mathrm{i}(\lambda)} \mbox{ with } \frac{\mathbf{b}_{\lambda}^{j}}{2}=|\partial_{\lambda^{j}}\psi(\lambda)\rangle\langle \psi(\lambda)| + | \psi(\lambda)\rangle\langle \partial_{\lambda^{j}}\psi(\lambda)|
+\]</span></p>
+<div style="height: 1em;">
+
+</div>
+<p><span class="math display">\[
+\mathrm{G}(\partial_{\lambda^{j}},\partial_{\lambda^{k}})(\lambda)=\langle \psi(\lambda)|\{\mathbf{b}_{\lambda}^{j},\,\mathbf{b}_{\lambda}^{k}\}|\psi(\lambda)\rangle= 4g_{jk}^{\mathrm{FS}}(\lambda) =4\Re Q_{jk}(\lambda)
+\]</span></p>
+<aside><ol class="aside-footnotes"><li id="fn6"><p>Recall that <span class="math inline">\(\langle\psi(\lambda)|\psi(\lambda)\rangle =1\)</span> implies <span class="math inline">\(\Re \langle\partial_{\lambda^{j}}\psi(\lambda)|\psi(\lambda)\rangle=0\)</span>.</p></li></ol></aside></section>
+<section id="finally-the-bures-helstrom-metric" class="slide level2" data-background-color="beige" data-visibility="uncounted">
+<h2>Finally, the (Bures-Helstrom) metric!</h2>
+<p>Once we have a <strong><em>regular parametric model</em></strong> is a triple <span class="math inline">\((\mathscr{A},\mathrm{i},M)\)</span>: <span class="math display">\[
+\mathrm{G}(X,Y)(m):=\left(\tilde{\eta}^{X_{m}}\mid\tilde{\eta}^{Y_{m}}\right)_{\mathrm{i}(m)}
+\]</span> where <span class="math inline">\(X,Y\in\mathfrak{X}(M)\)</span>, and <span class="math inline">\(X_{m},Y_{m}\in T_{m}M\)</span>.</p>
+<div style="height: 2em;">
+
+</div>
+<p><strong>Faithful quantum models</strong>: <span class="math display">\[
+v_{\lambda}^{j}\equiv \left.\partial_{\lambda^{j}}\right|_{\lambda}\rightsquigarrow\;\partial_{\lambda^{j}}\rho(\lambda)=\{\rho(\lambda),\tilde\eta^{v_{\lambda}^{j}}\}\equiv \{\rho(\lambda),\mathbf{L}_{j}(\lambda)\}
+\]</span></p>
+<div style="height: 1em;">
+
+</div>
+<p><span class="math display">\[
+\mathrm{G}(\partial_{\lambda^{j}},\partial_{\lambda^{k}})(\lambda)=\mathrm{Tr}_{\mathcal{H}}\left(\rho(\lambda)\left\{\mathbf{L}_{j}(\lambda), \mathbf{L}_{k}(\lambda)\right\}\right)=g_{jk}^{\mathrm{BH}}(\lambda)
+\]</span></p>
+</section>
+<section id="wait-theres-also-a-two-form" class="slide level2" data-background-color="beige">
+<h2>Wait, there’s also a two-form!</h2>
+<p>We also have <span class="math display">\[
+\Xi(X,Y)(m):=\Im \langle\tilde{\eta}^{X_{m}}\mid\tilde{\eta}^{Y_{m}}\rangle_{\mathrm{i}(m)}
+\]</span> where <span class="math inline">\(X,Y\in\mathfrak{X}(M)\)</span>, and <span class="math inline">\(X_{m},Y_{m}\in T_{m}M\)</span>.</p>
+<div style="height: 2em;">
+
+</div>
+<div class="fragment fade-in">
+<p><strong>Classical models</strong>: <span class="math display">\[
+v_{\theta}^{j}\equiv \left.\partial_{\theta^{j}}\right|_{\theta}\;\rightsquigarrow\;\tilde\eta^{v_{\theta}^{j}}(\omega)\equiv s_{j}(\theta;\omega)\in\mathcal{L}^{2}(\Omega,p_{\theta}\mu)
+\]</span></p>
+<div style="height: 1em;">
+
+</div>
+<p><span class="math display">\[
+\Xi(\partial_{\theta^{j}},\partial_{\theta^{k}})(\theta)=\Im\int_{\Omega}\,s_{j}(\theta;\omega)\,s_{k}(\theta;\omega)\,p(\theta;\omega)\,\mathrm{d}\mu(\omega)=0
+\]</span></p>
+</div>
+</section>
+<section id="wait-theres-also-a-two-form-1" class="slide level2" data-background-color="beige" data-visibility="uncounted">
+<h2>Wait, there’s also a two-form!</h2>
+<p>We also have <span class="math display">\[
+\Xi(X,Y)(m):=\Im \langle\tilde{\eta}^{X_{m}}\mid\tilde{\eta}^{Y_{m}}\rangle_{\mathrm{i}(m)}
+\]</span> where <span class="math inline">\(X,Y\in\mathfrak{X}(M)\)</span>, and <span class="math inline">\(X_{m},Y_{m}\in T_{m}M\)</span>.</p>
+<div style="height: 2em;">
+
+</div>
+<p><strong>Pure quantum models</strong><sup>1</sup>: <span class="math display">\[
+v_{\lambda}^{j}\equiv \left.\partial_{\lambda^{j}}\right|_{\lambda}\rightsquigarrow\;\tilde\eta^{v_{\lambda}^{j}}=\psi_{\mathbf{b}_{\lambda}^{j}}^{\mathrm{i}(\lambda)} \mbox{ with } \frac{\mathbf{b}_{\lambda}^{j}}{2}=|\partial_{\lambda^{j}}\psi(\lambda)\rangle\langle \psi(\lambda)| + | \psi(\lambda)\rangle\langle \partial_{\lambda^{j}}\psi(\lambda)|
+\]</span></p>
+<div style="height: 1em;">
+
+</div>
+<p><span class="math display">\[
+\Xi(\partial_{\lambda^{j}},\partial_{\lambda^{k}})(\lambda)=\frac{1}{2i}\langle \psi(\lambda)|[\mathbf{b}_{\lambda}^{j},\,\mathbf{b}_{\lambda}^{k}]|\psi(\lambda)\rangle= 4\varpi_{jk}^{\mathrm{FS}}(\lambda)
+\]</span></p>
+<div style="height: 1em;">
+
+</div>
+<p><strong>Remark</strong>: maximally entangled states are maximally isotropic submanifolds of <span class="math inline">\(\Xi\)</span></p>
+<aside><ol class="aside-footnotes"><li id="fn7"><p>Recall that <span class="math inline">\(\langle\psi(\lambda)|\psi(\lambda)\rangle =1\)</span> implies <span class="math inline">\(\Re \langle\partial_{\lambda^{j}}\psi(\lambda)|\psi(\lambda)\rangle=0\)</span>.</p></li></ol></aside></section>
+<section id="wait-theres-also-a-two-form-2" class="slide level2" data-background-color="beige" data-visibility="uncounted">
+<h2>Wait, there’s also a two-form!</h2>
+<p>We also have <span class="math display">\[
+\Xi(X,Y)(m):=\Im \langle\tilde{\eta}^{X_{m}}\mid\tilde{\eta}^{Y_{m}}\rangle_{\mathrm{i}(m)}
+\]</span> where <span class="math inline">\(X,Y\in\mathfrak{X}(M)\)</span>, and <span class="math inline">\(X_{m},Y_{m}\in T_{m}M\)</span>.</p>
+<div style="height: 2em;">
+
+</div>
+<p><strong>Faithful quantum models</strong>:</p>
+<p><span class="math display">\[
+v_{\lambda}^{j}\equiv \left.\partial_{\lambda^{j}}\right|_{\lambda}\;\rightsquigarrow\;\partial_{\lambda^{j}}\rho(\lambda)=\{\rho(\lambda),\tilde\eta^{v_{\lambda}^{j}}\}\equiv \{\rho(\lambda),\mathbf{L}_{j}(\lambda)\}
+\]</span></p>
+<div style="height: 1em;">
+
+</div>
+<p><span class="math display">\[
+\Xi(\partial_{\lambda^{j}},\partial_{\lambda^{k}})(\theta)=\frac{1}{2i}\mathrm{Tr}_{\mathcal{H}}\left(\rho(\lambda)\left[\mathbf{L}_{j}(\lambda), \mathbf{L}_{k}(\lambda)\right]\right)
+\]</span></p>
+<div style="height: 1em;">
+
+</div>
+<p><strong>Remark</strong>: isotropic submanifolds of <span class="math inline">\(\Xi\)</span> are <em>quasi-classical models</em></p>
+</section>
+<section id="formal-take-home-message" class="slide level2" data-background-color="beige">
+<h2>Formal take-home message</h2>
+
+<img data-src="../../../auxiliaries/2025-12-29_diagram_GNS_bundle_pullback.png" class="r-stretch"></section>
+<section id="whats-next" class="slide level2" data-background-color="beige">
+<h2>What’s next?</h2>
+<div class="columns">
+<div class="column">
+<p><img data-src="../../../auxiliaries/Pepe_Silvia.jpg"></p>
+</div><div class="column">
+<ul>
+<li>Guarantee “automatic smoothness” of <span class="math inline">\(\mathrm{G}\)</span> and <span class="math inline">\(\Xi\)</span>
+<div style="height: 1em;">
+
+</div></li>
+<li>Geodesics of <span class="math inline">\(\mathrm{G}\)</span> “from geodesics” on <span class="math inline">\(\mathcal{H}^{*}(\mathscr{A})\)</span>
+<div style="height: 1em;">
+
+</div></li>
+<li>How far is <span class="math inline">\(\Xi\)</span> form being symplectic?
+<div style="height: 1em;">
+
+</div></li>
+<li>How do we interpret <span class="math inline">\(\Xi\)</span>?
+<div style="height: 1em;">
+
+</div></li>
+<li>Estimation theory/metrology (C-R, Q-C-R, speed limits, uncertainty relations)
+<div style="height: 1em;">
+
+</div></li>
+<li>Parallel transport, dual connections, and their geodesics on <span class="math inline">\(\mathcal{H}^{*}(\mathscr{A})\)</span>
+<div style="height: 1em;">
+
+</div></li>
+<li>Alternative geometries from alternative Hilbert structures (quantum monotone metrics)</li>
+</ul>
+</div></div>
 
 
 </section>
+
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
