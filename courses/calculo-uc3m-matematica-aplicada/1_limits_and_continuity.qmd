@@ -418,14 +418,23 @@ However, if $x_{0}$ does belong to $D$ and the limit exists, it makes sense to s
 ::: {.callout-note title="Continuity"}
 
 ::: {#def-continuity}
-Let $x_{0}\in D\subseteq \mathbb{R}$ be an [accumulation point](0_sets_and_functions.qmd#def-accumulation-point)  for $D$. 
-The function $f\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}$ said to be **continuous** at $x_{0}\in D$ if
+Let $x_{0}\in D\subseteq \mathbb{R}$.
+The function $f\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}$ is said to be **continuous** at $x_{0}$ if, for every $\varepsilon>0$, there exists $\delta>0$ such that
 $$
-\lim_{x\rightarrow x_{0}}f(x)=f(x_{0}).
+x\in D,\quad |x-x_{0}|<\delta \Longrightarrow |f(x)-f(x_{0})|<\varepsilon.
 $$
-Left and right continuity are defined in the obvious way. 
 
-The function $f\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}$ said to be continuous if it is continuous at all accumulation points $x_{0}\in D$, and left/right continuous at all right/left accumulation points $x_{0}\in D$.
+If $x_{0}$ is a right accumulation point for $D$, $f$ is **right continuous** at $x_{0}$ if, for every $\varepsilon>0$, there exists $\delta>0$ such that
+$$
+x\in D,\quad 0<x-x_{0}<\delta \Longrightarrow |f(x)-f(x_{0})|<\varepsilon.
+$$
+
+If $x_{0}$ is a left accumulation point for $D$, $f$ is **left continuous** at $x_{0}$ if, for every $\varepsilon>0$, there exists $\delta>0$ such that
+$$
+x\in D,\quad 0<x_{0}-x<\delta \Longrightarrow |f(x)-f(x_{0})|<\varepsilon.
+$$
+
+The function $f\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}$ is said to be continuous on $D$ if it is continuous at every $x_{0}\in D$.
 
 :::
 

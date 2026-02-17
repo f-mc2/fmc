@@ -8,7 +8,7 @@ date-modified: last-modified
 # Introduction
 
 
-# Näive set theory
+# Naive set theory
 
 
 
@@ -51,6 +51,7 @@ We need to introduce various types of intervals. These objects help in formalizi
 ::: {#def-open-closed-intervals} 
  
 Let $a<b\in\mathbb{R}\cup\{+\infty\}\cup\{-\infty\}$.
+Here and throughout, inequalities involving $\pm\infty$ use the usual order on the extended real line.
 We define the **open interval** $(a,b)$ as the subset of $\mathbb{R}$ given by
 $$
 (a,b):= \{x\in\mathbb{R}\,|\quad a< x < b \}.
@@ -113,6 +114,24 @@ $$
 |x-x_0|<r,
 $$ 
 which means it is both a left and right accumulation point.
+
+:::
+
+:::
+
+::: {.callout-note title="Accumulation at infinity"}
+
+::: {#def-accumulation-point-at-infinity}
+
+Let $D\subseteq\mathbb{R}$.
+We say that $+\infty$ is a **right accumulation point** for $D$ if for every $R>0$ there exists $x\in D$ such that
+$$
+x>R.
+$$
+We say that $-\infty$ is a **left accumulation point** for $D$ if for every $R>0$ there exists $x\in D$ such that
+$$
+x<-R.
+$$
 
 :::
 
