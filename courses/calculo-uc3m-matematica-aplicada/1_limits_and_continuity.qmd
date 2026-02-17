@@ -492,7 +492,7 @@ which is exactly continuity at $x_{0}$.
 ::: {#rem-continuity-isolated-points}
 
 If $x_{0}\in D$ is an isolated point of $D$, then every function $f\colon D\rightarrow\mathbb{R}$ is continuous at $x_{0}$ in the sense of @def-continuity.
-By definition (see [@def-isolated-point](0_sets_and_functions.qmd#def-isolated-point)), there exists $\delta>0$ such that
+By definition of [isolated point](0_sets_and_functions.qmd#def-isolated-point), there exists $\delta>0$ such that
 $$
 D\cap(x_{0}-\delta,x_{0}+\delta)=\{x_{0}\},
 $$
