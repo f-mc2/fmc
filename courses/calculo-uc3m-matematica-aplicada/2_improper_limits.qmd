@@ -34,16 +34,15 @@ However, since we do have the  intuitive understanding of how  $f$ behaves aroun
 
 ::: {#def-unbounded-limits}
 
-Consider the function $f\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}$, and let $x_{0}$ be a [**left accumulation point**](0_sets_and_functions.qmd#def-accumulation-point)  for $D$. 
-We say that the formal equality
+Consider the function $f\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}$.
+If $x_{0}$ is an [**accumulation point**](0_sets_and_functions.qmd#def-accumulation-point) for $D$, we say that the formal equality
 $$ 
 \lim_{x\rightarrow x_{0}} f(x)=+\infty 
 $$ 
 holds if for every $K>0$ there is a  $0< \delta$ such that
 $$
-|x-x_{0}|<\delta \Rightarrow f(x)>K
+x\in D,\quad 0<|x-x_{0}|<\delta \Longrightarrow f(x)>K.
 $$
-for every $x_{0}\neq x\in D$. 
 In this case, we say that $+\infty$ is the limit of $f$ at $x_{0}$.
 
 Analogously, we say that the formal equality
@@ -52,12 +51,26 @@ $$
 $$ 
 holds if for every $K>0$ there is a  $0< \delta$ such that
 $$
-|x-x_{0}|<\delta \Rightarrow f(x)< -K
+x\in D,\quad 0<|x-x_{0}|<\delta \Longrightarrow f(x)< -K.
 $$
-for every $x_{0}\neq x\in D$.
 In this case, we say that $-\infty$ is the limit of $f$ at $x_{0}$.
 
-Left and right unbounded limits are defined by replacing $|x- x_{0}|<\delta$ with $x_{0}-x<\delta$ or $x-x_{0}<\delta$, respectively. 
+If $x_{0}$ is a right accumulation point for $D$, the right unbounded limits are defined by replacing
+$$
+0<|x- x_{0}|<\delta
+$$
+with
+$$
+x\in D,\quad 0<x-x_{0}<\delta.
+$$
+If $x_{0}$ is a left accumulation point for $D$, the left unbounded limits are defined by replacing
+$$
+0<|x- x_{0}|<\delta
+$$
+with
+$$
+x\in D,\quad 0<x_{0}-x<\delta.
+$$
 
 :::
 
@@ -76,11 +89,11 @@ Let $x_{0}$ be an accumulation point for $D\subseteq \mathbb{R}$, and consider t
 If 
 $$
 \begin{split}
-\lim_{x\rightarrow +\infty}f(x)&=L \\
-\lim_{x\rightarrow +\infty}f(x)&=M,
+\lim_{x\rightarrow x_{0}}f(x)&=L \\
+\lim_{x\rightarrow x_{0}}f(x)&=M,
 \end{split}
 $$
-according to @def-unbounded-limits, then $L=M$.
+according to @def-unbounded-limits, with $L,M\in\{+\infty,-\infty\}$, then $L=M$.
 
 Under the obvious modifications, a similar result holds for left and right unbounded limits.
 
@@ -355,7 +368,7 @@ $$
 $$
 holds  with $L\in\mathbb{R}$ if for every $\varepsilon>0$ there is $\varrho>0$ such that
 $$
-D\ni x> \varrho \Rightarrow |f(x) - l|<\varepsilon .
+D\ni x> \varrho \Longrightarrow |f(x) - L|<\varepsilon .
 $$
 
 
@@ -365,7 +378,7 @@ $$
 $$ 
 holds if for every $K>0$ there is  $\varrho>0$ such that
 $$
-D\ni x> \varrho \rightarrow f(x)>K.
+D\ni x> \varrho \Longrightarrow f(x)>K.
 $$
 
 The formal equality  
@@ -374,7 +387,7 @@ $$
 $$ 
 holds if for every $K>0$ there is  $\varrho>0$ such that
 $$
-D\ni x> \varrho \rightarrow f(x)<-K.
+D\ni x> \varrho \Longrightarrow f(x)<-K.
 $$
 
 :::
@@ -393,7 +406,7 @@ $$
 $$
 holds  with $L\in\mathbb{R}$ if for every $\varepsilon>0$ there is $\varrho>0$ such that
 $$
-D\ni x<-\varrho\Rightarrow |f(x) - l|<\varepsilon .
+D\ni x<-\varrho \Longrightarrow |f(x) - L|<\varepsilon .
 $$
 
 
@@ -403,7 +416,7 @@ $$
 $$ 
 holds if for every $K>0$ there is  $\varrho>0$ such that
 $$
-D\ni x<- \varrho \rightarrow f(x)>K.
+D\ni x<- \varrho \Longrightarrow f(x)>K.
 $$
 
 The formal equality  
@@ -412,7 +425,7 @@ $$
 $$ 
 holds if for every $K>0$ there is  $\varrho>0$ such that
 $$
-D\ni x<- \varrho \rightarrow f(x)<-K.
+D\ni x<- \varrho \Longrightarrow f(x)<-K.
 $$
 
 :::
@@ -792,8 +805,6 @@ Then, the rest of the proof uses the  limit of composite functions (with the out
 :::
 
 :::
-
-
 
 
 
