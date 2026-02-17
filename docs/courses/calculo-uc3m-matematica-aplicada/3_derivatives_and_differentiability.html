@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-10-22">
+<meta name="dcterms.date" content="2025-11-14">
 
-<title>Sets and functions – Florio M. Ciaglia</title>
+<title>Derivatives and differentiability – Florio M. Ciaglia</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -320,7 +320,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../courses/courses_index.html">Courses</a></li><li class="breadcrumb-item"><a href="../../courses/calculo-uc3m-matematica-aplicada/index.html">Calculus (20124)</a></li><li class="breadcrumb-item"><a href="../../courses/calculo-uc3m-matematica-aplicada/0_sets_and_functions.html">Sets and functions</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../courses/courses_index.html">Courses</a></li><li class="breadcrumb-item"><a href="../../courses/calculo-uc3m-matematica-aplicada/index.html">Calculus (20124)</a></li><li class="breadcrumb-item"><a href="../../courses/calculo-uc3m-matematica-aplicada/3_derivatives_and_differentiability.html">Derivatives and differentiability</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -356,7 +356,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../courses/calculo-uc3m-matematica-aplicada/0_sets_and_functions.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../courses/calculo-uc3m-matematica-aplicada/0_sets_and_functions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Sets and functions</span></a>
   </div>
 </li>
@@ -374,7 +374,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../courses/calculo-uc3m-matematica-aplicada/3_derivatives_and_differentiability.html" class="sidebar-item-text sidebar-link">
+  <a href="../../courses/calculo-uc3m-matematica-aplicada/3_derivatives_and_differentiability.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Derivatives and differentiability</span></a>
   </div>
 </li>
@@ -456,10 +456,12 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">1</span> Introduction</a></li>
-  <li><a href="#näive-set-theory" id="toc-näive-set-theory" class="nav-link" data-scroll-target="#näive-set-theory"><span class="header-section-number">2</span> Näive set theory</a></li>
-  <li><a href="#functions" id="toc-functions" class="nav-link" data-scroll-target="#functions"><span class="header-section-number">3</span> Functions</a></li>
-  <li><a href="#real-numbers" id="toc-real-numbers" class="nav-link" data-scroll-target="#real-numbers"><span class="header-section-number">4</span> Real numbers</a></li>
+  <li><a href="#sec-introduction" id="toc-sec-introduction" class="nav-link active" data-scroll-target="#sec-introduction"><span class="header-section-number">1</span> Introduction</a></li>
+  <li><a href="#derivative-and-differentiability" id="toc-derivative-and-differentiability" class="nav-link" data-scroll-target="#derivative-and-differentiability"><span class="header-section-number">2</span> Derivative and differentiability</a></li>
+  <li><a href="#properties-of-derivatives" id="toc-properties-of-derivatives" class="nav-link" data-scroll-target="#properties-of-derivatives"><span class="header-section-number">3</span> Properties of derivatives</a></li>
+  <li><a href="#derivative-of-inverse-and-composite-functions" id="toc-derivative-of-inverse-and-composite-functions" class="nav-link" data-scroll-target="#derivative-of-inverse-and-composite-functions"><span class="header-section-number">4</span> Derivative of inverse and composite functions</a></li>
+  <li><a href="#interpretation-of-derivative" id="toc-interpretation-of-derivative" class="nav-link" data-scroll-target="#interpretation-of-derivative"><span class="header-section-number">5</span> Interpretation of derivative</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">6</span> Exercises</a></li>
   </ul>
 </nav>
     </div>
@@ -467,9 +469,9 @@ window.Quarto = {
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../courses/courses_index.html">Courses</a></li><li class="breadcrumb-item"><a href="../../courses/calculo-uc3m-matematica-aplicada/index.html">Calculus (20124)</a></li><li class="breadcrumb-item"><a href="../../courses/calculo-uc3m-matematica-aplicada/0_sets_and_functions.html">Sets and functions</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../courses/courses_index.html">Courses</a></li><li class="breadcrumb-item"><a href="../../courses/calculo-uc3m-matematica-aplicada/index.html">Calculus (20124)</a></li><li class="breadcrumb-item"><a href="../../courses/calculo-uc3m-matematica-aplicada/3_derivatives_and_differentiability.html">Derivatives and differentiability</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Sets and functions</h1>
+<h1 class="title">Derivatives and differentiability</h1>
 </div>
 
 
@@ -480,14 +482,14 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">October 22, 2025</p>
+      <p class="date">November 14, 2025</p>
     </div>
   </div>
   
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">February 17, 2026</p>
+      <p class="date-modified">January 31, 2026</p>
     </div>
   </div>
     
@@ -498,118 +500,338 @@ window.Quarto = {
 </header>
 
 
-<section id="introduction" class="level1" data-number="1">
+<!-- 
+::: {.callout-note title="**Slides for this chapter**"}
+
+[Go to the slides](/presentations/calculo-uc3m-matematica-aplicada_slides/slides/3_derivatives_and_differentiability_slides.qmd)
+
+:::
+-->
+<section id="sec-introduction" class="level1" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> Introduction</h1>
 </section>
-<section id="näive-set-theory" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> Näive set theory</h1>
+<section id="derivative-and-differentiability" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Derivative and differentiability</h1>
+<div class="callout callout-style-default callout-note callout-titled" title="Derivative and differentiability">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Derivative and differentiability
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div id="def-derivative" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 1</strong></span> Consider the function <span class="math inline">\(f\colon D\subseteq\mathbb{R}\rightarrow\mathbb{R}\)</span> and a <a href="../../courses/calculo-uc3m-matematica-aplicada/0_sets_and_functions.html#def-accumulation-point"><strong>accumulation point</strong></a> <span class="math inline">\(x_{0}\in D\)</span>.</p>
+<p>For <span class="math inline">\(c&gt;0\)</span>, define the function <span class="math inline">\(\Delta f\colon (x_{0}-c,x_{0}+c)\subset D\rightarrow \mathbb{R}\)</span> given by <span class="math display">\[
+\Delta f(h):=\frac{f(x_{0}+h) - f(x_{0})}{h} .
+\]</span> If the limit <span class="math display">\[
+\lim_{h\rightarrow 0}\;\Delta f = l
+\]</span> exists with <span class="math inline">\(l\in\mathbb{R}\)</span>, we say that <span class="math inline">\(l\)</span> is the derivative of <span class="math inline">\(f\)</span> at <span class="math inline">\(x_{0}\)</span>, and that <span class="math inline">\(f\)</span> is differentiable at <span class="math inline">\(x_{0}\)</span>.</p>
+<p>When <span class="math inline">\(f\)</span> is differentiable at <span class="math inline">\(x_{0}\)</span>, we write <span class="math display">\[
+f'(x_{0})\equiv \lim_{h\rightarrow 0}\;\Delta f.
+\]</span> We also write <span class="math display">\[
+\frac{\mathrm{d}f}{\mathrm{d} x}(x_{0})\equiv f'(x_{0}),
+\]</span> and refer to this expression as the <em>Leibniz</em> notation for derivatives.</p>
+<p>If <span class="math inline">\(f\)</span> is differentiable at all <span class="math inline">\(x\in D\)</span>, we say that <span class="math inline">\(f\)</span> is differentiable in <span class="math inline">\(D\)</span>.</p>
+<p>The function determined by the rule <span class="math inline">\(x\mapsto f'(x)\)</span> (whenever it makes sense) is called the <strong>derivative</strong> of <span class="math inline">\(f\)</span>. Its domain <strong>need not</strong> coincide with the domain of <span class="math inline">\(f\)</span>.</p>
+</div>
+</div>
+</div>
+<p>Before we learn some cool tricks that make computing (a lot but not all) derivatives a sort of mechanical task that does not require computing limits, let’s work out some derivatives from the very definition.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Three simple examples">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Three simple examples
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div id="exm-derivative-constant-linear-quadratic-functions" class="theorem example">
+<p><span class="theorem-title"><strong>Example 1</strong></span> The first example of derivative we consider is that of a constant function <span class="math inline">\(f(x)=c\)</span> with <span class="math inline">\(c\in \mathbb{R}\)</span>. Following the very definition of derivative given above, we have <span class="math display">\[
+f'(x_{0})=\lim_{h\rightarrow 0} \frac{f(x_{0}+h)-f(x_{0})}{h}=0
+\]</span> for every <span class="math inline">\(x_{0}\in\mathbb{R}\)</span>.</p>
+<hr>
+<p>The second example we consider is that of the function <span class="math inline">\(f(x)=x\)</span>: <span class="math display">\[
+f'(x_{0})=\lim_{h\rightarrow 0} \frac{f(x_{0}+h)-f(x_{0})}{h}=\lim_{h\rightarrow 0} \frac{x_{0} + h -x_{0}}{h}=1
+\]</span> for every <span class="math inline">\(x_{0}\in\mathbb{R}\)</span>.</p>
+<hr>
+<p>The third example we consider is that of the function <span class="math inline">\(f(x)=x^{2}\)</span>: <span class="math display">\[
+\begin{split}
+f'(x_{0})&amp;=\lim_{h\rightarrow 0} \frac{f(x_{0}+h)-f(x_{0})}{h}= \\ &amp;=\lim_{h\rightarrow 0} \frac{(x_{0} + h)^{2} -x_{0}^{2}}{h}= \\ &amp;\lim_{h\rightarrow 0} \frac{2x_{0}h + h^{2}}{h}=2x_{0}
+\end{split}
+\]</span> for every <span class="math inline">\(x_{0}\in\mathbb{R}\)</span>.</p>
+</div>
+</div>
+</div>
+<p>We defined the derivative of <span class="math inline">\(f\)</span> at <span class="math inline">\(x_{0}\)</span> assuming <span class="math inline">\(x_{0}\)</span> is an accumulation point. However, we can also relax this assumption to the case where <span class="math inline">\(x_{0}\)</span> is either a left or right accumulation point, obtaining the notions of left/right derivative and differentiability.</p>
+<div class="callout callout-style-default callout-caution callout-titled" title="Right and left derivative">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Caution</span>Right and left derivative
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div id="exr-left-right-derivative" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 1</strong></span> Consider the function <span class="math inline">\(f\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}\)</span>.</p>
+<p>If <span class="math inline">\(x_{0}\in D\)</span> is a left or right accumulation point, define the right or left derivative and differentiability of <span class="math inline">\(f\)</span> at <span class="math inline">\(x_{0}\)</span> using <a href="../../courses/calculo-uc3m-matematica-aplicada/1_limits_and_continuity.html#def-limits">left/right limits</a>, and prove that, when <span class="math inline">\(x_{0}\)</span> is both a left <strong>and</strong> right accumulation point, the differentiability of <span class="math inline">\(f\)</span> at <span class="math inline">\(x_{0}\)</span> is equivalent to left <strong>and</strong> right differentiability.</p>
+<details>
+<summary>
+<strong>Solution:</strong>
+</summary>
+You are strongly invited to try to solve it on your own.
+</details>
+</div>
+</div>
+</div>
+<p>Just as it happens for <a href="../../courses/calculo-uc3m-matematica-aplicada/1_limits_and_continuity.html#exr-limits-restriction-functions">limits</a>, derivatives behave well with respect to restrictions.</p>
+<div class="callout callout-style-default callout-caution callout-titled" title="Derivative of the restriction">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Caution</span>Derivative of the restriction
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div id="exr-derivative-restriction-functions" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 2</strong></span> Consider <span class="math inline">\(D,D'\subseteq \mathbb{R}\)</span> such that <span class="math inline">\(D\cap D'\neq \emptyset\)</span>, and consider two functions <span class="math inline">\(f\colon D\rightarrow \mathbb{R}\)</span> and <span class="math inline">\(g\colon D' \rightarrow \mathbb{R}\)</span> such that <span class="math inline">\(g(x)=f(x)\)</span> on <span class="math inline">\(S\subseteq D\cap D'\)</span>, and such that both are differentiable at <span class="math inline">\(x_{0}\in S\)</span>. Prove that <span class="math display">\[
+f'(x_{0})=g'(x_{0}),
+\]</span> and prove analogous results for the case of left and right derivatives.</p>
+<details>
+<summary>
+<strong>Solution:</strong>
+</summary>
+You are strongly invited to try to solve it on your own.
+</details>
+</div>
+</div>
+</div>
+<p>Once a definition is in place, it’s always a good idea to go searching for situations in which the definition itself can not be applied.</p>
+<p>Let us consider the absolute value function <span class="math inline">\(|\cdot|\colon \mathbb{R}\rightarrow\mathbb{R}\)</span> given by <span class="math display">\[
+|x|=\sqrt{x^{2}}=\left\{\begin{matrix}x &amp; \mbox{ if } x\geq 0 \\ &amp; \\ -x &amp; \mbox{ if } x&lt;0 .\end{matrix}\right.
+\]</span> For all points <span class="math inline">\(x_{0}\neq 0\)</span>, we can compute the derivative following the second example <a href="#exm-derivative-constant-linear-quadratic-functions">above</a> (essentially because of <a href="#exr-derivative-restriction-functions" class="quarto-xref">Exercise&nbsp;2</a>). However, when <span class="math inline">\(x_{0}=0\)</span>, we have to take into account the “sudden change” of the function. Therefore, we first compute the <a href="#exr-left-right-derivative">right and left derivatives</a>: <span class="math display">\[
+\begin{split}
+\lim_{x\rightarrow 0^{+}}\frac{x-0}{x}&amp;=1 \\ &amp; \\
+\lim_{x\rightarrow 0^{-}}\frac{-x-0}{x}&amp;=-1 .
+\end{split}
+\]</span> Since the two derivatives exist but are different, we conclude that <span class="math inline">\(|x|\)</span> is not differentiable at <span class="math inline">\(0\)</span> (but it is separately left and right differentiable there).</p>
 </section>
-<section id="functions" class="level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> Functions</h1>
-<div class="callout callout-style-default callout-warning callout-titled" title="How we will write functions">
+<section id="properties-of-derivatives" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Properties of derivatives</h1>
+<p>The first “property” of derivatives we want to highlight is that it requires continuity.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Differentiability implies continuity">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Warning</span>How we will write functions
+<span class="screen-reader-only">Note</span>Differentiability implies continuity
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div id="rem-how-we-write-functions" class="proof remark">
-<p><span class="proof-title"><em>Remark 1</em>. </span>Sometimes, we may be forced to talk about the function <span class="math inline">\(f\colon D\subseteq X\rightarrow Y\)</span> given by <span class="math inline">\(f(x)=y\)</span> multiple times when proving a theorem, solving an exercise, or discussing an idea. To avoid an absurd amount of notationally-heavy repetitions, once the domain, the input space, the output space, and the explicit rule <span class="math inline">\(f(x)=y\)</span> have been clearly defined as above, we will often write just <span class="math inline">\(f(x)=y\)</span>, or even just <span class="math inline">\(f\)</span>, for the rest of the proof of the theorem, or of the exercise, or of the discussion.</p>
-<p>Moreover, sometimes we may be introducing a subset <span class="math inline">\(D\subseteq X\)</span>, and later introduce a function having <span class="math inline">\(D\)</span> as domain. In this case, we often writes <span class="math inline">\(f\colon D\rightarrow Y\)</span> given by <span class="math inline">\(f(x)=y\)</span> omitting the input space since it is clear from the context.</p>
+<div id="prp-diff-implies-cont" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 1</strong></span> If the function <span class="math inline">\(f\colon D\subseteq\mathbb{R}\rightarrow\mathbb{R}\)</span> is (left/right) differentiable at <span class="math inline">\(x_{0}\in D\)</span>, then it is also (left/right) continuous at <span class="math inline">\(x_{0}\)</span>.</p>
+<details>
+<summary>
+<strong>Proof:</strong>
+</summary>
+You are strongly invited to try to prove it on your own.
+</details>
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-note callout-titled" title="Inverse function">
+<p>Note, however, that the converse of the previous proposition does not hold. An explicit counterexample is given by the absolute value function we discussed <a href="#derivative-and-differentiability">before</a></p>
+<p>Next, we pass to how derivatives behave with respect to sums and products of 2 functions.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Algebraic manipulations of derivatives">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Inverse function
+<span class="screen-reader-only">Note</span>Algebraic manipulations of derivatives
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div id="def-inverse-function" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 1</strong></span> INSERT</p>
+<div id="prp-algebraic-manipulations-derivatives" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 2</strong></span> Given <span class="math inline">\(\alpha,\beta\in\mathbb{R}\)</span> and the functions <span class="math inline">\(f,g\colon D\subseteq\mathbb{R}\rightarrow\mathbb{R}\)</span> differentiable at <span class="math inline">\(x_{0}\in D\)</span>, the functions <span class="math inline">\(h,r\colon D\subseteq\mathbb{R}\rightarrow\mathbb{R}\)</span> given by <span class="math inline">\(h:=\alpha f+\beta g\)</span> and <span class="math inline">\(r:=f\cdot g\)</span> are differentiable at <span class="math inline">\(x\in D\)</span> and their derivatives are <span class="math display">\[
+\begin{split}
+h'(x)&amp;=\alpha f'(x) + \beta g'(x),\\
+r'(x)&amp; =f'(x)\,g(x) + f(x)\,g'(x).
+\end{split}
+\]</span> The formula for the derivative of the product of two functions is usually referred to as the <strong>Leibniz rule</strong>.</p>
+<details>
+<summary>
+<strong>Proof:</strong>
+</summary>
+TBA
+</details>
+</div>
+</div>
+</div>
+<p>What happens if we have more than 2 functions? Luckily, it turns out we can safely generalize <a href="#prp-algebraic-manipulations-derivatives" class="quarto-xref">Proposition&nbsp;2</a>. To better digest the generalization, let’s consider an instructive example concerning the product of <span class="math inline">\(n\)</span> functions.</p>
+<div class="callout callout-style-default callout-caution callout-titled" title="Derivative of $x^{n}$">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Caution</span>Derivative of <span class="math inline">\(x^{n}\)</span>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div id="exr-derivative-xn" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 3</strong></span> Consider the “raise to the power <span class="math inline">\(n\)</span>” function <span class="math inline">\((\cdot)^{n}:\mathbb{R}\rightarrow\mathbb{R}\)</span>. Prove that <span class="math display">\[
+\frac{\mathrm{d}}{\mathrm{d} x}(x^{n})=nx^{n-1}.
+\]</span></p>
+<details>
+<summary>
+<strong>Solution:</strong>
+</summary>
+Clearly, we can decompose <span class="math inline">\(x^{n}\)</span> into the product of two functions, say <span class="math inline">\(f(x)=x\)</span> and <span class="math inline">\(g(x)=x^{n-1}\)</span>, and apply the Leibniz Rule: <span class="math display">\[
+\frac{\mathrm{d}}{\mathrm{d} x}(x^{n})=x^{n-1} + x \frac{\mathrm{d}}{\mathrm{d} x}(x^{n-1}).
+\]</span> Now, we can decompose <span class="math inline">\(x^{n-1}\)</span> into the product of two functions, say <span class="math inline">\(f(x)=x\)</span> and <span class="math inline">\(g(x) = x^{n-2}\)</span>, and apply the Leibniz Rule: <span class="math display">\[
+\frac{\mathrm{d}}{\mathrm{d} x}(x^{n-1})=x^{n-2} + x \frac{\mathrm{d}}{\mathrm{d} x}(x^{n-3}),
+\]</span> which means <span class="math display">\[
+\begin{split}
+\frac{\mathrm{d}}{\mathrm{d} x}(x^{n})&amp;=x^{n-1} + x \frac{\mathrm{d}}{\mathrm{d} x}(x^{n-1})= \\
+&amp;=x^{n-1} + x\left(x^{n-2} + x \frac{\mathrm{d}}{\mathrm{d} x}(x^{n-3})\right)= \\
+&amp;=2x^{n-1} + x^{2} \frac{\mathrm{d}}{\mathrm{d} x}(x^{n-3}).
+\end{split}
+\]</span> We can keep going until we hit <span class="math inline">\(x^{n-(n-1)}=x\)</span> <span class="math display">\[
+ff
+\]</span>
+</details>
+</div>
+</div>
+</div>
+<p>What happens when we have more than 2 functions? For a small number of functions, say between 3 and 7, it should be not extremely boring to use the associativity property of function sums and products to understant how to generalize <a href="#prp-algebraic-manipulations-derivatives" class="quarto-xref">Proposition&nbsp;2</a>. For an arbitrary finite number of functions, the generalization can be obtained using the induction principle.</p>
+<div class="callout callout-style-default callout-caution callout-titled" title="Algebraic manipulations of derivatives continued">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Caution</span>Algebraic manipulations of derivatives continued
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div id="exr-algebraic-manipulations-derivatives-N-functions" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 4</strong></span> Let <span class="math inline">\((\alpha_{1},\cdots\alpha_{n})\)</span> be a finite sequence of real numbers and <span class="math inline">\((f_{1},\cdots,f_{n})\)</span> a finite sequence of scalar functions with common domain <span class="math inline">\(D\subseteq\mathbb{R}\)</span>. Suppose that, at <span class="math inline">\(x_{0}\in D\)</span>, the derivatives <span class="math inline">\(f_{j}'(x_{0})\)</span> exist for every <span class="math inline">\(j=1,...,n\)</span>. Then, it holds <span class="math display">\[
+\begin{split}
+\left(\sum_{j=1}^{n}\,\alpha_{j}\,f_{j}\right)'(x_{0}) &amp;=\sum_{j=1}^{n}\, \alpha_{j}\,f_{j}'(x_{0})  \\
+\left(\prod_{j=1}^{n} \,\alpha_{j}\,f_{j}\right)'(x_{0}) &amp;=\sum_{j=1}^{n}\,\alpha_{j}\,f_{j}'(x_{0})\,\left(\prod_{k\neq j}\alpha_{k}\,f_{k}(x_{0})\right).
+\end{split}
+\]</span></p>
+<details>
+<summary>
+<strong>Solution (by induction on <span class="math inline">\(n\)</span>):</strong>
+</summary>
+<p>Fix an accumulation point <span class="math inline">\(x_0\in D\)</span> and assume that <span class="math inline">\(f_j'(x_0)\)</span> exists for all <span class="math inline">\(j=1,\dots,n\)</span>. Set <span class="math inline">\(g_j:=\alpha_j f_j\)</span>, so that <span class="math inline">\(g_j'(x_0)=\alpha_j f_j'(x_0)\)</span>.</p>
+<p>We will use the two-function rules from <a href="#prp-algebraic-manipulations-derivatives" class="quarto-xref">Proposition&nbsp;2</a></p>
+<hr>
+<p>We start with the derivative of the sum of finitely many functions.</p>
+<p>For <span class="math inline">\(h\neq 0\)</span> with <span class="math inline">\(x_0+h\in D\)</span>, we have <span class="math display">\[
+\frac{\sum_{j=1}^n \alpha_j f_j(x_0+h)-\sum_{j=1}^n \alpha_j f_j(x_0)}{h}
+=\sum_{j=1}^n \alpha_j \frac{f_j(x_0+h)-f_j(x_0)}{h}.
+\]</span> Following <a href="#def-derivative" class="quarto-xref">Definition&nbsp;1</a>, we take the limit as <span class="math inline">\(h\to 0\)</span>: <span class="math display">\[
+\left(\sum_{j=1}^{n}\,\alpha_{j}\,f_{j}\right)'(x_{0})
+=\sum_{j=1}^n \alpha_j \lim_{h\to 0}\frac{f_j(x_0+h)-f_j(x_0)}{h}
+=\sum_{j=1}^n \alpha_j f_j'(x_0),
+\]</span> where we passed the limit through the sum because it’s a sum of finitely many elements.</p>
+<hr>
+<p>Now, we pass to the derivative of the product of finitely many functions.</p>
+<p>Define <span class="math display">\[
+P_n(x):=\prod_{j=1}^n g_j(x).
+\]</span></p>
+<p><strong>Base case (<span class="math inline">\(n=1\)</span>):</strong> <span class="math inline">\(P_1=g_1\)</span>, hence <span class="math display">\[
+P_1'(x_0)=g_1'(x_0)
+=\sum_{j=1}^1 g_j'(x_0)\prod_{k\neq j} g_k(x_0),
+\]</span> so the formula holds.</p>
+<p><strong>Inductive step:</strong> assume that for some <span class="math inline">\(n\ge 1\)</span>, <span class="math display">\[
+P_n'(x_0)=\sum_{j=1}^n g_j'(x_0)\prod_{\substack{k=1\\k\neq j}}^n g_k(x_0).
+\]</span> Now <span class="math inline">\(P_{n+1}=P_n\,g_{n+1}\)</span>. By the two-function product rule, <span class="math display">\[
+P_{n+1}'(x_0)=P_n'(x_0)\,g_{n+1}(x_0)+P_n(x_0)\,g_{n+1}'(x_0).
+\]</span> Substitute the inductive hypothesis into the first term: <span class="math display">\[
+\begin{aligned}
+P_{n+1}'(x_0)
+&amp;=\left(\sum_{j=1}^n g_j'(x_0)\prod_{\substack{k=1\\k\neq j}}^n g_k(x_0)\right) g_{n+1}(x_0)
++ \left(\prod_{k=1}^n g_k(x_0)\right) g_{n+1}'(x_0)\\[4pt]
+&amp;=\sum_{j=1}^n g_j'(x_0)\prod_{\substack{k=1\\k\neq j}}^{n+1} g_k(x_0)
+\;+\; g_{n+1}'(x_0)\prod_{k=1}^n g_k(x_0)\\[4pt]
+&amp;=\sum_{j=1}^{n+1} g_j'(x_0)\prod_{\substack{k=1\\k\neq j}}^{n+1} g_k(x_0).
+\end{aligned}
+\]</span> Finally, replacing <span class="math inline">\(g_j=\alpha_j f_j\)</span> and <span class="math inline">\(g_j'(x_0)=\alpha_j f_j'(x_0)\)</span>, we obtain <span class="math display">\[
+\left(\prod_{j=1}^n \alpha_j f_j\right)'(x_0)
+=\sum_{j=1}^n \alpha_j f_j'(x_0)\left(\prod_{k\neq j}\alpha_k f_k(x_0)\right).
+\]</span></p>
+This concludes the proof.
+</details>
+</div>
+</div>
+</div>
+<p>Now, we consider what happens to the derivative of the quotient of two functions.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Derivative of the quotient">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Derivative of the quotient
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div id="prp-derivative-quotient" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 3</strong></span> Given the functions <span class="math inline">\(f,g\colon D\subseteq\mathbb{R}\rightarrow\mathbb{R}\)</span> differentiable at <span class="math inline">\(x_{0}\in D\)</span> and with <span class="math inline">\(g(x_{0})\neq 0\)</span>, the function <span class="math inline">\(h\colon \tilde{D}\subseteq\mathbb{R}\rightarrow\mathbb{R}\)</span> given by <span class="math inline">\(h:=\frac{f}{g}\)</span> is differentiable at <span class="math inline">\(x\in D\)</span> and its derivative is <span class="math display">\[
+h'(x)= \frac{f'(x)\,g(x)-f(x)\,g'(x)}{(g(x))^{2}}.
+\]</span></p>
+<details>
+<summary>
+<strong>Proof:</strong>
+</summary>
+TBA
+</details>
+</div>
+</div>
+</div>
+<p>Finally, we are able to use all the results presented in this section to compute the derivatives of polynomial and rational functions without ever computing a limit.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Derivatives of polynomials and rational functions">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Derivatives of polynomials and rational functions
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div id="exm-derivative-polynomial-rational-functions" class="theorem example">
+<p><span class="theorem-title"><strong>Example 2</strong></span> Let <span class="math inline">\(P_{n},Q_{m}\colon \mathbb{R}\rightarrow \mathbb{R}\)</span> be polynomial functions. We now compute <span class="math inline">\(P_{n}',Q_{m}'\)</span> and <span class="math inline">\(R'\)</span> with <span class="math inline">\(R=\frac{P_{n}}{Q_{m}}\)</span>.</p>
+<p>To compute <span class="math inline">\(P_{n}'\)</span> we first write <span class="math display">\[
+P_{n}'(x)=\sum_{k=0}^{n}\alpha_{k}\,x^{k}
+\]</span> with <span class="math inline">\(\alpha_{k}\in\mathbb{R}\)</span>, and then invoke <a href="#exr-algebraic-manipulations-derivatives-N-functions" class="quarto-xref">Exercise&nbsp;4</a> to conclude that <span class="math inline">\(P_{n}'\)</span> is the polynomial of order <span class="math inline">\((n-1)\)</span> given by <span class="math display">\[
+P_{n}'(x)=\sum_{k=1}^{n}k\alpha_{k}\,x^{k-1}.
+\]</span> A similar result holds for <span class="math inline">\(Q_{m}'(x)\)</span>.</p>
+<hr>
 </div>
 </div>
 </div>
 </section>
-<section id="real-numbers" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> Real numbers</h1>
-<p>We need to introduce various types of intervals. These objects help in formalizing the way <span class="math inline">\(x\)</span> approaches <span class="math inline">\(x_{0}\)</span>.</p>
-<div class="callout callout-style-default callout-note callout-titled" title="Open and closed intervals">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Open and closed intervals
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<div id="def-open-closed-intervals" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 2</strong></span> Let <span class="math inline">\(a&lt;b\in\mathbb{R}\cup\{+\infty\}\cup\{-\infty\}\)</span>. We define the <strong>open interval</strong> <span class="math inline">\((a,b)\)</span> as the subset of <span class="math inline">\(\mathbb{R}\)</span> given by <span id="eq-open-interval"><span class="math display">\[
-(a,b):= \{x\in\mathbb{R}\,|\quad a&lt; x &lt; b \}.
-\tag{1}\]</span></span> If either <span class="math inline">\(a=-\infty\)</span> or <span class="math inline">\(b=+\infty\)</span>, the interval is said to be <strong>unbounded</strong>.</p>
-<p>When <span class="math inline">\(a\neq-\infty\)</span> and <span class="math inline">\(b\neq+\infty\)</span>, we define the closed interval <span class="math inline">\([a,b]\)</span> as <span class="math display">\[
-[a,b]:= \{x\in\mathbb{R}\,|\quad a\leq x \leq b \}.
-\]</span></p>
-<p>Intuitively speaking, the interval <span class="math inline">\((a,b)\)</span> is <em>open</em> because its boundary points <strong>are not</strong> part of it, while <span class="math inline">\([a,b]\)</span> is <em>closed</em> because its boundary points <strong>are</strong> part of it.</p>
-</div>
-</div>
-</div>
-<p>Not all intervals are either open or closed. For instance, when <span class="math inline">\(a\neq-\infty\)</span>, we can define the interval <span class="math inline">\([a,b)\)</span> as <span class="math display">\[
-[a,b) := \{x\in\mathbb{R}\,|\quad a\leq x &lt; b\},
-\]</span> while, when <span class="math inline">\(b\neq+\infty\)</span>, we can define the interval <span class="math inline">\((a,b]\)</span> as <span class="math display">\[
-(a,b] := \{x\in\mathbb{R}\,|\quad a &lt; x \leq b\},
-\]</span> and it’s clear that these interval are neither open nor closed in the sense of <a href="#def-open-closed-intervals" class="quarto-xref">Definition&nbsp;2</a></p>
-<p>In the following, it will be useful to also consider the <strong>symmetric open interval</strong> <span class="math display">\[
-I_{x_{0},\varepsilon}\equiv(x_{0}-\varepsilon, x_{0}+\varepsilon)=\{x\in\mathbb{R}\,|\quad x_{0}-\varepsilon &lt; x &lt; x_{0} + \varepsilon\}
-\]</span> centered at <span class="math inline">\(x_{0}\in\mathbb{R}\)</span> with length <span class="math inline">\(2\varepsilon\)</span> with <span class="math inline">\(\varepsilon&gt;0\)</span>. It is not hard to see that if <span class="math inline">\(x\in I_{x_{0},\varepsilon}\)</span>, then either <span class="math inline">\(x-x_{0}&lt; \varepsilon\)</span> or <span class="math inline">\(x_{0} - x &lt;\varepsilon\)</span>. It then follows that <span class="math inline">\(|x-x_{0}|&lt;\varepsilon\)</span>, so that <span class="math display">\[
-I_{x_{0},\varepsilon}=\{x\in\mathbb{R}\,| \quad d(x_{0},x)&lt;\varepsilon\}.
-\]</span> Therefore, the symmetric open intervals of <span class="math inline">\(\mathbb{R}\)</span> may be determined through the distance function.</p>
-<div class="callout callout-style-default callout-note callout-titled" title="Accumulation point">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Accumulation point
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<div id="def-accumulation-point" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 3</strong></span> A point <span class="math inline">\(x_{0}\in \mathbb{R}\)</span> is said to be a <strong>left accumulation point</strong> for the subset <span class="math inline">\(D\)</span> if for every <span class="math inline">\(r&gt;0\)</span> there exists <span class="math inline">\(x\in D\)</span> such that <span class="math display">\[
-x_0-r&lt;x&lt;x_0.
-\]</span> A point <span class="math inline">\(x_{0}\in \mathbb{R}\)</span> is said to be a <strong>right accumulation point</strong> for <span class="math inline">\(D\)</span> if for every <span class="math inline">\(r&gt;0\)</span> there exists <span class="math inline">\(x\in D\)</span> such that <span class="math display">\[
-x_0&lt;x&lt;x_0+r.
-\]</span></p>
-<p>A point which is a left (right) accumulation point but not a right (left) accumulation point is called a <strong>strict left accumulation point</strong> (<strong>strict right accumulation point</strong>).</p>
-<p>A point <span class="math inline">\(x_0\in\mathbb{R}\)</span> is said to be an <strong>accumulation point</strong> for <span class="math inline">\(D\)</span> if for every <span class="math inline">\(r&gt;0\)</span> there exists <span class="math inline">\(x\in D\)</span> with <span class="math inline">\(x\neq x_0\)</span> such that <span class="math display">\[
-|x-x_0|&lt;r,
-\]</span> which means it is both a left and right accumulation point.</p>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled" title="Invertible functions on intervals are monotone">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Invertible functions on intervals are monotone
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<div id="prp-invertible-functions-are-monotonic" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 1</strong></span> INSERT</p>
-</div>
-</div>
-</div>
+<section id="derivative-of-inverse-and-composite-functions" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Derivative of inverse and composite functions</h1>
+</section>
+<section id="interpretation-of-derivative" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Interpretation of derivative</h1>
+</section>
+<section id="exercises" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> Exercises</h1>
 
 
 </section>

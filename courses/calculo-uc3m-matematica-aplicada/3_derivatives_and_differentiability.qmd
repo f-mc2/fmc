@@ -1,0 +1,386 @@
+---
+title: "Derivatives and differentiability"
+date: 2025-11-14
+date-style: full
+date-modified: last-modified
+---
+<!-- 
+::: {.callout-note title="**Slides for this chapter**"}
+
+[Go to the slides](/presentations/calculo-uc3m-matematica-aplicada_slides/slides/3_derivatives_and_differentiability_slides.qmd)
+
+:::
+-->
+# Introduction {#sec-introduction}
+
+
+# Derivative and differentiability
+
+
+::: {.callout-note title="Derivative and differentiability"}
+
+::: {#def-derivative}
+
+Consider the function $f\colon D\subseteq\mathbb{R}\rightarrow\mathbb{R}$ and a [**accumulation point**](0_sets_and_functions.qmd#def-accumulation-point)  $x_{0}\in D$.
+
+For $c>0$, define the function $\Delta f\colon (x_{0}-c,x_{0}+c)\subset D\rightarrow \mathbb{R}$ given by
+$$
+\Delta f(h):=\frac{f(x_{0}+h) - f(x_{0})}{h} .
+$$
+If the limit 
+$$
+\lim_{h\rightarrow 0}\;\Delta f = l
+$$
+exists with $l\in\mathbb{R}$, we say that $l$ is the derivative of $f$ at $x_{0}$, and that $f$ is differentiable at $x_{0}$. 
+
+When $f$ is differentiable at $x_{0}$, we write
+$$
+f'(x_{0})\equiv \lim_{h\rightarrow 0}\;\Delta f.
+$$
+We also write 
+$$
+\frac{\mathrm{d}f}{\mathrm{d} x}(x_{0})\equiv f'(x_{0}),
+$$
+and refer to this expression as the _Leibniz_ notation for derivatives.
+
+If $f$ is differentiable at all $x\in D$, we say that $f$ is differentiable in $D$.
+
+
+The function determined by the rule $x\mapsto f'(x)$ (whenever it makes sense) is called the **derivative** of $f$.  Its domain **need not** coincide with the domain of $f$.
+:::
+
+:::
+
+Before we learn some cool tricks that make computing (a lot but not all) derivatives a sort of mechanical task that does not require computing limits, let's work out some derivatives from the very definition.
+
+::: {.callout-tip title="Three simple examples"}
+
+::: {#exm-derivative-constant-linear-quadratic-functions}
+
+The first example of derivative we consider is that of a constant function $f(x)=c$ with $c\in \mathbb{R}$. Following the very definition of  derivative given above, we have
+$$
+f'(x_{0})=\lim_{h\rightarrow 0} \frac{f(x_{0}+h)-f(x_{0})}{h}=0
+$$
+for every $x_{0}\in\mathbb{R}$. 
+
+---
+
+The second example we consider is that of the function $f(x)=x$:
+$$
+f'(x_{0})=\lim_{h\rightarrow 0} \frac{f(x_{0}+h)-f(x_{0})}{h}=\lim_{h\rightarrow 0} \frac{x_{0} + h -x_{0}}{h}=1
+$$
+for every $x_{0}\in\mathbb{R}$.
+
+---
+
+The third example we consider is that of the function $f(x)=x^{2}$:
+$$
+\begin{split}
+f'(x_{0})&=\lim_{h\rightarrow 0} \frac{f(x_{0}+h)-f(x_{0})}{h}= \\ &=\lim_{h\rightarrow 0} \frac{(x_{0} + h)^{2} -x_{0}^{2}}{h}= \\ &\lim_{h\rightarrow 0} \frac{2x_{0}h + h^{2}}{h}=2x_{0}
+\end{split}
+$$
+for every $x_{0}\in\mathbb{R}$.
+
+
+:::
+
+:::
+
+We defined the derivative of $f$ at $x_{0}$ assuming $x_{0}$ is an accumulation point. However, we can also relax this assumption to the case where $x_{0}$ is either a left or right accumulation point, obtaining the notions of left/right derivative and differentiability. 
+
+
+
+::: {.callout-caution title="Right and left derivative"}
+
+::: {#exr-left-right-derivative}
+
+Consider the function $f\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}$.
+
+If $x_{0}\in D$ is a left or right accumulation point, define the right or left derivative and differentiability of $f$ at $x_{0}$ using [left/right limits](1_limits_and_continuity.qmd#def-limits), and prove that, when $x_{0}$ is both a left **and** right accumulation point, the differentiability of $f$ at $x_{0}$ is equivalent to left **and** right differentiability.
+
+<details>
+<summary> **Solution:** </summary>
+
+You are strongly invited to try to solve it on your own.
+</details>
+
+:::
+
+:::
+
+Just as it happens for [limits](1_limits_and_continuity.qmd#exr-limits-restriction-functions), derivatives behave well with respect to restrictions.
+
+::: {.callout-caution title="Derivative of the restriction"}
+
+::: {#exr-derivative-restriction-functions}
+
+Consider $D,D'\subseteq \mathbb{R}$ such that $D\cap D'\neq \emptyset$, and consider two functions $f\colon D\rightarrow \mathbb{R}$ and $g\colon D' \rightarrow \mathbb{R}$ such that $g(x)=f(x)$ on $S\subseteq D\cap D'$, and such that both are differentiable at $x_{0}\in S$.
+Prove that
+$$
+f'(x_{0})=g'(x_{0}),
+$$
+and prove analogous results for the case of left and right derivatives.
+
+<details>
+<summary> **Solution:** </summary>
+
+You are strongly invited to try to solve it on your own.
+</details>
+
+:::
+
+:::
+
+
+Once a definition is in place, it's always a good idea to go searching for situations in which the definition itself can not be applied.
+
+Let us consider the absolute value function $|\cdot|\colon \mathbb{R}\rightarrow\mathbb{R}$ given by 
+$$
+|x|=\sqrt{x^{2}}=\left\{\begin{matrix}x & \mbox{ if } x\geq 0 \\ & \\ -x & \mbox{ if } x<0 .\end{matrix}\right.
+$$
+For all points $x_{0}\neq 0$, we can compute the derivative following the second example [above](#exm-derivative-constant-linear-quadratic-functions) (essentially because of @exr-derivative-restriction-functions). However, when $x_{0}=0$, we have to take into account the "sudden change" of the function. Therefore, we first compute the [right and left derivatives](#exr-left-right-derivative): 
+$$
+\begin{split}
+\lim_{x\rightarrow 0^{+}}\frac{x-0}{x}&=1 \\ & \\
+\lim_{x\rightarrow 0^{-}}\frac{-x-0}{x}&=-1 .
+\end{split}
+$$
+Since the two derivatives exist but are different, we conclude that $|x|$ is not differentiable at $0$ (but it is separately left and right differentiable there).
+
+
+
+# Properties of derivatives
+
+The first "property" of derivatives we want to highlight is that it requires continuity.
+
+::: {.callout-note title="Differentiability implies continuity"}
+
+::: {#prp-diff-implies-cont}
+
+If the function $f\colon D\subseteq\mathbb{R}\rightarrow\mathbb{R}$ is (left/right) differentiable at $x_{0}\in D$, then it is also (left/right) continuous at $x_{0}$. 
+
+<details>
+<summary>**Proof:**</summary>
+
+You are strongly invited to try to prove it on your own.
+</details>
+
+:::
+
+:::
+
+Note, however, that the converse of the previous proposition does not hold. An explicit counterexample is given by the absolute value function we discussed [before](#derivative-and-differentiability)
+
+
+Next, we pass to how derivatives behave with respect to sums and products of 2 functions.
+
+::: {.callout-note title="Algebraic manipulations of derivatives"}
+
+::: {#prp-algebraic-manipulations-derivatives}
+
+Given $\alpha,\beta\in\mathbb{R}$ and the functions $f,g\colon D\subseteq\mathbb{R}\rightarrow\mathbb{R}$ differentiable at $x_{0}\in D$, the functions $h,r\colon D\subseteq\mathbb{R}\rightarrow\mathbb{R}$ given by $h:=\alpha f+\beta g$ and $r:=f\cdot g$ are differentiable at $x\in D$ and their derivatives are
+$$
+\begin{split}
+h'(x)&=\alpha f'(x) + \beta g'(x),\\
+r'(x)& =f'(x)\,g(x) + f(x)\,g'(x).
+\end{split}
+$$
+The formula for the derivative of the product of two functions is usually referred to as the **Leibniz rule**.
+
+<details>
+<summary>**Proof:**</summary>
+
+TBA
+</details>
+
+:::
+
+:::
+
+What happens if we have more than 2 functions? Luckily, it turns out we can safely generalize @prp-algebraic-manipulations-derivatives. To better digest the generalization, let's consider an instructive example concerning the product of $n$ functions.
+
+
+::: {.callout-caution title="Derivative of $x^{n}$"}
+
+::: {#exr-derivative-xn}
+
+Consider the "raise to the power $n$" function $(\cdot)^{n}:\mathbb{R}\rightarrow\mathbb{R}$. 
+Prove that
+$$
+\frac{\mathrm{d}}{\mathrm{d} x}(x^{n})=nx^{n-1}.
+$$
+
+<details>
+<summary> **Solution:** </summary>
+
+Clearly, we can decompose $x^{n}$ into the product of two functions, say $f(x)=x$ and $g(x)=x^{n-1}$, and apply the Leibniz Rule:
+$$
+\frac{\mathrm{d}}{\mathrm{d} x}(x^{n})=x^{n-1} + x \frac{\mathrm{d}}{\mathrm{d} x}(x^{n-1}).
+$$
+Now, we can decompose $x^{n-1}$ into the product of two functions, say $f(x)=x$ and $g(x) = x^{n-2}$, and apply the Leibniz Rule:
+$$
+\frac{\mathrm{d}}{\mathrm{d} x}(x^{n-1})=x^{n-2} + x \frac{\mathrm{d}}{\mathrm{d} x}(x^{n-3}),
+$$
+which  means
+$$
+\begin{split}
+\frac{\mathrm{d}}{\mathrm{d} x}(x^{n})&=x^{n-1} + x \frac{\mathrm{d}}{\mathrm{d} x}(x^{n-1})= \\
+&=x^{n-1} + x\left(x^{n-2} + x \frac{\mathrm{d}}{\mathrm{d} x}(x^{n-3})\right)= \\
+&=2x^{n-1} + x^{2} \frac{\mathrm{d}}{\mathrm{d} x}(x^{n-3}).
+\end{split}
+$$
+We can keep going until we hit $x^{n-(n-1)}=x$
+$$
+ff
+$$
+</details>
+
+:::
+
+:::
+
+
+What happens when we have more than 2 functions? For a small number of functions, say between 3 and 7, it should be not extremely boring to use the associativity property of function sums and products to understant how to generalize @prp-algebraic-manipulations-derivatives. For an arbitrary finite number of functions, the generalization can be obtained using the induction principle.
+
+::: {.callout-caution title="Algebraic manipulations of derivatives continued"}
+
+::: {#exr-algebraic-manipulations-derivatives-N-functions}
+
+Let $(\alpha_{1},\cdots\alpha_{n})$ be a finite sequence of real numbers and $(f_{1},\cdots,f_{n})$ a finite sequence of scalar functions with common domain $D\subseteq\mathbb{R}$. Suppose that, at $x_{0}\in D$, the derivatives $f_{j}'(x_{0})$ exist for every $j=1,...,n$. Then, it holds
+$$
+\begin{split}
+\left(\sum_{j=1}^{n}\,\alpha_{j}\,f_{j}\right)'(x_{0}) &=\sum_{j=1}^{n}\, \alpha_{j}\,f_{j}'(x_{0})  \\
+\left(\prod_{j=1}^{n} \,\alpha_{j}\,f_{j}\right)'(x_{0}) &=\sum_{j=1}^{n}\,\alpha_{j}\,f_{j}'(x_{0})\,\left(\prod_{k\neq j}\alpha_{k}\,f_{k}(x_{0})\right).
+\end{split}
+$$
+
+<details>
+<summary> **Solution (by induction on $n$):** </summary>
+
+Fix an accumulation point $x_0\in D$ and assume that $f_j'(x_0)$ exists for all $j=1,\dots,n$.
+Set $g_j:=\alpha_j f_j$, so that $g_j'(x_0)=\alpha_j f_j'(x_0)$.
+
+We will use the two-function rules from @prp-algebraic-manipulations-derivatives
+
+---
+
+We start with the derivative of the sum of finitely many functions.
+
+
+For $h\neq 0$ with $x_0+h\in D$, we have
+$$
+\frac{\sum_{j=1}^n \alpha_j f_j(x_0+h)-\sum_{j=1}^n \alpha_j f_j(x_0)}{h}
+=\sum_{j=1}^n \alpha_j \frac{f_j(x_0+h)-f_j(x_0)}{h}.
+$$
+Following @def-derivative, we take the limit as $h\to 0$:
+$$
+\left(\sum_{j=1}^{n}\,\alpha_{j}\,f_{j}\right)'(x_{0}) 
+=\sum_{j=1}^n \alpha_j \lim_{h\to 0}\frac{f_j(x_0+h)-f_j(x_0)}{h}
+=\sum_{j=1}^n \alpha_j f_j'(x_0),
+$$
+where we passed the limit through the sum because it's a sum of finitely many elements.
+
+---
+
+Now, we pass to the derivative of the product of finitely many functions.
+
+Define
+$$
+P_n(x):=\prod_{j=1}^n g_j(x).
+$$
+
+**Base case ($n=1$):** $P_1=g_1$, hence
+$$
+P_1'(x_0)=g_1'(x_0)
+=\sum_{j=1}^1 g_j'(x_0)\prod_{k\neq j} g_k(x_0),
+$$
+so the formula holds.
+
+**Inductive step:** assume that for some $n\ge 1$,
+$$
+P_n'(x_0)=\sum_{j=1}^n g_j'(x_0)\prod_{\substack{k=1\\k\neq j}}^n g_k(x_0).
+$$
+Now $P_{n+1}=P_n\,g_{n+1}$. By the two-function product rule,
+$$
+P_{n+1}'(x_0)=P_n'(x_0)\,g_{n+1}(x_0)+P_n(x_0)\,g_{n+1}'(x_0).
+$$
+Substitute the inductive hypothesis into the first term:
+$$
+\begin{aligned}
+P_{n+1}'(x_0)
+&=\left(\sum_{j=1}^n g_j'(x_0)\prod_{\substack{k=1\\k\neq j}}^n g_k(x_0)\right) g_{n+1}(x_0)
++ \left(\prod_{k=1}^n g_k(x_0)\right) g_{n+1}'(x_0)\\[4pt]
+&=\sum_{j=1}^n g_j'(x_0)\prod_{\substack{k=1\\k\neq j}}^{n+1} g_k(x_0)
+\;+\; g_{n+1}'(x_0)\prod_{k=1}^n g_k(x_0)\\[4pt]
+&=\sum_{j=1}^{n+1} g_j'(x_0)\prod_{\substack{k=1\\k\neq j}}^{n+1} g_k(x_0).
+\end{aligned}
+$$
+Finally, replacing $g_j=\alpha_j f_j$ and $g_j'(x_0)=\alpha_j f_j'(x_0)$, we obtain
+$$
+\left(\prod_{j=1}^n \alpha_j f_j\right)'(x_0)
+=\sum_{j=1}^n \alpha_j f_j'(x_0)\left(\prod_{k\neq j}\alpha_k f_k(x_0)\right).
+$$
+
+This concludes the proof.
+</details>
+
+
+:::
+
+:::
+
+
+
+
+
+Now, we consider what happens to the derivative of the quotient of two functions.
+
+::: {.callout-note title="Derivative of the quotient"}
+
+::: {#prp-derivative-quotient}
+
+Given the functions $f,g\colon D\subseteq\mathbb{R}\rightarrow\mathbb{R}$ differentiable at $x_{0}\in D$ and with $g(x_{0})\neq 0$, the function  $h\colon \tilde{D}\subseteq\mathbb{R}\rightarrow\mathbb{R}$ given by $h:=\frac{f}{g}$ is differentiable at $x\in D$ and its derivative is
+$$
+h'(x)= \frac{f'(x)\,g(x)-f(x)\,g'(x)}{(g(x))^{2}}.
+$$
+
+<details>
+<summary>**Proof:**</summary>
+
+TBA
+</details>
+
+:::
+
+:::
+
+Finally, we are able to use all the results presented in this section to compute the derivatives of polynomial and rational functions without ever computing a limit.
+
+::: {.callout-tip title="Derivatives of polynomials and rational functions"}
+
+::: {#exm-derivative-polynomial-rational-functions}
+
+Let $P_{n},Q_{m}\colon \mathbb{R}\rightarrow \mathbb{R}$ be polynomial functions.
+We now compute $P_{n}',Q_{m}'$ and $R'$ with $R=\frac{P_{n}}{Q_{m}}$.
+
+To compute $P_{n}'$ we first write
+$$
+P_{n}'(x)=\sum_{k=0}^{n}\alpha_{k}\,x^{k}
+$$
+with $\alpha_{k}\in\mathbb{R}$, and then invoke @exr-algebraic-manipulations-derivatives-N-functions to conclude that $P_{n}'$ is the polynomial of order $(n-1)$ given by
+$$
+P_{n}'(x)=\sum_{k=1}^{n}k\alpha_{k}\,x^{k-1}.
+$$
+A similar result holds for $Q_{m}'(x)$.
+
+---
+
+:::
+
+:::
+
+# Derivative of inverse and composite functions
+
+# Interpretation of derivative
+
+# Exercises

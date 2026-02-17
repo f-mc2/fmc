@@ -644,7 +644,7 @@ $$
 $$
 where $(A_{1},\cdots,A_{n})$ can be a finite sequence of numbers or functions, we can use  the previous results together with the associativity property for function sums and products  to solve the following exercise.
 
-::: {.callout-caution title="Algebraic manipulations of more than 2 functions"}
+::: {.callout-caution title="Algebraic manipulations of limits continued"}
 
 ::: {#exr-algebraic-manipulations-limits-N-functions}
 
@@ -672,7 +672,7 @@ Under the obvious modifications, the same conclusions hold for left and right li
 <details>
 <summary> **Solution:** </summary>
 
-Use @prp-algebraic-manipulations-limits and the associativity property for function sums and products.
+Use @prp-algebraic-manipulations-limits and the associativity property for function sums and products (and some patience).
 </details>
 
 :::
