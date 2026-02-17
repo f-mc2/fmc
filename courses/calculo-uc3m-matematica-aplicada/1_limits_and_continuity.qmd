@@ -193,14 +193,6 @@ In this case, we say that $l$ is the limit of $f$ at $x_{0}$.
 :::
 
  
-Recall that the point $x_{0}$ in @def-limits is not necessarily a point in $D$.
-Therefore, limits describe the behavior of $f$ near $x_{0}$, independently of the value of $f$ at $x_{0}$.
-When $x_{0}\in D$ and $x_{0}$ is an accumulation point for $D$, continuity at $x_{0}$ is equivalent to
-$$
-\lim_{x\rightarrow x_{0}}f(x)=f(x_{0})
-$$
-(see @prp-continuity-limit-characterization below).
-
  
 
 Before proceeding further, we must be sure that @def-limits is well-posed in the sense that a limit, if it exists, is unique.
@@ -409,11 +401,18 @@ The proof is will likely take me some time to upload it.
 
 # Continuity {#sec-continuity}
 
+Recall that the point $x_{0}$ in @def-limits is not necessarily a point in the domain $D$ of the function $f$ under consideration.
+Therefore, limits describe the behavior of $f$ near $x_{0}$ independently of the value of $f$ at $x_{0}$, which may not exist at all if $x_{0}\notin D$.
+However, we may be interested in understanding what happens to $f$ when we consider input points in $D$  that are close to the input point $x_{0}\in D$. In this case, what we need is the notion of **continuity**.
 
+Continuity is meant to formalize a very concrete idea: **small changes in the input should produce small changes in the output**. In other words, if we want to keep the values of $f(x)$ within a prescribed tolerance $\varepsilon>0$ from the reference value $f(x_{0})$, we should be able to enforce this by restricting $x$ to be sufficiently close to $x_{0}$.
 
-In this section we define continuity directly through an $\varepsilon$-$\delta$ condition at points $x_{0}\in D$.
-Unlike @def-limits, this definition does not require $x_{0}$ to be an accumulation point of $D$, so isolated points are included automatically.
-When $x_{0}$ is an accumulation point, the direct definition agrees with the usual limit characterization; see @prp-continuity-limit-characterization.
+This may sound almost identical to the definition of limit in @def-limits, and one could try to define continuity at $x_{0}$ by requiring that
+$$
+\lim_{x\rightarrow x_{0}} f(x)=f(x_{0}).
+$$
+However, this formulation only makes sense when $x_{0}\in D$ is an accumulation point of $D$ (see @def-limits), which is not always the case. For this reason, we introduce continuity directly via an $\varepsilon-\delta$ condition comparing $f(x)$ to $f(x_{0})$.
+
 
 ::: {.callout-note title="Continuity"}
 
@@ -488,7 +487,7 @@ which is exactly continuity at $x_{0}$.
 
 :::
 
-::: {.callout-note title="Remark on isolated points"}
+::: {.callout-warning title="Continuity at isolated points"}
 
 ::: {#rem-continuity-isolated-points}
 
