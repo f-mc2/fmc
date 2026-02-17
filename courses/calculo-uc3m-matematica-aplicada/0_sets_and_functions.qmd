@@ -119,6 +119,20 @@ which means it is both a left and right accumulation point.
 
 :::
 
+::: {.callout-note title="Isolated point"}
+
+::: {#def-isolated-point}
+
+Let $D\subseteq\mathbb{R}$ and let $x_{0}\in D$.
+We say that $x_{0}$ is an **isolated point** of $D$ if there exists $r>0$ such that
+$$
+D\cap(x_{0}-r,x_{0}+r)=\{x_{0}\}.
+$$
+
+:::
+
+:::
+
 ::: {.callout-note title="Accumulation at infinity"}
 
 ::: {#def-accumulation-point-at-infinity}
