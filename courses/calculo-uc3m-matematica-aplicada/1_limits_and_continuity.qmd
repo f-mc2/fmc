@@ -38,7 +38,7 @@ Indeed, visualizing $\mathbb{R}$ as the real line, and taking three points $x_{0
 
 
 <script type="text/tikz">
-\begin{tikzpicture}[x=1cm,y=1cm]
+\begin{tikzpicture}[x=3cm,y=3cm]
 % --- real line with three dots at both ends ---
 \draw [dash dot] (-5.2,0) -- (-4.9,0);
 \draw [thick] (-4.8,0) -- (4.8,0);
@@ -193,8 +193,13 @@ In this case, we say that $l$ is the limit of $f$ at $x_{0}$.
 :::
 
  
-Recall that the (left/right) accumulation point $x_{0}$ of $D$ in @def-limits is not necessarily a point in $D$, and thus it doesn't necessarily make sense to compare the limit $L$ with $f(x_{0})$. 
-When this is possible, and $f(x_{0})=L$, then we are dealing with a particularly regular function (see the notion of **continuity** [below](@sec-continuity)).
+Recall that the point $x_{0}$ in @def-limits is not necessarily a point in $D$.
+Therefore, limits describe the behavior of $f$ near $x_{0}$, independently of the value of $f$ at $x_{0}$.
+When $x_{0}\in D$ and $x_{0}$ is an accumulation point for $D$, continuity at $x_{0}$ is equivalent to
+$$
+\lim_{x\rightarrow x_{0}}f(x)=f(x_{0})
+$$
+(see @prp-continuity-limit-characterization below).
 
  
 
@@ -406,12 +411,9 @@ The proof is will likely take me some time to upload it.
 
 
 
-As already noted right after @def-limits, the point $x_0$ appearing when considering the limit
-$$
-\lim_{x\rightarrow x_{0}}f(x)=L
-$$
-is an [accumulation point](0_sets_and_functions.qmd#def-accumulation-point) of the domain $D\subseteq\mathbb{R}$ of the function $f\colon D\rightarrow\mathbb{R}$, but it is not necessarily true that $x_0 \in D$ for the notion of limit to make sense.
-However, if $x_{0}$ does belong to $D$ and the limit exists, it makes sense to see if the limit $L$ differs from the value of the function at $x_0$. 
+In this section we define continuity directly through an $\varepsilon$-$\delta$ condition at points $x_{0}\in D$.
+Unlike @def-limits, this definition does not require $x_{0}$ to be an accumulation point of $D$, so isolated points are included automatically.
+When $x_{0}$ is an accumulation point, the direct definition agrees with the usual limit characterization; see @prp-continuity-limit-characterization.
 
 ::: {.callout-note title="Continuity"}
 
@@ -438,6 +440,73 @@ The function $f\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}$ is said to be
 
 :::
 
+::: {.callout-note title="Continuity and limits at accumulation points"}
+
+::: {#prp-continuity-limit-characterization}
+
+Let $f\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}$ and let $x_{0}\in D$ be an accumulation point for $D$.
+Then $f$ is continuous at $x_{0}$ in the sense of @def-continuity if and only if
+$$
+\lim_{x\rightarrow x_{0}}f(x)=f(x_{0}).
+$$
+
+Analogous statements hold for left continuity and left limits (when $x_{0}$ is a left accumulation point), and for right continuity and right limits (when $x_{0}$ is a right accumulation point).
+
+<details>
+<summary> **Proof:** </summary>
+
+Assume first that $f$ is continuous at $x_{0}$.
+Given $\varepsilon>0$, let $\delta>0$ be as in @def-continuity:
+$$
+x\in D,\quad |x-x_{0}|<\delta \Longrightarrow |f(x)-f(x_{0})|<\varepsilon.
+$$
+In particular, for every $x\in D$ with $0<|x-x_{0}|<\delta$, the same inequality holds.
+Hence, by @def-limits,
+$$
+\lim_{x\rightarrow x_{0}}f(x)=f(x_{0}).
+$$
+
+Conversely, assume
+$$
+\lim_{x\rightarrow x_{0}}f(x)=f(x_{0}).
+$$
+Given $\varepsilon>0$, @def-limits provides $\delta>0$ such that
+$$
+x\in D,\quad 0<|x-x_{0}|<\delta \Longrightarrow |f(x)-f(x_{0})|<\varepsilon.
+$$
+Now take any $x\in D$ with $|x-x_{0}|<\delta$.
+If $x\neq x_{0}$, the previous implication applies.
+If $x=x_{0}$, then $|f(x)-f(x_{0})|=0<\varepsilon$.
+Therefore
+$$
+x\in D,\quad |x-x_{0}|<\delta \Longrightarrow |f(x)-f(x_{0})|<\varepsilon,
+$$
+which is exactly continuity at $x_{0}$.
+</details>
+
+:::
+
+:::
+
+::: {.callout-note title="Remark on isolated points"}
+
+::: {#rem-continuity-isolated-points}
+
+If $x_{0}\in D$ is an isolated point of $D$, then every function $f\colon D\rightarrow\mathbb{R}$ is continuous at $x_{0}$ in the sense of @def-continuity.
+Indeed, there exists $\delta>0$ such that
+$$
+D\cap(x_{0}-\delta,x_{0}+\delta)=\{x_{0}\},
+$$
+so that
+$$
+x\in D,\quad |x-x_{0}|<\delta \Longrightarrow x=x_{0} \Longrightarrow |f(x)-f(x_{0})|=0.
+$$
+In this case, $\lim_{x\rightarrow x_{0}}f(x)$ is not defined in the sense of @def-limits because $x_{0}$ is not an accumulation point of $D$.
+
+:::
+
+:::
+
 
 
 
@@ -445,7 +514,8 @@ The function $f\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}$ is said to be
 
 ::: {#exr-continuity-iff-left-right-continuity}
 
-The function $f\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}$ is  continuous at $x_{0}\in D$ **and only if** it is both left and right continuous at $x_0$.
+Assume that $x_{0}\in D$ is both a left and right accumulation point for $D$.
+Prove that the function $f\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}$ is  continuous at $x_{0}$ **if and only if** it is both left and right continuous at $x_0$.
 
 
 <details>
