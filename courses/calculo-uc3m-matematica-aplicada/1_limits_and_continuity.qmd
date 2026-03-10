@@ -519,7 +519,7 @@ Prove that the function $f\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}$ is
 <details>
 <summary> **Solution:** </summary>
 
-It follows directly from @exr-left-right-limits-link.
+Use @exr-left-right-limits-link and @prp-continuity-limit-characterization.
 </details>
 
 
@@ -1000,7 +1000,7 @@ Suppose that
 $$
 \lim_{x\rightarrow x_{0}}g(x)=l
 $${#eq-limit-composite-functions}
-with $l$ an accumulation point for $D$, and 
+where the first limit is taken in $D'$, and $l\in D$, and 
 $$
 \lim_{y\rightarrow l} f(y) =L .
 $${#eq-limit-composite-functions2}
@@ -1011,7 +1011,7 @@ $$
 holds  if either one of the following additional assumptions are met:
 
 1. $f$ is continuous at $y=l$; 
-2. there is an open interval $I$ centered at $x_{0}$ on which $g(x)\neq l$ for every $x\in I\setminus\{x_{0}\}$.
+2. there is an open interval $I$ centered at $x_{0}$ such that $I\setminus\{x_{0}\}\subseteq D'$ and $g(x)\neq l$ for every $x\in I\setminus\{x_{0}\}$.
 
 
 Analogous results hold for right/left limits.
