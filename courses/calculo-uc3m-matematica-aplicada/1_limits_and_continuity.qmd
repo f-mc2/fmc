@@ -535,7 +535,8 @@ Just as in @exr-limits-restriction-functions, we must ensure that the notion of 
 ::: {#exr-continuity-restriction-functions}
 
 Consider two functions $f\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}$ and $g\colon D'\subseteq \mathbb{R}\rightarrow \mathbb{R}$ such that $g(x)=f(x)$ on $S\subseteq D\cap D'\neq \emptyset$.
-Prove that the restriction function $h\colon S\rightarrow\mathbb{R}$ given by $h(x)=g(x)=f(x)$ is (left/right) continuous at $x_{0}\in S$ if either $f$ or $g$ is (left/right) continuous at $x_{0}\in S$.
+Assume that $x_{0}\in S$ is an accumulation point for $S$.
+Prove that the restriction function $h\colon S\rightarrow\mathbb{R}$ given by $h(x)=g(x)=f(x)$ is (left/right) continuous at $x_{0}$ if either $f$ or $g$ is (left/right) continuous at $x_{0}$.
 
 In particular, prove that $h$ is (left/right) continuous on $S$ if either $f$ or $g$ is continuous on $D$.
 
@@ -1010,7 +1011,7 @@ $$
 holds  if either one of the following additional assumptions are met:
 
 1. $f$ is continuous at $y=l$; 
-2. there is an open interval $I$ centered at $x_{0}$ on which $g(x)\neq l$ for all $x_{0}\neq x\in I$.
+2. there is an open interval $I$ centered at $x_{0}$ on which $g(x)\neq l$ for every $x\in I\setminus\{x_{0}\}$.
 
 
 Analogous results hold for right/left limits.
@@ -1022,7 +1023,6 @@ From @eq-limit-composite-functions2, given $\varepsilon>0$, it follows that ther
 $$
 0<|y-l|<\eta \implies |f(y)-L|<\varepsilon,
 $${#eq-limit-composite-functions3}
-with $y\neq l$.
 On the other hand,  @eq-limit-composite-functions implies that, given the same $\eta>0$ as before, there is $\delta>0$ such that 
 $$
 0<|x-x_{0}|<\delta \implies  |g(x) - l|<\eta.
