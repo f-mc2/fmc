@@ -150,7 +150,7 @@ Consequently, by suitably varying $\varepsilon$ and $\delta$ with the sliders, w
 </figure>
 
 Now that we have an intuitive and visual understanding of what the notion of limit is, we can proceed to introduce a rigorous definition.
-Since we can approach the input point $x_{0}$ from the left, from the right, or from both side simultaneously, we consider three types of limits.
+Since we can approach the input point $x_{0}$ from the left, from the right, or from both sides simultaneously, we consider three types of limits.
 
 
 
@@ -162,7 +162,7 @@ If $x_{0}$ is a [**right accumulation point**](0_sets_and_functions.qmd#def-accu
 $$
 \lim_{x\rightarrow x_{0}^{+}} f(x)=l
 $$
-holds if for every $\varepsilon>0$ there is  $0< \delta$  such that
+holds if for every $\varepsilon>0$ there exists $\delta>0$ such that
 $$ 
 x\in D,\quad 0<x-x_{0}<\delta \Longrightarrow  |f(x)-l|<\varepsilon .
 $$
@@ -172,7 +172,7 @@ Similarly, if $x_{0}$ is a **left accumulation point** for $D$, we say that the 
 $$
 \lim_{x\rightarrow x_{0}^{-}} f(x)=l
 $$
-holds if for every $\varepsilon>0$ there is a  $0< \delta$ such that
+holds if for every $\varepsilon>0$ there exists $\delta>0$ such that
 $$ 
 x\in D,\quad 0<x_{0}-x<\delta \Longrightarrow |f(x)-l|<\varepsilon .
 $$
@@ -182,7 +182,7 @@ Finally, if $x_{0}$ is an **accumulation point** for $D$, we say that the formal
 $$ 
 \lim_{x\rightarrow x_{0}} f(x)=l 
 $$
-holds if for every $\varepsilon>0$ there is a  $0< \delta$ such that
+holds if for every $\varepsilon>0$ there exists $\delta>0$ such that
 $$
 x\in D,\quad 0<|x-x_{0}|<\delta \Longrightarrow |f(x)-l|<\varepsilon .
 $$
@@ -265,7 +265,7 @@ $$
 \lim_{x\rightarrow x_{0}} f(x)= x_{0} + a=f(x_{0})
 $${#eq-limit-linear-function}
 for every $x_{0}\in\mathbb{R}$. 
-According to @def-limits, we need to prove that, for every $\varepsilon>0$, there is $\delta>0$ such that $|x-x_{0}|<\delta$ implies $|f(x)-x_{0}|<\varepsilon$.
+According to @def-limits, we need to prove that, for every $\varepsilon>0$, there is $\delta>0$ such that $|x-x_{0}|<\delta$ implies $|f(x)-f(x_{0})|<\varepsilon$.
 
 By the very definition of $f$, it holds $|f(x) - (x_{0}+a)|=|x - x_{0}|$.
 Taking $\delta< \varepsilon$, we get that $|x - x_{0}|<\delta$ implies $|f(x) - f(x_{0})|<\varepsilon$ as desired.
@@ -573,11 +573,11 @@ If continuity is replaced by left or right continuity at $c$, then there is a co
 
 :::
 
-From @prp-sign-preserving-property-continuous-functions, we can derive the so-called **Bolzano's** theorem, also known as  the  **extreme value theorem** for continuous functions.
+From @prp-sign-preserving-property-continuous-functions, we can derive the so-called **extreme value theorem** for continuous functions.
 This theorem shows that continuous functions on closed intervals must always attain a (possibly non-unique) maximum and a (possibly non-unique) minimum.
 
 
-::: {.callout-note title="[Bolzano's/Extreme value theorem](https://en.wikipedia.org/wiki/Extreme_value_theorem)"}
+::: {.callout-note title="[Extreme value theorem](https://en.wikipedia.org/wiki/Extreme_value_theorem)"}
 
 ::: {#thm-extreme-value-thm}
 
@@ -854,7 +854,7 @@ From @prp-algebraic-manipulations-limits and @exr-algebraic-manipulations-limits
 
 ::: {#prp-algebraic-manipulations-continuous-functions}
 
-Let $(\alpha_{1},\cdots\alpha_{n})\in\mathbb{R}^{n}$ and $x_{0}$ be an accumulation point for $D\subseteq \mathbb{R}$.
+Let $(\alpha_{1},\cdots,\alpha_{n})\in\mathbb{R}^{n}$ and $x_{0}$ be an accumulation point for $D\subseteq \mathbb{R}$.
 For each $j=1,\cdots,n$, consider the function $f_{j}\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}$, assumed to be  continuous at $x_{0}$.
 
 It follows that 
@@ -932,7 +932,7 @@ Explicitly, $D=\mathbb{R}$ if $n$ is odd, and $D=\mathbb{R}_{+}$ if $n$ is even.
 
 ::: {#prp-continuity-inverse-function}
 
-Let $I$ be an interval, and let $f\colon I\rightarrow \mathbb{R}$ be continuous and invertible on $I$ (in particular, $f$ is [monotonic](0_sets_and_functions.qmd#prp-invertible functions are monotonic)).
+Let $I$ be an interval, and let $f\colon I\rightarrow \mathbb{R}$ be continuous and invertible on $I$ (in particular, $f$ is [monotonic](0_sets_and_functions.qmd#prp-invertible-functions-are-monotonic)).
 Then $J:=f(I)$ is an interval, and the inverse function $f^{-1}\colon J\rightarrow\mathbb{R}$ is continuous.
 
 <details>
@@ -997,9 +997,9 @@ The following two propositions make us happy because they answer the previous qu
 Consider the  functions $f\colon D\subseteq \mathbb{R} \rightarrow \mathbb{R}$ and $g\colon D'\subseteq \mathbb{R} \rightarrow \mathbb{R}$, and  let $x_{0}$ be an accumulation point for $D'$.
 Suppose that
 $$
- \lim_{x\rightarrow x_{0}}g(x) = l
+\lim_{x\rightarrow x_{0}}g(x)=l
 $${#eq-limit-composite-functions}
-with $l$ is an accumulation point for $D$, and 
+with $l$ an accumulation point for $D$, and 
 $$
 \lim_{y\rightarrow l} f(y) =L .
 $${#eq-limit-composite-functions2}
@@ -1018,7 +1018,7 @@ Analogous results hold for right/left limits.
 <details>
 <summary> **Proof:** </summary>
 
-From @eq-limit-composite-functions2, give $\varepsilon>0$, it follows that there is $\eta>0$ for which
+From @eq-limit-composite-functions2, given $\varepsilon>0$, it follows that there is $\eta>0$ for which
 $$
 0<|y-l|<\eta \implies |f(y)-L|<\varepsilon,
 $${#eq-limit-composite-functions3}
@@ -1027,7 +1027,7 @@ On the other hand,  @eq-limit-composite-functions implies that, given the same $
 $$
 0<|x-x_{0}|<\delta \implies  |g(x) - l|<\eta.
 $${#eq-limit-composite-functions4}
-Setting $y=g(x)$, @eq-limit-composite-functions4 leads to $|g(x)-l|<\eta$, while @eq-limit-composite-functions3 states that $0<|y-l|=|g(x)-l|<\eta$ implies $|f(y)-L|=|f(g(x))-L|<\varepsilon$, and it does not necessarily hold that $|g(x)-l|<\eta$ implies $0<|y-l|=|g(x)-l|<\eta$ because $y=g(x)$ may be equal to $l$.
+Setting $y=g(x)$, @eq-limit-composite-functions4 leads to $|g(x)-l|<\eta$, while @eq-limit-composite-functions3 states that $0<|y-l|=|g(x)-l|<\eta$ implies $|f(y)-L|=|f(g(x))-L|<\varepsilon$, and it does not necessarily hold that $|g(x)-l|<\eta$ implies $0<|y-l|<\eta$ because $y=g(x)$ may be equal to $l$.
 See @exr-tricky-limit-composition for more details.
 We thus need to assume something more to obtain the desired result.
 
