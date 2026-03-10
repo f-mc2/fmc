@@ -716,16 +716,14 @@ $$
 &< |\alpha\beta|\left(\varepsilon_{1}\varepsilon_{2} + |L_{1}|\,\varepsilon_{2} + |L_{2}|\,\varepsilon_{1}\right).
 \end{split}
 $$
-
 Given $\varepsilon>0$, choose
 $$
 \eta':=\min\left\{1,\frac{\varepsilon}{(1+|L_{1}|+|L_{2}|)(|\alpha\beta|+1)}\right\},
 $$
-and set $\varepsilon_{1}=\varepsilon_{2}=\eta'$.
-Then
+and set $\varepsilon_{1}=\varepsilon_{2}=\eta'$. Then
 $$
 \varepsilon_{1}\varepsilon_{2} + |L_{1}|\,\varepsilon_{2} + |L_{2}|\,\varepsilon_{1}
-\leq \eta'(1+|L_{1}|+|L_{2}|)\leq \frac{\varepsilon}{|\alpha\beta|+1},
+\leq \eta'(\eta'+|L_{1}|+|L_{2}|)\leq  \eta'(1+|L_{1}|+|L_{2}|)\leq \frac{\varepsilon}{|\alpha\beta|+1},
 $$
 and from this we deduce
 $$
@@ -734,22 +732,23 @@ $$
 \leq \frac{|\alpha\beta|}{|\alpha\beta|+1}\,\varepsilon < \varepsilon.
 $$
 Therefore $(\alpha f)(x)(\beta g)(x)= (\alpha f)(x)\,(\beta g)(x)$ has limit $\alpha\beta L_{1}L_{2}$ at $x_0$.
-Scalar multiplication is a subcase: taking $g\equiv 1$ (so that $L_{2}=1$) gives
+Scalar multiplication is a subcase: taking $g\equiv 1=\beta$ (so that $L_{2}=1$) gives
 $$
 \lim_{x\to x_{0}}\alpha f(x)=\alpha L_{1}.
 $$
 
 
 
-For the quotient case, set $h(x):=\beta g(x)$. By the first part of this proof,
-applied to \(0\cdot f+\beta g\), we already know that
+For the quotient case, set $h(x):=\beta g(x)$. By the scalar multiplication
+result proved above, we already know that
 $$
 \lim_{x\to x_{0}}h(x)=\beta L_{2}.
 $$
-By assumption there is $\delta_{0}>0$ such that for $x\in D$ and
-$0<|x-x_{0}|<\delta_{0}$ one has $g(x)\neq 0$. Since $\beta\neq 0$, this implies
-$h(x)\neq 0$ in that range.
-If we prove
+From the hypothesis on $\beta g$, choose $\delta_{0}>0$ such that
+$$
+x\in D,\ 0<|x-x_{0}|<\delta_{0}\Longrightarrow h(x)\neq 0,
+$$
+equivalent to $g(x)\neq 0$ since $\beta\neq 0$. If we prove
 $$
 \lim_{x\to x_{0}}\frac{1}{h(x)}=\frac{1}{\beta L_{2}},
 $$
@@ -760,25 +759,37 @@ $$
 =\frac{\alpha L_{1}}{\beta L_{2}}.
 $$
 
-Let $\varepsilon>0$ and choose
+Fix $\varepsilon>0$ and define
 $$
 \eta:=\min\left\{1,\frac{|\beta L_{2}|}{2},\frac{\varepsilon |\beta L_{2}|^{2}}{2}\right\}.
 $$
-By the definition of limit, there is $\delta_{1}>0$ such that $x\in D$ and
+By definition of limit there is $\delta_{1}>0$ such that $x\in D$ and
 $0<|x-x_{0}|<\delta_{1}$ imply $|h(x)-\beta L_{2}|<\eta$.
-Set $\delta:=\min\{\delta_{0},\delta_{1}\}$. Then for $x\in D$ with
-$0<|x-x_{0}|<\delta$,
+Set $\delta:=\min\{\delta_{0},\delta_{1}\}$. For $x\in D$ with
+$0<|x-x_{0}|<\delta$, we have $h(x)\neq 0$ (from $\delta_{0}$) and
+$$
+|h(x)-\beta L_{2}|<\eta\le \frac{|\beta L_{2}|}{2}.
+$$
+By the [reverse triangle inequality](https://en.wikipedia.org/wiki/Triangle_inequality#Reverse_triangle_inequality),
+$$
+\left||h(x)|-|\beta L_{2}|\right|\le |h(x)-\beta L_{2}|,
+$$
+hence
+$$
+|h(x)|\ge |\beta L_{2}|-|h(x)-\beta L_{2}|.
+$$
+Therefore
 $$
 |h(x)|\ge |\beta L_{2}|-|h(x)-\beta L_{2}|
 \ge\frac{|\beta L_{2}|}{2}.
 $$
-Hence
+Thus
 $$
 \left|\frac{1}{h(x)}-\frac{1}{\beta L_{2}}\right|
 =\frac{|h(x)-\beta L_{2}|}{|h(x)|\,|\beta L_{2}|}
 \le\frac{2\,|h(x)-\beta L_{2}|}{|\beta L_{2}|^{2}}
 <\frac{2\eta}{|\beta L_{2}|^{2}}
-\le \varepsilon.
+\le\varepsilon.
 $$
 Therefore
 $$

@@ -732,7 +732,7 @@ The case of left and right limits can be proved analogously.
 <summary>
 <strong>Solution:</strong>
 </summary>
-You are strongly invited to try to solve it on your own.
+<strong>TBA</strong>
 </details>
 </div>
 </div>
@@ -751,15 +751,15 @@ You are strongly invited to try to solve it on your own.
 </div>
 <div class="callout-body-container callout-body">
 <div id="exr-limits-restriction-functions" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 2</strong></span> Consider <span class="math inline">\(D,D'\subseteq \mathbb{R}\)</span> such that <span class="math inline">\(D\cap D'\neq \emptyset\)</span>, and consider two functions <span class="math inline">\(f\colon D\rightarrow \mathbb{R}\)</span> and <span class="math inline">\(g\colon D' \rightarrow \mathbb{R}\)</span> such that <span class="math inline">\(g(x)=f(x)\)</span> on <span class="math inline">\(S\subseteq D\cap D'\)</span>. If <span class="math inline">\(x_{0}\)</span> is an accumulation point for <span class="math inline">\(S\)</span> prove that <span class="math display">\[
-\lim_{x\rightarrow x_{0}} f(x)=\lim_{x\rightarrow x_{0}} g(x)
+<p><span class="theorem-title"><strong>Exercise 2</strong></span> Consider <span class="math inline">\(D,D'\subseteq \mathbb{R}\)</span> such that <span class="math inline">\(D\cap D'\neq \emptyset\)</span>, and consider two functions <span class="math inline">\(f\colon D\rightarrow \mathbb{R}\)</span> and <span class="math inline">\(g\colon D' \rightarrow \mathbb{R}\)</span> such that <span class="math inline">\(g(x)=f(x)\)</span> on <span class="math inline">\(S\subseteq D\cap D'\)</span>. Let <span class="math inline">\(h\colon S\rightarrow\mathbb{R}\)</span> be such that <span class="math inline">\(h(x):=f(x)=g(x)\)</span>. We may consider the function <span class="math inline">\(h\)</span> to be the restriction of <span class="math inline">\(f\)</span> or <span class="math inline">\(g\)</span> to <span class="math inline">\(S\)</span>. If <span class="math inline">\(x_{0}\)</span> is an accumulation point for <span class="math inline">\(S\)</span> prove that <span class="math display">\[
+\lim_{x\rightarrow x_{0}} h(x)=\lim_{x\rightarrow x_{0}} f(x)=\lim_{x\rightarrow x_{0}} g(x)
 \]</span> whenever either one of the limits exist in the sense of <a href="#def-limits" class="quarto-xref">Definition&nbsp;2</a>.</p>
 <p>Prove analogous results for the case of left and right limits.</p>
 <details>
 <summary>
 <strong>Solution:</strong>
 </summary>
-You are strongly invited to try to solve it on your own.
+<strong>TBA</strong>
 </details>
 </div>
 </div>
@@ -786,7 +786,7 @@ You are strongly invited to try to solve it on your own.
 <summary>
 <strong>Proof:</strong>
 </summary>
-The proof is will likely take me some time to upload it.
+<strong>TBA</strong>
 </details>
 </div>
 </div>
@@ -898,7 +898,7 @@ It follows directly from <a href="#exr-left-right-limits-link" class="quarto-xre
 </div>
 </div>
 </div>
-<p>Just as <a href="#exr-limits-restriction-functions" class="quarto-xref">Exercise&nbsp;2</a>, we must ensure that the notion of continuity in <a href="#def-continuity" class="quarto-xref">Definition&nbsp;3</a> behaves well we consider different functions that agrees on the intersections of their domains to avoid unpleasant pathological behaviours.</p>
+<p>Just as in <a href="#exr-limits-restriction-functions" class="quarto-xref">Exercise&nbsp;2</a>, we must ensure that the notion of continuity in <a href="#def-continuity" class="quarto-xref">Definition&nbsp;3</a> behaves well we consider different functions that agrees on the intersections of their domains to avoid unpleasant pathological behaviours.</p>
 <div class="callout callout-style-default callout-caution callout-titled" title="Continuity of the restriction">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -910,13 +910,13 @@ It follows directly from <a href="#exr-left-right-limits-link" class="quarto-xre
 </div>
 <div class="callout-body-container callout-body">
 <div id="exr-continuity-restriction-functions" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 4</strong></span> Consider two functions <span class="math inline">\(f\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}\)</span> and <span class="math inline">\(g\colon D'\subseteq \mathbb{R}\rightarrow \mathbb{R}\)</span> such that <span class="math inline">\(g(x)=f(x)\)</span> on <span class="math inline">\(D\cap D'\neq \emptyset\)</span>. Prove that <span class="math inline">\(h\colon D\cap D'\subseteq \mathbb{R}\rightarrow\mathbb{R}\)</span> given by <span class="math inline">\(h(x)=g(x)=f(x)\)</span> is (left/right) continuous at <span class="math inline">\(x_{0}\in D\cap D'\)</span> if <span class="math inline">\(g\)</span> is (left/right) continuous at <span class="math inline">\(x_{0}\in D\cap D'\)</span>.</p>
-<p>In particular, prove that <span class="math inline">\(h\)</span> is (left/right) continuous on <span class="math inline">\(D\cap D'\)</span> if <span class="math inline">\(g\)</span> is continuous on <span class="math inline">\(D\)</span>.</p>
+<p><span class="theorem-title"><strong>Exercise 4</strong></span> Consider two functions <span class="math inline">\(f\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}\)</span> and <span class="math inline">\(g\colon D'\subseteq \mathbb{R}\rightarrow \mathbb{R}\)</span> such that <span class="math inline">\(g(x)=f(x)\)</span> on <span class="math inline">\(S\subseteq D\cap D'\neq \emptyset\)</span>. Prove that the restriction function <span class="math inline">\(h\colon S\rightarrow\mathbb{R}\)</span> given by <span class="math inline">\(h(x)=g(x)=f(x)\)</span> is (left/right) continuous at <span class="math inline">\(x_{0}\in S\)</span> if either <span class="math inline">\(f\)</span> or <span class="math inline">\(g\)</span> is (left/right) continuous at <span class="math inline">\(x_{0}\in S\)</span>.</p>
+<p>In particular, prove that <span class="math inline">\(h\)</span> is (left/right) continuous on <span class="math inline">\(S\)</span> if either <span class="math inline">\(f\)</span> or <span class="math inline">\(g\)</span> is continuous on <span class="math inline">\(D\)</span>.</p>
 <details>
 <summary>
 <strong>Solution:</strong>
 </summary>
-It follows directly from <a href="#exr-limits-restriction-functions" class="quarto-xref">Exercise&nbsp;2</a>.
+<strong>TBA</strong>
 </details>
 </div>
 </div>
@@ -933,13 +933,13 @@ It follows directly from <a href="#exr-limits-restriction-functions" class="quar
 </div>
 <div class="callout-body-container callout-body">
 <div id="prp-sign-preserving-property-continuous-functions" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 3</strong></span> Let <span class="math inline">\(f\colon D\subseteq\mathbb{R}\rightarrow\mathbb{R}\)</span> be continuous at <span class="math inline">\(c\in D\)</span>, and suppose that <span class="math inline">\(f(c) \neq 0\)</span>. Then there is an interval <span class="math inline">\((c — \delta, c + \delta)\)</span> in which <span class="math inline">\(f\)</span> has the same sign as <span class="math inline">\(f(c)\)</span>.</p>
+<p><span class="theorem-title"><strong>Proposition 3</strong></span> Let <span class="math inline">\(f\colon D\subseteq\mathbb{R}\rightarrow\mathbb{R}\)</span> be continuous at <span class="math inline">\(c\in D\)</span>, and suppose that <span class="math inline">\(f(c) \neq 0\)</span>. Then there is an interval <span class="math inline">\((c - \delta, c + \delta)\)</span> in which <span class="math inline">\(f\)</span> has the same sign as <span class="math inline">\(f(c)\)</span>.</p>
 <p>If continuity is replaced by left or right continuity at <span class="math inline">\(c\)</span>, then there is a corresponding one-sided interval <span class="math inline">\([c, c + \delta)\)</span> or <span class="math inline">\((c - \delta, c]\)</span> in which <span class="math inline">\(f\)</span> has the same sign as <span class="math inline">\(f(c)\)</span>.</p>
 <details>
 <summary>
 <strong>Proof:</strong>
 </summary>
-I’ll do it soon (hopefully).
+<strong>TBA</strong>
 </details>
 </div>
 </div>
@@ -961,7 +961,7 @@ I’ll do it soon (hopefully).
 <summary>
 <strong>Proof:</strong>
 </summary>
-I’ll do it soon (hopefully).
+<strong>TBA</strong>
 </details>
 </div>
 </div>
@@ -983,7 +983,7 @@ I’ll do it soon (hopefully).
 <summary>
 <strong>Proof:</strong>
 </summary>
-I’ll do it soon (hopefully).
+<strong>TBA</strong>
 </details>
 </div>
 </div>
@@ -1014,39 +1014,85 @@ I’ll do it soon (hopefully).
 \]</span> in the sense of <a href="#def-limits" class="quarto-xref">Definition&nbsp;2</a>, then <span id="eq-algebraic-manipulations-limits"><span class="math display">\[
 \begin{split}
 \lim_{x\rightarrow x_{0}} \left(\alpha \,f + \beta \,g \right)(x) &amp;=\lim_{x\rightarrow x_{0}}  \alpha \,f (x) + \lim_{x\rightarrow x_{0}} \beta \, g(x) =  \alpha\,L_{1} + \beta \,L_{2} \\ &amp; \\
-\lim_{x\rightarrow x_{0}} \left((\alpha \,f)\cdot(\beta \,g)\right) (x) &amp; =\left(\lim_{x\rightarrow x_{0}} \alpha \,f(x)\right)\left(\lim_{x\rightarrow x_{0}}  \beta \,g(x)\right)= \alpha\,L_{1}\,\beta \,L_{2}  \\ &amp; \\
-\lim_{x\rightarrow x_{0}}\,\left(\frac{\alpha \,f}{\beta \,g}\right)(x)&amp;=\frac{\lim_{x\rightarrow x_{0} }\alpha \,f(x)}{\lim_{x\rightarrow x_{0} }\beta \,g(x)} =\frac{\alpha L_{1}}{\beta L_{2}},
+\lim_{x\rightarrow x_{0}} \left((\alpha \,f)\cdot(\beta \,g)\right) (x) &amp; =\left(\lim_{x\rightarrow x_{0}} \alpha \,f(x)\right)\left(\lim_{x\rightarrow x_{0}}  \beta \,g(x)\right)= \alpha\,L_{1}\,\beta \,L_{2}
 \end{split}
-\tag{5}\]</span></span> where <span class="math inline">\(\beta L_{2}\neq 0\)</span> and there exists <span class="math inline">\(\delta_{0}&gt;0\)</span> such that <span class="math display">\[
+\tag{5}\]</span></span> If <span class="math inline">\(\beta,\,L_{2}\neq 0\)</span> and there exists <span class="math inline">\(\delta_{0}&gt;0\)</span> such that <span class="math display">\[
 x\in D,\quad 0&lt;|x-x_{0}|&lt;\delta_{0}\Longrightarrow g(x)\neq 0
-\]</span> for the quotient case.</p>
-<p>Under the obvious modifications, the same conclusions hold for left and right limits.</p>
+\]</span> then <span id="eq-algebraic-manipulations-limits2"><span class="math display">\[
+\begin{split}
+\lim_{x\rightarrow x_{0}}\,\left(\frac{\alpha \,f}{\beta \,g}\right)(x)&amp;=\frac{\lim_{x\rightarrow x_{0} }\alpha \,f(x)}{\lim_{x\rightarrow x_{0} }\beta \,g(x)} =\frac{\alpha L_{1}}{\beta L_{2}}.
+\end{split}
+\tag{6}\]</span></span></p>
+<p>Under suitable modifications, analogous conclusions hold for left and right limits.</p>
 <details>
 <summary>
 <strong>Proof:</strong>
 </summary>
-<p>Let us start with the sum of two functions. From <a href="#def-limits" class="quarto-xref">Definition&nbsp;2</a>, for any <span class="math inline">\(\varepsilon_{1},\varepsilon_{2}&gt;0\)</span> there are <span class="math inline">\(\delta_{1},\delta_{2}&gt;0\)</span> such that <span id="eq-limit-of-sum"><span class="math display">\[
+<p>Let us start with the weighted sum of two functions. From <a href="#def-limits" class="quarto-xref">Definition&nbsp;2</a>, for any <span class="math inline">\(\varepsilon_{1},\varepsilon_{2}&gt;0\)</span> there are <span class="math inline">\(\delta_{1},\delta_{2}&gt;0\)</span> such that <span id="eq-limit-of-sum"><span class="math display">\[
 \begin{split}
 x\in D,\ 0&lt;|x-x_{0}|&lt;\delta_{1}&amp;\Rightarrow |f(x) -L_{1}|&lt;\varepsilon_{1} \\
 x\in D,\ 0&lt;|x-x_{0}|&lt;\delta_{2}&amp;\Rightarrow |g(x) -L_{2}|&lt;\varepsilon_{2}.
 \end{split}
-\tag{6}\]</span></span> For every <span class="math inline">\(\varepsilon&gt;0\)</span>, we can take <span class="math inline">\(\varepsilon_{1}\)</span> and <span class="math inline">\(\varepsilon_{2}\)</span> such that <span class="math inline">\(\varepsilon=\varepsilon_{1}+\varepsilon_{2}\)</span>. Consequently, if <span class="math inline">\(x\in D\)</span> and <span class="math inline">\(0&lt;|x-x_{0}|&lt;\mathrm{min}(\delta_{1},\delta_{2})\)</span>, it holds <span class="math display">\[
-|f(x) + g(x) - L_{1} - L_{2}|\leq |f(x) -L_{1}| + |g(x) -L_{2}| &lt;\varepsilon_{1} +\varepsilon_{2}=\varepsilon
-\]</span> which means that <span class="math inline">\(L_{1} + L_{2}\)</span> is the limit at <span class="math inline">\(x_{0}\)</span> of <span class="math inline">\((f+g)(x)=f(x) + g(x)\)</span> according to <a href="#def-limits" class="quarto-xref">Definition&nbsp;2</a>.</p>
-<p>Passing to the product of two functions, again <a href="#def-limits" class="quarto-xref">Definition&nbsp;2</a> implies that <span class="math display">\[
+\tag{7}\]</span></span> Consequently, if <span class="math inline">\(x\in D\)</span> and <span class="math inline">\(0&lt;|x-x_{0}|&lt;\mathrm{min}(\delta_{1},\delta_{2})\)</span>, it holds <span class="math display">\[
+|\alpha f(x)+\beta g(x)-\alpha L_{1}-\beta L_{2}|
+\leq |\alpha|\,|f(x)-L_{1}| + |\beta|\,|g(x)-L_{2}| &lt; |\alpha|\,\varepsilon_{1}+|\beta|\,\varepsilon_{2}.
+\]</span> For every <span class="math inline">\(\varepsilon&gt;0\)</span>, take <span class="math display">\[
+\varepsilon_{1}:=\min\left\{1,\frac{\varepsilon}{2(|\alpha|+1)}\right\},\qquad
+\varepsilon_{2}:=\min\left\{1,\frac{\varepsilon}{2(|\beta|+1)}\right\}.
+\]</span> and therefore <span class="math display">\[
+|\alpha|\,\varepsilon_{1}+|\beta|\,\varepsilon_{2}\le \frac{\varepsilon}{2}\left(\frac{|\alpha|}{1+|\alpha|}+\frac{|\beta|}{1+|\beta|}\right)&lt;\varepsilon.
+\]</span> which means that <span class="math inline">\(\alpha L_{1} + \beta L_{2}\)</span> is the limit at <span class="math inline">\(x_{0}\)</span> of <span class="math inline">\((\alpha f+\beta g)(x)=\alpha f(x) + \beta g(x)\)</span> according to <a href="#def-limits" class="quarto-xref">Definition&nbsp;2</a>.</p>
+<p>Now passing to the product of two functions, we work directly in the weighted case: <span class="math display">\[
 \begin{split}
-|f(x)g(x) - L_{1}L_{2}|&amp;=\mid (f(x) -L_{1} + L_{1})(g(x) -L_{2} +L_{2}) -L_{1}L_{2}\mid = \\
-&amp;=\mid (f(x) -L_{1})(g(x)-L_{2}) + L_{1}(g(x)-L_{2}) + (f(x)-L_{1})L_{2}\mid \leq \\
-&amp;\leq \mid (f(x) -L_{1})(g(x)-L_{2})\mid + \mid L_{1}(g(x)-L_{2})\mid + \mid(f(x)-L_{1})L_{2}\mid &lt; \\
-&amp;&lt;\varepsilon_{1}\varepsilon_{2} + |L_{1}|\,\varepsilon_{2} + |L_{2}|\,\varepsilon_{1} .
+|(\alpha f)(x)(\beta g)(x)-\alpha\beta L_{1}L_{2}|&amp;=|\alpha\beta|\,|f(x)g(x)-L_{1}L_{2}| \\
+&amp;=|\alpha\beta|\,\mid (f(x) -L_{1} + L_{1})(g(x) -L_{2} +L_{2}) -L_{1}L_{2}\mid \\
+&amp;=|\alpha\beta|\,\mid (f(x) -L_{1})(g(x)-L_{2}) + L_{1}(g(x)-L_{2}) + (f(x)-L_{1})L_{2}\mid \\
+&amp;\le |\alpha\beta|\big(\mid (f(x) -L_{1})(g(x)-L_{2})\mid + \mid L_{1}(g(x)-L_{2})\mid + \mid(f(x)-L_{1})L_{2}\mid\big)\\
+&amp;&lt; |\alpha\beta|\left(\varepsilon_{1}\varepsilon_{2} + |L_{1}|\,\varepsilon_{2} + |L_{2}|\,\varepsilon_{1}\right).
 \end{split}
-\]</span></p>
-<p>Given <span class="math inline">\(\varepsilon&gt;0\)</span>, choose <span class="math display">\[
-\eta:=\min\left\{1,\frac{\varepsilon}{1+|L_{1}|+|L_{2}|}\right\},
-\]</span> and set <span class="math inline">\(\varepsilon_{1}=\varepsilon_{2}=\eta\)</span>. Then <span class="math display">\[
+\]</span> Given <span class="math inline">\(\varepsilon&gt;0\)</span>, choose <span class="math display">\[
+\eta':=\min\left\{1,\frac{\varepsilon}{(1+|L_{1}|+|L_{2}|)(|\alpha\beta|+1)}\right\},
+\]</span> and set <span class="math inline">\(\varepsilon_{1}=\varepsilon_{2}=\eta'\)</span>. Then <span class="math display">\[
 \varepsilon_{1}\varepsilon_{2} + |L_{1}|\,\varepsilon_{2} + |L_{2}|\,\varepsilon_{1}
-\leq \eta(1+|L_{1}|+|L_{2}|)\leq \varepsilon,
-\]</span> and thus we conclude that <span class="math inline">\(L_{1}L_{2}\)</span> is the limit at <span class="math inline">\(x_{0}\)</span> of <span class="math inline">\((fg)(x)=f(x)g(x)\)</span>.</p>
+\leq \eta'(\eta'+|L_{1}|+|L_{2}|)\leq  \eta'(1+|L_{1}|+|L_{2}|)\leq \frac{\varepsilon}{|\alpha\beta|+1},
+\]</span> and from this we deduce <span class="math display">\[
+\left|(\alpha f)(x)(\beta g)(x)-\alpha\beta L_{1}L_{2}\right|
+\leq |\alpha\beta|\left(\varepsilon_{1}\varepsilon_{2}+|L_{1}|\varepsilon_{2}+|L_{2}|\varepsilon_{1}\right)
+\leq \frac{|\alpha\beta|}{|\alpha\beta|+1}\,\varepsilon &lt; \varepsilon.
+\]</span> Therefore <span class="math inline">\((\alpha f)(x)(\beta g)(x)= (\alpha f)(x)\,(\beta g)(x)\)</span> has limit <span class="math inline">\(\alpha\beta L_{1}L_{2}\)</span> at <span class="math inline">\(x_0\)</span>. Scalar multiplication is a subcase: taking <span class="math inline">\(g\equiv 1=\beta\)</span> (so that <span class="math inline">\(L_{2}=1\)</span>) gives <span class="math display">\[
+\lim_{x\to x_{0}}\alpha f(x)=\alpha L_{1}.
+\]</span></p>
+<p>For the quotient case, set <span class="math inline">\(h(x):=\beta g(x)\)</span>. By the scalar multiplication result proved above, we already know that <span class="math display">\[
+\lim_{x\to x_{0}}h(x)=\beta L_{2}.
+\]</span> From the hypothesis on <span class="math inline">\(\beta g\)</span>, choose <span class="math inline">\(\delta_{0}&gt;0\)</span> such that <span class="math display">\[
+x\in D,\ 0&lt;|x-x_{0}|&lt;\delta_{0}\Longrightarrow h(x)\neq 0,
+\]</span> equivalent to <span class="math inline">\(g(x)\neq 0\)</span> since <span class="math inline">\(\beta\neq 0\)</span>. If we prove <span class="math display">\[
+\lim_{x\to x_{0}}\frac{1}{h(x)}=\frac{1}{\beta L_{2}},
+\]</span> then the quotient follows by the product formula already proved: <span class="math display">\[
+\lim_{x\to x_{0}}\left(\frac{\alpha f}{\beta g}\right)(x)
+=\lim_{x\to x_{0}}(\alpha f)(x)\cdot\lim_{x\to x_{0}}\frac{1}{h(x)}
+=\frac{\alpha L_{1}}{\beta L_{2}}.
+\]</span></p>
+<p>Fix <span class="math inline">\(\varepsilon&gt;0\)</span> and define <span class="math display">\[
+\eta:=\min\left\{1,\frac{|\beta L_{2}|}{2},\frac{\varepsilon |\beta L_{2}|^{2}}{2}\right\}.
+\]</span> By definition of limit there is <span class="math inline">\(\delta_{1}&gt;0\)</span> such that <span class="math inline">\(x\in D\)</span> and <span class="math inline">\(0&lt;|x-x_{0}|&lt;\delta_{1}\)</span> imply <span class="math inline">\(|h(x)-\beta L_{2}|&lt;\eta\)</span>. Set <span class="math inline">\(\delta:=\min\{\delta_{0},\delta_{1}\}\)</span>. For <span class="math inline">\(x\in D\)</span> with <span class="math inline">\(0&lt;|x-x_{0}|&lt;\delta\)</span>, we have <span class="math inline">\(h(x)\neq 0\)</span> (from <span class="math inline">\(\delta_{0}\)</span>) and <span class="math display">\[
+|h(x)-\beta L_{2}|&lt;\eta\le \frac{|\beta L_{2}|}{2}.
+\]</span> By the <a href="https://en.wikipedia.org/wiki/Triangle_inequality#Reverse_triangle_inequality">reverse triangle inequality</a>, <span class="math display">\[
+\left||h(x)|-|\beta L_{2}|\right|\le |h(x)-\beta L_{2}|,
+\]</span> hence <span class="math display">\[
+|h(x)|\ge |\beta L_{2}|-|h(x)-\beta L_{2}|.
+\]</span> Therefore <span class="math display">\[
+|h(x)|\ge |\beta L_{2}|-|h(x)-\beta L_{2}|
+\ge\frac{|\beta L_{2}|}{2}.
+\]</span> Thus <span class="math display">\[
+\left|\frac{1}{h(x)}-\frac{1}{\beta L_{2}}\right|
+=\frac{|h(x)-\beta L_{2}|}{|h(x)|\,|\beta L_{2}|}
+\le\frac{2\,|h(x)-\beta L_{2}|}{|\beta L_{2}|^{2}}
+&lt;\frac{2\eta}{|\beta L_{2}|^{2}}
+\le\varepsilon.
+\]</span> Therefore <span class="math display">\[
+\lim_{x\to x_{0}}\frac{1}{h(x)}=\frac{1}{\beta L_{2}},
+\]</span> and the quotient formula is proved.</p>
 The case of left and right limits should be easy to obtain by following and suitably adapting the previous steps.
 </details>
 </div>
@@ -1069,22 +1115,20 @@ The case of left and right limits should be easy to obtain by following and suit
 </div>
 <div class="callout-body-container callout-body">
 <div id="exr-algebraic-manipulations-limits-N-functions" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 5</strong></span> Let <span class="math inline">\((\alpha_{1},\cdots\alpha_{n})\mathbb{R}^{n}\)</span>, let <span class="math inline">\(x_{0}\in\mathbb{R}\)</span> be an accumulation point for <span class="math inline">\(D\)</span>, and, for each <span class="math inline">\(j=1,\cdots,n\)</span>, consider the function <span class="math inline">\(f_{j}\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}\)</span>. Prove that, if <span class="math display">\[
+<p><span class="theorem-title"><strong>Exercise 5</strong></span> Let <span class="math inline">\((\alpha_{1},\cdots,\alpha_{n})\in\mathbb{R}^{n}\)</span>, let <span class="math inline">\(x_{0}\in\mathbb{R}\)</span> be an accumulation point for <span class="math inline">\(D\)</span>, and, for each <span class="math inline">\(j=1,\cdots,n\)</span>, consider the function <span class="math inline">\(f_{j}\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}\)</span>. Prove that, if <span class="math display">\[
 \lim_{x\rightarrow x_{0}}f_{j}(x)=L_{j}\in \mathbb{R}
 \]</span> for every <span class="math inline">\(j=1,...,n\)</span>, then <span id="eq-algebraic-manipulations-limits-n-functions"><span class="math display">\[
 \begin{split}
 \lim_{x\rightarrow x_{0}} \left(\sum_{j=1}^{n}\,\alpha_{j}\,f_{j}\right)(x) &amp;=\sum_{j=1}^{n}\,\lim_{x\rightarrow x_{0}} \left(\alpha_{j}\,f_{j}(x)\right) = \sum_{j=1}^{n}\,\alpha_{j}\,L_{j} \\ &amp; \\
 \lim_{x\rightarrow x_{0}}\left(\prod_{j=1}^{n} \,\alpha_{j}\,f_{j}\right)(x) &amp; =\prod_{j=1}^{n}\,\lim_{x\rightarrow x_{0}} \left(\alpha_{j}\,f_{j}(x)\right) = \prod_{j=1}^{n}\,\alpha_{j}\,L_{j} .
 \end{split}
-\tag{7}\]</span></span> Moreover, if <span class="math inline">\(n=2\)</span> and <span class="math inline">\(\alpha_{2},L_{2}\neq 0\)</span>, it holds <span class="math display">\[
-\lim_{x\rightarrow x_{0}^{+}}\,\left(\frac{\alpha_{1}f_{1}}{\alpha_{2}f_{2}}\right)(x)=\lim_{x\rightarrow x_{0}^{+}}\,\frac{\alpha_{1}f_{1}(x)}{\alpha_{2}f_{2}(x)}=\frac{\alpha_{1}L_{1}}{\alpha_{2} L_{2}}.
-\]</span></p>
-<p>Under the obvious modifications, the same conclusions hold for left and right limits.</p>
+\tag{8}\]</span></span></p>
+<p>Under suitable modifications, analogous conclusions hold for left and right limits.</p>
 <details>
 <summary>
 <strong>Solution:</strong>
 </summary>
-Use <a href="#prp-algebraic-manipulations-limits" class="quarto-xref">Proposition&nbsp;4</a> and the associativity property for function sums and products (and some patience).
+Use <a href="#prp-algebraic-manipulations-limits" class="quarto-xref">Proposition&nbsp;4</a>, the associativity property for function sums and products, and some patience.
 </details>
 </div>
 </div>
@@ -1101,7 +1145,7 @@ Use <a href="#prp-algebraic-manipulations-limits" class="quarto-xref">Propositio
 </div>
 <div class="callout-body-container callout-body">
 <div id="prp-algebraic-manipulations-continuous-functions" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 5</strong></span> Let <span class="math inline">\((\alpha_{1},\cdots\alpha_{n})\mathbb{R}^{n}\)</span> and <span class="math inline">\(x_{0}\)</span> be an accumulation point for <span class="math inline">\(D\subseteq \mathbb{R}\)</span>. For each <span class="math inline">\(j=1,\cdots,n\)</span>, consider the function <span class="math inline">\(f_{j}\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}\)</span>, assumed to be continuous at <span class="math inline">\(x_{0}\)</span>.</p>
+<p><span class="theorem-title"><strong>Proposition 5</strong></span> Let <span class="math inline">\((\alpha_{1},\cdots\alpha_{n})\in\mathbb{R}^{n}\)</span> and <span class="math inline">\(x_{0}\)</span> be an accumulation point for <span class="math inline">\(D\subseteq \mathbb{R}\)</span>. For each <span class="math inline">\(j=1,\cdots,n\)</span>, consider the function <span class="math inline">\(f_{j}\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}\)</span>, assumed to be continuous at <span class="math inline">\(x_{0}\)</span>.</p>
 <p>It follows that <span class="math display">\[
 F(x)=\left(\sum\limits_{j=1}^{n}\alpha_{j}f_{j}\right)(x),\qquad G(x)=\left(\prod_{j=1}^{n}\alpha_{j}f_{j}\right)(x)
 \]</span> are continuous at <span class="math inline">\(x_{0}\)</span>.</p>
@@ -1137,8 +1181,8 @@ Follow <a href="#def-continuity" class="quarto-xref">Definition&nbsp;3</a> and a
 <strong>Solution:</strong>
 </summary>
 <p>The polynomial <span class="math inline">\(\mathrm{P}_{n}(x)\)</span> can be written as <span class="math display">\[
-\mathrm{P}_{n}(x)= a_{n}x^{n} + a_{n-1} x^{n-1}\cdots a_{1}x + a_{0}x^{0},
-\]</span> where <span class="math inline">\(a_{j}\in\mathbb{R}\)</span> for every <span class="math inline">\(j=1,\cdots , n\)</span>. It is then clear that <span class="math inline">\(\mathrm{P}_{n}\)</span> is a suitable combinations of sums and products of constant functions (which are continuous) with the identity function <span class="math inline">\(f(x)=x\)</span> (which is continuous). Consequently, <a href="#prp-algebraic-manipulations-continuous-functions" class="quarto-xref">Proposition&nbsp;5</a> ensures the desired result.</p>
+\mathrm{P}_{n}(x)= a_{n}x^{n} + a_{n-1} x^{n-1}+\cdots+ a_{1}x + a_{0}x^{0},
+\]</span> where <span class="math inline">\(a_{j}\in\mathbb{R}\)</span> for every <span class="math inline">\(j=1,\cdots , n\)</span>. It is then clear that <span class="math inline">\(\mathrm{P}_{n}\)</span> is a suitable combination of sums and products of constant functions (which are continuous) with the identity function <span class="math inline">\(f(x)=x\)</span> (which is continuous). Consequently, <a href="#prp-algebraic-manipulations-continuous-functions" class="quarto-xref">Proposition&nbsp;5</a> ensures the desired result.</p>
 The continuity of <span class="math inline">\(\mathrm{R}\)</span> follows again from <a href="#prp-algebraic-manipulations-continuous-functions" class="quarto-xref">Proposition&nbsp;5</a> since both <span class="math inline">\(\mathrm{P}_{n}\)</span> and <span class="math inline">\(\mathrm{Q}_{m}\)</span> are continuous on <span class="math inline">\(D\)</span> and <span class="math inline">\(\mathrm{Q}_{m}(x)\neq 0\)</span> on <span class="math inline">\(D\)</span>.
 </details>
 </div>
@@ -1211,9 +1255,9 @@ h(x)=x^{2}+3.
 <div id="prp-limit-composite-functions" class="theorem proposition">
 <p><span class="theorem-title"><strong>Proposition 7</strong></span> Consider the functions <span class="math inline">\(f\colon D\subseteq \mathbb{R} \rightarrow \mathbb{R}\)</span> and <span class="math inline">\(g\colon D'\subseteq \mathbb{R} \rightarrow \mathbb{R}\)</span>, and let <span class="math inline">\(x_{0}\)</span> be an accumulation point for <span class="math inline">\(D'\)</span>. Suppose that <span id="eq-limit-composite-functions"><span class="math display">\[
 \lim_{x\rightarrow x_{0}}g(x) = l
-\tag{8}\]</span></span> with <span class="math inline">\(l\)</span> is an accumulation point for <span class="math inline">\(D\)</span>, and <span id="eq-limit-composite-functions2"><span class="math display">\[
+\tag{9}\]</span></span> with <span class="math inline">\(l\)</span> is an accumulation point for <span class="math inline">\(D\)</span>, and <span id="eq-limit-composite-functions2"><span class="math display">\[
 \lim_{y\rightarrow l} f(y) =L .
-\tag{9}\]</span></span> The equality <span class="math display">\[
+\tag{10}\]</span></span> The equality <span class="math display">\[
 \lim_{x\rightarrow x_{0}} f\circ g(x)=L
 \]</span> holds if either one of the following additional assumptions are met:</p>
 <ol type="1">
@@ -1225,11 +1269,11 @@ h(x)=x^{2}+3.
 <summary>
 <strong>Proof:</strong>
 </summary>
-<p>From <a href="#eq-limit-composite-functions2" class="quarto-xref">Equation&nbsp;9</a>, give <span class="math inline">\(\varepsilon&gt;0\)</span>, it follows that there is <span class="math inline">\(\eta&gt;0\)</span> for which <span id="eq-limit-composite-functions3"><span class="math display">\[
+<p>From <a href="#eq-limit-composite-functions2" class="quarto-xref">Equation&nbsp;10</a>, give <span class="math inline">\(\varepsilon&gt;0\)</span>, it follows that there is <span class="math inline">\(\eta&gt;0\)</span> for which <span id="eq-limit-composite-functions3"><span class="math display">\[
 0&lt;|y-l|&lt;\eta \implies |f(y)-L|&lt;\varepsilon,
-\tag{10}\]</span></span> with <span class="math inline">\(y\neq l\)</span>. On the other hand, <a href="#eq-limit-composite-functions" class="quarto-xref">Equation&nbsp;8</a> implies that, given the same <span class="math inline">\(\eta&gt;0\)</span> as before, there is <span class="math inline">\(\delta&gt;0\)</span> such that <span id="eq-limit-composite-functions4"><span class="math display">\[
+\tag{11}\]</span></span> with <span class="math inline">\(y\neq l\)</span>. On the other hand, <a href="#eq-limit-composite-functions" class="quarto-xref">Equation&nbsp;9</a> implies that, given the same <span class="math inline">\(\eta&gt;0\)</span> as before, there is <span class="math inline">\(\delta&gt;0\)</span> such that <span id="eq-limit-composite-functions4"><span class="math display">\[
 0&lt;|x-x_{0}|&lt;\delta \implies  |g(x) - l|&lt;\eta.
-\tag{11}\]</span></span> Setting <span class="math inline">\(y=g(x)\)</span>, <a href="#eq-limit-composite-functions4" class="quarto-xref">Equation&nbsp;11</a> leads to <span class="math inline">\(|g(x)-l|&lt;\eta\)</span>, while <a href="#eq-limit-composite-functions3" class="quarto-xref">Equation&nbsp;10</a> states that <span class="math inline">\(0&lt;|y-l|=|g(x)-l|&lt;\eta\)</span> implies <span class="math inline">\(|f(y)-L|=|f(g(x))-L|&lt;\varepsilon\)</span>, and it does not necessarily hold that <span class="math inline">\(|g(x)-l|&lt;\eta\)</span> implies <span class="math inline">\(0&lt;|y-l|=|g(x)-l|&lt;\eta\)</span> because <span class="math inline">\(y=g(x)\)</span> may be equal to <span class="math inline">\(l\)</span>. See <a href="#exr-tricky-limit-composition" class="quarto-xref">Exercise&nbsp;8</a> for more details. We thus need to assume something more to otbain the desired result.</p>
+\tag{12}\]</span></span> Setting <span class="math inline">\(y=g(x)\)</span>, <a href="#eq-limit-composite-functions4" class="quarto-xref">Equation&nbsp;12</a> leads to <span class="math inline">\(|g(x)-l|&lt;\eta\)</span>, while <a href="#eq-limit-composite-functions3" class="quarto-xref">Equation&nbsp;11</a> states that <span class="math inline">\(0&lt;|y-l|=|g(x)-l|&lt;\eta\)</span> implies <span class="math inline">\(|f(y)-L|=|f(g(x))-L|&lt;\varepsilon\)</span>, and it does not necessarily hold that <span class="math inline">\(|g(x)-l|&lt;\eta\)</span> implies <span class="math inline">\(0&lt;|y-l|=|g(x)-l|&lt;\eta\)</span> because <span class="math inline">\(y=g(x)\)</span> may be equal to <span class="math inline">\(l\)</span>. See <a href="#exr-tricky-limit-composition" class="quarto-xref">Exercise&nbsp;8</a> for more details. We thus need to assume something more to otbain the desired result.</p>
 <ol type="1">
 <li>In this case, <span class="math inline">\(L=f(l)\)</span> because <span class="math inline">\(f\)</span> is continuous at <span class="math inline">\(l\)</span>, and thus <span class="math inline">\(|f(y) -L|=|f(y) -f(l)|&lt;\varepsilon\)</span> even when <span class="math inline">\(y=g(x)=l\)</span>, and the result follows.</li>
 <li>In this case, we can take <span class="math inline">\(\delta\)</span> sufficiently small so that <span class="math inline">\(0&lt;|x-x_{0}|&lt;\delta\)</span> implies <span class="math inline">\(x\in I\)</span> and thus <span class="math inline">\(g(x)\neq l\)</span> by assumption. Consequently, it holds <span class="math display">\[
