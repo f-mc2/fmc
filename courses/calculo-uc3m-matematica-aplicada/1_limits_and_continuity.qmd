@@ -724,6 +724,32 @@ $$
 $$
 and thus we conclude that $L_{1}L_{2}$ is the limit at $x_{0}$ of $(fg)(x)=f(x)g(x)$.
 
+For the weighted product, if $\alpha\beta=0$ there is nothing to prove.
+If $\alpha\beta\neq 0$, then for
+$$
+\eta':=\min\left\{1,\frac{\varepsilon}{(1+|L_{1}|+|L_{2}|)(|\alpha\beta|+1)}\right\},
+$$
+and taking $\varepsilon_{1}=\varepsilon_{2}=\eta'$ in the previous estimate, we get
+$$
+\left|f(x)g(x)-L_{1}L_{2}\right|<\eta'(1+|L_{1}|+|L_{2}|).
+$$
+Combining this with $\eta'\le\frac{\varepsilon}{(1+|L_{1}|+|L_{2}|)(|\alpha\beta|+1)}$ yields
+$$
+\begin{split}
+\left|f(x)g(x)-L_{1}L_{2}\right|<\frac{\varepsilon}{|\alpha\beta|+1},
+\end{split}
+$$
+and therefore
+$$
+\begin{split}
+\left|(\alpha f)(x)(\beta g)(x)-\alpha\beta L_{1}L_{2}\right|
+&=|\alpha\beta|\,\left|f(x)g(x)-L_{1}L_{2}\right| \\
+&<|\alpha\beta|\,\eta'\,(1+|L_{1}|+|L_{2}|)\le \varepsilon,
+\end{split}
+$$
+Hence $\alpha\beta L_{1}L_{2}$ is the limit at $x_{0}$ of
+$(\alpha f)(x)(\beta g)(x)=(\alpha f)(x)\,(\beta g)(x)$.
+
 
 
 For the quotient case, set $h(x):=\beta g(x)$. By the first part of this proof
