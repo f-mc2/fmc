@@ -86,7 +86,7 @@ Graphical depiction of distances between real numbers on the real line.
 :::
 
 
-The 'distances' $\Delta_{1}$ and $\Delta_{2}$ are precisely the lenghts of the segments joining $x_{0}$ with $x_{1}$ and $x_{0}$ with $x_{2}$, respectively, as measured with a standard ruler. 
+The 'distances' $\Delta_{1}$ and $\Delta_{2}$ are precisely the lengths of the segments joining $x_{0}$ with $x_{1}$ and $x_{0}$ with $x_{2}$, respectively, as measured with a standard ruler. 
 
 
 
@@ -111,7 +111,7 @@ $$
 \lim_{x\rightarrow x_{0}} f(x)=L
 $$
 as follows.
-The interval $(L-\varepsilon, L+\varepsilon)$ in the output space is depicted as an horizontal blue strip of length $2\varepsilon$, while the interval $(x_{0}-\delta,x_{0}+\delta)$ in the input space is depicted as a vertical red strip of lenght $2\delta$.
+The interval $(L-\varepsilon, L+\varepsilon)$ in the output space is depicted as a horizontal blue strip of length $2\varepsilon$, while the interval $(x_{0}-\delta,x_{0}+\delta)$ in the input space is depicted as a vertical red strip of length $2\delta$.
 We can use the sliders to change the value of $\varepsilon>0$ and $\delta>0$, and we can see that, whatever the value of $\varepsilon$ is, we can find a suitable value for $\delta$ such that $x\in (x_{0}-\delta,x_{0}+\delta)$ (or, equivalently, $|x-x_{0}|<\delta$) implies $f(x)\in (L-\varepsilon, L+\varepsilon)$ (or, equivalently, $|f(x)- L|<\epsilon$.
 
 
@@ -132,7 +132,7 @@ We can use the sliders to change the value of $\varepsilon>0$ and $\delta>0$, an
 
 In general, limits do not need to exist, as visualized in the applet below (source: [Jason McCullough in Geogebra](https://www.geogebra.org/m/hebkhRJm)).
 This example exploits the oscillating behavior of trigonometric functions, a type of real-valued function that we will able to properly define only later in the course.
-The intuitive ideais that, when $x$ approaches $0$, the function keeps oscillating taking all values between $-1$ and $1$.
+The intuitive idea is that, when $x$ approaches $0$, the function keeps oscillating taking all values between $-1$ and $1$.
 Consequently, by suitably varying $\varepsilon$ and $\delta$ with the sliders, we can see that, as soon as $\varepsilon$ is smaller than $1$, there are no $L$ and no $\delta>0$ such that $|x-0|<\delta$ implies $|f(x)-L|<\varepsilon$.
 
 
@@ -145,7 +145,7 @@ Consequently, by suitably varying $\varepsilon$ and $\delta$ with the sliders, w
     style="border:0;width:100%;height:640px;display:block;"
   ></iframe>
   <figcaption style="text-align:center;font-size:0.95em;opacity:.85;margin-top:.5rem">
-    Interactive demo: when a limit does not exists.
+    Interactive demo: when a limit does not exist.
   </figcaption>
 </figure>
 
@@ -309,7 +309,7 @@ Note that the way in which $\delta$ depends on $\varepsilon$ is more complex tha
 
 
 
-In @def-limits, three types of limits are considered because we can approach the input point $x_{0}$ from the left, from the right, or from both sides simulatenously.
+In @def-limits, three types of limits are considered because we can approach the input point $x_{0}$ from the left, from the right, or from both sides simultaneously.
 In the last case,  it is reasonable to ask if the three types of limits agree.
 In the exercise below, you are asked to  prove that this is indeed the case.
 
@@ -319,7 +319,7 @@ In the exercise below, you are asked to  prove that this is indeed the case.
 
 Consider the function $f\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}$.
 
-If $x_{0}$ is a left and right accumulation point for $D\subseteq \mathbb{R}$, prove that  $l$ is the limit of function $f\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}$ for $x$ going to $x_{0}$ if and only **if and only if** it is also the left and right limit of $f\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}$ at $x_{0}$.
+If $x_{0}$ is a left and right accumulation point for $D\subseteq \mathbb{R}$, prove that  $l$ is the limit of function $f\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}$ for $x$ going to $x_{0}$ if and only if it is also the left and right limit of $f\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}$ at $x_{0}$.
 
 <details>
 <summary> **Solution:** </summary>
@@ -527,7 +527,7 @@ It follows directly from @exr-left-right-limits-link.
 
 :::
 
-Just as in @exr-limits-restriction-functions, we must ensure that the notion of continuity in @def-continuity behaves well we consider different functions that agrees on the intersections of their domains to avoid unpleasant pathological behaviours.
+Just as in @exr-limits-restriction-functions, we must ensure that the notion of continuity in @def-continuity behaves well when considering different functions that agree on the intersections of their domains to avoid unpleasant pathological behaviors.
 
 
 ::: {.callout-caution title="Continuity of the restriction"}
@@ -1029,7 +1029,7 @@ $$
 $${#eq-limit-composite-functions4}
 Setting $y=g(x)$, @eq-limit-composite-functions4 leads to $|g(x)-l|<\eta$, while @eq-limit-composite-functions3 states that $0<|y-l|=|g(x)-l|<\eta$ implies $|f(y)-L|=|f(g(x))-L|<\varepsilon$, and it does not necessarily hold that $|g(x)-l|<\eta$ implies $0<|y-l|=|g(x)-l|<\eta$ because $y=g(x)$ may be equal to $l$.
 See @exr-tricky-limit-composition for more details.
-We thus need to assume something more to otbain the desired result.
+We thus need to assume something more to obtain the desired result.
 
 1. In this case,  $L=f(l)$ because $f$ is continuous at $l$, and thus $|f(y) -L|=|f(y) -f(l)|<\varepsilon$ even when $y=g(x)=l$, and the result follows.
 2. In this case, we can take $\delta$ sufficiently small so that $0<|x-x_{0}|<\delta$ implies $x\in I$ and thus  $g(x)\neq l$ by assumption.
@@ -1082,7 +1082,7 @@ Here, $f$ is not continuous at $0$, and $g(x)=0$ for every $x\neq 0$ close to $0
 
 :::
 
-@prp-limit-composite-functions immediately implies that continuous functions behaves well when composed among themseleves.
+@prp-limit-composite-functions immediately implies that continuous functions behave well when composed among themselves.
 
 ::: {.callout-note title="Composition of continuous functions"}
 
@@ -1109,7 +1109,7 @@ Now, we are ready to solve quite a number of interesting problems.
 
 ::: {#exr-limits-1}
 
-All the functions defined by the formulas given below are implicitely assumed to be defined on their maximal domains.
+All the functions defined by the formulas given below are implicitly assumed to be defined on their maximal domains.
 Calculate the limits, or prove they do not exist, explaining which previous results you are using in each case:
 
 $$
