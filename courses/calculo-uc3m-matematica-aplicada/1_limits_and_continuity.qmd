@@ -689,15 +689,19 @@ x\in D,\ 0<|x-x_{0}|<\delta_{1}&\Rightarrow |f(x) -L_{1}|<\varepsilon_{1} \\
 x\in D,\ 0<|x-x_{0}|<\delta_{2}&\Rightarrow |g(x) -L_{2}|<\varepsilon_{2}.
 \end{split}
 $${#eq-limit-of-sum}
-For every $\varepsilon>0$, take
-$$
-\varepsilon_{1}:=\frac{\varepsilon}{2(|\alpha|+1)},\qquad
-\varepsilon_{2}:=\frac{\varepsilon}{2(|\beta|+1)}.
-$$
 Consequently, if $x\in D$ and $0<|x-x_{0}|<\mathrm{min}(\delta_{1},\delta_{2})$, it holds
 $$
 |\alpha f(x)+\beta g(x)-\alpha L_{1}-\beta L_{2}|
-\leq |\alpha|\,|f(x)-L_{1}| + |\beta|\,|g(x)-L_{2}| <\varepsilon.
+\leq |\alpha|\,|f(x)-L_{1}| + |\beta|\,|g(x)-L_{2}| < |\alpha|\,\varepsilon_{1}+|\beta|\,\varepsilon_{2}.
+$$
+For every $\varepsilon>0$, take
+$$
+\varepsilon_{1}:=\min\left\{1,\frac{\varepsilon}{2(|\alpha|+1)}\right\},\qquad
+\varepsilon_{2}:=\min\left\{1,\frac{\varepsilon}{2(|\beta|+1)}\right\}.
+$$
+and therefore
+$$
+|\alpha|\,\varepsilon_{1}+|\beta|\,\varepsilon_{2}\le \frac{\varepsilon}{2}\left(\frac{|\alpha|}{1+|\alpha|}+\frac{|\beta|}{1+|\beta|}\right)<\varepsilon.
 $$
 which means that $\alpha L_{1} + \beta L_{2}$ is the limit at $x_{0}$ of
 $(\alpha f+\beta g)(x)=\alpha f(x) + \beta g(x)$ according to @def-limits.
@@ -729,16 +733,16 @@ $$
 \leq |\alpha\beta|\left(\varepsilon_{1}\varepsilon_{2}+|L_{1}|\varepsilon_{2}+|L_{2}|\varepsilon_{1}\right)
 \leq \frac{|\alpha\beta|}{|\alpha\beta|+1}\,\varepsilon < \varepsilon.
 $$
-Therefore $(\alpha f)(x)(\beta g)(x)= (\alpha f)(x)\,(\beta g)(x)$ has limit \(\alpha\beta L_{1}L_{2}\) at \(x_0\).
-Scalar multiplication is a subcase: taking \(g\equiv 1\) (so \(L_{2}=1\)) gives
-\[
+Therefore $(\alpha f)(x)(\beta g)(x)= (\alpha f)(x)\,(\beta g)(x)$ has limit $\alpha\beta L_{1}L_{2}$ at $x_0$.
+Scalar multiplication is a subcase: taking $g\equiv 1$ (so $L_{2}=1$) gives
+$$
 \lim_{x\to x_{0}}\alpha f(x)=\alpha L_{1}.
-\]
+$$
 
 
 
 For the quotient case, set $h(x):=\beta g(x)$. By the first part of this proof,
-applied to \(0\cdot f+\beta g\), we already know that
+applied to $0\cdot f+\beta g$, we already know that
 $$
 \lim_{x\to x_{0}}h(x)=\beta L_{2}.
 $$
