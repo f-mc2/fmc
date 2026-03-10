@@ -163,7 +163,7 @@ $$
 \lim_{x\rightarrow x_{0}^{+}} f(x)=l
 $$
 holds if for every $\varepsilon>0$ there exists $\delta>0$ such that
-$$ 
+$$
 x\in D,\quad 0<x-x_{0}<\delta \Longrightarrow  |f(x)-l|<\varepsilon .
 $$
 In this case, we say that $l$ is the right limit of $f$ at  $x_{0}$.
@@ -1105,18 +1105,12 @@ Follow @def-continuity and apply @prp-limit-composite-functions.
 
 Now, we are ready to solve quite a number of interesting problems.
 
-::: {.callout-caution title="Some exercises to keep us in shape"}
-
 ::: {#exr-limits-1}
 
-All the functions defined by the formulas given below are implicitly assumed to be defined on their maximal domains.
-Calculate the limits, or prove they do not exist, explaining which previous results you are using in each case:
+All the functions below are implicitly defined on their maximal domains.
+Calculate the one-sided limits, and decide whether the two-sided limit exists:
 
-$$
-\begin{split}
-1) \lim_{x\rightarrow 0^{\pm}} \frac{|x|}{x} & \qquad & \qquad  & 2) \lim_{x\rightarrow 0^{\pm}} \frac{\sqrt{x^{2}}}{x}
-\end{split}
-$$
+1) $\lim_{x\to0^\pm}\frac{|x|}{x}$ and $\lim_{x\to0^\pm}\frac{\sqrt{x^2}}{x}$.
 
 <details>
 <summary> **Solution** </summary>
@@ -1143,7 +1137,7 @@ $$
 \frac{\sqrt{x^{2}}}{x}=\frac{|x|}{x},
 $$
 and the same conclusion follows from the previous item:
-$$
+$$ 
 \lim_{x\to 0^+}\frac{\sqrt{x^{2}}}{x}=1,\qquad
 \lim_{x\to 0^-}\frac{\sqrt{x^{2}}}{x}=-1.
 $$
@@ -1151,13 +1145,10 @@ $$
 
 :::
 
-:::
-
-::: {.callout-caution title="Counterexamples and pitfalls (rational/irrational + composition)"}
-
 ::: {#exr-counterexamples-rational-irrational}
 
 All functions below are implicitly defined on their maximal domains.
+Each item has its own solution.
 
 1) Let
 $$
@@ -1168,6 +1159,20 @@ f(x)=\begin{cases}
 $$
 Prove that $\lim_{x\to x_0}f(x)$ does not exist for any $x_0\in\mathbb{R}$.
 
+<details>
+<summary> **Solution** </summary>
+
+Assume $\lim_{x\to x_0}f(x)=L$.
+Choose $\varepsilon=\frac12$. By the limit definition, there must be $\delta>0$ such that $|f(x)-L|<\frac12$ whenever $0<|x-x_0|<\delta$.
+But any interval $(x_0-\delta,x_0+\delta)$ contains both rational and irrational points, so we can find $q\in\mathbb{Q}$ and $r\notin\mathbb{Q}$ with this property.
+Then $f(q)=0$ and $f(r)=1$, hence
+$$
+|f(q)-L|<\frac12,\qquad |f(r)-L|<\frac12.
+$$
+So $L$ is within $\frac12$ of both $0$ and $1$, impossible. Therefore the limit does not exist.
+
+</details>
+
 2) Let
 $$
 g(x)=\begin{cases}
@@ -1176,6 +1181,26 @@ x & \text{if } x\notin\mathbb{Q}.
 \end{cases}
 $$
 Show that $\lim_{x\to 0}g(x)=0$, and determine for which $x_0\neq 0$ the limit can exist.
+
+<details>
+<summary> **Solution** </summary>
+
+To show $\lim_{x\to 0}g(x)=0$, let $\varepsilon>0$.  
+If $x\in\mathbb{Q}$, then $g(x)=0$, so $|g(x)-0|=0<\varepsilon$.  
+If $x\notin\mathbb{Q}$, then $g(x)=x$, so $|g(x)-0|=|x|<\varepsilon$ whenever $|x|<\varepsilon$.  
+Hence for $\delta=\varepsilon$, @def-limits gives $\lim_{x\to0}g(x)=0$.
+
+Now let $x_0\neq0$. Take $\varepsilon=|x_0|/2$. For any $\delta>0$, set
+$\delta_0=\min\{\delta,|x_0|/2\}$ and pick
+a rational $q$ and an irrational $r$ such that $0<|q-x_0|<\delta_0$ and $0<|r-x_0|<\delta_0$.
+Then $g(q)=0$, while $g(r)=r$. Since
+$$
+|r| \geq ||x_0|-|r-x_0|| > \frac{|x_0|}{2}=\varepsilon,
+$$
+there is no single $L$ such that $|g(r)-L|<\varepsilon$ together with $|g(q)-L|<\varepsilon$.
+Thus $\lim_{x\to x_0}g(x)$ does not exist for $x_0\neq0$.
+
+</details>
 
 3) Let
 $$
@@ -1192,45 +1217,10 @@ $$
 Verify that $\lim_{x\to 0}g(x)=\lim_{y\to 0}f(y)=0$, but $\lim_{x\to 0}f\circ g(x)=1$.
 Explain explicitly which assumption of @prp-limit-composite-functions is not satisfied.
 
-4) Let
-$$
-h(x)=\begin{cases}
-0 & \text{if } x\le 0,\\
-1 & \text{if } x>0.
-\end{cases}
-$$
-Compute the left and right limits at $x_0=0$, and decide whether $h$ is continuous, left continuous, or right continuous at $0$.
-
-5) Let $D=(0,3)$, $D'=(-1,2)$, $f(x)=x+3$, $g(x)=x+3$, and $S=\{1\}$.
-Define $h\colon S\to\mathbb{R}$ by $h(x)=f(x)=g(x)$.  
-Show that $1$ is not an accumulation point of $S$, and discuss why this is the key reason the restriction continuity discussion does not give information about nearby-point behavior.
-
 <details>
 <summary> **Solution** </summary>
 
-1) Assume $\lim_{x\to x_0}f(x)=L$.  
-Choose $\varepsilon=\frac12$. By the limit definition, there must be $\delta>0$ such that $|f(x)-L|<\frac12$ whenever $0<|x-x_0|<\delta$.  
-But any interval $(x_0-\delta,x_0+\delta)$ contains both rational and irrational numbers. Hence we can find $q\in\mathbb{Q}$ and $r\notin\mathbb{Q}$ in that interval, giving $f(q)=0$ and $f(r)=1$. Then
-$$
-|f(q)-L|<\frac12,\qquad |f(r)-L|<\frac12.
-$$
-So $L$ is within $\frac12$ of both $0$ and $1$, impossible. Therefore the limit does not exist.
-
-2) To show $\lim_{x\to 0}g(x)=0$, let $\varepsilon>0$.  
-If $x\in\mathbb{Q}$, then $g(x)=0$, so $|g(x)-0|=0<\varepsilon$.  
-If $x\notin\mathbb{Q}$, then $g(x)=x$, so $|g(x)-0|=|x|<\varepsilon$ whenever $|x|<\varepsilon$.  
-Hence for $\delta=\varepsilon$, @def-limits gives $\lim_{x\to0}g(x)=0$.
-
-Now let $x_0\neq0$. Take $\varepsilon=|x_0|/2$. For any $\delta>0$, set
-$\delta_0=\min\{\delta,|x_0|/2\}$ and pick
-a rational $q$ and an irrational $r$ such that $0<|q-x_0|<\delta_0$ and $0<|r-x_0|<\delta_0$.
-Then $g(q)=0$, while $g(r)=r$. Since
-$$
-|r| \geq ||x_0|-|r-x_0|| > \frac{|x_0|}{2}=\varepsilon,
-$$
-there is no single $L$ such that $|g(r)-L|<\varepsilon$ together with $|g(q)-L|<\varepsilon$. Thus $\lim_{x\to x_0}g(x)$ does not exist for $x_0\neq0$.
-
-3) From the definitions, $\lim_{x\to 0}g(x)=0$ and $\lim_{y\to0}f(y)=0$, so the expected composed value is
+From the definitions, $\lim_{x\to 0}g(x)=0$ and $\lim_{y\to0}f(y)=0$, so the expected composed value is
 $$
 f\!\left(\lim_{x\to0}g(x)\right)=f(0)=1.
 $$
@@ -1242,7 +1232,7 @@ $$
 0 & \text{if } x=0.
 \end{cases}
 $$
-It follows that $\lim_{x\to0}(f\circ g)(x)=1$ by @def-limits.
+Therefore, by @def-limits, $\lim_{x\to0}(f\circ g)(x)=1$.
 
 The hypotheses of @prp-limit-composite-functions are not satisfied:
 \begin{itemize}
@@ -1251,19 +1241,42 @@ The hypotheses of @prp-limit-composite-functions are not satisfied:
 \end{itemize}
 This is a useful warning: the conclusion may still hold by coincidence, but the theorem does not apply.
 
-4) By @def-limits, $\lim_{x\to0^-}h(x)=0$ and $\lim_{x\to0^+}h(x)=1$.  
+</details>
+
+4) Let
+$$
+h(x)=\begin{cases}
+0 & \text{if } x\le 0,\\
+1 & \text{if } x>0.
+\end{cases}
+$$
+Compute the left and right limits at $x_0=0$, and decide whether $h$ is continuous, left continuous, or right continuous at $0$.
+
+<details>
+<summary> **Solution** </summary>
+
+By @def-limits, $\lim_{x\to0^-}h(x)=0$ and $\lim_{x\to0^+}h(x)=1$.  
 The one-sided limits differ, so the two-sided limit does not exist at $0$.  
 Since $h(0)=0$, $h$ is left continuous at $0$ ($\lim_{x\to0^-}h(x)=h(0)$) but not right continuous ($\lim_{x\to0^+}h(x)\neq h(0)$).  
 Hence it is not continuous at $0$.
 
-5) Since $S=\{1\}$, for every $\delta>0$ we have
+</details>
+
+5) Let $D=(0,3)$, $D'=(-1,2)$, $f(x)=x+3$, $g(x)=x+3$, and $S=\{1\}$.
+Define $h\colon S\to\mathbb{R}$ by $h(x)=f(x)=g(x)$.  
+Show that $1$ is not an accumulation point of $S$, and discuss why this is the key reason the restriction continuity discussion does not give information about nearby-point behavior.
+
+<details>
+<summary> **Solution** </summary>
+
+Since $S=\{1\}$, for every $\delta>0$ we have
 $$
 S\cap(1-\delta,1+\delta)=\{1\}.
 $$
 So $1$ is isolated and not an accumulation point. Hence @exr-continuity-restriction-functions does not apply at $x_{0}=1$, because its hypotheses require accumulation behavior at the base point.
 This is the same reason behind @rem-continuity-isolated-points.
+
 </details>
 
-:::
 
 :::
