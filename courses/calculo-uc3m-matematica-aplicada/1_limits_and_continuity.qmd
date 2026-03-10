@@ -734,7 +734,7 @@ $$
 \leq \frac{|\alpha\beta|}{|\alpha\beta|+1}\,\varepsilon < \varepsilon.
 $$
 Therefore $(\alpha f)(x)(\beta g)(x)= (\alpha f)(x)\,(\beta g)(x)$ has limit $\alpha\beta L_{1}L_{2}$ at $x_0$.
-Scalar multiplication is a subcase: taking $g\equiv 1$ (so $L_{2}=1$) gives
+Scalar multiplication is a subcase: taking $g\equiv 1$ (so that $L_{2}=1$) gives
 $$
 \lim_{x\to x_{0}}\alpha f(x)=\alpha L_{1}.
 $$
@@ -742,7 +742,7 @@ $$
 
 
 For the quotient case, set $h(x):=\beta g(x)$. By the first part of this proof,
-applied to $0\cdot f+\beta g$, we already know that
+applied to \(0\cdot f+\beta g\), we already know that
 $$
 \lim_{x\to x_{0}}h(x)=\beta L_{2}.
 $$
