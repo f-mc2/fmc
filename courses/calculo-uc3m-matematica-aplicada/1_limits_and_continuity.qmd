@@ -538,7 +538,7 @@ Consider two functions $f\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}$ and
 Assume that $x_{0}\in S$ is an accumulation point for $S$.
 Prove that the restriction function $h\colon S\rightarrow\mathbb{R}$ given by $h(x)=g(x)=f(x)$ is (left/right) continuous at $x_{0}$ if either $f$ or $g$ is (left/right) continuous at $x_{0}$.
 
-In particular, prove that $h$ is (left/right) continuous on $S$ if either $f$ or $g$ is continuous on $D$.
+In particular, prove that $h$ is (left/right) continuous on $S$ if either $f$ is continuous on $D$ or $g$ is continuous on $D'$.
 
 <details>
 <summary> **Solution:** </summary>
