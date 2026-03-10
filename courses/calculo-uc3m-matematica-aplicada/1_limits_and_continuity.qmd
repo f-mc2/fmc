@@ -720,43 +720,50 @@ and thus we conclude that $L_{1}L_{2}$ is the limit at $x_{0}$ of $(fg)(x)=f(x)g
 
 
 
-For the quotient case, define $h(x):=\beta g(x)$, and by the first part of this proof
+For the quotient case, set $h(x):=\beta g(x)$. By the first part of this proof
+(the scalar multiplication case), we already know that
 $$
 \lim_{x\to x_{0}}h(x)=\beta L_{2}.
 $$
-By hypothesis there is $\delta_{0}>0$ such that for $x\in D$ and
-$0<|x-x_{0}|<\delta_{0}$ one has $g(x)\neq 0$, hence $h(x)\neq 0$.
-So it is enough to prove
+By assumption there is $\delta_{0}>0$ such that for $x\in D$ and
+$0<|x-x_{0}|<\delta_{0}$ one has $g(x)\neq 0$. Since $\beta\neq 0$, this implies
+$h(x)\neq 0$ in that range.
+If we prove
 $$
-\lim_{x\to x_{0}}\frac{1}{h(x)}=\frac{1}{\beta L_{2}}.
+\lim_{x\to x_{0}}\frac{1}{h(x)}=\frac{1}{\beta L_{2}},
 $$
+then the quotient follows by the product formula already proved:
+$$
+\lim_{x\to x_{0}}\left(\frac{\alpha f}{\beta g}\right)(x)
+=\lim_{x\to x_{0}}(\alpha f)(x)\cdot\lim_{x\to x_{0}}\frac{1}{h(x)}
+=\frac{\alpha L_{1}}{\beta L_{2}}.
+$$
+
 Let $\varepsilon>0$ and choose
 $$
 \eta:=\min\left\{1,\frac{|\beta L_{2}|}{2},\frac{\varepsilon |\beta L_{2}|^{2}}{2}\right\}.
 $$
 By the definition of limit, there is $\delta_{1}>0$ such that $x\in D$ and
 $0<|x-x_{0}|<\delta_{1}$ imply $|h(x)-\beta L_{2}|<\eta$.
-Set $\delta=\min\{\delta_{0},\delta_{1}\}$. Then
+Set $\delta:=\min\{\delta_{0},\delta_{1}\}$. Then for $x\in D$ with
+$0<|x-x_{0}|<\delta$,
 $$
-|h(x)|\ge |\beta L_{2}|-|h(x)-\beta L_{2}|\ge \frac{|\beta L_{2}|}{2},
-$$
-for $0<|x-x_{0}|<\delta$, and therefore
-$$
-\left|\frac{1}{h(x)}-\frac{1}{\beta L_{2}}\right|
-=\frac{|h(x)-\beta L_{2}|}{|h(x)|\,|\beta L_{2}|}
-<\frac{2|h(x)-\beta L_{2}|}{|\beta L_{2}|^{2}}
-<\varepsilon.
+|h(x)|\ge |\beta L_{2}|-|h(x)-\beta L_{2}|
+\ge\frac{|\beta L_{2}|}{2}.
 $$
 Hence
 $$
-\lim_{x\to x_{0}}\frac{1}{h(x)}=\frac{1}{\beta L_{2}}.
+\left|\frac{1}{h(x)}-\frac{1}{\beta L_{2}}\right|
+=\frac{|h(x)-\beta L_{2}|}{|h(x)|\,|\beta L_{2}|}
+\le\frac{2\,|h(x)-\beta L_{2}|}{|\beta L_{2}|^{2}}
+<\frac{2\eta}{|\beta L_{2}|^{2}}
+\le \varepsilon.
 $$
-By the product formula above,
+Therefore
 $$
-\lim_{x\to x_{0}}\left(\frac{\alpha f}{\beta g}\right)(x)
-=\lim_{x\to x_{0}}(\alpha f)(x)\cdot\lim_{x\to x_{0}}\frac{1}{h(x)}
-=\frac{\alpha L_{1}}{\beta L_{2}}.
+\lim_{x\to x_{0}}\frac{1}{h(x)}=\frac{1}{\beta L_{2}},
 $$
+and the quotient formula is proved.
 
 The case of left and right limits should be easy to obtain by following and suitably adapting the previous steps.
 </details>
