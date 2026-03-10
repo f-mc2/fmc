@@ -1121,7 +1121,147 @@ $$
 <details>
 <summary> **Solution** </summary>
 
-You are strongly invited to try to solve them on your own.
+For $x\neq0$,
+$$
+\frac{|x|}{x}= \begin{cases}
+1 & \text{if } x>0,\\
+-1 & \text{if } x<0.
+\end{cases}
+$$
+Therefore,
+$$
+\lim_{x\to 0^+}\frac{|x|}{x}=1,
+\qquad
+\lim_{x\to 0^-}\frac{|x|}{x}=-1,
+$$
+By @def-limits, hence the two-sided limit at $0$ does not exist.
+If a two-sided limit existed, both one-sided limits would coincide by @prp-well-posedness-limits, contradicting the two different values above.
+This directly uses @def-limits: when the punctured neighborhood is one-sided and the function is constant there, the limit equals that constant.
+
+For $x\neq0$, we have $\sqrt{x^{2}}=|x|$, so
+$$
+\frac{\sqrt{x^{2}}}{x}=\frac{|x|}{x},
+$$
+and the same conclusion follows from the previous item:
+$$
+\lim_{x\to 0^+}\frac{\sqrt{x^{2}}}{x}=1,\qquad
+\lim_{x\to 0^-}\frac{\sqrt{x^{2}}}{x}=-1.
+$$
+</details>
+
+:::
+
+:::
+
+::: {.callout-caution title="Counterexamples and pitfalls (rational/irrational + composition)"}
+
+::: {#exr-counterexamples-rational-irrational}
+
+All functions below are implicitly defined on their maximal domains.
+
+1) Let
+$$
+f(x)=\begin{cases}
+0 & \text{if } x\in\mathbb{Q},\\
+1 & \text{if } x\notin\mathbb{Q}.
+\end{cases}
+$$
+Prove that $\lim_{x\to x_0}f(x)$ does not exist for any $x_0\in\mathbb{R}$.
+
+2) Let
+$$
+g(x)=\begin{cases}
+0 & \text{if } x\in\mathbb{Q},\\
+x & \text{if } x\notin\mathbb{Q}.
+\end{cases}
+$$
+Show that $\lim_{x\to 0}g(x)=0$, and determine for which $x_0\neq 0$ the limit can exist.
+
+3) Let
+$$
+f(x)=\begin{cases}
+0 & \text{if } x\neq 0,\\
+1 & \text{if } x=0.
+\end{cases}
+\qquad
+g(x)=\begin{cases}
+0 & \text{if } x\neq 0,\\
+1 & \text{if } x=0.
+\end{cases}
+$$
+Verify that $\lim_{x\to 0}g(x)=\lim_{y\to 0}f(y)=0$, but $\lim_{x\to 0}f\circ g(x)=1$.
+Explain explicitly which assumption of @prp-limit-composite-functions is not satisfied.
+
+4) Let
+$$
+h(x)=\begin{cases}
+0 & \text{if } x\le 0,\\
+1 & \text{if } x>0.
+\end{cases}
+$$
+Compute the left and right limits at $x_0=0$, and decide whether $h$ is continuous, left continuous, or right continuous at $0$.
+
+5) Let $D=(0,3)$, $D'=(-1,2)$, $f(x)=x+3$, $g(x)=x+3$, and $S=\{1\}$.
+Define $h\colon S\to\mathbb{R}$ by $h(x)=f(x)=g(x)$.  
+Show that $1$ is not an accumulation point of $S$, and discuss why this is the key reason the restriction continuity discussion does not give information about nearby-point behavior.
+
+<details>
+<summary> **Solution** </summary>
+
+1) Assume $\lim_{x\to x_0}f(x)=L$.  
+Choose $\varepsilon=\frac12$. By the limit definition, there must be $\delta>0$ such that $|f(x)-L|<\frac12$ whenever $0<|x-x_0|<\delta$.  
+But any interval $(x_0-\delta,x_0+\delta)$ contains both rational and irrational numbers. Hence we can find $q\in\mathbb{Q}$ and $r\notin\mathbb{Q}$ in that interval, giving $f(q)=0$ and $f(r)=1$. Then
+$$
+|f(q)-L|<\frac12,\qquad |f(r)-L|<\frac12.
+$$
+So $L$ is within $\frac12$ of both $0$ and $1$, impossible. Therefore the limit does not exist.
+
+2) To show $\lim_{x\to 0}g(x)=0$, let $\varepsilon>0$.  
+If $x\in\mathbb{Q}$, then $g(x)=0$, so $|g(x)-0|=0<\varepsilon$.  
+If $x\notin\mathbb{Q}$, then $g(x)=x$, so $|g(x)-0|=|x|<\varepsilon$ whenever $|x|<\varepsilon$.  
+Hence for $\delta=\varepsilon$, @def-limits gives $\lim_{x\to0}g(x)=0$.
+
+Now let $x_0\neq0$. Take $\varepsilon=|x_0|/2$. For any $\delta>0$, set
+$\delta_0=\min\{\delta,|x_0|/2\}$ and pick
+a rational $q$ and an irrational $r$ such that $0<|q-x_0|<\delta_0$ and $0<|r-x_0|<\delta_0$.
+Then $g(q)=0$, while $g(r)=r$. Since
+$$
+|r| \geq ||x_0|-|r-x_0|| > \frac{|x_0|}{2}=\varepsilon,
+$$
+there is no single $L$ such that $|g(r)-L|<\varepsilon$ together with $|g(q)-L|<\varepsilon$. Thus $\lim_{x\to x_0}g(x)$ does not exist for $x_0\neq0$.
+
+3) From the definitions, $\lim_{x\to 0}g(x)=0$ and $\lim_{y\to0}f(y)=0$, so the expected composed value is
+$$
+f\!\left(\lim_{x\to0}g(x)\right)=f(0)=1.
+$$
+Now $g(0)=1$, and $g(x)=0$ for $x\neq0$. Hence
+$$
+(f\circ g)(x)=
+\begin{cases}
+1 & \text{if } x\neq0,\\
+0 & \text{if } x=0.
+\end{cases}
+$$
+It follows that $\lim_{x\to0}(f\circ g)(x)=1$ by @def-limits.
+
+The hypotheses of @prp-limit-composite-functions are not satisfied:
+\begin{itemize}
+\item (1) fails because $f$ is not continuous at $0$, as shown in @prp-continuity-limit-characterization.
+\item (2) fails because $g(x)=0$ for every $x\neq0$, i.e., for $x$ close to $0$ we have $g(x)=\ell$.
+\end{itemize}
+This is a useful warning: the conclusion may still hold by coincidence, but the theorem does not apply.
+
+4) By @def-limits, $\lim_{x\to0^-}h(x)=0$ and $\lim_{x\to0^+}h(x)=1$.  
+The one-sided limits differ, so the two-sided limit does not exist at $0$.  
+Since $h(0)=0$, $h$ is left continuous at $0$ ($\lim_{x\to0^-}h(x)=h(0)$) but not right continuous ($\lim_{x\to0^+}h(x)\neq h(0)$).  
+Hence it is not continuous at $0$.
+
+5) Since $S=\{1\}$, for every $\delta>0$ we have
+$$
+S\cap(1-\delta,1+\delta)=\{1\}.
+$$
+So $1$ is isolated and not an accumulation point. Hence @exr-continuity-restriction-functions does not apply at $x_{0}=1$, because its hypotheses require accumulation behavior at the base point.
+This is the same reason behind @rem-continuity-isolated-points.
 </details>
 
 :::
