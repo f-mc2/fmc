@@ -720,34 +720,35 @@ and thus we conclude that $L_{1}L_{2}$ is the limit at $x_{0}$ of $(fg)(x)=f(x)g
 
 The case of left and right limits should be easy to obtain by following and suitably adapting the previous steps.
 
-For the quotient case, if $\alpha =0$, the result is trivial. Assume $\alpha \neq 0$. Let $\varepsilon>0$ and choose
-$$
-\eta := \min\left\{1,\frac{|L_2|}{2}, \frac{\varepsilon |\beta|\,|L_2|}{4|\alpha|}, \frac{\varepsilon |\beta|\,|L_2|^2}{4|\alpha|(|L_1|+1)} \right\}.
-$$
-By the definition of limit for $f$ and $g$, there exist $\delta_1,\delta_2>0$ such that
-$$
-\begin{split}
-x\in D,\ 0<|x-x_0|<\delta_1 &\Rightarrow |f(x)-L_1|<\eta\\
-x\in D,\ 0<|x-x_0|<\delta_2 &\Rightarrow |g(x)-L_2|<\eta.
-\end{split}
-$$
-Set $\delta := \min\{\delta_0,\delta_1,\delta_2\}$. If $x\in D$ and $0<|x-x_0|<\delta$, then $g(x)\neq 0$ by hypothesis and
-$$
-|g(x)|\ge |L_2|-|g(x)-L_2|\ge |L_2|-\eta\ge \frac{|L_2|}{2}.
-$$
-Hence
-$$
-\begin{split}
-\left|\frac{\alpha f(x)}{\beta g(x)}-\frac{\alpha L_1}{\beta L_2}\right|
-&=\frac{|\alpha|}{|\beta|}
-\left|\frac{L_2 f(x)-L_1 g(x)}{g(x)L_2}\right| \\
-&\le \frac{|\alpha|}{|\beta|}\cdot\left(\frac{|f(x)-L_1|}{|g(x)|}+\frac{|L_1|\,|g(x)-L_2|}{|g(x)|\,|L_2|}\right) \\
-&\le \frac{2|\alpha|}{|\beta||L_2|}\,|f(x)-L_1| + \frac{2|\alpha||L_1|}{|\beta||L_2|^2}|g(x)-L_2| \\
-&<\frac{2|\alpha|}{|\beta||L_2|}\cdot \frac{\varepsilon |\beta||L_2|}{4|\alpha|} + \frac{2|\alpha||L_1|}{|\beta||L_2|^2}\cdot\frac{\varepsilon |\beta||L_2|^2}{4|\alpha|(|L_1|+1)} \\
-&<\frac{\varepsilon}{2} + \frac{\varepsilon\,|L_1|}{2(|L_1|+1)} < \varepsilon.
-\end{split}
-$$
-This proves the result.
+For the quotient case, first note that by the first part of this proof,
+\[
+\lim_{x\to x_{0}} (\beta g)(x)=\beta L_2.
+\]
+Define $h(x)=\beta g(x)$, and since $h(x)\neq 0$ for $x\in D$ close enough to $x_0$, it is enough to prove
+\[
+\lim_{x\to x_{0}} \frac{1}{h(x)}=\frac{1}{\beta L_2}.
+\]
+Given $\varepsilon>0$, choose
+\[
+\eta:=\min\left\{1,\frac{|\beta L_2|}{2},\frac{\varepsilon |\beta L_2|^2}{2}\right\},
+\]
+and let $\delta>0$ be such that $x\in D$ and $0<|x-x_{0}|<\delta$ imply
+\[
+|h(x)-\beta L_2|<\eta.
+\]
+Then $|h(x)|\ge |\beta L_2|-|h(x)-\beta L_2| \ge \frac{|\beta L_2|}{2}$, so
+\[
+\left|\frac{1}{h(x)}-\frac{1}{\beta L_2}\right|
+=\frac{|h(x)-\beta L_2|}{|h(x)|\,|\beta L_2|}
+<\frac{2|h(x)-\beta L_2|}{|\beta L_2|^2}
+<\varepsilon.
+\]
+Hence $\lim_{x\to x_{0}}1/h(x)=1/(\beta L_2)$, and by the product rule proved above,
+\[
+\lim_{x\to x_{0}}\left(\frac{\alpha f}{\beta g}\right)(x)
+=\lim_{x\to x_{0}} (\alpha f)(x)\cdot\lim_{x\to x_{0}} \frac{1}{h(x)}
+=\frac{\alpha L_1}{\beta L_2}.
+\]
 </details>
 
 
