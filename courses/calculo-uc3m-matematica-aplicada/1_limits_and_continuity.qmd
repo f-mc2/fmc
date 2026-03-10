@@ -131,7 +131,7 @@ We can use the sliders to change the value of $\varepsilon>0$ and $\delta>0$, an
  
 
 In general, limits do not need to exist, as visualized in the applet below (source: [Jason McCullough in Geogebra](https://www.geogebra.org/m/hebkhRJm)).
-This example exploits the oscillating behavior of trigonometric functions, a type of real-valued function that we will able to properly define only later in the course.
+This example exploits the oscillating behavior of trigonometric functions, a type of real-valued function that we will be able to properly define only later in the course.
 The intuitive idea is that, when $x$ approaches $0$, the function keeps oscillating taking all values between $-1$ and $1$.
 Consequently, by suitably varying $\varepsilon$ and $\delta$ with the sliders, we can see that, as soon as $\varepsilon$ is smaller than $1$, there are no $L$ and no $\delta>0$ such that $|x-0|<\delta$ implies $|f(x)-L|<\varepsilon$.
 
