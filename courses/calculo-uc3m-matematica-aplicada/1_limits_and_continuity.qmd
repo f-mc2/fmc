@@ -534,7 +534,7 @@ Just as in @exr-limits-restriction-functions, we must ensure that the notion of 
 
 ::: {#exr-continuity-restriction-functions}
 
-Consider two functions $f\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}$ and $g\colon D'\subseteq \mathbb{R}\rightarrow \mathbb{R}$ such that $g(x)=f(x)$ on $S\subeteq D\cap D'\neq \emptyset$.
+Consider two functions $f\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}$ and $g\colon D'\subseteq \mathbb{R}\rightarrow \mathbb{R}$ such that $g(x)=f(x)$ on $S\subseteq D\cap D'\neq \emptyset$.
 Prove that the restriction function $h\colon S\rightarrow\mathbb{R}$ given by $h(x)=g(x)=f(x)$ is (left/right) continuous at $x_{0}\in S$ if either $f$ or $g$ is (left/right) continuous at $x_{0}\in S$.
 
 In particular, prove that $h$ is (left/right) continuous on $S$ if either $f$ or $g$ is continuous on $D$.
@@ -559,7 +559,7 @@ First, we prove the so-called **sign-preserving property** of continuous functio
 ::: {#prp-sign-preserving-property-continuous-functions}
 
 Let $f\colon D\subseteq\mathbb{R}\rightarrow\mathbb{R}$ be continuous at $c\in D$, and suppose that $f(c) \neq 0$. 
-Then there is an interval $(c — \delta, c + \delta)$ in which $f$ has the same sign as $f(c)$.
+Then there is an interval $(c - \delta, c + \delta)$ in which $f$ has the same sign as $f(c)$.
 
 If continuity is replaced by left or right continuity at $c$, then there is a corresponding one-sided interval $[c, c + \delta)$ or $(c - \delta, c]$ in which $f$ has the same sign as $f(c)$.
 
@@ -660,17 +660,21 @@ in the sense of @def-limits, then
 $$
 \begin{split}
 \lim_{x\rightarrow x_{0}} \left(\alpha \,f + \beta \,g \right)(x) &=\lim_{x\rightarrow x_{0}}  \alpha \,f (x) + \lim_{x\rightarrow x_{0}} \beta \, g(x) =  \alpha\,L_{1} + \beta \,L_{2} \\ & \\
-\lim_{x\rightarrow x_{0}} \left((\alpha \,f)\cdot(\beta \,g)\right) (x) & =\left(\lim_{x\rightarrow x_{0}} \alpha \,f(x)\right)\left(\lim_{x\rightarrow x_{0}}  \beta \,g(x)\right)= \alpha\,L_{1}\,\beta \,L_{2}  \\ & \\
-\lim_{x\rightarrow x_{0}}\,\left(\frac{\alpha \,f}{\beta \,g}\right)(x)&=\frac{\lim_{x\rightarrow x_{0} }\alpha \,f(x)}{\lim_{x\rightarrow x_{0} }\beta \,g(x)} =\frac{\alpha L_{1}}{\beta L_{2}},
+\lim_{x\rightarrow x_{0}} \left((\alpha \,f)\cdot(\beta \,g)\right) (x) & =\left(\lim_{x\rightarrow x_{0}} \alpha \,f(x)\right)\left(\lim_{x\rightarrow x_{0}}  \beta \,g(x)\right)= \alpha\,L_{1}\,\beta \,L_{2}
 \end{split}
 $${#eq-algebraic-manipulations-limits}
-where $\beta L_{2}\neq 0$ and there exists $\delta_{0}>0$ such that
+If $\beta,\,L_{2}\neq 0$ and there exists $\delta_{0}>0$ such that
 $$
 x\in D,\quad 0<|x-x_{0}|<\delta_{0}\Longrightarrow g(x)\neq 0
 $$
-for the quotient case.
+then
+$$
+\begin{split}
+\lim_{x\rightarrow x_{0}}\,\left(\frac{\alpha \,f}{\beta \,g}\right)(x)&=\frac{\lim_{x\rightarrow x_{0} }\alpha \,f(x)}{\lim_{x\rightarrow x_{0} }\beta \,g(x)} =\frac{\alpha L_{1}}{\beta L_{2}}.
+\end{split}
+$${#eq-algebraic-manipulations-limits2}
 
-Under the obvious modifications, the same conclusions hold for left and right limits.
+Under suitable modifications, analogous conclusions hold for left and right limits.
 
 
 
@@ -714,7 +718,36 @@ $$
 $$
 and thus we conclude that $L_{1}L_{2}$ is the limit at $x_{0}$ of $(fg)(x)=f(x)g(x)$.
 
-The case of left and right limits should be easy to obtain by following and suitably adapting the previous steps. 
+The case of left and right limits should be easy to obtain by following and suitably adapting the previous steps.
+
+For the quotient case, if $\alpha =0$, the result is trivial. Assume $\alpha \neq 0$. Let $\varepsilon>0$ and choose
+$$
+\eta := \min\left\{1,\frac{|L_2|}{2}, \frac{\varepsilon |\beta|\,|L_2|}{4|\alpha|}, \frac{\varepsilon |\beta|\,|L_2|^2}{4|\alpha|(|L_1|+1)} \right\}.
+$$
+By the definition of limit for $f$ and $g$, there exist $\delta_1,\delta_2>0$ such that
+$$
+\begin{split}
+x\in D,\ 0<|x-x_0|<\delta_1 &\Rightarrow |f(x)-L_1|<\eta\\
+x\in D,\ 0<|x-x_0|<\delta_2 &\Rightarrow |g(x)-L_2|<\eta.
+\end{split}
+$$
+Set $\delta := \min\{\delta_0,\delta_1,\delta_2\}$. If $x\in D$ and $0<|x-x_0|<\delta$, then $g(x)\neq 0$ by hypothesis and
+$$
+|g(x)|\ge |L_2|-|g(x)-L_2|\ge |L_2|-\eta\ge \frac{|L_2|}{2}.
+$$
+Hence
+$$
+\begin{split}
+\left|\frac{\alpha f(x)}{\beta g(x)}-\frac{\alpha L_1}{\beta L_2}\right|
+&=\frac{|\alpha|}{|\beta|}
+\left|\frac{L_2 f(x)-L_1 g(x)}{g(x)L_2}\right| \\
+&\le \frac{|\alpha|}{|\beta|}\cdot\left(\frac{|f(x)-L_1|}{|g(x)|}+\frac{|L_1|\,|g(x)-L_2|}{|g(x)|\,|L_2|}\right) \\
+&\le \frac{2|\alpha|}{|\beta||L_2|}\,|f(x)-L_1| + \frac{2|\alpha||L_1|}{|\beta||L_2|^2}|g(x)-L_2| \\
+&<\frac{2|\alpha|}{|\beta||L_2|}\cdot \frac{\varepsilon |\beta||L_2|}{4|\alpha|} + \frac{2|\alpha||L_1|}{|\beta||L_2|^2}\cdot\frac{\varepsilon |\beta||L_2|^2}{4|\alpha|(|L_1|+1)} \\
+&<\frac{\varepsilon}{2} + \frac{\varepsilon\,|L_1|}{2(|L_1|+1)} < \varepsilon.
+\end{split}
+$$
+This proves the result.
 </details>
 
 
@@ -737,7 +770,7 @@ where $(A_{1},\cdots,A_{n})$ can be a finite sequence of numbers or functions, w
 ::: {#exr-algebraic-manipulations-limits-N-functions}
 
 
-Let $(\alpha_{1},\cdots\alpha_{n})\mathbb{R}^{n}$, let $x_{0}\in\mathbb{R}$ be an accumulation point for $D$, and, for each $j=1,\cdots,n$, consider the function $f_{j}\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}$.
+Let $(\alpha_{1},\cdots,\alpha_{n})\in\mathbb{R}^{n}$, let $x_{0}\in\mathbb{R}$ be an accumulation point for $D$, and, for each $j=1,\cdots,n$, consider the function $f_{j}\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}$.
 Prove that, if
 $$
 \lim_{x\rightarrow x_{0}}f_{j}(x)=L_{j}\in \mathbb{R}
@@ -749,18 +782,15 @@ $$
 \lim_{x\rightarrow x_{0}}\left(\prod_{j=1}^{n} \,\alpha_{j}\,f_{j}\right)(x) & =\prod_{j=1}^{n}\,\lim_{x\rightarrow x_{0}} \left(\alpha_{j}\,f_{j}(x)\right) = \prod_{j=1}^{n}\,\alpha_{j}\,L_{j} .
 \end{split}
 $${#eq-algebraic-manipulations-limits-n-functions}
-Moreover, if $n=2$ and $\alpha_{2},L_{2}\neq 0$, it holds
-$$
-\lim_{x\rightarrow x_{0}^{+}}\,\left(\frac{\alpha_{1}f_{1}}{\alpha_{2}f_{2}}\right)(x)=\lim_{x\rightarrow x_{0}^{+}}\,\frac{\alpha_{1}f_{1}(x)}{\alpha_{2}f_{2}(x)}=\frac{\alpha_{1}L_{1}}{\alpha_{2} L_{2}}.
-$$
 
-Under the obvious modifications, the same conclusions hold for left and right limits.
+
+Under suitable modifications, analogous conclusions hold for left and right limits.
 
 
 <details>
 <summary> **Solution:** </summary>
 
-Use @prp-algebraic-manipulations-limits and the associativity property for function sums and products (and some patience).
+Use @prp-algebraic-manipulations-limits, the associativity property for function sums and products, and some patience.
 </details>
 
 :::
@@ -774,7 +804,7 @@ From @prp-algebraic-manipulations-limits and @exr-algebraic-manipulations-limits
 
 ::: {#prp-algebraic-manipulations-continuous-functions}
 
-Let $(\alpha_{1},\cdots\alpha_{n})\mathbb{R}^{n}$ and $x_{0}$ be an accumulation point for $D\subseteq \mathbb{R}$.
+Let $(\alpha_{1},\cdots\alpha_{n})\in\mathbb{R}^{n}$ and $x_{0}$ be an accumulation point for $D\subseteq \mathbb{R}$.
 For each $j=1,\cdots,n$, consider the function $f_{j}\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}$, assumed to be  continuous at $x_{0}$.
 
 It follows that 
@@ -822,10 +852,10 @@ Prove that the rational function $\mathrm{R}\colon D\subseteq \mathbb{R}\rightar
 
 The polynomial $\mathrm{P}_{n}(x)$ can be written as
 $$
-\mathrm{P}_{n}(x)= a_{n}x^{n} + a_{n-1} x^{n-1}\cdots a_{1}x + a_{0}x^{0},
+\mathrm{P}_{n}(x)= a_{n}x^{n} + a_{n-1} x^{n-1}+\cdots+ a_{1}x + a_{0}x^{0},
 $$
 where $a_{j}\in\mathbb{R}$ for every $j=1,\cdots , n$.
-It is then clear that $\mathrm{P}_{n}$ is a suitable combinations of sums and products of constant functions (which are continuous) with  the identity function $f(x)=x$ (which is continuous).
+It is then clear that $\mathrm{P}_{n}$ is a suitable combination of sums and products of constant functions (which are continuous) with  the identity function $f(x)=x$ (which is continuous).
 Consequently, @prp-algebraic-manipulations-continuous-functions ensures the desired result.
 
 The continuity of $\mathrm{R}$ follows again from @prp-algebraic-manipulations-continuous-functions since both $\mathrm{P}_{n}$ and $\mathrm{Q}_{m}$ are continuous on $D$ and $\mathrm{Q}_{m}(x)\neq 0$ on $D$.
