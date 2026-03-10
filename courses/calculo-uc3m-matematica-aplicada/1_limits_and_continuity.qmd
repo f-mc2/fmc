@@ -718,37 +718,47 @@ $$
 $$
 and thus we conclude that $L_{1}L_{2}$ is the limit at $x_{0}$ of $(fg)(x)=f(x)g(x)$.
 
-The case of left and right limits should be easy to obtain by following and suitably adapting the previous steps.
 
-For the quotient case, first note that by the first part of this proof,
+
+For the quotient case, define $h(x):=\beta g(x)$, and by the first part of this proof
 \[
-\lim_{x\to x_{0}} (\beta g)(x)=\beta L_2.
+\lim_{x\to x_{0}}h(x)=\beta L_{2}.
 \]
-Define $h(x)=\beta g(x)$, and since $h(x)\neq 0$ for $x\in D$ close enough to $x_0$, it is enough to prove
+By hypothesis there is $\delta_{0}>0$ such that for $x\in D$ and
+$0<|x-x_{0}|<\delta_{0}$ one has $g(x)\neq 0$, hence $h(x)\neq 0$.
+So it is enough to prove
 \[
-\lim_{x\to x_{0}} \frac{1}{h(x)}=\frac{1}{\beta L_2}.
+\lim_{x\to x_{0}}\frac{1}{h(x)}=\frac{1}{\beta L_{2}}.
 \]
-Given $\varepsilon>0$, choose
+Let $\varepsilon>0$ and choose
 \[
-\eta:=\min\left\{1,\frac{|\beta L_2|}{2},\frac{\varepsilon |\beta L_2|^2}{2}\right\},
+\eta:=\min\left\{1,\frac{|\beta L_{2}|}{2},\frac{\varepsilon |\beta L_{2}|^{2}}{2}\right\}.
 \]
-and let $\delta>0$ be such that $x\in D$ and $0<|x-x_{0}|<\delta$ imply
+By the definition of limit, there is $\delta_{1}>0$ such that $x\in D$ and
+$0<|x-x_{0}|<\delta_{1}$ imply $|h(x)-\beta L_{2}|<\eta$.
+Set $\delta=\min\{\delta_{0},\delta_{1}\}$. Then
 \[
-|h(x)-\beta L_2|<\eta.
+|h(x)|\ge |\beta L_{2}|-|h(x)-\beta L_{2}|\ge \frac{|\beta L_{2}|}{2},
 \]
-Then $|h(x)|\ge |\beta L_2|-|h(x)-\beta L_2| \ge \frac{|\beta L_2|}{2}$, so
+for $0<|x-x_{0}|<\delta$, and therefore
 \[
-\left|\frac{1}{h(x)}-\frac{1}{\beta L_2}\right|
-=\frac{|h(x)-\beta L_2|}{|h(x)|\,|\beta L_2|}
-<\frac{2|h(x)-\beta L_2|}{|\beta L_2|^2}
+\left|\frac{1}{h(x)}-\frac{1}{\beta L_{2}}\right|
+=\frac{|h(x)-\beta L_{2}|}{|h(x)|\,|\beta L_{2}|}
+<\frac{2|h(x)-\beta L_{2}|}{|\beta L_{2}|^{2}}
 <\varepsilon.
 \]
-Hence $\lim_{x\to x_{0}}1/h(x)=1/(\beta L_2)$, and by the product rule proved above,
+Hence
+\[
+\lim_{x\to x_{0}}\frac{1}{h(x)}=\frac{1}{\beta L_{2}}.
+\]
+By the product formula above,
 \[
 \lim_{x\to x_{0}}\left(\frac{\alpha f}{\beta g}\right)(x)
-=\lim_{x\to x_{0}} (\alpha f)(x)\cdot\lim_{x\to x_{0}} \frac{1}{h(x)}
-=\frac{\alpha L_1}{\beta L_2}.
+=\lim_{x\to x_{0}}(\alpha f)(x)\cdot\lim_{x\to x_{0}}\frac{1}{h(x)}
+=\frac{\alpha L_{1}}{\beta L_{2}}.
 \]
+
+The case of left and right limits should be easy to obtain by following and suitably adapting the previous steps.
 </details>
 
 
