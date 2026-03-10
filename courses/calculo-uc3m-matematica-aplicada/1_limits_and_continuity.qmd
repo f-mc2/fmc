@@ -681,7 +681,7 @@ Under suitable modifications, analogous conclusions hold for left and right limi
 <details>
 <summary> **Proof:** </summary>
 
-Let us start with the sum of two functions.
+Let us start with the weighted sum of two functions.
 From @def-limits, for any $\varepsilon_{1},\varepsilon_{2}>0$ there are $\delta_{1},\delta_{2}>0$ such that 
 $$
 \begin{split}
@@ -689,14 +689,20 @@ x\in D,\ 0<|x-x_{0}|<\delta_{1}&\Rightarrow |f(x) -L_{1}|<\varepsilon_{1} \\
 x\in D,\ 0<|x-x_{0}|<\delta_{2}&\Rightarrow |g(x) -L_{2}|<\varepsilon_{2}.
 \end{split}
 $${#eq-limit-of-sum}
-For every $\varepsilon>0$, we can take $\varepsilon_{1}$ and $\varepsilon_{2}$ such that $\varepsilon=\varepsilon_{1}+\varepsilon_{2}$.
+For every $\varepsilon>0$, take
+$$
+\varepsilon_{1}:=\frac{\varepsilon}{2(|\alpha|+1)},\qquad
+\varepsilon_{2}:=\frac{\varepsilon}{2(|\beta|+1)}.
+$$
 Consequently, if $x\in D$ and $0<|x-x_{0}|<\mathrm{min}(\delta_{1},\delta_{2})$, it holds
 $$
-|f(x) + g(x) - L_{1} - L_{2}|\leq |f(x) -L_{1}| + |g(x) -L_{2}| <\varepsilon_{1} +\varepsilon_{2}=\varepsilon
+|\alpha f(x)+\beta g(x)-\alpha L_{1}-\beta L_{2}|
+\leq |\alpha|\,|f(x)-L_{1}| + |\beta|\,|g(x)-L_{2}| <\varepsilon.
 $$
-which means that $L_{1} + L_{2}$ is the limit at $x_{0}$ of $(f+g)(x)=f(x) + g(x)$ according to @def-limits.
+which means that $\alpha L_{1} + \beta L_{2}$ is the limit at $x_{0}$ of
+$(\alpha f+\beta g)(x)=\alpha f(x) + \beta g(x)$ according to @def-limits.
 
-Passing to the product of two functions, again @def-limits implies that
+Now passing to the product of two functions, again @def-limits implies that
 $$
 \begin{split}
 |f(x)g(x) - L_{1}L_{2}|&=\mid (f(x) -L_{1} + L_{1})(g(x) -L_{2} +L_{2}) -L_{1}L_{2}\mid = \\
