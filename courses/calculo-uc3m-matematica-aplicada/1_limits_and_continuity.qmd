@@ -324,7 +324,7 @@ If $x_{0}$ is a left and right accumulation point for $D\subseteq \mathbb{R}$, p
 <details>
 <summary> **Solution:** </summary>
 
-You are strongly invited to try to solve it on your own.
+**TBA**
 </details>
 
 :::
@@ -344,10 +344,9 @@ The following exercise asks you to prove that this weird behavior is not compati
 
 ::: {#exr-limits-restriction-functions}
 
-Consider $D,D'\subseteq \mathbb{R}$ such that $D\cap D'\neq \emptyset$, and consider two functions $f\colon D\rightarrow \mathbb{R}$ and $g\colon D' \rightarrow \mathbb{R}$ such that $g(x)=f(x)$ on $S\subseteq D\cap D'$.
-If $x_{0}$ is an accumulation point for $S$ prove that 
+Consider $D,D'\subseteq \mathbb{R}$ such that $D\cap D'\neq \emptyset$, and consider two functions $f\colon D\rightarrow \mathbb{R}$ and $g\colon D' \rightarrow \mathbb{R}$ such that $g(x)=f(x)$ on $S\subseteq D\cap D'$. Let $h\colon S\rightarrow\mathbb{R}$ be such that $h(x):=f(x)=g(x)$. We may consider the function $h$ to be the restriction of $f$ or $g$ to $S$. If $x_{0}$ is an accumulation point for $S$ prove that 
 $$
-\lim_{x\rightarrow x_{0}} f(x)=\lim_{x\rightarrow x_{0}} g(x)
+\lim_{x\rightarrow x_{0}} h(x)=\lim_{x\rightarrow x_{0}} f(x)=\lim_{x\rightarrow x_{0}} g(x)
 $$
 whenever either one of the limits exist in the sense of @def-limits.
 
@@ -356,7 +355,7 @@ Prove analogous results for the case of left and right limits.
 <details>
 <summary> **Solution:** </summary>
 
-You are strongly invited to try to solve it on your own.
+**TBA**
 </details>
 
 :::
@@ -388,7 +387,7 @@ Under the obvious modifications, the same conclusions hold for left and right li
 <details>
 <summary> **Proof:** </summary>
 
-The proof is will likely take me some time to upload it.
+**TBA**
 </details>
 
 :::
@@ -411,7 +410,7 @@ This may sound almost identical to the definition of limit in @def-limits, and o
 $$
 \lim_{x\rightarrow x_{0}} f(x)=f(x_{0}).
 $$
-However, this formulation only makes sense when $x_{0}\in D$ is an accumulation point of $D$ (see @def-limits), which is not always the case. For this reason, we introduce continuity directly via an $\varepsilon-\delta$ condition comparing $f(x)$ to $f(x_{0})$.
+However, this formulation only makes sense when $x_{0}\in D$ is an accumulation point of $D$ (see @def-limits), which is not always the case (see [below](@rem-continuity-isolated-points)). For this reason, we introduce continuity directly via an $\varepsilon$-$\delta$ condition comparing $f(x)$ to $f(x_{0})$.
 
 
 ::: {.callout-note title="Continuity"}
@@ -520,7 +519,7 @@ Prove that the function $f\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}$ is
 <details>
 <summary> **Solution:** </summary>
 
-It follows directly from this [previous exercise on limits](@exr-left-right-limits-link).
+It follows directly from @exr-left-right-limits-link.
 </details>
 
 
@@ -528,23 +527,22 @@ It follows directly from this [previous exercise on limits](@exr-left-right-limi
 
 :::
 
-
-Just as for [limits](@exr-limits-restriction-functions), we must ensure that the notion of continuity in @def-continuity behaves well we consider different functions that agrees on the intersections of their domains to avoid unpleasant pathological behaviours.
+Just as in @exr-limits-restriction-functions, we must ensure that the notion of continuity in @def-continuity behaves well we consider different functions that agrees on the intersections of their domains to avoid unpleasant pathological behaviours.
 
 
 ::: {.callout-caution title="Continuity of the restriction"}
 
 ::: {#exr-continuity-restriction-functions}
 
-Consider two functions $f\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}$ and $g\colon D'\subseteq \mathbb{R}\rightarrow \mathbb{R}$ such that $g(x)=f(x)$ on $D\cap D'\neq \emptyset$.
-Prove that $h\colon D\cap D'\subseteq \mathbb{R}\rightarrow\mathbb{R}$ given by $h(x)=g(x)=f(x)$ is (left/right) continuous at $x_{0}\in D\cap D'$ if $g$ is (left/right) continuous at $x_{0}\in D\cap D'$.
+Consider two functions $f\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}$ and $g\colon D'\subseteq \mathbb{R}\rightarrow \mathbb{R}$ such that $g(x)=f(x)$ on $S\subeteq D\cap D'\neq \emptyset$.
+Prove that the restriction function $h\colon S\rightarrow\mathbb{R}$ given by $h(x)=g(x)=f(x)$ is (left/right) continuous at $x_{0}\in S$ if either $f$ or $g$ is (left/right) continuous at $x_{0}\in S$.
 
-In particular, prove that $h$ is (left/right) continuous on $D\cap D'$ if $g$ is continuous on $D$.
+In particular, prove that $h$ is (left/right) continuous on $S$ if either $f$ or $g$ is continuous on $D$.
 
 <details>
 <summary> **Solution:** </summary>
 
-It follows directly from @exr-limits-restriction-functions.
+**TBA**
 </details>
 
 :::
@@ -568,7 +566,7 @@ If continuity is replaced by left or right continuity at $c$, then there is a co
 <details>
 <summary> **Proof:** </summary>
 
-I'll do it soon (hopefully).
+**TBA**
 </details>
 
 :::
@@ -589,7 +587,7 @@ If $f\colon [a,b]\rightarrow\mathbb{R}$ is continuous it attains a maximum and m
 <details>
 <summary> **Proof:** </summary>
 
-I'll do it soon (hopefully).
+**TBA**
 </details>
 
 :::
@@ -611,7 +609,7 @@ Let $a,b\in\mathbb{R}$, let $f\colon [a,b]\rightarrow\mathbb{R}$ be continuous, 
 <details>
 <summary> **Proof:** </summary>
 
-I'll do it soon (hopefully).
+**TBA**
 </details>
 
 :::

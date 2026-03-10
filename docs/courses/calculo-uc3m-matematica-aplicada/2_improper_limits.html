@@ -356,6 +356,12 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../../courses/calculo-uc3m-matematica-aplicada/0_sets_and_functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Sets and functions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../../courses/calculo-uc3m-matematica-aplicada/1_limits_and_continuity.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Limits and continuity of real-valued functions</span></a>
   </div>
@@ -482,7 +488,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">December 14, 2025</p>
+      <p class="date-modified">February 17, 2026</p>
     </div>
   </div>
     
@@ -519,17 +525,25 @@ window.Quarto = {
 </div>
 <div class="callout-body-container callout-body">
 <div id="def-unbounded-limits" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 1</strong></span> Consider the function <span class="math inline">\(f\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}\)</span>, and let <span class="math inline">\(x_{0}\)</span> be a <a href="0_sets_and_functions.qmd#def-accumulation-point"><strong>left accumulation point</strong></a> for <span class="math inline">\(D\)</span>. We say that the formal equality <span class="math display">\[
+<p><span class="theorem-title"><strong>Definition 1</strong></span> Consider the function <span class="math inline">\(f\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}\)</span>. If <span class="math inline">\(x_{0}\)</span> is an <a href="../../courses/calculo-uc3m-matematica-aplicada/0_sets_and_functions.html#def-accumulation-point"><strong>accumulation point</strong></a> for <span class="math inline">\(D\)</span>, we say that the formal equality <span class="math display">\[
 \lim_{x\rightarrow x_{0}} f(x)=+\infty
 \]</span> holds if for every <span class="math inline">\(K&gt;0\)</span> there is a <span class="math inline">\(0&lt; \delta\)</span> such that <span class="math display">\[
-|x-x_{0}|&lt;\delta \Rightarrow f(x)&gt;K
-\]</span> for every <span class="math inline">\(x_{0}\neq x\in D\)</span>. In this case, we say that <span class="math inline">\(+\infty\)</span> is the limit of <span class="math inline">\(f\)</span> at <span class="math inline">\(x_{0}\)</span>.</p>
+x\in D,\quad 0&lt;|x-x_{0}|&lt;\delta \Longrightarrow f(x)&gt;K.
+\]</span> In this case, we say that <span class="math inline">\(+\infty\)</span> is the limit of <span class="math inline">\(f\)</span> at <span class="math inline">\(x_{0}\)</span>.</p>
 <p>Analogously, we say that the formal equality <span class="math display">\[
 \lim_{x\rightarrow x_{0}} f(x)=-\infty
 \]</span> holds if for every <span class="math inline">\(K&gt;0\)</span> there is a <span class="math inline">\(0&lt; \delta\)</span> such that <span class="math display">\[
-|x-x_{0}|&lt;\delta \Rightarrow f(x)&lt; -K
-\]</span> for every <span class="math inline">\(x_{0}\neq x\in D\)</span>. In this case, we say that <span class="math inline">\(-\infty\)</span> is the limit of <span class="math inline">\(f\)</span> at <span class="math inline">\(x_{0}\)</span>.</p>
-<p>Left and right unbounded limits are defined by replacing <span class="math inline">\(|x- x_{0}|&lt;\delta\)</span> with <span class="math inline">\(x_{0}-x&lt;\delta\)</span> or <span class="math inline">\(x-x_{0}&lt;\delta\)</span>, respectively.</p>
+x\in D,\quad 0&lt;|x-x_{0}|&lt;\delta \Longrightarrow f(x)&lt; -K.
+\]</span> In this case, we say that <span class="math inline">\(-\infty\)</span> is the limit of <span class="math inline">\(f\)</span> at <span class="math inline">\(x_{0}\)</span>.</p>
+<p>If <span class="math inline">\(x_{0}\)</span> is a right accumulation point for <span class="math inline">\(D\)</span>, the right unbounded limits are defined by replacing <span class="math display">\[
+0&lt;|x- x_{0}|&lt;\delta
+\]</span> with <span class="math display">\[
+x\in D,\quad 0&lt;x-x_{0}&lt;\delta.
+\]</span> If <span class="math inline">\(x_{0}\)</span> is a left accumulation point for <span class="math inline">\(D\)</span>, the left unbounded limits are defined by replacing <span class="math display">\[
+0&lt;|x- x_{0}|&lt;\delta
+\]</span> with <span class="math display">\[
+x\in D,\quad 0&lt;x_{0}-x&lt;\delta.
+\]</span></p>
 </div>
 </div>
 </div>
@@ -548,10 +562,10 @@ window.Quarto = {
 <div id="prp-well-posedness-unbounded-limits" class="theorem proposition">
 <p><span class="theorem-title"><strong>Proposition 1</strong></span> Let <span class="math inline">\(x_{0}\)</span> be an accumulation point for <span class="math inline">\(D\subseteq \mathbb{R}\)</span>, and consider the function <span class="math inline">\(f\colon D\subseteq\mathbb{R}\rightarrow\mathbb{R}\)</span>. If <span class="math display">\[
 \begin{split}
-\lim_{x\rightarrow +\infty}f(x)&amp;=L \\
-\lim_{x\rightarrow +\infty}f(x)&amp;=M,
+\lim_{x\rightarrow x_{0}}f(x)&amp;=L \\
+\lim_{x\rightarrow x_{0}}f(x)&amp;=M,
 \end{split}
-\]</span> according to <a href="#def-unbounded-limits" class="quarto-xref">Definition&nbsp;1</a>, then <span class="math inline">\(L=M\)</span>.</p>
+\]</span> according to <a href="#def-unbounded-limits" class="quarto-xref">Definition&nbsp;1</a>, with <span class="math inline">\(L,M\in\{+\infty,-\infty\}\)</span>, then <span class="math inline">\(L=M\)</span>.</p>
 <p>Under the obvious modifications, a similar result holds for left and right unbounded limits.</p>
 <details>
 <summary>
@@ -763,18 +777,18 @@ Let us consider only the case where the limit in <a href="#eq-unbounded-limit-co
 <p>The formal equality <span class="math display">\[
 \lim_{x\rightarrow +\infty} f(x)= L
 \]</span> holds with <span class="math inline">\(L\in\mathbb{R}\)</span> if for every <span class="math inline">\(\varepsilon&gt;0\)</span> there is <span class="math inline">\(\varrho&gt;0\)</span> such that <span class="math display">\[
-D\ni x&gt; \varrho \Rightarrow |f(x) - l|&lt;\varepsilon .
+D\ni x&gt; \varrho \Longrightarrow |f(x) - L|&lt;\varepsilon .
 \]</span></p>
 <p>The formal equality <span class="math display">\[
 \lim_{x\rightarrow +\infty} f(x)=+\infty
 \]</span> holds if for every <span class="math inline">\(K&gt;0\)</span> there is <span class="math inline">\(\varrho&gt;0\)</span> such that <span class="math display">\[
-D\ni x&gt; \varrho \rightarrow f(x)&gt;K.
+D\ni x&gt; \varrho \Longrightarrow f(x)&gt;K.
 \]</span></p>
 <p>The formal equality<br>
 <span class="math display">\[
 \lim_{x\rightarrow +\infty} f(x)=-\infty
 \]</span> holds if for every <span class="math inline">\(K&gt;0\)</span> there is <span class="math inline">\(\varrho&gt;0\)</span> such that <span class="math display">\[
-D\ni x&gt; \varrho \rightarrow f(x)&lt;-K.
+D\ni x&gt; \varrho \Longrightarrow f(x)&lt;-K.
 \]</span></p>
 </div>
 </div>
@@ -794,18 +808,18 @@ D\ni x&gt; \varrho \rightarrow f(x)&lt;-K.
 <p>The formal equality <span class="math display">\[
 \lim_{x\rightarrow -\infty} f(x)= L
 \]</span> holds with <span class="math inline">\(L\in\mathbb{R}\)</span> if for every <span class="math inline">\(\varepsilon&gt;0\)</span> there is <span class="math inline">\(\varrho&gt;0\)</span> such that <span class="math display">\[
-D\ni x&lt;-\varrho\Rightarrow |f(x) - l|&lt;\varepsilon .
+D\ni x&lt;-\varrho \Longrightarrow |f(x) - L|&lt;\varepsilon .
 \]</span></p>
 <p>The formal equality <span class="math display">\[
 \lim_{x\rightarrow -\infty} f(x)=+\infty
 \]</span> holds if for every <span class="math inline">\(K&gt;0\)</span> there is <span class="math inline">\(\varrho&gt;0\)</span> such that <span class="math display">\[
-D\ni x&lt;- \varrho \rightarrow f(x)&gt;K.
+D\ni x&lt;- \varrho \Longrightarrow f(x)&gt;K.
 \]</span></p>
 <p>The formal equality<br>
 <span class="math display">\[
 \lim_{x\rightarrow -\infty} f(x)=-\infty
 \]</span> holds if for every <span class="math inline">\(K&gt;0\)</span> there is <span class="math inline">\(\varrho&gt;0\)</span> such that <span class="math display">\[
-D\ni x&lt;- \varrho \rightarrow f(x)&lt;-K.
+D\ni x&lt;- \varrho \Longrightarrow f(x)&lt;-K.
 \]</span></p>
 </div>
 </div>

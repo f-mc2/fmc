@@ -489,7 +489,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">January 31, 2026</p>
+      <p class="date-modified">February 17, 2026</p>
     </div>
   </div>
     
@@ -524,13 +524,15 @@ window.Quarto = {
 <div class="callout-body-container callout-body">
 <div id="def-derivative" class="theorem definition">
 <p><span class="theorem-title"><strong>Definition 1</strong></span> Consider the function <span class="math inline">\(f\colon D\subseteq\mathbb{R}\rightarrow\mathbb{R}\)</span> and a <a href="../../courses/calculo-uc3m-matematica-aplicada/0_sets_and_functions.html#def-accumulation-point"><strong>accumulation point</strong></a> <span class="math inline">\(x_{0}\in D\)</span>.</p>
-<p>For <span class="math inline">\(c&gt;0\)</span>, define the function <span class="math inline">\(\Delta f\colon (x_{0}-c,x_{0}+c)\subset D\rightarrow \mathbb{R}\)</span> given by <span class="math display">\[
+<p>Define the set of admissible increments <span class="math display">\[
+H_{x_{0}}:=\{h\in\mathbb{R}\setminus\{0\}\,:\,x_{0}+h\in D\},
+\]</span> and the function <span class="math inline">\(\Delta f\colon H_{x_{0}}\rightarrow \mathbb{R}\)</span> by <span class="math display">\[
 \Delta f(h):=\frac{f(x_{0}+h) - f(x_{0})}{h} .
 \]</span> If the limit <span class="math display">\[
-\lim_{h\rightarrow 0}\;\Delta f = l
+\lim_{\substack{h\rightarrow 0 \\ h\in H_{x_{0}}}}\Delta f(h)= l
 \]</span> exists with <span class="math inline">\(l\in\mathbb{R}\)</span>, we say that <span class="math inline">\(l\)</span> is the derivative of <span class="math inline">\(f\)</span> at <span class="math inline">\(x_{0}\)</span>, and that <span class="math inline">\(f\)</span> is differentiable at <span class="math inline">\(x_{0}\)</span>.</p>
 <p>When <span class="math inline">\(f\)</span> is differentiable at <span class="math inline">\(x_{0}\)</span>, we write <span class="math display">\[
-f'(x_{0})\equiv \lim_{h\rightarrow 0}\;\Delta f.
+f'(x_{0})\equiv \lim_{\substack{h\rightarrow 0 \\ h\in H_{x_{0}}}}\Delta f(h)=\lim_{\substack{h\rightarrow 0 \\ h\in H_{x_{0}}}}\frac{f(x_{0}+h)-f(x_{0})}{h}.
 \]</span> We also write <span class="math display">\[
 \frac{\mathrm{d}f}{\mathrm{d} x}(x_{0})\equiv f'(x_{0}),
 \]</span> and refer to this expression as the <em>Leibniz</em> notation for derivatives.</p>
@@ -602,7 +604,7 @@ You are strongly invited to try to solve it on your own.
 </div>
 <div class="callout-body-container callout-body">
 <div id="exr-derivative-restriction-functions" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 2</strong></span> Consider <span class="math inline">\(D,D'\subseteq \mathbb{R}\)</span> such that <span class="math inline">\(D\cap D'\neq \emptyset\)</span>, and consider two functions <span class="math inline">\(f\colon D\rightarrow \mathbb{R}\)</span> and <span class="math inline">\(g\colon D' \rightarrow \mathbb{R}\)</span> such that <span class="math inline">\(g(x)=f(x)\)</span> on <span class="math inline">\(S\subseteq D\cap D'\)</span>, and such that both are differentiable at <span class="math inline">\(x_{0}\in S\)</span>. Prove that <span class="math display">\[
+<p><span class="theorem-title"><strong>Exercise 2</strong></span> Consider <span class="math inline">\(D,D'\subseteq \mathbb{R}\)</span> such that <span class="math inline">\(D\cap D'\neq \emptyset\)</span>, and consider two functions <span class="math inline">\(f\colon D\rightarrow \mathbb{R}\)</span> and <span class="math inline">\(g\colon D' \rightarrow \mathbb{R}\)</span> such that both are differentiable at <span class="math inline">\(x_{0}\in D\cap D'\)</span>. Assume there is a subset <span class="math inline">\(S\subseteq D\cap D'\)</span> such that <span class="math inline">\(x_{0}\)</span> is an accumulation point for <span class="math inline">\(S\)</span> and <span class="math inline">\(g(x)=f(x)\)</span> for every <span class="math inline">\(x\in S\)</span>. Prove that <span class="math display">\[
 f'(x_{0})=g'(x_{0}),
 \]</span> and prove analogous results for the case of left and right derivatives.</p>
 <details>
@@ -661,10 +663,10 @@ You are strongly invited to try to prove it on your own.
 </div>
 <div class="callout-body-container callout-body">
 <div id="prp-algebraic-manipulations-derivatives" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 2</strong></span> Given <span class="math inline">\(\alpha,\beta\in\mathbb{R}\)</span> and the functions <span class="math inline">\(f,g\colon D\subseteq\mathbb{R}\rightarrow\mathbb{R}\)</span> differentiable at <span class="math inline">\(x_{0}\in D\)</span>, the functions <span class="math inline">\(h,r\colon D\subseteq\mathbb{R}\rightarrow\mathbb{R}\)</span> given by <span class="math inline">\(h:=\alpha f+\beta g\)</span> and <span class="math inline">\(r:=f\cdot g\)</span> are differentiable at <span class="math inline">\(x\in D\)</span> and their derivatives are <span class="math display">\[
+<p><span class="theorem-title"><strong>Proposition 2</strong></span> Given <span class="math inline">\(\alpha,\beta\in\mathbb{R}\)</span> and the functions <span class="math inline">\(f,g\colon D\subseteq\mathbb{R}\rightarrow\mathbb{R}\)</span> differentiable at <span class="math inline">\(x_{0}\in D\)</span>, the functions <span class="math inline">\(h,r\colon D\subseteq\mathbb{R}\rightarrow\mathbb{R}\)</span> given by <span class="math inline">\(h:=\alpha f+\beta g\)</span> and <span class="math inline">\(r:=f\cdot g\)</span> are differentiable at <span class="math inline">\(x_{0}\)</span> and their derivatives are <span class="math display">\[
 \begin{split}
-h'(x)&amp;=\alpha f'(x) + \beta g'(x),\\
-r'(x)&amp; =f'(x)\,g(x) + f(x)\,g'(x).
+h'(x_{0})&amp;=\alpha f'(x_{0}) + \beta g'(x_{0}),\\
+r'(x_{0})&amp; =f'(x_{0})\,g(x_{0}) + f(x_{0})\,g'(x_{0}).
 \end{split}
 \]</span> The formula for the derivative of the product of two functions is usually referred to as the <strong>Leibniz rule</strong>.</p>
 <details>
@@ -695,18 +697,23 @@ TBA
 <summary>
 <strong>Solution:</strong>
 </summary>
-Clearly, we can decompose <span class="math inline">\(x^{n}\)</span> into the product of two functions, say <span class="math inline">\(f(x)=x\)</span> and <span class="math inline">\(g(x)=x^{n-1}\)</span>, and apply the Leibniz Rule: <span class="math display">\[
+<p>Clearly, we can decompose <span class="math inline">\(x^{n}\)</span> into the product of two functions, say <span class="math inline">\(f(x)=x\)</span> and <span class="math inline">\(g(x)=x^{n-1}\)</span>, and apply the Leibniz Rule: <span class="math display">\[
 \frac{\mathrm{d}}{\mathrm{d} x}(x^{n})=x^{n-1} + x \frac{\mathrm{d}}{\mathrm{d} x}(x^{n-1}).
 \]</span> Now, we can decompose <span class="math inline">\(x^{n-1}\)</span> into the product of two functions, say <span class="math inline">\(f(x)=x\)</span> and <span class="math inline">\(g(x) = x^{n-2}\)</span>, and apply the Leibniz Rule: <span class="math display">\[
-\frac{\mathrm{d}}{\mathrm{d} x}(x^{n-1})=x^{n-2} + x \frac{\mathrm{d}}{\mathrm{d} x}(x^{n-3}),
+\frac{\mathrm{d}}{\mathrm{d} x}(x^{n-1})=x^{n-2} + x \frac{\mathrm{d}}{\mathrm{d} x}(x^{n-2}),
 \]</span> which means <span class="math display">\[
 \begin{split}
 \frac{\mathrm{d}}{\mathrm{d} x}(x^{n})&amp;=x^{n-1} + x \frac{\mathrm{d}}{\mathrm{d} x}(x^{n-1})= \\
-&amp;=x^{n-1} + x\left(x^{n-2} + x \frac{\mathrm{d}}{\mathrm{d} x}(x^{n-3})\right)= \\
-&amp;=2x^{n-1} + x^{2} \frac{\mathrm{d}}{\mathrm{d} x}(x^{n-3}).
+&amp;=x^{n-1} + x\left(x^{n-2} + x \frac{\mathrm{d}}{\mathrm{d} x}(x^{n-2})\right)= \\
+&amp;=2x^{n-1} + x^{2} \frac{\mathrm{d}}{\mathrm{d} x}(x^{n-2}).
 \end{split}
-\]</span> We can keep going until we hit <span class="math inline">\(x^{n-(n-1)}=x\)</span> <span class="math display">\[
-ff
+\]</span> This pattern suggests the formula, and we can make it rigorous by induction on <span class="math inline">\(n\)</span>.</p>
+For <span class="math inline">\(n=1\)</span>, we have <span class="math inline">\(\frac{\mathrm{d}}{\mathrm{d}x}(x)=1\)</span>. Assume now that <span class="math display">\[
+\frac{\mathrm{d}}{\mathrm{d}x}(x^{n})=n x^{n-1}.
+\]</span> Then, by the Leibniz rule, <span class="math display">\[
+\frac{\mathrm{d}}{\mathrm{d}x}(x^{n+1})=\frac{\mathrm{d}}{\mathrm{d}x}(x\cdot x^{n})=x^{n}+x\frac{\mathrm{d}}{\mathrm{d}x}(x^{n})=x^{n}+x(nx^{n-1})=(n+1)x^{n}.
+\]</span> Therefore, for every natural number <span class="math inline">\(n\geq 1\)</span>, <span class="math display">\[
+\frac{\mathrm{d}}{\mathrm{d}x}(x^{n})=n x^{n-1}.
 \]</span>
 </details>
 </div>
@@ -789,8 +796,8 @@ This concludes the proof.
 </div>
 <div class="callout-body-container callout-body">
 <div id="prp-derivative-quotient" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 3</strong></span> Given the functions <span class="math inline">\(f,g\colon D\subseteq\mathbb{R}\rightarrow\mathbb{R}\)</span> differentiable at <span class="math inline">\(x_{0}\in D\)</span> and with <span class="math inline">\(g(x_{0})\neq 0\)</span>, the function <span class="math inline">\(h\colon \tilde{D}\subseteq\mathbb{R}\rightarrow\mathbb{R}\)</span> given by <span class="math inline">\(h:=\frac{f}{g}\)</span> is differentiable at <span class="math inline">\(x\in D\)</span> and its derivative is <span class="math display">\[
-h'(x)= \frac{f'(x)\,g(x)-f(x)\,g'(x)}{(g(x))^{2}}.
+<p><span class="theorem-title"><strong>Proposition 3</strong></span> Given the functions <span class="math inline">\(f,g\colon D\subseteq\mathbb{R}\rightarrow\mathbb{R}\)</span> differentiable at <span class="math inline">\(x_{0}\in D\)</span> and with <span class="math inline">\(g(x_{0})\neq 0\)</span>, the function <span class="math inline">\(h\colon \tilde{D}\subseteq\mathbb{R}\rightarrow\mathbb{R}\)</span> given by <span class="math inline">\(h:=\frac{f}{g}\)</span> is differentiable at <span class="math inline">\(x_{0}\)</span> and its derivative is <span class="math display">\[
+h'(x_{0})= \frac{f'(x_{0})\,g(x_{0})-f(x_{0})\,g'(x_{0})}{(g(x_{0}))^{2}}.
 \]</span></p>
 <details>
 <summary>
