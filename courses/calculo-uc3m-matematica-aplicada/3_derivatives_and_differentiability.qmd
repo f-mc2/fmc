@@ -437,7 +437,11 @@ $$
 $$
 so $\phi$ is continuous at $g(x_{0})$.
 
-Moreover, @prp-diff-implies-cont implies that $g$ is continuous at $x_{0}$, and therefore
+Moreover, @prp-diff-implies-cont implies that $g$ is continuous at $x_{0}$, that is,
+$$
+\lim_{x\rightarrow x_{0}}g(x)=g(x_{0}).
+$$
+Since $\phi$ is continuous at $g(x_{0})$, [limit of composite functions](1_limits_and_continuity.qmd#prp-limit-composite-functions) implies that
 $$
 \lim_{x\rightarrow x_{0}} \phi(g(x))=\phi(g(x_{0}))=f'(g(x_{0})).
 $$
@@ -466,9 +470,9 @@ as claimed.
 
 :::
 
-::: {.callout-tip title="A first application of the chain rule"}
+::: {.callout-caution title="A first exercise on the chain rule"}
 
-::: {#exm-chain-rule-polynomial}
+::: {#exr-chain-rule-polynomial}
 
 Compute the derivative of the function
 $$
@@ -486,7 +490,7 @@ h(y):=y^{3},
 $$
 so that $f=h\circ g$.
 
-From @exm-derivative-quadratic-functions and @exm-derivative-constant-functions, we obtain
+From @exm-derivative-quadratic-functions, @exm-derivative-constant-functions, and @prp-algebraic-manipulations-derivatives, we obtain
 $$
 g'(x)=2x.
 $$
@@ -531,7 +535,10 @@ $$
 $$
 
 Now let $y\rightarrow y_{0}$ in $J$.
-Since $f^{-1}$ is continuous at $y_{0}$, we have $x=f^{-1}(y)\rightarrow f^{-1}(y_{0})=x_{0}$.
+Since $f^{-1}$ is continuous at $y_{0}$ by [continuity of inverse function](1_limits_and_continuity.qmd#prp-continuity-inverse-function), we have
+$$
+x=f^{-1}(y)\rightarrow f^{-1}(y_{0})=x_{0}.
+$$
 Therefore,
 $$
 \begin{split}
@@ -549,9 +556,9 @@ where the reciprocal is legitimate because $f'(x_{0})\neq 0$.
 
 :::
 
-::: {.callout-tip title="Derivative of root functions"}
+::: {.callout-caution title="Derivative of root functions"}
 
-::: {#exm-derivative-root-functions}
+::: {#exr-derivative-root-functions}
 
 Let $n\in \mathbb{N}$ with $n\geq 1$, and let $D$ be the maximal domain on which the function
 $$
@@ -589,6 +596,37 @@ $$
 p_{n}'(0)=0,
 $$
 so @prp-derivative-inverse-function does not apply. Therefore, for $n>1$, the derivative formula above is valid only at points $y_{0}\neq 0$.
+</details>
+
+:::
+
+:::
+
+::: {.callout-caution title="Right derivative at the origin for even roots"}
+
+::: {#exr-right-derivative-even-root-functions}
+
+Let $n\in \mathbb{N}$ be even and satisfy $n\geq 2$.
+Consider the function $g\colon \mathbb{R}_{+}\rightarrow \mathbb{R}$ given by
+$$
+g(y)=y^{\frac{1}{n}}.
+$$
+Study the right derivative of $g$ at $0$.
+
+<details>
+<summary> **Solution:** </summary>
+
+Since $g(0)=0$, for every $h>0$ we have
+$$
+\frac{g(0+h)-g(0)}{h}
+=\frac{h^{\frac{1}{n}}}{h}
+=h^{\frac{1}{n}-1}
+=h^{-\frac{n-1}{n}}.
+$$
+Because $-\frac{n-1}{n}<0$, the previous quantity tends to $+\infty$ as $h\rightarrow 0^{+}$.
+
+Therefore, $g$ does not admit a finite right derivative at $0$.
+Equivalently, the right difference quotient has unbounded limit $+\infty$ at the origin.
 </details>
 
 :::
