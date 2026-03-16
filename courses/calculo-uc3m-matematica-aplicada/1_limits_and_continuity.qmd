@@ -1103,54 +1103,35 @@ Follow @def-continuity and apply @prp-limit-composite-functions.
 
 # Exercises
 
-Now, we are ready to solve quite a number of interesting problems.
+If not stated otherwise, all the functions below are implicitly defined on their maximal domains.
 
-::: {#exr-limits-1}
 
-All the functions below are implicitly defined on their maximal domains.
-Calculate the one-sided limits, and decide whether the two-sided limit exists:
-
-1) $\lim_{x\to0^\pm}\frac{|x|}{x}$ and $\lim_{x\to0^\pm}\frac{\sqrt{x^2}}{x}$.
+1) Calculate the left and right limits  $\lim_{x\to0^\pm}\frac{|x|}{x}=\frac{\sqrt{x^2}}{x}$ and decide whether the limit at $0$ exists.
 
 <details>
 <summary> **Solution** </summary>
 
-For $x\neq0$,
+For $x\neq0$ it holds
 $$
 \frac{|x|}{x}= \begin{cases}
 1 & \text{if } x>0,\\
 -1 & \text{if } x<0.
 \end{cases}
 $$
-Therefore,
+Therefore, for $x<0$ and $x>0$, $f(x)$ is the restriction of the constant function $-1$ and $1$, respectively, so that
 $$
 \lim_{x\to 0^+}\frac{|x|}{x}=1,
 \qquad
-\lim_{x\to 0^-}\frac{|x|}{x}=-1,
+\lim_{x\to 0^-}\frac{|x|}{x}=-1.
 $$
-By @def-limits, hence the two-sided limit at $0$ does not exist.
-If a two-sided limit existed, both one-sided limits would coincide by @prp-well-posedness-limits, contradicting the two different values above.
-This directly uses @def-limits: when the punctured neighborhood is one-sided and the function is constant there, the limit equals that constant.
+If the limit existed, both left and right limits would coincide by @prp-well-posedness-limits,  contradicting the two different values above.
+Therefore, the limit at $0$ does not exist.
 
-For $x\neq0$, we have $\sqrt{x^{2}}=|x|$, so
-$$
-\frac{\sqrt{x^{2}}}{x}=\frac{|x|}{x},
-$$
-and the same conclusion follows from the previous item:
-$$ 
-\lim_{x\to 0^+}\frac{\sqrt{x^{2}}}{x}=1,\qquad
-\lim_{x\to 0^-}\frac{\sqrt{x^{2}}}{x}=-1.
-$$
 </details>
 
-:::
+  
 
-::: {#exr-counterexamples-rational-irrational}
-
-All functions below are implicitly defined on their maximal domains.
-Each item has its own solution.
-
-1) Let
+2) Let
 $$
 f(x)=\begin{cases}
 0 & \text{if } x\in\mathbb{Q},\\
@@ -1173,7 +1154,7 @@ So $L$ is within $\frac12$ of both $0$ and $1$, impossible. Therefore the limit 
 
 </details>
 
-2) Let
+3) Let
 $$
 g(x)=\begin{cases}
 0 & \text{if } x\in\mathbb{Q},\\
@@ -1202,7 +1183,7 @@ Thus $\lim_{x\to x_0}g(x)$ does not exist for $x_0\neq0$.
 
 </details>
 
-3) Let
+4) Let
 $$
 f(x)=\begin{cases}
 0 & \text{if } x\neq 0,\\
@@ -1243,7 +1224,7 @@ This is a useful warning: the conclusion may still hold by coincidence, but the 
 
 </details>
 
-4) Let
+5) Let
 $$
 h(x)=\begin{cases}
 0 & \text{if } x\le 0,\\
@@ -1262,7 +1243,7 @@ Hence it is not continuous at $0$.
 
 </details>
 
-5) Let $D=(0,3)$, $D'=(-1,2)$, $f(x)=x+3$, $g(x)=x+3$, and $S=\{1\}$.
+6) Let $D=(0,3)$, $D'=(-1,2)$, $f(x)=x+3$, $g(x)=x+3$, and $S=\{1\}$.
 Define $h\colon S\to\mathbb{R}$ by $h(x)=f(x)=g(x)$.  
 Show that $1$ is not an accumulation point of $S$, and discuss why this is the key reason the restriction continuity discussion does not give information about nearby-point behavior.
 
@@ -1278,5 +1259,4 @@ This is the same reason behind @rem-continuity-isolated-points.
 
 </details>
 
-
-:::
+ 

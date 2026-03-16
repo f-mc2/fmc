@@ -489,7 +489,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">March 10, 2026</p>
+      <p class="date-modified">March 16, 2026</p>
     </div>
   </div>
     
@@ -569,7 +569,7 @@ Figure&nbsp;1: Graphical depiction of distances between real numbers on the real
 </figcaption>
 </figure>
 </div>
-<p>The ‘distances’ <span class="math inline">\(\Delta_{1}\)</span> and <span class="math inline">\(\Delta_{2}\)</span> are precisely the lenghts of the segments joining <span class="math inline">\(x_{0}\)</span> with <span class="math inline">\(x_{1}\)</span> and <span class="math inline">\(x_{0}\)</span> with <span class="math inline">\(x_{2}\)</span>, respectively, as measured with a standard ruler.</p>
+<p>The ‘distances’ <span class="math inline">\(\Delta_{1}\)</span> and <span class="math inline">\(\Delta_{2}\)</span> are precisely the lengths of the segments joining <span class="math inline">\(x_{0}\)</span> with <span class="math inline">\(x_{1}\)</span> and <span class="math inline">\(x_{0}\)</span> with <span class="math inline">\(x_{2}\)</span>, respectively, as measured with a standard ruler.</p>
 <div class="callout callout-style-default callout-note callout-titled" title="Euclidean distance function">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -589,7 +589,7 @@ d(x,y)=\sqrt{(x-y)^{2}}=|x-y|
 </div>
 <p>Now that we know what ‘being close to’ means, we can visualize what is the <span class="math inline">\((\varepsilon-\delta)\)</span>-definition of the limit of a function (see <a href="#def-limits" class="quarto-xref">Definition&nbsp;2</a> below) when everything works (source: <a href="https://www.geogebra.org/m/mj2bXA5y">Jason McCullough in Geogebra</a>). The function used in the applet is <span class="math inline">\(f\colon\mathbb{R}\rightarrow\mathbb{R}\)</span> with <span class="math inline">\(f(x) = \frac{x^3}{8}\)</span>, but can be changed in the input bar. We fix the reference point <span class="math inline">\(a\in\mathbb{R}\)</span> in the input space by simply dragging it where we want, and visualize the validity of the formal equality <span class="math display">\[
 \lim_{x\rightarrow x_{0}} f(x)=L
-\]</span> as follows. The interval <span class="math inline">\((L-\varepsilon, L+\varepsilon)\)</span> in the output space is depicted as an horizontal blue strip of length <span class="math inline">\(2\varepsilon\)</span>, while the interval <span class="math inline">\((x_{0}-\delta,x_{0}+\delta)\)</span> in the input space is depicted as a vertical red strip of lenght <span class="math inline">\(2\delta\)</span>. We can use the sliders to change the value of <span class="math inline">\(\varepsilon&gt;0\)</span> and <span class="math inline">\(\delta&gt;0\)</span>, and we can see that, whatever the value of <span class="math inline">\(\varepsilon\)</span> is, we can find a suitable value for <span class="math inline">\(\delta\)</span> such that <span class="math inline">\(x\in (x_{0}-\delta,x_{0}+\delta)\)</span> (or, equivalently, <span class="math inline">\(|x-x_{0}|&lt;\delta\)</span>) implies <span class="math inline">\(f(x)\in (L-\varepsilon, L+\varepsilon)\)</span> (or, equivalently, <span class="math inline">\(|f(x)- L|&lt;\epsilon\)</span>.</p>
+\]</span> as follows. The interval <span class="math inline">\((L-\varepsilon, L+\varepsilon)\)</span> in the output space is depicted as a horizontal blue strip of length <span class="math inline">\(2\varepsilon\)</span>, while the interval <span class="math inline">\((x_{0}-\delta,x_{0}+\delta)\)</span> in the input space is depicted as a vertical red strip of length <span class="math inline">\(2\delta\)</span>. We can use the sliders to change the value of <span class="math inline">\(\varepsilon&gt;0\)</span> and <span class="math inline">\(\delta&gt;0\)</span>, and we can see that, whatever the value of <span class="math inline">\(\varepsilon\)</span> is, we can find a suitable value for <span class="math inline">\(\delta\)</span> such that <span class="math inline">\(x\in (x_{0}-\delta,x_{0}+\delta)\)</span> (or, equivalently, <span class="math inline">\(|x-x_{0}|&lt;\delta\)</span>) implies <span class="math inline">\(f(x)\in (L-\varepsilon, L+\varepsilon)\)</span> (or, equivalently, <span class="math inline">\(|f(x)- L|&lt;\epsilon\)</span>.</p>
 <figure style="max-width:960px;margin:1rem auto" class="figure">
 <iframe src="https://www.geogebra.org/material/iframe/id/mj2bXA5y/width/960/height/640/border/888888/sfsb/true/smb/true/stb/false" title="GeoGebra: Tangent line intuition" loading="lazy" allowfullscreen="" style="border:0;width:100%;height:640px;display:block;">
 </iframe>
@@ -597,15 +597,15 @@ d(x,y)=\sqrt{(x-y)^{2}}=|x-y|
 Interactive demo: when a limit exists.
 </figcaption>
 </figure>
-<p>In general, limits do not need to exist, as visualized in the applet below (source: <a href="https://www.geogebra.org/m/hebkhRJm">Jason McCullough in Geogebra</a>). This example exploits the oscillating behavior of trigonometric functions, a type of real-valued function that we will able to properly define only later in the course. The intuitive ideais that, when <span class="math inline">\(x\)</span> approaches <span class="math inline">\(0\)</span>, the function keeps oscillating taking all values between <span class="math inline">\(-1\)</span> and <span class="math inline">\(1\)</span>. Consequently, by suitably varying <span class="math inline">\(\varepsilon\)</span> and <span class="math inline">\(\delta\)</span> with the sliders, we can see that, as soon as <span class="math inline">\(\varepsilon\)</span> is smaller than <span class="math inline">\(1\)</span>, there are no <span class="math inline">\(L\)</span> and no <span class="math inline">\(\delta&gt;0\)</span> such that <span class="math inline">\(|x-0|&lt;\delta\)</span> implies <span class="math inline">\(|f(x)-L|&lt;\varepsilon\)</span>.</p>
+<p>In general, limits do not need to exist, as visualized in the applet below (source: <a href="https://www.geogebra.org/m/hebkhRJm">Jason McCullough in Geogebra</a>). This example exploits the oscillating behavior of trigonometric functions, a type of real-valued function that we will be able to properly define only later in the course. The intuitive idea is that, when <span class="math inline">\(x\)</span> approaches <span class="math inline">\(0\)</span>, the function keeps oscillating taking all values between <span class="math inline">\(-1\)</span> and <span class="math inline">\(1\)</span>. Consequently, by suitably varying <span class="math inline">\(\varepsilon\)</span> and <span class="math inline">\(\delta\)</span> with the sliders, we can see that, as soon as <span class="math inline">\(\varepsilon\)</span> is smaller than <span class="math inline">\(1\)</span>, there are no <span class="math inline">\(L\)</span> and no <span class="math inline">\(\delta&gt;0\)</span> such that <span class="math inline">\(|x-0|&lt;\delta\)</span> implies <span class="math inline">\(|f(x)-L|&lt;\varepsilon\)</span>.</p>
 <figure style="max-width:960px;margin:1rem auto" class="figure">
 <iframe src="https://www.geogebra.org/material/iframe/id/hebkhRJm/width/960/height/640/border/888888/sfsb/true/smb/true/stb/false" title="GeoGebra: Tangent line intuition" loading="lazy" allowfullscreen="" style="border:0;width:100%;height:640px;display:block;">
 </iframe>
 <figcaption style="text-align:center;font-size:0.95em;opacity:.85;margin-top:.5rem">
-Interactive demo: when a limit does not exists.
+Interactive demo: when a limit does not exist.
 </figcaption>
 </figure>
-<p>Now that we have an intuitive and visual understanding of what the notion of limit is, we can proceed to introduce a rigorous definition. Since we can approach the input point <span class="math inline">\(x_{0}\)</span> from the left, from the right, or from both side simultaneously, we consider three types of limits.</p>
+<p>Now that we have an intuitive and visual understanding of what the notion of limit is, we can proceed to introduce a rigorous definition. Since we can approach the input point <span class="math inline">\(x_{0}\)</span> from the left, from the right, or from both sides simultaneously, we consider three types of limits.</p>
 <div class="callout callout-style-default callout-note callout-titled" title="$\varepsilon$-$\delta$ definition of ([left/right](https://en.wikipedia.org/wiki/One-sided_limit)) [limits](https://en.wikipedia.org/wiki/Limit_of_a_function#(%CE%B5,_%CE%B4)-definition_of_limit)">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -620,18 +620,18 @@ Interactive demo: when a limit does not exists.
 <p><span class="theorem-title"><strong>Definition 2</strong></span> Consider the function <span class="math inline">\(f\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}\)</span>. If <span class="math inline">\(x_{0}\)</span> is a <a href="../../courses/calculo-uc3m-matematica-aplicada/0_sets_and_functions.html#def-accumulation-point"><strong>right accumulation point</strong></a> for <span class="math inline">\(D\)</span>, we say that the formal equality<br>
 <span class="math display">\[
 \lim_{x\rightarrow x_{0}^{+}} f(x)=l
-\]</span> holds if for every <span class="math inline">\(\varepsilon&gt;0\)</span> there is <span class="math inline">\(0&lt; \delta\)</span> such that <span class="math display">\[
+\]</span> holds if for every <span class="math inline">\(\varepsilon&gt;0\)</span> there exists <span class="math inline">\(\delta&gt;0\)</span> such that <span class="math display">\[
 x\in D,\quad 0&lt;x-x_{0}&lt;\delta \Longrightarrow  |f(x)-l|&lt;\varepsilon .
 \]</span> In this case, we say that <span class="math inline">\(l\)</span> is the right limit of <span class="math inline">\(f\)</span> at <span class="math inline">\(x_{0}\)</span>.</p>
 <p>Similarly, if <span class="math inline">\(x_{0}\)</span> is a <strong>left accumulation point</strong> for <span class="math inline">\(D\)</span>, we say that the formal equality<br>
 <span class="math display">\[
 \lim_{x\rightarrow x_{0}^{-}} f(x)=l
-\]</span> holds if for every <span class="math inline">\(\varepsilon&gt;0\)</span> there is a <span class="math inline">\(0&lt; \delta\)</span> such that <span class="math display">\[
+\]</span> holds if for every <span class="math inline">\(\varepsilon&gt;0\)</span> there exists <span class="math inline">\(\delta&gt;0\)</span> such that <span class="math display">\[
 x\in D,\quad 0&lt;x_{0}-x&lt;\delta \Longrightarrow |f(x)-l|&lt;\varepsilon .
 \]</span> In this case, we say that <span class="math inline">\(l\)</span> is the left limit of <span class="math inline">\(f\)</span> at <span class="math inline">\(x_{0}\)</span>.</p>
 <p>Finally, if <span class="math inline">\(x_{0}\)</span> is an <strong>accumulation point</strong> for <span class="math inline">\(D\)</span>, we say that the formal equality <span class="math display">\[
 \lim_{x\rightarrow x_{0}} f(x)=l
-\]</span> holds if for every <span class="math inline">\(\varepsilon&gt;0\)</span> there is a <span class="math inline">\(0&lt; \delta\)</span> such that <span class="math display">\[
+\]</span> holds if for every <span class="math inline">\(\varepsilon&gt;0\)</span> there exists <span class="math inline">\(\delta&gt;0\)</span> such that <span class="math display">\[
 x\in D,\quad 0&lt;|x-x_{0}|&lt;\delta \Longrightarrow |f(x)-l|&lt;\varepsilon .
 \]</span> In this case, we say that <span class="math inline">\(l\)</span> is the limit of <span class="math inline">\(f\)</span> at <span class="math inline">\(x_{0}\)</span>.</p>
 </div>
@@ -694,7 +694,7 @@ The case of left and right limits can be proved analogously.
 <hr>
 <p>Now, let us consider the function <span class="math inline">\(f\colon \mathbb{R}\rightarrow\mathbb{R}\)</span> given by <span class="math inline">\(f(x)=x + a\)</span>, and prove that <span id="eq-limit-linear-function"><span class="math display">\[
 \lim_{x\rightarrow x_{0}} f(x)= x_{0} + a=f(x_{0})
-\tag{3}\]</span></span> for every <span class="math inline">\(x_{0}\in\mathbb{R}\)</span>. According to <a href="#def-limits" class="quarto-xref">Definition&nbsp;2</a>, we need to prove that, for every <span class="math inline">\(\varepsilon&gt;0\)</span>, there is <span class="math inline">\(\delta&gt;0\)</span> such that <span class="math inline">\(|x-x_{0}|&lt;\delta\)</span> implies <span class="math inline">\(|f(x)-x_{0}|&lt;\varepsilon\)</span>.</p>
+\tag{3}\]</span></span> for every <span class="math inline">\(x_{0}\in\mathbb{R}\)</span>. According to <a href="#def-limits" class="quarto-xref">Definition&nbsp;2</a>, we need to prove that, for every <span class="math inline">\(\varepsilon&gt;0\)</span>, there is <span class="math inline">\(\delta&gt;0\)</span> such that <span class="math inline">\(|x-x_{0}|&lt;\delta\)</span> implies <span class="math inline">\(|f(x)-f(x_{0})|&lt;\varepsilon\)</span>.</p>
 <p>By the very definition of <span class="math inline">\(f\)</span>, it holds <span class="math inline">\(|f(x) - (x_{0}+a)|=|x - x_{0}|\)</span>. Taking <span class="math inline">\(\delta&lt; \varepsilon\)</span>, we get that <span class="math inline">\(|x - x_{0}|&lt;\delta\)</span> implies <span class="math inline">\(|f(x) - f(x_{0})|&lt;\varepsilon\)</span> as desired. Note that, unlike what happens in the case of the constant function above, <span class="math inline">\(\delta_\varepsilon\)</span> depends on <span class="math inline">\(\varepsilon\)</span> because it must be <span class="math inline">\(\delta&lt;\varepsilon\)</span>.</p>
 <hr>
 <p>Finally, let us consider the function <span class="math inline">\(f\colon \mathbb{R}\rightarrow\mathbb{R}\)</span> given by <span class="math inline">\(f(x)=x^{2}\)</span>, and prove that <span id="eq-limit-quadratic-function"><span class="math display">\[
@@ -714,7 +714,7 @@ The case of left and right limits can be proved analogously.
 </div>
 </div>
 </div>
-<p>In <a href="#def-limits" class="quarto-xref">Definition&nbsp;2</a>, three types of limits are considered because we can approach the input point <span class="math inline">\(x_{0}\)</span> from the left, from the right, or from both sides simulatenously. In the last case, it is reasonable to ask if the three types of limits agree. In the exercise below, you are asked to prove that this is indeed the case.</p>
+<p>In <a href="#def-limits" class="quarto-xref">Definition&nbsp;2</a>, three types of limits are considered because we can approach the input point <span class="math inline">\(x_{0}\)</span> from the left, from the right, or from both sides simultaneously. In the last case, it is reasonable to ask if the three types of limits agree. In the exercise below, you are asked to prove that this is indeed the case.</p>
 <div class="callout callout-style-default callout-caution callout-titled" title="Existence of the limit at $x_{0}$ is equivalent to existence and equality of left and right limits at $x_{0}$">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -727,7 +727,7 @@ The case of left and right limits can be proved analogously.
 <div class="callout-body-container callout-body">
 <div id="exr-left-right-limits-link" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 1</strong></span> Consider the function <span class="math inline">\(f\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}\)</span>.</p>
-<p>If <span class="math inline">\(x_{0}\)</span> is a left and right accumulation point for <span class="math inline">\(D\subseteq \mathbb{R}\)</span>, prove that <span class="math inline">\(l\)</span> is the limit of function <span class="math inline">\(f\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}\)</span> for <span class="math inline">\(x\)</span> going to <span class="math inline">\(x_{0}\)</span> if and only <strong>if and only if</strong> it is also the left and right limit of <span class="math inline">\(f\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}\)</span> at <span class="math inline">\(x_{0}\)</span>.</p>
+<p>If <span class="math inline">\(x_{0}\)</span> is a left and right accumulation point for <span class="math inline">\(D\subseteq \mathbb{R}\)</span>, prove that <span class="math inline">\(l\)</span> is the limit of function <span class="math inline">\(f\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}\)</span> for <span class="math inline">\(x\)</span> going to <span class="math inline">\(x_{0}\)</span> if and only if it is also the left and right limit of <span class="math inline">\(f\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}\)</span> at <span class="math inline">\(x_{0}\)</span>.</p>
 <details>
 <summary>
 <strong>Solution:</strong>
@@ -893,12 +893,12 @@ x\in D,\quad |x-x_{0}|&lt;\delta \Longrightarrow x=x_{0} \Longrightarrow |f(x)-f
 <summary>
 <strong>Solution:</strong>
 </summary>
-It follows directly from <a href="#exr-left-right-limits-link" class="quarto-xref">Exercise&nbsp;1</a>.
+Use <a href="#exr-left-right-limits-link" class="quarto-xref">Exercise&nbsp;1</a> and <a href="#prp-continuity-limit-characterization" class="quarto-xref">Proposition&nbsp;2</a>.
 </details>
 </div>
 </div>
 </div>
-<p>Just as in <a href="#exr-limits-restriction-functions" class="quarto-xref">Exercise&nbsp;2</a>, we must ensure that the notion of continuity in <a href="#def-continuity" class="quarto-xref">Definition&nbsp;3</a> behaves well we consider different functions that agrees on the intersections of their domains to avoid unpleasant pathological behaviours.</p>
+<p>Just as in <a href="#exr-limits-restriction-functions" class="quarto-xref">Exercise&nbsp;2</a>, we must ensure that the notion of continuity in <a href="#def-continuity" class="quarto-xref">Definition&nbsp;3</a> behaves well when considering different functions that agree on the intersections of their domains to avoid unpleasant pathological behaviors.</p>
 <div class="callout callout-style-default callout-caution callout-titled" title="Continuity of the restriction">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -910,8 +910,8 @@ It follows directly from <a href="#exr-left-right-limits-link" class="quarto-xre
 </div>
 <div class="callout-body-container callout-body">
 <div id="exr-continuity-restriction-functions" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 4</strong></span> Consider two functions <span class="math inline">\(f\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}\)</span> and <span class="math inline">\(g\colon D'\subseteq \mathbb{R}\rightarrow \mathbb{R}\)</span> such that <span class="math inline">\(g(x)=f(x)\)</span> on <span class="math inline">\(S\subseteq D\cap D'\neq \emptyset\)</span>. Prove that the restriction function <span class="math inline">\(h\colon S\rightarrow\mathbb{R}\)</span> given by <span class="math inline">\(h(x)=g(x)=f(x)\)</span> is (left/right) continuous at <span class="math inline">\(x_{0}\in S\)</span> if either <span class="math inline">\(f\)</span> or <span class="math inline">\(g\)</span> is (left/right) continuous at <span class="math inline">\(x_{0}\in S\)</span>.</p>
-<p>In particular, prove that <span class="math inline">\(h\)</span> is (left/right) continuous on <span class="math inline">\(S\)</span> if either <span class="math inline">\(f\)</span> or <span class="math inline">\(g\)</span> is continuous on <span class="math inline">\(D\)</span>.</p>
+<p><span class="theorem-title"><strong>Exercise 4</strong></span> Consider two functions <span class="math inline">\(f\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}\)</span> and <span class="math inline">\(g\colon D'\subseteq \mathbb{R}\rightarrow \mathbb{R}\)</span> such that <span class="math inline">\(g(x)=f(x)\)</span> on <span class="math inline">\(S\subseteq D\cap D'\neq \emptyset\)</span>. Assume that <span class="math inline">\(x_{0}\in S\)</span> is an accumulation point for <span class="math inline">\(S\)</span>. Prove that the restriction function <span class="math inline">\(h\colon S\rightarrow\mathbb{R}\)</span> given by <span class="math inline">\(h(x)=g(x)=f(x)\)</span> is (left/right) continuous at <span class="math inline">\(x_{0}\)</span> if either <span class="math inline">\(f\)</span> or <span class="math inline">\(g\)</span> is (left/right) continuous at <span class="math inline">\(x_{0}\)</span>.</p>
+<p>In particular, prove that <span class="math inline">\(h\)</span> is (left/right) continuous on <span class="math inline">\(S\)</span> if either <span class="math inline">\(f\)</span> is continuous on <span class="math inline">\(D\)</span> or <span class="math inline">\(g\)</span> is continuous on <span class="math inline">\(D'\)</span>.</p>
 <details>
 <summary>
 <strong>Solution:</strong>
@@ -944,14 +944,14 @@ It follows directly from <a href="#exr-left-right-limits-link" class="quarto-xre
 </div>
 </div>
 </div>
-<p>From <a href="#prp-sign-preserving-property-continuous-functions" class="quarto-xref">Proposition&nbsp;3</a>, we can derive the so-called <strong>Bolzano’s</strong> theorem, also known as the <strong>extreme value theorem</strong> for continuous functions. This theorem shows that continuous functions on closed intervals must always attain a (possibly non-unique) maximum and a (possibly non-unique) minimum.</p>
-<div class="callout callout-style-default callout-note callout-titled" title="[Bolzano's/Extreme value theorem](https://en.wikipedia.org/wiki/Extreme_value_theorem)">
+<p>From <a href="#prp-sign-preserving-property-continuous-functions" class="quarto-xref">Proposition&nbsp;3</a>, we can derive the so-called <strong>extreme value theorem</strong> for continuous functions. This theorem shows that continuous functions on closed intervals must always attain a (possibly non-unique) maximum and a (possibly non-unique) minimum.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="[Extreme value theorem](https://en.wikipedia.org/wiki/Extreme_value_theorem)">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span><a href="https://en.wikipedia.org/wiki/Extreme_value_theorem">Bolzano’s/Extreme value theorem</a>
+<span class="screen-reader-only">Note</span><a href="https://en.wikipedia.org/wiki/Extreme_value_theorem">Extreme value theorem</a>
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1145,7 +1145,7 @@ Use <a href="#prp-algebraic-manipulations-limits" class="quarto-xref">Propositio
 </div>
 <div class="callout-body-container callout-body">
 <div id="prp-algebraic-manipulations-continuous-functions" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 5</strong></span> Let <span class="math inline">\((\alpha_{1},\cdots\alpha_{n})\in\mathbb{R}^{n}\)</span> and <span class="math inline">\(x_{0}\)</span> be an accumulation point for <span class="math inline">\(D\subseteq \mathbb{R}\)</span>. For each <span class="math inline">\(j=1,\cdots,n\)</span>, consider the function <span class="math inline">\(f_{j}\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}\)</span>, assumed to be continuous at <span class="math inline">\(x_{0}\)</span>.</p>
+<p><span class="theorem-title"><strong>Proposition 5</strong></span> Let <span class="math inline">\((\alpha_{1},\cdots,\alpha_{n})\in\mathbb{R}^{n}\)</span> and <span class="math inline">\(x_{0}\)</span> be an accumulation point for <span class="math inline">\(D\subseteq \mathbb{R}\)</span>. For each <span class="math inline">\(j=1,\cdots,n\)</span>, consider the function <span class="math inline">\(f_{j}\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}\)</span>, assumed to be continuous at <span class="math inline">\(x_{0}\)</span>.</p>
 <p>It follows that <span class="math display">\[
 F(x)=\left(\sum\limits_{j=1}^{n}\alpha_{j}f_{j}\right)(x),\qquad G(x)=\left(\prod_{j=1}^{n}\alpha_{j}f_{j}\right)(x)
 \]</span> are continuous at <span class="math inline">\(x_{0}\)</span>.</p>
@@ -1203,7 +1203,7 @@ The continuity of <span class="math inline">\(\mathrm{R}\)</span> follows again 
 </div>
 <div class="callout-body-container callout-body">
 <div id="prp-continuity-inverse-function" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 6</strong></span> Let <span class="math inline">\(I\)</span> be an interval, and let <span class="math inline">\(f\colon I\rightarrow \mathbb{R}\)</span> be continuous and invertible on <span class="math inline">\(I\)</span> (in particular, <span class="math inline">\(f\)</span> is <a href="../../courses/calculo-uc3m-matematica-aplicada/0_sets_and_functions.html#prp-invertible functions are monotonic">monotonic</a>). Then <span class="math inline">\(J:=f(I)\)</span> is an interval, and the inverse function <span class="math inline">\(f^{-1}\colon J\rightarrow\mathbb{R}\)</span> is continuous.</p>
+<p><span class="theorem-title"><strong>Proposition 6</strong></span> Let <span class="math inline">\(I\)</span> be an interval, and let <span class="math inline">\(f\colon I\rightarrow \mathbb{R}\)</span> be continuous and invertible on <span class="math inline">\(I\)</span> (in particular, <span class="math inline">\(f\)</span> is <a href="../../courses/calculo-uc3m-matematica-aplicada/0_sets_and_functions.html#prp-invertible-functions-are-monotonic">monotonic</a>). Then <span class="math inline">\(J:=f(I)\)</span> is an interval, and the inverse function <span class="math inline">\(f^{-1}\colon J\rightarrow\mathbb{R}\)</span> is continuous.</p>
 <details>
 <summary>
 <strong>Proof:</strong>
@@ -1254,26 +1254,26 @@ h(x)=x^{2}+3.
 <div class="callout-body-container callout-body">
 <div id="prp-limit-composite-functions" class="theorem proposition">
 <p><span class="theorem-title"><strong>Proposition 7</strong></span> Consider the functions <span class="math inline">\(f\colon D\subseteq \mathbb{R} \rightarrow \mathbb{R}\)</span> and <span class="math inline">\(g\colon D'\subseteq \mathbb{R} \rightarrow \mathbb{R}\)</span>, and let <span class="math inline">\(x_{0}\)</span> be an accumulation point for <span class="math inline">\(D'\)</span>. Suppose that <span id="eq-limit-composite-functions"><span class="math display">\[
-\lim_{x\rightarrow x_{0}}g(x) = l
-\tag{9}\]</span></span> with <span class="math inline">\(l\)</span> is an accumulation point for <span class="math inline">\(D\)</span>, and <span id="eq-limit-composite-functions2"><span class="math display">\[
+\lim_{x\rightarrow x_{0}}g(x)=l
+\tag{9}\]</span></span> where the first limit is taken in <span class="math inline">\(D'\)</span>, and <span class="math inline">\(l\in D\)</span>, and <span id="eq-limit-composite-functions2"><span class="math display">\[
 \lim_{y\rightarrow l} f(y) =L .
 \tag{10}\]</span></span> The equality <span class="math display">\[
 \lim_{x\rightarrow x_{0}} f\circ g(x)=L
 \]</span> holds if either one of the following additional assumptions are met:</p>
 <ol type="1">
 <li><span class="math inline">\(f\)</span> is continuous at <span class="math inline">\(y=l\)</span>;</li>
-<li>there is an open interval <span class="math inline">\(I\)</span> centered at <span class="math inline">\(x_{0}\)</span> on which <span class="math inline">\(g(x)\neq l\)</span> for all <span class="math inline">\(x_{0}\neq x\in I\)</span>.</li>
+<li>there is an open interval <span class="math inline">\(I\)</span> centered at <span class="math inline">\(x_{0}\)</span> such that <span class="math inline">\(I\setminus\{x_{0}\}\subseteq D'\)</span> and <span class="math inline">\(g(x)\neq l\)</span> for every <span class="math inline">\(x\in I\setminus\{x_{0}\}\)</span>.</li>
 </ol>
 <p>Analogous results hold for right/left limits.</p>
 <details>
 <summary>
 <strong>Proof:</strong>
 </summary>
-<p>From <a href="#eq-limit-composite-functions2" class="quarto-xref">Equation&nbsp;10</a>, give <span class="math inline">\(\varepsilon&gt;0\)</span>, it follows that there is <span class="math inline">\(\eta&gt;0\)</span> for which <span id="eq-limit-composite-functions3"><span class="math display">\[
+<p>From <a href="#eq-limit-composite-functions2" class="quarto-xref">Equation&nbsp;10</a>, given <span class="math inline">\(\varepsilon&gt;0\)</span>, it follows that there is <span class="math inline">\(\eta&gt;0\)</span> for which <span id="eq-limit-composite-functions3"><span class="math display">\[
 0&lt;|y-l|&lt;\eta \implies |f(y)-L|&lt;\varepsilon,
-\tag{11}\]</span></span> with <span class="math inline">\(y\neq l\)</span>. On the other hand, <a href="#eq-limit-composite-functions" class="quarto-xref">Equation&nbsp;9</a> implies that, given the same <span class="math inline">\(\eta&gt;0\)</span> as before, there is <span class="math inline">\(\delta&gt;0\)</span> such that <span id="eq-limit-composite-functions4"><span class="math display">\[
+\tag{11}\]</span></span> On the other hand, <a href="#eq-limit-composite-functions" class="quarto-xref">Equation&nbsp;9</a> implies that, given the same <span class="math inline">\(\eta&gt;0\)</span> as before, there is <span class="math inline">\(\delta&gt;0\)</span> such that <span id="eq-limit-composite-functions4"><span class="math display">\[
 0&lt;|x-x_{0}|&lt;\delta \implies  |g(x) - l|&lt;\eta.
-\tag{12}\]</span></span> Setting <span class="math inline">\(y=g(x)\)</span>, <a href="#eq-limit-composite-functions4" class="quarto-xref">Equation&nbsp;12</a> leads to <span class="math inline">\(|g(x)-l|&lt;\eta\)</span>, while <a href="#eq-limit-composite-functions3" class="quarto-xref">Equation&nbsp;11</a> states that <span class="math inline">\(0&lt;|y-l|=|g(x)-l|&lt;\eta\)</span> implies <span class="math inline">\(|f(y)-L|=|f(g(x))-L|&lt;\varepsilon\)</span>, and it does not necessarily hold that <span class="math inline">\(|g(x)-l|&lt;\eta\)</span> implies <span class="math inline">\(0&lt;|y-l|=|g(x)-l|&lt;\eta\)</span> because <span class="math inline">\(y=g(x)\)</span> may be equal to <span class="math inline">\(l\)</span>. See <a href="#exr-tricky-limit-composition" class="quarto-xref">Exercise&nbsp;8</a> for more details. We thus need to assume something more to otbain the desired result.</p>
+\tag{12}\]</span></span> Setting <span class="math inline">\(y=g(x)\)</span>, <a href="#eq-limit-composite-functions4" class="quarto-xref">Equation&nbsp;12</a> leads to <span class="math inline">\(|g(x)-l|&lt;\eta\)</span>, while <a href="#eq-limit-composite-functions3" class="quarto-xref">Equation&nbsp;11</a> states that <span class="math inline">\(0&lt;|y-l|=|g(x)-l|&lt;\eta\)</span> implies <span class="math inline">\(|f(y)-L|=|f(g(x))-L|&lt;\varepsilon\)</span>, and it does not necessarily hold that <span class="math inline">\(|g(x)-l|&lt;\eta\)</span> implies <span class="math inline">\(0&lt;|y-l|&lt;\eta\)</span> because <span class="math inline">\(y=g(x)\)</span> may be equal to <span class="math inline">\(l\)</span>. See <a href="#exr-tricky-limit-composition" class="quarto-xref">Exercise&nbsp;8</a> for more details. We thus need to assume something more to obtain the desired result.</p>
 <ol type="1">
 <li>In this case, <span class="math inline">\(L=f(l)\)</span> because <span class="math inline">\(f\)</span> is continuous at <span class="math inline">\(l\)</span>, and thus <span class="math inline">\(|f(y) -L|=|f(y) -f(l)|&lt;\varepsilon\)</span> even when <span class="math inline">\(y=g(x)=l\)</span>, and the result follows.</li>
 <li>In this case, we can take <span class="math inline">\(\delta\)</span> sufficiently small so that <span class="math inline">\(0&lt;|x-x_{0}|&lt;\delta\)</span> implies <span class="math inline">\(x\in I\)</span> and thus <span class="math inline">\(g(x)\neq l\)</span> by assumption. Consequently, it holds <span class="math display">\[
@@ -1315,7 +1315,7 @@ h(x)=\left\{\begin{matrix} 1 &amp; \mbox{ if } x\neq 0 \\ 0 &amp; \mbox{ if } x=
 </div>
 </div>
 </div>
-<p><a href="#prp-limit-composite-functions" class="quarto-xref">Proposition&nbsp;7</a> immediately implies that continuous functions behaves well when composed among themseleves.</p>
+<p><a href="#prp-limit-composite-functions" class="quarto-xref">Proposition&nbsp;7</a> immediately implies that continuous functions behave well when composed among themselves.</p>
 <div class="callout callout-style-default callout-note callout-titled" title="Composition of continuous functions">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1340,33 +1340,119 @@ Follow <a href="#def-continuity" class="quarto-xref">Definition&nbsp;3</a> and a
 </section>
 <section id="exercises" class="level1" data-number="6">
 <h1 data-number="6"><span class="header-section-number">6</span> Exercises</h1>
-<p>Now, we are ready to solve quite a number of interesting problems.</p>
-<div class="callout callout-style-default callout-caution callout-titled" title="Some exercises to keep us in shape">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Caution</span>Some exercises to keep us in shape
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<div id="exr-limits-1" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 9</strong></span> All the functions defined by the formulas given below are implicitely assumed to be defined on their maximal domains. Calculate the limits, or prove they do not exist, explaining which previous results you are using in each case:</p>
-<p><span class="math display">\[
-\begin{split}
-1) \lim_{x\rightarrow 0^{\pm}} \frac{|x|}{x} &amp; \qquad &amp; \qquad  &amp; 2) \lim_{x\rightarrow 0^{\pm}} \frac{\sqrt{x^{2}}}{x}
-\end{split}
-\]</span></p>
+<p>If not stated otherwise, all the functions below are implicitly defined on their maximal domains.</p>
+<ol type="1">
+<li>Calculate the left and right limits <span class="math inline">\(\lim_{x\to0^\pm}\frac{|x|}{x}=\frac{\sqrt{x^2}}{x}\)</span> and decide whether the limit at <span class="math inline">\(0\)</span> exists.</li>
+</ol>
 <details>
 <summary>
 <strong>Solution</strong>
 </summary>
-You are strongly invited to try to solve them on your own.
+<p>For <span class="math inline">\(x\neq0\)</span> it holds <span class="math display">\[
+\frac{|x|}{x}= \begin{cases}
+1 &amp; \text{if } x&gt;0,\\
+-1 &amp; \text{if } x&lt;0.
+\end{cases}
+\]</span> Therefore, for <span class="math inline">\(x&lt;0\)</span> and <span class="math inline">\(x&gt;0\)</span>, <span class="math inline">\(f(x)\)</span> is the restriction of the constant function <span class="math inline">\(-1\)</span> and <span class="math inline">\(1\)</span>, respectively, so that <span class="math display">\[
+\lim_{x\to 0^+}\frac{|x|}{x}=1,
+\qquad
+\lim_{x\to 0^-}\frac{|x|}{x}=-1.
+\]</span> If the limit existed, both left and right limits would coincide by <a href="#prp-well-posedness-limits" class="quarto-xref">Proposition&nbsp;1</a>, contradicting the two different values above. Therefore, the limit at <span class="math inline">\(0\)</span> does not exist.</p>
 </details>
-</div>
-</div>
-</div>
+<ol start="2" type="1">
+<li>Let <span class="math display">\[
+f(x)=\begin{cases}
+0 &amp; \text{if } x\in\mathbb{Q},\\
+1 &amp; \text{if } x\notin\mathbb{Q}.
+\end{cases}
+\]</span> Prove that <span class="math inline">\(\lim_{x\to x_0}f(x)\)</span> does not exist for any <span class="math inline">\(x_0\in\mathbb{R}\)</span>.</li>
+</ol>
+<details>
+<summary>
+<strong>Solution</strong>
+</summary>
+<p>Assume <span class="math inline">\(\lim_{x\to x_0}f(x)=L\)</span>. Choose <span class="math inline">\(\varepsilon=\frac12\)</span>. By the limit definition, there must be <span class="math inline">\(\delta&gt;0\)</span> such that <span class="math inline">\(|f(x)-L|&lt;\frac12\)</span> whenever <span class="math inline">\(0&lt;|x-x_0|&lt;\delta\)</span>. But any interval <span class="math inline">\((x_0-\delta,x_0+\delta)\)</span> contains both rational and irrational points, so we can find <span class="math inline">\(q\in\mathbb{Q}\)</span> and <span class="math inline">\(r\notin\mathbb{Q}\)</span> with this property. Then <span class="math inline">\(f(q)=0\)</span> and <span class="math inline">\(f(r)=1\)</span>, hence <span class="math display">\[
+|f(q)-L|&lt;\frac12,\qquad |f(r)-L|&lt;\frac12.
+\]</span> So <span class="math inline">\(L\)</span> is within <span class="math inline">\(\frac12\)</span> of both <span class="math inline">\(0\)</span> and <span class="math inline">\(1\)</span>, impossible. Therefore the limit does not exist.</p>
+</details>
+<ol start="3" type="1">
+<li>Let <span class="math display">\[
+g(x)=\begin{cases}
+0 &amp; \text{if } x\in\mathbb{Q},\\
+x &amp; \text{if } x\notin\mathbb{Q}.
+\end{cases}
+\]</span> Show that <span class="math inline">\(\lim_{x\to 0}g(x)=0\)</span>, and determine for which <span class="math inline">\(x_0\neq 0\)</span> the limit can exist.</li>
+</ol>
+<details>
+<summary>
+<strong>Solution</strong>
+</summary>
+<p>To show <span class="math inline">\(\lim_{x\to 0}g(x)=0\)</span>, let <span class="math inline">\(\varepsilon&gt;0\)</span>.<br>
+If <span class="math inline">\(x\in\mathbb{Q}\)</span>, then <span class="math inline">\(g(x)=0\)</span>, so <span class="math inline">\(|g(x)-0|=0&lt;\varepsilon\)</span>.<br>
+If <span class="math inline">\(x\notin\mathbb{Q}\)</span>, then <span class="math inline">\(g(x)=x\)</span>, so <span class="math inline">\(|g(x)-0|=|x|&lt;\varepsilon\)</span> whenever <span class="math inline">\(|x|&lt;\varepsilon\)</span>.<br>
+Hence for <span class="math inline">\(\delta=\varepsilon\)</span>, <a href="#def-limits" class="quarto-xref">Definition&nbsp;2</a> gives <span class="math inline">\(\lim_{x\to0}g(x)=0\)</span>.</p>
+<p>Now let <span class="math inline">\(x_0\neq0\)</span>. Take <span class="math inline">\(\varepsilon=|x_0|/2\)</span>. For any <span class="math inline">\(\delta&gt;0\)</span>, set <span class="math inline">\(\delta_0=\min\{\delta,|x_0|/2\}\)</span> and pick a rational <span class="math inline">\(q\)</span> and an irrational <span class="math inline">\(r\)</span> such that <span class="math inline">\(0&lt;|q-x_0|&lt;\delta_0\)</span> and <span class="math inline">\(0&lt;|r-x_0|&lt;\delta_0\)</span>. Then <span class="math inline">\(g(q)=0\)</span>, while <span class="math inline">\(g(r)=r\)</span>. Since <span class="math display">\[
+|r| \geq ||x_0|-|r-x_0|| &gt; \frac{|x_0|}{2}=\varepsilon,
+\]</span> there is no single <span class="math inline">\(L\)</span> such that <span class="math inline">\(|g(r)-L|&lt;\varepsilon\)</span> together with <span class="math inline">\(|g(q)-L|&lt;\varepsilon\)</span>. Thus <span class="math inline">\(\lim_{x\to x_0}g(x)\)</span> does not exist for <span class="math inline">\(x_0\neq0\)</span>.</p>
+</details>
+<ol start="4" type="1">
+<li>Let <span class="math display">\[
+f(x)=\begin{cases}
+0 &amp; \text{if } x\neq 0,\\
+1 &amp; \text{if } x=0.
+\end{cases}
+\qquad
+g(x)=\begin{cases}
+0 &amp; \text{if } x\neq 0,\\
+1 &amp; \text{if } x=0.
+\end{cases}
+\]</span> Verify that <span class="math inline">\(\lim_{x\to 0}g(x)=\lim_{y\to 0}f(y)=0\)</span>, but <span class="math inline">\(\lim_{x\to 0}f\circ g(x)=1\)</span>. Explain explicitly which assumption of <a href="#prp-limit-composite-functions" class="quarto-xref">Proposition&nbsp;7</a> is not satisfied.</li>
+</ol>
+<details>
+<summary>
+<strong>Solution</strong>
+</summary>
+<p>From the definitions, <span class="math inline">\(\lim_{x\to 0}g(x)=0\)</span> and <span class="math inline">\(\lim_{y\to0}f(y)=0\)</span>, so the expected composed value is <span class="math display">\[
+f\!\left(\lim_{x\to0}g(x)\right)=f(0)=1.
+\]</span> Now <span class="math inline">\(g(0)=1\)</span>, and <span class="math inline">\(g(x)=0\)</span> for <span class="math inline">\(x\neq0\)</span>. Hence <span class="math display">\[
+(f\circ g)(x)=
+\begin{cases}
+1 &amp; \text{if } x\neq0,\\
+0 &amp; \text{if } x=0.
+\end{cases}
+\]</span> Therefore, by <a href="#def-limits" class="quarto-xref">Definition&nbsp;2</a>, <span class="math inline">\(\lim_{x\to0}(f\circ g)(x)=1\)</span>.</p>
+The hypotheses of <a href="#prp-limit-composite-functions" class="quarto-xref">Proposition&nbsp;7</a> are not satisfied:
+<p>This is a useful warning: the conclusion may still hold by coincidence, but the theorem does not apply.</p>
+</details>
+<ol start="5" type="1">
+<li>Let <span class="math display">\[
+h(x)=\begin{cases}
+0 &amp; \text{if } x\le 0,\\
+1 &amp; \text{if } x&gt;0.
+\end{cases}
+\]</span> Compute the left and right limits at <span class="math inline">\(x_0=0\)</span>, and decide whether <span class="math inline">\(h\)</span> is continuous, left continuous, or right continuous at <span class="math inline">\(0\)</span>.</li>
+</ol>
+<details>
+<summary>
+<strong>Solution</strong>
+</summary>
+<p>By <a href="#def-limits" class="quarto-xref">Definition&nbsp;2</a>, <span class="math inline">\(\lim_{x\to0^-}h(x)=0\)</span> and <span class="math inline">\(\lim_{x\to0^+}h(x)=1\)</span>.<br>
+The one-sided limits differ, so the two-sided limit does not exist at <span class="math inline">\(0\)</span>.<br>
+Since <span class="math inline">\(h(0)=0\)</span>, <span class="math inline">\(h\)</span> is left continuous at <span class="math inline">\(0\)</span> (<span class="math inline">\(\lim_{x\to0^-}h(x)=h(0)\)</span>) but not right continuous (<span class="math inline">\(\lim_{x\to0^+}h(x)\neq h(0)\)</span>).<br>
+Hence it is not continuous at <span class="math inline">\(0\)</span>.</p>
+</details>
+<ol start="6" type="1">
+<li>Let <span class="math inline">\(D=(0,3)\)</span>, <span class="math inline">\(D'=(-1,2)\)</span>, <span class="math inline">\(f(x)=x+3\)</span>, <span class="math inline">\(g(x)=x+3\)</span>, and <span class="math inline">\(S=\{1\}\)</span>. Define <span class="math inline">\(h\colon S\to\mathbb{R}\)</span> by <span class="math inline">\(h(x)=f(x)=g(x)\)</span>.<br>
+Show that <span class="math inline">\(1\)</span> is not an accumulation point of <span class="math inline">\(S\)</span>, and discuss why this is the key reason the restriction continuity discussion does not give information about nearby-point behavior.</li>
+</ol>
+<details>
+<summary>
+<strong>Solution</strong>
+</summary>
+<p>Since <span class="math inline">\(S=\{1\}\)</span>, for every <span class="math inline">\(\delta&gt;0\)</span> we have <span class="math display">\[
+S\cap(1-\delta,1+\delta)=\{1\}.
+\]</span> So <span class="math inline">\(1\)</span> is isolated and not an accumulation point. Hence <a href="#exr-continuity-restriction-functions" class="quarto-xref">Exercise&nbsp;4</a> does not apply at <span class="math inline">\(x_{0}=1\)</span>, because its hypotheses require accumulation behavior at the base point. This is the same reason behind <a href="#rem-continuity-isolated-points" class="quarto-xref">Remark&nbsp;1</a>.</p>
+</details>
 
 
 </section>
