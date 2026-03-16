@@ -55,7 +55,7 @@ The function determined by the rule $x\mapsto f'(x)$ (whenever it makes sense) i
 
 :::
 
-Before we learn some cool tricks that make computing (a lot but not all) derivatives a sort of mechanical task that does not require computing limits, let's work out some derivatives from the very definition.
+Before we learn some useful tricks that make computing (a lot but not all) derivatives a sort of mechanical task that does not require computing limits, let's work out some derivatives from the very definition.
 
 ::: {.callout-tip title="Derivative of constant functions"}
 
@@ -159,7 +159,7 @@ Let us consider the absolute value function $|\cdot|\colon \mathbb{R}\rightarrow
 $$
 |x|=\sqrt{x^{2}}=\left\{\begin{matrix}x & \mbox{ if } x\geq 0 \\ & \\ -x & \mbox{ if } x<0 .\end{matrix}\right.
 $$
-For all points $x_{0}\neq 0$, we can compute the derivative following the second example [above](#exm-derivative-constant-linear-quadratic-functions) (essentially because of @exr-derivative-restriction-functions). However, when $x_{0}=0$, we have to take into account the "sudden change" of the function. Therefore, we first compute the [right and left derivatives](#exr-left-right-derivative): 
+For all points $x_{0}\neq 0$, we can compute the derivative following @exm-derivative-linear-functions (essentially because of @exr-derivative-restriction-functions). However, when $x_{0}=0$, we have to take into account the "sudden change" of the function. Therefore, we first compute the [right and left derivatives](#exr-left-right-derivative): 
 $$
 \begin{split}
 \lim_{x\rightarrow 0^{+}}\frac{x-0}{x}&=1 \\ & \\
@@ -221,7 +221,7 @@ The formula for the derivative of the product of two functions is usually referr
 :::
 
 
-What happens when we have more than 2 functions? For a small number of functions, say between 3 and 7, it should be not extremely boring to use the associativity property of function sums and products to understant how to generalize @prp-algebraic-manipulations-derivatives. For an arbitrary finite number of functions, the generalization can be obtained using the induction principle.
+What happens when we have more than 2 functions? For a small number of functions, say between 3 and 7, it should be not extremely boring to use the associativity property of function sums and products to understand how to generalize @prp-algebraic-manipulations-derivatives. For an arbitrary finite number of functions, the generalization can be obtained using the induction principle.
 
 ::: {.callout-caution title="Algebraic manipulations of derivatives continued"}
 
@@ -317,14 +317,14 @@ This concludes the proof.
  
 ::: {#exr-derivative-monomial}
 
-Prove that  the derivative of the function $f_{n}\colon \mathbb{R}\rightarrow\mathbb{R}$ given by $f_{n}(x)=\alpha_{n}x^{n}$  with $\alpha_{n}\in \mathbb{R}$ is $n\alpha_{n}x^{n-1}$.
+Let $n\in \mathbb{N}$. Prove that  the derivative of the function $f_{n}\colon \mathbb{R}\rightarrow\mathbb{R}$ given by $f_{n}(x)=\alpha_{n}x^{n}$  with $\alpha_{n}\in \mathbb{R}$ is $n\alpha_{n}x^{n-1}$.
 
 
 
 <details>
 <summary> **Solution:** </summary>
 
-Use @exm-derivative-linear-quadratic-functions together with @exr-algebraic-manipulations-derivatives-N-functions.
+Use @exm-derivative-linear-functions together with @exr-algebraic-manipulations-derivatives-N-functions.
  
 
 </details>
@@ -343,7 +343,12 @@ Now, we consider what happens to the derivative of the quotient of two functions
 
 ::: {#prp-derivative-quotient}
 
-Given the functions $f,g\colon D\subseteq\mathbb{R}\rightarrow\mathbb{R}$ differentiable at $x_{0}\in D$ and with $g(x_{0})\neq 0$, the function  $h\colon \tilde{D}\subseteq\mathbb{R}\rightarrow\mathbb{R}$ given by $h:=\frac{f}{g}$ is differentiable at $x_{0}$ and its derivative is
+Given the functions $f,g\colon D\subseteq\mathbb{R}\rightarrow\mathbb{R}$ differentiable at $x_{0}\in D$ and with $g(x_{0})\neq 0$, define
+$$
+\tilde{D}:=\{x\in D \,:\, g(x)\neq 0\},
+$$
+and the function $h\colon \tilde{D}\subseteq\mathbb{R}\rightarrow\mathbb{R}$ given by $h:=\frac{f}{g}$.
+Then $h$ is differentiable at $x_{0}$ and its derivative is
 $$
 h'(x_{0})= \frac{f'(x_{0})\,g(x_{0})-f(x_{0})\,g'(x_{0})}{(g(x_{0}))^{2}}.
 $$
@@ -378,17 +383,17 @@ Compute $P_{n}',Q_{m}'$, and $R'$, where $R=\frac{P_{n}}{Q_{m}}$ is defined on t
 
 
 
-To compute $P_{n}'$, we first write
+To compute the derivative of $P_{n}$, we first write
 $$
-P_{n}'(x)=\sum_{k=0}^{n}\alpha_{k}\,x^{k}
+P_{n}(x)=\sum_{k=0}^{n}\alpha_{k}\,x^{k}
 $$
-with $\alpha_{k}\in\mathbb{R}$, and then  use @exr-algebraic-manipulations-derivatives-N-functions together with @exr-derivative-monomial to conclude that $P_{n}'$ is the polynomial of order $(n-1)$ given by
+with $\alpha_{k}\in\mathbb{R}$, and then  use @exr-algebraic-manipulations-derivatives-N-functions together with @exr-derivative-monomial to conclude that the derivative $P_{n}'$ of $P_{n}$ is the polynomial of order $(n-1)$ given by
 $$
 P_{n}'(x)=\sum_{k=1}^{n}k\alpha_{k}\,x^{k-1}.
 $$
 A similar result holds for $Q_{m}'(x)$.
 
-The derivative of $R(x)=\frac{P_{n}(x)}{Q_{m}(x)}$ can then immediately obtained using the previous results and @prp-derivative-quotient:
+The derivative of $R(x)=\frac{P_{n}(x)}{Q_{m}(x)}$ can then be immediately obtained using the previous results and @prp-derivative-quotient:
 
 $$
 R'(x)=\frac{P'_{n}(x)Q_{m}(x) - P_{n}(x)Q'_{m}(x)}{(Q_{m}(x))^{2}}.
@@ -400,6 +405,197 @@ $$
 :::
 
 # Derivative of inverse and composite functions
+
+In [composition of continuous functions](1_limits_and_continuity.qmd#prp-composition-continuous-functions) and [continuity of inverse function](1_limits_and_continuity.qmd#prp-continuity-inverse-function), we saw that continuity behaves well under composition and inversion on intervals. We now ask the analogous question for differentiability, and the answer is again positive under suitable hypotheses.
+
+::: {.callout-note title="Chain rule"}
+
+::: {#prp-chain-rule}
+
+Consider the functions $f\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}$ and $g\colon D'\subseteq \mathbb{R}\rightarrow \mathbb{R}$, and assume that $g(D')\subseteq D$.
+If $g$ is differentiable at $x_{0}\in D'$ and $f$ is differentiable at $g(x_{0})\in D$, then the composite function $r:=f\circ g$ is differentiable at $x_{0}$ and
+$$
+r'(x_{0})=(f\circ g)'(x_{0})=f'(g(x_{0}))\,g'(x_{0}).
+$$
+
+<details>
+<summary>**Proof:**</summary>
+
+Define the auxiliary function $\phi\colon D\rightarrow \mathbb{R}$ by
+$$
+\phi(y):=
+\left\{
+\begin{matrix}
+\dfrac{f(y)-f(g(x_{0}))}{y-g(x_{0})} & \mbox{ if } y\neq g(x_{0}), \\ & \\
+f'(g(x_{0})) & \mbox{ if } y=g(x_{0}) .
+\end{matrix}
+\right.
+$$
+Since $f$ is differentiable at $g(x_{0})$, it follows from @def-derivative that
+$$
+\lim_{y\rightarrow g(x_{0})}\phi(y)=f'(g(x_{0})),
+$$
+so $\phi$ is continuous at $g(x_{0})$.
+
+Moreover, @prp-diff-implies-cont implies that $g$ is continuous at $x_{0}$, and therefore
+$$
+\lim_{x\rightarrow x_{0}} \phi(g(x))=\phi(g(x_{0}))=f'(g(x_{0})).
+$$
+
+For every $h\neq 0$ such that $x_{0}+h\in D'$, we have
+$$
+\frac{r(x_{0}+h)-r(x_{0})}{h}
+=\frac{f(g(x_{0}+h))-f(g(x_{0}))}{h}
+=\phi(g(x_{0}+h))\,\frac{g(x_{0}+h)-g(x_{0})}{h}.
+$$
+Indeed, if $g(x_{0}+h)\neq g(x_{0})$, the identity follows from the definition of $\phi$, while if $g(x_{0}+h)= g(x_{0})$, both sides are equal to $0$.
+
+Passing to the limit as $h\to 0$, we obtain
+$$
+\begin{split}
+r'(x_{0})
+&=\lim_{h\to 0}\phi(g(x_{0}+h))\,\frac{g(x_{0}+h)-g(x_{0})}{h} \\
+&=\left(\lim_{h\to 0}\phi(g(x_{0}+h))\right)\left(\lim_{h\to 0}\frac{g(x_{0}+h)-g(x_{0})}{h}\right) \\
+&=f'(g(x_{0}))\,g'(x_{0}),
+\end{split}
+$$
+as claimed.
+</details>
+
+:::
+
+:::
+
+::: {.callout-tip title="A first application of the chain rule"}
+
+::: {#exm-chain-rule-polynomial}
+
+Compute the derivative of the function
+$$
+f(x)=\left(x^{2}+1\right)^{3}.
+$$
+
+<details>
+<summary> **Solution:** </summary>
+
+Define
+$$
+g(x):=x^{2}+1
+\qquad\text{and}\qquad
+h(y):=y^{3},
+$$
+so that $f=h\circ g$.
+
+From @exm-derivative-quadratic-functions and @exm-derivative-constant-functions, we obtain
+$$
+g'(x)=2x.
+$$
+From @exr-derivative-monomial, we know that
+$$
+h'(y)=3y^{2}.
+$$
+Applying @prp-chain-rule, we conclude that
+$$
+f'(x)=h'(g(x))\,g'(x)=3(x^{2}+1)^{2}\cdot 2x=6x(x^{2}+1)^{2}.
+$$
+</details>
+
+:::
+
+:::
+
+::: {.callout-note title="Derivative of inverse functions"}
+
+::: {#prp-derivative-inverse-function}
+
+Let $I$ be an interval, let $f\colon I\rightarrow \mathbb{R}$ be differentiable and invertible on $I$, and set $J:=f(I)$.
+Fix $x_{0}\in I$ and write $y_{0}:=f(x_{0})$.
+If $f'(x_{0})\neq 0$, then the inverse function $f^{-1}\colon J\rightarrow \mathbb{R}$ is differentiable at $y_{0}$ and
+$$
+\left(f^{-1}\right)'(y_{0})=\frac{1}{f'(x_{0})}.
+$$
+
+<details>
+<summary>**Proof:**</summary>
+
+Since $f$ is differentiable on $I$, @prp-diff-implies-cont implies that $f$ is continuous on $I$.
+Therefore, [continuity of inverse function](1_limits_and_continuity.qmd#prp-continuity-inverse-function) guarantees that $f^{-1}$ is continuous on $J$.
+
+Take $y\in J$ with $y\neq y_{0}$, and set $x:=f^{-1}(y)$.
+Then $x\neq x_{0}$ because $f$ is invertible, and $y=f(x)$.
+Hence
+$$
+\frac{f^{-1}(y)-f^{-1}(y_{0})}{y-y_{0}}
+=\frac{x-x_{0}}{f(x)-f(x_{0})}
+=\left(\frac{f(x)-f(x_{0})}{x-x_{0}}\right)^{-1}.
+$$
+
+Now let $y\rightarrow y_{0}$ in $J$.
+Since $f^{-1}$ is continuous at $y_{0}$, we have $x=f^{-1}(y)\rightarrow f^{-1}(y_{0})=x_{0}$.
+Therefore,
+$$
+\begin{split}
+\left(f^{-1}\right)'(y_{0})
+&=\lim_{y\rightarrow y_{0}}\frac{f^{-1}(y)-f^{-1}(y_{0})}{y-y_{0}} \\
+&=\lim_{x\rightarrow x_{0}}\left(\frac{f(x)-f(x_{0})}{x-x_{0}}\right)^{-1} \\
+&=\left(\lim_{x\rightarrow x_{0}}\frac{f(x)-f(x_{0})}{x-x_{0}}\right)^{-1} \\
+&=\frac{1}{f'(x_{0})},
+\end{split}
+$$
+where the reciprocal is legitimate because $f'(x_{0})\neq 0$.
+</details>
+
+:::
+
+:::
+
+::: {.callout-tip title="Derivative of root functions"}
+
+::: {#exm-derivative-root-functions}
+
+Let $n\in \mathbb{N}$ with $n\geq 1$, and let $D$ be the maximal domain on which the function
+$$
+p_{n}(x)=x^{n}
+$$
+admits an inverse. Explicitly, $D=\mathbb{R}$ if $n$ is odd and $D=\mathbb{R}_{+}$ if $n$ is even.
+Use @prp-derivative-inverse-function to compute the derivative of
+$$
+g(y)=y^{\frac{1}{n}}=p_{n}^{-1}(y)
+$$
+at points $y_{0}\in p_{n}(D)$ for which the proposition applies.
+
+<details>
+<summary> **Solution:** </summary>
+
+Fix $y_{0}\in p_{n}(D)$ and set $x_{0}:=g(y_{0})=y_{0}^{\frac{1}{n}}$.
+By @exr-derivative-monomial, the derivative of $p_{n}$ is
+$$
+p_{n}'(x)=nx^{n-1}.
+$$
+Therefore, if $x_{0}\neq 0$, then
+$$
+p_{n}'(x_{0})=n x_{0}^{n-1}\neq 0,
+$$
+and @prp-derivative-inverse-function yields
+$$
+g'(y_{0})=\frac{1}{p_{n}'(x_{0})}
+=\frac{1}{n x_{0}^{n-1}}
+=\frac{1}{n\left(y_{0}^{\frac{1}{n}}\right)^{n-1}}
+=\frac{1}{n}y_{0}^{\frac{1}{n}-1}.
+$$
+
+If $n>1$ and $y_{0}=0$, then $x_{0}=0$ and
+$$
+p_{n}'(0)=0,
+$$
+so @prp-derivative-inverse-function does not apply. Therefore, for $n>1$, the derivative formula above is valid only at points $y_{0}\neq 0$.
+</details>
+
+:::
+
+:::
+
+Together, the chain rule and the derivative of inverse functions will allow us to compute derivatives of rational powers and much more complicated compositions without returning to the definition every time.
 
 # Interpretation of derivative
 
