@@ -550,6 +550,21 @@ In particular, prove that $h$ is (left/right) continuous on $S$ if either $f$ is
 
 :::
 
+::: {.callout-caution title="Continuity of constant, linear, and quadratic functions"}
+
+::: {#exr-continuity-constant-linear-quadratic-functions}
+
+Prove that the functions in @exm-limits-constant-linear-quadratic-functions are continuous.
+
+<details>
+<summary> **Solution:** </summary>
+
+**TBA**
+</details>
+
+:::
+
+:::
 
 It is informally said that a function $f\colon D\subseteq\mathbb{R}\rightarrow\mathbb{R}$ is a continuous function if its graph can be drawn on paper without lifting the pen/pencil.
 We now try to make this informal statement precise by working our way to the [intermediate value theorem](#thm-intermediate-value-thm) below.
@@ -798,7 +813,7 @@ $$
 $$
 and the quotient formula is proved.
 
-The case of left and right limits should be easy to obtain by following and suitably adapting the previous steps.
+The case of left and right limits can be obtained by following and suitably adapting the previous steps.
 </details>
 
 
@@ -849,7 +864,7 @@ Use @prp-algebraic-manipulations-limits, the associativity property for function
 :::
 
 
-From @prp-algebraic-manipulations-limits and @exr-algebraic-manipulations-limits-N-functions it naturally follows that continuous functions behave well with respect to sums and products.
+From @exr-algebraic-manipulations-limits-N-functions it naturally follows that continuous functions behave well with respect to sums and products.
 
 ::: {.callout-note title="Algebraic manipulations of continuous functions"}
 
@@ -875,7 +890,7 @@ Analogous results hold for left/right continuity with the obvious modifications.
 <details>
 <summary> **Proof:** </summary>
 
-Follow @def-continuity and apply the results of @prp-algebraic-manipulations-limits and @exr-algebraic-manipulations-limits-N-functions.
+Follow @def-continuity and apply the results of @exr-algebraic-manipulations-limits-N-functions.
 </details>
 
 :::
@@ -901,13 +916,13 @@ Prove that the rational function $\mathrm{R}\colon D\subseteq \mathbb{R}\rightar
 <details>
 <summary> **Solution:** </summary>
 
-The polynomial $\mathrm{P}_{n}(x)$ can be written as
+First, we note that the function $f\colon \mathbb{R}\rightarrow\mathbb{R}$ given by $f_{n}(x)=a_{n}x^{n}$, with a_{n}\in \mathbb{R}$, is continuous for each $n\in\mathbb{N}$ because of proposition @prp-algebraic-manipulations-continuous-functions and @exr-continuity-constant-linear-quadratic-functions.
+
+Then, we note that that the polynomial $\mathrm{P}_{n}(x)$ can be written as
 $$
-\mathrm{P}_{n}(x)= a_{n}x^{n} + a_{n-1} x^{n-1}+\cdots+ a_{1}x + a_{0}x^{0},
+\mathrm{P}_{n}(x)= a_{n}x^{n} + a_{n-1} x^{n-1}+\cdots+ a_{1}x + a_{0}x^{0}\equiv\sum_{j=0}^{1}f_{j}(x),
 $$
-where $a_{j}\in\mathbb{R}$ for every $j=1,\cdots , n$.
-It is then clear that $\mathrm{P}_{n}$ is a suitable combination of sums and products of constant functions (which are continuous) with  the identity function $f(x)=x$ (which is continuous).
-Consequently, @prp-algebraic-manipulations-continuous-functions ensures the desired result.
+where $a_{j}\in\mathbb{R}$ for every $j=1,\cdots , n$, and it is thus continuous because of @prp-algebraic-manipulations-continuous-functions since it is the sum of continuous functions.
 
 The continuity of $\mathrm{R}$ follows again from @prp-algebraic-manipulations-continuous-functions since both $\mathrm{P}_{n}$ and $\mathrm{Q}_{m}$ are continuous on $D$ and $\mathrm{Q}_{m}(x)\neq 0$ on $D$.
 </details>
@@ -939,7 +954,7 @@ Then $J:=f(I)$ is an interval, and the inverse function $f^{-1}\colon J\rightarr
 <details>
 <summary> **Proof:** </summary>
 
-The proof is tedious, and it will take me some time to upload it.
+**TBA**
 </details>
 
 :::
@@ -961,7 +976,7 @@ Given $D$ as above and $m,n>0$ natural numbers, prove that $f\colon D\rightarrow
 <details>
 <summary> **Solution:** </summary>
 
-You are strongly invited to try to solve it on your own.
+**TBA**
 </details>
 
 :::
