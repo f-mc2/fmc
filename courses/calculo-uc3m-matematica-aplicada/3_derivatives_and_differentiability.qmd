@@ -639,4 +639,134 @@ Together, the chain rule and the derivative of inverse functions will allow us t
 
 # Higher order derivatives, $C^{k}$-functions, and smooth functions
 
+It may happen that the derivative of a differentiable function is itself differentiable, and that the same phenomenon can be repeated many times. This leads to the notion of higher order derivatives and, later on, to a useful regularity classification of functions.
+
+::: {.callout-note title="Higher order derivatives"}
+
+::: {#def-higher-order-derivatives}
+
+Consider the function $f\colon D\subseteq\mathbb{R}\rightarrow\mathbb{R}$.
+
+If the derivative function $f'$ is differentiable at $x_{0}\in D$, then its derivative at $x_{0}$ is called the **second derivative** of $f$ at $x_{0}$, and is denoted by
+$$
+f''(x_{0})=(f')'(x_{0}).
+$$
+If the derivative of $f'$ is again differentiable at $x_{0}$, then we define the **third derivative** of $f$ at $x_{0}$ by
+$$
+f'''(x_{0})=(f'')'(x_{0}),
+$$
+and so on.
+
+More generally, define recursively
+$$
+f^{(0)}:=f.
+$$
+For $k\in \mathbb{N}$, if $f^{(k-1)}$ is differentiable at $x_{0}$, then the derivative of $f^{(k-1)}$ at $x_{0}$ is called the **$k$-th derivative** of $f$ at $x_{0}$, and is denoted by
+$$
+f^{(k)}(x_{0})=\left(f^{(k-1)}\right)'(x_{0}).
+$$
+We also write
+$$
+\frac{\mathrm{d}^{k}f}{\mathrm{d} x^{k}}(x_{0})\equiv f^{(k)}(x_{0}).
+$$
+
+If $f^{(k)}(x)$ exists for every $x\in D$, we say that $f$ is **$k$ times differentiable** in $D$.
+As for the first derivative, the domain of $f^{(k)}$ need not coincide with the domain of $f$.
+
+:::
+
+:::
+
+::: {.callout-note title="$C^{k}$-functions and smooth functions"}
+
+::: {#def-ck-smooth-functions}
+
+Let $k\in \mathbb{N}\cup\{0\}$.
+We say that the function $f\colon D\subseteq\mathbb{R}\rightarrow\mathbb{R}$ is of class **$C^{k}$** in $D$ if, for every $j=0,\dots,k$, the derivative $f^{(j)}$ exists in $D$ and is continuous in $D$.
+Here, by convention, $f^{(0)}=f$, so being of class $C^{0}$ simply means being continuous.
+
+If $f$ is of class $C^{k}$ for every $k\in \mathbb{N}\cup\{0\}$, then $f$ is called a **smooth function**, or a **$C^{\infty}$-function**.
+
+Clearly, if $f$ is of class $C^{k}$ with $k\geq 1$, then it is also of class $C^{k-1}$.
+
+:::
+
+:::
+
+::: {.callout-caution title="Higher derivatives of monomials"}
+
+::: {#exr-higher-derivatives-monomials}
+
+Let $n\in \mathbb{N}$ and $\alpha_{n}\in\mathbb{R}$.
+Consider the function $f_{n}\colon \mathbb{R}\rightarrow\mathbb{R}$ given by
+$$
+f_{n}(x)=\alpha_{n}x^{n}.
+$$
+Compute its $k$-th derivative for every $k\in\mathbb{N}$.
+
+<details>
+<summary> **Solution:** </summary>
+
+From @exr-derivative-monomial, we know that
+$$
+f_{n}'(x)=n\alpha_{n}x^{n-1}.
+$$
+Applying the same result repeatedly, we obtain
+$$
+\begin{split}
+f_{n}''(x)&=n(n-1)\alpha_{n}x^{n-2}, \\
+f_{n}'''(x)&=n(n-1)(n-2)\alpha_{n}x^{n-3},
+\end{split}
+$$
+and, in general,
+$$
+f_{n}^{(k)}(x)=n(n-1)\cdots (n-k+1)\,\alpha_{n}\,x^{n-k}
+=\frac{n!}{(n-k)!}\,\alpha_{n}\,x^{n-k}
+$$
+for every $k=1,\dots,n$.
+
+For $k=n$, this gives
+$$
+f_{n}^{(n)}(x)=n!\,\alpha_{n},
+$$
+which is a constant function. Therefore, by @exm-derivative-constant-functions,
+$$
+f_{n}^{(n+1)}(x)=0.
+$$
+Applying again @exm-derivative-constant-functions, we conclude that
+$$
+f_{n}^{(k)}(x)=0
+$$
+for every $k\geq n+1$.
+</details>
+
+:::
+
+:::
+
+::: {.callout-note title="Polynomials are smooth"}
+
+::: {#prp-polynomials-smooth}
+
+Every polynomial function $P\colon\mathbb{R}\rightarrow\mathbb{R}$ is smooth.
+
+<details>
+<summary>**Proof:**</summary>
+
+Write
+$$
+P(x)=\sum_{j=0}^{n}\alpha_{j}x^{j}.
+$$
+Fix $k\in\mathbb{N}$.
+By @exr-higher-derivatives-monomials, for every $j=0,\dots,n$, the $k$-th derivative of the monomial $x\mapsto \alpha_{j}x^{j}$ exists on $\mathbb{R}$ and is either a monomial or the zero function.
+In particular, it is continuous on $\mathbb{R}$.
+
+Using @exr-algebraic-manipulations-derivatives-N-functions repeatedly, we conclude that $P^{(k)}$ exists on $\mathbb{R}$ and is continuous on $\mathbb{R}$.
+Since $k$ is arbitrary, $P$ is of class $C^{k}$ for every $k\in\mathbb{N}$, hence it is smooth.
+</details>
+
+:::
+
+:::
+
 # Exercises
