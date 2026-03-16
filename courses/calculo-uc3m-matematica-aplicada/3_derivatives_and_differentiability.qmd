@@ -57,9 +57,9 @@ The function determined by the rule $x\mapsto f'(x)$ (whenever it makes sense) i
 
 Before we learn some cool tricks that make computing (a lot but not all) derivatives a sort of mechanical task that does not require computing limits, let's work out some derivatives from the very definition.
 
-::: {.callout-tip title="Three simple examples"}
+::: {.callout-tip title="Derivative of constant functions"}
 
-::: {#exm-derivative-constant-linear-quadratic-functions}
+::: {#exm-derivative-constant-functions}
 
 The first example of derivative we consider is that of a constant function $f(x)=c$ with $c\in \mathbb{R}$. Following the very definition of  derivative given above, we have
 $$
@@ -67,20 +67,32 @@ f'(x_{0})=\lim_{h\rightarrow 0} \frac{f(x_{0}+h)-f(x_{0})}{h}=0
 $$
 for every $x_{0}\in\mathbb{R}$. 
 
----
+:::
 
-The second example we consider is that of the function $f(x)=x$:
+:::
+
+::: {.callout-tip title="Derivative of linear functions"}
+
+::: {#exm-derivative-linear-functions}
+
+The second example we consider is that of the linear function $f(x)=ax$ with $a\in\mathbb{R}$:
 $$
-f'(x_{0})=\lim_{h\rightarrow 0} \frac{f(x_{0}+h)-f(x_{0})}{h}=\lim_{h\rightarrow 0} \frac{x_{0} + h -x_{0}}{h}=1
+f'(x_{0})=\lim_{h\rightarrow 0} \frac{f(x_{0}+h)-f(x_{0})}{h}=\lim_{h\rightarrow 0} \frac{a(x_{0} + h) -ax_{0}}{h}=a
 $$
 for every $x_{0}\in\mathbb{R}$.
 
----
+:::
 
-The third example we consider is that of the function $f(x)=x^{2}$:
+:::
+
+::: {.callout-tip title="Derivative of quadratic functions"}
+
+::: {#exm-derivative-quadratic-functions}
+
+The third example we consider is that of the function $f(x)=ax^{2}$:
 $$
 \begin{split}
-f'(x_{0})&=\lim_{h\rightarrow 0} \frac{f(x_{0}+h)-f(x_{0})}{h}= \\ &=\lim_{h\rightarrow 0} \frac{(x_{0} + h)^{2} -x_{0}^{2}}{h}= \\ &\lim_{h\rightarrow 0} \frac{2x_{0}h + h^{2}}{h}=2x_{0}
+f'(x_{0})&=\lim_{h\rightarrow 0} \frac{f(x_{0}+h)-f(x_{0})}{h}= \\ &=\lim_{h\rightarrow 0} \frac{a(x_{0} + h)^{2} -ax_{0}^{2}}{h}= \\ &\lim_{h\rightarrow 0} \frac{2ax_{0}h + ah^{2}}{h}=2ax_{0}
 \end{split}
 $$
 for every $x_{0}\in\mathbb{R}$.
@@ -129,7 +141,7 @@ and prove analogous results for the case of left and right derivatives.
 <details>
 <summary> **Solution:** </summary>
 
-You are strongly invited to try to solve it on your own.
+**TBA**
 </details>
 
 :::
@@ -138,6 +150,10 @@ You are strongly invited to try to solve it on your own.
 
 
 Once a definition is in place, it's always a good idea to go searching for situations in which the definition itself can not be applied.
+
+::: {.callout-tip title="Absolute value function is not differentiable at $x=0$"}
+
+::: {#exm-abs-value-function-not-diff-at-0}
 
 Let us consider the absolute value function $|\cdot|\colon \mathbb{R}\rightarrow\mathbb{R}$ given by 
 $$
@@ -152,7 +168,9 @@ $$
 $$
 Since the two derivatives exist but are different, we conclude that $|x|$ is not differentiable at $0$ (but it is separately left and right differentiable there).
 
+:::
 
+:::
 
 # Properties of derivatives
 
@@ -174,7 +192,7 @@ You are strongly invited to try to prove it on your own.
 
 :::
 
-Note, however, that the converse of the previous proposition does not hold. An explicit counterexample is given by the absolute value function we discussed [before](#derivative-and-differentiability)
+Note, however, that the converse of the previous proposition does not hold. An explicit counterexample is given by the absolute value function in @exm-abs-value-function-not-diff-at-0.
 
 
 Next, we pass to how derivatives behave with respect to sums and products of 2 functions.
@@ -195,60 +213,7 @@ The formula for the derivative of the product of two functions is usually referr
 <details>
 <summary>**Proof:**</summary>
 
-TBA
-</details>
-
-:::
-
-:::
-
-What happens if we have more than 2 functions? Luckily, it turns out we can safely generalize @prp-algebraic-manipulations-derivatives. To better digest the generalization, let's consider an instructive example concerning the product of $n$ functions.
-
-
-::: {.callout-caution title="Derivative of $x^{n}$"}
-
-::: {#exr-derivative-xn}
-
-Consider the "raise to the power $n$" function $(\cdot)^{n}:\mathbb{R}\rightarrow\mathbb{R}$. 
-Prove that
-$$
-\frac{\mathrm{d}}{\mathrm{d} x}(x^{n})=nx^{n-1}.
-$$
-
-<details>
-<summary> **Solution:** </summary>
-
-Clearly, we can decompose $x^{n}$ into the product of two functions, say $f(x)=x$ and $g(x)=x^{n-1}$, and apply the Leibniz Rule:
-$$
-\frac{\mathrm{d}}{\mathrm{d} x}(x^{n})=x^{n-1} + x \frac{\mathrm{d}}{\mathrm{d} x}(x^{n-1}).
-$$
-Now, we can decompose $x^{n-1}$ into the product of two functions, say $f(x)=x$ and $g(x) = x^{n-2}$, and apply the Leibniz Rule:
-$$
-\frac{\mathrm{d}}{\mathrm{d} x}(x^{n-1})=x^{n-2} + x \frac{\mathrm{d}}{\mathrm{d} x}(x^{n-2}),
-$$
-which  means
-$$
-\begin{split}
-\frac{\mathrm{d}}{\mathrm{d} x}(x^{n})&=x^{n-1} + x \frac{\mathrm{d}}{\mathrm{d} x}(x^{n-1})= \\
-&=x^{n-1} + x\left(x^{n-2} + x \frac{\mathrm{d}}{\mathrm{d} x}(x^{n-2})\right)= \\
-&=2x^{n-1} + x^{2} \frac{\mathrm{d}}{\mathrm{d} x}(x^{n-2}).
-\end{split}
-$$
-This pattern suggests the formula, and we can make it rigorous by induction on $n$.
-
-For $n=1$, we have $\frac{\mathrm{d}}{\mathrm{d}x}(x)=1$.
-Assume now that
-$$
-\frac{\mathrm{d}}{\mathrm{d}x}(x^{n})=n x^{n-1}.
-$$
-Then, by the Leibniz rule,
-$$
-\frac{\mathrm{d}}{\mathrm{d}x}(x^{n+1})=\frac{\mathrm{d}}{\mathrm{d}x}(x\cdot x^{n})=x^{n}+x\frac{\mathrm{d}}{\mathrm{d}x}(x^{n})=x^{n}+x(nx^{n-1})=(n+1)x^{n}.
-$$
-Therefore, for every natural number $n\geq 1$,
-$$
-\frac{\mathrm{d}}{\mathrm{d}x}(x^{n})=n x^{n-1}.
-$$
+**TBA**
 </details>
 
 :::
@@ -271,7 +236,7 @@ $$
 $$
 
 <details>
-<summary> **Solution (by induction on $n$):** </summary>
+<summary> **Solution:** </summary>
 
 Fix an accumulation point $x_0\in D$ and assume that $f_j'(x_0)$ exists for all $j=1,\dots,n$.
 Set $g_j:=\alpha_j f_j$, so that $g_j'(x_0)=\alpha_j f_j'(x_0)$.
@@ -346,6 +311,29 @@ This concludes the proof.
 :::
 
 
+::: {.callout-caution title="A foundational example"}
+
+ 
+ 
+::: {#exr-derivative-monomial}
+
+Prove that  the derivative of the function $f_{n}\colon \mathbb{R}\rightarrow\mathbb{R}$ given by $f_{n}(x)=\alpha_{n}x^{n}$  with $\alpha_{n}\in \mathbb{R}$ is $n\alpha_{n}x^{n-1}$.
+
+
+
+<details>
+<summary> **Solution:** </summary>
+
+Use @exm-derivative-linear-quadratic-functions together with @exr-algebraic-manipulations-derivatives-N-functions.
+ 
+
+</details>
+
+:::
+
+:::
+
+
 
 
 
@@ -363,7 +351,7 @@ $$
 <details>
 <summary>**Proof:**</summary>
 
-TBA
+**TBA**
 </details>
 
 :::
@@ -372,24 +360,40 @@ TBA
 
 Finally, we are able to use all the results presented in this section to compute the derivatives of polynomial and rational functions without ever computing a limit.
 
-::: {.callout-tip title="Derivatives of polynomials and rational functions"}
+::: {.callout-caution title="Derivatives of polynomials and rational functions"}
 
-::: {#exm-derivative-polynomial-rational-functions}
+ 
+ 
+::: {#exr-derivative-polynomial-rational-functions}
+
+
 
 Let $P_{n},Q_{m}\colon \mathbb{R}\rightarrow \mathbb{R}$ be polynomial functions.
-We now compute $P_{n}',Q_{m}'$ and $R'$ with $R=\frac{P_{n}}{Q_{m}}$.
+Compute $P_{n}',Q_{m}'$, and $R'$, where $R=\frac{P_{n}}{Q_{m}}$ is defined on the maximal domain $D\subseteq\mathbb{R}$ on which $Q_{m}(x)\neq 0$.
 
-To compute $P_{n}'$ we first write
+
+
+<details>
+<summary> **Solution:** </summary>
+
+
+
+To compute $P_{n}'$, we first write
 $$
 P_{n}'(x)=\sum_{k=0}^{n}\alpha_{k}\,x^{k}
 $$
-with $\alpha_{k}\in\mathbb{R}$, and then invoke @exr-algebraic-manipulations-derivatives-N-functions to conclude that $P_{n}'$ is the polynomial of order $(n-1)$ given by
+with $\alpha_{k}\in\mathbb{R}$, and then  use @exr-algebraic-manipulations-derivatives-N-functions together with @exr-derivative-monomial to conclude that $P_{n}'$ is the polynomial of order $(n-1)$ given by
 $$
 P_{n}'(x)=\sum_{k=1}^{n}k\alpha_{k}\,x^{k-1}.
 $$
 A similar result holds for $Q_{m}'(x)$.
 
----
+The derivative of $R(x)=\frac{P_{n}(x)}{Q_{m}(x)}$ can then immediately obtained using the previous results and @prp-derivative-quotient:
+
+$$
+R'(x)=\frac{P'_{n}(x)Q_{m}(x) - P_{n}(x)Q'_{m}(x)}{(Q_{m}(x))^{2}}.
+$$
+</details>
 
 :::
 
@@ -398,5 +402,7 @@ A similar result holds for $Q_{m}'(x)$.
 # Derivative of inverse and composite functions
 
 # Interpretation of derivative
+
+# Higher order derivatives, $C^{k}$-functions, and smooth functions
 
 # Exercises

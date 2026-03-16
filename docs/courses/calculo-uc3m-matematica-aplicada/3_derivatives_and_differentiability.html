@@ -43,9 +43,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-088cf8b58fc5bdaf5ae7da23cfb2a7f7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-8e9235ed90459df727a637835f354bde.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../site_libs/bootstrap/bootstrap-088cf8b58fc5bdaf5ae7da23cfb2a7f7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-0eb7fd585e00d51023b3d1090d08195f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-cbdd6c9d3bb07a08fa49b004a2aab0e1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-0eb7fd585e00d51023b3d1090d08195f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -461,7 +461,8 @@ window.Quarto = {
   <li><a href="#properties-of-derivatives" id="toc-properties-of-derivatives" class="nav-link" data-scroll-target="#properties-of-derivatives"><span class="header-section-number">3</span> Properties of derivatives</a></li>
   <li><a href="#derivative-of-inverse-and-composite-functions" id="toc-derivative-of-inverse-and-composite-functions" class="nav-link" data-scroll-target="#derivative-of-inverse-and-composite-functions"><span class="header-section-number">4</span> Derivative of inverse and composite functions</a></li>
   <li><a href="#interpretation-of-derivative" id="toc-interpretation-of-derivative" class="nav-link" data-scroll-target="#interpretation-of-derivative"><span class="header-section-number">5</span> Interpretation of derivative</a></li>
-  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">6</span> Exercises</a></li>
+  <li><a href="#higher-order-derivatives-ck-functions-and-smooth-functions" id="toc-higher-order-derivatives-ck-functions-and-smooth-functions" class="nav-link" data-scroll-target="#higher-order-derivatives-ck-functions-and-smooth-functions"><span class="header-section-number">6</span> Higher order derivatives, <span class="math inline">\(C^{k}\)</span>-functions, and smooth functions</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">7</span> Exercises</a></li>
   </ul>
 </nav>
     </div>
@@ -489,7 +490,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">February 17, 2026</p>
+      <p class="date-modified">March 16, 2026</p>
     </div>
   </div>
     
@@ -542,28 +543,54 @@ f'(x_{0})\equiv \lim_{\substack{h\rightarrow 0 \\ h\in H_{x_{0}}}}\Delta f(h)=\l
 </div>
 </div>
 <p>Before we learn some cool tricks that make computing (a lot but not all) derivatives a sort of mechanical task that does not require computing limits, let’s work out some derivatives from the very definition.</p>
-<div class="callout callout-style-default callout-tip callout-titled" title="Three simple examples">
+<div class="callout callout-style-default callout-tip callout-titled" title="Derivative of constant functions">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Three simple examples
+<span class="screen-reader-only">Tip</span>Derivative of constant functions
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div id="exm-derivative-constant-linear-quadratic-functions" class="theorem example">
+<div id="exm-derivative-constant-functions" class="theorem example">
 <p><span class="theorem-title"><strong>Example 1</strong></span> The first example of derivative we consider is that of a constant function <span class="math inline">\(f(x)=c\)</span> with <span class="math inline">\(c\in \mathbb{R}\)</span>. Following the very definition of derivative given above, we have <span class="math display">\[
 f'(x_{0})=\lim_{h\rightarrow 0} \frac{f(x_{0}+h)-f(x_{0})}{h}=0
 \]</span> for every <span class="math inline">\(x_{0}\in\mathbb{R}\)</span>.</p>
-<hr>
-<p>The second example we consider is that of the function <span class="math inline">\(f(x)=x\)</span>: <span class="math display">\[
-f'(x_{0})=\lim_{h\rightarrow 0} \frac{f(x_{0}+h)-f(x_{0})}{h}=\lim_{h\rightarrow 0} \frac{x_{0} + h -x_{0}}{h}=1
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Derivative of linear functions">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Derivative of linear functions
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div id="exm-derivative-linear-functions" class="theorem example">
+<p><span class="theorem-title"><strong>Example 2</strong></span> The second example we consider is that of the linear function <span class="math inline">\(f(x)=ax\)</span> with <span class="math inline">\(a\in\mathbb{R}\)</span>: <span class="math display">\[
+f'(x_{0})=\lim_{h\rightarrow 0} \frac{f(x_{0}+h)-f(x_{0})}{h}=\lim_{h\rightarrow 0} \frac{a(x_{0} + h) -ax_{0}}{h}=a
 \]</span> for every <span class="math inline">\(x_{0}\in\mathbb{R}\)</span>.</p>
-<hr>
-<p>The third example we consider is that of the function <span class="math inline">\(f(x)=x^{2}\)</span>: <span class="math display">\[
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Derivative of quadratic functions">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Derivative of quadratic functions
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div id="exm-derivative-quadratic-functions" class="theorem example">
+<p><span class="theorem-title"><strong>Example 3</strong></span> The third example we consider is that of the function <span class="math inline">\(f(x)=ax^{2}\)</span>: <span class="math display">\[
 \begin{split}
-f'(x_{0})&amp;=\lim_{h\rightarrow 0} \frac{f(x_{0}+h)-f(x_{0})}{h}= \\ &amp;=\lim_{h\rightarrow 0} \frac{(x_{0} + h)^{2} -x_{0}^{2}}{h}= \\ &amp;\lim_{h\rightarrow 0} \frac{2x_{0}h + h^{2}}{h}=2x_{0}
+f'(x_{0})&amp;=\lim_{h\rightarrow 0} \frac{f(x_{0}+h)-f(x_{0})}{h}= \\ &amp;=\lim_{h\rightarrow 0} \frac{a(x_{0} + h)^{2} -ax_{0}^{2}}{h}= \\ &amp;\lim_{h\rightarrow 0} \frac{2ax_{0}h + ah^{2}}{h}=2ax_{0}
 \end{split}
 \]</span> for every <span class="math inline">\(x_{0}\in\mathbb{R}\)</span>.</p>
 </div>
@@ -611,13 +638,24 @@ f'(x_{0})=g'(x_{0}),
 <summary>
 <strong>Solution:</strong>
 </summary>
-You are strongly invited to try to solve it on your own.
+<strong>TBA</strong>
 </details>
 </div>
 </div>
 </div>
 <p>Once a definition is in place, it’s always a good idea to go searching for situations in which the definition itself can not be applied.</p>
-<p>Let us consider the absolute value function <span class="math inline">\(|\cdot|\colon \mathbb{R}\rightarrow\mathbb{R}\)</span> given by <span class="math display">\[
+<div class="callout callout-style-default callout-tip callout-titled" title="Absolute value function is not differentiable at $x=0$">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Absolute value function is not differentiable at <span class="math inline">\(x=0\)</span>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div id="exm-abs-value-function-not-diff-at-0" class="theorem example">
+<p><span class="theorem-title"><strong>Example 4</strong></span> Let us consider the absolute value function <span class="math inline">\(|\cdot|\colon \mathbb{R}\rightarrow\mathbb{R}\)</span> given by <span class="math display">\[
 |x|=\sqrt{x^{2}}=\left\{\begin{matrix}x &amp; \mbox{ if } x\geq 0 \\ &amp; \\ -x &amp; \mbox{ if } x&lt;0 .\end{matrix}\right.
 \]</span> For all points <span class="math inline">\(x_{0}\neq 0\)</span>, we can compute the derivative following the second example <a href="#exm-derivative-constant-linear-quadratic-functions">above</a> (essentially because of <a href="#exr-derivative-restriction-functions" class="quarto-xref">Exercise&nbsp;2</a>). However, when <span class="math inline">\(x_{0}=0\)</span>, we have to take into account the “sudden change” of the function. Therefore, we first compute the <a href="#exr-left-right-derivative">right and left derivatives</a>: <span class="math display">\[
 \begin{split}
@@ -625,6 +663,9 @@ You are strongly invited to try to solve it on your own.
 \lim_{x\rightarrow 0^{-}}\frac{-x-0}{x}&amp;=-1 .
 \end{split}
 \]</span> Since the two derivatives exist but are different, we conclude that <span class="math inline">\(|x|\)</span> is not differentiable at <span class="math inline">\(0\)</span> (but it is separately left and right differentiable there).</p>
+</div>
+</div>
+</div>
 </section>
 <section id="properties-of-derivatives" class="level1" data-number="3">
 <h1 data-number="3"><span class="header-section-number">3</span> Properties of derivatives</h1>
@@ -650,7 +691,7 @@ You are strongly invited to try to prove it on your own.
 </div>
 </div>
 </div>
-<p>Note, however, that the converse of the previous proposition does not hold. An explicit counterexample is given by the absolute value function we discussed <a href="#derivative-and-differentiability">before</a></p>
+<p>Note, however, that the converse of the previous proposition does not hold. An explicit counterexample is given by the absolute value function in <a href="#exm-abs-value-function-not-diff-at-0" class="quarto-xref">Example&nbsp;4</a>.</p>
 <p>Next, we pass to how derivatives behave with respect to sums and products of 2 functions.</p>
 <div class="callout callout-style-default callout-note callout-titled" title="Algebraic manipulations of derivatives">
 <div class="callout-header d-flex align-content-center">
@@ -673,48 +714,7 @@ r'(x_{0})&amp; =f'(x_{0})\,g(x_{0}) + f(x_{0})\,g'(x_{0}).
 <summary>
 <strong>Proof:</strong>
 </summary>
-TBA
-</details>
-</div>
-</div>
-</div>
-<p>What happens if we have more than 2 functions? Luckily, it turns out we can safely generalize <a href="#prp-algebraic-manipulations-derivatives" class="quarto-xref">Proposition&nbsp;2</a>. To better digest the generalization, let’s consider an instructive example concerning the product of <span class="math inline">\(n\)</span> functions.</p>
-<div class="callout callout-style-default callout-caution callout-titled" title="Derivative of $x^{n}$">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Caution</span>Derivative of <span class="math inline">\(x^{n}\)</span>
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<div id="exr-derivative-xn" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 3</strong></span> Consider the “raise to the power <span class="math inline">\(n\)</span>” function <span class="math inline">\((\cdot)^{n}:\mathbb{R}\rightarrow\mathbb{R}\)</span>. Prove that <span class="math display">\[
-\frac{\mathrm{d}}{\mathrm{d} x}(x^{n})=nx^{n-1}.
-\]</span></p>
-<details>
-<summary>
-<strong>Solution:</strong>
-</summary>
-<p>Clearly, we can decompose <span class="math inline">\(x^{n}\)</span> into the product of two functions, say <span class="math inline">\(f(x)=x\)</span> and <span class="math inline">\(g(x)=x^{n-1}\)</span>, and apply the Leibniz Rule: <span class="math display">\[
-\frac{\mathrm{d}}{\mathrm{d} x}(x^{n})=x^{n-1} + x \frac{\mathrm{d}}{\mathrm{d} x}(x^{n-1}).
-\]</span> Now, we can decompose <span class="math inline">\(x^{n-1}\)</span> into the product of two functions, say <span class="math inline">\(f(x)=x\)</span> and <span class="math inline">\(g(x) = x^{n-2}\)</span>, and apply the Leibniz Rule: <span class="math display">\[
-\frac{\mathrm{d}}{\mathrm{d} x}(x^{n-1})=x^{n-2} + x \frac{\mathrm{d}}{\mathrm{d} x}(x^{n-2}),
-\]</span> which means <span class="math display">\[
-\begin{split}
-\frac{\mathrm{d}}{\mathrm{d} x}(x^{n})&amp;=x^{n-1} + x \frac{\mathrm{d}}{\mathrm{d} x}(x^{n-1})= \\
-&amp;=x^{n-1} + x\left(x^{n-2} + x \frac{\mathrm{d}}{\mathrm{d} x}(x^{n-2})\right)= \\
-&amp;=2x^{n-1} + x^{2} \frac{\mathrm{d}}{\mathrm{d} x}(x^{n-2}).
-\end{split}
-\]</span> This pattern suggests the formula, and we can make it rigorous by induction on <span class="math inline">\(n\)</span>.</p>
-For <span class="math inline">\(n=1\)</span>, we have <span class="math inline">\(\frac{\mathrm{d}}{\mathrm{d}x}(x)=1\)</span>. Assume now that <span class="math display">\[
-\frac{\mathrm{d}}{\mathrm{d}x}(x^{n})=n x^{n-1}.
-\]</span> Then, by the Leibniz rule, <span class="math display">\[
-\frac{\mathrm{d}}{\mathrm{d}x}(x^{n+1})=\frac{\mathrm{d}}{\mathrm{d}x}(x\cdot x^{n})=x^{n}+x\frac{\mathrm{d}}{\mathrm{d}x}(x^{n})=x^{n}+x(nx^{n-1})=(n+1)x^{n}.
-\]</span> Therefore, for every natural number <span class="math inline">\(n\geq 1\)</span>, <span class="math display">\[
-\frac{\mathrm{d}}{\mathrm{d}x}(x^{n})=n x^{n-1}.
-\]</span>
+<strong>TBA</strong>
 </details>
 </div>
 </div>
@@ -731,7 +731,7 @@ For <span class="math inline">\(n=1\)</span>, we have <span class="math inline">
 </div>
 <div class="callout-body-container callout-body">
 <div id="exr-algebraic-manipulations-derivatives-N-functions" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 4</strong></span> Let <span class="math inline">\((\alpha_{1},\cdots\alpha_{n})\)</span> be a finite sequence of real numbers and <span class="math inline">\((f_{1},\cdots,f_{n})\)</span> a finite sequence of scalar functions with common domain <span class="math inline">\(D\subseteq\mathbb{R}\)</span>. Suppose that, at <span class="math inline">\(x_{0}\in D\)</span>, the derivatives <span class="math inline">\(f_{j}'(x_{0})\)</span> exist for every <span class="math inline">\(j=1,...,n\)</span>. Then, it holds <span class="math display">\[
+<p><span class="theorem-title"><strong>Exercise 3</strong></span> Let <span class="math inline">\((\alpha_{1},\cdots\alpha_{n})\)</span> be a finite sequence of real numbers and <span class="math inline">\((f_{1},\cdots,f_{n})\)</span> a finite sequence of scalar functions with common domain <span class="math inline">\(D\subseteq\mathbb{R}\)</span>. Suppose that, at <span class="math inline">\(x_{0}\in D\)</span>, the derivatives <span class="math inline">\(f_{j}'(x_{0})\)</span> exist for every <span class="math inline">\(j=1,...,n\)</span>. Then, it holds <span class="math display">\[
 \begin{split}
 \left(\sum_{j=1}^{n}\,\alpha_{j}\,f_{j}\right)'(x_{0}) &amp;=\sum_{j=1}^{n}\, \alpha_{j}\,f_{j}'(x_{0})  \\
 \left(\prod_{j=1}^{n} \,\alpha_{j}\,f_{j}\right)'(x_{0}) &amp;=\sum_{j=1}^{n}\,\alpha_{j}\,f_{j}'(x_{0})\,\left(\prod_{k\neq j}\alpha_{k}\,f_{k}(x_{0})\right).
@@ -739,7 +739,7 @@ For <span class="math inline">\(n=1\)</span>, we have <span class="math inline">
 \]</span></p>
 <details>
 <summary>
-<strong>Solution (by induction on <span class="math inline">\(n\)</span>):</strong>
+<strong>Solution:</strong>
 </summary>
 <p>Fix an accumulation point <span class="math inline">\(x_0\in D\)</span> and assume that <span class="math inline">\(f_j'(x_0)\)</span> exists for all <span class="math inline">\(j=1,\dots,n\)</span>. Set <span class="math inline">\(g_j:=\alpha_j f_j\)</span>, so that <span class="math inline">\(g_j'(x_0)=\alpha_j f_j'(x_0)\)</span>.</p>
 <p>We will use the two-function rules from <a href="#prp-algebraic-manipulations-derivatives" class="quarto-xref">Proposition&nbsp;2</a></p>
@@ -784,6 +784,27 @@ This concludes the proof.
 </div>
 </div>
 </div>
+<div class="callout callout-style-default callout-caution callout-titled" title="A foundational example">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Caution</span>A foundational example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div id="exr-derivative-monomial" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 4</strong></span> Prove that the derivative of the function <span class="math inline">\(f_{n}\colon \mathbb{R}\rightarrow\mathbb{R}\)</span> given by <span class="math inline">\(f_{n}(x)=\alpha_{n}x^{n}\)</span> with <span class="math inline">\(\alpha_{n}\in \mathbb{R}\)</span> is <span class="math inline">\(n\alpha_{n}x^{n-1}\)</span>.</p>
+<details>
+<summary>
+<strong>Solution:</strong>
+</summary>
+<p>Use <strong>?@exm-derivative-linear-quadratic-functions</strong> together with <a href="#exr-algebraic-manipulations-derivatives-N-functions" class="quarto-xref">Exercise&nbsp;3</a>.</p>
+</details>
+</div>
+</div>
+</div>
 <p>Now, we consider what happens to the derivative of the quotient of two functions.</p>
 <div class="callout callout-style-default callout-note callout-titled" title="Derivative of the quotient">
 <div class="callout-header d-flex align-content-center">
@@ -803,30 +824,38 @@ h'(x_{0})= \frac{f'(x_{0})\,g(x_{0})-f(x_{0})\,g'(x_{0})}{(g(x_{0}))^{2}}.
 <summary>
 <strong>Proof:</strong>
 </summary>
-TBA
+<strong>TBA</strong>
 </details>
 </div>
 </div>
 </div>
 <p>Finally, we are able to use all the results presented in this section to compute the derivatives of polynomial and rational functions without ever computing a limit.</p>
-<div class="callout callout-style-default callout-tip callout-titled" title="Derivatives of polynomials and rational functions">
+<div class="callout callout-style-default callout-caution callout-titled" title="Derivatives of polynomials and rational functions">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Derivatives of polynomials and rational functions
+<span class="screen-reader-only">Caution</span>Derivatives of polynomials and rational functions
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div id="exm-derivative-polynomial-rational-functions" class="theorem example">
-<p><span class="theorem-title"><strong>Example 2</strong></span> Let <span class="math inline">\(P_{n},Q_{m}\colon \mathbb{R}\rightarrow \mathbb{R}\)</span> be polynomial functions. We now compute <span class="math inline">\(P_{n}',Q_{m}'\)</span> and <span class="math inline">\(R'\)</span> with <span class="math inline">\(R=\frac{P_{n}}{Q_{m}}\)</span>.</p>
-<p>To compute <span class="math inline">\(P_{n}'\)</span> we first write <span class="math display">\[
+<div id="exr-derivative-polynomial-rational-functions" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 5</strong></span> Let <span class="math inline">\(P_{n},Q_{m}\colon \mathbb{R}\rightarrow \mathbb{R}\)</span> be polynomial functions. Compute <span class="math inline">\(P_{n}',Q_{m}'\)</span>, and <span class="math inline">\(R'\)</span>, where <span class="math inline">\(R=\frac{P_{n}}{Q_{m}}\)</span> is defined on the maximal domain <span class="math inline">\(D\subseteq\mathbb{R}\)</span> on which <span class="math inline">\(Q_{m}(x)\neq 0\)</span>.</p>
+<details>
+<summary>
+<strong>Solution:</strong>
+</summary>
+<p>To compute <span class="math inline">\(P_{n}'\)</span>, we first write <span class="math display">\[
 P_{n}'(x)=\sum_{k=0}^{n}\alpha_{k}\,x^{k}
-\]</span> with <span class="math inline">\(\alpha_{k}\in\mathbb{R}\)</span>, and then invoke <a href="#exr-algebraic-manipulations-derivatives-N-functions" class="quarto-xref">Exercise&nbsp;4</a> to conclude that <span class="math inline">\(P_{n}'\)</span> is the polynomial of order <span class="math inline">\((n-1)\)</span> given by <span class="math display">\[
+\]</span> with <span class="math inline">\(\alpha_{k}\in\mathbb{R}\)</span>, and then use <a href="#exr-algebraic-manipulations-derivatives-N-functions" class="quarto-xref">Exercise&nbsp;3</a> together with <a href="#exr-derivative-monomial" class="quarto-xref">Exercise&nbsp;4</a> to conclude that <span class="math inline">\(P_{n}'\)</span> is the polynomial of order <span class="math inline">\((n-1)\)</span> given by <span class="math display">\[
 P_{n}'(x)=\sum_{k=1}^{n}k\alpha_{k}\,x^{k-1}.
 \]</span> A similar result holds for <span class="math inline">\(Q_{m}'(x)\)</span>.</p>
-<hr>
+<p>The derivative of <span class="math inline">\(R(x)=\frac{P_{n}(x)}{Q_{m}(x)}\)</span> can then immediately obtained using the previous results and <a href="#prp-derivative-quotient" class="quarto-xref">Proposition&nbsp;3</a>:</p>
+<span class="math display">\[
+R'(x)=\frac{P'_{n}(x)Q_{m}(x) - P_{n}(x)Q'_{m}(x)}{(Q_{m}(x))^{2}}.
+\]</span>
+</details>
 </div>
 </div>
 </div>
@@ -837,8 +866,11 @@ P_{n}'(x)=\sum_{k=1}^{n}k\alpha_{k}\,x^{k-1}.
 <section id="interpretation-of-derivative" class="level1" data-number="5">
 <h1 data-number="5"><span class="header-section-number">5</span> Interpretation of derivative</h1>
 </section>
-<section id="exercises" class="level1" data-number="6">
-<h1 data-number="6"><span class="header-section-number">6</span> Exercises</h1>
+<section id="higher-order-derivatives-ck-functions-and-smooth-functions" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> Higher order derivatives, <span class="math inline">\(C^{k}\)</span>-functions, and smooth functions</h1>
+</section>
+<section id="exercises" class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> Exercises</h1>
 
 
 </section>
