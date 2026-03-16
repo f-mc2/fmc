@@ -43,9 +43,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-088cf8b58fc5bdaf5ae7da23cfb2a7f7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-8e9235ed90459df727a637835f354bde.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../site_libs/bootstrap/bootstrap-088cf8b58fc5bdaf5ae7da23cfb2a7f7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-0eb7fd585e00d51023b3d1090d08195f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-cbdd6c9d3bb07a08fa49b004a2aab0e1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-0eb7fd585e00d51023b3d1090d08195f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -1394,64 +1394,6 @@ Hence for <span class="math inline">\(\delta=\varepsilon\)</span>, <a href="#def
 <p>Now let <span class="math inline">\(x_0\neq0\)</span>. Take <span class="math inline">\(\varepsilon=|x_0|/2\)</span>. For any <span class="math inline">\(\delta&gt;0\)</span>, set <span class="math inline">\(\delta_0=\min\{\delta,|x_0|/2\}\)</span> and pick a rational <span class="math inline">\(q\)</span> and an irrational <span class="math inline">\(r\)</span> such that <span class="math inline">\(0&lt;|q-x_0|&lt;\delta_0\)</span> and <span class="math inline">\(0&lt;|r-x_0|&lt;\delta_0\)</span>. Then <span class="math inline">\(g(q)=0\)</span>, while <span class="math inline">\(g(r)=r\)</span>. Since <span class="math display">\[
 |r| \geq ||x_0|-|r-x_0|| &gt; \frac{|x_0|}{2}=\varepsilon,
 \]</span> there is no single <span class="math inline">\(L\)</span> such that <span class="math inline">\(|g(r)-L|&lt;\varepsilon\)</span> together with <span class="math inline">\(|g(q)-L|&lt;\varepsilon\)</span>. Thus <span class="math inline">\(\lim_{x\to x_0}g(x)\)</span> does not exist for <span class="math inline">\(x_0\neq0\)</span>.</p>
-</details>
-<ol start="4" type="1">
-<li>Let <span class="math display">\[
-f(x)=\begin{cases}
-0 &amp; \text{if } x\neq 0,\\
-1 &amp; \text{if } x=0.
-\end{cases}
-\qquad
-g(x)=\begin{cases}
-0 &amp; \text{if } x\neq 0,\\
-1 &amp; \text{if } x=0.
-\end{cases}
-\]</span> Verify that <span class="math inline">\(\lim_{x\to 0}g(x)=\lim_{y\to 0}f(y)=0\)</span>, but <span class="math inline">\(\lim_{x\to 0}f\circ g(x)=1\)</span>. Explain explicitly which assumption of <a href="#prp-limit-composite-functions" class="quarto-xref">Proposition&nbsp;7</a> is not satisfied.</li>
-</ol>
-<details>
-<summary>
-<strong>Solution</strong>
-</summary>
-<p>From the definitions, <span class="math inline">\(\lim_{x\to 0}g(x)=0\)</span> and <span class="math inline">\(\lim_{y\to0}f(y)=0\)</span>, so the expected composed value is <span class="math display">\[
-f\!\left(\lim_{x\to0}g(x)\right)=f(0)=1.
-\]</span> Now <span class="math inline">\(g(0)=1\)</span>, and <span class="math inline">\(g(x)=0\)</span> for <span class="math inline">\(x\neq0\)</span>. Hence <span class="math display">\[
-(f\circ g)(x)=
-\begin{cases}
-1 &amp; \text{if } x\neq0,\\
-0 &amp; \text{if } x=0.
-\end{cases}
-\]</span> Therefore, by <a href="#def-limits" class="quarto-xref">Definition&nbsp;2</a>, <span class="math inline">\(\lim_{x\to0}(f\circ g)(x)=1\)</span>.</p>
-The hypotheses of <a href="#prp-limit-composite-functions" class="quarto-xref">Proposition&nbsp;7</a> are not satisfied:
-<p>This is a useful warning: the conclusion may still hold by coincidence, but the theorem does not apply.</p>
-</details>
-<ol start="5" type="1">
-<li>Let <span class="math display">\[
-h(x)=\begin{cases}
-0 &amp; \text{if } x\le 0,\\
-1 &amp; \text{if } x&gt;0.
-\end{cases}
-\]</span> Compute the left and right limits at <span class="math inline">\(x_0=0\)</span>, and decide whether <span class="math inline">\(h\)</span> is continuous, left continuous, or right continuous at <span class="math inline">\(0\)</span>.</li>
-</ol>
-<details>
-<summary>
-<strong>Solution</strong>
-</summary>
-<p>By <a href="#def-limits" class="quarto-xref">Definition&nbsp;2</a>, <span class="math inline">\(\lim_{x\to0^-}h(x)=0\)</span> and <span class="math inline">\(\lim_{x\to0^+}h(x)=1\)</span>.<br>
-The one-sided limits differ, so the two-sided limit does not exist at <span class="math inline">\(0\)</span>.<br>
-Since <span class="math inline">\(h(0)=0\)</span>, <span class="math inline">\(h\)</span> is left continuous at <span class="math inline">\(0\)</span> (<span class="math inline">\(\lim_{x\to0^-}h(x)=h(0)\)</span>) but not right continuous (<span class="math inline">\(\lim_{x\to0^+}h(x)\neq h(0)\)</span>).<br>
-Hence it is not continuous at <span class="math inline">\(0\)</span>.</p>
-</details>
-<ol start="6" type="1">
-<li>Let <span class="math inline">\(D=(0,3)\)</span>, <span class="math inline">\(D'=(-1,2)\)</span>, <span class="math inline">\(f(x)=x+3\)</span>, <span class="math inline">\(g(x)=x+3\)</span>, and <span class="math inline">\(S=\{1\}\)</span>. Define <span class="math inline">\(h\colon S\to\mathbb{R}\)</span> by <span class="math inline">\(h(x)=f(x)=g(x)\)</span>.<br>
-Show that <span class="math inline">\(1\)</span> is not an accumulation point of <span class="math inline">\(S\)</span>, and discuss why this is the key reason the restriction continuity discussion does not give information about nearby-point behavior.</li>
-</ol>
-<details>
-<summary>
-<strong>Solution</strong>
-</summary>
-<p>Since <span class="math inline">\(S=\{1\}\)</span>, for every <span class="math inline">\(\delta&gt;0\)</span> we have <span class="math display">\[
-S\cap(1-\delta,1+\delta)=\{1\}.
-\]</span> So <span class="math inline">\(1\)</span> is isolated and not an accumulation point. Hence <a href="#exr-continuity-restriction-functions" class="quarto-xref">Exercise&nbsp;4</a> does not apply at <span class="math inline">\(x_{0}=1\)</span>, because its hypotheses require accumulation behavior at the base point. This is the same reason behind <a href="#rem-continuity-isolated-points" class="quarto-xref">Remark&nbsp;1</a>.</p>
 </details>
 
 
