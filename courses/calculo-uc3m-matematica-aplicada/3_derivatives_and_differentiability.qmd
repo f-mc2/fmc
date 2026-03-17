@@ -16,6 +16,7 @@ date-modified: last-modified
 
 # Derivative and differentiability
 
+Let's start with the very definition of derivative at a point.
 
 ::: {.callout-note title="Derivative and differentiability"}
 
@@ -31,15 +32,15 @@ and the function $\Delta f\colon H_{x_{0}}\rightarrow \mathbb{R}$ by
 $$
 \Delta f(h):=\frac{f(x_{0}+h) - f(x_{0})}{h} .
 $$
+Note that $h=0$ is an accumulation point of $H_{x_{0}}$.
+
 If the limit 
 $$
-\lim_{\substack{h\rightarrow 0 \\ h\in H_{x_{0}}}}\Delta f(h)= l
+\lim_{h\rightarrow 0}\Delta f(h)=\lim_{h\rightarrow 0}\frac{f(x_{0}+h)-f(x_{0})}{h}= l
 $$
-exists with $l\in\mathbb{R}$, we say that $l$ is the derivative of $f$ at $x_{0}$, and that $f$ is differentiable at $x_{0}$. 
-
-When $f$ is differentiable at $x_{0}$, we write
+exists with $l\in\mathbb{R}$, we say that $l$ is the derivative of $f$ at $x_{0}$, that $f$ is differentiable at $x_{0}$, and we write
 $$
-f'(x_{0})\equiv \lim_{\substack{h\rightarrow 0 \\ h\in H_{x_{0}}}}\Delta f(h)=\lim_{\substack{h\rightarrow 0 \\ h\in H_{x_{0}}}}\frac{f(x_{0}+h)-f(x_{0})}{h}.
+f'(x_{0})\equiv \lim_{h\rightarrow 0}\Delta f(h)=\lim_{h\rightarrow 0}\frac{f(x_{0}+h)-f(x_{0})}{h}=l.
 $$
 We also write 
 $$
@@ -406,9 +407,11 @@ $$
 
 # Derivative of inverse and composite functions
 
-In [composition of continuous functions](1_limits_and_continuity.qmd#prp-composition-continuous-functions) and [continuity of inverse function](1_limits_and_continuity.qmd#prp-continuity-inverse-function), we saw that continuity behaves well under composition and inversion on intervals. We now ask the analogous question for differentiability, and the answer is again positive under suitable hypotheses.
+We previously saw that continuity behaves well under [composition of continuous functions](1_limits_and_continuity.qmd#prp-composition-continuous-functions) and [inversion of functions on intervals](1_limits_and_continuity.qmd#prp-continuity-inverse-function). 
 
-::: {.callout-note title="Chain rule"}
+Can we hope for analogous behaviours for differentiable functions? The answer is yes, under suitable hypotheses.
+
+::: {.callout-note title="Derivative of composite functions - The chain rule"}
 
 ::: {#prp-chain-rule}
 
@@ -474,7 +477,7 @@ as claimed.
 
 ::: {#exr-chain-rule-polynomial}
 
-Compute the derivative of the function
+Compute the derivative of the function $f\colon\mathbb{R}\rightarrow\mathbb{R}$ given by
 $$
 f(x)=\left(x^{2}+1\right)^{3}.
 $$
@@ -564,12 +567,9 @@ Let $n\in \mathbb{N}$ with $n\geq 1$, and let $D$ be the maximal domain on which
 $$
 p_{n}(x)=x^{n}
 $$
-admits an inverse. Explicitly, $D=\mathbb{R}$ if $n$ is odd and $D=\mathbb{R}_{+}$ if $n$ is even.
-Use @prp-derivative-inverse-function to compute the derivative of
-$$
-g(y)=y^{\frac{1}{n}}=p_{n}^{-1}(y)
-$$
-at points $y_{0}\in p_{n}(D)$ for which the proposition applies.
+admits an inverse denoted by $g\colon D\subseteq\mathbb{R}\rightarrow\mathbb{R}$ and given by $g(y)=y^{\frac{1}{n}}$. Explicitly, $D=\mathbb{R}$ if $n$ is odd and $D=\mathbb{R}_{+}=(0,\infty)$ if $n$ is even.
+
+Use @prp-derivative-inverse-function to compute the derivative of $g$ at points $y_{0}\in p_{n}(D)$ for which the proposition applies.
 
 <details>
 <summary> **Solution:** </summary>
@@ -606,8 +606,8 @@ so @prp-derivative-inverse-function does not apply. Therefore, for $n>1$, the de
 
 ::: {#exr-right-derivative-even-root-functions}
 
-Let $n\in \mathbb{N}$ be even and satisfy $n\geq 2$.
-Consider the function $g\colon \mathbb{R}_{+}\rightarrow \mathbb{R}$ given by
+Let $\mathbb{N}\ni n\geq 2$ be even.
+Consider the function $g\colon \mathbb{R}_{+}\subseteq\mathbb{R}\rightarrow \mathbb{R}$ given by
 $$
 g(y)=y^{\frac{1}{n}}.
 $$
@@ -633,7 +633,7 @@ Equivalently, the right difference quotient has unbounded limit $+\infty$ at the
 
 :::
 
-Together, the chain rule and the derivative of inverse functions will allow us to compute derivatives of rational powers and much more complicated compositions without returning to the definition every time.
+
 
 # Interpretation of derivative
 
