@@ -210,6 +210,166 @@ $$
 :::
 :::
 
+::: {.callout-note title="Relation on a set"}
+
+::: {#def-relation}
+
+Let $X$ be a set.
+A **relation** on $X$ is a subset
+$$
+R\subseteq X\times X.
+$$
+If $(x,y)\in R$, we often write
+$$
+x\,R\,y.
+$$
+
+Thus, a relation is simply a systematic way of declaring, for some ordered pairs $(x,y)$ of elements of $X$, that $x$ is related to $y$.
+
+:::
+
+:::
+
+::: {.callout-note title="Order relations"}
+
+::: {#def-order-relations}
+
+Let $X$ be a set, and let $\leq$ be a relation on $X$.
+We say that $\leq$ is a **partial order** if the following properties hold for every $x,y,z\in X$:
+
+1. **Reflexivity**: $x\leq x$.
+2. **Antisymmetry**: if $x\leq y$ and $y\leq x$, then $x=y$.
+3. **Transitivity**: if $x\leq y$ and $y\leq z$, then $x\leq z$.
+
+If, in addition, for every $x,y\in X$ one has either $x\leq y$ or $y\leq x$, then $\leq$ is called a **total order** or **linear order**.
+
+When the order is total, we also write
+$$
+x<y
+$$
+to mean that $x\leq y$ and $x\neq y$.
+
+:::
+
+:::
+
+::: {.callout-note title="Upper and lower bounds"}
+
+::: {#def-upper-lower-bounds}
+
+Let $X$ be a totally ordered set, and let $A\subseteq X$.
+
+An element $u\in X$ is called an **upper bound** for $A$ if
+$$
+a\leq u
+$$
+for every $a\in A$.
+
+An element $\ell\in X$ is called a **lower bound** for $A$ if
+$$
+\ell\leq a
+$$
+for every $a\in A$.
+
+An upper bound $s$ for $A$ is called the **least upper bound** or **supremum** of $A$ if
+$$
+s\leq u
+$$
+for every upper bound $u$ of $A$.
+
+A lower bound $m$ for $A$ is called the **greatest lower bound** or **infimum** of $A$ if
+$$
+\ell\leq m
+$$
+for every lower bound $\ell$ of $A$.
+
+If $A$ has a least upper bound, we write
+$$
+\sup A.
+$$
+If $A$ has a greatest lower bound, we write
+$$
+\inf A.
+$$
+
+A totally ordered set is said to have the **least-upper-bound property** if every nonempty subset which is bounded above has a supremum.
+
+:::
+
+:::
+
+::: {.callout-note title="Ordered field"}
+
+::: {#def-ordered-field}
+
+An **ordered field** is a set $F$ endowed with two operations, addition and multiplication, together with distinguished elements $0,1\in F$ and a total order $\leq$ (with associated strict order $<$), such that
+
+1. $(F,+,\cdot,0,1)$ is a field in the usual algebraic sense;
+2. if $x<y$, then
+$$
+x+z<y+z
+$$
+for every $z\in F$;
+3. if $0<x$ and $0<y$, then
+$$
+0<xy.
+$$
+
+Thus, an ordered field is a field in which the algebraic operations and the order relation are compatible.
+
+:::
+
+:::
+
+::: {.callout-note title="Characterization of the real numbers"}
+
+::: {#thm-characterization-reals}
+
+There exists, up to order-preserving field isomorphism, only one ordered field with the least-upper-bound property.
+That ordered field is what mathematicians call the set of **real numbers**, and it can be proved to "coincide" with the intuitive idea we already have of $\mathbb{R}$.
+
+We will not prove this theorem here.
+Instead, we simply accept that the familiar real numbers form an ordered field with the least-upper-bound property and use that fact throughout the course.
+
+:::
+
+:::
+
+::: {.callout-note title="The standard number sets inside $\mathbb{R}$"}
+
+::: {#def-standard-number-sets}
+
+Once $\mathbb{R}$ is in place, we regard the standard number systems as nested subsets
+$$
+\mathbb{N}\subseteq \mathbb{Z}\subseteq \mathbb{Q}\subseteq \mathbb{R}.
+$$
+Here $\mathbb{N}$ denotes the natural numbers, $\mathbb{Z}$ the integers, $\mathbb{Q}$ the rational numbers, and $\mathbb{R}$ the real numbers.
+
+We will use these inclusions in the usual informal way and think of the algebraic operations and the order on the smaller number sets as inherited from $\mathbb{R}$.
+
+:::
+
+:::
+
+::: {.callout-note title="Induction principle"}
+
+::: {#prp-induction-principle}
+
+Let $P(n)$ be a statement depending on a natural number $n\in\mathbb{N}$.
+Assume that
+
+1. $P(0)$ is true;
+2. whenever $P(n)$ is true, then $P(n+1)$ is also true.
+
+Then $P(n)$ is true for every $n\in\mathbb{N}$.
+
+This is the **principle of mathematical induction**.
+In practice, it allows us to prove infinitely many statements, one for each natural number, by verifying only a base case and one inductive step.
+
+:::
+
+:::
+
 # Functions
 
 
