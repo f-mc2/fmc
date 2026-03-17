@@ -116,9 +116,8 @@ n\mapsto n+1
 $$
 which sends each natural number to another natural number.
 
-We will not discuss the formal [Peano axioms](https://en.wikipedia.org/wiki/Peano_axioms) here, nor will we attempt to construct the integers, rationals, or reals from $\mathbb{N}$.
-Instead, we use the familiar intuitive number systems and record explicitly whatever algebraic or order-theoretic properties we need later on.
 
+9) **Power set**:
 :::
 
 :::
@@ -430,20 +429,11 @@ In this case, we often writes $f\colon D\rightarrow Y$ given by $f(x)=y$ omittin
 :::
 
 :::
-
-::: {.callout-note title="Inverse function"}
-
-::: {#def-inverse-function}
-
-INSERT
-
-:::
-
-:::
+ 
 
 
 
-# Real numbers
+# Subsets of real numbers
 
 We need to introduce various types of intervals. These objects help in formalizing the way $x$ approaches $x_{0}$.
 

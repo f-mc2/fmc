@@ -487,7 +487,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">March 17, 2026</p>
+      <p class="date-modified">March 18, 2026</p>
     </div>
   </div>
     
@@ -665,6 +665,198 @@ A\times B:=\{(a,b)\,:\, a\in A,\ b\in B\}.
 </div>
 </div>
 </div>
+<div class="callout callout-style-default callout-note callout-titled" title="Relation on a set">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Relation on a set
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div id="def-relation" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 5</strong></span> Let <span class="math inline">\(X\)</span> be a set. A <strong>relation</strong> on <span class="math inline">\(X\)</span> is a subset <span class="math display">\[
+R\subseteq X\times X.
+\]</span> If <span class="math inline">\((x,y)\in R\)</span>, we often write <span class="math display">\[
+x\,R\,y.
+\]</span></p>
+<p>Thus, a relation is simply a systematic way of declaring, for some ordered pairs <span class="math inline">\((x,y)\)</span> of elements of <span class="math inline">\(X\)</span>, that <span class="math inline">\(x\)</span> is related to <span class="math inline">\(y\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Order relations">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Order relations
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div id="def-order-relations" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 6</strong></span> Let <span class="math inline">\(X\)</span> be a set, and let <span class="math inline">\(\leq\)</span> be a relation on <span class="math inline">\(X\)</span>. We say that <span class="math inline">\(\leq\)</span> is a <strong>partial order</strong> if the following properties hold for every <span class="math inline">\(x,y,z\in X\)</span>:</p>
+<ol type="1">
+<li><strong>Reflexivity</strong>: <span class="math inline">\(x\leq x\)</span>.</li>
+<li><strong>Antisymmetry</strong>: if <span class="math inline">\(x\leq y\)</span> and <span class="math inline">\(y\leq x\)</span>, then <span class="math inline">\(x=y\)</span>.</li>
+<li><strong>Transitivity</strong>: if <span class="math inline">\(x\leq y\)</span> and <span class="math inline">\(y\leq z\)</span>, then <span class="math inline">\(x\leq z\)</span>.</li>
+</ol>
+<p>If, in addition, for every <span class="math inline">\(x,y\in X\)</span> one has either <span class="math inline">\(x\leq y\)</span> or <span class="math inline">\(y\leq x\)</span>, then <span class="math inline">\(\leq\)</span> is called a <strong>total order</strong> or <strong>linear order</strong>.</p>
+<p>When the order is total, we also write <span class="math display">\[
+x&lt;y
+\]</span> to mean that <span class="math inline">\(x\leq y\)</span> and <span class="math inline">\(x\neq y\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Upper and lower bounds">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Upper and lower bounds
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div id="def-upper-lower-bounds" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 7</strong></span> Let <span class="math inline">\(X\)</span> be a totally ordered set, and let <span class="math inline">\(A\subseteq X\)</span>.</p>
+<p>An element <span class="math inline">\(u\in X\)</span> is called an <strong>upper bound</strong> for <span class="math inline">\(A\)</span> if <span class="math display">\[
+a\leq u
+\]</span> for every <span class="math inline">\(a\in A\)</span>.</p>
+<p>An element <span class="math inline">\(\ell\in X\)</span> is called a <strong>lower bound</strong> for <span class="math inline">\(A\)</span> if <span class="math display">\[
+\ell\leq a
+\]</span> for every <span class="math inline">\(a\in A\)</span>.</p>
+<p>An upper bound <span class="math inline">\(s\)</span> for <span class="math inline">\(A\)</span> is called the <strong>least upper bound</strong> or <strong>supremum</strong> of <span class="math inline">\(A\)</span> if <span class="math display">\[
+s\leq u
+\]</span> for every upper bound <span class="math inline">\(u\)</span> of <span class="math inline">\(A\)</span>.</p>
+<p>A lower bound <span class="math inline">\(m\)</span> for <span class="math inline">\(A\)</span> is called the <strong>greatest lower bound</strong> or <strong>infimum</strong> of <span class="math inline">\(A\)</span> if <span class="math display">\[
+\ell\leq m
+\]</span> for every lower bound <span class="math inline">\(\ell\)</span> of <span class="math inline">\(A\)</span>.</p>
+<p>If <span class="math inline">\(A\)</span> has a least upper bound, we write <span class="math display">\[
+\sup A.
+\]</span> If <span class="math inline">\(A\)</span> has a greatest lower bound, we write <span class="math display">\[
+\inf A.
+\]</span></p>
+<p>A totally ordered set is said to have the <strong>least-upper-bound property</strong> if every nonempty subset which is bounded above has a supremum.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Field">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Field
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div id="def-field" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 8</strong></span> A <strong>field</strong> is a set <span class="math inline">\(F\)</span> endowed with two operations, called <strong>addition</strong> and <strong>multiplication</strong>, together with two distinguished elements <span class="math inline">\(0,1\in F\)</span> with <span class="math inline">\(0\neq 1\)</span>, such that the following hold for every <span class="math inline">\(x,y,z\in F\)</span>:</p>
+<ol type="1">
+<li><p><strong>Associativity of addition and multiplication</strong>: <span class="math display">\[
+(x+y)+z=x+(y+z),\qquad (xy)z=x(yz).
+\]</span></p></li>
+<li><p><strong>Commutativity of addition and multiplication</strong>: <span class="math display">\[
+x+y=y+x,\qquad xy=yx.
+\]</span></p></li>
+<li><p><strong>Neutral elements</strong>: <span class="math display">\[
+x+0=x,\qquad x\cdot 1=x.
+\]</span></p></li>
+<li><p><strong>Additive inverses</strong>: for every <span class="math inline">\(x\in F\)</span>, there exists an element <span class="math inline">\(-x\in F\)</span> such that <span class="math display">\[
+x+(-x)=0.
+\]</span></p></li>
+<li><p><strong>Multiplicative inverses</strong>: for every <span class="math inline">\(x\in F\)</span> with <span class="math inline">\(x\neq 0\)</span>, there exists an element <span class="math inline">\(x^{-1}\in F\)</span> such that <span class="math display">\[
+x\,x^{-1}=1.
+\]</span></p></li>
+<li><p><strong>Distributive law</strong>: <span class="math display">\[
+x(y+z)=xy+xz.
+\]</span></p></li>
+</ol>
+<p>These axioms allow us to perform the usual algebraic manipulations with sums, differences, products, and quotients by nonzero elements. The familiar number systems <span class="math inline">\(\mathbb{Q}\)</span> and <span class="math inline">\(\mathbb{R}\)</span> are examples of fields.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Ordered field">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Ordered field
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div id="def-ordered-field" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 9</strong></span> An <strong>ordered field</strong> is a field <span class="math inline">\(F\)</span> in the sense of <a href="#def-field" class="quarto-xref">Definition&nbsp;8</a>, together with a total order <span class="math inline">\(\leq\)</span> (with associated strict order <span class="math inline">\(&lt;\)</span>), such that</p>
+<ol type="1">
+<li>if <span class="math inline">\(x&lt;y\)</span>, then <span class="math display">\[
+x+z&lt;y+z
+\]</span> for every <span class="math inline">\(z\in F\)</span>;</li>
+<li>if <span class="math inline">\(0&lt;x\)</span> and <span class="math inline">\(0&lt;y\)</span>, then <span class="math display">\[
+0&lt;xy.
+\]</span></li>
+</ol>
+<p>Thus, an ordered field is a field in which the algebraic operations and the order relation are compatible. The rational numbers <span class="math inline">\(\mathbb{Q}\)</span> and the real numbers <span class="math inline">\(\mathbb{R}\)</span> are the standard examples.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Characterization of the real numbers">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Characterization of the real numbers
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div id="thm-characterization-reals" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 1</strong></span> There exists, up to order-preserving field isomorphism, only one ordered field with the least-upper-bound property. That ordered field is what mathematicians call the set of <strong>real numbers</strong>, and it can be proved to “coincide” with the intuitive idea we already have of <span class="math inline">\(\mathbb{R}\)</span>.</p>
+<p>We will not prove this theorem here. Instead, we simply accept that the familiar real numbers form an ordered field with the least-upper-bound property and use that fact throughout the course.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="The standard number sets inside $\mathbb{R}$">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>The standard number sets inside <span class="math inline">\(\mathbb{R}\)</span>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div id="def-standard-number-sets" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 10</strong></span> Once <span class="math inline">\(\mathbb{R}\)</span> is in place, we regard the standard number systems as nested subsets <span class="math display">\[
+\mathbb{N}\subseteq \mathbb{Z}\subseteq \mathbb{Q}\subseteq \mathbb{R}.
+\]</span> Here <span class="math inline">\(\mathbb{N}\)</span> denotes the natural numbers, <span class="math inline">\(\mathbb{Z}\)</span> the integers, <span class="math inline">\(\mathbb{Q}\)</span> the rational numbers, and <span class="math inline">\(\mathbb{R}\)</span> the real numbers.</p>
+<p>We will use these inclusions in the usual informal way and think of the algebraic operations and the order on the smaller number sets as inherited from <span class="math inline">\(\mathbb{R}\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Induction principle">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Induction principle
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div id="prp-induction-principle" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 1</strong></span> Let <span class="math inline">\(P(n)\)</span> be a statement depending on a natural number <span class="math inline">\(n\in\mathbb{N}\)</span>. Assume that</p>
+<ol type="1">
+<li><span class="math inline">\(P(0)\)</span> is true;</li>
+<li>whenever <span class="math inline">\(P(n)\)</span> is true, then <span class="math inline">\(P(n+1)\)</span> is also true.</li>
+</ol>
+<p>Then <span class="math inline">\(P(n)\)</span> is true for every <span class="math inline">\(n\in\mathbb{N}\)</span>.</p>
+<p>This is the <strong>principle of mathematical induction</strong>. In practice, it allows us to prove infinitely many statements, one for each natural number, by verifying only a base case and one inductive step.</p>
+</div>
+</div>
+</div>
 </section>
 <section id="functions" class="level1" data-number="3">
 <h1 data-number="3"><span class="header-section-number">3</span> Functions</h1>
@@ -695,7 +887,7 @@ A\times B:=\{(a,b)\,:\, a\in A,\ b\in B\}.
 </div>
 <div class="callout-body-container callout-body">
 <div id="def-inverse-function" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 5</strong></span> INSERT</p>
+<p><span class="theorem-title"><strong>Definition 11</strong></span> INSERT</p>
 </div>
 </div>
 </div>
@@ -714,7 +906,7 @@ A\times B:=\{(a,b)\,:\, a\in A,\ b\in B\}.
 </div>
 <div class="callout-body-container callout-body">
 <div id="def-open-closed-intervals" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 6</strong></span> Let <span class="math inline">\(a&lt;b\in\mathbb{R}\cup\{+\infty\}\cup\{-\infty\}\)</span>. Here and throughout, inequalities involving <span class="math inline">\(\pm\infty\)</span> use the usual order on the extended real line. We define the <strong>open interval</strong> <span class="math inline">\((a,b)\)</span> as the subset of <span class="math inline">\(\mathbb{R}\)</span> given by <span id="eq-open-interval"><span class="math display">\[
+<p><span class="theorem-title"><strong>Definition 12</strong></span> Let <span class="math inline">\(a&lt;b\in\mathbb{R}\cup\{+\infty\}\cup\{-\infty\}\)</span>. Here and throughout, inequalities involving <span class="math inline">\(\pm\infty\)</span> use the usual order on the extended real line. We define the <strong>open interval</strong> <span class="math inline">\((a,b)\)</span> as the subset of <span class="math inline">\(\mathbb{R}\)</span> given by <span id="eq-open-interval"><span class="math display">\[
 (a,b):= \{x\in\mathbb{R}\,|\quad a&lt; x &lt; b \}.
 \tag{1}\]</span></span> If either <span class="math inline">\(a=-\infty\)</span> or <span class="math inline">\(b=+\infty\)</span>, the interval is said to be <strong>unbounded</strong>.</p>
 <p>When <span class="math inline">\(a\neq-\infty\)</span> and <span class="math inline">\(b\neq+\infty\)</span>, we define the closed interval <span class="math inline">\([a,b]\)</span> as <span class="math display">\[
@@ -728,7 +920,7 @@ A\times B:=\{(a,b)\,:\, a\in A,\ b\in B\}.
 [a,b) := \{x\in\mathbb{R}\,|\quad a\leq x &lt; b\},
 \]</span> while, when <span class="math inline">\(b\neq+\infty\)</span>, we can define the interval <span class="math inline">\((a,b]\)</span> as <span class="math display">\[
 (a,b] := \{x\in\mathbb{R}\,|\quad a &lt; x \leq b\},
-\]</span> and it’s clear that these interval are neither open nor closed in the sense of <a href="#def-open-closed-intervals" class="quarto-xref">Definition&nbsp;6</a></p>
+\]</span> and it’s clear that these interval are neither open nor closed in the sense of <a href="#def-open-closed-intervals" class="quarto-xref">Definition&nbsp;12</a></p>
 <p>In the following, it will be useful to also consider the <strong>symmetric open interval</strong> <span class="math display">\[
 I_{x_{0},\varepsilon}\equiv(x_{0}-\varepsilon, x_{0}+\varepsilon)=\{x\in\mathbb{R}\,|\quad x_{0}-\varepsilon &lt; x &lt; x_{0} + \varepsilon\}
 \]</span> centered at <span class="math inline">\(x_{0}\in\mathbb{R}\)</span> with length <span class="math inline">\(2\varepsilon\)</span> with <span class="math inline">\(\varepsilon&gt;0\)</span>. It is not hard to see that if <span class="math inline">\(x\in I_{x_{0},\varepsilon}\)</span>, then either <span class="math inline">\(x-x_{0}&lt; \varepsilon\)</span> or <span class="math inline">\(x_{0} - x &lt;\varepsilon\)</span>. It then follows that <span class="math inline">\(|x-x_{0}|&lt;\varepsilon\)</span>, so that <span class="math display">\[
@@ -745,7 +937,7 @@ I_{x_{0},\varepsilon}=\{x\in\mathbb{R}\,| \quad d(x_{0},x)&lt;\varepsilon\}.
 </div>
 <div class="callout-body-container callout-body">
 <div id="def-accumulation-point" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 7</strong></span> A point <span class="math inline">\(x_{0}\in \mathbb{R}\)</span> is said to be a <strong>left accumulation point</strong> for the subset <span class="math inline">\(D\)</span> if for every <span class="math inline">\(r&gt;0\)</span> there exists <span class="math inline">\(x\in D\)</span> such that <span class="math display">\[
+<p><span class="theorem-title"><strong>Definition 13</strong></span> A point <span class="math inline">\(x_{0}\in \mathbb{R}\)</span> is said to be a <strong>left accumulation point</strong> for the subset <span class="math inline">\(D\)</span> if for every <span class="math inline">\(r&gt;0\)</span> there exists <span class="math inline">\(x\in D\)</span> such that <span class="math display">\[
 x_0-r&lt;x&lt;x_0.
 \]</span> A point <span class="math inline">\(x_{0}\in \mathbb{R}\)</span> is said to be a <strong>right accumulation point</strong> for <span class="math inline">\(D\)</span> if for every <span class="math inline">\(r&gt;0\)</span> there exists <span class="math inline">\(x\in D\)</span> such that <span class="math display">\[
 x_0&lt;x&lt;x_0+r.
@@ -768,7 +960,7 @@ x_0&lt;x&lt;x_0+r.
 </div>
 <div class="callout-body-container callout-body">
 <div id="def-isolated-point" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 8</strong></span> Let <span class="math inline">\(D\subseteq\mathbb{R}\)</span> and let <span class="math inline">\(x_{0}\in D\)</span>. We say that <span class="math inline">\(x_{0}\)</span> is an <strong>isolated point</strong> of <span class="math inline">\(D\)</span> if there exists <span class="math inline">\(r&gt;0\)</span> such that <span class="math display">\[
+<p><span class="theorem-title"><strong>Definition 14</strong></span> Let <span class="math inline">\(D\subseteq\mathbb{R}\)</span> and let <span class="math inline">\(x_{0}\in D\)</span>. We say that <span class="math inline">\(x_{0}\)</span> is an <strong>isolated point</strong> of <span class="math inline">\(D\)</span> if there exists <span class="math inline">\(r&gt;0\)</span> such that <span class="math display">\[
 D\cap(x_{0}-r,x_{0}+r)=\{x_{0}\}.
 \]</span></p>
 </div>
@@ -785,7 +977,7 @@ D\cap(x_{0}-r,x_{0}+r)=\{x_{0}\}.
 </div>
 <div class="callout-body-container callout-body">
 <div id="def-accumulation-point-at-infinity" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 9</strong></span> Let <span class="math inline">\(D\subseteq\mathbb{R}\)</span>. We say that <span class="math inline">\(+\infty\)</span> is a <strong>right accumulation point</strong> for <span class="math inline">\(D\)</span> if for every <span class="math inline">\(R&gt;0\)</span> there exists <span class="math inline">\(x\in D\)</span> such that <span class="math display">\[
+<p><span class="theorem-title"><strong>Definition 15</strong></span> Let <span class="math inline">\(D\subseteq\mathbb{R}\)</span>. We say that <span class="math inline">\(+\infty\)</span> is a <strong>right accumulation point</strong> for <span class="math inline">\(D\)</span> if for every <span class="math inline">\(R&gt;0\)</span> there exists <span class="math inline">\(x\in D\)</span> such that <span class="math display">\[
 x&gt;R.
 \]</span> We say that <span class="math inline">\(-\infty\)</span> is a <strong>left accumulation point</strong> for <span class="math inline">\(D\)</span> if for every <span class="math inline">\(R&gt;0\)</span> there exists <span class="math inline">\(x\in D\)</span> such that <span class="math display">\[
 x&lt;-R.
@@ -804,7 +996,7 @@ x&lt;-R.
 </div>
 <div class="callout-body-container callout-body">
 <div id="prp-invertible-functions-are-monotonic" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 1</strong></span> INSERT</p>
+<p><span class="theorem-title"><strong>Proposition 2</strong></span> INSERT</p>
 </div>
 </div>
 </div>
