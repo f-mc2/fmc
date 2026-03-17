@@ -414,6 +414,133 @@ In practice, it allows us to prove infinitely many statements, one for each natu
 
 # Functions
 
+Just as relations are special subsets of Cartesian products, functions may be regarded as special relations in which each input determines exactly one output.
+
+::: {.callout-note title="Functions as relations"}
+
+::: {#def-function}
+
+Let $D,X,Y$ be sets with $D\subseteq X$.
+A **function** from $D$ to $Y$ is a relation
+$$
+f\subseteq D\times Y
+$$
+such that for every $x\in D$ there exists a unique $y\in Y$ with
+$$
+(x,y)\in f.
+$$
+
+In this situation, we write
+$$
+f\colon D\subseteq X\rightarrow Y
+$$
+and denote by $f(x)$ the unique element $y\in Y$ such that $(x,y)\in f$.
+The set $D$ is called the **domain** of $f$, while $Y$ is called the **codomain** of $f$.
+
+:::
+
+:::
+
+::: {.callout-note title="Equality of functions"}
+
+::: {#def-equality-functions}
+
+Two functions
+$$
+f\colon D\subseteq X\rightarrow Y
+\qquad\text{and}\qquad
+g\colon E\subseteq X'\rightarrow Y'
+$$
+are said to be **equal** if
+$$
+D=E,\qquad Y=Y',
+$$
+and
+$$
+f(x)=g(x)
+$$
+for every $x\in D$.
+
+Thus, the domain and codomain are part of the data of a function.
+In particular, the same explicit rule applied to different domains defines different functions.
+For example, the functions
+$$
+f\colon \mathbb{R}\rightarrow\mathbb{R},\qquad f(x)=x^{2},
+$$
+and
+$$
+g\colon [0,+\infty)\rightarrow\mathbb{R},\qquad g(x)=x^{2},
+$$
+are not equal because their domains are different.
+
+:::
+
+:::
+
+::: {.callout-note title="Composition of functions"}
+
+::: {#def-composition-functions}
+
+Consider two functions
+$$
+f\colon D\subseteq X\rightarrow Y
+\qquad\text{and}\qquad
+g\colon E\subseteq Y\rightarrow Z.
+$$
+Assume that
+$$
+f(x)\in E
+$$
+for every $x\in D$.
+Then the **composition** of $g$ and $f$ is the function
+$$
+g\circ f\colon D\subseteq X\rightarrow Z
+$$
+defined by
+$$
+(g\circ f)(x):=g(f(x)).
+$$
+
+:::
+
+:::
+
+::: {.callout-note title="Associativity of function composition"}
+
+::: {#prp-associativity-composition}
+
+Let
+$$
+f\colon D\subseteq X\rightarrow Y,\qquad
+g\colon E\subseteq Y\rightarrow Z,\qquad
+h\colon F\subseteq Z\rightarrow W
+$$
+be functions such that the compositions involved are well defined.
+Then
+$$
+h\circ (g\circ f)=(h\circ g)\circ f.
+$$
+
+<details>
+<summary>**Proof:**</summary>
+
+Both sides are functions from $D$ to $W$.
+For every $x\in D$, one has
+$$
+\bigl(h\circ (g\circ f)\bigr)(x)=h\bigl((g\circ f)(x)\bigr)=h(g(f(x))),
+$$
+while
+$$
+\bigl((h\circ g)\circ f\bigr)(x)=(h\circ g)(f(x))=h(g(f(x))).
+$$
+Hence the two functions have the same domain, the same codomain, and the same values on every point of the domain.
+By @def-equality-functions, they are equal.
+</details>
+
+:::
+
+:::
+
 
 
 ::: {.callout-warning title="How we will write functions"}
@@ -432,6 +559,187 @@ In this case, we often writes $f\colon D\rightarrow Y$ given by $f(x)=y$ omittin
  
 
 
+
+::: {.callout-note title="Injective, surjective, and bijective functions"}
+
+::: {#def-injective-surjective-bijective}
+
+Consider the function
+$$
+f\colon D\subseteq X\rightarrow Y.
+$$
+
+We say that $f$ is **injective** if
+$$
+f(x)=f(x') \Longrightarrow x=x'
+$$
+for every $x,x'\in D$.
+
+We say that $f$ is **surjective** if for every $y\in Y$ there exists $x\in D$ such that
+$$
+f(x)=y.
+$$
+
+We say that $f$ is **bijective** if it is both injective and surjective.
+
+:::
+
+:::
+
+::: {.callout-note title="Image and inverse image"}
+
+::: {#def-image-inverse-image}
+
+Consider the function
+$$
+f\colon D\subseteq X\rightarrow Y.
+$$
+
+If $A\subseteq D$, the **image** of $A$ through $f$ is the subset of $Y$ defined by
+$$
+f(A):=\{f(x)\,:\, x\in A\}.
+$$
+
+If $B\subseteq Y$, the **inverse image** of $B$ through $f$ is the subset of $D$ defined by
+$$
+f^{-1}(B):=\{x\in D \,:\, f(x)\in B\}.
+$$
+
+In particular, the image of the whole domain is
+$$
+f(D)=\{f(x)\,:\, x\in D\}\subseteq Y.
+$$
+Thus, the function $f$ is surjective if and only if
+$$
+f(D)=Y.
+$$
+
+Note that the notation $f^{-1}(B)$ for inverse image makes sense whether or not the function $f$ admits an inverse function.
+
+:::
+
+:::
+
+::: {.callout-note title="Left inverse, right inverse, and inverse function"}
+
+::: {#def-inverse-function}
+
+Let
+$$
+f\colon D\subseteq X\rightarrow Y.
+$$
+The **identity function** on $D$ is the function
+$$
+\mathrm{id}_{D}\colon D\rightarrow D
+$$
+defined by
+$$
+\mathrm{id}_{D}(x)=x.
+$$
+
+A function
+$$
+g\colon Y\rightarrow D
+$$
+is called a **left inverse** of $f$ if
+$$
+g\circ f=\mathrm{id}_{D}.
+$$
+
+A function
+$$
+h\colon Y\rightarrow D
+$$
+is called a **right inverse** of $f$ if
+$$
+f\circ h=\mathrm{id}_{Y}.
+$$
+
+If a function $u\colon Y\rightarrow D$ is both a left inverse and a right inverse of $f$, then $u$ is called the **inverse function** of $f$ and is denoted by
+$$
+f^{-1}\colon Y\rightarrow D.
+$$
+In that case,
+$$
+f^{-1}\circ f=\mathrm{id}_{D}
+\qquad\text{and}\qquad
+f\circ f^{-1}=\mathrm{id}_{Y}.
+$$
+
+:::
+
+:::
+
+::: {.callout-note title="Basic properties of inverses"}
+
+::: {#prp-basic-properties-inverses}
+
+Let
+$$
+f\colon D\subseteq X\rightarrow Y.
+$$
+
+1. If $f$ admits a left inverse, then $f$ is injective.
+2. If $f$ admits a right inverse, then $f$ is surjective.
+3. If $f$ admits both a left inverse and a right inverse, then they coincide.
+4. The function $f$ admits an inverse function if and only if it is bijective.
+5. If the inverse function exists, then it is unique, it is bijective, and
+$$
+\left(f^{-1}\right)^{-1}=f.
+$$
+
+<details>
+<summary>**Proof:**</summary>
+
+Suppose first that $g\colon Y\rightarrow D$ is a left inverse of $f$.
+If $f(x)=f(x')$, then
+$$
+x=(g\circ f)(x)=g(f(x))=g(f(x'))=(g\circ f)(x')=x',
+$$
+so $f$ is injective.
+
+Now suppose that $h\colon Y\rightarrow D$ is a right inverse of $f$.
+For every $y\in Y$, one has
+$$
+f(h(y))=(f\circ h)(y)=y,
+$$
+so every element of $Y$ belongs to the image of $f$.
+Thus $f$ is surjective.
+
+Assume next that $g$ is a left inverse and $h$ is a right inverse of $f$.
+Then
+$$
+g=g\circ \mathrm{id}_{Y}=g\circ (f\circ h)=(g\circ f)\circ h=\mathrm{id}_{D}\circ h=h,
+$$
+so they coincide.
+
+If $f$ admits an inverse function, then it admits both a left inverse and a right inverse, hence by the first two points it is bijective.
+
+Conversely, assume that $f$ is bijective.
+Given $y\in Y$, surjectivity guarantees the existence of $x\in D$ such that $f(x)=y$, and injectivity guarantees that this $x$ is unique.
+We may therefore define a function
+$$
+f^{-1}\colon Y\rightarrow D
+$$
+by declaring $f^{-1}(y)$ to be the unique $x\in D$ such that $f(x)=y$.
+By construction,
+$$
+f^{-1}\circ f=\mathrm{id}_{D}
+\qquad\text{and}\qquad
+f\circ f^{-1}=\mathrm{id}_{Y},
+$$
+so $f^{-1}$ is indeed an inverse function.
+
+Uniqueness follows from point 3: any left inverse and right inverse must coincide.
+Finally, if $f^{-1}$ exists, then the identities above show that $f$ is the inverse of $f^{-1}$, hence
+$$
+\left(f^{-1}\right)^{-1}=f.
+$$
+</details>
+
+:::
+
+:::
 
 # Subsets of real numbers
 
