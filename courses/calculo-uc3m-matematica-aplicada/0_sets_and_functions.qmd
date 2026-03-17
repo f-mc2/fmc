@@ -298,24 +298,67 @@ A totally ordered set is said to have the **least-upper-bound property** if ever
 
 :::
 
+::: {.callout-note title="Field"}
+
+::: {#def-field}
+
+A **field** is a set $F$ endowed with two operations, called **addition** and **multiplication**, together with two distinguished elements $0,1\in F$ with $0\neq 1$, such that the following hold for every $x,y,z\in F$:
+
+1. **Associativity of addition and multiplication**:
+$$
+(x+y)+z=x+(y+z),\qquad (xy)z=x(yz).
+$$
+
+2. **Commutativity of addition and multiplication**:
+$$
+x+y=y+x,\qquad xy=yx.
+$$
+
+3. **Neutral elements**:
+$$
+x+0=x,\qquad x\cdot 1=x.
+$$
+
+4. **Additive inverses**: for every $x\in F$, there exists an element $-x\in F$ such that
+$$
+x+(-x)=0.
+$$
+
+5. **Multiplicative inverses**: for every $x\in F$ with $x\neq 0$, there exists an element $x^{-1}\in F$ such that
+$$
+x\,x^{-1}=1.
+$$
+
+6. **Distributive law**:
+$$
+x(y+z)=xy+xz.
+$$
+
+These axioms allow us to perform the usual algebraic manipulations with sums, differences, products, and quotients by nonzero elements.
+The familiar number systems $\mathbb{Q}$ and $\mathbb{R}$ are examples of fields.
+
+:::
+
+:::
+
 ::: {.callout-note title="Ordered field"}
 
 ::: {#def-ordered-field}
 
-An **ordered field** is a set $F$ endowed with two operations, addition and multiplication, together with distinguished elements $0,1\in F$ and a total order $\leq$ (with associated strict order $<$), such that
+An **ordered field** is a field $F$ in the sense of @def-field, together with a total order $\leq$ (with associated strict order $<$), such that
 
-1. $(F,+,\cdot,0,1)$ is a field in the usual algebraic sense;
-2. if $x<y$, then
+1. if $x<y$, then
 $$
 x+z<y+z
 $$
 for every $z\in F$;
-3. if $0<x$ and $0<y$, then
+2. if $0<x$ and $0<y$, then
 $$
 0<xy.
 $$
 
 Thus, an ordered field is a field in which the algebraic operations and the order relation are compatible.
+The rational numbers $\mathbb{Q}$ and the real numbers $\mathbb{R}$ are the standard examples.
 
 :::
 
