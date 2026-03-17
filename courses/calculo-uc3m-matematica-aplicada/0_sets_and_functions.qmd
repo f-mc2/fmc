@@ -20,102 +20,67 @@ and if it does not belong to $A$, we write
 $$
 x\notin A.
 $$
-An intuitive example is given by the natural numbers
+
+An intuitive example of set is given by the set of natural numbers
 $$
 \mathbb{N}=\{0,1,2,3,\dots\},
 $$
-but at this stage this should be understood only informally.
+which, at this stage, should be understood only informally.
+
+::: {.callout-warning title="Numbers will NOT be built"}
+
+::: {#rem-numbers-treated-informally}
+
+In this course, we will unfortunately **not** build the set of natural numbers $\mathbb{N}$, of integers $\mathbb{Z}$, of rational numbers $\mathbb{Q}$, or of real numbers $\mathbb{R}$ from scratch.
+
+Doing so carefully would be supremely satisfying from the intellectual point of view, but it would also require a substantial amount of additional time to go through a similarly substantial amount of foundational material.
+
+In any case, we will explicitly point out the properties and subtleties of these number systems whenever they become relevant.
+
+:::
+
+:::
 
 This informal viewpoint is useful, but also delicate.
 If one tries to take the notion of set completely literally and declare that every possible collection of objects is automatically a set, contradictions appear.
-The most famous one is **Russell's paradox**, which can be explained through the **barber's paradox**: imagine a barber who shaves exactly those people in a village who do not shave themselves.
+The most famous one is [**Russell's paradox**](https://en.wikipedia.org/wiki/Russell%27s_paradox), which can be explained through the [**barber's paradox**](https://en.wikipedia.org/wiki/Barber_paradox): imagine a barber who lives in a village and shaves exactly those people in the village who do not shave themselves.
 Does the barber shave himself?
 If he does, then by definition he should not; if he does not, then by definition he should.
-The set-theoretic paradox has the same logical flavour and warns us that foundations must be handled with care.
+The set-theoretic Russel's paradox has the same logical flavour and warns us that foundations must be handled with care.
 Taking that issue seriously would force us into a long discussion on logic and the foundations of mathematics, which is far beyond the scope of this course.
 So we adopt a pragmatic axiomatic point of view.
 
 In these notes, we work with **objects** and **sets**, and we regard every set as an object.
 However, not every object is automatically considered to be a set.
-For instance, the number $3$ is an object, while the singleton $\{3\}$ is a set and therefore also an object.
-This is sometimes called an **impure** point of view.
-In **pure set theory**, by contrast, everything is ultimately regarded as a set.
-We will occasionally keep that picture in mind, following the discussion in Tao's *Analysis I*, but we will not need to push it very far.
+For instance, the number [$42$](https://www.scientificamerican.com/article/for-math-fans-a-hitchhikers-guide-to-the-number-42/) is an object, but [Axiom 4](#axm-axioms-set-theory) below assures there is  set $\{42\}$ containing the number 42, which is also an object.
 
-::: {.callout-warning title="Numbers Will Be Treated Informally"}
 
-::: {#wrn-numbers-treated-informally}
 
-We will **not** build the natural numbers, integers, rational numbers, or real numbers from scratch in this course.
-Doing so carefully would require a substantial amount of additional foundational material.
-Instead, we rely on the intuitive understanding we already have of
-$$
-\mathbb{N},\qquad \mathbb{Z},\qquad \mathbb{Q},\qquad \mathbb{R},
-$$
-and we will explicitly point out the properties and subtleties of these number systems whenever they become relevant.
 
-In particular, when we speak about the natural numbers below, we are not trying to derive them from first principles.
-We merely record the basic existence assumption that allows us to use them in the rest of the course.
 
-:::
 
-:::
+::: {.callout-note title="Axioms of Set Theory"}
 
-::: {.callout-note title="Equality of Sets"}
+::: {#axm-axioms-set-theory}
 
-::: {#def-equality-of-sets}
+1) **Sets Are Objects**: Every set is an object.
 
-Two sets $A$ and $B$ are said to be **equal** if they have exactly the same elements, that is, if for every object $x$ one has
+2) **Equality of Sets**: Two sets $A$ and $B$ are said to be **equal** if they have exactly the same elements, that is, if for every object $x$ one has
 $$
 x\in A \Longleftrightarrow x\in B.
 $$
 Thus, when dealing with sets, what matters is not the order in which the elements are written, nor how many times they are listed, but only which objects belong to the set.
 
-:::
-
-:::
-
-::: {.callout-note title="Axiom 3.1: Sets Are Objects"}
-
-::: {#axm-sets-are-objects}
-
-Every set is an object.
-
-:::
-
-:::
-
-::: {.callout-note title="Axiom 3.2: Empty Set"}
-
-::: {#axm-empty-set}
-
-There exists a set with no elements, called the **empty set** and denoted by
+3) **Empty Set**: There exists a set with no elements, called the **empty set** and denoted by
 $$
 \emptyset=\{\}.
 $$
 
-:::
-
-:::
-
-::: {.callout-note title="Axiom 3.3: Singleton Sets"}
-
-::: {#axm-singleton-set}
-
-If $x$ is an object, then there exists a set whose only element is $x$.
+4) **Singleton sets and pair sets**: If $x$ is an object, then there exists a set whose only element is $x$.
 This set is called the **singleton** associated with $x$ and is denoted by
 $$
 \{x\}.
 $$
-
-:::
-
-:::
-
-::: {.callout-note title="Axiom 3.4: Pair Sets"}
-
-::: {#axm-pair-set}
-
 If $x$ and $y$ are objects, then there exists a set whose elements are exactly $x$ and $y$.
 This set is denoted by
 $$
@@ -123,29 +88,13 @@ $$
 $$
 If $x=y$, this is just the singleton $\{x\}$.
 
-:::
-
-:::
-
-::: {.callout-note title="Axiom 3.5: Pairwise Union"}
-
-::: {#axm-pairwise-union}
-
-If $A$ and $B$ are sets, then there exists a set whose elements are precisely those objects that belong to $A$ or to $B$.
+5) **Pairwise Union**: If $A$ and $B$ are sets, then there exists a set whose elements are precisely those objects that belong to $A$ or to $B$.
 This set is called the **union** of $A$ and $B$ and is denoted by
 $$
 A\cup B.
 $$
 
-:::
-
-:::
-
-::: {.callout-note title="Axiom 3.6: Specification"}
-
-::: {#axm-specification}
-
-Let $A$ be a set, and let $P(x)$ be a property referring to objects $x$.
+6) **Specification**: Let $A$ be a set, and let $P(x)$ be a property referring to objects $x$.
 Then there exists a set consisting of exactly those elements of $A$ for which $P(x)$ is true.
 We denote it by
 $$
@@ -153,32 +102,15 @@ $$
 $$
 This is the basic operation that allows us to carve out subsets from sets that already exist.
 
-:::
-
-:::
-
-::: {.callout-note title="Axiom 3.7: Replacement"}
-
-::: {#axm-replacement}
-
-Let $A$ be a set, and suppose that to each element $x\in A$ we assign a unique object $f(x)$.
+7) **Replacement**: Let $A$ be a set, and suppose that to each element $x\in A$ we assign a unique object $f(x)$.
 Then the collection of all such outputs
 $$
 \{f(x)\,:\, x\in A\}
 $$
 is again a set.
-
 This axiom says that if we start with a set and systematically replace each of its elements by another object, the resulting collection is still a set.
 
-:::
-
-:::
-
-::: {.callout-note title="Axiom 3.8: Natural Numbers"}
-
-::: {#axm-natural-numbers}
-
-There exists a set $\mathbb{N}$ whose elements are called the **natural numbers**, together with a distinguished element $0\in\mathbb{N}$ and a successor operation
+8) **Natural Numbers**: There exists a set $\mathbb{N}$ whose elements are called the **natural numbers**, together with a distinguished element $0\in\mathbb{N}$ and a successor operation
 $$
 n\mapsto n+1
 $$
@@ -192,40 +124,63 @@ Instead, we use the familiar intuitive number systems and record explicitly what
 :::
 
 The previous axioms are enough for the level of set theory we need in this course.
-In particular, we deliberately stop here and do **not** pursue the more delicate axioms connected with Russell-type paradoxes.
 
-::: {.callout-note title="Basic Set Operations"}
 
-::: {#def-basic-set-operations}
+::: {.callout-note title="Subset"}
 
-Let $A,B,X$ be sets.
-We write
+::: {#def-subset}
+
+Given two sets $A$ and $X$, we write
 $$
 A\subseteq X
 $$
 if every element of $A$ is also an element of $X$.
+In this case, we call $A$ a **subset** of $X$. 
 
-The **intersection** of $A$ and $B$ is the set
+If $A\neq X$, which means there is at least one element of $X$ that is not in $A$, we say $A$ is a **strict subset**, and write $A\subset X$.
+
+:::
+
+:::
+
+
+::: {.callout-note title="Intersection"}
+
+::: {#def-intersection}
+
+If $A$ and $B$ are subsets of $X$, we define their **intersection** is the set
 $$
 A\cap B:=\{x\in A \,:\, x\in B\}.
 $$
+:::
 
-The **difference** of $A$ and $B$ is the set
+:::
+
+::: {.callout-note title="Difference and complement set"}
+
+::: {#def-difference-complement}
+
+If $A$ and $B$ are subsets of $X$, their **difference**  is the set
 $$
 A\setminus B:=\{x\in A \,:\, x\notin B\}.
 $$
 
-If $A\subseteq X$, the **complement** of $A$ in $X$ is the set
-$$
-X\setminus A=\{x\in X \,:\, x\notin A\}.
-$$
-When a reference set $X$ is understood from the context, one often writes this complement as $A^{c}$.
+In particular, when $A=X$, the difference $X\setminus B$  is called the **complement** of $B$ in $X$, and it is often denoted as $B^{c}$ when $X$ is understood from the context.
+
+:::
+
+:::
+
+
+::: {.callout-note title="Cartesian product"}
+
+::: {#def-cartesian-product}
 
 For two sets $A$ and $B$, their **Cartesian product** is the set
 $$
 A\times B:=\{(a,b)\,:\, a\in A,\ b\in B\}.
 $$
-Here $(a,b)$ denotes the ordered pair formed by $a$ and $b$; we treat ordered pairs as familiar objects without trying to construct them from sets.
+Here $(a,b)$ denotes the ordered pair formed by $a$ and $b$.
 
 More generally, if $A_{1},\dots,A_{n}$ are sets, we define their **finite Cartesian product** by
 $$
@@ -238,6 +193,22 @@ $$
 
 :::
 
+::: {.callout-warning title="Ordered pairs"}
+
+::: {#rem-ordered-pairs}
+
+In order for @def-cartesian-product to actually make sense, we must be able to consider $(a,b)$ an object, and to be sure that $(a,b)$ is the same object as $(a',b')$ if and only if $a=a'$ and $b=b'$. 
+
+
+
+To do this, we need the so-called [Kuratowski's definition of ordered pairs](https://en.wikipedia.org/wiki/Ordered_pair#Kuratowski's_definition), which defines
+$$
+(a,b):=\{\{a\},\{a,b\}\}.
+$$
+
+
+:::
+:::
 
 # Functions
 

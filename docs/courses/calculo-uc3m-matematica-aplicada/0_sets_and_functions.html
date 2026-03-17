@@ -487,7 +487,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">March 16, 2026</p>
+      <p class="date-modified">March 17, 2026</p>
     </div>
   </div>
     
@@ -503,6 +503,168 @@ window.Quarto = {
 </section>
 <section id="naive-set-theory" class="level1" data-number="2">
 <h1 data-number="2"><span class="header-section-number">2</span> Naive set theory</h1>
+<p>We begin with two primitive informal notions: <strong>objects</strong> and <strong>sets</strong>. Roughly speaking, a set is a collection of objects, and the most basic question we can ask is whether a given object belongs to a given set. If the object <span class="math inline">\(x\)</span> belongs to the set <span class="math inline">\(A\)</span>, we write <span class="math display">\[
+x\in A,
+\]</span> and if it does not belong to <span class="math inline">\(A\)</span>, we write <span class="math display">\[
+x\notin A.
+\]</span></p>
+<p>An intuitive example of set is given by the set of natural numbers <span class="math display">\[
+\mathbb{N}=\{0,1,2,3,\dots\},
+\]</span> which, at this stage, should be understood only informally.</p>
+<div class="callout callout-style-default callout-warning callout-titled" title="Numbers will NOT be built">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Numbers will NOT be built
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div id="rem-numbers-treated-informally" class="proof remark">
+<p><span class="proof-title"><em>Remark 1</em>. </span>In this course, we will unfortunately <strong>not</strong> build the set of natural numbers <span class="math inline">\(\mathbb{N}\)</span>, of integers <span class="math inline">\(\mathbb{Z}\)</span>, of rational numbers <span class="math inline">\(\mathbb{Q}\)</span>, or of real numbers <span class="math inline">\(\mathbb{R}\)</span> from scratch.</p>
+<p>Doing so carefully would be supremely satisfying from the intellectual point of view, but it would also require a substantial amount of additional time to go through a similarly substantial amount of foundational material.</p>
+<p>In any case, we will explicitly point out the properties and subtleties of these number systems whenever they become relevant.</p>
+</div>
+</div>
+</div>
+<p>This informal viewpoint is useful, but also delicate. If one tries to take the notion of set completely literally and declare that every possible collection of objects is automatically a set, contradictions appear. The most famous one is <a href="https://en.wikipedia.org/wiki/Russell%27s_paradox"><strong>Russell’s paradox</strong></a>, which can be explained through the <a href="https://en.wikipedia.org/wiki/Barber_paradox"><strong>barber’s paradox</strong></a>: imagine a barber who lives in a village and shaves exactly those people in the village who do not shave themselves. Does the barber shave himself? If he does, then by definition he should not; if he does not, then by definition he should. The set-theoretic Russel’s paradox has the same logical flavour and warns us that foundations must be handled with care. Taking that issue seriously would force us into a long discussion on logic and the foundations of mathematics, which is far beyond the scope of this course. So we adopt a pragmatic axiomatic point of view.</p>
+<p>In these notes, we work with <strong>objects</strong> and <strong>sets</strong>, and we regard every set as an object. However, not every object is automatically considered to be a set. For instance, the number <a href="https://www.scientificamerican.com/article/for-math-fans-a-hitchhikers-guide-to-the-number-42/"><span class="math inline">\(42\)</span></a> is an object, but <a href="#axm-axioms-set-theory">Axiom 4</a> below assures there is set <span class="math inline">\(\{42\}\)</span> containing the number 42, which is also an object.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Axioms of Set Theory">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Axioms of Set Theory
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div id="axm-axioms-set-theory">
+<ol type="1">
+<li><p><strong>Sets Are Objects</strong>: Every set is an object.</p></li>
+<li><p><strong>Equality of Sets</strong>: Two sets <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are said to be <strong>equal</strong> if they have exactly the same elements, that is, if for every object <span class="math inline">\(x\)</span> one has <span class="math display">\[
+x\in A \Longleftrightarrow x\in B.
+\]</span> Thus, when dealing with sets, what matters is not the order in which the elements are written, nor how many times they are listed, but only which objects belong to the set.</p></li>
+<li><p><strong>Empty Set</strong>: There exists a set with no elements, called the <strong>empty set</strong> and denoted by <span class="math display">\[
+\emptyset=\{\}.
+\]</span></p></li>
+<li><p><strong>Singleton sets and pair sets</strong>: If <span class="math inline">\(x\)</span> is an object, then there exists a set whose only element is <span class="math inline">\(x\)</span>. This set is called the <strong>singleton</strong> associated with <span class="math inline">\(x\)</span> and is denoted by <span class="math display">\[
+\{x\}.
+\]</span> If <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> are objects, then there exists a set whose elements are exactly <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>. This set is denoted by <span class="math display">\[
+\{x,y\}.
+\]</span> If <span class="math inline">\(x=y\)</span>, this is just the singleton <span class="math inline">\(\{x\}\)</span>.</p></li>
+<li><p><strong>Pairwise Union</strong>: If <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are sets, then there exists a set whose elements are precisely those objects that belong to <span class="math inline">\(A\)</span> or to <span class="math inline">\(B\)</span>. This set is called the <strong>union</strong> of <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> and is denoted by <span class="math display">\[
+A\cup B.
+\]</span></p></li>
+<li><p><strong>Specification</strong>: Let <span class="math inline">\(A\)</span> be a set, and let <span class="math inline">\(P(x)\)</span> be a property referring to objects <span class="math inline">\(x\)</span>. Then there exists a set consisting of exactly those elements of <span class="math inline">\(A\)</span> for which <span class="math inline">\(P(x)\)</span> is true. We denote it by <span class="math display">\[
+\{x\in A \,:\, P(x)\}.
+\]</span> This is the basic operation that allows us to carve out subsets from sets that already exist.</p></li>
+<li><p><strong>Replacement</strong>: Let <span class="math inline">\(A\)</span> be a set, and suppose that to each element <span class="math inline">\(x\in A\)</span> we assign a unique object <span class="math inline">\(f(x)\)</span>. Then the collection of all such outputs <span class="math display">\[
+\{f(x)\,:\, x\in A\}
+\]</span> is again a set. This axiom says that if we start with a set and systematically replace each of its elements by another object, the resulting collection is still a set.</p></li>
+<li><p><strong>Natural Numbers</strong>: There exists a set <span class="math inline">\(\mathbb{N}\)</span> whose elements are called the <strong>natural numbers</strong>, together with a distinguished element <span class="math inline">\(0\in\mathbb{N}\)</span> and a successor operation <span class="math display">\[
+n\mapsto n+1
+\]</span> which sends each natural number to another natural number.</p></li>
+</ol>
+<p>We will not discuss the formal <a href="https://en.wikipedia.org/wiki/Peano_axioms">Peano axioms</a> here, nor will we attempt to construct the integers, rationals, or reals from <span class="math inline">\(\mathbb{N}\)</span>. Instead, we use the familiar intuitive number systems and record explicitly whatever algebraic or order-theoretic properties we need later on.</p>
+</div>
+</div>
+</div>
+<p>The previous axioms are enough for the level of set theory we need in this course.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Subset">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Subset
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div id="def-subset" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 1</strong></span> Given two sets <span class="math inline">\(A\)</span> and <span class="math inline">\(X\)</span>, we write <span class="math display">\[
+A\subseteq X
+\]</span> if every element of <span class="math inline">\(A\)</span> is also an element of <span class="math inline">\(X\)</span>. In this case, we call <span class="math inline">\(A\)</span> a <strong>subset</strong> of <span class="math inline">\(X\)</span>.</p>
+<p>If <span class="math inline">\(A\neq X\)</span>, which means there is at least one element of <span class="math inline">\(X\)</span> that is not in <span class="math inline">\(A\)</span>, we say <span class="math inline">\(A\)</span> is a <strong>strict subset</strong>, and write <span class="math inline">\(A\subset X\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Intersection">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Intersection
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div id="def-intersection" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 2</strong></span> If <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are subsets of <span class="math inline">\(X\)</span>, we define their <strong>intersection</strong> is the set <span class="math display">\[
+A\cap B:=\{x\in A \,:\, x\in B\}.
+\]</span></p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Difference and complement set">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Difference and complement set
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div id="def-difference-complement" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 3</strong></span> If <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are subsets of <span class="math inline">\(X\)</span>, their <strong>difference</strong> is the set <span class="math display">\[
+A\setminus B:=\{x\in A \,:\, x\notin B\}.
+\]</span></p>
+<p>In particular, when <span class="math inline">\(A=X\)</span>, the difference <span class="math inline">\(X\setminus B\)</span> is called the <strong>complement</strong> of <span class="math inline">\(B\)</span> in <span class="math inline">\(X\)</span>, and it is often denoted as <span class="math inline">\(B^{c}\)</span> when <span class="math inline">\(X\)</span> is understood from the context.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Cartesian product">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Cartesian product
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div id="def-cartesian-product" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 4</strong></span> For two sets <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>, their <strong>Cartesian product</strong> is the set <span class="math display">\[
+A\times B:=\{(a,b)\,:\, a\in A,\ b\in B\}.
+\]</span> Here <span class="math inline">\((a,b)\)</span> denotes the ordered pair formed by <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>.</p>
+<p>More generally, if <span class="math inline">\(A_{1},\dots,A_{n}\)</span> are sets, we define their <strong>finite Cartesian product</strong> by <span class="math display">\[
+\prod_{j=1}^{n}A_{j}
+:=
+\left\{(x_{1},\dots,x_{n})\,:\, x_{j}\in A_{j}\ \mbox{ for every } j=1,\dots,n\right\}.
+\]</span></p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled" title="Ordered pairs">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Ordered pairs
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div id="rem-ordered-pairs" class="proof remark">
+<p><span class="proof-title"><em>Remark 2</em>. </span>In order for <a href="#def-cartesian-product" class="quarto-xref">Definition&nbsp;4</a> to actually make sense, we must be able to consider <span class="math inline">\((a,b)\)</span> an object, and to be sure that <span class="math inline">\((a,b)\)</span> is the same object as <span class="math inline">\((a',b')\)</span> if and only if <span class="math inline">\(a=a'\)</span> and <span class="math inline">\(b=b'\)</span>.</p>
+<p>To do this, we need the so-called <a href="https://en.wikipedia.org/wiki/Ordered_pair#Kuratowski's_definition">Kuratowski’s definition of ordered pairs</a>, which defines <span class="math display">\[
+(a,b):=\{\{a\},\{a,b\}\}.
+\]</span></p>
+</div>
+</div>
+</div>
 </section>
 <section id="functions" class="level1" data-number="3">
 <h1 data-number="3"><span class="header-section-number">3</span> Functions</h1>
@@ -517,7 +679,7 @@ window.Quarto = {
 </div>
 <div class="callout-body-container callout-body">
 <div id="rem-how-we-write-functions" class="proof remark">
-<p><span class="proof-title"><em>Remark 1</em>. </span>Sometimes, we may be forced to talk about the function <span class="math inline">\(f\colon D\subseteq X\rightarrow Y\)</span> given by <span class="math inline">\(f(x)=y\)</span> multiple times when proving a theorem, solving an exercise, or discussing an idea. To avoid an absurd amount of notationally-heavy repetitions, once the domain, the input space, the output space, and the explicit rule <span class="math inline">\(f(x)=y\)</span> have been clearly defined as above, we will often write just <span class="math inline">\(f(x)=y\)</span>, or even just <span class="math inline">\(f\)</span>, for the rest of the proof of the theorem, or of the exercise, or of the discussion.</p>
+<p><span class="proof-title"><em>Remark 3</em>. </span>Sometimes, we may be forced to talk about the function <span class="math inline">\(f\colon D\subseteq X\rightarrow Y\)</span> given by <span class="math inline">\(f(x)=y\)</span> multiple times when proving a theorem, solving an exercise, or discussing an idea. To avoid an absurd amount of notationally-heavy repetitions, once the domain, the input space, the output space, and the explicit rule <span class="math inline">\(f(x)=y\)</span> have been clearly defined as above, we will often write just <span class="math inline">\(f(x)=y\)</span>, or even just <span class="math inline">\(f\)</span>, for the rest of the proof of the theorem, or of the exercise, or of the discussion.</p>
 <p>Moreover, sometimes we may be introducing a subset <span class="math inline">\(D\subseteq X\)</span>, and later introduce a function having <span class="math inline">\(D\)</span> as domain. In this case, we often writes <span class="math inline">\(f\colon D\rightarrow Y\)</span> given by <span class="math inline">\(f(x)=y\)</span> omitting the input space since it is clear from the context.</p>
 </div>
 </div>
@@ -533,7 +695,7 @@ window.Quarto = {
 </div>
 <div class="callout-body-container callout-body">
 <div id="def-inverse-function" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 1</strong></span> INSERT</p>
+<p><span class="theorem-title"><strong>Definition 5</strong></span> INSERT</p>
 </div>
 </div>
 </div>
@@ -552,7 +714,7 @@ window.Quarto = {
 </div>
 <div class="callout-body-container callout-body">
 <div id="def-open-closed-intervals" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 2</strong></span> Let <span class="math inline">\(a&lt;b\in\mathbb{R}\cup\{+\infty\}\cup\{-\infty\}\)</span>. Here and throughout, inequalities involving <span class="math inline">\(\pm\infty\)</span> use the usual order on the extended real line. We define the <strong>open interval</strong> <span class="math inline">\((a,b)\)</span> as the subset of <span class="math inline">\(\mathbb{R}\)</span> given by <span id="eq-open-interval"><span class="math display">\[
+<p><span class="theorem-title"><strong>Definition 6</strong></span> Let <span class="math inline">\(a&lt;b\in\mathbb{R}\cup\{+\infty\}\cup\{-\infty\}\)</span>. Here and throughout, inequalities involving <span class="math inline">\(\pm\infty\)</span> use the usual order on the extended real line. We define the <strong>open interval</strong> <span class="math inline">\((a,b)\)</span> as the subset of <span class="math inline">\(\mathbb{R}\)</span> given by <span id="eq-open-interval"><span class="math display">\[
 (a,b):= \{x\in\mathbb{R}\,|\quad a&lt; x &lt; b \}.
 \tag{1}\]</span></span> If either <span class="math inline">\(a=-\infty\)</span> or <span class="math inline">\(b=+\infty\)</span>, the interval is said to be <strong>unbounded</strong>.</p>
 <p>When <span class="math inline">\(a\neq-\infty\)</span> and <span class="math inline">\(b\neq+\infty\)</span>, we define the closed interval <span class="math inline">\([a,b]\)</span> as <span class="math display">\[
@@ -566,7 +728,7 @@ window.Quarto = {
 [a,b) := \{x\in\mathbb{R}\,|\quad a\leq x &lt; b\},
 \]</span> while, when <span class="math inline">\(b\neq+\infty\)</span>, we can define the interval <span class="math inline">\((a,b]\)</span> as <span class="math display">\[
 (a,b] := \{x\in\mathbb{R}\,|\quad a &lt; x \leq b\},
-\]</span> and it’s clear that these interval are neither open nor closed in the sense of <a href="#def-open-closed-intervals" class="quarto-xref">Definition&nbsp;2</a></p>
+\]</span> and it’s clear that these interval are neither open nor closed in the sense of <a href="#def-open-closed-intervals" class="quarto-xref">Definition&nbsp;6</a></p>
 <p>In the following, it will be useful to also consider the <strong>symmetric open interval</strong> <span class="math display">\[
 I_{x_{0},\varepsilon}\equiv(x_{0}-\varepsilon, x_{0}+\varepsilon)=\{x\in\mathbb{R}\,|\quad x_{0}-\varepsilon &lt; x &lt; x_{0} + \varepsilon\}
 \]</span> centered at <span class="math inline">\(x_{0}\in\mathbb{R}\)</span> with length <span class="math inline">\(2\varepsilon\)</span> with <span class="math inline">\(\varepsilon&gt;0\)</span>. It is not hard to see that if <span class="math inline">\(x\in I_{x_{0},\varepsilon}\)</span>, then either <span class="math inline">\(x-x_{0}&lt; \varepsilon\)</span> or <span class="math inline">\(x_{0} - x &lt;\varepsilon\)</span>. It then follows that <span class="math inline">\(|x-x_{0}|&lt;\varepsilon\)</span>, so that <span class="math display">\[
@@ -583,7 +745,7 @@ I_{x_{0},\varepsilon}=\{x\in\mathbb{R}\,| \quad d(x_{0},x)&lt;\varepsilon\}.
 </div>
 <div class="callout-body-container callout-body">
 <div id="def-accumulation-point" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 3</strong></span> A point <span class="math inline">\(x_{0}\in \mathbb{R}\)</span> is said to be a <strong>left accumulation point</strong> for the subset <span class="math inline">\(D\)</span> if for every <span class="math inline">\(r&gt;0\)</span> there exists <span class="math inline">\(x\in D\)</span> such that <span class="math display">\[
+<p><span class="theorem-title"><strong>Definition 7</strong></span> A point <span class="math inline">\(x_{0}\in \mathbb{R}\)</span> is said to be a <strong>left accumulation point</strong> for the subset <span class="math inline">\(D\)</span> if for every <span class="math inline">\(r&gt;0\)</span> there exists <span class="math inline">\(x\in D\)</span> such that <span class="math display">\[
 x_0-r&lt;x&lt;x_0.
 \]</span> A point <span class="math inline">\(x_{0}\in \mathbb{R}\)</span> is said to be a <strong>right accumulation point</strong> for <span class="math inline">\(D\)</span> if for every <span class="math inline">\(r&gt;0\)</span> there exists <span class="math inline">\(x\in D\)</span> such that <span class="math display">\[
 x_0&lt;x&lt;x_0+r.
@@ -606,7 +768,7 @@ x_0&lt;x&lt;x_0+r.
 </div>
 <div class="callout-body-container callout-body">
 <div id="def-isolated-point" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 4</strong></span> Let <span class="math inline">\(D\subseteq\mathbb{R}\)</span> and let <span class="math inline">\(x_{0}\in D\)</span>. We say that <span class="math inline">\(x_{0}\)</span> is an <strong>isolated point</strong> of <span class="math inline">\(D\)</span> if there exists <span class="math inline">\(r&gt;0\)</span> such that <span class="math display">\[
+<p><span class="theorem-title"><strong>Definition 8</strong></span> Let <span class="math inline">\(D\subseteq\mathbb{R}\)</span> and let <span class="math inline">\(x_{0}\in D\)</span>. We say that <span class="math inline">\(x_{0}\)</span> is an <strong>isolated point</strong> of <span class="math inline">\(D\)</span> if there exists <span class="math inline">\(r&gt;0\)</span> such that <span class="math display">\[
 D\cap(x_{0}-r,x_{0}+r)=\{x_{0}\}.
 \]</span></p>
 </div>
@@ -623,7 +785,7 @@ D\cap(x_{0}-r,x_{0}+r)=\{x_{0}\}.
 </div>
 <div class="callout-body-container callout-body">
 <div id="def-accumulation-point-at-infinity" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 5</strong></span> Let <span class="math inline">\(D\subseteq\mathbb{R}\)</span>. We say that <span class="math inline">\(+\infty\)</span> is a <strong>right accumulation point</strong> for <span class="math inline">\(D\)</span> if for every <span class="math inline">\(R&gt;0\)</span> there exists <span class="math inline">\(x\in D\)</span> such that <span class="math display">\[
+<p><span class="theorem-title"><strong>Definition 9</strong></span> Let <span class="math inline">\(D\subseteq\mathbb{R}\)</span>. We say that <span class="math inline">\(+\infty\)</span> is a <strong>right accumulation point</strong> for <span class="math inline">\(D\)</span> if for every <span class="math inline">\(R&gt;0\)</span> there exists <span class="math inline">\(x\in D\)</span> such that <span class="math display">\[
 x&gt;R.
 \]</span> We say that <span class="math inline">\(-\infty\)</span> is a <strong>left accumulation point</strong> for <span class="math inline">\(D\)</span> if for every <span class="math inline">\(R&gt;0\)</span> there exists <span class="math inline">\(x\in D\)</span> such that <span class="math display">\[
 x&lt;-R.
