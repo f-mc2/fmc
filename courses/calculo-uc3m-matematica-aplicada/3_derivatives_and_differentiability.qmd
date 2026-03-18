@@ -770,3 +770,15 @@ Since $k$ is arbitrary, $P$ is of class $C^{k}$ for every $k\in\mathbb{N}$, henc
 :::
 
 # Exercises
+
+1. Consider $f\colon D\subseteq\mathbb{R}\rightarrow\mathbb{R}$ given by $f(x)=x^{\frac{m}{n}}$ with $\mathbb{N}\ni m,n>0$ and $D$ the maximal domain on which the expression makes sense. Determine the points in $D$ for which the derivative of $f(x)$ exists.
+<details>
+<summary> **Solution** </summary>
+</details>
+
+2. Find a function $f\colon\mathbb{R}\rightarrow\mathbb{R}$ such that 
+   i) $f(x)>x$
+   ii) $0<f'(x)<1$.
+<details>
+<summary> **Solution** </summary>
+</details>

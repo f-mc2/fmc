@@ -459,7 +459,7 @@ window.Quarto = {
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">1</span> Introduction</a></li>
   <li><a href="#naive-set-theory" id="toc-naive-set-theory" class="nav-link" data-scroll-target="#naive-set-theory"><span class="header-section-number">2</span> Naive set theory</a></li>
   <li><a href="#functions" id="toc-functions" class="nav-link" data-scroll-target="#functions"><span class="header-section-number">3</span> Functions</a></li>
-  <li><a href="#real-numbers" id="toc-real-numbers" class="nav-link" data-scroll-target="#real-numbers"><span class="header-section-number">4</span> Real numbers</a></li>
+  <li><a href="#subsets-of-real-numbers" id="toc-subsets-of-real-numbers" class="nav-link" data-scroll-target="#subsets-of-real-numbers"><span class="header-section-number">4</span> Subsets of real numbers</a></li>
   </ul>
 </nav>
     </div>
@@ -566,8 +566,8 @@ A\cup B.
 <li><p><strong>Natural Numbers</strong>: There exists a set <span class="math inline">\(\mathbb{N}\)</span> whose elements are called the <strong>natural numbers</strong>, together with a distinguished element <span class="math inline">\(0\in\mathbb{N}\)</span> and a successor operation <span class="math display">\[
 n\mapsto n+1
 \]</span> which sends each natural number to another natural number.</p></li>
+<li><p><strong>Power set</strong>:</p></li>
 </ol>
-<p>We will not discuss the formal <a href="https://en.wikipedia.org/wiki/Peano_axioms">Peano axioms</a> here, nor will we attempt to construct the integers, rationals, or reals from <span class="math inline">\(\mathbb{N}\)</span>. Instead, we use the familiar intuitive number systems and record explicitly whatever algebraic or order-theoretic properties we need later on.</p>
 </div>
 </div>
 </div>
@@ -860,6 +860,113 @@ x+z&lt;y+z
 </section>
 <section id="functions" class="level1" data-number="3">
 <h1 data-number="3"><span class="header-section-number">3</span> Functions</h1>
+<p>Just as relations are special subsets of Cartesian products, functions may be regarded as special relations in which each input determines exactly one output.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Functions as relations">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Functions as relations
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div id="def-function" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 11</strong></span> Let <span class="math inline">\(D,X,Y\)</span> be sets with <span class="math inline">\(D\subseteq X\)</span>. A <strong>function</strong> from <span class="math inline">\(D\)</span> to <span class="math inline">\(Y\)</span> is a relation <span class="math display">\[
+f\subseteq D\times Y
+\]</span> such that for every <span class="math inline">\(x\in D\)</span> there exists a unique <span class="math inline">\(y\in Y\)</span> with <span class="math display">\[
+(x,y)\in f.
+\]</span></p>
+<p>In this situation, we write <span class="math display">\[
+f\colon D\subseteq X\rightarrow Y
+\]</span> and denote by <span class="math inline">\(f(x)\)</span> the unique element <span class="math inline">\(y\in Y\)</span> such that <span class="math inline">\((x,y)\in f\)</span>. The set <span class="math inline">\(D\)</span> is called the <strong>domain</strong> of <span class="math inline">\(f\)</span>, while <span class="math inline">\(Y\)</span> is called the <strong>codomain</strong> of <span class="math inline">\(f\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Equality of functions">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Equality of functions
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div id="def-equality-functions" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 12</strong></span> Two functions <span class="math display">\[
+f\colon D\subseteq X\rightarrow Y
+\qquad\text{and}\qquad
+g\colon E\subseteq X'\rightarrow Y'
+\]</span> are said to be <strong>equal</strong> if <span class="math display">\[
+D=E,\qquad Y=Y',
+\]</span> and <span class="math display">\[
+f(x)=g(x)
+\]</span> for every <span class="math inline">\(x\in D\)</span>.</p>
+<p>Thus, the domain and codomain are part of the data of a function. In particular, the same explicit rule applied to different domains defines different functions. For example, the functions <span class="math display">\[
+f\colon \mathbb{R}\rightarrow\mathbb{R},\qquad f(x)=x^{2},
+\]</span> and <span class="math display">\[
+g\colon [0,+\infty)\rightarrow\mathbb{R},\qquad g(x)=x^{2},
+\]</span> are not equal because their domains are different.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Composition of functions">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Composition of functions
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div id="def-composition-functions" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 13</strong></span> Consider two functions <span class="math display">\[
+f\colon D\subseteq X\rightarrow Y
+\qquad\text{and}\qquad
+g\colon E\subseteq Y\rightarrow Z.
+\]</span> Assume that <span class="math display">\[
+f(x)\in E
+\]</span> for every <span class="math inline">\(x\in D\)</span>. Then the <strong>composition</strong> of <span class="math inline">\(g\)</span> and <span class="math inline">\(f\)</span> is the function <span class="math display">\[
+g\circ f\colon D\subseteq X\rightarrow Z
+\]</span> defined by <span class="math display">\[
+(g\circ f)(x):=g(f(x)).
+\]</span></p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Associativity of function composition">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Associativity of function composition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div id="prp-associativity-composition" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 2</strong></span> Let <span class="math display">\[
+f\colon D\subseteq X\rightarrow Y,\qquad
+g\colon E\subseteq Y\rightarrow Z,\qquad
+h\colon F\subseteq Z\rightarrow W
+\]</span> be functions such that the compositions involved are well defined. Then <span class="math display">\[
+h\circ (g\circ f)=(h\circ g)\circ f.
+\]</span></p>
+<details>
+<summary>
+<strong>Proof:</strong>
+</summary>
+Both sides are functions from <span class="math inline">\(D\)</span> to <span class="math inline">\(W\)</span>. For every <span class="math inline">\(x\in D\)</span>, one has <span class="math display">\[
+\bigl(h\circ (g\circ f)\bigr)(x)=h\bigl((g\circ f)(x)\bigr)=h(g(f(x))),
+\]</span> while <span class="math display">\[
+\bigl((h\circ g)\circ f\bigr)(x)=(h\circ g)(f(x))=h(g(f(x))).
+\]</span> Hence the two functions have the same domain, the same codomain, and the same values on every point of the domain. By <a href="#def-equality-functions" class="quarto-xref">Definition&nbsp;12</a>, they are equal.
+</details>
+</div>
+</div>
+</div>
 <div class="callout callout-style-default callout-warning callout-titled" title="How we will write functions">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -876,24 +983,151 @@ x+z&lt;y+z
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-note callout-titled" title="Inverse function">
+<div class="callout callout-style-default callout-note callout-titled" title="Injective, surjective, and bijective functions">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Inverse function
+<span class="screen-reader-only">Note</span>Injective, surjective, and bijective functions
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div id="def-injective-surjective-bijective" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 14</strong></span> Consider the function <span class="math display">\[
+f\colon D\subseteq X\rightarrow Y.
+\]</span></p>
+<p>We say that <span class="math inline">\(f\)</span> is <strong>injective</strong> if <span class="math display">\[
+f(x)=f(x') \Longrightarrow x=x'
+\]</span> for every <span class="math inline">\(x,x'\in D\)</span>.</p>
+<p>We say that <span class="math inline">\(f\)</span> is <strong>surjective</strong> if for every <span class="math inline">\(y\in Y\)</span> there exists <span class="math inline">\(x\in D\)</span> such that <span class="math display">\[
+f(x)=y.
+\]</span></p>
+<p>We say that <span class="math inline">\(f\)</span> is <strong>bijective</strong> if it is both injective and surjective.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Image and inverse image">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Image and inverse image
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div id="def-image-inverse-image" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 15</strong></span> Consider the function <span class="math display">\[
+f\colon D\subseteq X\rightarrow Y.
+\]</span></p>
+<p>If <span class="math inline">\(A\subseteq D\)</span>, the <strong>image</strong> of <span class="math inline">\(A\)</span> through <span class="math inline">\(f\)</span> is the subset of <span class="math inline">\(Y\)</span> defined by <span class="math display">\[
+f(A):=\{f(x)\,:\, x\in A\}.
+\]</span></p>
+<p>If <span class="math inline">\(B\subseteq Y\)</span>, the <strong>inverse image</strong> of <span class="math inline">\(B\)</span> through <span class="math inline">\(f\)</span> is the subset of <span class="math inline">\(D\)</span> defined by <span class="math display">\[
+f^{-1}(B):=\{x\in D \,:\, f(x)\in B\}.
+\]</span></p>
+<p>In particular, the image of the whole domain is <span class="math display">\[
+f(D)=\{f(x)\,:\, x\in D\}\subseteq Y.
+\]</span> Thus, the function <span class="math inline">\(f\)</span> is surjective if and only if <span class="math display">\[
+f(D)=Y.
+\]</span></p>
+<p>Note that the notation <span class="math inline">\(f^{-1}(B)\)</span> for inverse image makes sense whether or not the function <span class="math inline">\(f\)</span> admits an inverse function.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Left inverse, right inverse, and inverse function">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Left inverse, right inverse, and inverse function
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <div id="def-inverse-function" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 11</strong></span> INSERT</p>
+<p><span class="theorem-title"><strong>Definition 16</strong></span> Let <span class="math display">\[
+f\colon D\subseteq X\rightarrow Y.
+\]</span> The <strong>identity function</strong> on <span class="math inline">\(D\)</span> is the function <span class="math display">\[
+\mathrm{id}_{D}\colon D\rightarrow D
+\]</span> defined by <span class="math display">\[
+\mathrm{id}_{D}(x)=x.
+\]</span></p>
+<p>A function <span class="math display">\[
+g\colon Y\rightarrow D
+\]</span> is called a <strong>left inverse</strong> of <span class="math inline">\(f\)</span> if <span class="math display">\[
+g\circ f=\mathrm{id}_{D}.
+\]</span></p>
+<p>A function <span class="math display">\[
+h\colon Y\rightarrow D
+\]</span> is called a <strong>right inverse</strong> of <span class="math inline">\(f\)</span> if <span class="math display">\[
+f\circ h=\mathrm{id}_{Y}.
+\]</span></p>
+<p>If a function <span class="math inline">\(u\colon Y\rightarrow D\)</span> is both a left inverse and a right inverse of <span class="math inline">\(f\)</span>, then <span class="math inline">\(u\)</span> is called the <strong>inverse function</strong> of <span class="math inline">\(f\)</span> and is denoted by <span class="math display">\[
+f^{-1}\colon Y\rightarrow D.
+\]</span> In that case, <span class="math display">\[
+f^{-1}\circ f=\mathrm{id}_{D}
+\qquad\text{and}\qquad
+f\circ f^{-1}=\mathrm{id}_{Y}.
+\]</span></p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Basic properties of inverses">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Basic properties of inverses
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div id="prp-basic-properties-inverses" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 3</strong></span> Let <span class="math display">\[
+f\colon D\subseteq X\rightarrow Y.
+\]</span></p>
+<ol type="1">
+<li>If <span class="math inline">\(f\)</span> admits a left inverse, then <span class="math inline">\(f\)</span> is injective.</li>
+<li>If <span class="math inline">\(f\)</span> admits a right inverse, then <span class="math inline">\(f\)</span> is surjective.</li>
+<li>If <span class="math inline">\(f\)</span> admits both a left inverse and a right inverse, then they coincide.</li>
+<li>The function <span class="math inline">\(f\)</span> admits an inverse function if and only if it is bijective.</li>
+<li>If the inverse function exists, then it is unique, it is bijective, and <span class="math display">\[
+\left(f^{-1}\right)^{-1}=f.
+\]</span></li>
+</ol>
+<details>
+<summary>
+<strong>Proof:</strong>
+</summary>
+<p>Suppose first that <span class="math inline">\(g\colon Y\rightarrow D\)</span> is a left inverse of <span class="math inline">\(f\)</span>. If <span class="math inline">\(f(x)=f(x')\)</span>, then <span class="math display">\[
+x=(g\circ f)(x)=g(f(x))=g(f(x'))=(g\circ f)(x')=x',
+\]</span> so <span class="math inline">\(f\)</span> is injective.</p>
+<p>Now suppose that <span class="math inline">\(h\colon Y\rightarrow D\)</span> is a right inverse of <span class="math inline">\(f\)</span>. For every <span class="math inline">\(y\in Y\)</span>, one has <span class="math display">\[
+f(h(y))=(f\circ h)(y)=y,
+\]</span> so every element of <span class="math inline">\(Y\)</span> belongs to the image of <span class="math inline">\(f\)</span>. Thus <span class="math inline">\(f\)</span> is surjective.</p>
+<p>Assume next that <span class="math inline">\(g\)</span> is a left inverse and <span class="math inline">\(h\)</span> is a right inverse of <span class="math inline">\(f\)</span>. Then <span class="math display">\[
+g=g\circ \mathrm{id}_{Y}=g\circ (f\circ h)=(g\circ f)\circ h=\mathrm{id}_{D}\circ h=h,
+\]</span> so they coincide.</p>
+<p>If <span class="math inline">\(f\)</span> admits an inverse function, then it admits both a left inverse and a right inverse, hence by the first two points it is bijective.</p>
+<p>Conversely, assume that <span class="math inline">\(f\)</span> is bijective. Given <span class="math inline">\(y\in Y\)</span>, surjectivity guarantees the existence of <span class="math inline">\(x\in D\)</span> such that <span class="math inline">\(f(x)=y\)</span>, and injectivity guarantees that this <span class="math inline">\(x\)</span> is unique. We may therefore define a function <span class="math display">\[
+f^{-1}\colon Y\rightarrow D
+\]</span> by declaring <span class="math inline">\(f^{-1}(y)\)</span> to be the unique <span class="math inline">\(x\in D\)</span> such that <span class="math inline">\(f(x)=y\)</span>. By construction, <span class="math display">\[
+f^{-1}\circ f=\mathrm{id}_{D}
+\qquad\text{and}\qquad
+f\circ f^{-1}=\mathrm{id}_{Y},
+\]</span> so <span class="math inline">\(f^{-1}\)</span> is indeed an inverse function.</p>
+Uniqueness follows from point 3: any left inverse and right inverse must coincide. Finally, if <span class="math inline">\(f^{-1}\)</span> exists, then the identities above show that <span class="math inline">\(f\)</span> is the inverse of <span class="math inline">\(f^{-1}\)</span>, hence <span class="math display">\[
+\left(f^{-1}\right)^{-1}=f.
+\]</span>
+</details>
 </div>
 </div>
 </div>
 </section>
-<section id="real-numbers" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> Real numbers</h1>
+<section id="subsets-of-real-numbers" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Subsets of real numbers</h1>
 <p>We need to introduce various types of intervals. These objects help in formalizing the way <span class="math inline">\(x\)</span> approaches <span class="math inline">\(x_{0}\)</span>.</p>
 <div class="callout callout-style-default callout-note callout-titled" title="Open and closed intervals">
 <div class="callout-header d-flex align-content-center">
@@ -906,7 +1140,7 @@ x+z&lt;y+z
 </div>
 <div class="callout-body-container callout-body">
 <div id="def-open-closed-intervals" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 12</strong></span> Let <span class="math inline">\(a&lt;b\in\mathbb{R}\cup\{+\infty\}\cup\{-\infty\}\)</span>. Here and throughout, inequalities involving <span class="math inline">\(\pm\infty\)</span> use the usual order on the extended real line. We define the <strong>open interval</strong> <span class="math inline">\((a,b)\)</span> as the subset of <span class="math inline">\(\mathbb{R}\)</span> given by <span id="eq-open-interval"><span class="math display">\[
+<p><span class="theorem-title"><strong>Definition 17</strong></span> Let <span class="math inline">\(a&lt;b\in\mathbb{R}\cup\{+\infty\}\cup\{-\infty\}\)</span>. Here and throughout, inequalities involving <span class="math inline">\(\pm\infty\)</span> use the usual order on the extended real line. We define the <strong>open interval</strong> <span class="math inline">\((a,b)\)</span> as the subset of <span class="math inline">\(\mathbb{R}\)</span> given by <span id="eq-open-interval"><span class="math display">\[
 (a,b):= \{x\in\mathbb{R}\,|\quad a&lt; x &lt; b \}.
 \tag{1}\]</span></span> If either <span class="math inline">\(a=-\infty\)</span> or <span class="math inline">\(b=+\infty\)</span>, the interval is said to be <strong>unbounded</strong>.</p>
 <p>When <span class="math inline">\(a\neq-\infty\)</span> and <span class="math inline">\(b\neq+\infty\)</span>, we define the closed interval <span class="math inline">\([a,b]\)</span> as <span class="math display">\[
@@ -920,7 +1154,7 @@ x+z&lt;y+z
 [a,b) := \{x\in\mathbb{R}\,|\quad a\leq x &lt; b\},
 \]</span> while, when <span class="math inline">\(b\neq+\infty\)</span>, we can define the interval <span class="math inline">\((a,b]\)</span> as <span class="math display">\[
 (a,b] := \{x\in\mathbb{R}\,|\quad a &lt; x \leq b\},
-\]</span> and it’s clear that these interval are neither open nor closed in the sense of <a href="#def-open-closed-intervals" class="quarto-xref">Definition&nbsp;12</a></p>
+\]</span> and it’s clear that these interval are neither open nor closed in the sense of <a href="#def-open-closed-intervals" class="quarto-xref">Definition&nbsp;17</a></p>
 <p>In the following, it will be useful to also consider the <strong>symmetric open interval</strong> <span class="math display">\[
 I_{x_{0},\varepsilon}\equiv(x_{0}-\varepsilon, x_{0}+\varepsilon)=\{x\in\mathbb{R}\,|\quad x_{0}-\varepsilon &lt; x &lt; x_{0} + \varepsilon\}
 \]</span> centered at <span class="math inline">\(x_{0}\in\mathbb{R}\)</span> with length <span class="math inline">\(2\varepsilon\)</span> with <span class="math inline">\(\varepsilon&gt;0\)</span>. It is not hard to see that if <span class="math inline">\(x\in I_{x_{0},\varepsilon}\)</span>, then either <span class="math inline">\(x-x_{0}&lt; \varepsilon\)</span> or <span class="math inline">\(x_{0} - x &lt;\varepsilon\)</span>. It then follows that <span class="math inline">\(|x-x_{0}|&lt;\varepsilon\)</span>, so that <span class="math display">\[
@@ -937,7 +1171,7 @@ I_{x_{0},\varepsilon}=\{x\in\mathbb{R}\,| \quad d(x_{0},x)&lt;\varepsilon\}.
 </div>
 <div class="callout-body-container callout-body">
 <div id="def-accumulation-point" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 13</strong></span> A point <span class="math inline">\(x_{0}\in \mathbb{R}\)</span> is said to be a <strong>left accumulation point</strong> for the subset <span class="math inline">\(D\)</span> if for every <span class="math inline">\(r&gt;0\)</span> there exists <span class="math inline">\(x\in D\)</span> such that <span class="math display">\[
+<p><span class="theorem-title"><strong>Definition 18</strong></span> A point <span class="math inline">\(x_{0}\in \mathbb{R}\)</span> is said to be a <strong>left accumulation point</strong> for the subset <span class="math inline">\(D\)</span> if for every <span class="math inline">\(r&gt;0\)</span> there exists <span class="math inline">\(x\in D\)</span> such that <span class="math display">\[
 x_0-r&lt;x&lt;x_0.
 \]</span> A point <span class="math inline">\(x_{0}\in \mathbb{R}\)</span> is said to be a <strong>right accumulation point</strong> for <span class="math inline">\(D\)</span> if for every <span class="math inline">\(r&gt;0\)</span> there exists <span class="math inline">\(x\in D\)</span> such that <span class="math display">\[
 x_0&lt;x&lt;x_0+r.
@@ -960,7 +1194,7 @@ x_0&lt;x&lt;x_0+r.
 </div>
 <div class="callout-body-container callout-body">
 <div id="def-isolated-point" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 14</strong></span> Let <span class="math inline">\(D\subseteq\mathbb{R}\)</span> and let <span class="math inline">\(x_{0}\in D\)</span>. We say that <span class="math inline">\(x_{0}\)</span> is an <strong>isolated point</strong> of <span class="math inline">\(D\)</span> if there exists <span class="math inline">\(r&gt;0\)</span> such that <span class="math display">\[
+<p><span class="theorem-title"><strong>Definition 19</strong></span> Let <span class="math inline">\(D\subseteq\mathbb{R}\)</span> and let <span class="math inline">\(x_{0}\in D\)</span>. We say that <span class="math inline">\(x_{0}\)</span> is an <strong>isolated point</strong> of <span class="math inline">\(D\)</span> if there exists <span class="math inline">\(r&gt;0\)</span> such that <span class="math display">\[
 D\cap(x_{0}-r,x_{0}+r)=\{x_{0}\}.
 \]</span></p>
 </div>
@@ -977,7 +1211,7 @@ D\cap(x_{0}-r,x_{0}+r)=\{x_{0}\}.
 </div>
 <div class="callout-body-container callout-body">
 <div id="def-accumulation-point-at-infinity" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 15</strong></span> Let <span class="math inline">\(D\subseteq\mathbb{R}\)</span>. We say that <span class="math inline">\(+\infty\)</span> is a <strong>right accumulation point</strong> for <span class="math inline">\(D\)</span> if for every <span class="math inline">\(R&gt;0\)</span> there exists <span class="math inline">\(x\in D\)</span> such that <span class="math display">\[
+<p><span class="theorem-title"><strong>Definition 20</strong></span> Let <span class="math inline">\(D\subseteq\mathbb{R}\)</span>. We say that <span class="math inline">\(+\infty\)</span> is a <strong>right accumulation point</strong> for <span class="math inline">\(D\)</span> if for every <span class="math inline">\(R&gt;0\)</span> there exists <span class="math inline">\(x\in D\)</span> such that <span class="math display">\[
 x&gt;R.
 \]</span> We say that <span class="math inline">\(-\infty\)</span> is a <strong>left accumulation point</strong> for <span class="math inline">\(D\)</span> if for every <span class="math inline">\(R&gt;0\)</span> there exists <span class="math inline">\(x\in D\)</span> such that <span class="math display">\[
 x&lt;-R.
@@ -996,7 +1230,7 @@ x&lt;-R.
 </div>
 <div class="callout-body-container callout-body">
 <div id="prp-invertible-functions-are-monotonic" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 2</strong></span> INSERT</p>
+<p><span class="theorem-title"><strong>Proposition 4</strong></span> INSERT</p>
 </div>
 </div>
 </div>
