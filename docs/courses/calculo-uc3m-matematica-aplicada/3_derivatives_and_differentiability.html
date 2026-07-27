@@ -513,7 +513,7 @@ window.Quarto = {
 </section>
 <section id="derivative-and-differentiability" class="level1" data-number="2">
 <h1 data-number="2"><span class="header-section-number">2</span> Derivative and differentiability</h1>
-<p>Let’s start with the very definition of derivative at a point.</p>
+<p>Let’s start with the very definition of derivative of a function at a point of its domain.</p>
 <div class="callout callout-style-default callout-note callout-titled" title="Derivative and differentiability">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -539,7 +539,7 @@ f'(x_{0})\equiv \lim_{h\rightarrow 0}\Delta f(h)=\lim_{h\rightarrow 0}\frac{f(x_
 \frac{\mathrm{d}f}{\mathrm{d} x}(x_{0})\equiv f'(x_{0}),
 \]</span> and refer to this expression as the <em>Leibniz</em> notation for derivatives.</p>
 <p>If <span class="math inline">\(f\)</span> is differentiable at all <span class="math inline">\(x\in D\)</span>, we say that <span class="math inline">\(f\)</span> is differentiable in <span class="math inline">\(D\)</span>.</p>
-<p>The function determined by the rule <span class="math inline">\(x\mapsto f'(x)\)</span> (whenever it makes sense) is called the <strong>derivative</strong> of <span class="math inline">\(f\)</span>. Its domain <strong>need not</strong> coincide with the domain of <span class="math inline">\(f\)</span>.</p>
+<p>The function determined by the rule <span class="math inline">\(x\mapsto f'(x)\)</span> (whenever it makes sense) is called the <strong>derivative</strong> of <span class="math inline">\(f\)</span>, and its domain <strong>need not</strong> coincide with the domain of <span class="math inline">\(f\)</span>.</p>
 </div>
 </div>
 </div>
@@ -1059,6 +1059,18 @@ Therefore, <span class="math inline">\(g\)</span> does not admit a finite right 
 </section>
 <section id="interpretation-of-derivative" class="level1" data-number="5">
 <h1 data-number="5"><span class="header-section-number">5</span> Interpretation of derivative</h1>
+<p>From a geometrical point of view, the derivative <span class="math inline">\(f'(x_{0})\)</span> is related with the slope of the line tangent to the graph of <span class="math inline">\(f\)</span> at the point <span class="math inline">\((x_{0},f(x_{0}))\)</span>.</p>
+<p>Intuitively speaking, the line tangent to the graph of a function at a point is the limit of the secant lines connecting said point with other points on the graph. The following applet allows to visualize how the secant line approach the tangent line.</p>
+<figure style="max-width:960px;margin:1rem auto" class="figure">
+<iframe src="https://www.geogebra.org/material/iframe/id/n8ztr6qs/width/960/height/640/border/888888/sfsb/true/smb/true/stb/false" title="GeoGebra: Tangent line intuition" loading="lazy" allowfullscreen="" style="border:0;width:100%;height:640px;display:block;">
+</iframe>
+<figcaption style="text-align:center;font-size:0.95em;opacity:.85;margin-top:.5rem">
+Interactive demo: tangent line intuition (source: <a href="https://www.geogebra.org/m/n8ztr6qs">https://www.geogebra.org/m/n8ztr6qs</a>).
+</figcaption>
+</figure>
+<p>The intuitive idea of derivative as rate of change often presented may be easy to grasp because it relies on the idea of velocity which the vast majority of humans can understand (even if only in a non-rigorous way). However, this interpretation is not very helpful when the input of the functions considered is no longer a single number (which can always be thought of as being the “time parameter” labeling something that changes).</p>
+<p>A perspective which is suitable to multivariable functions is that of thinking of the derivative <span class="math inline">\(f'(x_{0})\)</span> as providing the best linear approximation of the function near <span class="math inline">\(x_{0}\)</span>. Specifically, we can define <span class="math inline">\(f'(x_{0})\)</span> as the number (if it exists) such that <span class="math display">\[ \lim_{x\rightarrow x_{0}}\frac{\mid f(x) - [f(x_{0}) +f'(x_{0})\,(x-x_{0})]\mid}{\mid x-x_{0}\mid}=0. \]</span> Roughly speaking, the previous limit is telling us that the difference between <span class="math inline">\(f(x)\)</span> and <span class="math inline">\([f(x_{0}) +f'(x_{0})\,(x-x_{0})]\)</span> gets smaller as <span class="math inline">\(x\)</span> approaches <span class="math inline">\(x_{0}\)</span>, and it gets smaller “faster” than how <span class="math inline">\(x\)</span> approaches <span class="math inline">\(x_{0}\)</span> (because the limit with <span class="math inline">\(x-x_{0}\)</span> in the denominator is finite).</p>
+<p>Consequently, when the derivative at <span class="math inline">\(x_{0}\)</span> exists, we may approximate reasonably well <span class="math inline">\(f(x_{0})\)</span> with the linear function <span class="math inline">\([f(x_{0}) + f'(x_{0})\,(x-x_{0})]\)</span> as long as <span class="math inline">\(x\)</span> is close to <span class="math inline">\(x_{0}\)</span>.</p>
 </section>
 <section id="higher-order-derivatives-ck-functions-and-smooth-functions" class="level1" data-number="6">
 <h1 data-number="6"><span class="header-section-number">6</span> Higher order derivatives, <span class="math inline">\(C^{k}\)</span>-functions, and smooth functions</h1>
@@ -1176,10 +1188,21 @@ Using <a href="#exr-algebraic-manipulations-derivatives-N-functions" class="quar
 <section id="exercises" class="level1" data-number="7">
 <h1 data-number="7"><span class="header-section-number">7</span> Exercises</h1>
 <ol type="1">
+<li>Consider <span class="math inline">\(f\colon D\subseteq\mathbb{R}\rightarrow\mathbb{R}\)</span> given by <span class="math inline">\(f(x)=x^{\frac{m}{n}}\)</span> with <span class="math inline">\(\mathbb{N}\ni m,n&gt;0\)</span> and <span class="math inline">\(D\)</span> the maximal domain on which the expression makes sense. Determine the points in <span class="math inline">\(D\)</span> for which the derivative of <span class="math inline">\(f(x)\)</span> exists.
+<details>
+<summary>
+<strong>Solution</strong>
+</summary>
+</details></li>
 <li>Find a function <span class="math inline">\(f\colon\mathbb{R}\rightarrow\mathbb{R}\)</span> such that
 <ol type="i">
 <li><span class="math inline">\(f(x)&gt;x\)</span></li>
-<li><span class="math inline">\(0&lt;f'(x)&lt;1\)</span>.</li>
+<li><span class="math inline">\(0&lt;f'(x)&lt;1\)</span>.
+<details>
+<summary>
+<strong>Solution</strong>
+</summary>
+</details></li>
 </ol></li>
 </ol>
 

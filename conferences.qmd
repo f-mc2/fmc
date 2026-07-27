@@ -8,11 +8,14 @@ comments: false
 
 ## Organization of conferences and workshops:
 <ol reversed>
-<li><strong>When quantum field theory meets quantum information</strong> -- Madrid, Spain, December 2025. Local Organizer.</li>
+
+<li><strong>IX International Workshop on Information Geometry, Quantum Mechanics and Applications 2025</strong> -- UC3M, Madrid, Spain, March 2025. Local Organizer. [<a href="http://www.q-math.es/conferences/IGQMA2026/">committees</a>] [<a href="https://web.archive.org/web/20260727161337/http://www.q-math.es/conferences/IGQMA2026/">committees-archive</a>]  [<a href="http://www.q-math.es/conferences/IGQMA2026/Timetable.php">program</a>] [<a href="https://web.archive.org/web/20260727161355/http://www.q-math.es/conferences/IGQMA2026/Timetable.php">program-archive</a>]</li>
+
+<li><strong>When quantum field theory meets quantum information</strong> -- Madrid, Spain, December 2025. Local Organizer. [<a href="https://scala.uc3m.es/qft/">committees</a>] [<a href="https://web.archive.org/web/20260117012819/https://scala.uc3m.es/qft/#about">committees-archive</a>] [<a href="https://scala.uc3m.es/qft/#schedule">program</a>] [<a href="https://web.archive.org/web/20260117012819/https://scala.uc3m.es/qft/#schedule">program-archive</a>]</li> 
 
 <li><strong>Geometric Science of Information GSI'25</strong> -- Palais du Grand Large, Saint Malo, France, October 2025. Scientific Committee, Co-chairman of the session "Geometry of Classical and Quantum States". [<a href="https://conference-gsi.org/gsi-2025/about/committees/">committees</a>] [<a href="https://web.archive.org/web/20250603160804/https://conference-gsi.org/gsi-2025/about/committees/">committees-archive</a>] [<a href="https://conference-gsi.org/gsi-2025/program/30-october-2025/">program</a>] [<a href="https://web.archive.org/web/20251204085858/https://conference-gsi.org/gsi-2025/program/30-october-2025/">program-archive</a>]</li>
 
-<li><strong>IX International Workshop on Information Geometry, Quantum Mechanics and Applications 2025</strong> -- UC3M, Madrid, Spain, March 2025. Local Organizer. [<a href="http://www.q-math.es/conferences/IGQMA2025/">conference</a>]</li>
+<li><strong>IX International Workshop on Information Geometry, Quantum Mechanics and Applications 2025</strong> -- UC3M, Madrid, Spain, March 2025. Local Organizer. [<a href="http://www.q-math.es/conferences/IGQMA2025/">conference</a>]   [<a href="https://web.archive.org/web/20260727161723/http://www.q-math.es/conferences/IGQMA2025/">committees-archive</a>]  [<a href="http://www.q-math.es/conferences/IGQMA2025/Timetable.php">program</a>] [<a href="https://web.archive.org/web/20260727161738/http://www.q-math.es/conferences/IGQMA2025/Timetable.php">program-archive</a>]</li> 
 
 <li><strong>The XXXIX RSEF Physics Biennial</strong> -- Donostia/San Sebastián, Spain, July 2024. Symposia Organizer. [<a href="https://bienalfisica.org/en/symposia#headingSimposio15">conference</a>] [<a href="https://web.archive.org/web/20241006210554/https://bienalfisica.org/en/symposia#headingSimposio15">conference-archive</a>]</li>
 
