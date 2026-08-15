@@ -1,25 +1,22 @@
 title-block-banner: false
-number-sections: true
-format:
-  revealjs:
-    title-slide: false
-    slide-number: true
-    progress: true
-    overview: true
-    Hash: true
-    transition: fade
-    navigation-mode: linear
-    pdf-export: true
-    chalkboard: true
-    #self-contained: true   # handy for classroom PCs / offline
-    center: false          # more readable, left-aligned
-    number-sections: false
-    smaller: true
-    scrollable: false
+number-sections: false
+format: revealjs
+title-slide: false
+slide-number: true
+progress: true
+overview: true
+hash: true
+transition: fade
+navigation-mode: linear
+pdf-export: true
+chalkboard: true
+#self-contained: true   # handy for classroom PCs / offline
+center: false          # more readable, left-aligned
+smaller: true
+scrollable: false
     
 
 page-layout: full
 toc: false
 sidebar: false
 search: false              # keep slide decks out of search results
- 

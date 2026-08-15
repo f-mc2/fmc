@@ -1,340 +1,139 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
-<meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.24">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-
-<title>gns_everywhere – Florio M. Ciaglia</title>
-<style>
-code{white-space: pre-wrap;}
-span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
-div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-ul.task-list{list-style: none;}
-ul.task-list li input[type="checkbox"] {
-  width: 0.8em;
-  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
-  vertical-align: middle;
-}
-</style>
-
-
-<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<html lang="en"><head>
 <script src="../../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../../">
-<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabby.min.js"></script>
 <script src="../../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-b651517ce65839d647a86e2780455cfb.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
-<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-ad30ca1a7f71a96a19683986a1d7fc5a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../../site_libs/bootstrap/bootstrap-dark-3fa5c2d772949214d4b242ad13db694d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../../site_libs/bootstrap/bootstrap-ad30ca1a7f71a96a19683986a1d7fc5a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
-<script id="quarto-search-options" type="application/json">{
-  "location": "navbar",
-  "copy-button": false,
-  "collapse-after": 3,
-  "panel-placement": "end",
-  "type": "overlay",
-  "limit": 50,
-  "keyboard-shortcut": [
-    "f",
-    "/",
-    "s"
-  ],
-  "show-item-context": false,
-  "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
-    "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
-  }
-}</script>
-<link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css">
+<link href="../../../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.8.24">
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
+  <title>Florio M. Ciaglia – gns_everywhere</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
     }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="../../../css/style.css">
+  </style>
+  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/theme/quarto-2d6005004b77572f637765ffe352e55e.css">
+  <link href="../../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../../../site_libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="../../../site_libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="../../../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
 </head>
-
-<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
-    const toggleBodyColorMode = (bsSheetEl) => {
-      const mode = bsSheetEl.getAttribute("data-mode");
-      const bodyEl = window.document.querySelector("body");
-      if (mode === "dark") {
-        bodyEl.classList.add("quarto-dark");
-        bodyEl.classList.remove("quarto-light");
-      } else {
-        bodyEl.classList.add("quarto-light");
-        bodyEl.classList.remove("quarto-dark");
-      }
-    }
-    const toggleBodyColorPrimary = () => {
-      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
-      if (bsSheetEl) {
-        toggleBodyColorMode(bsSheetEl);
-      }
-    }
-    const setColorSchemeToggle = (alternate) => {
-      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
-      for (let i=0; i < toggles.length; i++) {
-        const toggle = toggles[i];
-        if (toggle) {
-          if (alternate) {
-            toggle.classList.add("alternate");
-          } else {
-            toggle.classList.remove("alternate");
-          }
-        }
-      }
-    };
-    const toggleColorMode = (alternate) => {
-      // Switch the stylesheets
-      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
-      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
-      manageTransitions('#quarto-margin-sidebar .nav-link', false);
-      if (alternate) {
-        // note: dark is layered on light, we don't disable primary!
-        enableStylesheet(alternateStylesheets);
-        for (const sheetNode of alternateStylesheets) {
-          if (sheetNode.id === "quarto-bootstrap") {
-            toggleBodyColorMode(sheetNode);
-          }
-        }
-      } else {
-        disableStylesheet(alternateStylesheets);
-        enableStylesheet(primaryStylesheets)
-        toggleBodyColorPrimary();
-      }
-      manageTransitions('#quarto-margin-sidebar .nav-link', true);
-      // Switch the toggles
-      setColorSchemeToggle(alternate)
-      // Hack to workaround the fact that safari doesn't
-      // properly recolor the scrollbar when toggling (#1455)
-      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
-        manageTransitions("body", false);
-        window.scrollTo(0, 1);
-        setTimeout(() => {
-          window.scrollTo(0, 0);
-          manageTransitions("body", true);
-        }, 40);
-      }
-    }
-    const disableStylesheet = (stylesheets) => {
-      for (let i=0; i < stylesheets.length; i++) {
-        const stylesheet = stylesheets[i];
-        stylesheet.rel = 'disabled-stylesheet';
-      }
-    }
-    const enableStylesheet = (stylesheets) => {
-      for (let i=0; i < stylesheets.length; i++) {
-        const stylesheet = stylesheets[i];
-        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
-          stylesheet.rel = 'stylesheet';
-        }
-      }
-    }
-    const manageTransitions = (selector, allowTransitions) => {
-      const els = window.document.querySelectorAll(selector);
-      for (let i=0; i < els.length; i++) {
-        const el = els[i];
-        if (allowTransitions) {
-          el.classList.remove('notransition');
-        } else {
-          el.classList.add('notransition');
-        }
-      }
-    }
-    const isFileUrl = () => {
-      return window.location.protocol === 'file:';
-    }
-    const hasAlternateSentinel = () => {
-      let styleSentinel = getColorSchemeSentinel();
-      if (styleSentinel !== null) {
-        return styleSentinel === "alternate";
-      } else {
-        return false;
-      }
-    }
-    const setStyleSentinel = (alternate) => {
-      const value = alternate ? "alternate" : "default";
-      if (!isFileUrl()) {
-        window.localStorage.setItem("quarto-color-scheme", value);
-      } else {
-        localAlternateSentinel = value;
-      }
-    }
-    const getColorSchemeSentinel = () => {
-      if (!isFileUrl()) {
-        const storageValue = window.localStorage.getItem("quarto-color-scheme");
-        return storageValue != null ? storageValue : localAlternateSentinel;
-      } else {
-        return localAlternateSentinel;
-      }
-    }
-    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
-      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
-      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
-      let newTheme = '';
-      if(authorPrefersDark) {
-        newTheme = isAlternate ? baseTheme : alternateTheme;
-      } else {
-        newTheme = isAlternate ? alternateTheme : baseTheme;
-      }
-      const changeGiscusTheme = () => {
-        // From: https://github.com/giscus/giscus/issues/336
-        const sendMessage = (message) => {
-          const iframe = document.querySelector('iframe.giscus-frame');
-          if (!iframe) return;
-          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
-        }
-        sendMessage({
-          setConfig: {
-            theme: newTheme
-          }
-        });
-      }
-      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
-      if (isGiscussLoaded) {
-        changeGiscusTheme();
-      }
-    };
-    const authorPrefersDark = false;
-    const darkModeDefault = authorPrefersDark;
-      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
-      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
-    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
-    // Dark / light mode switch
-    window.quartoToggleColorScheme = () => {
-      // Read the current dark / light value
-      let toAlternate = !hasAlternateSentinel();
-      toggleColorMode(toAlternate);
-      setStyleSentinel(toAlternate);
-      toggleGiscusIfUsed(toAlternate, darkModeDefault);
-      window.dispatchEvent(new Event('resize'));
-    };
-    // Switch to dark mode if need be
-    if (hasAlternateSentinel()) {
-      toggleColorMode(true);
-    } else {
-      toggleColorMode(false);
-    }
-  </script>
-
-<div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
-      <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container mx-auto">
-    <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
-    </a>
-    <a class="navbar-brand" href="../../../index.html">
-    <span class="navbar-title">Florio M. Ciaglia</span>
-    </a>
-  </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-  <span class="navbar-toggler-icon"></span>
-</button>
-          <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="../../../index.html"> 
-<span class="menu-text">Home</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../../../conferences.html"> 
-<span class="menu-text">Conferences &amp; Seminars</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../../../index_misc.html"> 
-<span class="menu-text">Miscellanea</span></a>
-  </li>  
-</ul>
-            <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/f-mc2/fmc"> <i class="bi bi-github" role="img">
-</i> 
-<span class="menu-text"></span></a>
-  </li>  
-</ul>
-          </div> <!-- /navcollapse -->
-            <div class="quarto-navbar-tools">
-  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
-</div>
-      </div> <!-- /container-fluid -->
-    </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
-<!-- sidebar -->
-<!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-    <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="2026-01-14_gns_everywhere.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></div>
-<!-- main -->
-<main class="content column-page-left" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
 
 
-
-
-
-<section id="look-its-gns-hilbert-spaces-everywhere" class="level2" data-background-color="beige" data-number="1">
-<h2 data-background-color="beige" data-number="1" class="anchored" data-anchor-id="look-its-gns-hilbert-spaces-everywhere"><span class="header-section-number">1</span> <span class="math inline">\(\;\)</span> Look: it’s GNS Hilbert spaces everywhere!</h2>
+<section id="look-its-gns-hilbert-spaces-everywhere" class="slide level2" data-background-color="beige">
+<h2><span class="math inline">\(\;\)</span> Look: it’s GNS Hilbert spaces everywhere!</h2>
 <div style="height: 0.8em;">
 
 </div>
-<section id="qquad-information-geometry-via-gns-construction" class="level3" data-number="1.1">
-<h3 data-number="1.1" class="anchored" data-anchor-id="qquad-information-geometry-via-gns-construction"><span class="header-section-number">1.1</span> <span class="math inline">\(\qquad\)</span> Information geometry <em>via</em> GNS construction</h3>
+<h3 id="qquad-information-geometry-via-gns-construction"><span class="math inline">\(\qquad\)</span> Information geometry <em>via</em> GNS construction</h3>
 <div style="height: 1.2em;">
 
 </div>
@@ -367,17 +166,15 @@ window.Quarto = {
 <p>L. E. González-Bravo (UCM)</p>
 </div><div class="column" style="width:33%;">
 <p>A. Ibort (UC3M)</p>
-</div>
-</div>
+</div></div>
 </div>
 </section>
-</section>
-<section id="very-informal-take-home-message" class="level2" data-background-color="beige" data-number="2">
-<h2 data-background-color="beige" data-number="2" class="anchored" data-anchor-id="very-informal-take-home-message"><span class="header-section-number">2</span> Very informal take-home message</h2>
-<p><img src="../../../auxiliaries/2025-12-26_woody_buzz_GNS.png" class="img-fluid"></p>
-</section>
-<section id="classical-models" class="level2" data-background-color="beige" data-number="3">
-<h2 data-background-color="beige" data-number="3" class="anchored" data-anchor-id="classical-models"><span class="header-section-number">3</span> Classical models</h2>
+<section id="very-informal-take-home-message" class="slide level2" data-background-color="beige">
+<h2>Very informal take-home message</h2>
+
+<img data-src="../../../auxiliaries/2025-12-26_woody_buzz_GNS.png" class="r-stretch"></section>
+<section id="classical-models" class="slide level2" data-background-color="beige">
+<h2>Classical models</h2>
 <p><strong>Parametric statistical model</strong> on the measure space <span class="math inline">\((\Omega,\mu)\)</span>: <span class="math display">\[
 \mathrm{i}\colon\Theta\subseteq\mathbb{R}^{n}  \hookrightarrow  \mathcal{P}(\Omega)
 \]</span> <span class="math display">\[
@@ -402,8 +199,8 @@ T_{jkl}^{\mathrm{AC}}(\theta)=\int_{\Omega} s_{j}(\theta;\omega)\,s_{k}(\theta;\
 $$
 --></p>
 </section>
-<section id="pure-quantum-models" class="level2" data-background-color="beige" data-number="4">
-<h2 data-background-color="beige" data-number="4" class="anchored" data-anchor-id="pure-quantum-models"><span class="header-section-number">4</span> Pure Quantum models</h2>
+<section id="pure-quantum-models" class="slide level2" data-background-color="beige">
+<h2>Pure Quantum models</h2>
 <p><strong>Parametric model</strong> of normalized vectors on the Hilbert space of the system: <span class="math display">\[
 \mathrm{i}\colon \Lambda\subseteq\mathbb{R}^{n} \hookrightarrow \mathcal{H}
 \]</span></p>
@@ -423,11 +220,10 @@ g_{ij}^{\mathrm{FS}}(\lambda)= \Re Q_{ij}(\lambda)
 <p><strong>Berry curvature</strong> (<strong>anti-symmetric part</strong>): <span class="math display">\[
 \varpi_{ij}(\lambda)= \Im Q_{ij}(\lambda)
 \]</span></p>
-</div>
-</div>
+</div></div>
 </section>
-<section id="faithful-quantum-models" class="level2" data-background-color="beige" data-number="5">
-<h2 data-background-color="beige" data-number="5" class="anchored" data-anchor-id="faithful-quantum-models"><span class="header-section-number">5</span> Faithful Quantum models</h2>
+<section id="faithful-quantum-models" class="slide level2" data-background-color="beige">
+<h2>Faithful Quantum models</h2>
 <p><strong>Parametric model</strong> of invertible density operators on the Hilbert space of the system: <span class="math display">\[
 \mathrm{i}\colon \Lambda\subseteq\mathbb{R}^{n} \hookrightarrow \mathcal{B}_{1}(\mathcal{H})
 \]</span></p>
@@ -443,8 +239,8 @@ g_{ij}^{\mathrm{FS}}(\lambda)= \Re Q_{ij}(\lambda)
 g_{jk}^{\mathrm{BH}}(\lambda)=\mathrm{Tr}_{\mathcal{H}}\left(\rho(\lambda)\left\{\mathbf{L}_{j}(\lambda), \mathbf{L}_{k}(\lambda)\right\}\right)=\Re \mathrm{Tr}_{\mathcal{H}}\left(\rho(\lambda)\,\mathbf{L}_{j}(\lambda)\, \mathbf{L}_{k}(\lambda)\right)
 \]</span></p>
 </section>
-<section id="complex-numbers-on-steroids-c-algebras" class="level2" data-background-color="beige" data-number="6">
-<h2 data-background-color="beige" data-number="6" class="anchored" data-anchor-id="complex-numbers-on-steroids-c-algebras"><span class="header-section-number">6</span> Complex numbers on steroids: <span class="math inline">\(C^*\)</span>-algebras</h2>
+<section id="complex-numbers-on-steroids-c-algebras" class="slide level2" data-background-color="beige">
+<h2>Complex numbers on steroids: <span class="math inline">\(C^*\)</span>-algebras</h2>
 <div class="columns">
 <div class="column">
 <p>The <strong>Classical</strong>:</p>
@@ -458,8 +254,7 @@ g_{jk}^{\mathrm{BH}}(\lambda)=\mathrm{Tr}_{\mathcal{H}}\left(\rho(\lambda)\left\
 <li><span class="math inline">\(\mathcal{B}(\mathcal{H})\)</span> is a non-Abelian <span class="math inline">\(C^*\)</span>-algebra</li>
 <li><span class="math inline">\(\mathcal{B}_{1}(\mathcal{H})\)</span> is its predual</li>
 </ul>
-</div>
-</div>
+</div></div>
 <p>A complex <strong>Banach algebra</strong> <span class="math inline">\(\mathscr{A}=(A,+,\cdot,\Vert \cdot \Vert)\)</span> with:</p>
 <ul>
 <li><strong>Involution</strong> (anti-linear, continuous): <span class="math inline">\(\mathbf{x}\mapsto\mathbf{x}^{\dagger}\mid (\mathbf{x}^{\dagger})^{\dagger}=\mathbf{x}\)</span></li>
@@ -477,16 +272,15 @@ g_{jk}^{\mathrm{BH}}(\lambda)=\mathrm{Tr}_{\mathcal{H}}\left(\rho(\lambda)\left\
 <li><strong>unitary</strong> part <span class="math inline">\(\mathcal{U}(\mathscr{A}):=\left\{\mathbf{u}\mid \mathbf{uu}^{\dagger}=\mathbf{u}^{\dagger}\mathbf{u}=\mathbb{I}\right\}\)</span></li>
 <li><strong>non-negative</strong> part <span class="math inline">\(\mathscr{A}_{+}:=\left\{\mathbf{p}\mid\mathbf{p}=\mathbf{xx}^{\dagger}\right\}\)</span></li>
 </ul>
-</div>
-</div>
+</div></div>
 <div style="height: 1em;">
 
 </div>
 <p>Life’s easier when <span class="math inline">\(\mathscr{A}\)</span> is a <strong><span class="math inline">\(W^{*}\)</span>-algebra</strong> (<em>i.e.</em>, it is the Banach dual space of some <span class="math inline">\(\mathscr{A}_{*}\)</span>)</p>
 </section>
-<section id="classical-and-quantum-states-revisited" class="level2" data-background-color="beige" data-number="7">
-<h2 data-background-color="beige" data-number="7" class="anchored" data-anchor-id="classical-and-quantum-states-revisited"><span class="header-section-number">7</span> Classical and quantum states revisited</h2>
-<p>The <strong>space of states</strong> <span class="math inline">\(\mathcal{S}(\mathscr{A})\)</span> of <span class="math inline">\(\mathscr{A}\)</span> is the convex set<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>: <span class="math display">\[
+<section id="classical-and-quantum-states-revisited" class="slide level2" data-background-color="beige">
+<h2>Classical and quantum states revisited</h2>
+<p>The <strong>space of states</strong> <span class="math inline">\(\mathcal{S}(\mathscr{A})\)</span> of <span class="math inline">\(\mathscr{A}\)</span> is the convex set<sup>1</sup>: <span class="math display">\[
 \mathcal{S}(\mathscr{A}):=\left\{\rho\in\mathscr{A}_{sa}^{*}\mid \rho(\mathbf{aa}^{\dagger})\geq 0, \;\Vert\rho\Vert_{\mathscr{A}^{*}} =1\,=\rho(\mathbb{I})\right\}
 \]</span></p>
 <div style="height: 1em;">
@@ -509,11 +303,10 @@ p\mu(f)=\int_{\Omega}f(\omega)\,p(\omega)\,\mathrm{d}\mu(\omega)
 \]</span> <span class="math display">\[
 \rho(\mathbf{a})=\mathrm{Tr}_{\mathcal{H}}\left(\rho\,\mathbf{a}\right)
 \]</span></p>
-</div>
-</div>
-</section>
-<section id="what-isstackrelmathbfnotcurlyvee-andbut-what-should-neveralways-be" class="level2" data-background-color="beige" data-number="8">
-<h2 data-background-color="beige" data-number="8" class="anchored" data-anchor-id="what-isstackrelmathbfnotcurlyvee-andbut-what-should-neveralways-be"><span class="header-section-number">8</span> What Is<span class="math inline">\(\stackrel{\mathbf{Not}}{\curlyvee}\)</span> <ruby><s>and</s><rt>but</rt></ruby> What Should <ruby><s>Never</s><rt>Always</rt></ruby> Be<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></h2>
+</div></div>
+<aside><ol class="aside-footnotes"><li id="fn1"><p>Every <span class="math inline">\(W^{*}\)</span>-algebra has an identity element <span class="math inline">\(\mathbb{I}\)</span>.</p></li></ol></aside></section>
+<section id="what-isstackrelmathbfnotcurlyvee-andbut-what-should-neveralways-be" class="slide level2" data-background-color="beige">
+<h2>What Is<span class="math inline">\(\stackrel{\mathbf{Not}}{\curlyvee}\)</span> <ruby><s>and</s><rt>but</rt></ruby> What Should <ruby><s>Never</s><rt>Always</rt></ruby> Be<sup>1</sup></h2>
 <p><strong>Classical</strong>/<strong>Quantum</strong> parametric models in one stroke: <span class="math display">\[
 \mathrm{i}\colon M\hookrightarrow \mathcal{S}_{n}(\mathscr{A})
 \]</span></p>
@@ -525,13 +318,13 @@ p\mu(f)=\int_{\Omega}f(\omega)\,p(\omega)\,\mathrm{d}\mu(\omega)
 \mathrm{i}^{*}\mathrm{G}=\left\{\begin{matrix} g^{\mathrm{FR}} &amp; \mbox{ when } \mathscr{A}=\mathcal{L}^{\infty}(\Omega,\mu) &amp; \\ &amp; &amp; \\ g^{\mathrm{FS}} &amp; \mbox{ when } \mathscr{A}=\mathcal{B}(\mathcal{H}), &amp; \mathrm{i}(m)\equiv\rho_{m} \mbox{ is pure} \\ &amp; &amp; \\ g^{\mathrm{BH}} &amp; \mbox{ when } \mathscr{A}=\mathcal{B}(\mathcal{H}), &amp; \mathrm{i}(m)\equiv\rho_{m} \mbox{ is faithful} \end{matrix}\right.
 \]</span></p>
 <p>We would be very happy…</p>
+<aside><ol class="aside-footnotes"><li id="fn2"><p>A beer to the first one who <a href="https://www.youtube.com/watch?v=WnMiXsRtsfc">gets it</a>.</p></li></ol></aside></section>
+<section id="obviously-mathcals_nmathscra-is-not-a-manifold" class="slide level2" data-background-color="beige">
+<h2>Obviously, <span class="math inline">\(\mathcal{S}_{n}(\mathscr{A})\)</span> is <strong>not</strong> a manifold!</h2>
+<p><img data-src="../../../auxiliaries/knight-arrow.jpg" class="absolute" style="right: 300px; height: 600px; "></p>
 </section>
-<section id="obviously-mathcals_nmathscra-is-not-a-manifold" class="level2" data-background-color="beige" data-number="9">
-<h2 data-background-color="beige" data-number="9" class="anchored" data-anchor-id="obviously-mathcals_nmathscra-is-not-a-manifold"><span class="header-section-number">9</span> Obviously, <span class="math inline">\(\mathcal{S}_{n}(\mathscr{A})\)</span> is <strong>not</strong> a manifold!</h2>
-<p><img src="../../../auxiliaries/knight-arrow.jpg" class="absolute" data-right="300" height="600"></p>
-</section>
-<section id="how-to-pullback-metrics" class="level2" data-background-color="beige" data-number="10">
-<h2 data-background-color="beige" data-number="10" class="anchored" data-anchor-id="how-to-pullback-metrics"><span class="header-section-number">10</span> How to pullback metrics</h2>
+<section id="how-to-pullback-metrics" class="slide level2" data-background-color="beige">
+<h2>How to pullback metrics</h2>
 <p>We need an immersion:</p>
 <p><span class="math display">\[
 \mathrm{i}\colon M \hookrightarrow N
@@ -553,8 +346,8 @@ T_{m}M\ni v_{m}\,\mapsto\,T_{m}\mathrm{i}(v_{m})\in T_{\mathrm{i}(m)}N
 (\mathrm{i}^{*}\mathrm{G})_{m}(v_{m},v_{m}):=\mathrm{G}_{\mathrm{i}(m)}\left(T_{m}\mathrm{i}(v_{m}),T_{m}\mathrm{i}(v_{m})\right)
 \]</span></p>
 </section>
-<section id="from-the-mathrmgns-space-to" class="level2" data-background-color="beige" data-number="11">
-<h2 data-background-color="beige" data-number="11" class="anchored" data-anchor-id="from-the-mathrmgns-space-to"><span class="header-section-number">11</span> From the <span class="math inline">\(\mathrm{GNS}\)</span> space to…</h2>
+<section id="from-the-mathrmgns-space-to" class="slide level2" data-background-color="beige">
+<h2>From the <span class="math inline">\(\mathrm{GNS}\)</span> space to…</h2>
 <p>Define the <em>Gel’fand ideal</em> <span class="math display">\[
 \mathscr{N}_{\rho}:=\left\{\mathbf{a}\in\mathscr{A}\mid\rho(\mathbf{a}^{\dagger}\mathbf{a})=0\right\}.
 \]</span></p>
@@ -572,13 +365,13 @@ p\mu(f)=\int_{\Omega}f(\omega)\,p(\omega)\,\mathrm{d}\mu(\omega) \qquad \rightsq
 \rho(\mathbf{a})=\mathrm{Tr}_{\mathcal{H}}(\rho\,\mathbf{a}) \qquad \rightsquigarrow\qquad \mathcal{H}_{\rho}^{\mathbb{C}}\cong \mathrm{HS}(\mathrm{ran}(\rho),\mathcal{H})
 \]</span></p>
 </section>
-<section id="cotangent-bundle-of-mathcals_nmathscra" class="level2" data-background-color="beige" data-number="12">
-<h2 data-background-color="beige" data-number="12" class="anchored" data-anchor-id="cotangent-bundle-of-mathcals_nmathscra"><span class="header-section-number">12</span> … “co/tangent bundle” of <span class="math inline">\(\mathcal{S}_{n}(\mathscr{A})\)</span></h2>
+<section id="cotangent-bundle-of-mathcals_nmathscra" class="slide level2" data-background-color="beige">
+<h2>… “co/tangent bundle” of <span class="math inline">\(\mathcal{S}_{n}(\mathscr{A})\)</span></h2>
 <p>Consider the realification <span class="math inline">\(\mathcal{H}_{\rho}\)</span> of <span class="math inline">\(\mathcal{H}_{\rho}^{\mathbb{C}}\)</span> with</p>
 <p><span class="math display">\[
 \qquad (\psi^{\rho}\mid\eta^{\rho})_{\rho}:=\frac{1}{2}\left(\langle\psi^{\rho}\mid\eta^{\rho}\rangle_{\rho} + \langle\eta^{\rho}\mid\psi^{\rho}\rangle_{\rho}\right)=\Re \langle\psi^{\rho}\mid\eta^{\rho}\rangle_{\rho} .
 \]</span></p>
-<p>Define the “<strong>co/tangent <span class="math inline">\(\mathrm{GNS}\)</span> bundles</strong>”<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>: <span class="math display">\[
+<p>Define the “<strong>co/tangent <span class="math inline">\(\mathrm{GNS}\)</span> bundles</strong>”<sup>1</sup>: <span class="math display">\[
 \mathcal{H}(\mathscr{A})=\sqcup_{\rho\in\mathcal{S}_{n}(\mathscr{A})}\mathcal{H}_{\rho}\,\stackrel{(\psi^{\rho}\mapsto \rho)}{\longrightarrow} \mathcal{S}_{n}(\mathscr{A})
 \]</span> <span class="math display">\[
 \mathcal{H}^{*}(\mathscr{A})=\sqcup_{\rho\in\mathcal{S}_{n}(\mathscr{A})}\mathcal{H}_{\rho}^{*}\,\stackrel{(\eta^{\rho}\mapsto \rho)}{\longrightarrow} \mathcal{S}_{n}(\mathscr{A})
@@ -589,9 +382,9 @@ p\mu(f)=\int_{\Omega}f(\omega)\,p(\omega)\,\mathrm{d}\mu(\omega) \qquad \rightsq
 \rho&amp;\mapsto s^{*}_{\mathbf{a}}(\rho)=\eta^{\mathbf{a}}_{\rho}\mid \eta^{\mathbf{a}}_{\rho}(\psi_{\mathbf{b}}^{\rho})=\left( \psi_{\mathbf{a}}^{\rho}\mid \psi_{\mathbf{b}}^{\rho}\right)_{\rho}
 \end{split}
 \]</span></p>
-</section>
-<section id="transformations-properties" class="level2" data-background-color="beige" data-number="13">
-<h2 data-background-color="beige" data-number="13" class="anchored" data-anchor-id="transformations-properties"><span class="header-section-number">13</span> Transformations properties</h2>
+<aside><ol class="aside-footnotes"><li id="fn3"><p>Fell-Doran Vol.1.3.18 assure us that these are (non-locally-trivial) Hilbert bundles.</p></li></ol></aside></section>
+<section id="transformations-properties" class="slide level2" data-background-color="beige">
+<h2>Transformations properties</h2>
 <p>The nCPU map <span class="math display">\[
 \Phi\colon \mathscr{B}\rightarrow \mathscr{A}
 \]</span> such that <span class="math display">\[
@@ -631,8 +424,8 @@ $$
 Using Riesz's theorem,  $\mathcal{V}_{\rho}$ is isomorphic to  $\mathsf{I}_{\rho}(\mathscr{A}_{sa})\subseteq\mathcal{H}_{\rho}$.
 -->
 </section>
-<section id="regular-parametric-models" class="level2" data-background-color="beige" data-number="14">
-<h2 data-background-color="beige" data-number="14" class="anchored" data-anchor-id="regular-parametric-models"><span class="header-section-number">14</span> Regular parametric models</h2>
+<section id="regular-parametric-models" class="slide level2" data-background-color="beige">
+<h2>Regular parametric models</h2>
 <p>A <strong><em>regular parametric model</em></strong> is a triple <span class="math inline">\((\mathscr{A},\mathrm{i},M)\)</span> where:</p>
 <ul>
 <li><span class="math inline">\(\mathscr{A}\)</span> is a <span class="math inline">\(W^*\)</span>-algebra</li>
@@ -653,14 +446,14 @@ Using Riesz's theorem,  $\mathcal{V}_{\rho}$ is isomorphic to  $\mathsf{I}_{\rho
 
 </div>
 <ul>
-<li>every <span class="math inline">\(v_{m}\in T_{m}M\)</span> is uniquely represented<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> in <span class="math inline">\(\mathcal{H}_{\mathrm{i}(m)}^{*}\)</span>:</li>
+<li>every <span class="math inline">\(v_{m}\in T_{m}M\)</span> is uniquely represented<sup>1</sup> in <span class="math inline">\(\mathcal{H}_{\mathrm{i}(m)}^{*}\)</span>:</li>
 </ul>
 <p><span class="math display">\[
 \frac{\mathrm{d}}{\mathrm{d}t}\left(\mathrm{i}(\gamma_{m}^{v_{m}}(t))(\mathbf{a})\right)_{t=0}=\eta^{v_{m}}_{\mathrm{i}(m)}(\psi_{\mathbf{a}}^{\mathrm{i}(m)})= \left(\tilde\eta_{v_{m}}^{\mathrm{i}(m)}|\psi_{\mathbf{a}}^{\mathrm{i}(m)}\right)_{\mathrm{i}(m)}
 \]</span> where <span class="math inline">\(\gamma_{m}^{v_{m}}(t)\)</span> is a defining curve for <span class="math inline">\(v_{m}\)</span>, and <span class="math inline">\(\mathbf{a}\in\mathscr{A}_{sa}\)</span></p>
-</section>
-<section id="scores-revisited" class="level2" data-background-color="beige" data-number="15">
-<h2 data-background-color="beige" data-number="15" class="anchored" data-anchor-id="scores-revisited"><span class="header-section-number">15</span> Scores (revisited)</h2>
+<aside><ol class="aside-footnotes"><li id="fn4"><p>Uniqueness is obtained imposing <span class="math inline">\(\eta^{v_{m}}_{\mathrm{i}(m)}\)</span> vanishes on the subspace generated by anti-self-adjoint elements.</p></li></ol></aside></section>
+<section id="scores-revisited" class="slide level2" data-background-color="beige">
+<h2>Scores (revisited)</h2>
 <p>Assume <span class="math inline">\((\mathcal{L}^{\infty}(\Omega,\mu),\mathrm{i},\Theta\subseteq \mathbb{R}^{n})\)</span> is a <strong><em>regular parametric model</em></strong> (<span class="math inline">\(p(\theta;\omega)&gt;0\)</span> <span class="math inline">\(\mu\)</span>-a.e., and <span class="math inline">\(f\in\mathscr{A}_{sa}\)</span>): <span class="math display">\[
 \theta\,\mapsto \mathrm{i}(\theta)(f)=\int_{\Omega}f(\omega)\,p(\theta;\omega)\,\mathrm{d}\mu(\omega)
 \]</span></p>
@@ -674,8 +467,8 @@ Using Riesz's theorem,  $\mathcal{V}_{\rho}$ is isomorphic to  $\mathsf{I}_{\rho
 v_{\theta}^{j}\equiv \left.\partial_{\theta^{j}}\right|_{\theta}\;\rightsquigarrow\;\tilde\eta_{v_{\theta}^{j}}^{\mathrm{i}(\theta)}(\omega)\equiv s_{j}(\theta;\omega)\in\mathcal{L}^{2}(\Omega,p_{\theta}\mu)
 \]</span></p>
 </section>
-<section id="slds-revisited" class="level2" data-background-color="beige" data-number="16">
-<h2 data-background-color="beige" data-number="16" class="anchored" data-anchor-id="slds-revisited"><span class="header-section-number">16</span> SLDs (revisited)</h2>
+<section id="slds-revisited" class="slide level2" data-background-color="beige">
+<h2>SLDs (revisited)</h2>
 <p>Assume <span class="math inline">\((\mathcal{B}(\mathcal{H}),\mathrm{i},\Lambda\subseteq \mathbb{R}^{n})\)</span> is a <strong><em>regular parametric model</em></strong> with <span class="math inline">\(\mathrm{dim}(\mathcal{H})&lt;\infty\)</span>, <span class="math inline">\(\rho(\lambda)&gt;0\)</span>, and <span class="math inline">\(\mathbf{a}=\mathbf{a}^{\dagger}\)</span>: <span class="math display">\[
 \lambda\;\mapsto\;\mathrm{i}(\lambda)(\mathbf{a})=\mathrm{Tr}_{\mathcal{H}}\left(\rho(\lambda)\,\mathbf{a}\right)
 \]</span></p>
@@ -689,8 +482,8 @@ v_{\theta}^{j}\equiv \left.\partial_{\theta^{j}}\right|_{\theta}\;\rightsquigarr
 v_{\lambda}^{j}\equiv \left.\partial_{\lambda^{j}}\right|_{\lambda}\;\rightsquigarrow\;\partial_{\lambda^{j}}\rho(\lambda)=\{\rho(\lambda),\tilde\eta_{v_{\lambda}^{j}}^{\mathrm{i}(\lambda)}\}\equiv \{\rho(\lambda),\mathbf{L}_{j}(\lambda)\}
 \]</span></p>
 </section>
-<section id="pure-slds" class="level2" data-background-color="beige" data-number="17">
-<h2 data-background-color="beige" data-number="17" class="anchored" data-anchor-id="pure-slds"><span class="header-section-number">17</span> Pure SLDs</h2>
+<section id="pure-slds" class="slide level2" data-background-color="beige">
+<h2>Pure SLDs</h2>
 <p>Assume <span class="math inline">\((\mathcal{B}(\mathcal{H}),\mathrm{i},\Lambda\subseteq \mathbb{R}^{n})\)</span> is a <strong><em>regular parametric model</em></strong> with <span class="math inline">\(\rho(\lambda)=|\psi(\lambda)\rangle\langle\psi(\lambda)|\)</span>, and <span class="math inline">\(\mathbf{a}=\mathbf{a}^{\dagger}\)</span>: <span class="math display">\[
 \lambda\;\mapsto\;\mathrm{i}(\lambda)(\mathbf{a})=\mathrm{Tr}_{\mathcal{H}}\left(\rho(\lambda)\,\mathbf{a}\right)
 \]</span></p>
@@ -700,12 +493,12 @@ v_{\lambda}^{j}\equiv \left.\partial_{\lambda^{j}}\right|_{\lambda}\;\rightsquig
 \parallel \qquad \qquad &amp;= \langle\partial_{\lambda^{j}}\psi(\lambda)|\mathbf{a}|\psi(\lambda)\rangle + \langle\psi(\lambda)|\mathbf{a}|\partial_{\lambda^{j}}\psi(\lambda)\rangle \\
 \left(\tilde\eta_{v_{\lambda}^{j}}^{\mathrm{i}(\lambda)}|\psi_{\mathbf{a}}^{\mathrm{i}(\lambda)}\right)_{\mathrm{i}(\lambda)}  
 \end{split}
-\]</span> which means<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> <span class="math display">\[
+\]</span> which means<sup>1</sup> <span class="math display">\[
 v_{\lambda}^{j}\equiv \left.\partial_{\lambda^{j}}\right|_{\lambda}\;\rightsquigarrow\;\tilde\eta_{v_{\lambda}^{j}}^{\mathrm{i}(\lambda)}=\psi_{\mathbf{b}_{\lambda}^{j}}^{\mathrm{i}(\lambda)} \;\mbox{ with } \frac{\mathbf{b}_{\lambda}^{j}}{2}=|\partial_{\lambda^{j}}\psi(\lambda)\rangle\langle \psi(\lambda)| + | \psi(\lambda)\rangle\langle \partial_{\lambda^{j}}\psi(\lambda)|
 \]</span></p>
-</section>
-<section id="how-to-pullback-metrics-without-manifolds" class="level2" data-background-color="beige" data-number="18">
-<h2 data-background-color="beige" data-number="18" class="anchored" data-anchor-id="how-to-pullback-metrics-without-manifolds"><span class="header-section-number">18</span> How to pullback metrics without manifolds</h2>
+<aside><ol class="aside-footnotes"><li id="fn5"><p>Recall that <span class="math inline">\(\rho(\lambda)(\mathbf{I})=\langle\psi(\lambda)|\psi(\lambda)\rangle =1\)</span> implies <span class="math inline">\(\Re \langle\partial_{\lambda^{j}}\psi(\lambda)|\psi(\lambda)\rangle=0\)</span>.</p></li></ol></aside></section>
+<section id="how-to-pullback-metrics-without-manifolds" class="slide level2" data-background-color="beige">
+<h2>How to pullback metrics without manifolds</h2>
 <p>We have an immersion:</p>
 <p><span class="math display">\[
 \mathrm{i}\colon M \hookrightarrow \mathscr{S}_{n}(\mathscr{A})
@@ -730,14 +523,14 @@ $$
 $$
 --->
 </section>
-<section id="finally-the-metric" class="level2" data-background-color="beige" data-number="19">
-<h2 data-background-color="beige" data-number="19" class="anchored" data-anchor-id="finally-the-metric"><span class="header-section-number">19</span> Finally, the metric!</h2>
+<section id="finally-the-metric" class="slide level2" data-background-color="beige">
+<h2>Finally, the metric!</h2>
 <p>Once we have a <strong><em>regular parametric model</em></strong> is a triple <span class="math inline">\((\mathscr{A},\mathrm{i},M)\)</span>: <span class="math display">\[
 \mathrm{G}(X,Y)(m):=\left(\tilde{\eta}^{X_{m}}\mid\tilde{\eta}^{Y_{m}}\right)_{\mathrm{i}(m)}
 \]</span> where <span class="math inline">\(X,Y\in\mathfrak{X}(M)\)</span>, and <span class="math inline">\(X_{m},Y_{m}\in T_{m}M\)</span>.</p>
 </section>
-<section id="finally-the-fisher-rao-metric" class="level2" data-background-color="beige" data-visibility="uncounted" data-number="20">
-<h2 data-background-color="beige" data-visibility="uncounted" data-number="20" class="anchored" data-anchor-id="finally-the-fisher-rao-metric"><span class="header-section-number">20</span> Finally, the (Fisher-Rao) metric!</h2>
+<section id="finally-the-fisher-rao-metric" class="slide level2" data-background-color="beige" data-visibility="uncounted">
+<h2>Finally, the (Fisher-Rao) metric!</h2>
 <p>Once we have a <strong><em>regular parametric model</em></strong> is a triple <span class="math inline">\((\mathscr{A},\mathrm{i},M)\)</span>: <span class="math display">\[
 \mathrm{G}(X,Y)(m):=\left(\tilde{\eta}^{X_{m}}\mid\tilde{\eta}^{Y_{m}}\right)_{\mathrm{i}(m)}
 \]</span> where <span class="math inline">\(X,Y\in\mathfrak{X}(M)\)</span>, and <span class="math inline">\(X_{m},Y_{m}\in T_{m}M\)</span>.</p>
@@ -754,15 +547,15 @@ v_{\theta}^{j}\equiv \left.\partial_{\theta^{j}}\right|_{\theta}\rightsquigarrow
 \mathrm{G}(\partial_{\theta^{j}},\partial_{\theta^{k}})(\theta)=\int_{\Omega}\,s_{j}(\theta;\omega)\,s_{k}(\theta;\omega)\,p(\theta;\omega)\,\mathrm{d}\mu(\omega)=g_{jk}^{\mathrm{FR}}(\theta)
 \]</span></p>
 </section>
-<section id="finally-the-fubini-study-metric" class="level2" data-background-color="beige" data-visibility="uncounted" data-number="21">
-<h2 data-background-color="beige" data-visibility="uncounted" data-number="21" class="anchored" data-anchor-id="finally-the-fubini-study-metric"><span class="header-section-number">21</span> Finally, the (Fubini-Study) metric!</h2>
+<section id="finally-the-fubini-study-metric" class="slide level2" data-background-color="beige" data-visibility="uncounted">
+<h2>Finally, the (Fubini-Study) metric!</h2>
 <p>Once we have a <strong><em>regular parametric model</em></strong> is a triple <span class="math inline">\((\mathscr{A},\mathrm{i},M)\)</span>: <span class="math display">\[
 \mathrm{G}(X,Y)(m):=\left(\tilde{\eta}^{X_{m}}\mid\tilde{\eta}^{Y_{m}}\right)_{\mathrm{i}(m)}
 \]</span> where <span class="math inline">\(X,Y\in\mathfrak{X}(M)\)</span>, and <span class="math inline">\(X_{m},Y_{m}\in T_{m}M\)</span>.</p>
 <div style="height: 2em;">
 
 </div>
-<p><strong>Pure quantum models</strong><a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>: <span class="math display">\[
+<p><strong>Pure quantum models</strong><sup>1</sup>: <span class="math display">\[
 v_{\lambda}^{j}\equiv \left.\partial_{\lambda^{j}}\right|_{\lambda}\rightsquigarrow\;\tilde\eta^{v_{\lambda}^{j}}=\psi_{\mathbf{b}_{\lambda}^{j}}^{\mathrm{i}(\lambda)} \mbox{ with } \frac{\mathbf{b}_{\lambda}^{j}}{2}=|\partial_{\lambda^{j}}\psi(\lambda)\rangle\langle \psi(\lambda)| + | \psi(\lambda)\rangle\langle \partial_{\lambda^{j}}\psi(\lambda)|
 \]</span></p>
 <div style="height: 1em;">
@@ -771,9 +564,9 @@ v_{\lambda}^{j}\equiv \left.\partial_{\lambda^{j}}\right|_{\lambda}\rightsquigar
 <p><span class="math display">\[
 \mathrm{G}(\partial_{\lambda^{j}},\partial_{\lambda^{k}})(\lambda)=\langle \psi(\lambda)|\{\mathbf{b}_{\lambda}^{j},\,\mathbf{b}_{\lambda}^{k}\}|\psi(\lambda)\rangle= 4g_{jk}^{\mathrm{FS}}(\lambda) =4\Re Q_{jk}(\lambda)
 \]</span></p>
-</section>
-<section id="finally-the-bures-helstrom-metric" class="level2" data-background-color="beige" data-visibility="uncounted" data-number="22">
-<h2 data-background-color="beige" data-visibility="uncounted" data-number="22" class="anchored" data-anchor-id="finally-the-bures-helstrom-metric"><span class="header-section-number">22</span> Finally, the (Bures-Helstrom) metric!</h2>
+<aside><ol class="aside-footnotes"><li id="fn6"><p>Recall that <span class="math inline">\(\langle\psi(\lambda)|\psi(\lambda)\rangle =1\)</span> implies <span class="math inline">\(\Re \langle\partial_{\lambda^{j}}\psi(\lambda)|\psi(\lambda)\rangle=0\)</span>.</p></li></ol></aside></section>
+<section id="finally-the-bures-helstrom-metric" class="slide level2" data-background-color="beige" data-visibility="uncounted">
+<h2>Finally, the (Bures-Helstrom) metric!</h2>
 <p>Once we have a <strong><em>regular parametric model</em></strong> is a triple <span class="math inline">\((\mathscr{A},\mathrm{i},M)\)</span>: <span class="math display">\[
 \mathrm{G}(X,Y)(m):=\left(\tilde{\eta}^{X_{m}}\mid\tilde{\eta}^{Y_{m}}\right)_{\mathrm{i}(m)}
 \]</span> where <span class="math inline">\(X,Y\in\mathfrak{X}(M)\)</span>, and <span class="math inline">\(X_{m},Y_{m}\in T_{m}M\)</span>.</p>
@@ -790,8 +583,8 @@ v_{\lambda}^{j}\equiv \left.\partial_{\lambda^{j}}\right|_{\lambda}\rightsquigar
 \mathrm{G}(\partial_{\lambda^{j}},\partial_{\lambda^{k}})(\lambda)=\mathrm{Tr}_{\mathcal{H}}\left(\rho(\lambda)\left\{\mathbf{L}_{j}(\lambda), \mathbf{L}_{k}(\lambda)\right\}\right)=g_{jk}^{\mathrm{BH}}(\lambda)
 \]</span></p>
 </section>
-<section id="wait-theres-also-a-two-form" class="level2" data-background-color="beige" data-number="23">
-<h2 data-background-color="beige" data-number="23" class="anchored" data-anchor-id="wait-theres-also-a-two-form"><span class="header-section-number">23</span> Wait, there’s also a two-form!</h2>
+<section id="wait-theres-also-a-two-form" class="slide level2" data-background-color="beige">
+<h2>Wait, there’s also a two-form!</h2>
 <p>We also have <span class="math display">\[
 \Xi(X,Y)(m):=\Im \langle\tilde{\eta}^{X_{m}}\mid\tilde{\eta}^{Y_{m}}\rangle_{\mathrm{i}(m)}
 \]</span> where <span class="math inline">\(X,Y\in\mathfrak{X}(M)\)</span>, and <span class="math inline">\(X_{m},Y_{m}\in T_{m}M\)</span>.</p>
@@ -810,15 +603,15 @@ v_{\theta}^{j}\equiv \left.\partial_{\theta^{j}}\right|_{\theta}\;\rightsquigarr
 \]</span></p>
 </div>
 </section>
-<section id="wait-theres-also-a-two-form-1" class="level2" data-background-color="beige" data-visibility="uncounted" data-number="24">
-<h2 data-background-color="beige" data-visibility="uncounted" data-number="24" class="anchored" data-anchor-id="wait-theres-also-a-two-form-1"><span class="header-section-number">24</span> Wait, there’s also a two-form!</h2>
+<section id="wait-theres-also-a-two-form-1" class="slide level2" data-background-color="beige" data-visibility="uncounted">
+<h2>Wait, there’s also a two-form!</h2>
 <p>We also have <span class="math display">\[
 \Xi(X,Y)(m):=\Im \langle\tilde{\eta}^{X_{m}}\mid\tilde{\eta}^{Y_{m}}\rangle_{\mathrm{i}(m)}
 \]</span> where <span class="math inline">\(X,Y\in\mathfrak{X}(M)\)</span>, and <span class="math inline">\(X_{m},Y_{m}\in T_{m}M\)</span>.</p>
 <div style="height: 2em;">
 
 </div>
-<p><strong>Pure quantum models</strong><a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a>: <span class="math display">\[
+<p><strong>Pure quantum models</strong><sup>1</sup>: <span class="math display">\[
 v_{\lambda}^{j}\equiv \left.\partial_{\lambda^{j}}\right|_{\lambda}\rightsquigarrow\;\tilde\eta^{v_{\lambda}^{j}}=\psi_{\mathbf{b}_{\lambda}^{j}}^{\mathrm{i}(\lambda)} \mbox{ with } \frac{\mathbf{b}_{\lambda}^{j}}{2}=|\partial_{\lambda^{j}}\psi(\lambda)\rangle\langle \psi(\lambda)| + | \psi(\lambda)\rangle\langle \partial_{\lambda^{j}}\psi(\lambda)|
 \]</span></p>
 <div style="height: 1em;">
@@ -831,9 +624,9 @@ v_{\lambda}^{j}\equiv \left.\partial_{\lambda^{j}}\right|_{\lambda}\rightsquigar
 
 </div>
 <p><strong>Remark</strong>: maximally entangled states are maximally isotropic submanifolds of <span class="math inline">\(\Xi\)</span></p>
-</section>
-<section id="wait-theres-also-a-two-form-2" class="level2" data-background-color="beige" data-visibility="uncounted" data-number="25">
-<h2 data-background-color="beige" data-visibility="uncounted" data-number="25" class="anchored" data-anchor-id="wait-theres-also-a-two-form-2"><span class="header-section-number">25</span> Wait, there’s also a two-form!</h2>
+<aside><ol class="aside-footnotes"><li id="fn7"><p>Recall that <span class="math inline">\(\langle\psi(\lambda)|\psi(\lambda)\rangle =1\)</span> implies <span class="math inline">\(\Re \langle\partial_{\lambda^{j}}\psi(\lambda)|\psi(\lambda)\rangle=0\)</span>.</p></li></ol></aside></section>
+<section id="wait-theres-also-a-two-form-2" class="slide level2" data-background-color="beige" data-visibility="uncounted">
+<h2>Wait, there’s also a two-form!</h2>
 <p>We also have <span class="math display">\[
 \Xi(X,Y)(m):=\Im \langle\tilde{\eta}^{X_{m}}\mid\tilde{\eta}^{Y_{m}}\rangle_{\mathrm{i}(m)}
 \]</span> where <span class="math inline">\(X,Y\in\mathfrak{X}(M)\)</span>, and <span class="math inline">\(X_{m},Y_{m}\in T_{m}M\)</span>.</p>
@@ -855,15 +648,15 @@ v_{\lambda}^{j}\equiv \left.\partial_{\lambda^{j}}\right|_{\lambda}\;\rightsquig
 </div>
 <p><strong>Remark</strong>: isotropic submanifolds of <span class="math inline">\(\Xi\)</span> are <em>quasi-classical models</em></p>
 </section>
-<section id="formal-take-home-message" class="level2" data-background-color="beige" data-number="26">
-<h2 data-background-color="beige" data-number="26" class="anchored" data-anchor-id="formal-take-home-message"><span class="header-section-number">26</span> Formal take-home message</h2>
-<p><img src="../../../auxiliaries/2025-12-29_diagram_GNS_bundle_pullback.png" class="img-fluid"></p>
-</section>
-<section id="whats-next" class="level2" data-background-color="beige" data-number="27">
-<h2 data-background-color="beige" data-number="27" class="anchored" data-anchor-id="whats-next"><span class="header-section-number">27</span> What’s next?</h2>
+<section id="formal-take-home-message" class="slide level2" data-background-color="beige">
+<h2>Formal take-home message</h2>
+
+<img data-src="../../../auxiliaries/2025-12-29_diagram_GNS_bundle_pullback.png" class="r-stretch"></section>
+<section id="whats-next" class="slide level2" data-background-color="beige">
+<h2>What’s next?</h2>
 <div class="columns">
 <div class="column">
-<p><img src="../../../auxiliaries/Pepe_Silvia.jpg" class="img-fluid"></p>
+<p><img data-src="../../../auxiliaries/Pepe_Silvia.jpg"></p>
 </div><div class="column">
 <ul>
 <li>Guarantee “automatic smoothness” of <span class="math inline">\(\mathrm{G}\)</span> and <span class="math inline">\(\Xi\)</span>
@@ -892,492 +685,425 @@ v_{\lambda}^{j}\equiv \left.\partial_{\lambda^{j}}\right|_{\lambda}\;\rightsquig
 </div></li>
 <li>Alternative geometries from alternative Hilbert structures (quantum monotone metrics)</li>
 </ul>
-</div>
-</div>
+</div></div>
 
 
 </section>
 
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
 
-<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+</div>
+</div></div>
 
-<ol>
-<li id="fn1"><p>Every <span class="math inline">\(W^{*}\)</span>-algebra has an identity element <span class="math inline">\(\mathbb{I}\)</span>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>A beer to the first one who <a href="https://www.youtube.com/watch?v=WnMiXsRtsfc">gets it</a>.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3"><p>Fell-Doran Vol.1.3.18 assure us that these are (non-locally-trivial) Hilbert bundles.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn4"><p>Uniqueness is obtained imposing <span class="math inline">\(\eta^{v_{m}}_{\mathrm{i}(m)}\)</span> vanishes on the subspace generated by anti-self-adjoint elements.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn5"><p>Recall that <span class="math inline">\(\rho(\lambda)(\mathbf{I})=\langle\psi(\lambda)|\psi(\lambda)\rangle =1\)</span> implies <span class="math inline">\(\Re \langle\partial_{\lambda^{j}}\psi(\lambda)|\psi(\lambda)\rangle=0\)</span>.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn6"><p>Recall that <span class="math inline">\(\langle\psi(\lambda)|\psi(\lambda)\rangle =1\)</span> implies <span class="math inline">\(\Re \langle\partial_{\lambda^{j}}\psi(\lambda)|\psi(\lambda)\rangle=0\)</span>.<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn7"><p>Recall that <span class="math inline">\(\langle\psi(\lambda)|\psi(\lambda)\rangle =1\)</span> implies <span class="math inline">\(\Re \langle\partial_{\lambda^{j}}\psi(\lambda)|\psi(\lambda)\rangle=0\)</span>.<a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
-</section></div></main> <!-- /main -->
-<script type="text/tikz">
-% --- TikZJax preamble (loaded once) ---
-\usetikzlibrary{arrows.meta,decorations.pathreplacing,calc,calligraphy}
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="../../../site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="../../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../../../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../../../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../../../site_libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="../../../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
 
-\usepackage{amsfonts,amsmath}
+  <script src="../../../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../../../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../../../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../../../site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
 
-</script>
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-  document.querySelectorAll('a[href^="http"]').forEach(function(link) {
-    if (!link.href.includes(window.location.hostname)) {
-      link.setAttribute("target", "_blank");
-      link.setAttribute("rel", "noopener noreferrer");
-    }
-  });
-});
-</script>
+  <script>
 
-<script src="https://tikzjax.com/v1/tikzjax.js"></script>
-<script id="quarto-html-after-body" type="application/javascript">
-  window.document.addEventListener("DOMContentLoaded", function (event) {
-    // Ensure there is a toggle, if there isn't float one in the top right
-    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
-      const a = window.document.createElement('a');
-      a.classList.add('top-right');
-      a.classList.add('quarto-color-scheme-toggle');
-      a.href = "";
-      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
-      const i = window.document.createElement("i");
-      i.classList.add('bi');
-      a.appendChild(i);
-      window.document.body.appendChild(a);
-    }
-    setColorSchemeToggle(hasAlternateSentinel())
-    const icon = "";
-    const anchorJS = new window.AnchorJS();
-    anchorJS.options = {
-      placement: 'right',
-      icon: icon
-    };
-    anchorJS.add('.anchored');
-    const isCodeAnnotation = (el) => {
-      for (const clz of el.classList) {
-        if (clz.startsWith('code-annotation-')) {                     
-          return true;
-        }
-      }
-      return false;
-    }
-    const onCopySuccess = function(e) {
-      // button target
-      const button = e.trigger;
-      // don't keep focus
-      button.blur();
-      // flash "checked"
-      button.classList.add('code-copy-button-checked');
-      var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Copied!");
-      let tooltip;
-      if (window.bootstrap) {
-        button.setAttribute("data-bs-toggle", "tooltip");
-        button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Copied!");
-        tooltip = new bootstrap.Tooltip(button, 
-          { trigger: "manual", 
-            customClass: "code-copy-button-tooltip",
-            offset: [0, -8]});
-        tooltip.show();    
-      }
-      setTimeout(function() {
-        if (tooltip) {
-          tooltip.hide();
-          button.removeAttribute("data-bs-title");
-          button.removeAttribute("data-bs-toggle");
-          button.removeAttribute("data-bs-placement");
-        }
-        button.setAttribute("title", currentTitle);
-        button.classList.remove('code-copy-button-checked');
-      }, 1000);
-      // clear code selection
-      e.clearSelection();
-    }
-    const getTextToCopy = function(trigger) {
-      const outerScaffold = trigger.parentElement.cloneNode(true);
-      const codeEl = outerScaffold.querySelector('code');
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-      text: getTextToCopy
-    });
-    clipboard.on('success', onCopySuccess);
-    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-        text: getTextToCopy,
-        container: window.document.getElementById('quarto-embedded-source-code-modal')
-      });
-      clipboardModal.on('success', onCopySuccess);
-    }
-      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-      var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
-      var isInternal = (href) => {
-          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-      }
-      // Inspect non-navigation links and adorn them if external
-     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-      for (var i=0; i<links.length; i++) {
-        const link = links[i];
-        if (!isInternal(link.href)) {
-          // undo the damage that might have been done by quarto-nav.js in the case of
-          // links that we want to consider external
-          if (link.dataset.originalHref !== undefined) {
-            link.href = link.dataset.originalHref;
-          }
-        }
-      }
-    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-      const config = {
-        allowHTML: true,
-        maxWidth: 500,
-        delay: 100,
-        arrow: false,
-        appendTo: function(el) {
-            return el.parentElement;
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":true},
+'smaller': true,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'fade',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
         },
-        interactive: true,
-        interactiveBorder: 10,
-        theme: 'quarto',
-        placement: 'bottom-start',
-      };
-      if (contentFn) {
-        config.content = contentFn;
-      }
-      if (onTriggerFn) {
-        config.onTrigger = onTriggerFn;
-      }
-      if (onUntriggerFn) {
-        config.onUntrigger = onUntriggerFn;
-      }
-      window.tippy(el, config); 
-    }
-    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-    for (var i=0; i<noterefs.length; i++) {
-      const ref = noterefs[i];
-      tippyHover(ref, function() {
-        // use id or data attribute instead here
-        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-        try { href = new URL(href).hash; } catch {}
-        const id = href.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note) {
-          return note.innerHTML;
-        } else {
-          return "";
-        }
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
       });
-    }
-    const xrefs = window.document.querySelectorAll('a.quarto-xref');
-    const processXRef = (id, note) => {
-      // Strip column container classes
-      const stripColumnClz = (el) => {
-        el.classList.remove("page-full", "page-columns");
-        if (el.children) {
-          for (const child of el.children) {
-            stripColumnClz(child);
-          }
-        }
-      }
-      stripColumnClz(note)
-      if (id === null || id.startsWith('sec-')) {
-        // Special case sections, only their first couple elements
-        const container = document.createElement("div");
-        if (note.children && note.children.length > 2) {
-          container.appendChild(note.children[0].cloneNode(true));
-          for (let i = 1; i < note.children.length; i++) {
-            const child = note.children[i];
-            if (child.tagName === "P" && child.innerText === "") {
-              continue;
-            } else {
-              container.appendChild(child.cloneNode(true));
-              break;
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
             }
           }
-          if (window.Quarto?.typesetMath) {
-            window.Quarto.typesetMath(container);
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
           }
-          return container.innerHTML
-        } else {
-          if (window.Quarto?.typesetMath) {
-            window.Quarto.typesetMath(note);
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
           }
-          return note.innerHTML;
+          return codeEl.innerText;
         }
-      } else {
-        // Remove any anchor links if they are present
-        const anchorLink = note.querySelector('a.anchorjs-link');
-        if (anchorLink) {
-          anchorLink.remove();
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(note);
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp('/' + window.location.host + '/');
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
         }
-        if (note.classList.contains("callout")) {
-          return note.outerHTML;
-        } else {
-          return note.innerHTML;
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
         }
-      }
-    }
-    for (var i=0; i<xrefs.length; i++) {
-      const xref = xrefs[i];
-      tippyHover(xref, undefined, function(instance) {
-        instance.disable();
-        let url = xref.getAttribute('href');
-        let hash = undefined; 
-        if (url.startsWith('#')) {
-          hash = url;
-        } else {
-          try { hash = new URL(url).hash; } catch {}
-        }
-        if (hash) {
-          const id = hash.replace(/^#\/?/, "");
-          const note = window.document.getElementById(id);
-          if (note !== null) {
-            try {
-              const html = processXRef(id, note.cloneNode(true));
-              instance.setContent(html);
-            } finally {
-              instance.enable();
-              instance.show();
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
             }
           } else {
-            // See if we can fetch this
-            fetch(url.split('#')[0])
-            .then(res => res.text())
-            .then(html => {
-              const parser = new DOMParser();
-              const htmlDoc = parser.parseFromString(html, "text/html");
-              const note = htmlDoc.getElementById(id);
-              if (note !== null) {
-                const html = processXRef(id, note);
-                instance.setContent(html);
-              } 
-            }).finally(() => {
-              instance.enable();
-              instance.show();
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
             });
           }
-        } else {
-          // See if we can fetch a full url (with no hash to target)
-          // This is a special case and we should probably do some content thinning / targeting
-          fetch(url)
-          .then(res => res.text())
-          .then(html => {
-            const parser = new DOMParser();
-            const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.querySelector('main.content');
-            if (note !== null) {
-              // This should only happen for chapter cross references
-              // (since there is no id in the URL)
-              // remove the first header
-              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-                note.children[0].remove();
-              }
-              const html = processXRef(null, note);
-              instance.setContent(html);
-            } 
-          }).finally(() => {
-            instance.enable();
-            instance.show();
-          });
         }
-      }, function(instance) {
       });
-    }
-        let selectedAnnoteEl;
-        const selectorForAnnotation = ( cell, annotation) => {
-          let cellAttr = 'data-code-cell="' + cell + '"';
-          let lineAttr = 'data-code-annotation="' +  annotation + '"';
-          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-          return selector;
-        }
-        const selectCodeLines = (annoteEl) => {
-          const doc = window.document;
-          const targetCell = annoteEl.getAttribute("data-target-cell");
-          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-          const lineIds = lines.map((line) => {
-            return targetCell + "-" + line;
-          })
-          let top = null;
-          let height = null;
-          let parent = null;
-          if (lineIds.length > 0) {
-              //compute the position of the single el (top and bottom and make a div)
-              const el = window.document.getElementById(lineIds[0]);
-              top = el.offsetTop;
-              height = el.offsetHeight;
-              parent = el.parentElement.parentElement;
-            if (lineIds.length > 1) {
-              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-              height = bottom - top;
-            }
-            if (top !== null && height !== null && parent !== null) {
-              // cook up a div (if necessary) and position it 
-              let div = window.document.getElementById("code-annotation-line-highlight");
-              if (div === null) {
-                div = window.document.createElement("div");
-                div.setAttribute("id", "code-annotation-line-highlight");
-                div.style.position = 'absolute';
-                parent.appendChild(div);
-              }
-              div.style.top = top - 2 + "px";
-              div.style.height = height + 4 + "px";
-              div.style.left = 0;
-              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-              if (gutterDiv === null) {
-                gutterDiv = window.document.createElement("div");
-                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-                gutterDiv.style.position = 'absolute';
-                const codeCell = window.document.getElementById(targetCell);
-                const gutter = codeCell.querySelector('.code-annotation-gutter');
-                gutter.appendChild(gutterDiv);
-              }
-              gutterDiv.style.top = top - 2 + "px";
-              gutterDiv.style.height = height + 4 + "px";
-            }
-            selectedAnnoteEl = annoteEl;
-          }
+      </script>
+    <input type="hidden" id="giscus-base-theme" value="light">
+    <input type="hidden" id="giscus-alt-theme" value="dark_dimmed">
+    <script>
+      function loadGiscus() {
+        // Function to get the theme based on body class
+        const getTheme = () => {
+          let baseTheme = document.getElementById('giscus-base-theme').value;
+          let altTheme = document.getElementById('giscus-alt-theme').value;
+          return document.body.classList.contains('quarto-dark') ? altTheme : baseTheme;
         };
-        const unselectCodeLines = () => {
-          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-          elementsIds.forEach((elId) => {
-            const div = window.document.getElementById(elId);
-            if (div) {
-              div.remove();
-            }
-          });
-          selectedAnnoteEl = undefined;
-        };
-          // Handle positioning of the toggle
-      window.addEventListener(
-        "resize",
-        throttle(() => {
-          elRect = undefined;
-          if (selectedAnnoteEl) {
-            selectCodeLines(selectedAnnoteEl);
-          }
-        }, 10)
-      );
-      function throttle(fn, ms) {
-      let throttle = false;
-      let timer;
-        return (...args) => {
-          if(!throttle) { // first call gets through
-              fn.apply(this, args);
-              throttle = true;
-          } else { // all the others get throttled
-              if(timer) clearTimeout(timer); // cancel #2
-              timer = setTimeout(() => {
-                fn.apply(this, args);
-                timer = throttle = false;
-              }, ms);
-          }
-        };
+        const script = document.createElement("script");
+        script.src = "https://giscus.app/client.js";
+        script.async = true;
+        script.dataset.repo = "f-mc2/personal-page-giscus";
+        script.dataset.repoId = "R_kgDOQHY3cg";
+        script.dataset.category = "General";
+        script.dataset.categoryId = "DIC_kwDOQHY3cs4Cw8t9";
+        script.dataset.mapping = "pathname";
+        script.dataset.reactionsEnabled = "1";
+        script.dataset.emitMetadata = "0";
+        script.dataset.inputPosition = "bottom";
+        script.dataset.theme = getTheme();
+        script.dataset.lang = "en";
+        script.crossOrigin = "anonymous";
+        // Append the script to the desired div instead of at the end of the body
+        document.getElementById("quarto-content").appendChild(script);
       }
-        // Attach click handler to the DT
-        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-        for (const annoteDlNode of annoteDls) {
-          annoteDlNode.addEventListener('click', (event) => {
-            const clickedEl = event.target;
-            if (clickedEl !== selectedAnnoteEl) {
-              unselectCodeLines();
-              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-              if (activeEl) {
-                activeEl.classList.remove('code-annotation-active');
-              }
-              selectCodeLines(clickedEl);
-              clickedEl.classList.add('code-annotation-active');
-            } else {
-              // Unselect the line
-              unselectCodeLines();
-              clickedEl.classList.remove('code-annotation-active');
-            }
-          });
-        }
-    const findCites = (el) => {
-      const parentEl = el.parentElement;
-      if (parentEl) {
-        const cites = parentEl.dataset.cites;
-        if (cites) {
-          return {
-            el,
-            cites: cites.split(' ')
-          };
-        } else {
-          return findCites(el.parentElement)
-        }
-      } else {
-        return undefined;
-      }
-    };
-    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-    for (var i=0; i<bibliorefs.length; i++) {
-      const ref = bibliorefs[i];
-      const citeInfo = findCites(ref);
-      if (citeInfo) {
-        tippyHover(citeInfo.el, function() {
-          var popup = window.document.createElement('div');
-          citeInfo.cites.forEach(function(cite) {
-            var citeDiv = window.document.createElement('div');
-            citeDiv.classList.add('hanging-indent');
-            citeDiv.classList.add('csl-entry');
-            var biblioDiv = window.document.getElementById('ref-' + cite);
-            if (biblioDiv) {
-              citeDiv.innerHTML = biblioDiv.innerHTML;
-            }
-            popup.appendChild(citeDiv);
-          });
-          return popup.innerHTML;
-        });
-      }
-    }
-  });
-  </script>
-<input type="hidden" id="giscus-base-theme" value="light">
-<input type="hidden" id="giscus-alt-theme" value="dark_dimmed">
-<script>
-  function loadGiscus() {
-    // Function to get the theme based on body class
-    const getTheme = () => {
-      let baseTheme = document.getElementById('giscus-base-theme').value;
-      let altTheme = document.getElementById('giscus-alt-theme').value;
-      if (authorPrefersDark) {
-          [baseTheme, altTheme] = [altTheme, baseTheme];
-      }
-      return document.body.classList.contains('quarto-dark') ? altTheme : baseTheme;
-    };
-    const script = document.createElement("script");
-    script.src = "https://giscus.app/client.js";
-    script.async = true;
-    script.dataset.repo = "f-mc2/personal-page-giscus";
-    script.dataset.repoId = "R_kgDOQHY3cg";
-    script.dataset.category = "General";
-    script.dataset.categoryId = "DIC_kwDOQHY3cs4Cw8t9";
-    script.dataset.mapping = "pathname";
-    script.dataset.reactionsEnabled = "1";
-    script.dataset.emitMetadata = "0";
-    script.dataset.inputPosition = "bottom";
-    script.dataset.theme = getTheme();
-    script.dataset.lang = "en";
-    script.crossOrigin = "anonymous";
-    // Append the script to the desired div instead of at the end of the body
-    document.getElementById("quarto-content").appendChild(script);
-  }
-  loadGiscus();
-</script>
-</div> <!-- /content -->
-
-
-
+      loadGiscus();
+    </script>
+    
 
 </body></html>
