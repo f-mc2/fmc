@@ -139,7 +139,7 @@ Finally, we have to verify that different functions that agree on an arbitrary s
 
 ::: {.callout-caution title="Unbounded limits of the restriction"}
 
-::: {#exr-unbdounde-limits-restriction-functions}
+::: {#exr-unbounded-limits-restriction-functions}
 
 
 Let $D,D'\subseteq \mathbb{R}$ be such that $D\cap D'\neq\emptyset$, and consider two functions $f\colon D \rightarrow \mathbb{R}$ and $g\colon D'\rightarrow \mathbb{R}$ such that $g(x)=f(x)$ on $S\subseteq D\cap D'$.
@@ -188,7 +188,7 @@ The case $x\rightarrow 0^{-}$ follows analogously.
 :::
 
 
-The algebraic manipulations of limits  [here](/courses/calculo-uc3m-matematica-aplicada/1_limits_and_continuity.qmd#prp-algebraic-manipulations-limits) can be appropriately modified to handle also unbounded limits, provided the so-called **inderminate forms** are treated with care.
+The algebraic manipulations of limits  [here](/courses/calculo-uc3m-matematica-aplicada/1_limits_and_continuity.qmd#prp-algebraic-manipulations-limits) can be appropriately modified to handle also unbounded limits, provided the so-called **indeterminate forms** are treated with care.
 
 
 ::: {.callout-note title="Algebraic manipulations of unbounded limits"}
@@ -481,7 +481,7 @@ whenever either one of the limits exist in the sense of @def-limits-at-infty or 
 <details>
 <summary> **Solution:** </summary>
 
-You are strongly invited to try to solve it on your own following what you should have already done for [this exercise](/courses/calculo-uc3m-matematica-aplicada/1_limits_and_continuity.qmd#exr-limits-restriction-functions) and @exr-unbdounde-limits-restriction-functions.
+You are strongly invited to try to solve it on your own following what you should have already done for [this exercise](/courses/calculo-uc3m-matematica-aplicada/1_limits_and_continuity.qmd#exr-limits-restriction-functions) and @exr-unbounded-limits-restriction-functions.
 </details>
 
 :::
@@ -542,7 +542,7 @@ Since $x<-M<0$ implies $0<-\frac{1}{x}<\frac{1}{M}$, taking (again) $M$ such tha
 
  
  
-The algebraic manipulations of limits [here](/courses/calculo-uc3m-matematica-aplicada/1_limits_and_continuity.qmd#prp-algebraic-manipulations-limits) can be appropriately modified to handle also limits at infinity, provided we handle the so-called **inderminate forms** with care.
+The algebraic manipulations of limits [here](/courses/calculo-uc3m-matematica-aplicada/1_limits_and_continuity.qmd#prp-algebraic-manipulations-limits) can be appropriately modified to handle also limits at infinity, provided we handle the so-called **indeterminate forms** with care.
 
 ::: {.callout-note title="Algebraic manipulations of improper limits"}
 
@@ -805,7 +805,6 @@ Then, the rest of the proof uses the  limit of composite functions (with the out
 :::
 
 :::
-
 
 
 

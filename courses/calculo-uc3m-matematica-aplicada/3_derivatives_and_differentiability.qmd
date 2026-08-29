@@ -22,7 +22,7 @@ Let's start with the very definition of derivative of a function at a point of i
 
 ::: {#def-derivative}
 
-Consider the function $f\colon D\subseteq\mathbb{R}\rightarrow\mathbb{R}$ and a [**accumulation point**](0_sets_and_functions.qmd#def-accumulation-point)  $x_{0}\in D$.
+Consider the function $f\colon D\subseteq\mathbb{R}\rightarrow\mathbb{R}$ and an [**accumulation point**](0_sets_and_functions.qmd#def-accumulation-point) $x_{0}\in D$.
 
 Define the set of admissible increments
 $$
