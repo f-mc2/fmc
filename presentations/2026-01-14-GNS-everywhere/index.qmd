@@ -1,7 +1,7 @@
 ---
 title: "Look: it's GNS Hilbert spaces everywhere!"
 format: html
-description: ""
+description: "Slides and references for the talk “Look: it’s GNS Hilbert spaces everywhere!”, presented at Geometry and Dynamics in Naples in January 2026."
 comments: false
 bibliography: ../../biblio.bib
 csl: ../../csl/cv-date-desc-doi-url.csl
