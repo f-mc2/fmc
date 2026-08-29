@@ -2,7 +2,7 @@
 title: "Timeline on fields of covariances"
 date: "2025-05-18"
 date-style: full
-date-modified: last modified
+date-modified: last-modified
 draft: true
 tags:
   - idee
@@ -60,4 +60,4 @@ On 2023-11-04, I wrote somewhere that, together with Fabio DC, we realized this 
 
 # 2023-09-12 gli stati tracciali mantengono l'unicità a la Čencov
 
-  Anche oggi ho fatto un po' di ricerca! Tralasciando una mezz'ora passata a cercare di cavare un ragno dal buco delle superalgebre di Jordan, insieme a Fabio DC abbiamo pensato una cosa interessante: la parte classica della categoria NCP non è data dalle algebre commutative, ma dagli stati tracciali. È per gli stati tracciali che il teorema di Čencov **deve** essere vero. Speriamo di riuscire a finire questo lavoro. 
+  Anche oggi ho fatto un po' di ricerca! Tralasciando una mezz'ora passata a cercare di cavare un ragno dal buco delle superalgebre di Jordan, insieme a Fabio DC abbiamo pensato una cosa interessante: la parte classica della categoria NCP non è data dalle algebre commutative, ma dagli stati tracciali. È per gli stati tracciali che il teorema di Čencov **deve** essere vero. Speriamo di riuscire a finire questo lavoro.

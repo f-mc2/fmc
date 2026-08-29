@@ -88,7 +88,7 @@
         <text macro="where"/>
         <group delimiter=", ">
           <text macro="year"/>
-        </group>S
+        </group>
         <text macro="access"/>
       </group>
     </layout>

@@ -2,7 +2,7 @@
 title: "Fundamentals of statistics"
 date: "2025-09-18"
 date-style: full
-date-modified: last modified
+date-modified: last-modified
 draft: true
 ---
 
@@ -55,6 +55,5 @@ event in connection with each experiment, etc. In the latter case, it is always 
 **13.5. On the frequency interpretation.** If E is an impossible event, i. e. an event that can never occur at a performance of the experiment, any frequency of Ε must be zero; and consequently we take the probability P to be 0. On the other hand, if we know that for some event Ε we have Ρ=0, then Ε is not necessarily an
 impossible event. In fact, the frequency interpretation of Ρ only implies that the frequency v/n of Ε will for large n be approximately equal to zero, so that in the long run Ε will at most occur in a very small percentage of all cases. The same conclusion holds not only when $Ρ = 0$, but even under the more general assumption that $0<P<\epsilon$, where $\epsilon$ is some very small number. If Ε is an event of this type, and if the experiment is performed one single time, it can thus be 
 considered as practically certain that Ε will not occur. Analogous considerations hold for certain events and $P=1$. This particular case of the frequency interpretation of a probability will often be applied in the sequel.
-
 
 
