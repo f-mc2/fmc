@@ -7,6 +7,5 @@ _site/
 .Rproj.user
 .ipynb_checkpoints
 
-/.quarto/
 **/*.quarto_ipynb
 .venv/
