@@ -1,28 +1,7 @@
 [
   {
-    "listing": "/teaching/teaching_index.html",
-    "items": [
-      "/teaching/calculo-uc3m-matematica-aplicada/index.html"
-    ]
-  },
-  {
     "listing": "/index_misc.html",
-    "items": [
-      "/misc/Fundamentals of statistics.html",
-      "/misc/2025-05-27 timeline on fields of covariances.html"
-    ]
-  },
-  {
-    "listing": "/slides/slides_index.html",
-    "items": [
-      "/slides/calculo-uc3m-matematica-aplicada_slides/index.html"
-    ]
-  },
-  {
-    "listing": "/presentations/presentations_index.html",
-    "items": [
-      "/presentations/2026-01-14-GNS-everywhere/index.html"
-    ]
+    "items": []
   },
   {
     "listing": "/courses/courses_index.html",
@@ -31,7 +10,9 @@
     ]
   },
   {
-    "listing": "/presentations/calculo-uc3m-matematica-aplicada_slides/index.html",
-    "items": []
+    "listing": "/presentations/presentations_index.html",
+    "items": [
+      "/presentations/2026-01-14-GNS-everywhere/index.html"
+    ]
   }
 ]

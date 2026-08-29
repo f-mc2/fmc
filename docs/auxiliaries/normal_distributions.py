@@ -6,7 +6,7 @@ x = np.linspace(-5, 5, 400)
 params = [
     (0.0, 1.0, r"$\mu=0,\ \sigma=1$"),
     (1.5, 1.0, r"$\mu=1.5,\ \sigma=1$"),
-    (-1.0, 0.6, r"$\mu=0,\ \sigma=0.6$"),
+    (-1.0, 0.6, r"$\mu=-1,\ \sigma=0.6$"),
 ]
 
 plt.figure(figsize=(5, 3))

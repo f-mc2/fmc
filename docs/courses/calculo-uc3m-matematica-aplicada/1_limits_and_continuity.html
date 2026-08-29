@@ -921,6 +921,27 @@ Use <a href="#exr-left-right-limits-link" class="quarto-xref">Exercise&nbsp;1</a
 </div>
 </div>
 </div>
+<div class="callout callout-style-default callout-caution callout-titled" title="Continuity of constant, linear, and quadratic functions">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Caution</span>Continuity of constant, linear, and quadratic functions
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div id="exr-continuity-constant-linear-quadratic-functions" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 5</strong></span> Prove that the functions in <a href="#exm-limits-constant-linear-quadratic-functions" class="quarto-xref">Example&nbsp;1</a> are continuous.</p>
+<details>
+<summary>
+<strong>Solution:</strong>
+</summary>
+<strong>TBA</strong>
+</details>
+</div>
+</div>
+</div>
 <p>It is informally said that a function <span class="math inline">\(f\colon D\subseteq\mathbb{R}\rightarrow\mathbb{R}\)</span> is a continuous function if its graph can be drawn on paper without lifting the pen/pencil. We now try to make this informal statement precise by working our way to the <a href="#thm-intermediate-value-thm">intermediate value theorem</a> below. First, we prove the so-called <strong>sign-preserving property</strong> of continuous functions.</p>
 <div class="callout callout-style-default callout-note callout-titled" title="Sign-preserving property of continuous functions">
 <div class="callout-header d-flex align-content-center">
@@ -1093,7 +1114,7 @@ x\in D,\ 0&lt;|x-x_{0}|&lt;\delta_{0}\Longrightarrow h(x)\neq 0,
 \]</span> Therefore <span class="math display">\[
 \lim_{x\to x_{0}}\frac{1}{h(x)}=\frac{1}{\beta L_{2}},
 \]</span> and the quotient formula is proved.</p>
-The case of left and right limits should be easy to obtain by following and suitably adapting the previous steps.
+The case of left and right limits can be obtained by following and suitably adapting the previous steps.
 </details>
 </div>
 </div>
@@ -1115,7 +1136,7 @@ The case of left and right limits should be easy to obtain by following and suit
 </div>
 <div class="callout-body-container callout-body">
 <div id="exr-algebraic-manipulations-limits-N-functions" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 5</strong></span> Let <span class="math inline">\((\alpha_{1},\cdots,\alpha_{n})\in\mathbb{R}^{n}\)</span>, let <span class="math inline">\(x_{0}\in\mathbb{R}\)</span> be an accumulation point for <span class="math inline">\(D\)</span>, and, for each <span class="math inline">\(j=1,\cdots,n\)</span>, consider the function <span class="math inline">\(f_{j}\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}\)</span>. Prove that, if <span class="math display">\[
+<p><span class="theorem-title"><strong>Exercise 6</strong></span> Let <span class="math inline">\((\alpha_{1},\cdots,\alpha_{n})\in\mathbb{R}^{n}\)</span>, let <span class="math inline">\(x_{0}\in\mathbb{R}\)</span> be an accumulation point for <span class="math inline">\(D\)</span>, and, for each <span class="math inline">\(j=1,\cdots,n\)</span>, consider the function <span class="math inline">\(f_{j}\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}\)</span>. Prove that, if <span class="math display">\[
 \lim_{x\rightarrow x_{0}}f_{j}(x)=L_{j}\in \mathbb{R}
 \]</span> for every <span class="math inline">\(j=1,...,n\)</span>, then <span id="eq-algebraic-manipulations-limits-n-functions"><span class="math display">\[
 \begin{split}
@@ -1133,7 +1154,7 @@ Use <a href="#prp-algebraic-manipulations-limits" class="quarto-xref">Propositio
 </div>
 </div>
 </div>
-<p>From <a href="#prp-algebraic-manipulations-limits" class="quarto-xref">Proposition&nbsp;4</a> and <a href="#exr-algebraic-manipulations-limits-N-functions" class="quarto-xref">Exercise&nbsp;5</a> it naturally follows that continuous functions behave well with respect to sums and products.</p>
+<p>From <a href="#exr-algebraic-manipulations-limits-N-functions" class="quarto-xref">Exercise&nbsp;6</a> it naturally follows that continuous functions behave well with respect to sums and products.</p>
 <div class="callout callout-style-default callout-note callout-titled" title="Algebraic manipulations of continuous functions">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1157,7 +1178,7 @@ H(x)=\left(\frac{\alpha_{1}f_{1} }{\alpha_{2}f_{2}}\right)(x)
 <summary>
 <strong>Proof:</strong>
 </summary>
-Follow <a href="#def-continuity" class="quarto-xref">Definition&nbsp;3</a> and apply the results of <a href="#prp-algebraic-manipulations-limits" class="quarto-xref">Proposition&nbsp;4</a> and <a href="#exr-algebraic-manipulations-limits-N-functions" class="quarto-xref">Exercise&nbsp;5</a>.
+Follow <a href="#def-continuity" class="quarto-xref">Definition&nbsp;3</a> and apply the results of <a href="#exr-algebraic-manipulations-limits-N-functions" class="quarto-xref">Exercise&nbsp;6</a>.
 </details>
 </div>
 </div>
@@ -1174,15 +1195,16 @@ Follow <a href="#def-continuity" class="quarto-xref">Definition&nbsp;3</a> and a
 </div>
 <div class="callout-body-container callout-body">
 <div id="exr-polynomials-continuous" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 6</strong></span> Consider the functions <span class="math inline">\(\mathrm{P}_{n}\colon\mathbb{R}\rightarrow\mathbb{R}\)</span> where <span class="math inline">\(\mathrm{P}_{n}(x)\)</span> is a polynomial of order <span class="math inline">\(n\)</span>. Prove that <span class="math inline">\(\mathrm{P}_{n}\)</span> is continuous.</p>
+<p><span class="theorem-title"><strong>Exercise 7</strong></span> Consider the functions <span class="math inline">\(\mathrm{P}_{n}\colon\mathbb{R}\rightarrow\mathbb{R}\)</span> where <span class="math inline">\(\mathrm{P}_{n}(x)\)</span> is a polynomial of order <span class="math inline">\(n\)</span>. Prove that <span class="math inline">\(\mathrm{P}_{n}\)</span> is continuous.</p>
 <p>Consider another polynomial function <span class="math inline">\(\mathrm{Q}_{m}\colon\mathbb{R}\rightarrow\mathbb{R}\)</span>. Prove that the rational function <span class="math inline">\(\mathrm{R}\colon D\subseteq \mathbb{R}\rightarrow \mathbb{R}\)</span>, which is defined on <span class="math inline">\(D=\{x\in\mathbb{R}|\mathrm{Q}_{m}(x)\neq 0\}\)</span> and is given by <span class="math inline">\(\mathrm{R}(x)=\frac{P_{n}(x)}{\mathrm{Q}_{m}(x)}\)</span>, is continuous.</p>
 <details>
 <summary>
 <strong>Solution:</strong>
 </summary>
-<p>The polynomial <span class="math inline">\(\mathrm{P}_{n}(x)\)</span> can be written as <span class="math display">\[
-\mathrm{P}_{n}(x)= a_{n}x^{n} + a_{n-1} x^{n-1}+\cdots+ a_{1}x + a_{0}x^{0},
-\]</span> where <span class="math inline">\(a_{j}\in\mathbb{R}\)</span> for every <span class="math inline">\(j=1,\cdots , n\)</span>. It is then clear that <span class="math inline">\(\mathrm{P}_{n}\)</span> is a suitable combination of sums and products of constant functions (which are continuous) with the identity function <span class="math inline">\(f(x)=x\)</span> (which is continuous). Consequently, <a href="#prp-algebraic-manipulations-continuous-functions" class="quarto-xref">Proposition&nbsp;5</a> ensures the desired result.</p>
+<p>First, we note that the function <span class="math inline">\(f\colon \mathbb{R}\rightarrow\mathbb{R}\)</span> given by <span class="math inline">\(f_{n}(x)=a_{n}x^{n}\)</span>, with a_{n}$, is continuous for each <span class="math inline">\(n\in\mathbb{N}\)</span> because of proposition <a href="#prp-algebraic-manipulations-continuous-functions" class="quarto-xref">Proposition&nbsp;5</a> and <a href="#exr-continuity-constant-linear-quadratic-functions" class="quarto-xref">Exercise&nbsp;5</a>.</p>
+<p>Then, we note that that the polynomial <span class="math inline">\(\mathrm{P}_{n}(x)\)</span> can be written as <span class="math display">\[
+\mathrm{P}_{n}(x)= a_{n}x^{n} + a_{n-1} x^{n-1}+\cdots+ a_{1}x + a_{0}x^{0}\equiv\sum_{j=0}^{1}f_{j}(x),
+\]</span> where <span class="math inline">\(a_{j}\in\mathbb{R}\)</span> for every <span class="math inline">\(j=1,\cdots , n\)</span>, and it is thus continuous because of <a href="#prp-algebraic-manipulations-continuous-functions" class="quarto-xref">Proposition&nbsp;5</a> since it is the sum of continuous functions.</p>
 The continuity of <span class="math inline">\(\mathrm{R}\)</span> follows again from <a href="#prp-algebraic-manipulations-continuous-functions" class="quarto-xref">Proposition&nbsp;5</a> since both <span class="math inline">\(\mathrm{P}_{n}\)</span> and <span class="math inline">\(\mathrm{Q}_{m}\)</span> are continuous on <span class="math inline">\(D\)</span> and <span class="math inline">\(\mathrm{Q}_{m}(x)\neq 0\)</span> on <span class="math inline">\(D\)</span>.
 </details>
 </div>
@@ -1191,7 +1213,7 @@ The continuity of <span class="math inline">\(\mathrm{R}\)</span> follows again 
 </section>
 <section id="continuity-of-inverse-and-composite-functions" class="level1" data-number="5">
 <h1 data-number="5"><span class="header-section-number">5</span> Continuity of inverse and composite functions</h1>
-<p>Let <span class="math inline">\(D\subseteq \mathbb{R}\)</span> be the maximal domain for which the function <span class="math inline">\(f\colon D\rightarrow\mathbb{R}\)</span> given by <span class="math inline">\(f(x)=x^{n}\)</span> admits an inverse. Explicitly, <span class="math inline">\(D=\mathbb{R}\)</span> if <span class="math inline">\(n\)</span> is odd, and <span class="math inline">\(D=\mathbb{R}_{+}\)</span> if <span class="math inline">\(n\)</span> is even. <a href="#exr-polynomials-continuous" class="quarto-xref">Exercise&nbsp;6</a> tells us that <span class="math inline">\(f\colon D\rightarrow\mathbb{R}\)</span> is continuous, and we would also like to say something about the continuity (or lack thereof) of its inverse function <span class="math inline">\(g\colon D\rightarrow\mathbb{R}\)</span> given by <span class="math inline">\(g(x)=x^{\frac{1}{n}}\)</span>.</p>
+<p>Let <span class="math inline">\(D\subseteq \mathbb{R}\)</span> be the maximal domain for which the function <span class="math inline">\(f\colon D\rightarrow\mathbb{R}\)</span> given by <span class="math inline">\(f(x)=x^{n}\)</span> admits an inverse. Explicitly, <span class="math inline">\(D=\mathbb{R}\)</span> if <span class="math inline">\(n\)</span> is odd, and <span class="math inline">\(D=\mathbb{R}_{+}\)</span> if <span class="math inline">\(n\)</span> is even. <a href="#exr-polynomials-continuous" class="quarto-xref">Exercise&nbsp;7</a> tells us that <span class="math inline">\(f\colon D\rightarrow\mathbb{R}\)</span> is continuous, and we would also like to say something about the continuity (or lack thereof) of its inverse function <span class="math inline">\(g\colon D\rightarrow\mathbb{R}\)</span> given by <span class="math inline">\(g(x)=x^{\frac{1}{n}}\)</span>.</p>
 <div class="callout callout-style-default callout-note callout-titled" title="Continuity of inverse function">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1208,7 +1230,7 @@ The continuity of <span class="math inline">\(\mathrm{R}\)</span> follows again 
 <summary>
 <strong>Proof:</strong>
 </summary>
-The proof is tedious, and it will take me some time to upload it.
+<strong>TBA</strong>
 </details>
 </div>
 </div>
@@ -1225,12 +1247,12 @@ The proof is tedious, and it will take me some time to upload it.
 </div>
 <div class="callout-body-container callout-body">
 <div id="exr-rational-power-functions-continuous" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 7</strong></span> Given <span class="math inline">\(D\)</span> as above and <span class="math inline">\(m,n&gt;0\)</span> natural numbers, prove that <span class="math inline">\(f\colon D\rightarrow\mathbb{R}\)</span> given by <span class="math inline">\(f(x)=x^{\frac{m}{n}}\)</span> is a continuous function.</p>
+<p><span class="theorem-title"><strong>Exercise 8</strong></span> Given <span class="math inline">\(D\)</span> as above and <span class="math inline">\(m,n&gt;0\)</span> natural numbers, prove that <span class="math inline">\(f\colon D\rightarrow\mathbb{R}\)</span> given by <span class="math inline">\(f(x)=x^{\frac{m}{n}}\)</span> is a continuous function.</p>
 <details>
 <summary>
 <strong>Solution:</strong>
 </summary>
-You are strongly invited to try to solve it on your own.
+<strong>TBA</strong>
 </details>
 </div>
 </div>
@@ -1240,7 +1262,7 @@ You are strongly invited to try to solve it on your own.
 g(y)=\sqrt{y},
 \]</span> and <span class="math inline">\(h\colon\mathbb{R}\rightarrow\mathbb{R}\)</span> given by <span class="math display">\[
 h(x)=x^{2}+3.
-\]</span> Moreover, <a href="#exr-polynomials-continuous" class="quarto-xref">Exercise&nbsp;6</a> and <a href="#exr-rational-power-functions-continuous" class="quarto-xref">Exercise&nbsp;7</a> guarantee that both <span class="math inline">\(g\)</span> and <span class="math inline">\(h\)</span> are continuous everywhere in their domain.</p>
+\]</span> Moreover, <a href="#exr-polynomials-continuous" class="quarto-xref">Exercise&nbsp;7</a> and <a href="#exr-rational-power-functions-continuous" class="quarto-xref">Exercise&nbsp;8</a> guarantee that both <span class="math inline">\(g\)</span> and <span class="math inline">\(h\)</span> are continuous everywhere in their domain.</p>
 <p>Wouldn’t it be nice if the continuity of <span class="math inline">\(g\)</span> and <span class="math inline">\(h\)</span> were enough to guarantee the continuity of <span class="math inline">\(f\)</span>? The following two propositions make us happy because they answer the previous question with a solid ‘<strong>yes</strong>’.</p>
 <div class="callout callout-style-default callout-note callout-titled" title="[Limit of composite functions](https://en.wikipedia.org/wiki/Limit_of_a_function#Limits_of_compositions_of_functions)">
 <div class="callout-header d-flex align-content-center">
@@ -1273,7 +1295,7 @@ h(x)=x^{2}+3.
 0&lt;|y-l|&lt;\eta \implies |f(y)-L|&lt;\varepsilon,
 \tag{11}\]</span></span> On the other hand, <a href="#eq-limit-composite-functions" class="quarto-xref">Equation&nbsp;9</a> implies that, given the same <span class="math inline">\(\eta&gt;0\)</span> as before, there is <span class="math inline">\(\delta&gt;0\)</span> such that <span id="eq-limit-composite-functions4"><span class="math display">\[
 0&lt;|x-x_{0}|&lt;\delta \implies  |g(x) - l|&lt;\eta.
-\tag{12}\]</span></span> Setting <span class="math inline">\(y=g(x)\)</span>, <a href="#eq-limit-composite-functions4" class="quarto-xref">Equation&nbsp;12</a> leads to <span class="math inline">\(|g(x)-l|&lt;\eta\)</span>, while <a href="#eq-limit-composite-functions3" class="quarto-xref">Equation&nbsp;11</a> states that <span class="math inline">\(0&lt;|y-l|=|g(x)-l|&lt;\eta\)</span> implies <span class="math inline">\(|f(y)-L|=|f(g(x))-L|&lt;\varepsilon\)</span>, and it does not necessarily hold that <span class="math inline">\(|g(x)-l|&lt;\eta\)</span> implies <span class="math inline">\(0&lt;|y-l|&lt;\eta\)</span> because <span class="math inline">\(y=g(x)\)</span> may be equal to <span class="math inline">\(l\)</span>. See <a href="#exr-tricky-limit-composition" class="quarto-xref">Exercise&nbsp;8</a> for more details. We thus need to assume something more to obtain the desired result.</p>
+\tag{12}\]</span></span> Setting <span class="math inline">\(y=g(x)\)</span>, <a href="#eq-limit-composite-functions4" class="quarto-xref">Equation&nbsp;12</a> leads to <span class="math inline">\(|g(x)-l|&lt;\eta\)</span>, while <a href="#eq-limit-composite-functions3" class="quarto-xref">Equation&nbsp;11</a> states that <span class="math inline">\(0&lt;|y-l|=|g(x)-l|&lt;\eta\)</span> implies <span class="math inline">\(|f(y)-L|=|f(g(x))-L|&lt;\varepsilon\)</span>, and it does not necessarily hold that <span class="math inline">\(|g(x)-l|&lt;\eta\)</span> implies <span class="math inline">\(0&lt;|y-l|&lt;\eta\)</span> because <span class="math inline">\(y=g(x)\)</span> may be equal to <span class="math inline">\(l\)</span>. See <a href="#exr-tricky-limit-composition" class="quarto-xref">Exercise&nbsp;9</a> for more details. We thus need to assume something more to obtain the desired result.</p>
 <ol type="1">
 <li>In this case, <span class="math inline">\(L=f(l)\)</span> because <span class="math inline">\(f\)</span> is continuous at <span class="math inline">\(l\)</span>, and thus <span class="math inline">\(|f(y) -L|=|f(y) -f(l)|&lt;\varepsilon\)</span> even when <span class="math inline">\(y=g(x)=l\)</span>, and the result follows.</li>
 <li>In this case, we can take <span class="math inline">\(\delta\)</span> sufficiently small so that <span class="math inline">\(0&lt;|x-x_{0}|&lt;\delta\)</span> implies <span class="math inline">\(x\in I\)</span> and thus <span class="math inline">\(g(x)\neq l\)</span> by assumption. Consequently, it holds <span class="math display">\[
@@ -1295,7 +1317,7 @@ h(x)=x^{2}+3.
 </div>
 <div class="callout-body-container callout-body">
 <div id="exr-tricky-limit-composition" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 8</strong></span> Let <span class="math inline">\(f,g\colon\mathbb{R}\rightarrow\mathbb{R}\)</span> be given by <span class="math display">\[
+<p><span class="theorem-title"><strong>Exercise 9</strong></span> Let <span class="math inline">\(f,g\colon\mathbb{R}\rightarrow\mathbb{R}\)</span> be given by <span class="math display">\[
 f(x)=g(x)=\left\{\begin{matrix} 0 &amp; \mbox{ if } x\neq 0 \\ 1 &amp; \mbox{ if } x= 0 .\end{matrix}\right.
 \]</span> Show that this example does not satisfy the hypotheses of <a href="#prp-limit-composite-functions" class="quarto-xref">Proposition&nbsp;7</a>, and explain why.</p>
 <details>
