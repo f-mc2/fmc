@@ -17,13 +17,9 @@ website:
       - href: index.qmd
         text: Home
       - text: "Conferences & Seminars"
-        href: conferences.qmd  
+        href: conferences.qmd
       - text: Miscellanea
         href: index_misc.qmd
-#      - text: Publications
-#        href: publications/
-#      - text: Teaching
-#        href: teaching/teaching_index.qmd      
     right:
       - icon: github
         href: https://github.com/f-mc2/fmc
@@ -33,9 +29,7 @@ website:
       - section: "Courses"
         href: courses/courses_index.qmd
         contents:
-          # auto-pick each course landing page
           - auto: courses/*/*.qmd
-          #- auto: "courses/*"
             sort: title
       - section: "Publications"
         href: publications/publications_index.qmd
@@ -48,14 +42,9 @@ website:
           - publications/proceedings.qmd
       - section: "Presentations"
         href: presentations/presentations_index.qmd
-        contents:    
+        contents:
           - auto: presentations/*/*.qmd
             sort: title
-#      - section: "Miscellanea"
-#        href: index_misc.qmd
-#        contents:
-#        - auto: misc/*.{qmd,ipynb,md}
-#          sort: "date desc"
   comments:
     giscus:
       repo: f-mc2/personal-page-giscus
