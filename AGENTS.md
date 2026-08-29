@@ -26,7 +26,7 @@ Last updated: 2026-02-17 | Version: 1.4
 | Run any non-git command (`quarto`, `python`, `pip`, `npm`, etc.) | Ask first | Provide exact command(s) |
 | Git commands locally (except `push`) | Allowed | Includes `commit` |
 | `git push` | Never | |
-| Delete files | Never | See §2.4 exception for renames |
+| Delete files | Never manually; approved Quarto renders may remove obsolete generated assets under `docs/` | See §2.5 |
 
 If in doubt: stop and ask, explaining what you want to do and why.
 
@@ -62,8 +62,15 @@ If in doubt: stop and ask, explaining what you want to do and why.
 
 ### 2.4 Renames vs deletions (important)
 - File **renames** are allowed only where renames are explicitly allowed above (e.g., `*.qmd` in content dirs).
-- Pure **deletions** are never allowed (no `rm`, no `git rm`, no “remove unused file”).
+- Pure **deletions** are never allowed, except for obsolete generated assets removed automatically under §2.5.
 - If a rename implies a delete+add at the git level, treat it as a rename only when it is a 1-to-1 move of an allowed filetype in an allowed directory.
+
+### 2.5 Generated-output cleanup
+- When the user has explicitly approved the exact Quarto render command, Quarto may automatically remove obsolete generated assets under `docs/`.
+- This exception covers non-page assets such as CSS, JavaScript, fonts, images, and source maps.
+- It does not permit manual deletion (`rm`, `git rm`, or equivalent), deletion outside `docs/`, or deletion of pages and source-like files such as `*.html`, `*.qmd`, `*.md`, or `*.ipynb`.
+- Before committing, inspect all deleted paths and verify that each deletion satisfies this exception. Stop and ask if any deletion falls outside it.
+- Report the generated assets removed in the final summary.
 
 
 ## 3) Requires permission (ask first, wait for explicit OK)
@@ -106,7 +113,7 @@ Bad example:
 4. Never install dependencies unless I explicitly grant permission.
 5. Never modify `_quarto.yml` unless I explicitly grant permission.
 6. Never `git push`.
-7. Never delete files.
+7. Never delete source files or manually delete files. Obsolete generated assets under `docs/` may be removed automatically only under the conditions in §2.5.
 
 If you are unsure whether an action violates a hard stop: stop and ask.
 
@@ -115,7 +122,7 @@ If you are unsure whether an action violates a hard stop: stop and ask.
 - `git push`
 - Any edits in `docs/`
 - Any read/write outside `REPO_ROOT`
-- Deleting files
+- Deleting files, except for automatic removal of obsolete generated assets under `docs/` as defined in §2.5
 - Any non-git commands without permission
 - Editing `_quarto.yml` without permission
 
@@ -159,7 +166,7 @@ If you are unsure whether an action violates a hard stop: stop and ask.
   - `git diff` — inspect what changed
   - `git status` — inspect repository state
 - Do not attempt a silent fix.
-- Never delete files as a fix — use git operations instead.
+- Never manually delete files as a fix. The only deletion exception is automatic generated-asset cleanup under §2.5.
 
 
 ## 9) Rule conflicts (priority order)
