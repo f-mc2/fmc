@@ -10,7 +10,7 @@ project:
     - "!**/*-draft.ipynb"
 website:
   title: "Florio M. Ciaglia"
-  description: "You thought he was a man, but he only was a muffin."
+  description: "Academic website of Florio M. Ciaglia, featuring research, publications, talks, courses, and mathematical notes."
   draft-mode: gone
   navbar:
     left:
@@ -92,4 +92,3 @@ format:
       gutter-width: 1.2rem   # space between columns
     code-fold: true
     code-summary: "Show/Hide code"
-
