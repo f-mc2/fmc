@@ -11,6 +11,7 @@ project:
 website:
   title: "Florio M. Ciaglia"
   description: "You thought he was a man, but he only was a muffin."
+  draft-mode: gone
   navbar:
     left:
       - href: index.qmd
@@ -91,5 +92,4 @@ format:
       gutter-width: 1.2rem   # space between columns
     code-fold: true
     code-summary: "Show/Hide code"
-
 
