@@ -1,8 +1,0 @@
----
-title: "Limits and continuity"
-order: 1
----
-
-## Introduction
-
----

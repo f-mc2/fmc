@@ -1,8 +1,0 @@
----
-title: "Sets and functions"
-order: 0
----
-
-## Introduction
-
----

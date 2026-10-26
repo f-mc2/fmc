@@ -8,6 +8,7 @@ project:
     - "!**/_drafts/**"
     - "!**/*-draft.qmd"
     - "!**/*-draft.ipynb"
+    - "!course-archive/**"
 website:
   title: "Florio M. Ciaglia"
   description: "Academic website of Florio M. Ciaglia, featuring research, publications, talks, courses, and mathematical notes."
@@ -20,17 +21,14 @@ website:
         href: conferences.qmd
       - text: Miscellanea
         href: index_misc.qmd
+      - text: Courses
+        href: courses/courses_index.qmd
     right:
       - icon: github
         href: https://github.com/f-mc2/fmc
   sidebar:
     style: "docked"
     contents:
-      - section: "Courses"
-        href: courses/courses_index.qmd
-        contents:
-          - auto: courses/*/*.qmd
-            sort: title
       - section: "Publications"
         href: publications/publications_index.qmd
         contents:

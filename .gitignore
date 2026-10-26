@@ -9,3 +9,6 @@ _site/
 **/*.quarto_ipynb
 .venv/
 /.quarto/
+
+# Local copies of courses moving to their own sites
+/course-archive/

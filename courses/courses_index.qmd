@@ -2,9 +2,6 @@
 title: "Courses"
 format: html
 comments: false
-listing:
-  contents: ./*/index.qmd
-  type: table     
-  fields: [title, description]
-  sort: "title"
 ---
+
+- [Calculus for Robotics Engineering (UC3M)](https://calculus-uc3m.netlify.app/)
